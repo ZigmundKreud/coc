@@ -15,7 +15,7 @@ import {CoCNpcSheet} from "./actors/npc-sheet.js";
 import { registerSystemSettings } from "./settings.js";
 import {preloadHandlebarsTemplates} from "./templates.js";
 import {registerHandlebarsHelpers} from "./helpers.js";
-import {CO} from "./config.js";
+import {COC} from "./config.js";
 
 
 Hooks.once("init", async function () {
@@ -39,7 +39,7 @@ Hooks.once("init", async function () {
     // Create a namespace within the game global
     game.coc = {
         skin : "base",
-        config: CO
+        config: COC
     };
 
     // Register sheet application classes

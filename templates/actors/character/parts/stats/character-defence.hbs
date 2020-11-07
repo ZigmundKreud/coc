@@ -1,20 +1,20 @@
 <div class="flexrow table-header defence-header no-wrap">
     <div class="flex6 center">
-        <div class="field-label">{{ localize 'coc.attributes.defence.label' }}</div>
+        <div class="field-label">{{ localize 'COC.attributes.defence.label' }}</div>
     </div>
     <div class="flex5 center">
-        <div class="field-label">{{ localize 'coc.ui.base' }}</div>
+        <div class="field-label">{{ localize 'COC.ui.base' }}</div>
     </div>
     <div class="flex5 center">
-        <div class="field-label">{{ localize 'coc.ui.bonus' }}</div>
+        <div class="field-label">{{ localize 'COC.ui.bonus' }}</div>
     </div>
     <div class="flex5 center">
-        <div class="field-label">{{ localize 'coc.ui.value' }}</div>
+        <div class="field-label">{{ localize 'COC.ui.value' }}</div>
     </div>
 </div>
 <div class="flexrow no-wrap defence">
     <div class="flex6 center cell-header">
-        <span class="field-label"><i class="fas fa-shield-alt"></i>&nbsp;{{ localize 'coc.attributes.def.abbrev' }}</span>
+        <span class="field-label"><i class="fas fa-shield-alt"></i>&nbsp;{{ localize 'COC.attributes.def.abbrev' }}</span>
     </div>
     <div class="flex5 center cell readonly">
         <input class="field-value" name="data.attributes.def.base" type="text" readonly="true" value="{{actor.data.attributes.def.base}}" placeholder="Base" data-dtype="Number"/>
@@ -29,7 +29,7 @@
 {{#if (isEnabled "useDamageResistance")}}
 <div class="flexrow no-wrap damage-resistance">
     <div class="flex6 center cell-header">
-        <span class="field-label"><i class="fas fa-user-shield"></i>&nbsp;{{ localize 'coc.attributes.dr.abbrev' }}</span>
+        <span class="field-label"><i class="fas fa-user-shield"></i>&nbsp;{{ localize 'COC.attributes.dr.abbrev' }}</span>
     </div>
     <div class="flex5 center cell">
         <input class="field-value" name="data.attributes.dr.base.value" type="text" value="{{actor.data.attributes.dr.base.value}}" placeholder="Base" data-dtype="Number"/>

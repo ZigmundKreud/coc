@@ -1,26 +1,26 @@
 <div class="row flexrow table-header red">
     <div class="flex1 center">
-        <h3>{{localize 'coc.ui.skillcheck'}}</h3>
+        <h3>{{localize 'COC.ui.skillcheck'}}</h3>
     </div>
 </div>
 <div class="flexrow" style="margin-bottom: 1px;">
     <div class="flex1 center bg-red">
-        <label for="dice">{{localize 'coc.ui.dice.type'}}</label>
+        <label for="dice">{{localize 'COC.ui.dice.type'}}</label>
     </div>
     <div class="flex1 center cell">
         <select class="flex1" name="dice" id="dice" data-type="String">
             <option value="1d20" selected>1d20</option>
             <option value="1d12">1d12</option>
-            <option value="2d12kh">2d12 ({{localize 'coc.ui.kh'}})</option>
-            <option value="2d20kh">2d20 ({{localize 'coc.ui.kh'}})</option>
-            <option value="2d12kl">2d12 ({{localize 'coc.ui.kl'}})</option>
-            <option value="2d20kl">2d20 ({{localize 'coc.ui.kl'}})</option>
+            <option value="2d12kh">2d12 ({{localize 'COC.ui.kh'}})</option>
+            <option value="2d20kh">2d20 ({{localize 'COC.ui.kh'}})</option>
+            <option value="2d12kl">2d12 ({{localize 'COC.ui.kl'}})</option>
+            <option value="2d20kl">2d20 ({{localize 'COC.ui.kl'}})</option>
         </select>
     </div>
 </div>
 <div class="row flexrow" style="margin-bottom: 1px;">
     <div class="flex1 center bg-red">
-        <span class="field-label">{{localize 'coc.ui.modifier'}}</span>
+        <span class="field-label">{{localize 'COC.ui.modifier'}}</span>
     </div>
     <div class="flex1 center cell">
         <input class="field-value readonly" id="mod" name="mod" type="text" readonly="true" value="{{numberFormat mod decimals=0 sign=true}}" data-dtype="Number"/>
@@ -33,7 +33,7 @@
 </div>
 <div class="row flexrow" style="margin-bottom: 1px;">
     <div class="flex1 center bg-red">
-        <span class="field-label">{{localize 'coc.ui.critrange'}}</span>
+        <span class="field-label">{{localize 'COC.ui.critrange'}}</span>
     </div>
     <div class="flex1 center cell">
         <input class="field-value" id="critrange" name="critrange" type="text" value="{{critrange}}" data-dtype="String"/>
@@ -41,7 +41,7 @@
 </div>
 <div class="row flexrow" style="margin-bottom: 1px;">
     <div class="flex1 center bg-red">
-        <span class="field-label">{{localize 'coc.ui.bonus'}}/{{localize 'coc.ui.malus'}}</span>
+        <span class="field-label">{{localize 'COC.ui.bonus'}}/{{localize 'COC.ui.malus'}}</span>
     </div>
     <div class="flex1 center cell">
         <input class="field-value" id="bonus" name="bonus" type="text" value="{{numberFormat bonus decimals=0 sign=true}}" data-dtype="Number"/>
@@ -52,7 +52,7 @@
 <!-- DIFFICULTY -->
 <div class="row flexrow" style="margin-bottom: 5px;">
     <div class="flex1 center bg-darkslate">
-        <span class="field-label">{{localize 'coc.ui.difficulty'}}</span>
+        <span class="field-label">{{localize 'COC.ui.difficulty'}}</span>
     </div>
     <div class="flex1 center cell">
         <input class="field-value" id="difficulty" name="difficulty" type="text" value="{{difficulty}}" data-dtype="Number"/>
@@ -62,7 +62,7 @@
 {{/if}}
 <div class="row flexrow table-header red">
     <div class="flex1 center">
-        <h3>{{localize 'coc.ui.damage'}}</h3>
+        <h3>{{localize 'COC.ui.damage'}}</h3>
     </div>
 </div>
 <!-- DAMAGES -->

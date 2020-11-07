@@ -3,22 +3,22 @@
         <!-- STATS -->
         <div class="flexrow table-header no-wrap">
             <div class="flex2 center rollable" data-rolling="data.stats" data-roll-type="attributes">
-                <div class="field-label ellipsis"><i class="fas fa-dice-d6"></i>&nbsp;{{ localize 'coc.stats.abbrev' }}</div>
+                <div class="field-label ellipsis"><i class="fas fa-dice-d6"></i>&nbsp;{{ localize 'COC.stats.abbrev' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.stats.base.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.stats.base.abbrev' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.stats.racial.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.stats.racial.abbrev' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.stats.value.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.stats.value.abbrev' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.stats.bonus.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.stats.bonus.abbrev' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.stats.mod.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.stats.mod.abbrev' }}</div>
             </div>
         </div>
         {{#each actor.data.stats as |stat id|}}
@@ -52,16 +52,16 @@
         <!-- ATTACKS -->
         <div class="flexrow table-header no-wrap">
             <div class="flex2 center">
-                <div class="field-label ellipsis">{{ localize 'coc.attacks.label' }}</div>
+                <div class="field-label ellipsis">{{ localize 'COC.attacks.label' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.ui.base' }}</div>
+                <div class="field-label">{{ localize 'COC.ui.base' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.ui.bonus' }}</div>
+                <div class="field-label">{{ localize 'COC.ui.bonus' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.ui.mod' }}</div>
+                <div class="field-label">{{ localize 'COC.ui.mod' }}</div>
             </div>
         </div>
         {{#each actor.data.attacks as |attack id|}}
@@ -100,30 +100,30 @@
         <!-- INIT -->
         <div class="flexrow table-header no-wrap">
             <div class="flex2 center">
-                <div class="field-label ellipsis">{{ localize 'coc.attributes.initiative.label' }}</div>
+                <div class="field-label ellipsis">{{ localize 'COC.attributes.initiative.label' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.attributes.base.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.attributes.base.abbrev' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.attributes.bonus.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.attributes.bonus.abbrev' }}</div>
             </div>
             <div class="flex1 center">
-                <div class="field-label">{{ localize 'coc.attributes.value.abbrev' }}</div>
+                <div class="field-label">{{ localize 'COC.attributes.value.abbrev' }}</div>
             </div>
         </div>
         <div class="flexrow no-wrap">
             <div class="flex2 center cell-header">
-                <span class="field-label ellipsis"><i class="fas fa-bolt"></i>&nbsp;{{ localize 'coc.attributes.init.abbrev' }}</span>
+                <span class="field-label ellipsis"><i class="fas fa-bolt"></i>&nbsp;{{ localize 'COC.attributes.init.abbrev' }}</span>
             </div>
             <div class="flex1 center cell">
-                <input class="field-value" name="data.attributes.init.base" readonly="true" type="text" value="{{actor.data.attributes.init.base}}" placeholder="{{ localize 'coc.attributes.base.abbrev' }}" data-dtype="Number"/>
+                <input class="field-value" name="data.attributes.init.base" readonly="true" type="text" value="{{actor.data.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
             </div>
             <div class="flex1 center cell">
-                <input class="field-value" name="data.attributes.init.bonus" type="text" value="{{actor.data.attributes.init.bonus}}" placeholder="{{ localize 'coc.attributes.bonus.abbrev' }}" data-dtype="Number"/>
+                <input class="field-value" name="data.attributes.init.bonus" type="text" value="{{actor.data.attributes.init.bonus}}" placeholder="{{ localize 'COC.attributes.bonus.abbrev' }}" data-dtype="Number"/>
             </div>
             <div class="flex1 center cell">
-                <input class="field-value" name="data.attributes.init.value" readonly="true" type="text" value="{{actor.data.attributes.init.value}}" placeholder="{{ localize 'coc.attributes.value.abbrev' }}" data-dtype="Number"/>
+                <input class="field-value" name="data.attributes.init.value" readonly="true" type="text" value="{{actor.data.attributes.init.value}}" placeholder="{{ localize 'COC.attributes.value.abbrev' }}" data-dtype="Number"/>
             </div>
         </div>
         <!-- /INIT -->

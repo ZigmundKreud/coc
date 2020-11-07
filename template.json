@@ -10,8 +10,8 @@
         "stats": {
           "str" : {
             "key" : "str",
-            "label" : "COF.stats.str.label",
-            "abbrev" : "COF.stats.str.abbrev",
+            "label" : "COC.stats.str.label",
+            "abbrev" : "COC.stats.str.abbrev",
             "base": 10,
             "racial": 0,
             "bonus": 0,
@@ -22,8 +22,8 @@
           },
           "dex" : {
             "key" : "dex",
-            "label" : "COF.stats.dex.label",
-            "abbrev" : "COF.stats.dex.abbrev",
+            "label" : "COC.stats.dex.label",
+            "abbrev" : "COC.stats.dex.abbrev",
             "base": 10,
             "racial": 0,
             "bonus": 0,
@@ -34,8 +34,8 @@
           },
           "con" : {
             "key" : "con",
-            "label" : "COF.stats.con.label",
-            "abbrev" : "COF.stats.con.abbrev",
+            "label" : "COC.stats.con.label",
+            "abbrev" : "COC.stats.con.abbrev",
             "base": 10,
             "racial": 0,
             "bonus": 0,
@@ -46,8 +46,8 @@
           },
           "int" : {
             "key" : "int",
-            "label" : "COF.stats.int.label",
-            "abbrev" : "COF.stats.int.abbrev",
+            "label" : "COC.stats.int.label",
+            "abbrev" : "COC.stats.int.abbrev",
             "base": 10,
             "racial": 0,
             "bonus": 0,
@@ -58,8 +58,8 @@
           },
           "wis" : {
             "key" : "wis",
-            "label" : "COF.stats.wis.label",
-            "abbrev" : "COF.stats.wis.abbrev",
+            "label" : "COC.stats.wis.label",
+            "abbrev" : "COC.stats.wis.abbrev",
             "base": 10,
             "racial": 0,
             "bonus": 0,
@@ -70,8 +70,8 @@
           },
           "cha" : {
             "key" : "cha",
-            "label" : "COF.stats.cha.label",
-            "abbrev" : "COF.stats.cha.abbrev",
+            "label" : "COC.stats.cha.label",
+            "abbrev" : "COC.stats.cha.abbrev",
             "base": 10,
             "racial": 0,
             "bonus": 0,
@@ -85,15 +85,15 @@
       "xp" : {
         "level": {
           "key" : "level",
-          "label" : "COF.attributes.level.label",
-          "abbrev" : "COF.attributes.level.abbrev",
+          "label" : "COC.attributes.level.label",
+          "abbrev" : "COC.attributes.level.abbrev",
           "value": 1,
           "max": 20
         },
         "xp": {
           "key" : "xp",
-          "label" : "COF.attributes.xp.label",
-          "abbrev" : "COF.attributes.xp.abbrev",
+          "label" : "COC.attributes.xp.label",
+          "abbrev" : "COC.attributes.xp.abbrev",
           "value": 2,
           "max": 2
         }
@@ -102,8 +102,8 @@
         "attacks" : {
           "melee" : {
             "key" : "melee",
-            "label": "COF.attacks.melee.label",
-            "abbrev": "COF.attacks.melee.abbrev",
+            "label": "COC.attacks.melee.label",
+            "abbrev": "COC.attacks.melee.abbrev",
             "stat": "@stats.str.mod",
             "enabled": true,
             "base": 1,
@@ -112,8 +112,8 @@
           },
           "ranged" : {
             "key" : "ranged",
-            "label": "COF.attacks.ranged.label",
-            "abbrev": "COF.attacks.ranged.abbrev",
+            "label": "COC.attacks.ranged.label",
+            "abbrev": "COC.attacks.ranged.abbrev",
             "stat": "@stats.dex.mod",
             "enabled": true,
             "base": 1,
@@ -122,8 +122,8 @@
           },
           "magic" : {
             "key" : "magic",
-            "label": "COF.attacks.magic.label",
-            "abbrev": "COF.attacks.magic.abbrev",
+            "label": "COC.attacks.magic.label",
+            "abbrev": "COC.attacks.magic.abbrev",
             "stat": "@stats.int.mod",
             "enabled": true,
             "base": 1,
@@ -137,8 +137,8 @@
         "attributes": {
           "hp": {
             "key" : "hp",
-            "label" : "COF.attributes.hp.label",
-            "abbrev" : "COF.attributes.hp.abbrev",
+            "label" : "COC.attributes.hp.label",
+            "abbrev" : "COC.attributes.hp.abbrev",
             "base": 0,
             "bonus": 0,
             "value": 0,
@@ -146,24 +146,24 @@
           },
           "def": {
             "key" : "def",
-            "label" : "COF.attributes.def.label",
-            "abbrev" : "COF.attributes.def.abbrev",
+            "label" : "COC.attributes.def.label",
+            "abbrev" : "COC.attributes.def.abbrev",
             "base": 10,
             "bonus": 0,
             "value": 10
           },
           "init": {
             "key" : "init",
-            "label" : "COF.attributes.init.label",
-            "abbrev" : "COF.attributes.init.abbrev",
+            "label" : "COC.attributes.init.label",
+            "abbrev" : "COC.attributes.init.abbrev",
             "base": 10,
             "bonus": 0,
             "value": 10
           },
           "dr": {
             "key" : "dr",
-            "label" : "COF.attributes.dr.label",
-            "abbrev" : "COF.attributes.dr.abbrev",
+            "label" : "COC.attributes.dr.label",
+            "abbrev" : "COC.attributes.dr.abbrev",
             "enabled": false,
             "base": { "value" : 0, "ignored" : ""},
             "bonus": { "value" : 0, "ignored" : ""},
@@ -171,8 +171,8 @@
           },
           "rp": {
             "key" : "rp",
-            "label" : "COF.attributes.rp.label",
-            "abbrev" : "COF.attributes.rp.abbrev",
+            "label" : "COC.attributes.rp.label",
+            "abbrev" : "COC.attributes.rp.abbrev",
             "enabled": false,
             "base": 5,
             "bonus": 0,
@@ -180,16 +180,16 @@
           },
           "madness": {
             "key" : "fp",
-            "label" : "COF.attributes.madness.label",
-            "abbrev" : "COF.attributes.madness.abbrev",
+            "label" : "COC.attributes.madness.label",
+            "abbrev" : "COC.attributes.madness.abbrev",
             "enabled": false,
             "base": 0,
             "value": 0
           },
           "fp": {
             "key" : "fp",
-            "label" : "COF.attributes.fp.label",
-            "abbrev" : "COF.attributes.fp.abbrev",
+            "label" : "COC.attributes.fp.label",
+            "abbrev" : "COC.attributes.fp.abbrev",
             "enabled": false,
             "base": 3,
             "bonus": 0,
@@ -198,8 +198,8 @@
           },
           "mp": {
             "key" : "mp",
-            "label" : "COF.attributes.mp.label",
-            "abbrev" : "COF.attributes.mp.abbrev",
+            "label" : "COC.attributes.mp.label",
+            "abbrev" : "COC.attributes.mp.abbrev",
             "enabled": false,
             "base": 0,
             "bonus": 0,
@@ -208,34 +208,34 @@
           },
           "hd": {
             "key" : "hd",
-            "label" : "COF.attributes.hd.label",
-            "abbrev" : "COF.attributes.hd.abbrev",
+            "label" : "COC.attributes.hd.label",
+            "abbrev" : "COC.attributes.hd.abbrev",
             "value": "1d4"
           }
         },
         "currency": {
           "pp": {
             "key" : "pp",
-            "label" : "COF.currency.pp.label",
-            "abbrev" : "COF.currency.pp.abbrev",
+            "label" : "COC.currency.pp.label",
+            "abbrev" : "COC.currency.pp.abbrev",
             "qty" : 0
           },
           "gp": {
             "key" : "gp",
-            "label" : "COF.currency.gp.label",
-            "abbrev" : "COF.currency.gp.abbrev",
+            "label" : "COC.currency.gp.label",
+            "abbrev" : "COC.currency.gp.abbrev",
             "qty" : 0
           },
           "sp": {
             "key" : "sp",
-            "label" : "COF.currency.sp.label",
-            "abbrev" : "COF.currency.sp.abbrev",
+            "label" : "COC.currency.sp.label",
+            "abbrev" : "COC.currency.sp.abbrev",
             "qty" : 0
           },
           "cp": {
             "key" : "cp",
-            "label" : "COF.currency.cp.label",
-            "abbrev" : "COF.currency.cp.abbrev",
+            "label" : "COC.currency.cp.label",
+            "abbrev" : "COC.currency.cp.abbrev",
             "qty" : 0
           }
         },
@@ -284,8 +284,8 @@
       ],
       "nc": {
         "key" : "nc",
-        "label" : "COF.attributes.nc.label",
-        "abbrev" : "COF.attributes.nc.abbrev",
+        "label" : "COC.attributes.nc.label",
+        "abbrev" : "COC.attributes.nc.abbrev",
         "value": 1
       },
       "weapons" : [{
