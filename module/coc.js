@@ -8,13 +8,13 @@
 import {CoCActor} from "./actors/actor.js";
 import {CoCItem} from "./items/item.js";
 
+import {CoCActorSheet} from "./actors/actor-sheet.js";
 import {CoCItemSheet} from "./items/item-sheet.js";
-import {CoCCharacterSheet} from "./actors/character-sheet.js";
-import {CoCNpcSheet} from "./actors/npc-sheet.js";
 
 import { registerSystemSettings } from "./settings.js";
 import {preloadHandlebarsTemplates} from "./templates.js";
 import {registerHandlebarsHelpers} from "./helpers.js";
+
 import {COC} from "./config.js";
 
 
@@ -47,8 +47,7 @@ Hooks.once("init", async function () {
     Items.unregisterSheet("core", ItemSheet);
 
     // Register actor sheets
-    Actors.registerSheet("coc", CoCCharacterSheet, {types: ["character"], makeDefault: true});
-    Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: true});
+    Actors.registerSheet("coc", CoCActorSheet, {types: ["character", "npc"], makeDefault: true});
     // Register item sheets
     Items.registerSheet("coc", CoCItemSheet, {types: ["item", "capacity", "profile", "path", "species"], makeDefault: true});
 

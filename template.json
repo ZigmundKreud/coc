@@ -2,8 +2,7 @@
   "Actor": {
     "types": [
       "character",
-      "npc",
-      "encounter"
+      "npc"
     ],
     "templates": {
       "stats": {
@@ -130,7 +129,13 @@
             "bonus": 0,
             "mod": 1
           }
-        }
+        },
+        "weapons" : [{
+          "name" : "",
+          "critrange" : 20,
+          "mod" : null,
+          "dmg" : null
+        }]
       },
       "common": {
         "description": "",
@@ -274,50 +279,15 @@
         "xp",
         "common"
       ]
-    },
-    "encounter": {
-      "key": null,
-      "templates": [
-        "stats",
-        "attacks",
-        "common"
-      ],
-      "nc": {
-        "key" : "nc",
-        "label" : "COC.attributes.nc.label",
-        "abbrev" : "COC.attributes.nc.abbrev",
-        "value": 1
-      },
-      "weapons" : [{
-        "name" : "",
-        "critrange" : 20,
-        "mod" : null,
-        "dmg" : null
-      }],
-      "capacities" : [],
-      "paths": [],
-      "boss": {
-        "rank" : null,
-        "type" : null
-      },
-      "families": [],
-      "archetype": "",
-      "category": ""
     }
   },
   "Item": {
     "types": [
       "item",
       "capacity",
-      "trapping",
       "species",
       "profile",
-      "path",
-      "armor",
-      "shield",
-      "melee",
-      "ranged",
-      "spell"
+      "path"
     ],
     "templates": {
       "base" : {

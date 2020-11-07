@@ -685,6 +685,10 @@
   max-width: 100%;
 }
 
+.coc .weapon-image {
+  background-image: url("../ui/coc/weapon.png");
+}
+
 .coc.actor {
   /* ----------------------------------------- */
   /*  Layout                                   */

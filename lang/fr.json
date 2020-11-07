@@ -132,8 +132,8 @@
   "COC.stats.con.abbrev" : "CON",
   "COC.stats.int.label" : "Intelligence",
   "COC.stats.int.abbrev" : "INT",
-  "COC.stats.wis.label" : "Sagesse/Perception",
-  "COC.stats.wis.abbrev" : "SAG/PER",
+  "COC.stats.wis.label" : "Perception",
+  "COC.stats.wis.abbrev" : "PER",
   "COC.stats.cha.label" : "Charisme",
   "COC.stats.cha.abbrev" : "CHA",
 
@@ -182,8 +182,8 @@
   "COC.attacks.melee.abbrev": "CONTACT",
   "COC.attacks.ranged.label": "Attaque à Distance",
   "COC.attacks.ranged.abbrev": "DISTANCE",
-  "COC.attacks.magic.label": "Attaque Magique",
-  "COC.attacks.magic.abbrev": "MAGIQUE",
+  "COC.attacks.magic.label": "Attaque Mentale",
+  "COC.attacks.magic.abbrev": "MENTALE",
 
   "COC.attributes.recovery.label": "RECUP",
   "COC.attributes.fortune.label": "CHANCE",

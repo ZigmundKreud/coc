@@ -9,7 +9,7 @@
             </div>
         </li>
         {{#each (getItems actor.items) as |item id|}}
-            {{> "systems/coc/templates/actors/character/parts/inventory/character-inventory-item.hbs" item}}
+            {{> "systems/coc/templates/actors/parts/inventory/actor-inventory-item.hbs" item}}
         {{/each}}
     {{!/if}}
 </ol>

@@ -8,36 +8,25 @@ export const preloadHandlebarsTemplates = async function () {
     // Define template paths to load
     const templatePaths = [
         // CHARACTER
-        "systems/coc/templates/actors/character/parts/character-combat.hbs",
-        "systems/coc/templates/actors/character/parts/character-inventory.hbs",
-        "systems/coc/templates/actors/character/parts/character-capacities.hbs",
-        "systems/coc/templates/actors/character/parts/character-description.hbs",
+        "systems/coc/templates/actors/parts/actor-description.hbs",
 
-        "systems/coc/templates/actors/character/parts/stats/character-attacks.hbs",
-        "systems/coc/templates/actors/character/parts/stats/character-attributes.hbs",
-        "systems/coc/templates/actors/character/parts/stats/character-recovery.hbs",
-        "systems/coc/templates/actors/character/parts/stats/character-resources.hbs",
-        "systems/coc/templates/actors/character/parts/stats/character-stats.hbs",
-        "systems/coc/templates/actors/character/parts/stats/character-vitality.hbs",
-        "systems/coc/templates/actors/character/parts/stats/character-defence.hbs",
-        "systems/coc/templates/actors/character/parts/stats/character-init.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-attacks.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-attributes.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-recovery.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-resources.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-stats.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-vitality.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-defence.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-init.hbs",
 
-        "systems/coc/templates/actors/character/parts/capacities/character-capacities.hbs",
-        "systems/coc/templates/actors/character/parts/capacities/character-paths.hbs",
+        "systems/coc/templates/actors/parts/capacities/actor-capacities.hbs",
+        "systems/coc/templates/actors/parts/capacities/actor-paths.hbs",
 
-        "systems/coc/templates/actors/character/parts/combat/character-combat.hbs",
-        "systems/coc/templates/actors/character/parts/combat/character-combat-item.hbs",
+        "systems/coc/templates/actors/parts/combat/actor-combat.hbs",
+        "systems/coc/templates/actors/parts/combat/actor-combat-item.hbs",
 
-        "systems/coc/templates/actors/character/parts/inventory/character-inventory.hbs",
-        "systems/coc/templates/actors/character/parts/inventory/character-inventory-item.hbs",
-
-
-        // NPC
-        "systems/coc/templates/actors/npc/parts/npc-stats.hbs",
-        "systems/coc/templates/actors/npc/parts/npc-combat.hbs",
-        "systems/coc/templates/actors/npc/parts/npc-inventory.hbs",
-        "systems/coc/templates/actors/npc/parts/npc-capacities.hbs",
-        "systems/coc/templates/actors/npc/parts/npc-description.hbs",
+        "systems/coc/templates/actors/parts/inventory/actor-inventory.hbs",
+        "systems/coc/templates/actors/parts/inventory/actor-inventory-item.hbs",
 
         // ITEMS PROPERTIES
         "systems/coc/templates/items/parts/properties/item-properties.hbs",
