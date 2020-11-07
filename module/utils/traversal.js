@@ -16,30 +16,53 @@ export class Traversal {
     static getAllEntitiesOfType(type, pack) {
         const compendium = game.packs.get(pack).getContent();
         const ingame = game.items.filter(item => item.type === type);
-        return ingame.cocncat(compendium);
+        return ingame.concat(compendium);
     }
 
-    // static getItemsOfType(type) {
-    //     let compendium = [];
-    //     let ingame = [];
-    //     switch(type){
-    //         case "path" :
-    //             compendium = coc.paths;
-    //             ingame = game.items.filter(item => item.type === "path").map(entity => entity.data);
-    //             break;
-    //         case "capacity" :
-    //             compendium = coc.capacities;
-    //             ingame = game.items.filter(item => item.type === "capacity").map(entity => entity.data);
-    //             break;
-    //     }
-    //     return ingame.cocncat(compendium);
-    // }
+    static getItemsOfType(type) {
+        let compendium = [];
+        let ingame = [];
+        switch(type){
+            case "path" :
+                compendium = game.coc.config.paths;
+                ingame = game.items.filter(item => item.type === "path").map(entity => entity.data);
+                break;
+            case "capacity" :
+                compendium = game.coc.capacities;
+                ingame = game.items.filter(item => item.type === "capacity").map(entity => entity.data);
+                break;
+        }
+        return ingame.concat(compendium);
+    }
 
     /*
      * DATA
      */
 
-    // static getInGameEntitiesDataOfType (type) {
-    //     return game.items.filter(item => item.type === type).map(entity => entity.data);
-    // }
+    static getInGameEntitiesDataOfType (type) {
+        return game.items.filter(item => item.type === type).map(entity => entity.data);
+    }
+
+    static getAllCapacitiesData () {
+        const compendium = game.coc.config.capacities;
+        const ingame = this.getInGameEntitiesDataOfType("capacity");
+        return ingame.concat(compendium);
+    }
+
+    static getAllPathsData () {
+        const compendium = game.coc.config.paths;
+        const ingame = this.getInGameEntitiesDataOfType("path");
+        return ingame.concat(compendium);
+    }
+
+    static getAllProfilesData () {
+        const compendium = game.coc.config.profiles;
+        const ingame = this.getInGameEntitiesDataOfType("profile");
+        return ingame.concat(compendium);
+    }
+
+    static findPathDataByKey (key) {
+        return this.getAllPathsData().find(entity => entity.data.key === key);
+    }
+
 }

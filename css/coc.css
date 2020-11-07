@@ -179,6 +179,123 @@
 }
 
 /* Global styles */
+.grid {
+  display: grid;
+  margin: 0;
+  padding: 0;
+}
+
+.grid .gridheader {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+
+.grid .gridrow {
+  display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid lightgray;
+}
+
+.grid .gridrow:last-child {
+  border-bottom: 1px solid lightgray;
+}
+
+.grid .gridcell {
+  border-left: 1px solid lightgray;
+  text-align: center;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.grid .gridcell:last-child {
+  border-right: 1px solid lightgray;
+}
+
+.grid .no-border {
+  border: none !important;
+}
+
+.grid-1col {
+  grid-column: span 1 / span 1;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-2col {
+  grid-column: span 2 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3col {
+  grid-column: span 3 / span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col-150 {
+  grid-column: span 6 / span 6;
+  grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr;
+}
+
+.grid-6col-200 {
+  grid-column: span 6 / span 6;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid-6col {
+  grid-column: span 6 / span 6;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7 / span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8 / span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9 / span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10 / span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11 / span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12 / span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
 /* ----------------------------------------- */
 /*  Flexbox                                  */
 /* ----------------------------------------- */
@@ -842,6 +959,75 @@
   color: white;
 }
 
+.coc.actor .window-content .editable .sheet-body .tab.capacities {
+  overflow: auto;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list {
+  -webkit-box-shadow: 0 4px 3px -3px gray;
+  box-shadow: 0 4px 3px -3px gray;
+  margin: 0 0 5px 0;
+  padding: 3px;
+  max-height: 205px;
+  overflow: hidden;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list .grid {
+  max-height: 150px;
+  overflow: auto;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list.encounter {
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list.encounter .grid {
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
+  overflow: auto;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list {
+  min-height: calc(100% - 220px);
+  height: calc(100% - 220px);
+  max-height: calc(100% - 220px);
+  overflow: auto;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p0 {
+  min-height: calc(100% - 15px);
+  height: calc(100% - 15px);
+  max-height: calc(100% - 15px);
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p1 {
+  min-height: calc(100% - 120px);
+  height: calc(100% - 120px);
+  max-height: calc(100% - 120px);
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p2 {
+  min-height: calc(100% - 145px);
+  height: calc(100% - 145px);
+  max-height: calc(100% - 145px);
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p3 {
+  min-height: calc(100% - 170px);
+  height: calc(100% - 170px);
+  max-height: calc(100% - 170px);
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p4 {
+  min-height: calc(100% - 195px);
+  height: calc(100% - 195px);
+  max-height: calc(100% - 195px);
+}
+
 .coc.actor .cell-header {
   background-color: black;
   color: white;
@@ -997,6 +1183,43 @@
   min-height: calc(100% - 40px);
   max-height: calc(100% - 40px);
   overflow: auto;
+}
+
+.coc.item .window-content .editable .sheet-body .tab .item-properties {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 150px;
+  flex: 0 0 150px;
+  margin: 5px 5px 5px 0;
+  padding-right: 5px;
+  border-right: 1px groove #eeede0;
+}
+
+.coc.item .window-content .editable .sheet-body .tab .item-properties .form-group {
+  margin: 0;
+}
+
+.coc.item .window-content .editable .sheet-body .tab .item-properties .form-group label {
+  line-height: 20px;
+}
+
+.coc.item .window-content .editable .sheet-body .tab .item-properties .form-group input {
+  text-align: right;
+}
+
+.coc.item .window-content .editable .sheet-body .tab .item-properties .properties-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.coc.item .window-content .editable .sheet-body .tab .item-properties .properties-list li {
+  margin: 3px 0;
+  padding: 0 2px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px groove #eeede0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .coc textarea, .coc select, .coc input {

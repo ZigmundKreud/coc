@@ -10,7 +10,7 @@ export class CoCActor extends Actor {
     prepareBaseData() {
         super.prepareBaseData();
         let actorData = this.data;
-        // console.log(actorData);
+        console.log(actorData);
         this.computeModsAndAttributes(actorData);
         this.computeAttacks(actorData);
     }
@@ -56,34 +56,12 @@ export class CoCActor extends Actor {
         attributes.init.value = attributes.init.base + attributes.init.bonus;
 
         // attributes.fp.base = 3 + stats.cha.mod;
-        // attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
-        // attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
-        // attributes.rp.value = attributes.rp.base + attributes.rp.bonus;
+        attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
+        attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
+        attributes.rp.value = attributes.rp.base + attributes.rp.bonus;
         attributes.hp.max = attributes.hp.base + attributes.hp.bonus;
 
-        // const magicMod = this.getMagicMod(stats, profile);
-
-        // if(profile){
-        //     attributes.hd.value = profile.data.dv;
-        //     switch (profile.data.key) {
-        //         case "barde" :
-        //         case "forgesort" :
-        //         case "pretre" :
-        //         case "druide" :
-        //             attributes.mp.base = lvl + magicMod;
-        //             break;
-        //         case "ensorceleur" :
-        //         case "magicien" :
-        //         case "necromancien" :
-        //             attributes.mp.base = 2 * lvl + magicMod;
-        //             break;
-        //         default :
-        //             attributes.mp.base = 0;
-        //             break;
-        //     }
-        // }
-        // else attributes.mp.base = 0;
-        // attributes.mp.max = attributes.mp.base + attributes.mp.bonus;
+        attributes.mp.max = attributes.mp.base + attributes.mp.bonus;
     }
 
     /* -------------------------------------------- */
@@ -102,7 +80,6 @@ export class CoCActor extends Actor {
 
         // STATS RELATED TO PROFILE
         let magicMod = eval(attacks.magic.stat.split("@")[1]);
-        // console.log(magicMod);
         melee.base = (strMod) ? strMod : 0;
         ranged.base = (dexMod) ? dexMod : 0;
         magic.base = (magicMod) ? magicMod : 0;
@@ -114,20 +91,12 @@ export class CoCActor extends Actor {
     /* -------------------------------------------- */
 
     computeDef(actorData) {
-        // let stats = actorData.data.stats;
+        let stats = actorData.data.stats;
         let attributes = actorData.data.attributes;
-        // let items = actorData.items;
-
-        // let armors = this.getWornArmors(items);
-        // let shields = this.getWornShields(items);
-        // let spells = this.getActiveSpells(items);
-
+        let protections = actorData.items.filter(i => i.type === "item" && i.data.worn && i.data.def).map(i => i.data.def);
         // COMPUTE DEF SCORES
-        // let armor = armors.map(armor => armor.data.def).reduce((acc, curr) => acc + curr, 0);
-        // let shield = shields.map(shield => shield.data.def).reduce((acc, curr) => acc + curr, 0);
-        // let spell = spells.map(spell => spell.data.def).reduce((acc, curr) => acc + curr, 0);
-
-        // attributes.def.base = 10 + armor + shield + spell + stats.dex.mod;
+        let protection = protections.reduce((acc, curr) => acc + curr, 0);
+        attributes.def.base = 10 + protection + stats.dex.mod;
         attributes.def.value = attributes.def.base + attributes.def.bonus;
     }
 

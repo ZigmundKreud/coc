@@ -225,6 +225,7 @@
   "COC.category.ammunition": "Ammunition",
   "COC.category.container" : "Container",
   "COC.category.mount" : "Mount",
+  "COC.category.vehicle" : "Vehicle",
   "COC.category.other": "Other",
 
   "COC.rarity.common" : "Common",

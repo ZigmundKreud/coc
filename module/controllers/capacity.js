@@ -21,7 +21,7 @@ export class Capacity {
         // get path from owned items
         const path = actor.getOwnedItem(pathId).data;
         // retrieve path capacities from world/compendiums
-        let capacities = Traversal.getItemsOfType("capacity").filter(c => path.data.capacities.includes(c._id));
+        let capacities = Traversal.getItemsOfType("capacity").filter(c => {if(c && c._id) return path.data.capacities.includes(c._id)});
         capacities = capacities.map(c => {
             let cdata = duplicate(c);
             // if no rank, force it
@@ -51,8 +51,8 @@ export class Capacity {
         }
     }
 
-    static removeFromActor(actor, event, itemData) {
-        return actor.deleteOwnedItem(itemData._id);
-    }
+    // static removeFromActor(actor, event, entity) {
+    //     return actor.deleteOwnedItem(entity._id);
+    // }
 
 }

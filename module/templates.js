@@ -39,7 +39,6 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/coc/templates/items/parts/details/path-details.hbs",
         "systems/coc/templates/items/parts/details/profile-details.hbs",
         "systems/coc/templates/items/parts/details/ranged-details.hbs",
-        "systems/coc/templates/items/parts/details/species-details.hbs",
         "systems/coc/templates/items/parts/details/equipment-details.hbs",
         "systems/coc/templates/items/parts/details/protection-details.hbs",
         "systems/coc/templates/items/parts/details/spell-details.hbs",

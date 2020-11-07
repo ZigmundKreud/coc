@@ -1,15 +1,52 @@
+import {Traversal} from "./utils/traversal.js";
+
 export const registerHandlebarsHelpers = function () {
+
+    Handlebars.registerHelper('getEmbeddedItems', function (type, ids) {
+        if (ids) {
+            const items = Traversal.getItemsOfType(type);
+            return ids.map(id => items.find(i => i._id === id));
+        } else return null;
+    });
+
+    Handlebars.registerHelper('getPaths', function (items) {
+        return items.filter(item => item.type === "path");
+    });
+
+    Handlebars.registerHelper('getSpecies', function (items) {
+        return items.find(item => item.type === "species");
+    });
+
+    Handlebars.registerHelper('getInventory', function (items) {
+        let inventory = items.filter(item => item.type === "item");
+        inventory.sort(function (a, b) {
+            const aKey = a.data.subtype + "-" + a.name.slugify({strict: true});
+            const bKey = b.data.subtype + "-" + b.name.slugify({strict: true});
+            return (aKey > bKey) ? 1 : -1
+        });
+        return inventory;
+    });
+
+    Handlebars.registerHelper('getWorn', function (items) {
+        let worn = items.filter(item => item.type === "item" && item.data.worn);
+        worn.sort(function (a, b) {
+            const aKey = a.data.subtype + "-" + a.name.slugify({strict: true});
+            const bKey = b.data.subtype + "-" + b.name.slugify({strict: true});
+            return (aKey > bKey) ? 1 : -1
+        });
+        return worn;
+    });
 
     Handlebars.registerHelper('getItems', function (items) {
         return items.filter(item => item.type === "item");
     });
 
-    Handlebars.registerHelper('getWornItems', function (items) {
-        return items.filter(item => item.type === "item" && item.data.worn);
+    Handlebars.registerHelper('getProfile', function (items) {
+        return items.find(item => item.type === "profile");
     });
 
-    Handlebars.registerHelper('getPaths', function (items) {
-        return items.filter(item => item.type === "path");
+    Handlebars.registerHelper('countPaths', function (items) {
+        return items.filter(item => item.type === "path").length;
     });
 
     Handlebars.registerHelper('getCapacities', function (items) {
@@ -22,8 +59,24 @@ export const registerHandlebarsHelpers = function () {
         return caps;
     });
 
-    Handlebars.registerHelper('countPaths', function (items) {
-        return items.filter(item => item.type === "path").length;
+    Handlebars.registerHelper('getCapacitiesByIds', function (ids) {
+        if (ids) {
+            console.log(ids);
+            const caps = Traversal.getItemsOfType("capacity").filter(c => {
+                console.log(c);
+                if(c && c._id) return ids.includes(c._id)
+            });
+            caps.sort(function (a, b) {
+                const indexA = ids.indexOf(a._id);
+                const indexB = ids.indexOf(b._id);
+                return (indexA > indexB) ? 1 : -1
+            });
+            return caps;
+        } else return null;
+    });
+
+    Handlebars.registerHelper('getPath', function (items, pathKey) {
+        return items.filter(item => item.type === "path").find(p => p.data.key === pathKey);
     });
 
     Handlebars.registerHelper('isNull', function (val) {
@@ -98,6 +151,26 @@ export const registerHandlebarsHelpers = function () {
         return str.split(separator)[keep];
     });
 
+    Handlebars.registerHelper('listProfiles', function () {
+        return Traversal.getAllProfilesData()
+    });
+
+    Handlebars.registerHelper('listSpecies', function () {
+        return Traversal.getAllSpeciesData()
+    });
+
+    Handlebars.registerHelper('listPaths', function () {
+        return Traversal.getAllPathsData()
+    });
+
+    Handlebars.registerHelper('findPath', function (key) {
+        return Traversal.getAllPathsData().find(p => p.data.key === key);
+    });
+
+    Handlebars.registerHelper('findCapacity', function (key) {
+        return Traversal.getAllCapacitiesData().find(c => c.data.key === key);
+    });
+
     // If you need to add Handlebars helpers, here are a few useful examples:
     Handlebars.registerHelper('concat', function () {
         var outStr = '';
@@ -116,4 +189,10 @@ export const registerHandlebarsHelpers = function () {
     Handlebars.registerHelper('valueAtIndex', function (arr, idx) {
         return arr[idx];
     });
+
+    Handlebars.registerHelper('includesKey', function (items, type, key) {
+        // console.log(items);
+        return items.filter(i => i.type === type).map(i => i.data.key).includes(key);
+    });
+
 }

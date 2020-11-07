@@ -39,7 +39,6 @@ COC.itemProperties = {
 };
 
 COC.profiles = [];
-COC.species = [];
 COC.paths = [];
 COC.capacities = [];
 
@@ -48,13 +47,6 @@ COC.getProfiles = async function () {
     let profiles = await game.packs.get("coc.profiles").getContent().then(index => index.map(entity => entity.data));
     COC.profiles = profiles;
     console.debug("Profiles loaded");
-};
-
-// Mise en cache des données de races
-COC.getSpecies = async function () {
-    let species = await game.packs.get("coc.species").getContent().then(index => index.map(entity => entity.data));
-    COC.species = species;
-    console.debug("Species loaded");
 };
 
 // Mise en cache des données de voies
@@ -72,15 +64,10 @@ COC.getCapacities = async function () {
 };
 
 COC.itemTypes = {
-    "species": "COC.category.species",
     "profile": "COC.category.profile",
     "capacity": "COC.category.capacity",
     "path": "COC.category.path",
-    "trapping": "COC.category.trapping",
-    "melee": "COC.category.melee",
-    "armor": "COC.category.armor",
-    "shield": "COC.category.shield",
-    "ranged": "COC.category.ranged",
-    "spell": "COC.category.spell"
+    "trait": "COC.category.trait",
+    "item": "COC.category.item"
 };
 
