@@ -2,6 +2,7 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
+import {CoCRoll} from "../controllers/roll.js";
 
 export class CoCActorSheet extends ActorSheet {
 
@@ -44,6 +45,54 @@ export class CoCActorSheet extends ActorSheet {
             this.actor.update({'data.weapons': data.weapons});
         });
 
+
+        // Initiate a roll
+        html.find('.rollable').click(ev => {
+            ev.preventDefault();
+            return this._onRoll(ev);
+        });
+
+    }
+
+
+    /* -------------------------------------------- */
+    /* ROLL EVENTS CALLBACKS                        */
+    /* -------------------------------------------- */
+
+    /**
+     * Initiates a roll from any kind depending on the "data-roll-type" attribute
+     * @param event the roll event
+     * @private
+     */
+    _onRoll(event) {
+        const elt = $(event.currentTarget)[0];
+        const rolltype = elt.attributes["data-roll-type"].value;
+        switch (rolltype) {
+            case "skillcheck" :
+                return CoCRoll.skillCheck(this.getData().data, this.actor, event);
+                break;
+            case "weapon" :
+                return CoCRoll.rollWeapon(this.getData().data, this.actor, event);
+                break;
+            case "encounter-weapon" :
+                return CoCRoll.rollEncounterWeapon(this.getData().data, this.actor, event);
+                break;
+            case "encounter-damage" :
+                return CoCRoll.rollEncounterDamage(this.getData().data, this.actor, event);
+                break;
+            case "spell" :
+                return CoCRoll.rollSpell(this.getData().data, this.actor, event);
+                break;
+            case "damage" :
+                return CoCRoll.rollDamage(this.getData().data, this.actor, event);
+                break;
+            case "hp" :
+                return CoCRoll.rollHitPoints(this.getData().data, this.actor, event);
+                break;
+            case "attributes" :
+                return CoCRoll.rollAttributes(this.getData().data, this.actor, event);
+                break;
+        }
     }
 
     /* -------------------------------------------- */

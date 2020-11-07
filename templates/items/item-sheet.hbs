@@ -13,26 +13,26 @@
                     {{/if}}
                 </span>
             </div>
-            <ul class="summary flexrow">
-                <li>
-                    {{#if data.source}}
-                        <input type="text" name="data.source" value="{{data.source}}" placeholder="{{ localize 'COC.ui.source' }}"/>
-                    {{else}}
-                        <input type="text" name="data.source" value="{{ localize 'COC.ui.na' }}" placeholder="{{ localize 'COC.ui.source' }}"/>
-                    {{/if}}
-                </li>
-                {{#if (equals item.type "item")}}
-                    {{#if (not (equals item.data.subtype "spell"))}}
-                    <li>
-                        {{#if data.rarity}}
-                            {{localize (concat "COC.rarity." data.rarity)}}
-                        {{else}}
-                            {{localize "COC.ui.na"}}
-                        {{/if}}
-                    </li>
-                    {{/if}}
-                {{/if}}
-            </ul>
+<!--            <ul class="summary flexrow">-->
+<!--                <li>-->
+<!--                    {{!#if data.source}}-->
+<!--                        <input type="text" name="data.source" value="{{data.source}}" placeholder="{{ localize 'COC.ui.source' }}"/>-->
+<!--                    {{!else}}-->
+<!--                        <input type="text" name="data.source" value="{{ localize 'COC.ui.na' }}" placeholder="{{ localize 'COC.ui.source' }}"/>-->
+<!--                    {{!/if}}-->
+<!--                </li>-->
+<!--                {{!#if (equals item.type "item")}}-->
+<!--                    {{!#if (not (equals item.data.subtype "spell"))}}-->
+<!--                    <li>-->
+<!--                        {{!#if data.rarity}}-->
+<!--                            {{!localize (concat "COC.rarity." data.rarity)}}-->
+<!--                        {{!else}}-->
+<!--                            {{!localize "COC.ui.na"}}-->
+<!--                        {{!/if}}-->
+<!--                    </li>-->
+<!--                    {{!/if}}-->
+<!--                {{!/if}}-->
+<!--            </ul>-->
         </div>
     </header>
     {{!-- Sheet Tab Navigation --}}

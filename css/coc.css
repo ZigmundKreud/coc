@@ -464,7 +464,7 @@
   -ms-flex-align: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
+  border: 1px groove #eeede0;
   font-weight: bold;
   line-height: 24px;
 }
@@ -625,6 +625,10 @@
 /* Styles limited to co sheets */
 .coc {
   font-family: "Signika", sans-serif;
+  /* Form Groups */
+  /*
+ Placeholders
+ */
 }
 
 .coc .rollable:hover {
@@ -838,6 +842,11 @@
   color: white;
 }
 
+.coc.actor .cell-header {
+  background-color: black;
+  color: white;
+}
+
 .coc.item {
   /* ----------------------------------------- */
   /*  Layout                                   */
@@ -860,6 +869,136 @@
   background-repeat: repeat;
 }
 
+.coc.item .window-content .editable .sheet-header {
+  -webkit-box-shadow: 0 10px 10px gray;
+  box-shadow: 0 10px 10px gray;
+}
+
+.coc.item .window-content .editable .sheet-header img.profile {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  max-width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  border: none;
+}
+
+.coc.item .window-content .editable .sheet-header .header-details {
+  height: 140px;
+  /*
+      .summary {
+        flex: 0 0 100%;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: $borderGroove;
+        border-bottom: none;
+
+        li {
+          height: calc(100% - 6px);
+          float: left;
+          margin: 2px 0;
+          padding: 0;
+          border-right: $borderGroove;
+          line-height: 34px;
+          color: $lightGreen;
+
+          &:last-child {
+            border-right: none;
+          }
+
+          input {
+            color: $lightGreen;
+          }
+        }
+      }
+*/
+}
+
+.coc.item .window-content .editable .sheet-header .header-details h1.charname input[type=text] {
+  font-family: Futura;
+  color: white;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.coc.item .window-content .editable .sheet-header .header-details .item-subtitle {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 150px;
+  flex: 0 0 150px;
+  height: 60px;
+  margin: 0;
+  padding: 5px;
+  text-align: right;
+  color: goldenrod;
+}
+
+.coc.item .window-content .editable .sheet-header .header-details .item-subtitle .item-type {
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0;
+}
+
+.coc.item .window-content .editable .sheet-header .header-details .item-subtitle .item-status {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.coc.item .window-content .editable nav.sheet-navigation {
+  margin-top: -28px;
+  border: none;
+}
+
+.coc.item .window-content .editable nav.sheet-navigation.tabs {
+  color: white;
+  text-align: center;
+  border: none;
+}
+
+.coc.item .window-content .editable nav.sheet-navigation.tabs .item {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px;
+  border: 1px solid #736953a6;
+  margin: 0;
+  height: 28px;
+  -webkit-box-shadow: 0 0 10px #00000052 inset;
+  box-shadow: 0 0 10px #00000052 inset;
+  /*padding: 3px 3px 0 3px;*/
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.coc.item .window-content .editable nav.sheet-navigation.tabs .item:hover {
+  background: rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}
+
+.coc.item .window-content .editable nav.sheet-navigation.tabs .item.active {
+  border: 1px inset #736953a6;
+  background: rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}
+
+.coc.item .window-content .editable .sheet-body {
+  background: white;
+}
+
+.coc.item .window-content .editable .sheet-body .tab {
+  background: lightgray;
+  padding: 10px;
+  height: calc(100% - 30px);
+  min-height: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  overflow: auto;
+}
+
 .coc textarea, .coc select, .coc input {
   background-color: rgba(0, 0, 0, 0.1);
   border: none;
@@ -876,4 +1015,199 @@
 .coc textarea[readonly=true], .coc select[readonly=true], .coc input[readonly=true] {
   background-color: rgba(0, 0, 0, 0.3);
   cursor: not-allowed;
+}
+
+.coc label.checkbox {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  padding: 0;
+  margin: 0;
+  height: 22px;
+  line-height: 22px;
+  font-size: 11px;
+}
+
+.coc label.checkbox > input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0 2px 0 0;
+  position: relative;
+  top: 4px;
+}
+
+.coc label.checkbox.right > input[type="checkbox"] {
+  margin: 0 0 0 2px;
+}
+
+.coc .form-group label {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  color: #4b4a44;
+  font-weight: bold;
+}
+
+.coc .form-group .form-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.coc .form-group .form-fields > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 3px 0 0;
+}
+
+.coc .form-group .form-fields > *:last-child {
+  margin-right: 0;
+}
+
+.coc .form-group .form-fields > * .flex1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.coc .form-group .form-fields > * .flex2 {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.coc .form-group .form-fields > * .flex3 {
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.coc .form-group .form-fields > * .flex4 {
+  -webkit-box-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+}
+
+.coc .form-group .form-fields label {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  margin: 0;
+}
+
+.coc .form-group .form-fields label.checkbox {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  text-align: left;
+}
+
+.coc .form-group.stacked label {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  margin: 0;
+}
+
+.coc .form-group.stacked label.checkbox {
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  text-align: left;
+}
+
+.coc .form-header {
+  margin: 0 0 0.25em 0;
+  padding: 2px 0;
+  border-top: 1px groove #eeede0;
+  border-bottom: 1px groove #eeede0;
+  font-family: Futura, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.coc .tag {
+  display: inline-block;
+  margin: 0 2px 0 0;
+  padding: 0 3px;
+  font-size: 10px;
+  line-height: 16px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.coc ::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1;
+  /* Firefox */
+}
+
+.coc ::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1;
+  /* Firefox */
+}
+
+.coc :-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1;
+  /* Firefox */
+}
+
+.coc ::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1;
+  /* Firefox */
+}
+
+.coc ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1;
+  /* Firefox */
+}
+
+.coc :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: lightgray;
+}
+
+.coc ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: lightgray;
+}
+
+.coc input::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+.coc input::-moz-placeholder {
+  color: lightgray;
+}
+
+.coc input:-ms-input-placeholder {
+  color: lightgray;
+}
+
+.coc input::-ms-input-placeholder {
+  color: lightgray;
+}
+
+.coc input::placeholder {
+  color: lightgray;
 }

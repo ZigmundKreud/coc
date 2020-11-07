@@ -47,6 +47,7 @@
   "COC.ui.activecaps" : "Active capacities",
   "COC.ui.spell" : "Spell",
   "COC.ui.spellcasting" : "Spellcasting",
+  "COC.ui.sc" : "INCANT",
   "COC.ui.limited" : "Limited action",
   "COC.ui.summary" : "Summary",
   "COC.ui.description" : "Description",

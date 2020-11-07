@@ -90,22 +90,22 @@ export class CoCActor extends Actor {
 
     computeAttacks(actorData) {
 
-        // let stats = actorData.data.stats;
+        let stats = actorData.data.stats;
         let attacks = actorData.data.attacks;
 
-        // let melee = attacks.melee;
-        // let ranged = attacks.ranged;
-        // let magic = attacks.magic;
+        let melee = attacks.melee;
+        let ranged = attacks.ranged;
+        let magic = attacks.magic;
 
-        // let strMod = stats.str.mod;
-        // let dexMod = stats.dex.mod;
+        let strMod = stats.str.mod;
+        let dexMod = stats.dex.mod;
 
         // STATS RELATED TO PROFILE
-        // const magicMod = this.getMagicMod(stats, profile);
-
-        // melee.base = (strMod) ? strMod : 0;
-        // ranged.base = (dexMod) ? dexMod : 0;
-        // magic.base = (magicMod) ? magicMod : 0;
+        let magicMod = eval(attacks.magic.stat.split("@")[1]);
+        // console.log(magicMod);
+        melee.base = (strMod) ? strMod : 0;
+        ranged.base = (dexMod) ? dexMod : 0;
+        magic.base = (magicMod) ? magicMod : 0;
         for (let attack of Object.values(attacks)) {
             attack.mod = attack.base + attack.bonus;
         }

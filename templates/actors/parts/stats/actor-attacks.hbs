@@ -47,3 +47,17 @@
 <!--        <div class="flexrow"><div class="flex1 spacer"></div></div>-->
     {{!/if}}
 {{/each}}
+<div class="flexrow no-wrap">
+    <div class="flex2 center cell-header">
+        <div class="field-label ellipsis">{{ localize "COC.ui.sc" }}</div>
+    </div>
+    <div class="flex3 center">
+        <select name="data.attacks.magic.stat" data-type="String" style="font-size:12px; width:100%">
+            {{#select data.attacks.magic.stat}}
+                <option value="@stats.int.mod">{{localize "COC.stats.int.abbrev"}}</option>
+                <option value="@stats.wis.mod">{{localize "COC.stats.wis.abbrev"}}</option>
+                <option value="@stats.cha.mod">{{localize "COC.stats.cha.abbrev"}}</option>
+            {{/select}}
+        </select>
+    </div>
+</div>
