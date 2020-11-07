@@ -1,0 +1,52 @@
+<h3 class="form-header">Propriétés d'armes à distance</h3>
+<div class="form-group">
+    <label>{{localize "COC.ui.range"}}</label>
+    <div class="form-fields">
+        <input name="data.range" type="text" value="{{item.data.range}}" placeholder="Range" data-dtype="Number">
+    </div>
+</div>
+<div class="form-group stacked">
+    <label>Classe</label>
+    <div class="form-fields">
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.bow" {{checked item.data.properties.bow}}> {{localize "COC.properties.bow"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.crossbow" {{checked item.data.properties.crossbow}}> {{localize "COC.properties.crossbow"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.powder" {{checked item.data.properties.powder}}> {{localize "COC.properties.powder"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.throwing" {{checked item.data.properties.throwing}}> {{localize "COC.properties.throwing"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.sling" {{checked item.data.properties.sling}}> {{localize "COC.properties.sling"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.spell" {{checked item.data.properties.spell}}> {{localize "COC.properties.spell"}}
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <label>Proriétés</label>
+    <div class="form-fields">
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.reloadable" {{checked item.data.properties.reloadable}}> {{localize "COC.properties.reloadable"}}
+        </label>
+    </div>
+</div>
+{{#if data.properties.reloadable}}
+    <div class="form-group">
+        <label>{{localize "COC.ui.reload"}}</label>
+        <div class="form-fields">
+            <select name="data.reload" data-type="String" style="width:100%">
+                {{#select data.reload}}
+                    <option value="">{{localize "COC.ui.noAction"}}</option>
+                    <option value="s">{{localize "COC.ui.simpleAction"}}</option>
+                    <option value="l">{{localize "COC.ui.limitedAction"}}</option>
+                {{/select}}
+            </select>
+        </div>
+    </div>
+{{/if}}

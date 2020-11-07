@@ -1,0 +1,8 @@
+<div class="item-properties">
+    <ol class="properties-list">
+        {{#if item.data.dv}}
+            <li>{{ localize "COC.ui.hd" }} : {{item.data.dv}}</li>{{/if}}
+        {{#if item.data.spellcasting}}
+            <li>{{localize "COC.ui.spellcasting"}} : {{localize (concat "COC.stats." (concat item.data.spellcasting ".label"))}}</li>{{/if}}
+    </ol>
+</div>

@@ -1,0 +1,91 @@
+//@import url('https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap');
+
+/* ----------------------------------------- */
+/*  LOCAL FONTS                             */
+/* ----------------------------------------- */
+
+@font-face {
+  font-family: "MyriadPro";
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/MyriadPro-Regular.otf');
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/MyriadPro-It.otf');
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  font-weight: 700;
+  src: url('../fonts/MyriadPro-Bold.otf');
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  font-weight: 700;
+  font-style: italic;
+  src: url('../fonts/MyriadPro-BoldIt.otf');
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  font-style: normal;
+  font-weight: 200;
+  src: url('../fonts/MyriadPro-Light.otf');
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/MyriadPro-Black.otf');
+}
+
+@font-face {
+  font-family: "PermanentMarker";
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/PermanentMarker-Regular.ttf');
+}
+
+@font-face {
+  font-family: "ChN1Regular";
+  src: url('../fonts/ChN1_Regular.ttf');
+}
+
+
+/* ----------------------------------------- */
+/*  TEXT STYLES                             */
+/* ----------------------------------------- */
+
+$font-primary: 'Signika', sans-serif;
+$font-secondary: 'MyriadPro', sans-serif;
+$font-tertiary: 'ChN1Regular', cursive;
+
+.strong{
+  font-weight: bold;
+}
+
+.font-sm{
+  font-size: smaller;
+}
+
+.font-lg{
+  font-size: larger;
+}
+
+.font-light{
+  font-weight: lighter;
+}
+
+.font-bold{
+  font-weight: bolder;
+}
+
+//.ellipsis{
+//  @include ellipsis;
+//}

@@ -4,28 +4,61 @@
  * Software License: GNU GPLv3
  */
 
-import {CocActorSheet} from "./actors/actor-sheet.js";
-import {CocItemSheet} from "./items/item-sheet.js";
-import {CocActor} from "./actors/actor.js";
-import {CocItem} from "./items/item.js";
+// Import Modules
+import {CoCActor} from "./actors/actor.js";
+import {CoCItem} from "./items/item.js";
+
+import {CoCItemSheet} from "./items/item-sheet.js";
+import {CoCCharacterSheet} from "./actors/character-sheet.js";
+import {CoCNpcSheet} from "./actors/npc-sheet.js";
+
+import { registerSystemSettings } from "./settings.js";
+import {preloadHandlebarsTemplates} from "./templates.js";
+import {registerHandlebarsHelpers} from "./helpers.js";
+import {CO} from "./config.js";
+
 
 Hooks.once("init", async function () {
 
-    console.info("COC Module Initializing...");
+    console.debug("Initialisation du Système Chroniques Oubliées...");
+
+    /**
+     * Set an initiative formula for the system
+     * @type {String}
+     */
+
+    CONFIG.Combat.initiative = {
+        formula: "@attributes.init.value + @stats.wis.value/100",
+        decimals: 2
+    };
 
     // Define custom Entity classes
-    CONFIG.Actor.entityClass = CocActor;
-    CONFIG.Item.entityClass = CocItem;
+    CONFIG.Actor.entityClass = CoCActor;
+    CONFIG.Item.entityClass = CoCItem;
 
     // Create a namespace within the game global
-    // game.coc = {
-    //     config: COC
-    // };
+    game.coc = {
+        skin : "base",
+        config: CO
+    };
+
+    // Register sheet application classes
+    Actors.unregisterSheet("core", ActorSheet);
+    Items.unregisterSheet("core", ItemSheet);
 
     // Register actor sheets
-    Actors.registerSheet("coc", CocActorSheet, {types: ["character", "npc"], makeDefault: true});
+    Actors.registerSheet("coc", CoCCharacterSheet, {types: ["character"], makeDefault: true});
+    Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: true});
     // Register item sheets
-    // Items.registerSheet("cof", CofItemSheet, {types: ["item", "capacity", "profile", "path", "species", "armor", "shield", "melee", "ranged", "spell", "trapping"], makeDefault: true});
-    Items.registerSheet("cof", CocItemSheet, {types: ["item", "capacity", "profile", "path", "species"], makeDefault: true});
+    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "capacity", "profile", "path", "species"], makeDefault: true});
+
+    // Register System Settings
+    registerSystemSettings();
+
+    // Preload Handlebars Templates
+    preloadHandlebarsTemplates();
+
+    // Register Handlebars helpers
+    registerHandlebarsHelpers();
 
 });

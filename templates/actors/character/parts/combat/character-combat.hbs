@@ -1,0 +1,13 @@
+<ol class="inventory-list">
+    <li class="inventory-header flexrow">
+        <h3 class="item-name flexrow">Equipé</h3>
+        <div class="item-detail">Usage</div>
+        <div class="item-detail">Crit</div>
+        <div class="item-detail">Mod</div>
+        <div class="item-detail">DM</div>
+        <div class="item-controls"></div>
+    </li>
+    {{#each (getItems actor.items) as |item id|}}
+        {{> "systems/coc/templates/actors/character/parts/combat/character-combat-item.hbs" item}}
+    {{/each}}
+</ol>

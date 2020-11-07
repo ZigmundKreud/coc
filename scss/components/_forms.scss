@@ -1,0 +1,14 @@
+textarea, select, input{
+  background-color: rgba(0,0,0, 0.1);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  &:focus, &:active{
+    box-shadow: none;
+  }
+
+  &[readonly=true]{
+    background-color: rgba(0,0,0, 0.3);
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,16 @@
+/* ----------------------------------------- */
+/*  Layout                                   */
+/* ----------------------------------------- */
+.window-content {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+
+  .editable {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+}

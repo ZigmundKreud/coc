@@ -1,0 +1,44 @@
+<div class="flexrow table-header defence-header no-wrap">
+    <div class="flex6 center">
+        <div class="field-label">{{ localize 'coc.attributes.defence.label' }}</div>
+    </div>
+    <div class="flex5 center">
+        <div class="field-label">{{ localize 'coc.ui.base' }}</div>
+    </div>
+    <div class="flex5 center">
+        <div class="field-label">{{ localize 'coc.ui.bonus' }}</div>
+    </div>
+    <div class="flex5 center">
+        <div class="field-label">{{ localize 'coc.ui.value' }}</div>
+    </div>
+</div>
+<div class="flexrow no-wrap defence">
+    <div class="flex6 center cell-header">
+        <span class="field-label"><i class="fas fa-shield-alt"></i>&nbsp;{{ localize 'coc.attributes.def.abbrev' }}</span>
+    </div>
+    <div class="flex5 center cell readonly">
+        <input class="field-value" name="data.attributes.def.base" type="text" readonly="true" value="{{actor.data.attributes.def.base}}" placeholder="Base" data-dtype="Number"/>
+    </div>
+    <div class="flex5 center cell">
+        <input class="field-value" name="data.attributes.def.bonus" type="text" value="{{actor.data.attributes.def.bonus}}" placeholder="Bonus" data-dtype="Number"/>
+    </div>
+    <div class="flex5 center cell readonly">
+        <input class="field-value" name="data.attributes.def.value" readonly="true" type="text" value="{{actor.data.attributes.def.value}}" placeholder="Value" data-dtype="Number"/>
+    </div>
+</div>
+{{#if (isEnabled "useDamageResistance")}}
+<div class="flexrow no-wrap damage-resistance">
+    <div class="flex6 center cell-header">
+        <span class="field-label"><i class="fas fa-user-shield"></i>&nbsp;{{ localize 'coc.attributes.dr.abbrev' }}</span>
+    </div>
+    <div class="flex5 center cell">
+        <input class="field-value" name="data.attributes.dr.base.value" type="text" value="{{actor.data.attributes.dr.base.value}}" placeholder="Base" data-dtype="Number"/>
+    </div>
+    <div class="flex5 center cell">
+        <input class="field-value" name="data.attributes.dr.bonus.value" type="text" value="{{actor.data.attributes.dr.bonus.value}}" placeholder="Bonus" data-dtype="Number"/>
+    </div>
+    <div class="flex5 center cell readonly">
+        <input class="field-value" name="data.attributes.dr.value" readonly="true" type="text" value="{{actor.data.attributes.dr.value}}" placeholder="Value" data-dtype="Number"/>
+    </div>
+</div>
+{{/if}}

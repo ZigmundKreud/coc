@@ -1,0 +1,69 @@
+<h3 class="form-header">Propriétés d'armes</h3>
+<div class="form-group">
+    <label>{{localize "COC.ui.dmgBase"}}</label>
+    <div class="form-fields">
+        <input name="data.dmgBase" type="text" value="{{data.dmgBase}}" placeholder="{{localize "COC.ui.dmgBase"}}" data-dtype="String">
+    </div>
+</div>
+
+<div class="form-group">
+    <label>{{localize "COC.ui.dmgStat"}}</label>
+    <div class="form-fields">
+        <select name="data.dmgStat" data-type="String" style="width:100%">
+            {{#select data.dmgStat}}
+                <option value="">{{localize "COC.None"}}</option>
+                <option value="@stats.str.mod">{{localize "COC.stats.str.label"}}</option>
+                <option value="@stats.dex.mod">{{localize "COC.stats.dex.label"}}</option>
+                <option value="@stats.con.mod">{{localize "COC.stats.con.label"}}</option>
+                <option value="@stats.int.mod">{{localize "COC.stats.int.label"}}</option>
+                <option value="@stats.wis.mod">{{localize "COC.stats.wis.label"}}</option>
+                <option value="@stats.cha.mod">{{localize "COC.stats.cha.label"}}</option>
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>{{localize "COC.ui.dmgBonus"}}</label>
+    <div class="form-fields">
+        <input name="data.dmgBonus" type="text" value="{{numberFormat data.dmgBonus decimals=0 sign=true}}" placeholder="{{localize "COC.ui.dmgBonus"}}" data-dtype="Number">
+    </div>
+</div>
+
+<div class="form-group">
+    <label>{{localize "COC.ui.skill"}}</label>
+    <div class="form-fields">
+        <select name="data.skill" data-type="String" style="width:100%">
+            {{#select data.skill}}
+                <option value="@attacks.melee.mod">{{localize "COC.attacks.melee.label"}}</option>
+                <option value="@attacks.ranged.mod">{{localize "COC.attacks.ranged.label"}}</option>
+                <option value="@attacks.magic.mod">{{localize "COC.attacks.magic.label"}}</option>
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>{{localize "COC.ui.skillBonus"}}</label>
+    <div class="form-fields">
+        <input name="data.skillBonus" type="text" value="{{numberFormat data.skillBonus decimals=0 sign=true}}" placeholder="{{localize "COC.ui.skillBonus"}}" data-dtype="Number">
+    </div>
+</div>
+
+<div class="form-group">
+    <label>{{localize "COC.ui.critrange"}}</label>
+    <div class="form-fields">
+        <input name="data.critrange" type="text" value="{{data.critrange}}" placeholder="{{localize "COC.ui.critrange"}}" data-dtype="String">
+    </div>
+</div>
+<div class="form-group">
+    <label>Proriétés</label>
+    <div class="form-fields">
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.bashing" {{checked item.data.properties.bashing}}> {{localize "COC.properties.bashing"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.13strmin" {{checked item.data.properties.13strmin}}> {{localize "COC.properties.13strmin"}}
+        </label>
+    </div>
+</div>

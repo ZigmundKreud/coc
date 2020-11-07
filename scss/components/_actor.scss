@@ -1,0 +1,141 @@
+/* ----------------------------------------- */
+/*  Layout                                   */
+/* ----------------------------------------- */
+.window-content {
+  @include nomargin;
+  height: 100%;
+  overflow: hidden;
+  background:white;
+
+  .editable {
+    @include nomargin;
+    height: 100%;
+    overflow: hidden;
+    background-image: url("../ui/coc/header.png");
+    background-repeat: repeat;
+
+    .sheet-header {
+      box-shadow: 0 10px 10px gray;
+
+      &.header-background {
+        background-image: url("../ui/coc/logo.png");
+        background-size: 300px 100px;
+        background-position-x: 10px;
+        background-position-y: 10px;
+        background-repeat: no-repeat;
+      }
+      .header-portrait{
+        position:absolute;
+        top:150px;
+        left:0;
+        margin : 10px;
+        height: 400px;
+        width: 300px;
+
+        background: antiquewhite;
+        border:5px solid white;
+        box-shadow: 5px 5px 5px black;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        img.profile {
+          border:none;
+          min-height: 400px;
+          //width: 150px;
+          //max-height: 200px;
+          max-width: 300px;
+        }
+      }
+
+      .header-details {
+        margin-left:320px;
+        height:140px;
+        h1.charname {
+          input[type=text]{
+            font-family: Futura;
+            color:white;
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    nav.sheet-navigation {
+      margin-left:320px;
+      margin-top:-28px;
+      border: none;
+      &.tabs {
+        color: white;
+        text-align: center;
+        border: none;
+        .item {
+          @include ellipsis;
+          padding: 5px;
+          border: 1px solid $c-border;
+          margin: 0;
+          height: 28px;
+          box-shadow: 0 0 10px $c-shadow inset;
+          /*padding: 3px 3px 0 3px;*/
+          background:rgba(0,0,0,0.05);
+          &:hover {
+            background:rgba(0,0,0,0.2);
+            text-shadow: none;
+          }
+          &.active {
+            border: 1px inset $c-border;
+            background:rgba(0,0,0,0.2);
+            text-shadow: none;
+          }
+        }
+      }
+
+    }
+
+    .sheet-body {
+      margin-left:320px;
+      background: white;
+      .tab {
+        background: lightgray;
+        padding:10px;
+        height: calc(100% - 30px);
+        min-height: calc(100% - 40px);
+        max-height: calc(100% - 40px);
+        //width: 100%;
+        //min-width: 100%;
+        //max-width: 100%;
+        overflow: auto;
+
+        &.stats {
+          .attributes-header,
+          .attacks-header,
+          .defence-header,
+          .init-header,
+          .recovery-header,
+          .vitality-header,
+          .resources-header{
+            color:goldenrod;
+          }
+          .attributes,
+          .attacks,
+          .defence,
+          .init,
+          .recovery,
+          .vitality,
+          .fortune,
+          .damage-resistance,
+          .mana{
+            .cell-header{
+              background-color: black;
+              color: white;
+            }
+          }
+        }
+        &.combat {}
+        &.inventory {}
+        &.capacities {}
+        &.stats {}
+      }
+    }
+  }
+}

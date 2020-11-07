@@ -1,0 +1,15 @@
+<ol class="inventory-list">
+    {{!#if (notEmpty (getItems actor.items))}}
+        <li class="inventory-header flexrow">
+            <h3 class="item-name flexrow">{{localize "COC.ui.equipment"}}</h3>
+            <div class="item-detail">{{localize "COC.ui.qty"}}</div>
+            <div class="item-detail">{{localize "COC.ui.equip"}}</div>
+            <div class="item-controls">
+                <a class="item-control item-create compendium-pack" data-pack="coc.items" data-open="0" title="Ajouter un objet"><i class="fas fa-plus"></i>&nbsp; {{localize "COC.ui.add"}}</a>
+            </div>
+        </li>
+        {{#each (getItems actor.items) as |item id|}}
+            {{> "systems/coc/templates/actors/character/parts/inventory/character-inventory-item.hbs" item}}
+        {{/each}}
+    {{!/if}}
+</ol>

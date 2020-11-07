@@ -3,24 +3,18 @@
  * @extends {ActorSheet}
  */
 
-export class CocActorSheet  extends ActorSheet {
-
-    /** @override */
-    static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
-            classes: ["coc", "sheet", "actor", "character"],
-            template: "/modules/coc/templates/actors/actor-sheet.hbs",
-            width: 600,
-            height: 600,
-            tabs: [{navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "description"}],
-            dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
-        });
-    }
+export class CoCActorSheet extends ActorSheet {
 
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
+
+        // Everything below here is only needed if the sheet is editable
+        // if (!this.options.editable) return;
+
     }
+
+    /* -------------------------------------------- */
 
     /** @override */
     setPosition(options = {}) {

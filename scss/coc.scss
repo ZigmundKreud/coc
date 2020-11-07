@@ -1,0 +1,28 @@
+// Import utilities.
+@import 'utils/colors';
+@import 'utils/typography';
+@import 'utils/mixins';
+@import 'utils/variables';
+
+/* Global styles */
+//@import 'global/grid';
+@import 'global/flex';
+@import 'global/table';
+@import 'global/chat';
+
+/* Styles limited to co sheets */
+.coc {
+  font-family: $font-primary;
+  @import 'components/common';
+
+  &.actor {
+    @import 'scss/components/actor';
+  }
+
+  &.item {
+    @import 'scss/components/item';
+  }
+
+  @import 'components/forms';
+  @import 'components/tabs';
+}

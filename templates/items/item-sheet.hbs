@@ -6,11 +6,32 @@
                 <input name="name" type="text" value="{{item.name}}" placeholder="Item Name"/>
             </h1>
             <div class="item-subtitle">
-                <h4 class="item-type">Item type</h4>
-                <span class="item-status">Item status</span>
+                <h4 class="item-type">{{localize (concat "COC.category." item.type)}}</h4>
+                <span class="item-status">
+                    {{#if item.subtype}}
+                        {{localize (concat "COC.category." item.subtype)}}
+                    {{/if}}
+                </span>
             </div>
             <ul class="summary flexrow">
-                <li>Summary</li>
+                <li>
+                    {{#if data.source}}
+                        <input type="text" name="data.source" value="{{data.source}}" placeholder="{{ localize 'coc.ui.source' }}"/>
+                    {{else}}
+                        <input type="text" name="data.source" value="{{ localize 'coc.ui.na' }}" placeholder="{{ localize 'coc.ui.source' }}"/>
+                    {{/if}}
+                </li>
+                {{#if (equals item.type "item")}}
+                    {{#if (not (equals item.data.subtype "spell"))}}
+                    <li>
+                        {{#if data.rarity}}
+                            {{localize (concat "COC.rarity." data.rarity)}}
+                        {{else}}
+                            {{localize "COC.ui.na"}}
+                        {{/if}}
+                    </li>
+                    {{/if}}
+                {{/if}}
             </ul>
         </div>
     </header>
@@ -21,7 +42,26 @@
     </nav>
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-        <div class="tab flexrow active" data-group="primary" data-tab="description"></div>
-        <div class="tab details" data-group="primary" data-tab="details"></div>
+        <div class="tab flexrow active" data-group="primary" data-tab="description">
+            {{> "systems/coc/templates/items/parts/properties/item-properties.hbs"}}
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+        <div class="tab details" data-group="primary" data-tab="details">
+            {{#if (equals item.type "item")}}
+                {{> "systems/coc/templates/items/parts/details/item-details.hbs"}}
+            {{/if}}
+            {{#if (equals item.type "capacity")}}
+                {{> "systems/coc/templates/items/parts/details/capacity-details.hbs"}}
+            {{/if}}
+            {{#if (equals item.type "path")}}
+                {{> "systems/coc/templates/items/parts/details/path-details.hbs"}}
+            {{/if}}
+            {{#if (equals item.type "profile")}}
+                {{> "systems/coc/templates/items/parts/details/profile-details.hbs"}}
+            {{/if}}
+            {{#if (equals item.type "species")}}
+                {{> "systems/coc/templates/items/parts/details/species-details.hbs"}}
+            {{/if}}
+        </div>
     </section>
 </form>

@@ -1,0 +1,459 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc",
+      "encounter"
+    ],
+    "templates": {
+      "stats": {
+        "stats": {
+          "str" : {
+            "key" : "str",
+            "label" : "COF.stats.str.label",
+            "abbrev" : "COF.stats.str.abbrev",
+            "base": 10,
+            "racial": 0,
+            "bonus": 0,
+            "mod": 0,
+            "value": 10,
+            "tmpmod": null,
+            "superior" : false
+          },
+          "dex" : {
+            "key" : "dex",
+            "label" : "COF.stats.dex.label",
+            "abbrev" : "COF.stats.dex.abbrev",
+            "base": 10,
+            "racial": 0,
+            "bonus": 0,
+            "mod": 0,
+            "value": 10,
+            "tmpmod": null,
+            "superior" : false
+          },
+          "con" : {
+            "key" : "con",
+            "label" : "COF.stats.con.label",
+            "abbrev" : "COF.stats.con.abbrev",
+            "base": 10,
+            "racial": 0,
+            "bonus": 0,
+            "mod": 0,
+            "value": 10,
+            "tmpmod": null,
+            "superior" : false
+          },
+          "int" : {
+            "key" : "int",
+            "label" : "COF.stats.int.label",
+            "abbrev" : "COF.stats.int.abbrev",
+            "base": 10,
+            "racial": 0,
+            "bonus": 0,
+            "mod": 0,
+            "value": 10,
+            "tmpmod": null,
+            "superior" : false
+          },
+          "wis" : {
+            "key" : "wis",
+            "label" : "COF.stats.wis.label",
+            "abbrev" : "COF.stats.wis.abbrev",
+            "base": 10,
+            "racial": 0,
+            "bonus": 0,
+            "mod": 0,
+            "value": 10,
+            "tmpmod": null,
+            "superior" : false
+          },
+          "cha" : {
+            "key" : "cha",
+            "label" : "COF.stats.cha.label",
+            "abbrev" : "COF.stats.cha.abbrev",
+            "base": 10,
+            "racial": 0,
+            "bonus": 0,
+            "mod": 0,
+            "value": 10,
+            "tmpmod": null,
+            "superior" : false
+          }
+        }
+      },
+      "xp" : {
+        "level": {
+          "key" : "level",
+          "label" : "COF.attributes.level.label",
+          "abbrev" : "COF.attributes.level.abbrev",
+          "value": 1,
+          "max": 20
+        },
+        "xp": {
+          "key" : "xp",
+          "label" : "COF.attributes.xp.label",
+          "abbrev" : "COF.attributes.xp.abbrev",
+          "value": 2,
+          "max": 2
+        }
+      },
+      "attacks" : {
+        "attacks" : {
+          "melee" : {
+            "key" : "melee",
+            "label": "COF.attacks.melee.label",
+            "abbrev": "COF.attacks.melee.abbrev",
+            "stat": "@stats.str.mod",
+            "enabled": true,
+            "base": 1,
+            "bonus": 0,
+            "mod": 1
+          },
+          "ranged" : {
+            "key" : "ranged",
+            "label": "COF.attacks.ranged.label",
+            "abbrev": "COF.attacks.ranged.abbrev",
+            "stat": "@stats.dex.mod",
+            "enabled": true,
+            "base": 1,
+            "bonus": 0,
+            "mod": 1
+          },
+          "magic" : {
+            "key" : "magic",
+            "label": "COF.attacks.magic.label",
+            "abbrev": "COF.attacks.magic.abbrev",
+            "stat": "@stats.int.mod",
+            "enabled": true,
+            "base": 1,
+            "bonus": 0,
+            "mod": 1
+          }
+        }
+      },
+      "common": {
+        "description": "",
+        "attributes": {
+          "hp": {
+            "key" : "hp",
+            "label" : "COF.attributes.hp.label",
+            "abbrev" : "COF.attributes.hp.abbrev",
+            "base": 0,
+            "bonus": 0,
+            "value": 0,
+            "max": 0
+          },
+          "def": {
+            "key" : "def",
+            "label" : "COF.attributes.def.label",
+            "abbrev" : "COF.attributes.def.abbrev",
+            "base": 10,
+            "bonus": 0,
+            "value": 10
+          },
+          "init": {
+            "key" : "init",
+            "label" : "COF.attributes.init.label",
+            "abbrev" : "COF.attributes.init.abbrev",
+            "base": 10,
+            "bonus": 0,
+            "value": 10
+          },
+          "dr": {
+            "key" : "dr",
+            "label" : "COF.attributes.dr.label",
+            "abbrev" : "COF.attributes.dr.abbrev",
+            "enabled": false,
+            "base": { "value" : 0, "ignored" : ""},
+            "bonus": { "value" : 0, "ignored" : ""},
+            "value": 0
+          },
+          "rp": {
+            "key" : "rp",
+            "label" : "COF.attributes.rp.label",
+            "abbrev" : "COF.attributes.rp.abbrev",
+            "enabled": false,
+            "base": 5,
+            "bonus": 0,
+            "value": 5
+          },
+          "madness": {
+            "key" : "fp",
+            "label" : "COF.attributes.madness.label",
+            "abbrev" : "COF.attributes.madness.abbrev",
+            "enabled": false,
+            "base": 0,
+            "value": 0
+          },
+          "fp": {
+            "key" : "fp",
+            "label" : "COF.attributes.fp.label",
+            "abbrev" : "COF.attributes.fp.abbrev",
+            "enabled": false,
+            "base": 3,
+            "bonus": 0,
+            "value": 3,
+            "max": 3
+          },
+          "mp": {
+            "key" : "mp",
+            "label" : "COF.attributes.mp.label",
+            "abbrev" : "COF.attributes.mp.abbrev",
+            "enabled": false,
+            "base": 0,
+            "bonus": 0,
+            "value": 0,
+            "max": 0
+          },
+          "hd": {
+            "key" : "hd",
+            "label" : "COF.attributes.hd.label",
+            "abbrev" : "COF.attributes.hd.abbrev",
+            "value": "1d4"
+          }
+        },
+        "currency": {
+          "pp": {
+            "key" : "pp",
+            "label" : "COF.currency.pp.label",
+            "abbrev" : "COF.currency.pp.abbrev",
+            "qty" : 0
+          },
+          "gp": {
+            "key" : "gp",
+            "label" : "COF.currency.gp.label",
+            "abbrev" : "COF.currency.gp.abbrev",
+            "qty" : 0
+          },
+          "sp": {
+            "key" : "sp",
+            "label" : "COF.currency.sp.label",
+            "abbrev" : "COF.currency.sp.abbrev",
+            "qty" : 0
+          },
+          "cp": {
+            "key" : "cp",
+            "label" : "COF.currency.cp.label",
+            "abbrev" : "COF.currency.cp.abbrev",
+            "qty" : 0
+          }
+        },
+        "alert": {
+          "type": "error",
+          "msg": ""
+        },
+        "details": {
+          "gender": "",
+          "age": "",
+          "weight": "",
+          "height": "",
+          "eyes": "",
+          "hair": "",
+          "size": "med",
+          "senses": "",
+          "languages": {
+            "value": [],
+            "custom": ""
+          }
+        }
+      }
+    },
+    "character": {
+      "templates": [
+        "stats",
+        "attacks",
+        "xp",
+        "common"
+      ]
+    },
+    "npc": {
+      "templates": [
+        "stats",
+        "attacks",
+        "xp",
+        "common"
+      ]
+    },
+    "encounter": {
+      "key": null,
+      "templates": [
+        "stats",
+        "attacks",
+        "common"
+      ],
+      "nc": {
+        "key" : "nc",
+        "label" : "COF.attributes.nc.label",
+        "abbrev" : "COF.attributes.nc.abbrev",
+        "value": 1
+      },
+      "weapons" : [{
+        "name" : "",
+        "critrange" : 20,
+        "mod" : null,
+        "dmg" : null
+      }],
+      "capacities" : [],
+      "paths": [],
+      "boss": {
+        "rank" : null,
+        "type" : null
+      },
+      "families": [],
+      "archetype": "",
+      "category": ""
+    }
+  },
+  "Item": {
+    "types": [
+      "item",
+      "capacity",
+      "trapping",
+      "species",
+      "profile",
+      "path",
+      "armor",
+      "shield",
+      "melee",
+      "ranged",
+      "spell"
+    ],
+    "templates": {
+      "base" : {
+        "description" : "",
+        "source" : ""
+      },
+      "equipment" : {
+        "def" : 0,
+        "defBase" : 0,
+        "defBonus" : 0,
+        "dr" : 0,
+        "dmg": "",
+        "dmgBase": "",
+        "dmgStat": "",
+        "dmgBonus": 0,
+        "mod": 0,
+        "skill": "",
+        "skillBonus" : 0,
+        "critrange": "20",
+        "hands": 1,
+        "range": 0,
+        "reload": "",
+        "worn": false,
+        "slot": "",
+        "qty" : 1,
+        "stacksize" : null,
+        "price": 0,
+        "rarity" : "common",
+        "properties": {
+          "predilection": false,
+          "ranged": false,
+          "equipable": false,
+          "stackable": false,
+          "activable" : false,
+          "unique" : false,
+          "tailored" : false,
+          "2H" : false,
+          "proficient" : false,
+          "finesse" : false,
+          "equipment" : false,
+          "weapon" : false,
+          "protection" : false,
+          "reloadable" : false,
+          "bow" : false,
+          "crossbow" : false,
+          "powder" : false,
+          "throwing" : false,
+          "dr" : false,
+          "sneak" : false,
+          "powerful" : false,
+          "critscience" : false,
+          "specialization" : false,
+          "effects" : false,
+          "13strmin" : false,
+          "bashing" : false,
+          "sling" : false,
+          "spell" : false
+        }
+      }
+    },
+    "item" : {
+      "templates": [
+        "base",
+        "equipment"
+      ],
+      "subtype" : ""
+    },
+    "capacity": {
+      "templates": [
+        "base"
+      ],
+      "key": "",
+      "summary" : "",
+      "rank": null,
+      "limited": false,
+      "spell": false
+    },
+    "profile": {
+      "templates": [
+        "base"
+      ],
+      "key": "",
+      "dv": "",
+      "spellcasting": "",
+      "paths" : [],
+      "proficiencies" : {
+        "daggers" : false,
+        "swords" : false,
+        "axes" : false,
+        "staves" : false,
+        "clubs" : false,
+        "hammers" : false,
+        "katanas" : false,
+        "2-hands" : false,
+        "slings" : false,
+        "bows" : false,
+        "crossbows" : false,
+        "throwing-weapons" : false,
+        "powder-weapons" : false,
+        "soft-leather" : false,
+        "studded-leather" : false,
+        "mail" : false,
+        "half-plate" : false,
+        "full-plate" : false,
+        "shield" : false
+      }
+    },
+    "species": {
+      "templates": [
+        "base"
+      ],
+      "key": "",
+      "bonuses": {
+        "str" : 0,
+        "dex" : 0,
+        "con" : 0,
+        "int" : 0,
+        "wis" : 0,
+        "cha" : 0
+      },
+      "paths": [],
+      "capacities": []
+    },
+    "path": {
+      "templates": [
+        "base"
+      ],
+      "key": "",
+      "capacities": [],
+      "properties": {
+        "profile": false,
+        "prestige": false,
+        "alternative": false,
+        "racial": false,
+        "creature": false
+      }
+    }
+  }
+}

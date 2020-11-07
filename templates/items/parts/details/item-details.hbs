@@ -1,0 +1,67 @@
+<h3 class="form-header">Type d'équipement</h3>
+<div class="form-group">
+    <label>Sous-catégorie</label>
+    <div class="form-fields">
+        <select name="data.subtype" data-type="String" style="width:100%">
+            {{#select data.subtype}}
+                <option value="">{{localize "COC.None"}}</option>
+                <option value="armor">{{localize "COC.category.armor"}}</option>
+                <option value="melee">{{localize "COC.category.melee"}}</option>
+                <option value="ranged">{{localize "COC.category.ranged"}}</option>
+                <option value="shield">{{localize "COC.category.shield"}}</option>
+                <option value="spell">{{localize "COC.category.spell"}}</option>
+                <option value="jewel">{{localize "COC.category.jewel"}}</option>
+                <option value="ammunition">{{localize "COC.category.ammunition"}}</option>
+                <option value="container">{{localize "COC.category.container"}}</option>
+                <option value="mount">{{localize "COC.category.mount"}}</option>
+                <option value="trapping">{{localize "COC.category.other"}}</option>
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+<div class="form-group stacked">
+    <label>Traits</label>
+    <div class="form-fields">
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.equipment" {{checked data.properties.equipment}}> {{localize "COC.properties.equipment"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.weapon" {{checked data.properties.weapon}}> {{localize "COC.properties.weapon"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.protection" {{checked data.properties.protection}}> {{localize "COC.properties.protection"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.ranged" {{checked data.properties.ranged}}> {{localize "COC.properties.ranged"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.spell" {{checked data.properties.spell}}> {{localize "COC.properties.spell"}}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="data.properties.effects" {{checked data.properties.effects}}> {{localize "COC.properties.effects"}}
+        </label>
+    </div>
+</div>
+
+{{#if data.properties.equipment}}
+    {{> "systems/coc/templates/items/parts/details/equipment-details.hbs"}}
+{{/if}}
+{{#if data.properties.weapon}}
+    {{> "systems/coc/templates/items/parts/details/weapon-details.hbs"}}
+{{/if}}
+{{#if data.properties.protection}}
+    {{> "systems/coc/templates/items/parts/details/protection-details.hbs"}}
+{{/if}}
+{{#if data.properties.ranged}}
+    {{> "systems/coc/templates/items/parts/details/ranged-details.hbs"}}
+{{/if}}
+{{#if data.properties.spell}}
+    {{> "systems/coc/templates/items/parts/details/spell-details.hbs"}}
+{{/if}}
+{{#if actor}}
+{{> "systems/coc/templates/items/parts/details/usage-details.hbs"}}
+{{/if}}
+{{#if data.properties.effects}}
+{{> "systems/coc/templates/items/parts/details/effects-details.hbs"}}
+{{/if}}

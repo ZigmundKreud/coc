@@ -1,0 +1,39 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header flexrow header-background no-wrap">
+<!--        <img class="logo" src="../ui/coc/logo.png" data-edit="img">-->
+        <div class="header-portrait">
+            <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img">
+        </div>
+        <div class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="Actor Name"/>
+            </h1>
+        </div>
+    </header>
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item" data-tab="stats">{{localize "COC.tabs.stats"}}</a>
+        <a class="item" data-tab="combat">{{localize "COC.tabs.combat"}}</a>
+        <a class="item" data-tab="inventory">{{localize "COC.tabs.inventory"}}</a>
+        <a class="item" data-tab="capacities">{{localize "COC.tabs.capacities"}}</a>
+        <a class="item" data-tab="description">{{localize "COC.tabs.description"}}</a>
+    </nav>
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <div class="tab stats" data-group="primary" data-tab="stats">
+            {{> "systems/coc/templates/actors/character/parts/stats/character-stats.hbs"}}
+        </div>
+        <div class="tab combat" data-group="primary" data-tab="combat">
+            {{> "systems/coc/templates/actors/character/parts/combat/character-combat.hbs"}}
+        </div>
+        <div class="tab inventory" data-group="primary" data-tab="inventory">
+            {{> "systems/coc/templates/actors/character/parts/inventory/character-inventory.hbs"}}
+        </div>
+        <div class="tab capacities" data-group="primary" data-tab="capacities">
+            {{> "systems/coc/templates/actors/character/parts/capacities/character-capacities.hbs"}}
+        </div>
+        <div class="tab description" data-group="primary" data-tab="description">
+            {{> "systems/coc/templates/actors/character/parts/character-description.hbs"}}
+        </div>
+    </section>
+</form>
