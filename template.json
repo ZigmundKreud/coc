@@ -105,9 +105,9 @@
             "abbrev": "COC.attacks.melee.abbrev",
             "stat": "@stats.str.mod",
             "enabled": true,
-            "base": 1,
+            "base": 0,
             "bonus": 0,
-            "mod": 1
+            "mod": 0
           },
           "ranged" : {
             "key" : "ranged",
@@ -115,9 +115,9 @@
             "abbrev": "COC.attacks.ranged.abbrev",
             "stat": "@stats.dex.mod",
             "enabled": true,
-            "base": 1,
+            "base": 0,
             "bonus": 0,
-            "mod": 1
+            "mod": 0
           },
           "magic" : {
             "key" : "magic",
@@ -125,9 +125,9 @@
             "abbrev": "COC.attacks.magic.abbrev",
             "stat": "@stats.int.mod",
             "enabled": true,
-            "base": 1,
+            "base": 0,
             "bonus": 0,
-            "mod": 1
+            "mod": 0
           }
         },
         "weapons" : [{
@@ -287,6 +287,7 @@
       "capacity",
       "species",
       "profile",
+      "trait",
       "path"
     ],
     "templates": {
@@ -360,7 +361,6 @@
         "base"
       ],
       "key": "",
-      "summary" : "",
       "rank": null,
       "limited": false,
       "spell": false

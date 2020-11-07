@@ -2,15 +2,15 @@
 /*  Layout                                   */
 /* ----------------------------------------- */
 .window-content {
-  padding: 0;
-  margin: 0;
+  @include nomargin;
   height: 100%;
   overflow: hidden;
 
   .editable {
-    padding: 0;
-    margin: 0;
+    @include nomargin;
     height: 100%;
     overflow: hidden;
+    background-image: url("../ui/coc/header.png");
+    background-repeat: repeat;
   }
 }

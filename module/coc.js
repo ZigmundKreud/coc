@@ -49,7 +49,7 @@ Hooks.once("init", async function () {
     // Register actor sheets
     Actors.registerSheet("coc", CoCActorSheet, {types: ["character", "npc"], makeDefault: true});
     // Register item sheets
-    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "capacity", "profile", "path", "species"], makeDefault: true});
+    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "trait"], makeDefault: true});
 
     // Register System Settings
     registerSystemSettings();

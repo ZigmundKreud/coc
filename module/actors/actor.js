@@ -11,8 +11,8 @@ export class CoCActor extends Actor {
         super.prepareBaseData();
         let actorData = this.data;
         // console.log(actorData);
-        if (actorData.type === "npc") this._prepareBaseNpcData(actorData);
-        else this._prepareBaseCharacterData(actorData);
+        this.computeModsAndAttributes(actorData);
+        this.computeAttacks(actorData);
     }
 
     /* -------------------------------------------- */
@@ -21,114 +21,14 @@ export class CoCActor extends Actor {
     prepareDerivedData() {
         super.prepareDerivedData();
         let actorData = this.data;
-        if (actorData.type === "npc") this._prepareDerivedNpcData(actorData);
-        else this._prepareDerivedCharacterData(actorData);
-    }
-
-    /* -------------------------------------------- */
-
-    _prepareBaseCharacterData(actorData) {
-        this.computeModsAndAttributes(actorData);
-        this.computeAttacks(actorData);
-    }
-
-    /* -------------------------------------------- */
-
-    _prepareDerivedCharacterData(actorData) {
-        // this.computeModsAndAttributes(actorData);
-        // this.computeAttacks(actorData);
         this.computeDef(actorData);
         this.computeXP(actorData);
     }
 
     /* -------------------------------------------- */
 
-    _prepareBaseNpcData(actorData) {
-        // STATS
-        let stats = actorData.data.stats;
-        // COMPUTE STATS FROM MODS
-        for (let stat of Object.values(stats)) {
-            stat.value = Stats.getStatValueFromMod(stat.mod);
-        }
-
-        // ATTACKS
-        if (!actorData.data.attacks) {
-            actorData.data.attacks = {
-                "melee": {
-                    "key": "melee",
-                    "label": "COC.attacks.melee.label",
-                    "abbrev": "COC.attacks.melee.abbrev",
-                    "stat": "@stats.str.mod",
-                    "enabled": true,
-                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.str.mod,
-                    "bonus": 0,
-                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.str.mod
-                },
-                "ranged": {
-                    "key": "ranged",
-                    "label": "COC.attacks.ranged.label",
-                    "abbrev": "COC.attacks.ranged.abbrev",
-                    "stat": "@stats.dex.mod",
-                    "enabled": true,
-                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.dex.mod,
-                    "bonus": 0,
-                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.dex.mod
-                },
-                "magic": {
-                    "key": "magic",
-                    "label": "COC.attacks.magic.label",
-                    "abbrev": "COC.attacks.magic.abbrev",
-                    "stat": "@stats.int.mod",
-                    "enabled": true,
-                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.int.mod,
-                    "bonus": 0,
-                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.int.mod
-                }
-            }
-        } else {
-            let attacks = actorData.data.attacks;
-            for (let attack of Object.values(attacks)) {
-                attack.mod = attack.base + attack.bonus;
-            }
-        }
-
-        // MODIFY TOKEN REGARDING SIZE
-        switch (actorData.data.details.size) {
-            case "big":
-                actorData.token.width = 2;
-                actorData.token.height = 2;
-                break;
-            case "huge":
-                actorData.token.width = 4;
-                actorData.token.height = 4;
-                break;
-            case "colossal":
-                actorData.token.width = 8;
-                actorData.token.height = 8;
-                break;
-            case "tiny":
-            case "small":
-            case "short":
-            case "med":
-            default:
-                break;
-        }
-    }
-
-    /* -------------------------------------------- */
-
-    _prepareDerivedNpcData(actorData) {}
-
-    /* -------------------------------------------- */
-
     getProfile(items) {
         return items.find(i => i.type === "profile")
-    }
-
-    /* -------------------------------------------- */
-
-    getSpecies(items) {
-        return items.find(i => i.type === "species")
     }
 
     /* -------------------------------------------- */
@@ -139,54 +39,26 @@ export class CoCActor extends Actor {
 
     /* -------------------------------------------- */
 
-    getMagicMod(stats, profile) {
-
-        let intMod = stats.int.mod;
-        let wisMod = stats.wis.mod;
-        let chaMod = stats.cha.mod;
-
-        // STATS RELATED TO PROFILE
-        let magicMod = intMod;
-        if (profile) {
-            switch (profile.data.spellcasting) {
-                case "wis" :
-                    magicMod = wisMod;
-                    break;
-                case "cha" :
-                    magicMod = chaMod;
-                    break;
-                default :
-                    magicMod = intMod;
-                    break;
-            }
-        }
-        return magicMod;
-    }
-
-    /* -------------------------------------------- */
-
     computeModsAndAttributes(actorData) {
 
         let stats = actorData.data.stats;
         let attributes = actorData.data.attributes;
-        let items = actorData.items;
-        let lvl = actorData.data.level.value;
-        let species = this.getSpecies(items);
-        let profile = this.getProfile(items);
+        // let items = actorData.items;
+        // let lvl = actorData.data.level.value;
+        // let profile = this.getProfile(items);
 
-        for(const [key, stat] of Object.entries(stats)){
-            stat.racial = (species && species.data.bonuses[key]) ? species.data.bonuses[key] : stat.racial;
-            stat.value = stat.base + stat.racial + stat.bonus;
+        for(const stat of Object.values(stats)){
+            stat.value = stat.base + stat.bonus;
             stat.mod = Stats.getModFromStatValue(stat.value);
         }
 
         attributes.init.base = stats.dex.value;
         attributes.init.value = attributes.init.base + attributes.init.bonus;
 
-        attributes.fp.base = 3 + stats.cha.mod;
-        attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
-        attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
-        attributes.rp.value = attributes.rp.base + attributes.rp.bonus;
+        // attributes.fp.base = 3 + stats.cha.mod;
+        // attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
+        // attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
+        // attributes.rp.value = attributes.rp.base + attributes.rp.bonus;
         attributes.hp.max = attributes.hp.base + attributes.hp.bonus;
 
         // const magicMod = this.getMagicMod(stats, profile);
@@ -218,24 +90,22 @@ export class CoCActor extends Actor {
 
     computeAttacks(actorData) {
 
-        let stats = actorData.data.stats;
+        // let stats = actorData.data.stats;
         let attacks = actorData.data.attacks;
-        let items = actorData.items;
-        let lvl = actorData.data.level.value;
-        let profile = this.getProfile(items);
 
-        let melee = attacks.melee;
-        let ranged = attacks.ranged;
-        let magic = attacks.magic;
+        // let melee = attacks.melee;
+        // let ranged = attacks.ranged;
+        // let magic = attacks.magic;
 
-        let strMod = stats.str.mod;
-        let dexMod = stats.dex.mod;
+        // let strMod = stats.str.mod;
+        // let dexMod = stats.dex.mod;
 
         // STATS RELATED TO PROFILE
-        const magicMod = this.getMagicMod(stats, profile);
-        melee.base = (strMod) ? strMod + lvl : lvl;
-        ranged.base = (dexMod) ? dexMod + lvl : lvl;
-        magic.base = (magicMod) ? magicMod + lvl : lvl;
+        // const magicMod = this.getMagicMod(stats, profile);
+
+        // melee.base = (strMod) ? strMod : 0;
+        // ranged.base = (dexMod) ? dexMod : 0;
+        // magic.base = (magicMod) ? magicMod : 0;
         for (let attack of Object.values(attacks)) {
             attack.mod = attack.base + attack.bonus;
         }
@@ -245,7 +115,7 @@ export class CoCActor extends Actor {
 
     computeDef(actorData) {
         // let stats = actorData.data.stats;
-        // let attributes = actorData.data.attributes;
+        let attributes = actorData.data.attributes;
         // let items = actorData.items;
 
         // let armors = this.getWornArmors(items);
@@ -258,7 +128,7 @@ export class CoCActor extends Actor {
         // let spell = spells.map(spell => spell.data.def).reduce((acc, curr) => acc + curr, 0);
 
         // attributes.def.base = 10 + armor + shield + spell + stats.dex.mod;
-        // attributes.def.value = attributes.def.base + attributes.def.bonus;
+        attributes.def.value = attributes.def.base + attributes.def.bonus;
     }
 
     /* -------------------------------------------- */

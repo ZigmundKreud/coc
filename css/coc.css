@@ -845,17 +845,19 @@
 }
 
 .coc.item .window-content {
-  padding: 0;
   margin: 0;
+  padding: 0;
   height: 100%;
   overflow: hidden;
 }
 
 .coc.item .window-content .editable {
-  padding: 0;
   margin: 0;
+  padding: 0;
   height: 100%;
   overflow: hidden;
+  background-image: url("../ui/coc/header.png");
+  background-repeat: repeat;
 }
 
 .coc textarea, .coc select, .coc input {
