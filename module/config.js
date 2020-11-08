@@ -41,6 +41,7 @@ COC.itemProperties = {
 COC.profiles = [];
 COC.paths = [];
 COC.capacities = [];
+COC.traits = [];
 
 // Mise en cache des données de profil
 COC.getProfiles = async function () {
@@ -61,6 +62,13 @@ COC.getCapacities = async function () {
     let capacities = await game.packs.get("coc.capacities").getContent().then(index => index.map(entity => entity.data));
     COC.capacities = capacities;
     console.debug("Capacities loaded");
+};
+
+// Mise en cache des données de capacités
+COC.getTraits = async function () {
+    let traits = await game.packs.get("coc.traits").getContent().then(index => index.map(entity => entity.data));
+    COC.traits = traits;
+    console.debug("Traits loaded");
 };
 
 COC.itemTypes = {

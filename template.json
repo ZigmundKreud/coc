@@ -285,7 +285,6 @@
     "types": [
       "item",
       "capacity",
-      "species",
       "profile",
       "trait",
       "path"
@@ -395,22 +394,6 @@
         "shield" : false
       }
     },
-    "species": {
-      "templates": [
-        "base"
-      ],
-      "key": "",
-      "bonuses": {
-        "str" : 0,
-        "dex" : 0,
-        "con" : 0,
-        "int" : 0,
-        "wis" : 0,
-        "cha" : 0
-      },
-      "paths": [],
-      "capacities": []
-    },
     "path": {
       "templates": [
         "base"
@@ -420,10 +403,14 @@
       "properties": {
         "profile": false,
         "prestige": false,
-        "alternative": false,
-        "racial": false,
-        "creature": false
+        "alternative": false
       }
+    },
+    "trait": {
+      "templates": [
+        "base"
+      ],
+      "key": ""
     }
   }
 }

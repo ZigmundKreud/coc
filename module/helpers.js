@@ -5,16 +5,12 @@ export const registerHandlebarsHelpers = function () {
     Handlebars.registerHelper('getEmbeddedItems', function (type, ids) {
         if (ids) {
             const items = Traversal.getItemsOfType(type);
-            return ids.map(id => items.find(i => i._id === id));
+            return ids.map(id => items.find(i => { if(i && i._id) return i._id === id }));
         } else return null;
     });
 
     Handlebars.registerHelper('getPaths', function (items) {
         return items.filter(item => item.type === "path");
-    });
-
-    Handlebars.registerHelper('getSpecies', function (items) {
-        return items.find(item => item.type === "species");
     });
 
     Handlebars.registerHelper('getInventory', function (items) {
@@ -151,10 +147,6 @@ export const registerHandlebarsHelpers = function () {
 
     Handlebars.registerHelper('listProfiles', function () {
         return Traversal.getAllProfilesData()
-    });
-
-    Handlebars.registerHelper('listSpecies', function () {
-        return Traversal.getAllSpeciesData()
     });
 
     Handlebars.registerHelper('listPaths', function () {

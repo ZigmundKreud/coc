@@ -3,6 +3,7 @@
  * @extends {ItemSheet}
  */
 import {ArrayUtils} from "../utils/array-utils.js";
+import {Traversal} from "../utils/traversal.js";
 
 export class CoCItemSheet extends ItemSheet {
 
@@ -118,8 +119,6 @@ export class CoCItemSheet extends ItemSheet {
                 return await this._onDropPathItem(event, itemData);
             case "profile" :
                 return await this._onDropProfileItem(event, itemData);
-            case "species" :
-                return await this._onDropSpeciesItem(event, itemData);
             case "capacity" :
                 return await this._onDropCapacityItem(event, itemData);
             default:
@@ -145,17 +144,11 @@ export class CoCItemSheet extends ItemSheet {
 
     /* -------------------------------------------- */
 
-    _onDropSpeciesItem(event, itemData) {
-        return false;
-    }
-
-    /* -------------------------------------------- */
-
     _onDropPathItem(event, itemData) {
         event.preventDefault();
         let data = duplicate(this.item.data);
         const id = itemData._id;
-        if(data.type === "profile" || data.type === "species"){
+        if(data.type === "profile"){
             if(!data.data.paths.includes(id)){
                 data.data.paths.push(id);
                 return this.item.update(data);

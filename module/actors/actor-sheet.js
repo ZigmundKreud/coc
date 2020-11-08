@@ -6,7 +6,6 @@ import {CoCRoll} from "../controllers/roll.js";
 import {Capacity} from "../controllers/capacity.js";
 import {Path} from "../controllers/path.js";
 import {Profile} from "../controllers/profile.js";
-import {Species} from "../controllers/species.js";
 import {Traversal} from "../utils/traversal.js";
 
 export class CoCActorSheet extends ActorSheet {
@@ -152,9 +151,6 @@ export class CoCActorSheet extends ActorSheet {
             case "profile" :
                 return Profile.removeFromActor(this.actor, event, entity);
                 break;
-            case "species" :
-                return Species.removeFromActor(this.actor, event, entity);
-                break;
             default: {
                 return this.actor.deleteOwnedItem(itemId);
             }
@@ -218,13 +214,7 @@ export class CoCActorSheet extends ActorSheet {
                 return await Path.addToActor(this.actor, event, itemData);
             case "profile" :
                 return await Profile.addToActor(this.actor, event, itemData);
-            case "species" :
-                return await Species.addToActor(this.actor, event, itemData);
             case "capacity" :
-            case "shield" :
-            case "armor" :
-            case "melee" :
-            case "ranged" :
             default:
                 // activate the capacity as it is droped on an actor sheet
                 // if (itemData.type === "capacity") itemData.data.checked = true;

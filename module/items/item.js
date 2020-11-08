@@ -24,30 +24,15 @@ export class CoCItem extends Item {
                 this._prepareArmorData(itemData, actorData);
                 this._prepareWeaponData(itemData, actorData);
                 break;
+            case "trait" :
             case "capacity" :
-                this._prepareCapacityData(itemData, actorData);
-                break;
             case "path" :
-                this._preparePathData(itemData, actorData);
-                break;
             case "profile" :
-                this._prepareProfileData(itemData, actorData);
+                if (!itemData.data.key) itemData.data.key = itemData.name.slugify({strict: true});
                 break;
             default :
                 break;
         }
-    }
-
-    _prepareCapacityData(itemData, actorData) {
-        if (!itemData.data.key) itemData.data.key = itemData.name.slugify({strict: true});
-    }
-
-    _preparePathData(itemData, actorData) {
-        if (!itemData.data.key) itemData.data.key = itemData.name.slugify({strict: true});
-    }
-
-    _prepareProfileData(itemData, actorData) {
-        if (!itemData.data.key) itemData.data.key = itemData.name.slugify({strict: true});
     }
 
     _prepareArmorData(itemData, actorData) {
