@@ -244,31 +244,11 @@
   "COC.category.vehicle" : "Véhicule",
   "COC.category.other": "Autre",
 
-
   "COC.rarity.common" : "Commun",
   "COC.rarity.moderate" : "Modéré",
   "COC.rarity.rare" : "Rare",
   "COC.rarity.very-rare" : "Très rare",
   "COC.rarity.unique" : "Unique",
-
-  "COC.ui.slot" : "Emplacement",
-  "COC.slot.hand":  "Main",
-  "COC.slot.head" : "Tête",
-  "COC.slot.ear" : "Oreille",
-  "COC.slot.neck" : "Cou",
-  "COC.slot.shoulders" : "Épaules",
-  "COC.slot.chest" : "Torse",
-  "COC.slot.back" : "Dos",
-  "COC.slot.arm" : "Bras",
-  "COC.slot.finger" : "Doigt",
-  "COC.slot.wrist" : "Poignet",
-  "COC.slot.waist" : "Taille",
-  "COC.slot.legs" : "Jambes",
-  "COC.slot.feet" : "Pieds",
-  "COC.slot.belt" : "À la ceinture",
-  "COC.slot.backpack" : "Sac-à-dos",
-  "COC.slot.quiver" : "Carquois",
-
 
   "COC.properties.equipable" : "Équipable",
   "COC.properties.activable" : "Activable",

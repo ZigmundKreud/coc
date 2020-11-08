@@ -10,7 +10,6 @@ export class CoCActor extends Actor {
     prepareBaseData() {
         super.prepareBaseData();
         let actorData = this.data;
-        console.log(actorData);
         this.computeModsAndAttributes(actorData);
         this.computeAttacks(actorData);
     }

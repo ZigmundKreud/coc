@@ -943,20 +943,21 @@
 .coc.actor .window-content .editable .sheet-body .tab.stats .recovery-header,
 .coc.actor .window-content .editable .sheet-body .tab.stats .vitality-header,
 .coc.actor .window-content .editable .sheet-body .tab.stats .resources-header {
-  color: goldenrod;
+  color: #caad27;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.stats .attributes .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .attacks .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .defence .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .init .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .recovery .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .vitality .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .fortune .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .damage-resistance .cell-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .mana .cell-header {
+.coc.actor .window-content .editable .sheet-body .tab.stats .cell {
+  margin-right: 1px;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.stats .cell-header {
+  margin-right: 1px;
   background-color: black;
   color: white;
+}
+
+.coc.actor .window-content .editable .sheet-body .tab.stats .flexrow {
+  margin-bottom: 1px;
 }
 
 .coc.actor .window-content .editable .sheet-body .tab.capacities {
@@ -1026,11 +1027,6 @@
   min-height: calc(100% - 195px);
   height: calc(100% - 195px);
   max-height: calc(100% - 195px);
-}
-
-.coc.actor .cell-header {
-  background-color: black;
-  color: white;
 }
 
 .coc.item {
@@ -1121,7 +1117,7 @@
   margin: 0;
   padding: 5px;
   text-align: right;
-  color: goldenrod;
+  color: #caad27;
 }
 
 .coc.item .window-content .editable .sheet-header .header-details .item-subtitle .item-type {

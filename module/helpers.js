@@ -61,9 +61,7 @@ export const registerHandlebarsHelpers = function () {
 
     Handlebars.registerHelper('getCapacitiesByIds', function (ids) {
         if (ids) {
-            console.log(ids);
             const caps = Traversal.getItemsOfType("capacity").filter(c => {
-                console.log(c);
                 if(c && c._id) return ids.includes(c._id)
             });
             caps.sort(function (a, b) {

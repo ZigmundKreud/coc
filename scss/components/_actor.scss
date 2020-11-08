@@ -114,21 +114,22 @@
           .recovery-header,
           .vitality-header,
           .resources-header{
-            color:goldenrod;
+            color:$colorGold;
           }
-          .attributes,
-          .attacks,
-          .defence,
-          .init,
-          .recovery,
-          .vitality,
-          .fortune,
-          .damage-resistance,
-          .mana{
-            .cell-header{
-              background-color: black;
-              color: white;
-            }
+
+          .cell{
+            margin-right: 1px;
+          }
+
+          .cell-header{
+            margin-right: 1px;
+            //border:1px solid transparent;
+            background-color: black;
+            color: white;
+          }
+
+          .flexrow {
+            margin-bottom: 1px;
           }
         }
         &.combat {}
@@ -201,9 +202,4 @@
       }
     }
   }
-}
-
-.cell-header{
-  background-color: black;
-  color: white;
 }
