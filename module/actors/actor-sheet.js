@@ -51,24 +51,9 @@ export class CoCActorSheet extends ActorSheet {
             }
         });
 
-        html.find('.weapon-add').click(ev => {
-            ev.preventDefault();
-            const data = this.getData().data;
-            data.weapons = Object.values(data.weapons);
-            data.weapons.push({"name":"", "mod":null, "dmg":null});
-            this.actor.update({'data.weapons': data.weapons});
-        });
+        html.find('.weapon-add').click(this._onWeaponAdd.bind(this));
 
-        html.find('.weapon-remove').click(ev => {
-            ev.preventDefault();
-            const elt = $(ev.currentTarget).parents(".weapon");
-            const idx = elt.data("itemId");
-            const data = this.getData().data;
-            data.weapons = Object.values(data.weapons);
-            if(data.weapons.length == 1) data.weapons[0] = {"name":"", "mod":null, "dmg":null};
-            else data.weapons.splice(idx, 1);
-            this.actor.update({'data.weapons': data.weapons});
-        });
+        html.find('.weapon-remove').click(this._onWeaponRemove.bind(this));
 
         // Check/Uncheck capacities
         html.find('.capacity-checked').click(ev => {
@@ -145,6 +130,29 @@ export class CoCActorSheet extends ActorSheet {
             entity = await Traversal.getEntity(id, type, pack);
         }
         if(entity) return entity.sheet.render(true);
+    }
+
+    /* -------------------------------------------- */
+    /* WEAPON ADD/REMOVE CALLBACKS                  */
+    /* -------------------------------------------- */
+
+    async _onWeaponAdd(event) {
+        event.preventDefault();
+        let data = await this.getData();
+        data.weapons = Object.values(data.data.weapons);
+        data.weapons.push({"name": "", "mod": null, "dmg": null});
+        return this.actor.update({'data.weapons': data.weapons});
+    }
+
+    async _onWeaponRemove(event) {
+        event.preventDefault();
+        const elt = $(event.currentTarget).parents(".weapon");
+        const idx = elt.data("itemId");
+        let data = await this.getData();
+        data.weapons = Object.values(data.data.weapons);
+        if(data.weapons.length == 1) data.weapons[0] = {"name":"", "mod":null, "dmg":null};
+        else data.weapons.splice(idx, 1);
+        return this.actor.update({'data.weapons': data.weapons});
     }
 
     /* -------------------------------------------- */
@@ -322,7 +330,6 @@ export class CoCActorSheet extends ActorSheet {
         data.capacities = capacities;
         data.trait = data.items.find(i => i.type === "trait");
         data.profile = data.items.find(i => i.type === "profile");
-        // console.log(data);
         return data;
     }
 

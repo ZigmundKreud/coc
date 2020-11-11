@@ -57,6 +57,7 @@
   "COC.ui.skill": "Skill",
   "COC.ui.skillBonus": "Skill (Bonus)",
   "COC.ui.price": "Price",
+  "COC.ui.strmin" : "Required strength (min)",
   "COC.ui.weight": "Weight",
   "COC.ui.rarity": "Rarity",
   "COC.ui.source": "Source",
@@ -286,6 +287,8 @@
   "COC.properties.bashing" : "Bashing DM possible",
   "COC.properties.sling" : "Sling",
   "COC.properties.spell" : "Spell",
+  "COC.properties.proneshot" : "DM sup if prone shot",
+  "COC.properties.salve" : "Salve",
 
   "COC.properties.profile" : "Profile",
   "COC.properties.prestige" : "Prestige",

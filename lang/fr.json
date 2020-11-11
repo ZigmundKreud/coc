@@ -54,6 +54,7 @@
   "COC.ui.defBonus": "Défense (Bonus)",
   "COC.ui.skill": "Compétence",
   "COC.ui.skillBonus": "Compétence (Bonus)",
+  "COC.ui.strmin" : "Force requise (min)",
   "COC.ui.price": "Prix",
   "COC.ui.weight": "Poids",
   "COC.ui.rarity": "Rareté",
@@ -244,6 +245,8 @@
   "COC.properties.13strmin" : "13 en FOR minimum",
   "COC.properties.bashing" : "DM temporaires possibles",
   "COC.properties.spell" : "Sort",
+  "COC.properties.proneshot" : "DM supp. si tir couché",
+  "COC.properties.salve" : "Arc de feu (L)",
 
   "COC.properties.profile" : "Profil",
   "COC.properties.action" : "Action",
@@ -258,7 +261,7 @@
   "COC.setting.base" : "Base",
   "COC.setting.epouvante" : "Épouvante",
   "COC.setting.pulp" : "Pulp",
-  "COC.setting.zombis" : "Zombis",
+  "COC.setting.zombis" : "Zombies",
   "COC.setting.espionnage" : "Espionnage",
   "COC.setting.surhumains" : "Surhumains",
   "COC.setting.cyberpunk" : "Cyberpunk"

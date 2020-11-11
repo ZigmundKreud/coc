@@ -33,7 +33,10 @@ COC.itemProperties = {
     "prestige": "COC.properties.prestige",
     "alternative": "COC.properties.alternative",
     "racial": "COC.properties.racial",
-    "creature" : "COC.properties.creature"
+    "creature" : "COC.properties.creature",
+    "proneshot" : "COC.properties.proneshot",
+    "salve" : "COC.properties.salve",
+    "explosive" : "COC.properties.explosive"
 };
 
 COC.profiles = [];
