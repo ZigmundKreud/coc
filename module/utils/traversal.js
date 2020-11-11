@@ -1,3 +1,5 @@
+import {COC} from "../config.js";
+
 export class Traversal {
 
     static async getEntity(id, type, pack) {
@@ -24,11 +26,13 @@ export class Traversal {
         let ingame = [];
         switch(type){
             case "path" :
-                compendium = game.coc.config.paths;
+                // compendium = await game.packs.get("coc.paths").getContent().then(index => index.map(entity => entity.data));
+                compendium = COC.paths;
                 ingame = game.items.filter(item => item.type === "path").map(entity => entity.data);
                 break;
             case "capacity" :
-                compendium = game.coc.capacities;
+                // compendium = await game.packs.get("coc.capacities").getContent().then(index => index.map(entity => entity.data));
+                compendium = COC.capacities;
                 ingame = game.items.filter(item => item.type === "capacity").map(entity => entity.data);
                 break;
         }

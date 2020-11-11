@@ -10,8 +10,14 @@ export class CoCActor extends Actor {
     prepareBaseData() {
         super.prepareBaseData();
         let actorData = this.data;
-        this.computeModsAndAttributes(actorData);
-        this.computeAttacks(actorData);
+        if(actorData.type === "npc"){
+            this.computeNpcModsAndAttributes(actorData);
+            this.computeNpcAttacks(actorData);
+
+        }else {
+            this.computeModsAndAttributes(actorData);
+            this.computeAttacks(actorData);
+        }
     }
 
     /* -------------------------------------------- */
@@ -65,6 +71,32 @@ export class CoCActor extends Actor {
 
     /* -------------------------------------------- */
 
+    computeNpcModsAndAttributes(actorData) {
+
+        let stats = actorData.data.stats;
+        let attributes = actorData.data.attributes;
+        // let items = actorData.items;
+        // let lvl = actorData.data.level.value;
+        // let profile = this.getProfile(items);
+
+        for(const stat of Object.values(stats)){
+            stat.value = Stats.getStatValueFromMod(stat.mod);
+        }
+
+        attributes.init.base = (attributes.init.base) ? attributes.init.base : stats.dex.value;
+        attributes.init.value = attributes.init.base + attributes.init.bonus;
+
+        // attributes.fp.base = 3 + stats.cha.mod;
+        attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
+        attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
+        attributes.rp.value = attributes.rp.base + attributes.rp.bonus;
+        attributes.hp.max = attributes.hp.base + attributes.hp.bonus;
+
+        attributes.mp.max = attributes.mp.base + attributes.mp.bonus;
+    }
+
+    /* -------------------------------------------- */
+
     computeAttacks(actorData) {
 
         let stats = actorData.data.stats;
@@ -89,14 +121,44 @@ export class CoCActor extends Actor {
 
     /* -------------------------------------------- */
 
+    computeNpcAttacks(actorData) {
+
+        let stats = actorData.data.stats;
+        let attacks = actorData.data.attacks;
+
+        let melee = attacks.melee;
+        let ranged = attacks.ranged;
+        let magic = attacks.magic;
+
+        let strMod = stats.str.mod;
+        let dexMod = stats.dex.mod;
+
+        // STATS RELATED TO PROFILE
+        let magicMod = eval(attacks.magic.stat.split("@")[1]);
+        melee.base = (strMod) ? strMod : 0;
+        ranged.base = (dexMod) ? dexMod : 0;
+        magic.base = (magicMod) ? magicMod : 0;
+        for (let attack of Object.values(attacks)) {
+            attack.mod = attack.base + attack.bonus;
+        }
+    }
+    /* -------------------------------------------- */
+
     computeDef(actorData) {
         let stats = actorData.data.stats;
         let attributes = actorData.data.attributes;
         let protections = actorData.items.filter(i => i.type === "item" && i.data.worn && i.data.def).map(i => i.data.def);
+        let resistances = actorData.items.filter(i => i.type === "item" && i.data.worn && i.data.dr).map(i => i.data.dr);
         // COMPUTE DEF SCORES
         let protection = protections.reduce((acc, curr) => acc + curr, 0);
+        let dr = resistances.reduce((acc, curr) => acc + curr, 0);
+
         attributes.def.base = 10 + protection + stats.dex.mod;
         attributes.def.value = attributes.def.base + attributes.def.bonus;
+
+        attributes.dr.base.value = (dr) ? dr : 0;
+        attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
+
     }
 
     /* -------------------------------------------- */

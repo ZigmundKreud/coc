@@ -1,7 +1,12 @@
 <div class="flexrow no-wrap">
     <div class="flex1 layout">
         <!-- STATS -->
-        {{> "systems/coc/templates/actors/parts/stats/actor-attributes.hbs"}}
+        {{#if (equals actor.type "character")}}
+            {{> "systems/coc/templates/actors/parts/stats/actor-attributes.hbs"}}
+        {{/if}}
+        {{#if (equals actor.type "npc")}}
+            {{> "systems/coc/templates/actors/parts/stats/npc-attributes.hbs"}}
+        {{/if}}
     </div>
     <div class="flex1 layout">
         <!-- ATTAQUES -->

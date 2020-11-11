@@ -20,7 +20,7 @@ import {COC} from "./config.js";
 
 Hooks.once("init", async function () {
 
-    console.debug("Initialisation du Système Chroniques Oubliées...");
+    console.debug("Initialisation du Système Chroniques Oubliées Contemporain...");
 
     /**
      * Set an initiative formula for the system

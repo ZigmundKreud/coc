@@ -8,29 +8,16 @@
             <div class="item-subtitle">
                 <h4 class="item-type">{{localize (concat "COC.category." item.type)}}</h4>
                 <span class="item-status">
-                    {{#if item.subtype}}
-                        {{localize (concat "COC.category." item.subtype)}}
+                    {{#if data.setting}}
+                    {{localize (concat "COC.setting." data.setting)}}
                     {{/if}}
                 </span>
             </div>
 <!--            <ul class="summary flexrow">-->
+<!--                {{!#if item.subtype}}-->
 <!--                <li>-->
-<!--                    {{!#if data.source}}-->
-<!--                        <input type="text" name="data.source" value="{{data.source}}" placeholder="{{ localize 'COC.ui.source' }}"/>-->
-<!--                    {{!else}}-->
-<!--                        <input type="text" name="data.source" value="{{ localize 'COC.ui.na' }}" placeholder="{{ localize 'COC.ui.source' }}"/>-->
-<!--                    {{!/if}}-->
+<!--                    {{!localize (concat "COC.category." item.subtype)}}-->
 <!--                </li>-->
-<!--                {{!#if (equals item.type "item")}}-->
-<!--                    {{!#if (not (equals item.data.subtype "spell"))}}-->
-<!--                    <li>-->
-<!--                        {{!#if data.rarity}}-->
-<!--                            {{!localize (concat "COC.rarity." data.rarity)}}-->
-<!--                        {{!else}}-->
-<!--                            {{!localize "COC.ui.na"}}-->
-<!--                        {{!/if}}-->
-<!--                    </li>-->
-<!--                    {{!/if}}-->
 <!--                {{!/if}}-->
 <!--            </ul>-->
         </div>
@@ -49,6 +36,9 @@
         <div class="tab details" data-group="primary" data-tab="details">
             {{#if (equals item.type "item")}}
                 {{> "systems/coc/templates/items/parts/details/item-details.hbs"}}
+            {{/if}}
+            {{#if (equals item.type "trait")}}
+                {{> "systems/coc/templates/items/parts/details/trait-details.hbs"}}
             {{/if}}
             {{#if (equals item.type "capacity")}}
                 {{> "systems/coc/templates/items/parts/details/capacity-details.hbs"}}

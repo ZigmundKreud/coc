@@ -16,9 +16,15 @@
     <div class="flex2 center cell-header">
         <span class="field-label ellipsis"><i class="fas fa-bolt"></i>&nbsp;{{ localize 'COC.attributes.init.abbrev' }}</span>
     </div>
-    <div class="flex1 center cell readonly">
-        <input class="field-value" name="data.attributes.init.base" readonly="true" type="text" value="{{actor.data.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
-    </div>
+    {{#if (equals actor.type "npc")}}
+        <div class="flex1 center cell">
+            <input class="field-value" name="data.attributes.init.base" type="text" value="{{actor.data.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
+        </div>
+    {{else}}
+        <div class="flex1 center cell">
+            <input class="field-value" name="data.attributes.init.base" type="text" value="{{actor.data.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
+        </div>
+    {{/if}}
     <div class="flex1 center cell">
         <input class="field-value" name="data.attributes.init.bonus" type="text" value="{{actor.data.attributes.init.bonus}}" placeholder="{{ localize 'COC.attributes.bonus.abbrev' }}" data-dtype="Number"/>
     </div>

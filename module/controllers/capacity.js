@@ -27,7 +27,13 @@ export class Capacity {
             // if no rank, force it
             if(!cdata.data.rank) cdata.data.rank = path.data.capacities.indexOf(c._id) +1;
             // if no path, force it
-            if(!cdata.data.path) cdata.data.path = path.data.key;
+            if(!cdata.data.path) {
+                cdata.data.path = {
+                    id : path._id,
+                    name : path.name,
+                    key : path.data.key
+                };
+            }
             return cdata;
         });
         const capacitiesKeys = capacities.map(c=>c.data.key);

@@ -19,10 +19,11 @@ export class CoCRoll {
         let label = eval(`${key}.label`);
         const mod = eval(`${key}.mod`);
         let bonus = eval(`${key}.bonus`);
+        let superior = eval(`${key}.superior`);
         const critrange = 20;
         bonus = (bonus) ? bonus : 0;
         label = (label) ? game.i18n.localize(label) : null;
-        this.skillRollDialog(actor, label, mod, bonus, critrange);
+        this.skillRollDialog(actor, label, mod, bonus, critrange, superior);
     }
 
     /**
@@ -176,9 +177,9 @@ export class CoCRoll {
 
     /* -------------------------------------------- */
 
-    static async skillRollDialog(actor, label, mod, bonus, critrange) {
+    static async skillRollDialog(actor, label, mod, bonus, critrange, superior=false) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/skillroll-dialog.hbs';
-        const rollOptionContent = await renderTemplate(rollOptionTpl, {mod: mod, bonus: bonus, critrange: critrange});
+        const rollOptionContent = await renderTemplate(rollOptionTpl, {mod: mod, bonus: bonus, critrange: critrange, superior:superior});
         let d = new Dialog({
             title: label,
             content: rollOptionContent,

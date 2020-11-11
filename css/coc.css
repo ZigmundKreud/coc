@@ -105,42 +105,14 @@
 @font-face {
   font-family: "MyriadPro";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   src: url("../fonts/MyriadPro-Regular.otf");
 }
 
 @font-face {
-  font-family: "MyriadPro";
-  font-style: italic;
-  font-weight: 400;
-  src: url("../fonts/MyriadPro-It.otf");
-}
-
-@font-face {
-  font-family: "MyriadPro";
+  font-family: "MyriadProBold";
   font-weight: 700;
   src: url("../fonts/MyriadPro-Bold.otf");
-}
-
-@font-face {
-  font-family: "MyriadPro";
-  font-weight: 700;
-  font-style: italic;
-  src: url("../fonts/MyriadPro-BoldIt.otf");
-}
-
-@font-face {
-  font-family: "MyriadPro";
-  font-style: normal;
-  font-weight: 200;
-  src: url("../fonts/MyriadPro-Light.otf");
-}
-
-@font-face {
-  font-family: "MyriadPro";
-  font-style: normal;
-  font-weight: 900;
-  src: url("../fonts/MyriadPro-Black.otf");
 }
 
 @font-face {
@@ -153,6 +125,48 @@
 @font-face {
   font-family: "ChN1Regular";
   src: url("../fonts/ChN1_Regular.ttf");
+}
+
+@font-face {
+  font-family: "ChocolateBox";
+  font-style: normal;
+  src: url("../fonts/C_BOX.TTF");
+}
+
+@font-face {
+  font-family: "Polentical";
+  font-style: normal;
+  src: url("../fonts/Polentical_Neon_Regular.ttf");
+}
+
+@font-face {
+  font-family: "RoyalVogueTypewriter1929";
+  font-style: normal;
+  src: url("../fonts/zai_RoyalVogueTypewriter1929.ttf");
+}
+
+@font-face {
+  font-family: "AsapCondensedRegular";
+  font-style: normal;
+  src: url("../fonts/AsapCondensed-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Antonio";
+  font-style: normal;
+  src: url("../fonts/Antonio-Regular.ttf");
+}
+
+@font-face {
+  font-family: "CoolveticaRegular";
+  font-style: normal;
+  src: url("../fonts/coolvetica_rg.ttf");
+}
+
+@font-face {
+  font-family: "CoolveticaCondensed";
+  font-style: normal;
+  src: url("../fonts/coolvetica_condensed_rg.ttf");
 }
 
 /* ----------------------------------------- */
@@ -589,7 +603,11 @@
 .inventory-list .inventory-header h3 {
   margin: 0 -5px 0 0;
   padding-left: 5px;
-  font-size: 18px;
+  padding-top: 2px;
+  font-family: "MyriadPro", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .inventory-list .inventory-header .item-controls a.item-create {
@@ -741,7 +759,7 @@
 
 /* Styles limited to co sheets */
 .coc {
-  font-family: "Signika", sans-serif;
+  font-family: "MyriadPro", sans-serif;
   /* Form Groups */
   /*
  Placeholders
@@ -806,25 +824,20 @@
   max-width: 100%;
 }
 
-.coc .weapon-image {
-  background-image: url("../ui/coc/weapon.png");
-}
-
-.coc.actor {
+.coc.base.actor {
   /* ----------------------------------------- */
   /*  Layout                                   */
   /* ----------------------------------------- */
 }
 
-.coc.actor .window-content {
+.coc.base.actor .window-content {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background: white;
 }
 
-.coc.actor .window-content .editable {
+.coc.base.actor .window-content .editable {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -833,138 +846,166 @@
   background-repeat: repeat;
 }
 
-.coc.actor .window-content .editable .sheet-header {
-  -webkit-box-shadow: 0 10px 10px gray;
-  box-shadow: 0 10px 10px gray;
+.coc.base.actor .window-content .editable .upper {
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
 }
 
-.coc.actor .window-content .editable .sheet-header.header-background {
+.coc.base.actor .window-content .editable .upper .logo {
+  position: relative;
+  top: 30px;
   background-image: url("../ui/coc/logo.png");
-  background-size: 300px 100px;
-  background-position-x: 10px;
-  background-position-y: 10px;
+  background-position-x: center;
+  background-position-y: bottom;
   background-repeat: no-repeat;
+  background-size: 280px auto;
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
 }
 
-.coc.actor .window-content .editable .sheet-header .header-portrait {
-  position: absolute;
-  top: 150px;
-  left: 0;
-  margin: 10px;
-  height: 400px;
-  width: 300px;
-  background: antiquewhite;
-  border: 5px solid white;
-  -webkit-box-shadow: 5px 5px 5px black;
-  box-shadow: 5px 5px 5px black;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
+.coc.base.actor .window-content .editable .main {
+  min-height: calc(100% - 100px);
+  height: calc(100% - 100px);
+  max-height: calc(100% - 100px);
 }
 
-.coc.actor .window-content .editable .sheet-header .header-portrait img.profile {
-  border: none;
-  min-height: 400px;
+.coc.base.actor .window-content .editable .main .sidebar {
+  border-right: 3px solid #caad27;
+  padding: 0 5px 0 5px;
+  height: 100%;
   max-width: 300px;
 }
 
-.coc.actor .window-content .editable .sheet-header .header-details {
-  margin-left: 320px;
-  height: 140px;
+.coc.base.actor .window-content .editable .main .sidebar .charname-title {
+  padding-top: 20px;
 }
 
-.coc.actor .window-content .editable .sheet-header .header-details h1.charname input[type=text] {
-  font-family: Futura;
+.coc.base.actor .window-content .editable .main .sidebar .charname-title .charname {
+  font-family: Polentical;
   color: white;
-  border: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background-color: transparent;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-.coc.actor .window-content .editable nav.sheet-navigation {
-  margin-left: 320px;
-  margin-top: -28px;
+.coc.base.actor .window-content .editable .main .sidebar .portrait img.profile {
   border: none;
 }
 
-.coc.actor .window-content .editable nav.sheet-navigation.tabs {
-  color: white;
-  text-align: center;
-  border: none;
-}
-
-.coc.actor .window-content .editable nav.sheet-navigation.tabs .item {
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 5px;
-  border: 1px solid #736953a6;
-  margin: 0;
-  height: 28px;
-  -webkit-box-shadow: 0 0 10px #00000052 inset;
-  box-shadow: 0 0 10px #00000052 inset;
-  /*padding: 3px 3px 0 3px;*/
-  background: rgba(0, 0, 0, 0.05);
-}
-
-.coc.actor .window-content .editable nav.sheet-navigation.tabs .item:hover {
-  background: rgba(0, 0, 0, 0.2);
-  text-shadow: none;
-}
-
-.coc.actor .window-content .editable nav.sheet-navigation.tabs .item.active {
-  border: 1px inset #736953a6;
-  background: rgba(0, 0, 0, 0.2);
-  text-shadow: none;
-}
-
-.coc.actor .window-content .editable .sheet-body {
-  margin-left: 320px;
+.coc.base.actor .window-content .editable .main .content {
+  height: 100%;
+  padding: 40px 10px 10px 10px;
+  border-top: 3px solid #caad27;
   background: white;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab {
-  background: lightgray;
-  padding: 10px;
-  height: calc(100% - 30px);
-  min-height: calc(100% - 40px);
-  max-height: calc(100% - 40px);
-  overflow: auto;
+.coc.base.actor .window-content .editable .main .content .sheet-header {
+  height: 90px;
+  min-height: 90px;
+  max-height: 90px;
+  padding: 10px 0;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.stats .attributes-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .attacks-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .defence-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .init-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .recovery-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .vitality-header,
-.coc.actor .window-content .editable .sheet-body .tab.stats .resources-header {
-  color: #caad27;
+.coc.base.actor .window-content .editable .main .content .sheet-header .header-details {
+  padding: 10px 0;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.stats .cell {
-  margin-right: 1px;
+.coc.base.actor .window-content .editable .main .content .sheet-header .header-details .field-label {
+  text-transform: uppercase;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.stats .cell-header {
-  margin-right: 1px;
+.coc.base.actor .window-content .editable .main .content .sheet-header .header-details .cell-header {
   background-color: black;
-  color: white;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.stats .flexrow {
+.coc.base.actor .window-content .editable .main .content .sheet-header .header-details .flexrow {
   margin-bottom: 1px;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities {
+.coc.base.actor .window-content .editable .main .content .sheet-body {
+  padding: 10px 0;
+  height: calc(100% - 10px);
+  min-height: calc(100% - 10px);
+  max-height: calc(100% - 10px);
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab {
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 80px);
+  min-height: calc(100% - 80px);
+  max-height: calc(100% - 80px);
   overflow: auto;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .flexrow {
+  margin-bottom: 1px;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #caad27;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes .cell-header {
+  background-color: black;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .init-header, .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #caad27;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .init .cell-header, .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks .cell-header {
+  background-color: black;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .defence-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #caad27;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .defence .cell-header {
+  background-color: black;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery-header,
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #caad27;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header, .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
+  background-color: black;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .resources-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #caad27;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .resources .cell-header {
+  background-color: black;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name {
+  padding-top: 2px;
+  border-right: 1px solid #c9c7b8;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name .weapon-image {
+  background-image: url("../ui/coc/weapon.png");
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities {
+  overflow: auto;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list {
   -webkit-box-shadow: 0 4px 3px -3px gray;
   box-shadow: 0 4px 3px -3px gray;
   margin: 0 0 5px 0;
@@ -973,76 +1014,670 @@
   overflow: hidden;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list .grid {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid {
+  font-size: 12px;
   max-height: 150px;
   overflow: auto;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list.encounter {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell {
+  padding: 3px 5px;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell.gridheader {
+  background-color: black;
+  font-family: "MyriadProBold", sans-serif;
+  color: white;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow.gridheader {
+  background-color: black;
+  font-family: "MyriadProBold", sans-serif;
+  color: white;
+}
+
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter {
   min-height: 100px;
   height: 100px;
   max-height: 100px;
   overflow: hidden;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .path-list.encounter .grid {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter .grid {
   min-height: 100px;
   height: 100px;
   max-height: 100px;
   overflow: auto;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list {
   min-height: calc(100% - 220px);
   height: calc(100% - 220px);
   max-height: calc(100% - 220px);
   overflow: auto;
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p0 {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p0 {
   min-height: calc(100% - 15px);
   height: calc(100% - 15px);
   max-height: calc(100% - 15px);
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p1 {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p1 {
   min-height: calc(100% - 120px);
   height: calc(100% - 120px);
   max-height: calc(100% - 120px);
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p2 {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p2 {
   min-height: calc(100% - 145px);
   height: calc(100% - 145px);
   max-height: calc(100% - 145px);
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p3 {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p3 {
   min-height: calc(100% - 170px);
   height: calc(100% - 170px);
   max-height: calc(100% - 170px);
 }
 
-.coc.actor .window-content .editable .sheet-body .tab.capacities .capacity-list.p4 {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p4 {
   min-height: calc(100% - 195px);
   height: calc(100% - 195px);
   max-height: calc(100% - 195px);
 }
 
-.coc.item {
+.coc.base.actor .window-content .editable .main .content .cell {
+  height: 26px;
+}
+
+.coc.base.actor .window-content .editable .main .content .cell .field-value {
+  font-family: "ChN1Regular", cursive;
+  font-size: 16px;
+}
+
+.coc.base.actor .window-content .editable .main .content .cell select.field-value {
+  font-size: 14px;
+}
+
+.coc.base.actor .window-content .editable .main .content .cell-header {
+  height: 26px;
+  background-color: black;
+  color: white;
+  padding-top: 2px;
+  font-family: "MyriadProBold", sans-serif;
+}
+
+.coc.base.actor .window-content .editable .main .content .drop-field {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.coc.base.actor .window-content .editable .main .content .drop-field .drop-item {
+  margin-left: 1px;
+  padding-top: 5px;
+  height: 26px;
+}
+
+.coc.base.actor .window-content .editable .main .content .drop-field .item {
+  padding-top: 3px;
+}
+
+.coc.base.actor .window-content .editable .main .content .drop-field .item .item-control {
+  color: #464331c4;
+  visibility: hidden;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 18px;
+  flex: 0 0 18px;
+  border: 1px solid transparent;
+}
+
+.coc.base.actor .window-content .editable .main .content .drop-field:hover > .item > .item-control {
+  visibility: visible;
+}
+
+.coc.base.item {
   /* ----------------------------------------- */
   /*  Layout                                   */
   /* ----------------------------------------- */
 }
 
-.coc.item .window-content {
+.coc.base.item .window-content {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
 }
 
-.coc.item .window-content .editable {
+.coc.base.item .window-content .editable {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: white;
+}
+
+.coc.base.item .window-content .editable .sheet-header {
+  -webkit-box-shadow: 0 10px 10px gray;
+  box-shadow: 0 10px 10px gray;
+  background-image: url("../ui/coc/header.png");
+  background-repeat: repeat;
+  border-bottom: 3px solid #caad27;
+  margin-bottom: 20px;
+}
+
+.coc.base.item .window-content .editable .sheet-header img.profile {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 64px;
+  flex: 0 0 64px;
+  max-width: 64px;
+  height: 64px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  border: none;
+}
+
+.coc.base.item .window-content .editable .sheet-header .header-details {
+  height: 72px;
+}
+
+.coc.base.item .window-content .editable .sheet-header .header-details h1.charname input[type=text] {
+  font-family: Polentical;
+  color: white;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.coc.base.item .window-content .editable .sheet-header .header-details .item-subtitle {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100px;
+  flex: 0 0 100px;
+  height: 64px;
+  margin: 0;
+  padding: 10px;
+  text-align: right;
+  color: #caad27;
+}
+
+.coc.base.item .window-content .editable .sheet-header .header-details .item-subtitle .item-type {
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0;
+}
+
+.coc.base.item .window-content .editable .sheet-header .header-details .item-subtitle .item-status {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.coc.base.item .window-content .editable .sheet-body {
+  height: calc(100% - 125px);
+  min-height: calc(100% - 125px);
+  max-height: calc(100% - 125px);
+  overflow: auto;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab {
+  background: lightgray;
+  padding: 10px;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .item-properties {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 150px;
+  flex: 0 0 150px;
+  margin: 5px 5px 5px 0;
+  padding-right: 5px;
+  border-right: 1px groove #eeede0;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .item-properties .form-group {
+  margin: 0;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .item-properties .form-group label {
+  line-height: 20px;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .item-properties .form-group input {
+  text-align: right;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .item-properties .properties-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .item-properties .properties-list li {
+  margin: 3px 0;
+  padding: 0 2px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px groove #eeede0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.coc.base nav.sheet-navigation {
+  border: none;
+}
+
+.coc.base nav.sheet-navigation.tabs {
+  font: 14px "MyriadPro", sans-serif;
+  color: #464331c4;
+  text-align: center;
+  border: none;
+}
+
+.coc.base nav.sheet-navigation.tabs .item {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px;
+  border: 1px solid #736953a6;
+  border-radius: 10px 10px 0 0;
+  margin: 0 -10px 0 0;
+  height: 28px;
+  -webkit-box-shadow: 0 0 10px #00000052 inset;
+  box-shadow: 0 0 10px #00000052 inset;
+  background: #AAA;
+}
+
+.coc.base nav.sheet-navigation.tabs .item:hover {
+  color: #464331c4;
+  background: #CCC;
+  text-shadow: none;
+}
+
+.coc.base nav.sheet-navigation.tabs .item.active {
+  background: #EEE;
+  color: #464331c4;
+  border: 1px inset #736953a6;
+  z-index: 10000;
+  text-shadow: none;
+}
+
+.coc.cocth {
+  font-family: "MyriadPro", sans-serif;
+}
+
+.coc.cocth .rollable:hover {
+  color: #000;
+  text-shadow: 0 0 10px white;
+  cursor: pointer;
+}
+
+.coc.cocth.rollable:hover .item-image {
+  background-image: url("../../icons/svg/d20-grey.svg") !important;
+}
+
+.coc.cocth.rollable .item-image:hover {
+  background-image: url("../../icons/svg/d20-black.svg") !important;
+}
+
+.coc.cocth .table-header,
+.coc.cocth .spacer {
+  min-height: 26px;
+  height: 26px;
+  max-height: 26px;
+}
+
+.coc.cocth .half-spacer {
+  min-height: 13px;
+  height: 13px;
+  max-height: 13px;
+}
+
+.coc.cocth .layout {
+  padding: 5px;
+}
+
+.coc.cocth .editor {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+.coc.cocth .editor .editor-content {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.coc.cocth .editor .tox-tinymce {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.coc.cocth.actor {
+  /* ----------------------------------------- */
+  /*  Layout                                   */
+  /* ----------------------------------------- */
+}
+
+.coc.cocth.actor .window-content {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.coc.cocth.actor .window-content .editable {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: white;
+}
+
+.coc.cocth.actor .window-content .editable .upper {
+  background-image: url("../ui/cocth/banner-120.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
+}
+
+.coc.cocth.actor .window-content .editable .upper .logo {
+  position: relative;
+  top: 30px;
+  background-image: url("../ui/cocth/logo-cocth-sm.png");
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+  background-size: 280px auto;
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
+}
+
+.coc.cocth.actor .window-content .editable .main {
+  min-height: calc(100% - 100px);
+  height: calc(100% - 100px);
+  max-height: calc(100% - 100px);
+}
+
+.coc.cocth.actor .window-content .editable .main .sidebar {
+  background-image: url("../ui/cocth/sidebar-bg.png");
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  border-right: 3px solid #a0c159;
+  padding: 0 5px 0 5px;
+  height: 100%;
+  max-width: 300px;
+}
+
+.coc.cocth.actor .window-content .editable .main .sidebar .charname-title {
+  padding-top: 20px;
+}
+
+.coc.cocth.actor .window-content .editable .main .sidebar .charname-title .charname {
+  font-family: ChocolateBox;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.coc.cocth.actor .window-content .editable .main .sidebar .portrait img.profile {
+  border: none;
+}
+
+.coc.cocth.actor .window-content .editable .main .content {
+  height: 100%;
+  padding: 40px 10px 10px 10px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-header {
+  height: 90px;
+  min-height: 90px;
+  max-height: 90px;
+  padding: 10px 0;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details {
+  padding: 10px 0;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details .field-label {
+  text-transform: uppercase;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details .cell-header {
+  background-color: #4d6345;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details .flexrow {
+  margin-bottom: 1px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body {
+  padding: 10px 0;
+  height: calc(100% - 10px);
+  min-height: calc(100% - 10px);
+  max-height: calc(100% - 10px);
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab {
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 80px);
+  min-height: calc(100% - 80px);
+  max-height: calc(100% - 80px);
+  overflow: auto;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .flexrow {
+  margin-bottom: 1px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #4d6345;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes .cell-header {
+  background-color: #4d6345;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .init-header, .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #cc262d;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .init .cell-header, .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks .cell-header {
+  background-color: #cc262d;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .defence-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #329edb;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .defence .cell-header {
+  background-color: #329edb;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery-header,
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #4ba23d;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header, .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
+  background-color: #4ba23d;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .resources-header {
+  font-family: "MyriadProBold", sans-serif;
+  color: #6f4b93;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .resources .cell-header {
+  background-color: #6f4b93;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name {
+  padding-top: 2px;
+  border-right: 1px solid #c9c7b8;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name .weapon-image {
+  background-image: url("../ui/coc/weapon.png");
+  background-size: 26px 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities {
+  overflow: auto;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list {
+  -webkit-box-shadow: 0 4px 3px -3px gray;
+  box-shadow: 0 4px 3px -3px gray;
+  margin: 0 0 5px 0;
+  padding: 3px;
+  max-height: 205px;
+  overflow: hidden;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid {
+  font-size: 12px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell {
+  padding: 3px 5px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell.gridheader {
+  background-color: #4d6345;
+  font-family: "MyriadProBold", sans-serif;
+  color: white;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow.gridheader {
+  background-color: #4d6345;
+  font-family: "MyriadProBold", sans-serif;
+  color: white;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter {
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter .grid {
+  min-height: 100px;
+  height: 100px;
+  max-height: 100px;
+  overflow: auto;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list {
+  min-height: calc(100% - 220px);
+  height: calc(100% - 220px);
+  max-height: calc(100% - 220px);
+  overflow: auto;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p0 {
+  min-height: calc(100% - 15px);
+  height: calc(100% - 15px);
+  max-height: calc(100% - 15px);
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p1 {
+  min-height: calc(100% - 120px);
+  height: calc(100% - 120px);
+  max-height: calc(100% - 120px);
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p2 {
+  min-height: calc(100% - 145px);
+  height: calc(100% - 145px);
+  max-height: calc(100% - 145px);
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p3 {
+  min-height: calc(100% - 170px);
+  height: calc(100% - 170px);
+  max-height: calc(100% - 170px);
+}
+
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p4 {
+  min-height: calc(100% - 195px);
+  height: calc(100% - 195px);
+  max-height: calc(100% - 195px);
+}
+
+.coc.cocth.actor .window-content .editable .main .content .cell {
+  height: 26px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .cell .field-value {
+  font-family: "ChN1Regular", cursive;
+  font-size: 16px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .cell select.field-value {
+  font-size: 14px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .cell-header {
+  height: 26px;
+  background-color: black;
+  color: white;
+  font-family: "MyriadProBold", sans-serif;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .drop-field {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.coc.cocth.actor .window-content .editable .main .content .drop-field .field-value {
+  background: transparent;
+}
+
+.coc.cocth.item {
+  /* ----------------------------------------- */
+  /*  Layout                                   */
+  /* ----------------------------------------- */
+}
+
+.coc.cocth.item .window-content {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.coc.cocth.item .window-content .editable {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -1051,12 +1686,12 @@
   background-repeat: repeat;
 }
 
-.coc.item .window-content .editable .sheet-header {
+.coc.cocth.item .window-content .editable .sheet-header {
   -webkit-box-shadow: 0 10px 10px gray;
   box-shadow: 0 10px 10px gray;
 }
 
-.coc.item .window-content .editable .sheet-header img.profile {
+.coc.cocth.item .window-content .editable .sheet-header img.profile {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -1067,40 +1702,11 @@
   border: none;
 }
 
-.coc.item .window-content .editable .sheet-header .header-details {
+.coc.cocth.item .window-content .editable .sheet-header .header-details {
   height: 140px;
-  /*
-      .summary {
-        flex: 0 0 100%;
-        height: 40px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        border-top: $borderGroove;
-        border-bottom: none;
-
-        li {
-          height: calc(100% - 6px);
-          float: left;
-          margin: 2px 0;
-          padding: 0;
-          border-right: $borderGroove;
-          line-height: 34px;
-          color: $lightGreen;
-
-          &:last-child {
-            border-right: none;
-          }
-
-          input {
-            color: $lightGreen;
-          }
-        }
-      }
-*/
 }
 
-.coc.item .window-content .editable .sheet-header .header-details h1.charname input[type=text] {
+.coc.cocth.item .window-content .editable .sheet-header .header-details h1.charname input[type=text] {
   font-family: Futura;
   color: white;
   border: none;
@@ -1109,7 +1715,7 @@
   background-color: transparent;
 }
 
-.coc.item .window-content .editable .sheet-header .header-details .item-subtitle {
+.coc.cocth.item .window-content .editable .sheet-header .header-details .item-subtitle {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 150px;
   flex: 0 0 150px;
@@ -1120,29 +1726,58 @@
   color: #caad27;
 }
 
-.coc.item .window-content .editable .sheet-header .header-details .item-subtitle .item-type {
+.coc.cocth.item .window-content .editable .sheet-header .header-details .item-subtitle .item-type {
   font-size: 24px;
   line-height: 26px;
   margin: 0;
 }
 
-.coc.item .window-content .editable .sheet-header .header-details .item-subtitle .item-status {
+.coc.cocth.item .window-content .editable .sheet-header .header-details .item-subtitle .item-status {
   font-size: 16px;
   line-height: 24px;
 }
 
-.coc.item .window-content .editable nav.sheet-navigation {
-  margin-top: -28px;
+.coc.cocth.item .window-content .editable .sheet-header .header-details .summary {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px groove #eeede0;
+  border-bottom: none;
+}
+
+.coc.cocth.item .window-content .editable .sheet-header .header-details .summary li {
+  height: calc(100% - 6px);
+  float: left;
+  margin: 2px 0;
+  padding: 0;
+  border-right: 1px groove #eeede0;
+  line-height: 34px;
+  color: #609b60;
+}
+
+.coc.cocth.item .window-content .editable .sheet-header .header-details .summary li:last-child {
+  border-right: none;
+}
+
+.coc.cocth.item .window-content .editable .sheet-header .header-details .summary li input {
+  color: #609b60;
+}
+
+.coc.cocth.item .window-content .editable nav.sheet-navigation {
   border: none;
 }
 
-.coc.item .window-content .editable nav.sheet-navigation.tabs {
+.coc.cocth.item .window-content .editable nav.sheet-navigation.tabs {
   color: white;
   text-align: center;
   border: none;
 }
 
-.coc.item .window-content .editable nav.sheet-navigation.tabs .item {
+.coc.cocth.item .window-content .editable nav.sheet-navigation.tabs .item {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1157,31 +1792,34 @@
   background: rgba(0, 0, 0, 0.05);
 }
 
-.coc.item .window-content .editable nav.sheet-navigation.tabs .item:hover {
+.coc.cocth.item .window-content .editable nav.sheet-navigation.tabs .item:hover {
   background: rgba(0, 0, 0, 0.2);
   text-shadow: none;
 }
 
-.coc.item .window-content .editable nav.sheet-navigation.tabs .item.active {
+.coc.cocth.item .window-content .editable nav.sheet-navigation.tabs .item.active {
   border: 1px inset #736953a6;
   background: rgba(0, 0, 0, 0.2);
   text-shadow: none;
 }
 
-.coc.item .window-content .editable .sheet-body {
+.coc.cocth.item .window-content .editable .sheet-body {
   background: white;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
 }
 
-.coc.item .window-content .editable .sheet-body .tab {
+.coc.cocth.item .window-content .editable .sheet-body .tab {
   background: lightgray;
   padding: 10px;
-  height: calc(100% - 30px);
-  min-height: calc(100% - 40px);
-  max-height: calc(100% - 40px);
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
   overflow: auto;
 }
 
-.coc.item .window-content .editable .sheet-body .tab .item-properties {
+.coc.cocth.item .window-content .editable .sheet-body .tab .item-properties {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 150px;
   flex: 0 0 150px;
@@ -1190,25 +1828,25 @@
   border-right: 1px groove #eeede0;
 }
 
-.coc.item .window-content .editable .sheet-body .tab .item-properties .form-group {
+.coc.cocth.item .window-content .editable .sheet-body .tab .item-properties .form-group {
   margin: 0;
 }
 
-.coc.item .window-content .editable .sheet-body .tab .item-properties .form-group label {
+.coc.cocth.item .window-content .editable .sheet-body .tab .item-properties .form-group label {
   line-height: 20px;
 }
 
-.coc.item .window-content .editable .sheet-body .tab .item-properties .form-group input {
+.coc.cocth.item .window-content .editable .sheet-body .tab .item-properties .form-group input {
   text-align: right;
 }
 
-.coc.item .window-content .editable .sheet-body .tab .item-properties .properties-list {
+.coc.cocth.item .window-content .editable .sheet-body .tab .item-properties .properties-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.coc.item .window-content .editable .sheet-body .tab .item-properties .properties-list li {
+.coc.cocth.item .window-content .editable .sheet-body .tab .item-properties .properties-list li {
   margin: 3px 0;
   padding: 0 2px;
   background: rgba(0, 0, 0, 0.05);
@@ -1216,6 +1854,46 @@
   text-align: center;
   font-size: 12px;
   line-height: 18px;
+}
+
+.coc.cocth nav.sheet-navigation {
+  border: none;
+}
+
+.coc.cocth nav.sheet-navigation.tabs {
+  font: 14px "MyriadPro", sans-serif;
+  color: #464331c4;
+  text-align: center;
+  border: none;
+}
+
+.coc.cocth nav.sheet-navigation.tabs .item {
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 5px;
+  border: 1px solid #736953a6;
+  border-radius: 10px 10px 0 0;
+  margin: 0 -10px 0 0;
+  height: 28px;
+  -webkit-box-shadow: 0 0 10px #00000052 inset;
+  box-shadow: 0 0 10px #00000052 inset;
+  background: #AAA;
+}
+
+.coc.cocth nav.sheet-navigation.tabs .item:hover {
+  color: #464331c4;
+  background: #CCC;
+  text-shadow: none;
+}
+
+.coc.cocth nav.sheet-navigation.tabs .item.active {
+  background: #EEE;
+  color: #464331c4;
+  border: 1px inset #736953a6;
+  z-index: 10000;
+  text-shadow: none;
 }
 
 .coc textarea, .coc select, .coc input {
@@ -1347,12 +2025,12 @@
 
 .coc .form-header {
   margin: 0 0 0.25em 0;
-  padding: 2px 0;
+  padding: 8px 0 5px 0;
   border-top: 1px groove #eeede0;
   border-bottom: 1px groove #eeede0;
-  font-family: Futura, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-family: "MyriadProBold", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .coc .tag {

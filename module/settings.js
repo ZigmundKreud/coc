@@ -1,3 +1,4 @@
+
 export const registerSystemSettings = function() {
 
     game.settings.register("coc", "useRecovery", {
@@ -16,6 +17,16 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: true,
+        type: Boolean,
+        onChange: lang => window.location.reload()
+    });
+
+    game.settings.register("coc", "useMadness", {
+        name: "Points de Folie",
+        hint: "Afficher les points de folie sur la fiche de personnage",
+        scope: "world",
+        config: true,
+        default: false,
         type: Boolean,
         onChange: lang => window.location.reload()
     });
@@ -49,4 +60,19 @@ export const registerSystemSettings = function() {
         type: Boolean,
         onChange: lang => window.location.reload()
     });
+
+    game.settings.register("coc", "cocthSkin", {
+        name: "Skin COC Cthulhu",
+        hint: "Utiliser la skin COC Cthulhu",
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: checked => {
+            game.coc.skin = (checked) ? "cocth" : "base";
+            window.location.reload()
+        }
+    });
+
+
 };

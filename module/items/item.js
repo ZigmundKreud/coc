@@ -24,11 +24,12 @@ export class CoCItem extends Item {
                 this._prepareArmorData(itemData, actorData);
                 this._prepareWeaponData(itemData, actorData);
                 break;
+            case "path" :
             case "trait" :
             case "capacity" :
-            case "path" :
             case "profile" :
-                if (!itemData.data.key) itemData.data.key = itemData.name.slugify({strict: true});
+                if(!itemData.data.setting) itemData.data.setting = "base";
+                itemData.data.key = itemData.data.setting + "-" + itemData.name.slugify({strict: true});
                 break;
             default :
                 break;
@@ -55,5 +56,7 @@ export class CoCItem extends Item {
             else itemData.data.dmg = itemData.data.dmgBase + " + " + dmgBonus;
         }
     }
+
+
 
 }

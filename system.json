@@ -57,6 +57,14 @@
       "path": "./packs/traits.db",
       "entity": "Item",
       "tag" : "trait"
+    },
+    {
+      "name": "tables",
+      "label": "Tables",
+      "system": "coc",
+      "path": "./packs/tables.db",
+      "entity": "RollTable",
+      "tag" : "table"
     }
   ],
   "languages": [

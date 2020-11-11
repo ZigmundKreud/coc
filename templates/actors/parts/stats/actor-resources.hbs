@@ -16,7 +16,7 @@
     </div>
 </div>
 {{#if (isEnabled "useFortune")}}
-<div class="flexrow no-wrap fortune">
+<div class="flexrow no-wrap resources fortune">
     <div class="flex8 center cell-header">
         <span class="field-label ellipsis"><i class="fas fa-star"></i>&nbsp;{{ localize 'COC.attributes.fp.abbrev' }}</span>
     </div>
@@ -34,8 +34,18 @@
     </div>
 </div>
 {{/if}}
+{{#if (isEnabled "useMadness")}}
+    <div class="flexrow no-wrap resources madness">
+        <div class="flex2 center cell-header">
+            <span class="field-label ellipsis"><i class="fas fa-skull"></i>&nbsp;{{ localize 'COC.attributes.mad.abbrev' }}</span>
+        </div>
+        <div class="flex3 center cell">
+            <input class="field-value" name="data.attributes.mad.value" type="text" value="{{actor.data.attributes.mad.value}}" placeholder="Value" data-dtype="Number"/>
+        </div>
+    </div>
+{{/if}}
 {{#if (isEnabled "useMana")}}
-<div class="flexrow no-wrap mana">
+<div class="flexrow no-wrap resources mana">
     <div class="flex8 center cell-header">
         <span class="field-label ellipsis"><i class="fas fa-hand-sparkles"></i>&nbsp;{{ localize 'COC.attributes.mp.abbrev' }}</span>
     </div>

@@ -15,8 +15,8 @@ export class CoCActorSheet extends ActorSheet {
         return mergeObject(super.defaultOptions, {
             classes: ["coc", game.coc.skin, "sheet", "actor", "character"],
             template: "/systems/coc/templates/actors/actor-sheet.hbs",
-            width: 950,
-            height: 670,
+            width: 900,
+            height: 720,
             tabs: [{navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "stats"}],
             dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
         });
@@ -29,6 +29,27 @@ export class CoCActorSheet extends ActorSheet {
         // Everything below here is only needed if the sheet is editable
         if (!this.options.editable) return;
 
+        // Click to open
+        html.find('.compendium-pack').dblclick(ev => {
+            ev.preventDefault();
+            let li = $(ev.currentTarget), pack = game.packs.get(li.data("pack"));
+            if (li.attr("data-open") === "1") pack.close();
+            else {
+                li.attr("data-open", "1");
+                pack.render(true);
+            }
+        });
+
+        // Click to open
+        html.find('.item-create.compendium-pack').click(ev => {
+            ev.preventDefault();
+            let li = $(ev.currentTarget), pack = game.packs.get(li.data("pack"));
+            if (li.attr("data-open") === "1") pack.close();
+            else {
+                li.attr("data-open", "1");
+                pack.render(true);
+            }
+        });
 
         html.find('.weapon-add').click(ev => {
             ev.preventDefault();
@@ -151,6 +172,7 @@ export class CoCActorSheet extends ActorSheet {
             case "profile" :
                 return Profile.removeFromActor(this.actor, event, entity);
                 break;
+            case "trait" :
             default: {
                 return this.actor.deleteOwnedItem(itemId);
             }
@@ -247,35 +269,61 @@ export class CoCActorSheet extends ActorSheet {
      * @param event the roll event
      * @private
      */
-    _onRoll(event) {
+    async _onRoll(event) {
         const elt = $(event.currentTarget)[0];
         const rolltype = elt.attributes["data-roll-type"].value;
+        let data = await this.getData();
         switch (rolltype) {
             case "skillcheck" :
-                return CoCRoll.skillCheck(this.getData().data, this.actor, event);
+                return CoCRoll.skillCheck(data.data, this.actor, event);
                 break;
             case "weapon" :
-                return CoCRoll.rollWeapon(this.getData().data, this.actor, event);
+                return CoCRoll.rollWeapon(data.data, this.actor, event);
                 break;
             case "encounter-weapon" :
-                return CoCRoll.rollEncounterWeapon(this.getData().data, this.actor, event);
+                return CoCRoll.rollEncounterWeapon(data.data, this.actor, event);
                 break;
             case "encounter-damage" :
-                return CoCRoll.rollEncounterDamage(this.getData().data, this.actor, event);
+                return CoCRoll.rollEncounterDamage(data.data, this.actor, event);
                 break;
             case "spell" :
-                return CoCRoll.rollSpell(this.getData().data, this.actor, event);
+                return CoCRoll.rollSpell(data.data, this.actor, event);
                 break;
             case "damage" :
-                return CoCRoll.rollDamage(this.getData().data, this.actor, event);
+                return CoCRoll.rollDamage(data.data, this.actor, event);
                 break;
             case "hp" :
-                return CoCRoll.rollHitPoints(this.getData().data, this.actor, event);
+                return CoCRoll.rollHitPoints(data.data, this.actor, event);
                 break;
             case "attributes" :
-                return CoCRoll.rollAttributes(this.getData().data, this.actor, event);
+                return CoCRoll.rollAttributes(data.data, this.actor, event);
                 break;
         }
+    }
+
+    /* -------------------------------------------- */
+
+    /** @override */
+    async getData() {
+        const data = super.getData();
+        const idx = await game.packs.get("coc.capacities").getContent();
+        const caps = idx.concat(game.items.filter(item => item.data.type === "capacity")).map(e => e.data);
+        let paths = data.items.filter(i => i.type === "path");
+        let capacities = data.items.filter(i => i.type === "capacity");
+        const capKeys = capacities.map(c => c.data.key);
+        for(let p of paths){
+            p.capacities = p.data.capacities.map(cid => {
+                let cap = caps.find(c => c._id === cid);
+                cap.checked = capKeys.includes(cap.data.key);
+                return cap;
+            });
+        }
+        data.paths = paths;
+        data.capacities = capacities;
+        data.trait = data.items.find(i => i.type === "trait");
+        data.profile = data.items.find(i => i.type === "profile");
+        // console.log(data);
+        return data;
     }
 
     /* -------------------------------------------- */

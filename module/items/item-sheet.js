@@ -208,34 +208,26 @@ export class CoCItemSheet extends ItemSheet {
     }
 
     /** @override */
-    getData() {
+    async getData() {
         const data = super.getData();
         data.labels = this.item.labels;
-
         // Include CONFIG values
         data.config = game.coc.config;
-
-        // Item Type, Status, and Details
         data.itemType = data.item.type.titleCase();
-        // data.itemStatus = this._getItemStatus(data.item);
         data.itemProperties = this._getItemProperties(data.item);
-        // data.isPhysical = data.item.data.hasOwnProperty("quantity");
-
-        // Potential consumption targets
-        // data.abilityConsumptionTargets = this._getItemConsumptionTargets(data.item);
-
-        // Action Details
-        // data.hasAttackRoll = this.item.hasAttack;
-        // data.isHealing = data.item.data.actionType === "heal";
-        // data.isFlatDC = getProperty(data.item.data, "save.scaling") === "flat";
-
-        // Vehicles
-        // data.isCrewed = data.item.data.activation?.type === 'crew';
-        // data.isMountable = this._isItemMountable(data.item);
+        if(data.data.capacities && data.data.capacities.length > 0){
+            const idx = await game.packs.get("coc.capacities").getIndex();
+            const caps = idx.concat(game.items.filter(item => item.data.type === "capacity" && data.data.capacities.includes(item._id)));
+            data.capacities = data.data.capacities.map(c => caps.find(e => e._id === c));
+        }
+        if(data.data.paths && data.data.paths.length > 0){
+            const idx = await game.packs.get("coc.paths").getIndex();
+            const ingame = game.items.filter(item => item.data.type === "path" && data.data.paths.includes(item._id));
+            data.paths = ingame.concat(idx.filter(item => data.data.paths.includes(item._id)));
+        }
+        // console.log(data);
         return data;
     }
-
-
 
     /* -------------------------------------------- */
 

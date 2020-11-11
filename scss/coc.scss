@@ -12,17 +12,31 @@
 
 /* Styles limited to co sheets */
 .coc {
+
   font-family: $font-primary;
   @import 'components/common';
 
-  &.actor {
-    @import 'scss/components/actor';
+  &.base{
+    &.actor {
+      @import 'scss/components/base/actor';
+    }
+    &.item {
+      @import 'scss/components/base/item';
+    }
+    @import 'components/base/tabs';
   }
 
-  &.item {
-    @import 'scss/components/item';
+  &.cocth{
+    font-family: $font-primary;
+    @import 'components/common';
+    &.actor {
+      @import 'scss/components/cocth/actor';
+    }
+    &.item {
+      @import 'scss/components/cocth/item';
+    }
+    @import 'components/cocth/tabs';
   }
-
   @import 'components/forms';
-  @import 'components/tabs';
+
 }

@@ -8,10 +8,12 @@ export const preloadHandlebarsTemplates = async function () {
     // Define template paths to load
     const templatePaths = [
         // CHARACTER
+        "systems/coc/templates/actors/parts/actor-header.hbs",
         "systems/coc/templates/actors/parts/actor-description.hbs",
 
         "systems/coc/templates/actors/parts/stats/actor-attacks.hbs",
         "systems/coc/templates/actors/parts/stats/actor-attributes.hbs",
+        "systems/coc/templates/actors/parts/stats/npc-attributes.hbs",
         "systems/coc/templates/actors/parts/stats/actor-recovery.hbs",
         "systems/coc/templates/actors/parts/stats/actor-resources.hbs",
         "systems/coc/templates/actors/parts/stats/actor-stats.hbs",
@@ -45,6 +47,8 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/coc/templates/items/parts/details/weapon-details.hbs",
         "systems/coc/templates/items/parts/details/usage-details.hbs",
         "systems/coc/templates/items/parts/details/effects-details.hbs",
+        "systems/coc/templates/items/parts/details/trait-details.hbs",
+        "systems/coc/templates/items/parts/details/setting-details.hbs"
 
     ];
 

@@ -149,6 +149,12 @@
             "value": 0,
             "max": 0
           },
+          "bg": {
+            "key" : "bg",
+            "label" : "COC.attributes.bg.label",
+            "abbrev" : "COC.attributes.bg.abbrev",
+            "value": 0
+          },
           "def": {
             "key" : "def",
             "label" : "COC.attributes.def.label",
@@ -183,14 +189,6 @@
             "bonus": 0,
             "value": 5
           },
-          "madness": {
-            "key" : "fp",
-            "label" : "COC.attributes.madness.label",
-            "abbrev" : "COC.attributes.madness.abbrev",
-            "enabled": false,
-            "base": 0,
-            "value": 0
-          },
           "fp": {
             "key" : "fp",
             "label" : "COC.attributes.fp.label",
@@ -200,6 +198,15 @@
             "bonus": 0,
             "value": 3,
             "max": 3
+          },
+          "mad": {
+            "key" : "mad",
+            "label" : "COC.attributes.mad.label",
+            "abbrev" : "COC.attributes.mad.abbrev",
+            "enabled": false,
+            "base": 0,
+            "bonus": 0,
+            "value": 0
           },
           "mp": {
             "key" : "mp",
@@ -216,32 +223,6 @@
             "label" : "COC.attributes.hd.label",
             "abbrev" : "COC.attributes.hd.abbrev",
             "value": "1d4"
-          }
-        },
-        "currency": {
-          "pp": {
-            "key" : "pp",
-            "label" : "COC.currency.pp.label",
-            "abbrev" : "COC.currency.pp.abbrev",
-            "qty" : 0
-          },
-          "gp": {
-            "key" : "gp",
-            "label" : "COC.currency.gp.label",
-            "abbrev" : "COC.currency.gp.abbrev",
-            "qty" : 0
-          },
-          "sp": {
-            "key" : "sp",
-            "label" : "COC.currency.sp.label",
-            "abbrev" : "COC.currency.sp.abbrev",
-            "qty" : 0
-          },
-          "cp": {
-            "key" : "cp",
-            "label" : "COC.currency.cp.label",
-            "abbrev" : "COC.currency.cp.abbrev",
-            "qty" : 0
           }
         },
         "alert": {
@@ -292,7 +273,9 @@
     "templates": {
       "base" : {
         "description" : "",
-        "source" : ""
+        "source" : "",
+        "key": "",
+        "setting": ""
       },
       "equipment" : {
         "def" : 0,
@@ -311,19 +294,16 @@
         "range": 0,
         "reload": "",
         "worn": false,
-        "slot": "",
         "qty" : 1,
+        "strmin" : null,
         "stacksize" : null,
         "price": 0,
-        "rarity" : "common",
         "properties": {
           "predilection": false,
           "ranged": false,
           "equipable": false,
           "stackable": false,
           "activable" : false,
-          "unique" : false,
-          "tailored" : false,
           "2H" : false,
           "proficient" : false,
           "finesse" : false,
@@ -331,6 +311,8 @@
           "weapon" : false,
           "protection" : false,
           "reloadable" : false,
+          "explosive" : false,
+          "vehicle" : false,
           "bow" : false,
           "crossbow" : false,
           "powder" : false,
@@ -359,8 +341,12 @@
       "templates": [
         "base"
       ],
-      "key": "",
       "rank": null,
+      "path": {
+        "id": "",
+        "name": "",
+        "key": ""
+      },
       "limited": false,
       "spell": false
     },
@@ -368,37 +354,22 @@
       "templates": [
         "base"
       ],
-      "key": "",
+      "family": null,
       "dv": "",
+      "bonuses" : {
+        "atc" : 0,
+        "atd" : 0,
+        "atm" : 0,
+        "fp" : 0,
+        "xp" : 0
+      },
       "spellcasting": "",
-      "paths" : [],
-      "proficiencies" : {
-        "daggers" : false,
-        "swords" : false,
-        "axes" : false,
-        "staves" : false,
-        "clubs" : false,
-        "hammers" : false,
-        "katanas" : false,
-        "2-hands" : false,
-        "slings" : false,
-        "bows" : false,
-        "crossbows" : false,
-        "throwing-weapons" : false,
-        "powder-weapons" : false,
-        "soft-leather" : false,
-        "studded-leather" : false,
-        "mail" : false,
-        "half-plate" : false,
-        "full-plate" : false,
-        "shield" : false
-      }
+      "paths" : []
     },
     "path": {
       "templates": [
         "base"
       ],
-      "key": "",
       "capacities": [],
       "properties": {
         "profile": false,
@@ -410,7 +381,8 @@
       "templates": [
         "base"
       ],
-      "key": ""
+      "family": "",
+      "rank": null
     }
   }
 }

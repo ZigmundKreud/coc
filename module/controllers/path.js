@@ -1,3 +1,5 @@
+import {Traversal} from "../utils/traversal.js";
+
 export class Path {
 
     static async addToActor(actor, event, itemData) {
@@ -11,6 +13,29 @@ export class Path {
             // return actor.createEmbeddedEntity("OwnedItem", items).then(() => this._render(false));
             return actor.createEmbeddedEntity("OwnedItem", itemData);
         }
+    }
+
+    static getPathsFromActorByKey(actor, pathKeys) {
+        const start = performance.now();
+        let items = [];
+        const ownedPaths = actor.items.filter(item => pathKeys.includes(item.data.data.key) && item.data.type === "path");
+        if(ownedPaths.length>0){
+            const ownedPathsIds = ownedPaths.map(c => c.data._id);
+            const ownedPathsCapacities = ownedPaths.map(c => c.data.data.capacities).flat();
+            // retrieve owned capacities matching profile paths capacities
+            const allCaps = Traversal.getItemsOfType("capacity");
+            const pathCaps = allCaps.filter(p => { if(p && p._id && ownedPathsCapacities.includes(p._id)) return ownedPathsCapacities.includes(p._id) });
+            if(pathCaps.length > 0){
+                const pathCapsKeys = pathCaps.map(c => c.data.key);
+                const capsIds = actor.items.filter(item => pathCapsKeys.includes(item.data.data.key) && item.data.type === "capacity").map(c => c.data._id);
+                items = items.concat(capsIds);
+            }
+            items = items.concat(ownedPathsIds);
+        }
+        const end = performance.now();
+        const duration = end-start;
+        console.log("Duration : " + duration + " ms");
+        return items;
     }
 
     static removeFromActor(actor, event, entity) {

@@ -11,15 +11,15 @@
                 <div class="gridcell gridcell-sm">4</div>
                 <div class="gridcell gridcell-sm">5</div>
             </div>
-            {{#each (getPaths actor.items) as |path id|}}
+            {{#each paths as |path id|}}
                 <div class="gridrow grid-6col-150 item" data-item-id="{{path._id}}" data-item-type="item" data-pack="coc.paths">
                     <div class="gridcell left gridheader no-border">
                         <a class="item-edit ellipsis" style="width: 100%; text-align: left" title="{{path.name}}">{{path.name}}</a>&nbsp;
                         <span class="path-controls item" data-item-id="{{path._id}}" style="padding-right:5px;"><a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a></span>
                     </div>
-                    {{#each (getCapacitiesByIds path.data.capacities) as |capacity id|}}
+                    {{#each path.capacities as |capacity id|}}
                         <div class="gridcell gridcell-sm item capacity left" data-item-id="{{capacity._id}}" data-item-type="item" data-pack="coc.capacities" data-path-id="{{path._id}}">
-                            {{#if (includesKey ../../actor.items "capacity" capacity.data.key)}}
+                            {{#if capacity.checked}}
                                 <a class="capacity-control capacity-checked" title="{{capacity.name}}"><i class="fas fa-square"></i></a>&nbsp;
                                 <a class="capacity-control item-edit ellipsis">{{capacity.name}}</a>
                             {{else}}

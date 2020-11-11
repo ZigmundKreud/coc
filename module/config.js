@@ -4,9 +4,7 @@ COC.itemProperties = {
     "equipable": "COC.properties.equipable",
     "stackable": "COC.properties.stackable",
     "unique": "COC.properties.unique",
-    "tailored": "COC.properties.tailored",
     "2h": "COC.properties.2H",
-    "predilection": "COC.properties.predilection",
     "ranged": "COC.properties.ranged",
     "proficient": "COC.properties.proficient",
     "finesse": "COC.properties.finesse",
@@ -54,6 +52,7 @@ COC.getProfiles = async function () {
 COC.getPaths = async function () {
     let paths = await game.packs.get("coc.paths").getContent().then(index => index.map(entity => entity.data));
     COC.paths = paths;
+    // console.log(COC.paths);
     console.debug("Paths loaded");
 };
 
@@ -61,6 +60,7 @@ COC.getPaths = async function () {
 COC.getCapacities = async function () {
     let capacities = await game.packs.get("coc.capacities").getContent().then(index => index.map(entity => entity.data));
     COC.capacities = capacities;
+    // console.log(COC.capacities);
     console.debug("Capacities loaded");
 };
 
@@ -68,6 +68,7 @@ COC.getCapacities = async function () {
 COC.getTraits = async function () {
     let traits = await game.packs.get("coc.traits").getContent().then(index => index.map(entity => entity.data));
     COC.traits = traits;
+    // console.log(COC.traits);
     console.debug("Traits loaded");
 };
 

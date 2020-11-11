@@ -1,0 +1,15 @@
+{{> "systems/coc/templates/items/parts/details/setting-details.hbs"}}
+
+<h3 class="form-header">Propriétés des traits</h3>
+<div class="form-group">
+    <label>Famille</label>
+    <div class="form-fields">
+        <select name="data.family" data-type="String" style="width:100%">
+            {{#select data.family}}
+                <option value="">{{localize "COC.None"}}</option>
+                <option value="action">Action</option>
+                <option value="reflexion">Réflexion</option>
+            {{/select}}
+        </select>
+    </div>
+</div>

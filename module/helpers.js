@@ -2,13 +2,6 @@ import {Traversal} from "./utils/traversal.js";
 
 export const registerHandlebarsHelpers = function () {
 
-    Handlebars.registerHelper('getEmbeddedItems', function (type, ids) {
-        if (ids) {
-            const items = Traversal.getItemsOfType(type);
-            return ids.map(id => items.find(i => { if(i && i._id) return i._id === id }));
-        } else return null;
-    });
-
     Handlebars.registerHelper('getPaths', function (items) {
         return items.filter(item => item.type === "path");
     });
@@ -37,10 +30,6 @@ export const registerHandlebarsHelpers = function () {
         return items.filter(item => item.type === "item");
     });
 
-    Handlebars.registerHelper('getProfile', function (items) {
-        return items.find(item => item.type === "profile");
-    });
-
     Handlebars.registerHelper('countPaths', function (items) {
         return items.filter(item => item.type === "path").length;
     });
@@ -58,7 +47,7 @@ export const registerHandlebarsHelpers = function () {
     Handlebars.registerHelper('getCapacitiesByIds', function (ids) {
         if (ids) {
             const caps = Traversal.getItemsOfType("capacity").filter(c => {
-                if(c && c._id) return ids.includes(c._id)
+                if (c && c._id) return ids.includes(c._id)
             });
             caps.sort(function (a, b) {
                 const indexA = ids.indexOf(a._id);

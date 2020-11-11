@@ -1,16 +1,21 @@
 import {Traversal} from "../utils/traversal.js";
+import {Path} from "./path.js";
 
 export class Profile {
 
-    static addToActor(actor, event, itemData) {
+    static async addToActor(actor, event, itemData) {
         if (actor.items.filter(item => item.type === "profile").length > 0) {
             ui.notifications.error("Vous avez déjà un profil.");
             return false;
         } else {
             // add paths from profile
-            let items = Traversal.getItemsOfType("path").filter(p => itemData.data.paths.includes(p._id));
+            const pack = await game.packs.get("coc.paths").getContent();
+            const ingame = game.items.filter(item => item.data.type === "path");
+            let items = ingame.concat(pack.filter(item => itemData.data.paths.includes(item._id)));
+            // let items = Traversal.getItemsOfType("path").filter(p => itemData.data.paths.includes(p._id));
             // add profile
             items.push(itemData);
+            console.log(items);
             return actor.createOwnedItem(items)
         }
     }
@@ -23,14 +28,7 @@ export class Profile {
             yes: () => {
                 // retrieve path data from profile paths
                 const pathsKeys = Traversal.getItemsOfType("path").filter(p => profileData.data.paths.includes(p._id)).map(p => p.data.key);
-                // retrieve owned items matching profile paths
-                const ownedPaths = actor.items.filter(item => pathsKeys.includes(item.data.data.key) && item.data.type === "path");
-                const ownedPathsIds = ownedPaths.map(c => c.data._id);
-                const ownedPathsCapacities = ownedPaths.map(c => c.data.data.capacities).flat();
-                // retrieve owned capacities matching profile paths capacities
-                const capsKeys = Traversal.getItemsOfType("capacity").filter(p => ownedPathsCapacities.includes(p._id)).map(c => c.data.key);
-                const capsIds = actor.items.filter(item => capsKeys.includes(item.data.data.key) && item.data.type === "capacity").map(c => c.data._id);
-                let items = ownedPathsIds.concat(capsIds);
+                let items = Path.getPathsFromActorByKey(actor, pathsKeys);
                 // add the profile item to be removed
                 items.push(entity._id);
                 return actor.deleteOwnedItem(items);

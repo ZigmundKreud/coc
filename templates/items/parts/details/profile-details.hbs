@@ -1,3 +1,5 @@
+{{> "systems/coc/templates/items/parts/details/setting-details.hbs"}}
+
 <h3 class="form-header">{{localize "COC.ui.properties"}}</h3>
 <input class="field-value" name="data.key" type="hidden" value="{{item.data.key}}" placeholder="{{ localize "COC.ui.key" }}" data-dtype="String">
 <div class="form-group">
@@ -18,6 +20,20 @@
 </div>
 
 <div class="form-group">
+    <label>Famille de profil</label>
+    <div class="form-fields">
+        <select name="data.family" data-type="String" style="width:100%">
+            {{#select data.family}}
+                <option value="">{{localize "COC.None"}}</option>
+                <option value="action">Action</option>
+                <option value="adventure">Aventure</option>
+                <option value="reflexion">Réflexion</option>
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
     <label>{{localize "COC.ui.spellcasting"}}</label>
     <div class="form-fields">
         <select name="data.spellcasting" data-type="String" style="width:100%">
@@ -31,24 +47,37 @@
     </div>
 </div>
 
-<h3 class="form-header">Maîtrises</h3>
-<div class="form-group stacked">
-    <label>Armes de contact</label>
+
+<h3 class="form-header">Bonus</h3>
+
+<div class="form-group">
+    <label>{{localize "COC.attacks.melee.label"}}</label>
     <div class="form-fields">
-        <label class="checkbox"> <input type="checkbox" name="data.proficiencies.daggers" {{checked item.data.proficiencies.daggers}}> Dagues </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.swords" {{checked item.data.proficiencies.swords}}> Épées </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.axes" {{checked item.data.proficiencies.axes}}> Haches </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.staves" {{checked item.data.proficiencies.staves}}> Bâtons </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.clubs" {{checked item.data.proficiencies.clubs}}> Gourdins </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.hammers" {{checked item.data.proficiencies.hammers}}> Marteaux </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.katanas" {{checked item.data.proficiencies.katanas}}> Katanas </label>
-        <label class="checkbox"> <input type="checkbox" name="data.proficiencies.2-hands" {{checked item.data.proficiencies.2-hands}}> Armes à deux mains </label>
+        <input class="field-value" name="data.bonuses.atc" type="text" value="{{numberFormat data.bonuses.atc decimals=0 sign=true}}" placeholder="{{localize "COC.attacks.melee.label"}}" data-dtype="Number">
     </div>
 </div>
-<div class="form-group stacked">
-    <label>Armes à distance</label>
+<div class="form-group">
+    <label>{{localize "COC.attacks.ranged.label"}}</label>
     <div class="form-fields">
-        <label class="checkbox"> <input type="checkbox" name="data.proficiencies.slings" {{checked item.data.proficiencies.slings}}> Frondes </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.bows" {{checked item.data.proficiencies.bows}}> Arcs </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.crossbows" {{checked item.data.proficiencies.crossbows}}> Arbalètes </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.throwing-weapons" {{checked item.data.proficiencies.throwing-weapons}}> Armes de jet </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.powder-weapons" {{checked item.data.proficiencies.powder-weapons}}> Armes à poudre </label>
+        <input class="field-value" name="data.bonuses.atd" type="text" value="{{numberFormat data.bonuses.atd decimals=0 sign=true}}" placeholder="{{localize "COC.attacks.ranged.label"}}" data-dtype="Number">
     </div>
 </div>
-<div class="form-group stacked">
-    <label>Armures</label>
+<div class="form-group">
+    <label>{{localize "COC.attacks.magic.label"}}</label>
     <div class="form-fields">
-        <label class="checkbox"> <input type="checkbox" name="data.proficiencies.soft-leather" {{checked item.data.proficiencies.soft-leather}}> Cuir léger </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.studded-leather" {{checked item.data.proficiencies.studded-leather}}> Cuir lourd </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.mail" {{checked item.data.proficiencies.mail}}> Armures de mailles </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.half-plate" {{checked item.data.proficiencies.half-plate}}> Demi-plaques </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.full-plate" {{checked item.data.proficiencies.full-plate}}> Armures complète en plaques </label> <label class="checkbox"> <input type="checkbox" name="data.proficiencies.shield" {{checked item.data.proficiencies.shield}}> Bouclier </label>
+        <input class="field-value" name="data.bonuses.atm" type="text" value="{{numberFormat data.bonuses.atm decimals=0 sign=true}}" placeholder="{{localize "COC.attacks.magic.label"}}" data-dtype="Number">
+    </div>
+</div>
+<div class="form-group">
+    <label>{{localize "COC.attributes.fp.label"}}</label>
+    <div class="form-fields">
+        <input class="field-value" name="data.bonuses.fp" type="text" value="{{numberFormat data.bonuses.fp decimals=0 sign=true}}" placeholder="{{localize "COC.attributes.fp.label"}}" data-dtype="Number">
+    </div>
+</div>
+<div class="form-group">
+    <label>{{localize "COC.attributes.xp.label"}}</label>
+    <div class="form-fields">
+        <input class="field-value" name="data.bonuses.xp" type="text" value="{{numberFormat data.bonuses.xp decimals=0 sign=true}}" placeholder="{{localize "COC.attributes.xp.label"}}" data-dtype="Number">
     </div>
 </div>
 
@@ -61,12 +90,12 @@
             <a class="item-control item-create compendium-pack" data-pack="coc.paths" data-open="0" title="Ajouter une voie"><i class="fas fa-plus"></i>&nbsp; Add</a>
         </div>
     </li>
-{{#each (getEmbeddedItems "path" data.paths) as |path id|}}
+{{#each paths}}
     <ol class="item-list">
-        <li class="item flexrow" data-item-id="{{path._id}}" data-item-type="path" data-key="{{path.data.key}}" draggable="true">
+        <li class="item flexrow" data-item-id="{{_id}}" data-item-type="path" data-key="{{data.key}}" draggable="true">
             <div class="item-name flexrow">
-                <div class="item-image" style="background-image: url('{{path.img}}')"></div>
-                <h4>{{path.name}}</h4>
+                <div class="item-image" style="background-image: url('{{img}}')"></div>
+                <h4>{{name}}</h4>
             </div>
             <div class="item-controls">
                 <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>

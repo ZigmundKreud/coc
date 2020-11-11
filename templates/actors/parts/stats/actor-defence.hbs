@@ -16,8 +16,8 @@
     <div class="flex6 center cell-header">
         <span class="field-label"><i class="fas fa-shield-alt"></i>&nbsp;{{ localize 'COC.attributes.def.abbrev' }}</span>
     </div>
-    <div class="flex5 center cell readonly">
-        <input class="field-value" name="data.attributes.def.base" type="text" readonly="true" value="{{actor.data.attributes.def.base}}" placeholder="Base" data-dtype="Number"/>
+    <div class="flex5 center cell">
+        <input class="field-value" name="data.attributes.def.base" type="text" value="{{actor.data.attributes.def.base}}" placeholder="Base" data-dtype="Number"/>
     </div>
     <div class="flex5 center cell">
         <input class="field-value" name="data.attributes.def.bonus" type="text" value="{{actor.data.attributes.def.bonus}}" placeholder="Bonus" data-dtype="Number"/>
@@ -27,7 +27,7 @@
     </div>
 </div>
 {{#if (isEnabled "useDamageResistance")}}
-<div class="flexrow no-wrap damage-resistance">
+<div class="flexrow no-wrap defence damage-resistance">
     <div class="flex6 center cell-header">
         <span class="field-label"><i class="fas fa-user-shield"></i>&nbsp;{{ localize 'COC.attributes.dr.abbrev' }}</span>
     </div>

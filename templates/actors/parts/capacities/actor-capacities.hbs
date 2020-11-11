@@ -11,7 +11,7 @@
                 <a class="item-control item-create compendium-pack" data-pack="coc.capacities" data-open="0" title="Ajouter une capacité"><i class="fas fa-plus"></i>&nbsp; {{localize "COC.ui.add"}}</a>
             </div>
         </li>
-        {{#each (getCapacities actor.items) as |capacity id|}}
+        {{#each capacities as |capacity id|}}
             <ol class="item-list">
                 <!--            <li class="item flexrow" data-item-id="{{capacity._id}}" data-item-type="capacity" draggable="true">-->
                 <li class="item flexrow" data-item-id="{{capacity._id}}" data-item-type="item" data-item-type="item" draggable="true">
@@ -19,10 +19,8 @@
                         <div class="item-image" style="background-image: url('{{capacity.img}}')"></div>
                         <h4>{{capacity.name}}</h4>
                     </div>
-                    {{#with (getPath ../actor.items capacity.data.path)}}
-                        {{{name}}}
-                        <div class="item-detail">{{#if capacity.data.rank}}{{capacity.data.rank}}{{/if}}</div>
-                    {{/with}}
+                    {{{capacity.data.path.name}}}
+                    <div class="item-detail">{{#if capacity.data.rank}}{{capacity.data.rank}}{{/if}}</div>
                     <div class="item-detail">{{#if capacity.data.limited}}L{{/if}}</div>
                     <div class="item-detail">{{#if capacity.data.spell}}&#10033;{{/if}}</div>
                     <div class="item-controls">

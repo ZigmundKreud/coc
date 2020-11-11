@@ -147,6 +147,9 @@
 
   "COC.attributes.hp.label": "Hit Points",
   "COC.attributes.hp.abbrev": "HP",
+  "COC.attributes.bg.label": "Serious Wounds",
+  "COC.attributes.bg.abbrev": "SW",
+
   "COC.attributes.xp.label": "Experience points",
   "COC.attributes.xp.abbrev": "XP",
   "COC.attributes.init.label": "Initiative",
@@ -198,6 +201,8 @@
   "COC.attributes.mp.abbrev" : "MP",
   "COC.attributes.dr.label" : "Damage Reduction",
   "COC.attributes.dr.abbrev" : "DR",
+  "COC.attributes.mad.label" : "Madness",
+  "COC.attributes.mad.abbrev" : "MDP",
 
   "COC.currency.pp.label": "Platinium pieces",
   "COC.currency.pp.abbrev": "PP",
@@ -224,6 +229,7 @@
   "COC.category.container" : "Container",
   "COC.category.mount" : "Mount",
   "COC.category.vehicle" : "Vehicle",
+  "COC.category.money" : "Money",
   "COC.category.other": "Other",
 
   "COC.rarity.common" : "Common",
@@ -265,6 +271,7 @@
   "COC.properties.weapon" : "Weapon",
   "COC.properties.protection" : "Protection",
   "COC.properties.reloadable" : "Reloadable",
+  "COC.properties.explosive" : "Explosive",
   "COC.properties.bow" : "Bow",
   "COC.properties.crossbow" : "Crossbow",
   "COC.properties.powder" : "Powder",
@@ -284,6 +291,14 @@
   "COC.properties.prestige" : "Prestige",
   "COC.properties.alternative" : "Alternative",
   "COC.properties.racial" : "Racial",
-  "COC.properties.creature" : "Creature"
+  "COC.properties.creature" : "Creature",
+
+  "COC.setting.base" : "Base",
+  "COC.setting.epouvante" : "Horror",
+  "COC.setting.pulp" : "Pulp",
+  "COC.setting.zombis" : "Zombies",
+  "COC.setting.espionnage" : "Spy",
+  "COC.setting.surhumains" : "Mutants",
+  "COC.setting.cyberpunk" : "Cyberpunk"
 
 }

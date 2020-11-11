@@ -1,0 +1,17 @@
+<div class="form-group">
+    <label>Setting</label>
+    <div class="form-fields">
+        <select name="data.setting" data-type="String" style="width:100%">
+            {{#select data.setting}}
+                <option value="">{{localize "COC.None"}}</option>
+                <option value="base">{{localize "COC.setting.base"}}</option>
+                <option value="epouvante">{{localize "COC.setting.epouvante"}}</option>
+                <option value="pulp">{{localize "COC.setting.pulp"}}</option>
+                <option value="zombis">{{localize "COC.setting.zombis"}}</option>
+                <option value="espionnage">{{localize "COC.setting.espionnage"}}</option>
+                <option value="surhumains">{{localize "COC.setting.surhumains"}}</option>
+                <option value="cyberpunk">{{localize "COC.setting.cyberpunk"}}</option>
+            {{/select}}
+        </select>
+    </div>
+</div>
