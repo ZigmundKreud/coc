@@ -1,5 +1,8 @@
 # Chroniques Oubliées Contemporain pour Foundry VTT
 
+<img src="https://github.com/ZigmundKreud/coc/raw/master/ui/coc/logo.png" width="40%">
+
+
 ![logo](https://github.com/ZigmundKreud/coc/raw/master/ui/coc/logo.png | width=300)
 
 Ce programme est fait pour être exécuté dans le moteur [Foundry VTT](https://foundryvtt.com/).
