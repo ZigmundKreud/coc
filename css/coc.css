@@ -988,21 +988,26 @@
   background-color: black;
 }
 
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries-header,
 .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery-header,
 .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality-header {
   font-family: "MyriadProBold", sans-serif;
   color: #caad27;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header, .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries .cell-header,
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header,
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
   background-color: black;
 }
 
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .madness-header,
 .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .resources-header {
   font-family: "MyriadProBold", sans-serif;
   color: #caad27;
 }
 
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .madness .cell-header,
 .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .resources .cell-header {
   background-color: black;
 }
@@ -1544,38 +1549,28 @@
   background-color: #329edb;
 }
 
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries-header,
 .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery-header,
 .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality-header {
   font-family: "MyriadProBold", sans-serif;
   color: #4ba23d;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header, .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries .cell-header,
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header,
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
   background-color: #4ba23d;
 }
 
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .madness-header,
 .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .resources-header {
   font-family: "MyriadProBold", sans-serif;
   color: #6f4b93;
 }
 
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .madness .cell-header,
 .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .resources .cell-header {
   background-color: #6f4b93;
-}
-
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .inventory-list .item-list .item .item-subtype {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 100px;
-  flex: 0 1 100px;
-  font-size: 12px;
-  color: #7a7971;
-  text-align: center;
-  border-right: 1px solid #c9c7b8;
-  word-break: break-word;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name {

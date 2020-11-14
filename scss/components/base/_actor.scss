@@ -117,11 +117,16 @@ $headerColor:black;
               .defence-header{ font-family: $font-secondary; color:$colorGold; }
               .defence{ .cell-header{ background-color:$headerColor } }
 
+              .injuries-header,
               .recovery-header,
               .vitality-header{ font-family: $font-secondary; color:$colorGold; }
-              .recovery, .vitality{ .cell-header{ background-color:$headerColor } }
+              .injuries,
+              .recovery,
+              .vitality{ .cell-header{ background-color:$headerColor } }
 
+              .madness-header,
               .resources-header{ font-family: $font-secondary; color:$colorGold; }
+              .madness,
               .resources{ .cell-header{ background-color:$headerColor } }
 
             }
