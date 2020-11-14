@@ -140,6 +140,7 @@
   "COC.attributes.value.abbrev": "Value",
   "COC.attributes.mod.abbrev" : "Mod",
   "COC.attributes.bonus.abbrev" : "Bonus",
+  "COC.attributes.penalty.abbrev" : "Malus",
   "COC.attributes.max.abbrev" : "Max",
 
   "COC.attributes.defence.label": "DEFENCE",

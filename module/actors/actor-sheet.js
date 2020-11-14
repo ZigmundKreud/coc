@@ -15,8 +15,8 @@ export class CoCActorSheet extends ActorSheet {
         return mergeObject(super.defaultOptions, {
             classes: ["coc", game.coc.skin, "sheet", "actor", "character"],
             template: "/systems/coc/templates/actors/actor-sheet.hbs",
-            width: 900,
-            height: 720,
+            width: 970,
+            height: 750,
             tabs: [{navSelector: ".sheet-navigation", contentSelector: ".sheet-body", initial: "stats"}],
             dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
         });
@@ -117,11 +117,10 @@ export class CoCActorSheet extends ActorSheet {
 
     async _onEditItem(event) {
         event.preventDefault();
-        const li = $(event.currentTarget).parents(".item");
+        const li = $(event.currentTarget).closest(".item");
         const id = li.data("itemId");
         const type = (li.data("itemType")) ? li.data("itemType") : "item";
         const pack = (li.data("pack")) ? li.data("pack") : null;
-
         let entity = null;
         // look first in actor onwed items
         entity = this.actor.getOwnedItem(id);

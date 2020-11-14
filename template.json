@@ -169,6 +169,7 @@
             "abbrev" : "COC.attributes.init.abbrev",
             "base": 10,
             "bonus": 0,
+            "penalty": 0,
             "value": 10
           },
           "dr": {

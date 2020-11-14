@@ -29,7 +29,7 @@
             </div>
             <div class="flex2 center cell drop-field compendium-pack" data-pack="coc.traits" data-open="0">
                 {{#with trait}}
-                    <div class="flex5 drop-item trait" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
+                    <div class="flex5 drop-item item-name item trait" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                     <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">
                         <a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a>
                     </div>
@@ -43,12 +43,12 @@
                 <span class="field-label">{{ localize 'COC.details.profile' }}</span>
             </div>
             <div class="flex4 center cell drop-field compendium-pack" data-pack="coc.profiles" data-open="0">
-                {{#with profile}}
-                <div class="flex5 drop-item profile" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
+            {{#with profile}}
+                <div class="flex5 drop-item item-name item profile" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                 <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">
-                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a>
-                </div>
-                {{/with}}
+                <a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a>
+            </div>
+            {{/with}}
             </div>
         </div>
         <!-- /PROFILE -->

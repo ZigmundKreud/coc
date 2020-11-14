@@ -102,7 +102,7 @@
 
   // Item Detail Sections
   .item-detail {
-    flex: 0 0 70px;
+    flex: 0 0 50px;
     font-size: 12px;
     color: $colorTan;
     text-align: center;
@@ -112,8 +112,30 @@
     overflow: hidden;
 
     &:last-child { border-right: none; }
-    &.item-action {flex: 0 0 100px}
+    &.item-action {flex: 0 0 120px}
   }
+
+  .item-subtype {
+    //font-size: 10px;
+    flex: 0 1 100px;
+    font-size: 12px;
+    color: $colorTan;
+    text-align: center;
+    border-right: 1px solid $colorFaint;
+    word-break: break-word;
+    @include ellipsis;
+  }
+
+  .item-damage {
+    //font-size: 10px;
+    flex: 0 1 70px;
+    font-size: 12px;
+    color: $colorTan;
+    text-align: center;
+    border-right: 1px solid $colorFaint;
+    word-break: break-word;
+  }
+
 
   .item-weight {
     flex: 0 0 60px;

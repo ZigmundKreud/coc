@@ -12,10 +12,8 @@ export class Profile {
             const pack = await game.packs.get("coc.paths").getContent();
             const ingame = game.items.filter(item => item.data.type === "path");
             let items = ingame.concat(pack.filter(item => itemData.data.paths.includes(item._id)));
-            // let items = Traversal.getItemsOfType("path").filter(p => itemData.data.paths.includes(p._id));
             // add profile
             items.push(itemData);
-            console.log(items);
             return actor.createOwnedItem(items)
         }
     }

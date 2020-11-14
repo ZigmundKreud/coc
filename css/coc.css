@@ -622,8 +622,8 @@
 
 .inventory-list .item-detail {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 70px;
-  flex: 0 0 70px;
+  -ms-flex: 0 0 50px;
+  flex: 0 0 50px;
   font-size: 12px;
   color: #7a7971;
   text-align: center;
@@ -639,8 +639,34 @@
 
 .inventory-list .item-detail.item-action {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
+  -ms-flex: 0 0 120px;
+  flex: 0 0 120px;
+}
+
+.inventory-list .item-subtype {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 100px;
+  flex: 0 1 100px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+  word-break: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inventory-list .item-damage {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 70px;
+  flex: 0 1 70px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+  word-break: break-word;
 }
 
 .inventory-list .item-weight {
@@ -989,6 +1015,21 @@
   background-color: black;
 }
 
+.coc.base.actor .window-content .editable .main .content .sheet-body .tab.combat .inventory-list .item-list .item .item-subtype {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 100px;
+  flex: 0 1 100px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+  word-break: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .coc.base.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name {
   padding-top: 2px;
   border-right: 1px solid #c9c7b8;
@@ -1232,6 +1273,7 @@
 }
 
 .coc.base.item .window-content .editable .sheet-body .tab .item-properties {
+  background-color: #cd071e;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 150px;
   flex: 0 0 150px;
@@ -1266,6 +1308,24 @@
   text-align: center;
   font-size: 12px;
   line-height: 18px;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .editor {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .editor .editor-content {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+.coc.base.item .window-content .editable .sheet-body .tab .editor .tox-tinymce {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
 }
 
 .coc.base nav.sheet-navigation {
@@ -1538,6 +1598,21 @@
   background-color: #6f4b93;
 }
 
+.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .inventory-list .item-list .item .item-subtype {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 100px;
+  flex: 0 1 100px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+  word-break: break-word;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name {
   padding-top: 2px;
   border-right: 1px solid #c9c7b8;
@@ -1660,8 +1735,28 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .drop-field .field-value {
-  background: transparent;
+.coc.cocth.actor .window-content .editable .main .content .drop-field .drop-item {
+  margin-left: 1px;
+  padding-top: 5px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .drop-field .item {
+  padding-top: 3px;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .drop-field .item .item-control {
+  color: #464331c4;
+  visibility: hidden;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 18px;
+  flex: 0 0 18px;
+  border: 1px solid transparent;
+}
+
+.coc.cocth.actor .window-content .editable .main .content .drop-field:hover > .item > .item-control {
+  visibility: visible;
 }
 
 .coc.cocth.item {

@@ -4,7 +4,9 @@
             <div class="item-image" style="background-image: url('{{img}}')"></div>
             <h4>{{name}}</h4>
         </div>
-        {{localize (concat "COC.category." data.subtype)}}
+        <div class="item-subtype">
+            {{localize (concat "COC.category." data.subtype)}}
+        </div>
         <div class="item-detail {{#if data.properties.stackable}}item-qty unlocked{{else}}locked{{/if}}">
             {{#if data.properties.stackable}}{{data.qty}}{{/if}}
         </div>

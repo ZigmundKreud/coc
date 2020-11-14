@@ -127,8 +127,24 @@ export class CoCRoll {
                         hp.value = hp.max;
                     } else {
                         const hpLvl1 = hdmax + conMod;
-                        const dice2Roll = lvl - 1;
-                        const formula = `${dice2Roll}d${hdmax} + ${dice2Roll * conMod}`;
+
+                        /*
+                         * Formule pour le calcul des points de vie :
+                         * - Niv 1 = max du dé + Mod
+                         * - Niv 2 = hpLvl1 + 1DV
+                         * - Niv 3 = hpLvl1 + 1DV + 1Mod
+                         * - Niv 4 = hpLvl1 + 2DV + 1Mod
+                         * - Niv 5 = hpLvl1 + 2DV + 2Mod
+                         * - Niv 6 = hpLvl1 + 3DV + 2Mod
+                         * - Niv 7 = hpLvl1 + 3DV + 3Mod
+                         * - Niv 8 = hpLvl1 + 4DV + 3Mod
+                         * - Niv 9 = hpLvl1 + 4DV + 4Mod
+                         * - Niv 10 = hpLvl1 + 5DV + 4Mod
+                         */
+                        const dice2Roll = Math.floor(lvl/2);
+                        const mods2add = (conMod < 0) ? Math.floor(lvl/2) : Math.floor((lvl - 1)/2);
+                        const bonus = (mods2add * conMod) + hpLvl1;
+                        const formula = `${dice2Roll}d${hdmax} + ${bonus}`;
                         const r = new Roll(formula);
                         r.roll();
                         r.toMessage({
@@ -136,7 +152,8 @@ export class CoCRoll {
                             flavor: "<h2>Roll Hit Points</h2>",
                             speaker: ChatMessage.getSpeaker({actor: actor})
                         });
-                        hp.base = hpLvl1 + r.total;
+                        const minHp = dice2Roll + hpLvl1;
+                        hp.base = (r.total < dice2Roll + hpLvl1) ? minHp : r.total;
                         hp.max = hp.base + hp.bonus;
                         hp.value = hp.max;
                     }

@@ -16,6 +16,8 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/coc/templates/actors/parts/stats/npc-attributes.hbs",
         "systems/coc/templates/actors/parts/stats/actor-recovery.hbs",
         "systems/coc/templates/actors/parts/stats/actor-resources.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-madness.hbs",
+        "systems/coc/templates/actors/parts/stats/actor-injuries.hbs",
         "systems/coc/templates/actors/parts/stats/actor-stats.hbs",
         "systems/coc/templates/actors/parts/stats/actor-vitality.hbs",
         "systems/coc/templates/actors/parts/stats/actor-defence.hbs",
@@ -23,6 +25,9 @@ export const preloadHandlebarsTemplates = async function () {
 
         "systems/coc/templates/actors/parts/capacities/actor-capacities.hbs",
         "systems/coc/templates/actors/parts/capacities/actor-paths.hbs",
+
+        "systems/coc/templates/actors/parts/combat/character-combat.hbs",
+        "systems/coc/templates/actors/parts/combat/character-combat-item.hbs",
 
         "systems/coc/templates/actors/parts/combat/actor-combat.hbs",
         "systems/coc/templates/actors/parts/combat/actor-combat-item.hbs",

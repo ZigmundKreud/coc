@@ -1,0 +1,18 @@
+{{#if (isEnabled "useMadness")}}
+<div class="flexrow table-header resources-header no-wrap">
+    <div class="flex2 center">
+        <div class="field-label ellipsis">{{ localize 'COC.attributes.mad.label' }}</div>
+    </div>
+    <div class="flex3 center">
+        <div class="field-label">{{ localize 'COC.ui.value' }}</div>
+    </div>
+</div>
+<div class="flexrow no-wrap resources madness">
+    <div class="flex2 center cell-header">
+        <span class="field-label ellipsis"><i class="fas fa-skull"></i>&nbsp;{{ localize 'COC.attributes.mad.abbrev' }}</span>
+    </div>
+    <div class="flex3 center cell">
+        <input class="field-value" name="data.attributes.mad.value" type="text" value="{{actor.data.attributes.mad.value}}" placeholder="Value" data-dtype="Number"/>
+    </div>
+</div>
+{{/if}}
