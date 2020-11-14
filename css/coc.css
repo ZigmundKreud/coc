@@ -824,9 +824,6 @@
 }
 
 .coc .editor {
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
   height: 100%;
   min-height: 100%;
   max-height: 100%;
@@ -836,18 +833,13 @@
   height: 100%;
   min-height: 100%;
   max-height: 100%;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
 }
 
 .coc .editor .tox-tinymce {
+  background-color: white;
   height: 100%;
   min-height: 100%;
   max-height: 100%;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
 }
 
 .coc.base.actor {
@@ -1273,7 +1265,6 @@
 }
 
 .coc.base.item .window-content .editable .sheet-body .tab .item-properties {
-  background-color: #cd071e;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 150px;
   flex: 0 0 150px;
@@ -1308,24 +1299,6 @@
   text-align: center;
   font-size: 12px;
   line-height: 18px;
-}
-
-.coc.base.item .window-content .editable .sheet-body .tab .editor {
-  height: 100%;
-  min-height: 100%;
-  max-height: 100%;
-}
-
-.coc.base.item .window-content .editable .sheet-body .tab .editor .editor-content {
-  height: 100%;
-  min-height: 100%;
-  max-height: 100%;
-}
-
-.coc.base.item .window-content .editable .sheet-body .tab .editor .tox-tinymce {
-  height: 100%;
-  min-height: 100%;
-  max-height: 100%;
 }
 
 .coc.base nav.sheet-navigation {
@@ -1404,9 +1377,6 @@
 }
 
 .coc.cocth .editor {
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
   height: 100%;
   min-height: 100%;
   max-height: 100%;
@@ -1416,18 +1386,13 @@
   height: 100%;
   min-height: 100%;
   max-height: 100%;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
 }
 
 .coc.cocth .editor .tox-tinymce {
+  background-color: white;
   height: 100%;
   min-height: 100%;
   max-height: 100%;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
 }
 
 .coc.cocth.actor {

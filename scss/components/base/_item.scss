@@ -79,7 +79,6 @@ $borderColor:#caad27;
         overflow: auto;
 
         .item-properties {
-          background-color: #cd071e;
           flex: 0 0 150px;
           margin: 5px 5px 5px 0;
           padding-right: 5px;
@@ -112,25 +111,7 @@ $borderColor:#caad27;
               line-height: 18px;
             }
           }
-
         }
-
-        .editor {
-          height: 100%;
-          min-height: 100%;
-          max-height: 100%;
-          .editor-content {
-            height: 100%;
-            min-height: 100%;
-            max-height: 100%;
-          }
-          .tox-tinymce{
-            height: 100%;
-            min-height: 100%;
-            max-height: 100%;
-          }
-        }
-
       }
     }
   }
