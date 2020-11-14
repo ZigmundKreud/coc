@@ -1,6 +1,9 @@
 # Chroniques Oubliées Contemporain pour Foundry VTT
 
+![logo](https://github.com/ZigmundKreud/coc/raw/master/ui/coc/logo.png "Chroniques Oubliées Contemporain")
+
 Ce programme est fait pour être exécuté dans le moteur [Foundry VTT](https://foundryvtt.com/).
+
 
 ---
 ### Installation
