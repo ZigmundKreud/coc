@@ -265,6 +265,8 @@
   "COC.setting.zombis" : "Zombies",
   "COC.setting.espionnage" : "Espionnage",
   "COC.setting.surhumains" : "Surhumains",
-  "COC.setting.cyberpunk" : "Cyberpunk"
+  "COC.setting.cyberpunk" : "Cyberpunk",
 
+  "COC.notification.MacroItemMissing" : "Le personnage ne possède pas cet objet",
+  "COC.notification.MacroItemUnequiped" : "L'objet n'est pas équipé"
 }

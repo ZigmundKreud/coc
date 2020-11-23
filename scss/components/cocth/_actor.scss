@@ -18,7 +18,7 @@ $resourcesColor:#6f4b93;
   height: 100%;
   overflow: hidden;
 
-  .editable {
+  &>form {
     @include nomargin;
     height: 100%;
     overflow: hidden;

@@ -16,6 +16,7 @@ import {preloadHandlebarsTemplates} from "./templates.js";
 import {registerHandlebarsHelpers} from "./helpers.js";
 
 import {COC} from "./config.js";
+import {Macros} from "./system/macros.js";
 
 
 Hooks.once("init", async function () {
@@ -39,6 +40,7 @@ Hooks.once("init", async function () {
     // Create a namespace within the game global
     game.coc = {
         skin : "base",
+        macros : Macros,
         config: COC
     };
 

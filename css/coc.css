@@ -855,7 +855,7 @@
   overflow: hidden;
 }
 
-.coc.base.actor .window-content .editable {
+.coc.base.actor .window-content > form {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -864,13 +864,13 @@
   background-repeat: repeat;
 }
 
-.coc.base.actor .window-content .editable .upper {
+.coc.base.actor .window-content > form .upper {
   min-height: 100px;
   height: 100px;
   max-height: 100px;
 }
 
-.coc.base.actor .window-content .editable .upper .logo {
+.coc.base.actor .window-content > form .upper .logo {
   position: relative;
   top: 30px;
   background-image: url("../ui/coc/logo.png");
@@ -883,72 +883,72 @@
   max-height: 100px;
 }
 
-.coc.base.actor .window-content .editable .main {
+.coc.base.actor .window-content > form .main {
   min-height: calc(100% - 100px);
   height: calc(100% - 100px);
   max-height: calc(100% - 100px);
 }
 
-.coc.base.actor .window-content .editable .main .sidebar {
+.coc.base.actor .window-content > form .main .sidebar {
   border-right: 3px solid #caad27;
   padding: 0 5px 0 5px;
   height: 100%;
   max-width: 300px;
 }
 
-.coc.base.actor .window-content .editable .main .sidebar .charname-title {
+.coc.base.actor .window-content > form .main .sidebar .charname-title {
   padding-top: 20px;
 }
 
-.coc.base.actor .window-content .editable .main .sidebar .charname-title .charname {
+.coc.base.actor .window-content > form .main .sidebar .charname-title .charname {
   font-family: Polentical;
   color: white;
   font-size: 30px;
   font-weight: 700;
 }
 
-.coc.base.actor .window-content .editable .main .sidebar .portrait img.profile {
+.coc.base.actor .window-content > form .main .sidebar .portrait img.profile {
   border: none;
 }
 
-.coc.base.actor .window-content .editable .main .content {
+.coc.base.actor .window-content > form .main .content {
   height: 100%;
   padding: 40px 10px 10px 10px;
   border-top: 3px solid #caad27;
   background: white;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-header {
+.coc.base.actor .window-content > form .main .content .sheet-header {
   height: 90px;
   min-height: 90px;
   max-height: 90px;
   padding: 10px 0;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-header .header-details {
+.coc.base.actor .window-content > form .main .content .sheet-header .header-details {
   padding: 10px 0;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-header .header-details .field-label {
+.coc.base.actor .window-content > form .main .content .sheet-header .header-details .field-label {
   text-transform: uppercase;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-header .header-details .cell-header {
+.coc.base.actor .window-content > form .main .content .sheet-header .header-details .cell-header {
   background-color: black;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-header .header-details .flexrow {
+.coc.base.actor .window-content > form .main .content .sheet-header .header-details .flexrow {
   margin-bottom: 1px;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body {
+.coc.base.actor .window-content > form .main .content .sheet-body {
   padding: 10px 0;
   height: calc(100% - 10px);
   min-height: calc(100% - 10px);
   max-height: calc(100% - 10px);
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab {
   margin: 0;
   padding: 0;
   height: calc(100% - 80px);
@@ -957,62 +957,62 @@
   overflow: auto;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .flexrow {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .flexrow {
   margin-bottom: 1px;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .attributes-header {
   font-family: "MyriadProBold", sans-serif;
   color: #caad27;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes .cell-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .attributes .cell-header {
   background-color: black;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .init-header, .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .init-header, .coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .attacks-header {
   font-family: "MyriadProBold", sans-serif;
   color: #caad27;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .init .cell-header, .coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks .cell-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .init .cell-header, .coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .attacks .cell-header {
   background-color: black;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .defence-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .defence-header {
   font-family: "MyriadProBold", sans-serif;
   color: #caad27;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .defence .cell-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .defence .cell-header {
   background-color: black;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries-header,
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery-header,
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .injuries-header,
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .recovery-header,
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .vitality-header {
   font-family: "MyriadProBold", sans-serif;
   color: #caad27;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries .cell-header,
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header,
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .injuries .cell-header,
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .recovery .cell-header,
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .vitality .cell-header {
   background-color: black;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .madness-header,
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .resources-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .madness-header,
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .resources-header {
   font-family: "MyriadProBold", sans-serif;
   color: #caad27;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .madness .cell-header,
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.stats .resources .cell-header {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .madness .cell-header,
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.stats .resources .cell-header {
   background-color: black;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.combat .inventory-list .item-list .item .item-subtype {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.combat .inventory-list .item-list .item .item-subtype {
   -webkit-box-flex: 0;
   -ms-flex: 0 1 100px;
   flex: 0 1 100px;
@@ -1027,23 +1027,23 @@
   white-space: nowrap;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.combat .weapon .item-name {
   padding-top: 2px;
   border-right: 1px solid #c9c7b8;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name .weapon-image {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.combat .weapon .item-name .weapon-image {
   background-image: url("../ui/coc/weapon.png");
   background-size: 26px 26px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities {
   overflow: auto;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list {
   -webkit-box-shadow: 0 4px 3px -3px gray;
   box-shadow: 0 4px 3px -3px gray;
   margin: 0 0 5px 0;
@@ -1052,93 +1052,93 @@
   overflow: hidden;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid {
   font-size: 12px;
   max-height: 150px;
   overflow: auto;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell {
   padding: 3px 5px;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell.gridheader {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell.gridheader {
   background-color: black;
   font-family: "MyriadProBold", sans-serif;
   color: white;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow.gridheader {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid .gridrow.gridheader {
   background-color: black;
   font-family: "MyriadProBold", sans-serif;
   color: white;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list.encounter {
   min-height: 100px;
   height: 100px;
   max-height: 100px;
   overflow: hidden;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter .grid {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list.encounter .grid {
   min-height: 100px;
   height: 100px;
   max-height: 100px;
   overflow: auto;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list {
   min-height: calc(100% - 220px);
   height: calc(100% - 220px);
   max-height: calc(100% - 220px);
   overflow: auto;
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p0 {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p0 {
   min-height: calc(100% - 15px);
   height: calc(100% - 15px);
   max-height: calc(100% - 15px);
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p1 {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p1 {
   min-height: calc(100% - 120px);
   height: calc(100% - 120px);
   max-height: calc(100% - 120px);
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p2 {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p2 {
   min-height: calc(100% - 145px);
   height: calc(100% - 145px);
   max-height: calc(100% - 145px);
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p3 {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p3 {
   min-height: calc(100% - 170px);
   height: calc(100% - 170px);
   max-height: calc(100% - 170px);
 }
 
-.coc.base.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p4 {
+.coc.base.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p4 {
   min-height: calc(100% - 195px);
   height: calc(100% - 195px);
   max-height: calc(100% - 195px);
 }
 
-.coc.base.actor .window-content .editable .main .content .cell {
+.coc.base.actor .window-content > form .main .content .cell {
   height: 26px;
 }
 
-.coc.base.actor .window-content .editable .main .content .cell .field-value {
+.coc.base.actor .window-content > form .main .content .cell .field-value {
   font-family: "ChN1Regular", cursive;
   font-size: 16px;
 }
 
-.coc.base.actor .window-content .editable .main .content .cell select.field-value {
+.coc.base.actor .window-content > form .main .content .cell select.field-value {
   font-size: 14px;
 }
 
-.coc.base.actor .window-content .editable .main .content .cell-header {
+.coc.base.actor .window-content > form .main .content .cell-header {
   height: 26px;
   background-color: black;
   color: white;
@@ -1146,21 +1146,21 @@
   font-family: "MyriadProBold", sans-serif;
 }
 
-.coc.base.actor .window-content .editable .main .content .drop-field {
+.coc.base.actor .window-content > form .main .content .drop-field {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.coc.base.actor .window-content .editable .main .content .drop-field .drop-item {
+.coc.base.actor .window-content > form .main .content .drop-field .drop-item {
   margin-left: 1px;
   padding-top: 5px;
   height: 26px;
 }
 
-.coc.base.actor .window-content .editable .main .content .drop-field .item {
+.coc.base.actor .window-content > form .main .content .drop-field .item {
   padding-top: 3px;
 }
 
-.coc.base.actor .window-content .editable .main .content .drop-field .item .item-control {
+.coc.base.actor .window-content > form .main .content .drop-field .item .item-control {
   color: #464331c4;
   visibility: hidden;
   -webkit-box-flex: 0;
@@ -1169,7 +1169,7 @@
   border: 1px solid transparent;
 }
 
-.coc.base.actor .window-content .editable .main .content .drop-field:hover > .item > .item-control {
+.coc.base.actor .window-content > form .main .content .drop-field:hover > .item > .item-control {
   visibility: visible;
 }
 
@@ -1186,7 +1186,7 @@
   overflow: hidden;
 }
 
-.coc.base.item .window-content .editable {
+.coc.base.item .window-content > form {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -1194,7 +1194,7 @@
   background: white;
 }
 
-.coc.base.item .window-content .editable .sheet-header {
+.coc.base.item .window-content > form .sheet-header {
   -webkit-box-shadow: 0 10px 10px gray;
   box-shadow: 0 10px 10px gray;
   background-image: url("../ui/coc/header.png");
@@ -1203,7 +1203,7 @@
   margin-bottom: 20px;
 }
 
-.coc.base.item .window-content .editable .sheet-header img.profile {
+.coc.base.item .window-content > form .sheet-header img.profile {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 64px;
   flex: 0 0 64px;
@@ -1214,11 +1214,11 @@
   border: none;
 }
 
-.coc.base.item .window-content .editable .sheet-header .header-details {
+.coc.base.item .window-content > form .sheet-header .header-details {
   height: 72px;
 }
 
-.coc.base.item .window-content .editable .sheet-header .header-details h1.charname input[type=text] {
+.coc.base.item .window-content > form .sheet-header .header-details h1.charname input[type=text] {
   font-family: Polentical;
   color: white;
   border: none;
@@ -1231,7 +1231,7 @@
   white-space: nowrap;
 }
 
-.coc.base.item .window-content .editable .sheet-header .header-details .item-subtitle {
+.coc.base.item .window-content > form .sheet-header .header-details .item-subtitle {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100px;
   flex: 0 0 100px;
@@ -1242,25 +1242,25 @@
   color: #caad27;
 }
 
-.coc.base.item .window-content .editable .sheet-header .header-details .item-subtitle .item-type {
+.coc.base.item .window-content > form .sheet-header .header-details .item-subtitle .item-type {
   font-size: 24px;
   line-height: 26px;
   margin: 0;
 }
 
-.coc.base.item .window-content .editable .sheet-header .header-details .item-subtitle .item-status {
+.coc.base.item .window-content > form .sheet-header .header-details .item-subtitle .item-status {
   font-size: 16px;
   line-height: 24px;
 }
 
-.coc.base.item .window-content .editable .sheet-body {
+.coc.base.item .window-content > form .sheet-body {
   height: calc(100% - 125px);
   min-height: calc(100% - 125px);
   max-height: calc(100% - 125px);
   overflow: auto;
 }
 
-.coc.base.item .window-content .editable .sheet-body .tab {
+.coc.base.item .window-content > form .sheet-body .tab {
   background: lightgray;
   padding: 10px;
   height: 100%;
@@ -1269,7 +1269,7 @@
   overflow: auto;
 }
 
-.coc.base.item .window-content .editable .sheet-body .tab .item-properties {
+.coc.base.item .window-content > form .sheet-body .tab .item-properties {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 150px;
   flex: 0 0 150px;
@@ -1278,25 +1278,25 @@
   border-right: 1px groove #eeede0;
 }
 
-.coc.base.item .window-content .editable .sheet-body .tab .item-properties .form-group {
+.coc.base.item .window-content > form .sheet-body .tab .item-properties .form-group {
   margin: 0;
 }
 
-.coc.base.item .window-content .editable .sheet-body .tab .item-properties .form-group label {
+.coc.base.item .window-content > form .sheet-body .tab .item-properties .form-group label {
   line-height: 20px;
 }
 
-.coc.base.item .window-content .editable .sheet-body .tab .item-properties .form-group input {
+.coc.base.item .window-content > form .sheet-body .tab .item-properties .form-group input {
   text-align: right;
 }
 
-.coc.base.item .window-content .editable .sheet-body .tab .item-properties .properties-list {
+.coc.base.item .window-content > form .sheet-body .tab .item-properties .properties-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.coc.base.item .window-content .editable .sheet-body .tab .item-properties .properties-list li {
+.coc.base.item .window-content > form .sheet-body .tab .item-properties .properties-list li {
   margin: 3px 0;
   padding: 0 2px;
   background: rgba(0, 0, 0, 0.05);
@@ -1413,7 +1413,7 @@
   overflow: hidden;
 }
 
-.coc.cocth.actor .window-content .editable {
+.coc.cocth.actor .window-content > form {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -1421,7 +1421,7 @@
   background: white;
 }
 
-.coc.cocth.actor .window-content .editable .upper {
+.coc.cocth.actor .window-content > form .upper {
   background-image: url("../ui/cocth/banner-120.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -1430,7 +1430,7 @@
   max-height: 100px;
 }
 
-.coc.cocth.actor .window-content .editable .upper .logo {
+.coc.cocth.actor .window-content > form .upper .logo {
   position: relative;
   top: 30px;
   background-image: url("../ui/cocth/logo-cocth-sm.png");
@@ -1443,13 +1443,13 @@
   max-height: 100px;
 }
 
-.coc.cocth.actor .window-content .editable .main {
+.coc.cocth.actor .window-content > form .main {
   min-height: calc(100% - 100px);
   height: calc(100% - 100px);
   max-height: calc(100% - 100px);
 }
 
-.coc.cocth.actor .window-content .editable .main .sidebar {
+.coc.cocth.actor .window-content > form .main .sidebar {
   background-image: url("../ui/cocth/sidebar-bg.png");
   background-size: 100% auto;
   background-repeat: repeat-y;
@@ -1459,57 +1459,57 @@
   max-width: 300px;
 }
 
-.coc.cocth.actor .window-content .editable .main .sidebar .charname-title {
+.coc.cocth.actor .window-content > form .main .sidebar .charname-title {
   padding-top: 20px;
 }
 
-.coc.cocth.actor .window-content .editable .main .sidebar .charname-title .charname {
+.coc.cocth.actor .window-content > form .main .sidebar .charname-title .charname {
   font-family: ChocolateBox;
   color: white;
   font-size: 30px;
   font-weight: 700;
 }
 
-.coc.cocth.actor .window-content .editable .main .sidebar .portrait img.profile {
+.coc.cocth.actor .window-content > form .main .sidebar .portrait img.profile {
   border: none;
 }
 
-.coc.cocth.actor .window-content .editable .main .content {
+.coc.cocth.actor .window-content > form .main .content {
   height: 100%;
   padding: 40px 10px 10px 10px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-header {
   height: 90px;
   min-height: 90px;
   max-height: 90px;
   padding: 10px 0;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details {
+.coc.cocth.actor .window-content > form .main .content .sheet-header .header-details {
   padding: 10px 0;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details .field-label {
+.coc.cocth.actor .window-content > form .main .content .sheet-header .header-details .field-label {
   text-transform: uppercase;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details .cell-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-header .header-details .cell-header {
   background-color: #4d6345;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-header .header-details .flexrow {
+.coc.cocth.actor .window-content > form .main .content .sheet-header .header-details .flexrow {
   margin-bottom: 1px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body {
+.coc.cocth.actor .window-content > form .main .content .sheet-body {
   padding: 10px 0;
   height: calc(100% - 10px);
   min-height: calc(100% - 10px);
   max-height: calc(100% - 10px);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab {
   margin: 0;
   padding: 0;
   height: calc(100% - 80px);
@@ -1518,78 +1518,78 @@
   overflow: auto;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .flexrow {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .flexrow {
   margin-bottom: 1px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .attributes-header {
   font-family: "MyriadProBold", sans-serif;
   color: #4d6345;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attributes .cell-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .attributes .cell-header {
   background-color: #4d6345;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .init-header, .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .init-header, .coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .attacks-header {
   font-family: "MyriadProBold", sans-serif;
   color: #cc262d;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .init .cell-header, .coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .attacks .cell-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .init .cell-header, .coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .attacks .cell-header {
   background-color: #cc262d;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .defence-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .defence-header {
   font-family: "MyriadProBold", sans-serif;
   color: #329edb;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .defence .cell-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .defence .cell-header {
   background-color: #329edb;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries-header,
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery-header,
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .injuries-header,
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .recovery-header,
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .vitality-header {
   font-family: "MyriadProBold", sans-serif;
   color: #4ba23d;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .injuries .cell-header,
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .recovery .cell-header,
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .vitality .cell-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .injuries .cell-header,
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .recovery .cell-header,
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .vitality .cell-header {
   background-color: #4ba23d;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .madness-header,
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .resources-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .madness-header,
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .resources-header {
   font-family: "MyriadProBold", sans-serif;
   color: #6f4b93;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .madness .cell-header,
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.stats .resources .cell-header {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .madness .cell-header,
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.stats .resources .cell-header {
   background-color: #6f4b93;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.combat .weapon .item-name {
   padding-top: 2px;
   border-right: 1px solid #c9c7b8;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.combat .weapon .item-name .weapon-image {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.combat .weapon .item-name .weapon-image {
   background-image: url("../ui/coc/weapon.png");
   background-size: 26px 26px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities {
   overflow: auto;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list {
   -webkit-box-shadow: 0 4px 3px -3px gray;
   box-shadow: 0 4px 3px -3px gray;
   margin: 0 0 5px 0;
@@ -1598,115 +1598,115 @@
   overflow: hidden;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid {
   font-size: 12px;
   max-height: 150px;
   overflow: auto;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell {
   padding: 3px 5px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell.gridheader {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid .gridrow .gridcell.gridheader {
   background-color: #4d6345;
   font-family: "MyriadProBold", sans-serif;
   color: white;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list .grid .gridrow.gridheader {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list .grid .gridrow.gridheader {
   background-color: #4d6345;
   font-family: "MyriadProBold", sans-serif;
   color: white;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list.encounter {
   min-height: 100px;
   height: 100px;
   max-height: 100px;
   overflow: hidden;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .path-list.encounter .grid {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .path-list.encounter .grid {
   min-height: 100px;
   height: 100px;
   max-height: 100px;
   overflow: auto;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list {
   min-height: calc(100% - 220px);
   height: calc(100% - 220px);
   max-height: calc(100% - 220px);
   overflow: auto;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p0 {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p0 {
   min-height: calc(100% - 15px);
   height: calc(100% - 15px);
   max-height: calc(100% - 15px);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p1 {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p1 {
   min-height: calc(100% - 120px);
   height: calc(100% - 120px);
   max-height: calc(100% - 120px);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p2 {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p2 {
   min-height: calc(100% - 145px);
   height: calc(100% - 145px);
   max-height: calc(100% - 145px);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p3 {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p3 {
   min-height: calc(100% - 170px);
   height: calc(100% - 170px);
   max-height: calc(100% - 170px);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .sheet-body .tab.capacities .capacity-list.p4 {
+.coc.cocth.actor .window-content > form .main .content .sheet-body .tab.capacities .capacity-list.p4 {
   min-height: calc(100% - 195px);
   height: calc(100% - 195px);
   max-height: calc(100% - 195px);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .cell {
+.coc.cocth.actor .window-content > form .main .content .cell {
   height: 26px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .cell .field-value {
+.coc.cocth.actor .window-content > form .main .content .cell .field-value {
   font-family: "ChN1Regular", cursive;
   font-size: 16px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .cell select.field-value {
+.coc.cocth.actor .window-content > form .main .content .cell select.field-value {
   font-size: 14px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .cell-header {
+.coc.cocth.actor .window-content > form .main .content .cell-header {
   height: 26px;
   background-color: black;
   color: white;
   font-family: "MyriadProBold", sans-serif;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .drop-field {
+.coc.cocth.actor .window-content > form .main .content .drop-field {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.coc.cocth.actor .window-content .editable .main .content .drop-field .drop-item {
+.coc.cocth.actor .window-content > form .main .content .drop-field .drop-item {
   margin-left: 1px;
   padding-top: 5px;
   height: 26px;
   cursor: pointer;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .drop-field .item {
+.coc.cocth.actor .window-content > form .main .content .drop-field .item {
   padding-top: 3px;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .drop-field .item .item-control {
+.coc.cocth.actor .window-content > form .main .content .drop-field .item .item-control {
   color: #464331c4;
   visibility: hidden;
   -webkit-box-flex: 0;
@@ -1715,7 +1715,7 @@
   border: 1px solid transparent;
 }
 
-.coc.cocth.actor .window-content .editable .main .content .drop-field:hover > .item > .item-control {
+.coc.cocth.actor .window-content > form .main .content .drop-field:hover > .item > .item-control {
   visibility: visible;
 }
 

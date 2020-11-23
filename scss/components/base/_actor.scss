@@ -14,7 +14,7 @@ $headerColor:black;
   height: 100%;
   overflow: hidden;
 
-  .editable {
+  &>form {
     @include nomargin;
     height: 100%;
     overflow: hidden;

@@ -8,7 +8,7 @@ $borderColor:#caad27;
   height: 100%;
   overflow: hidden;
 
-  .editable {
+  &>form {
     @include nomargin;
     height: 100%;
     overflow: hidden;

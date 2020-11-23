@@ -2,9 +2,9 @@
   "name": "coc",
   "title": "Chroniques Oubliées Contemporain",
   "description": "<p>Système Foundry VTT pour <a href='https://www.black-book-editions.fr/catalogue.php?id=477'>Chroniques Oubliées Contemporain</a>.</p><p> *** Rejoignez la communauté Discord FR :<a href='https://discord.gg/pPSDNJk'>https://discord.gg/pPSDNJk</a></p>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minimumCoreVersion": "0.7.3",
-  "compatibleCoreVersion": "0.7.6",
+  "compatibleCoreVersion": "0.7.7",
   "templateVersion": 2,
   "author": "Zigmund",
   "esmodules": [
@@ -65,6 +65,14 @@
       "path": "./packs/tables.db",
       "entity": "RollTable",
       "tag" : "table"
+    },
+    {
+      "name": "macros",
+      "label": "Macros",
+      "system": "coc",
+      "path": "./packs/macros.db",
+      "entity": "Macro",
+      "tag" : "macro"
     }
   ],
   "languages": [
@@ -86,6 +94,6 @@
   "secondaryTokenAttribute": null,
   "url": "https://github.com/ZigmundKreud/coc",
   "manifest": "https://raw.githubusercontent.com/ZigmundKreud/coc/master/system.json",
-  "download": "https://github.com/ZigmundKreud/coc/archive/0.1.0.zip",
+  "download": "https://github.com/ZigmundKreud/coc/archive/0.1.1.zip",
   "license": "LICENCE"
 }

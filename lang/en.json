@@ -303,6 +303,8 @@
   "COC.setting.zombis" : "Zombies",
   "COC.setting.espionnage" : "Spy",
   "COC.setting.surhumains" : "Mutants",
-  "COC.setting.cyberpunk" : "Cyberpunk"
+  "COC.setting.cyberpunk" : "Cyberpunk",
 
+  "COC.notification.MacroItemMissing" : "Your controlled Actor does not have such an item.",
+  "COC.notification.MacroItemUnequiped" : "Item is unequiped"
 }

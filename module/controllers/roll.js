@@ -23,7 +23,7 @@ export class CoCRoll {
         const critrange = 20;
         bonus = (bonus) ? bonus : 0;
         label = (label) ? game.i18n.localize(label) : null;
-        this.skillRollDialog(actor, label, mod, bonus, critrange, superior);
+        return this.skillRollDialog(actor, label, mod, bonus, critrange, superior);
     }
 
     /**
@@ -113,7 +113,7 @@ export class CoCRoll {
         const conMod = data.stats.con.mod;
         const actorData = actor.data;
 
-        Dialog.confirm({
+        return Dialog.confirm({
             title: "Roll Hit Points",
             content: `<p>Êtes sûr de vouloir remplacer les points de vie de <strong>${actor.name}</strong></p>`,
             yes: () => {
@@ -172,7 +172,7 @@ export class CoCRoll {
      */
     static async rollAttributes(data, actor, event) {
         let stats = data.stats;
-        Dialog.confirm({
+        return Dialog.confirm({
             title: "Jet de caractéristiques",
             content: `<p>Êtes sûr de vouloir remplacer les caractériques de <strong>${actor.name}</strong></p>`,
             yes: () => {
@@ -186,15 +186,13 @@ export class CoCRoll {
             },
             defaultYes: false
         });
-        return true;
     }
 
     /* -------------------------------------------- */
     /* ROLL DIALOGS                                 */
-
     /* -------------------------------------------- */
 
-    static async skillRollDialog(actor, label, mod, bonus, critrange, superior=false) {
+    static async skillRollDialog(actor, label, mod, bonus, critrange, superior=false, onEnter = "submit") {
         const rollOptionTpl = 'systems/coc/templates/dialogs/skillroll-dialog.hbs';
         const rollOptionContent = await renderTemplate(rollOptionTpl, {mod: mod, bonus: bonus, critrange: critrange, superior:superior});
         let d = new Dialog({
@@ -221,14 +219,13 @@ export class CoCRoll {
                     }
                 }
             },
-            default: "submit",
-            close: () => {
-            }
+            default: onEnter,
+            close: () => {}
         }, this.options());
-        d.render(true);
+        return d.render(true);
     }
 
-    static async rollWeaponDialog(actor, label, mod, bonus, critrange, formula) {
+    static async rollWeaponDialog(actor, label, mod, bonus, critrange, formula, onEnter = "submit") {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-weapon-dialog.hbs';
         let diff = null;
         if (game.settings.get("coc", "displayDifficulty") && game.user.targets.size > 0) {
@@ -267,14 +264,13 @@ export class CoCRoll {
                     }
                 }
             },
-            default: "submit",
-            close: () => {
-            }
+            default: onEnter,
+            close: () => {}
         }, this.options());
-        d.render(true);
+        return d.render(true);
     }
 
-    static async rollDamageDialog(actor, label, formula, bonus) {
+    static async rollDamageDialog(actor, label, formula, bonus, onEnter = "submit") {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-dmg-dialog.hbs';
         const rollOptionContent = await renderTemplate(rollOptionTpl, {formula: formula, bonus: bonus, custom: ""});
 
@@ -299,11 +295,10 @@ export class CoCRoll {
                     }
                 }
             },
-            default: "submit",
-            close: () => {
-            }
+            default: onEnter,
+            close: () => {}
         }, this.options());
-        d.render(true);
+        return d.render(true);
     }
 
 }
