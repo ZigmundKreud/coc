@@ -54,7 +54,7 @@ export class Macros {
                 let dmg = itemData.data.dmg;
                 CoCRoll.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
             }
-            else return ui.notifications.warn(`${game.i18n.localize("COC.notification.MacroItemMissing")}: "${itemName}"`);
+            else return ui.notifications.warn(`${game.i18n.localize("COC.notification.MacroItemUnequiped")}: "${itemName}"`);
         }
         else{
             return item.sheet.render(true);

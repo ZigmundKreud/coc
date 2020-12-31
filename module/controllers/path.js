@@ -7,7 +7,7 @@ export class Path {
             ui.notifications.error("Vous possédez déjà cette voie.");
             return false;
         } else {
-            // const capsContent = await game.packs.get("cof.capacities").getContent();
+            // const capsContent = await game.packs.get("coc.capacities").getContent();
             // let items = duplicate(capsContent.filter(entity => entity.data.data.path === itemData.data.key));
             // items.push(itemData);
             // return actor.createEmbeddedEntity("OwnedItem", items).then(() => this._render(false));
