@@ -18,7 +18,7 @@ export class CoCRoll {
         let key = elt.attributes["data-rolling"].value;
         let label = eval(`${key}.label`);
         const mod = eval(`${key}.mod`);
-        let bonus = eval(`${key}.bonus`);
+        let bonus = 0;
         let superior = eval(`${key}.superior`);
         const critrange = 20;
         bonus = (bonus) ? bonus : 0;
