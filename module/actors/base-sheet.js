@@ -134,15 +134,11 @@ export class CoCBaseSheet extends ActorSheet {
         const li = $(event.currentTarget).closest(".item");
         const id = li.data("itemId");
         const type = (li.data("itemType")) ? li.data("itemType") : "item";
-        const pack = (li.data("pack")) ? li.data("pack") : null;
-        let entity = null;
-        // look first in actor onwed items
-        entity = this.actor.getOwnedItem(id);
-        if(!entity) {
-            // look into world/compendiums items
-            return Traversal.getEntity(id, type, pack);
-        }
-        if(entity) return entity.sheet.render(true);
+        const pack = (li.data("pack")) ? "coc." + li.data("pack") : null;
+
+        // look first in actor owned items elsewhere into world/compendiums items
+        let entity = this.actor.items.get(id);
+        return (entity) ? entity.sheet.render(true) : Traversal.getDocument(id, type, pack).then(e => e.sheet.render(true));
     }
 
     /* -------------------------------------------- */
