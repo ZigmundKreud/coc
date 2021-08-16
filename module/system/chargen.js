@@ -5,7 +5,7 @@ export class CharacterGeneration {
         const grandTotal = rolls.map(r => r.total).reduce((acc, val) => acc + val);
         renderTemplate(tpl, { rolls:rolls, grandTotal: grandTotal}).then(html => {
             let msgData = {
-                user: game.user._id,
+                user: game.user.id,
                 flavor: flavor,
                 sound: CONFIG.sounds.dice,
                 content : html
@@ -25,7 +25,7 @@ export class CharacterGeneration {
         let stats = [];
         for(let i=0; i<6; i++){
             let r = new Roll("4d6kh3");
-            r.roll();
+            r.roll({"async": false});
             stats[i] = {
                 formula : r.formula,
                 result : r.result,

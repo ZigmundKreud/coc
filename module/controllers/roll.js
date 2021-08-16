@@ -174,7 +174,7 @@ export class CoCRoll {
         let stats = data.stats;
         return Dialog.confirm({
             title: "Jet de caractéristiques",
-            content: `<p>Êtes sûr de vouloir remplacer les caractériques de <strong>${actor.name}</strong></p>`,
+            content: `<p>Êtes-vous sûr de vouloir remplacer les caractéristiques de <strong>${actor.name}</strong> ?</p>`,
             yes: () => {
                 const rolls = CharacterGeneration.statsCommand(actor);
                 let i = 0;
