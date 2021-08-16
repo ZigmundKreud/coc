@@ -9,11 +9,11 @@ export class Trait {
         }
     }
 
-    static removeFromActor(actor, event, entity) {
+    static removeFromActor(actor, entity) {
         console.log(entity);
         Dialog.confirm({
-            title: "Supprimer le trait ?",
-            content: `<p>Etes-vous sûr de vouloir supprimer le trait ${entity.name} ?</p>`,
+            title: "Supprimer le trait",
+            content: `<p>Etes-vous sûr de vouloir supprimer le trait ${entity.name} de ${actor.name} ?</p>`,
             yes: () => {
                 return entity.delete();
             },

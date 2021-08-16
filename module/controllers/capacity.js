@@ -15,8 +15,30 @@ export class Capacity {
         }
     }
 
-    static removeFromActor(actor, event, entity) {
+    /*static removeFromActor(actor, event, entity) {
         return entity.delete();
+    }*/
+
+    /**
+     * Supprime une capacité de la feuille de personnage et met à jour les infos d'un éventuel path
+     * @param {*} actor 
+     * @param {*} capacity 
+     * @returns 
+     */
+     static removeFromActor(actor, capacity) {
+        const capacityData = capacity.data;
+        if (capacityData.data.path) {
+            let path = actor.items.find(item => item.id === capacityData.data.path._id);
+            if (path) {
+                let pathData = duplicate(path.data);
+                if (capacityData.flags.core.sourceId) {
+                    let pcap = pathData.data.capacities.find(c => c.sourceId === capacityData.flags.core.sourceId);
+                    pcap.data.checked = false;
+                }
+                return path.update(pathData).then(() => { return actor.deleteEmbeddedDocuments("Item", [capacity.id]); });
+            }
+        }
+        return actor.deleteEmbeddedDocuments("Item", [capacity.id]);
     }
 
     /**

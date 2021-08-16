@@ -56,20 +56,7 @@ export class Path {
             // return this.addPathsToActor(actor, [{ "itemData": pathData, "sourceId": pathData.data.flags.core.sourceId }]);
         }
     }
-
-    // static addToActor(actor, event, itemData) {
-    //     if (actor.items.filter(item => item.type === "path" && item.data.name === itemData.name).length > 0) {
-    //         ui.notifications.error("Vous possédez déjà cette voie.");
-    //         return false;
-    //     } else {
-    //         // const capsContent = await game.packs.get("coc.capacities").getContent();
-    //         // let items = duplicate(capsContent.filter(entity => entity.data.data.path === itemData.data.key));
-    //         // items.push(itemData);
-    //         // return actor.createEmbeddedEntity("OwnedItem", items).then(() => this._render(false));
-    //         return actor.createEmbeddedDocuments("Item", [itemData], {});
-    //     }
-    // }
-
+    
     static getPathsFromActorByKey(actor, pathKeys) {
         const start = performance.now();
         let items = [];
@@ -93,19 +80,39 @@ export class Path {
         return items;
     }
 
-    static removeFromActor(actor, event, entity) {
-        console.log(entity);
-        const pathData = entity.data;
+    static removeFromActor(actor, entity) {        
         Dialog.confirm({
-            title: "Supprimer la voie ?",
-            content: `<p>Etes-vous sûr de vouloir supprimer la voie ${entity.name} ?</p>`,
+            title: "Supprimer une voie",
+            content: `<p>Etes-vous sûr de vouloir supprimer la ${entity.name} de ${actor.name} ?</p>`,
             yes: () => {
-                let items = actor.items.filter(item => item.data.type === "capacity" && item.data.data.path === pathData.data.key).map(c => c.data._id);
+                const pathData = entity.data;
+                let items = actor.items.filter(item => item.data.type === "capacity" && item.data.data.path._id === pathData._id).map(c => c.data._id);
                 items.push(entity._id);
-                return actor.deleteOwnedItem(items);
+                return actor.deleteEmbeddedDocuments("Item", items);
             },
             defaultYes: true
         });
     }
+
+    /**
+     * 
+     * @param {*} actor 
+     * @param {*} paths 
+     * @returns 
+     */
+         static removePathsFromActor(actor, paths) {
+            let items = [];
+            paths = paths instanceof Array ? paths : [paths];
+            paths.map(path => {
+                let caps = actor.items.filter(item => {
+                    if (item.data.type === "capacity") {
+                        if (item.data.data.path._id === path.id) return true;
+                    }
+                });
+                caps.map(c => items.push(c.id));
+                items.push(path.id);
+            });
+            return actor.deleteEmbeddedDocuments("Item", items);
+        }
 
 }

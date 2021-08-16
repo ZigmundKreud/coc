@@ -124,7 +124,7 @@ export class CoCActorSheet extends CoCBaseSheet {
         // data.capacities = capacities;
         // data.trait = data.items.find(i => i.type === "trait");
         // data.profile = data.items.find(i => i.type === "profile");
-        console.log(data);
+        //console.log(data);
         return data;
     }
 

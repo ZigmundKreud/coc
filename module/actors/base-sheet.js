@@ -158,20 +158,19 @@ export class CoCBaseSheet extends ActorSheet {
         const entity = this.actor.items.get(itemId);
         switch (entity.data.type) {
             case "capacity" :
-                return Capacity.removeFromActor(this.actor, event, entity);
+                return Capacity.removeFromActor(this.actor, entity);
                 break;
             case "trait" :
-                return Trait.removeFromActor(this.actor, event, entity);
+                return Trait.removeFromActor(this.actor, entity);
                 break;
             case "path" :
-                return Path.removeFromActor(this.actor, event, entity);
+                return Path.removeFromActor(this.actor, entity);
                 break;
             case "profile" :
-                return Profile.removeFromActor(this.actor, event, entity);
+                return Profile.removeFromActor(this.actor, entity);
                 break;
-            case "trait" :
             default: {
-                return this.actor.deleteEmbeddedDocuments("Item", [itemId], {});
+                return this.actor.deleteEmbeddedDocuments("Item", [entity], {});
             }
         }
     }

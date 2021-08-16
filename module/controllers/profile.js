@@ -29,34 +29,29 @@ export class Profile {
                     return Path.addPathsToActor(actor, newProfileData.data.paths)
                 });
             });
-
-            // add paths from profile
-            console.log(itemData);
-            // return game.packs.get("coc.paths").getDocuments().then(pack => {
-            //     const ingame = game.items.filter(item => item.data.type === "path");
-            //     let items = ingame.concat(pack.filter(item => itemData.data.paths.includes(item.id))).map(i => i.data);
-            //     console.log(items);
-            //     add profile
-            //     items.push(itemData);
-            //     return actor.createEmbeddedDocuments("Item", items, {});
-            // });
-            return actor.createEmbeddedDocuments("Item", [itemData], {});
         }
     }
 
-    static removeFromActor(actor, event, entity) {
-        const profileData = entity.data;
+     /**
+     * @name removeFromActor
+     * @description Supprime le profil et ses voies de l'acteur en paramètre
+     * @public @static 
+     * 
+     * @param {CocActor} actor l'acteur sur lequel supprimer le profil
+     * @param {CocItem} profile l'item profil à supprimer
+     * @returns 
+     */
+    static removeFromActor(actor, profile) {
+        const paths = actor.items.filter(item => item.type === "path" && item.data.data.profile?._id === profile.id);
         return Dialog.confirm({
-            title: "Supprimer le profil ?",
+            title: "Supprimer le profil",
             content: `<p>Etes-vous sûr de vouloir supprimer le profil de ${actor.name} ?</p>`,
             yes: () => {
-                entity.delete();
-                // // retrieve path data from profile paths
-                // const pathsKeys = Traversal.getItemsOfType("path").filter(p => profileData.data.paths.includes(p.id)).map(p => p.data.key);
-                // let items = Path.getPathsFromActorByKey(actor, pathsKeys);
-                // // add the profile item to be removed
-                // items.push(entity._id);
-                // return actor.deleteOwnedItem(items);
+                Path.removePathsFromActor(actor, paths).then(() => {
+                    ui.notifications.info(parseInt(paths.length) + ((paths.length > 1) ? " voies ont été supprimées." : " voie a été supprimée"));
+                });
+                ui.notifications.info("Le profil a été supprimé.");
+                return actor.deleteEmbeddedDocuments("Item", [profile.id]);
             },
             defaultYes: false
         });
