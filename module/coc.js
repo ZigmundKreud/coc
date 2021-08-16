@@ -9,19 +9,22 @@ import {CoCActor} from "./actors/actor.js";
 import {CoCItem} from "./items/item.js";
 
 import {CoCActorSheet} from "./actors/actor-sheet.js";
+import {CoCNpcSheet} from "./actors/npc-sheet.js";
 import {CoCItemSheet} from "./items/item-sheet.js";
 
-import { registerSystemSettings } from "./settings.js";
-import {preloadHandlebarsTemplates} from "./templates.js";
-import {registerHandlebarsHelpers} from "./helpers.js";
+import { registerSystemSettings } from "./system/settings.js";
+import {preloadHandlebarsTemplates} from "./system/templates.js";
+import {registerHandlebarsHelpers} from "./system/helpers.js";
 
-import {COC} from "./config.js";
+import {COC, System} from "./system/config.js";
 import {Macros} from "./system/macros.js";
 
+import registerHooks from "./system/hooks.js";
+import {UpdateUtils} from "./utils/update-utils.js";
 
-Hooks.once("init", async function () {
+Hooks.once("init", function () {
 
-    console.debug("Initialisation du Système Chroniques Oubliées Contemporain...");
+    console.debug(System.label + " | System Initializing...");
 
     /**
      * Set an initiative formula for the system
@@ -34,8 +37,8 @@ Hooks.once("init", async function () {
     };
 
     // Define custom Entity classes
-    CONFIG.Actor.entityClass = CoCActor;
-    CONFIG.Item.entityClass = CoCItem;
+    CONFIG.Actor.documentClass = CoCActor;
+    CONFIG.Item.documentClass = CoCItem;
 
     // Create a namespace within the game global
     game.coc = {
@@ -49,7 +52,8 @@ Hooks.once("init", async function () {
     Items.unregisterSheet("core", ItemSheet);
 
     // Register actor sheets
-    Actors.registerSheet("coc", CoCActorSheet, {types: ["character", "npc"], makeDefault: true});
+    Actors.registerSheet("coc", CoCActorSheet, {types: ["character"], makeDefault: true});
+    Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: true});
     // Register item sheets
     Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "trait"], makeDefault: true});
 
@@ -61,5 +65,31 @@ Hooks.once("init", async function () {
 
     // Register Handlebars helpers
     registerHandlebarsHelpers();
+
+    // Register hooks
+    registerHooks();
+
+});
+
+/**
+ * Ready hook loads tables, and override's foundry's entity link functions to provide extension to pseudo entities
+ */
+Hooks.once("ready", async () => {
+
+    // await COC.getProfiles();
+    // await COC.getTraits();
+    // await COC.getPaths();
+    // await COC.getCapacities();
+
+    // await UpdateUtils.updateTraits();
+    // await UpdateUtils.updateCapacities();
+    // await UpdateUtils.updateProfiles();
+    // await UpdateUtils.updatePacks();
+
+    if(game.settings.get("coc", "cocthSkin")){
+        game.coc.skin = "cocth";
+    }
+
+    console.debug(System.label + " | System Initialized.");
 
 });

@@ -7,22 +7,19 @@ import {Stats} from "../system/stats.js";
 export class CoCActor extends Actor {
 
     /** @override */
-    prepareBaseData() {
-        super.prepareBaseData();
-        let actorData = this.data;
+    prepareDerivedData() {
+        super.prepareDerivedData();
+        // console.debug("Actor prepareDerivedData");
+
+        const actorData = this.data;
+        // const data = actorData.data;
+        // const flags = actorData.flags;
+
         if(actorData.type === "npc") this.computeNpcMods(actorData);
         else this.computeMods(actorData);
 
         this.computeAttributes(actorData);
         this.computeAttacks(actorData);
-    }
-
-    /* -------------------------------------------- */
-
-    /** @override */
-    prepareDerivedData() {
-        super.prepareDerivedData();
-        let actorData = this.data;
         this.computeDef(actorData);
         this.computeXP(actorData);
     }
@@ -30,7 +27,9 @@ export class CoCActor extends Actor {
     /* -------------------------------------------- */
 
     getProfile(items) {
-        return items.find(i => i.type === "profile")
+        let profile = items.find(i => i.type === "profile")
+        if(profile) return profile.data;
+        else return null;
     }
 
     /* -------------------------------------------- */
@@ -89,9 +88,8 @@ export class CoCActor extends Actor {
         attributes.init.penalty = - parseInt(protection);
         attributes.init.value = attributes.init.base + attributes.init.bonus + attributes.init.penalty;
 
-
-        // attributes.fp.base = 3 + stats.cha.mod;
-        attributes.fp.base = (profile && profile.data.bonuses.fp) ? 2 + stats.cha.mod + profile.data.bonuses.fp : 2 + stats.cha.mod;
+        attributes.fp.base = 3 + stats.cha.mod;
+        attributes.fp.bonus = (profile && profile.data.bonuses.fp) ? profile.data.bonuses.fp : 0;
         attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
         attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
         attributes.rp.value = attributes.rp.base + attributes.rp.bonus;

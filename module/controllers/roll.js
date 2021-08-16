@@ -34,7 +34,7 @@ export class CoCRoll {
      */
     static rollWeapon(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
-        let item = actor.getOwnedItem(li.data("itemId"));
+        let item = actor.items.get(li.data("itemId"));
         const itemData = item.data;
         let label = itemData.name;
         let mod = itemData.data.mod;
@@ -79,7 +79,7 @@ export class CoCRoll {
      */
     static rollSpell(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
-        let item = actor.getOwnedItem(li.data("itemId"));
+        let item = actor.items.get(li.data("itemId"));
         let label = item.data.name;
         let mod = item.data.data.mod;
         let critrange = item.data.data.critrange;
@@ -95,7 +95,7 @@ export class CoCRoll {
      */
     static rollDamage(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
-        let item = actor.getOwnedItem(li.data("itemId"));
+        let item = actor.items.get(li.data("itemId"));
         let label = item.data.name;
         let dmg = item.data.data.dmg;
         return this.rollDamageDialog(actor, label, dmg, 0);
@@ -148,7 +148,7 @@ export class CoCRoll {
                         const r = new Roll(formula);
                         r.roll();
                         r.toMessage({
-                            user: game.user._id,
+                            user: game.user.id,
                             flavor: "<h2>Roll Hit Points</h2>",
                             speaker: ChatMessage.getSpeaker({actor: actor})
                         });

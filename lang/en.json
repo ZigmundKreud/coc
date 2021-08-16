@@ -1,4 +1,16 @@
 {
+  "ACTOR.TypeCharacter": "Character",
+  "ACTOR.TypeNpc": "NPC",
+  "ACTOR.TypeEncounter": "Encounter",
+  "ACTOR.TypeLoot": "Vendor/Loot",
+  "ACTOR.TypeVehicle": "Vehicle",
+
+  "ITEM.TypeItem": "Object",
+  "ITEM.TypeCapacity": "Capacity",
+  "ITEM.TypeTrait": "Trait",
+  "ITEM.TypeProfile": "Profile",
+  "ITEM.TypePath": "Path",
+
   "COC.title": "Chroniques Oubliées Contemporain",
 
   "COC.ui.na": "N.A.",
@@ -82,6 +94,8 @@
   "COC.ui.equipable" :  "Equipable",
   "COC.ui.stackable" : "Stackable",
   "COC.ui.stacksize" : "Max quantity",
+  "COC.ui.activeCapacities": "Active capacities",
+  "COC.ui.CapacityPoints": "Capacity points",
   "COC.placeholders.stacksize" : "Infinite if empty",
 
   "COC.roll.success" : "Success",
@@ -306,5 +320,7 @@
   "COC.setting.cyberpunk" : "Cyberpunk",
 
   "COC.notification.MacroItemMissing" : "Your controlled Actor does not have such an item.",
-  "COC.notification.MacroItemUnequiped" : "Item is unequiped"
+  "COC.notification.MacroItemUnequiped" : "Item is unequiped",
+  "COC.notification.noCapacitySelected" : "No capacity has been selected yet",
+  "COC.notification.noPathSelected": "No path have been added yet"
 }

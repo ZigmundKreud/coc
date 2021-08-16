@@ -140,21 +140,6 @@
       "common": {
         "description": "",
         "attributes": {
-          "hp": {
-            "key" : "hp",
-            "label" : "COC.attributes.hp.label",
-            "abbrev" : "COC.attributes.hp.abbrev",
-            "base": 0,
-            "bonus": 0,
-            "value": 0,
-            "max": 0
-          },
-          "bg": {
-            "key" : "bg",
-            "label" : "COC.attributes.bg.label",
-            "abbrev" : "COC.attributes.bg.abbrev",
-            "value": 0
-          },
           "def": {
             "key" : "def",
             "label" : "COC.attributes.def.label",
@@ -179,6 +164,27 @@
             "enabled": false,
             "base": { "value" : 0, "ignored" : ""},
             "bonus": { "value" : 0, "ignored" : ""},
+            "value": 0
+          },
+          "hd": {
+            "key" : "hd",
+            "label" : "COC.attributes.hd.label",
+            "abbrev" : "COC.attributes.hd.abbrev",
+            "value": "1d4"
+          },
+          "hp": {
+            "key" : "hp",
+            "label" : "COC.attributes.hp.label",
+            "abbrev" : "COC.attributes.hp.abbrev",
+            "base": 0,
+            "bonus": 0,
+            "value": 0,
+            "max": 0
+          },
+          "bg": {
+            "key" : "bg",
+            "label" : "COC.attributes.bg.label",
+            "abbrev" : "COC.attributes.bg.abbrev",
             "value": 0
           },
           "rp": {
@@ -218,12 +224,6 @@
             "bonus": 0,
             "value": 0,
             "max": 0
-          },
-          "hd": {
-            "key" : "hd",
-            "label" : "COC.attributes.hd.label",
-            "abbrev" : "COC.attributes.hd.abbrev",
-            "value": "1d4"
           }
         },
         "alert": {
@@ -243,7 +243,22 @@
             "value": [],
             "custom": ""
           }
-        }
+        },
+        "settings": {
+          "combat": {
+            "folded": []
+          },
+          "inventory": {
+            "folded": []
+          },
+          "capacities": {
+            "folded": []
+          },
+          "effects": {
+            "folded": []
+          }
+        },
+        "moduleData": {}
       }
     },
     "character": {
@@ -276,7 +291,8 @@
         "description" : "",
         "source" : "",
         "key": "",
-        "setting": ""
+        "setting": "",
+        "moduleData": {}
       },
       "equipment" : {
         "def" : 0,

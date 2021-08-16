@@ -1,0 +1,33 @@
+nav.sheet-navigation {
+  border: none;
+
+  &.tabs {
+    font: 14px @font-primary;
+    color: @c-darkbrown;
+    text-align: center;
+    border: none;
+
+    .item {
+      .ellipsis();
+      padding: 5px;
+      border: 1px solid @c-border;
+      border-radius: 10px 10px 0 0;
+      margin: 0 -10px 0 0;
+      height: 28px;
+      box-shadow: 0 0 10px @c-shadow inset;
+      background:#AAA;
+      &:hover {
+        color: @c-darkbrown;
+        background:#CCC;
+        text-shadow: none;
+      }
+      &.active {
+        background:#EEE;
+        color: @c-darkbrown;
+        border: 1px inset @c-border;
+        z-index: 10000;
+        text-shadow: none;
+      }
+    }
+  }
+}

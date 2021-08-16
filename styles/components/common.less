@@ -1,0 +1,46 @@
+// Rollable Links
+.rollable:hover {
+  color: #000;
+  text-shadow: 0 0 10px white;
+  cursor: pointer;
+}
+
+&.rollable:hover .item-image {
+  background-image: url("../../icons/svg/d20-grey.svg") !important;
+}
+&.rollable .item-image:hover {
+  background-image: url("../../icons/svg/d20-black.svg") !important;
+}
+
+.table-header,
+.spacer {
+  min-height: @row-height;
+  height: @row-height;
+  max-height: @row-height;
+}
+.half-spacer {
+  min-height: @row-height / 2;
+  height: @row-height / 2;
+  max-height: @row-height / 2;
+}
+
+.layout {
+  padding: 5px;
+}
+
+.editor {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  .editor-content {
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
+  .tox-tinymce{
+    background-color: white;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
+}

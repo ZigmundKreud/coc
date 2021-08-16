@@ -1,4 +1,16 @@
 {
+  "ACTOR.TypeCharacter": "Personnage",
+  "ACTOR.TypeNpc": "PNJ",
+  "ACTOR.TypeEncounter": "Rencontre",
+  "ACTOR.TypeLoot": "Vendeur/Coffre",
+  "ACTOR.TypeVehicle": "Véhicule",
+
+  "ITEM.TypeItem": "Objet",
+  "ITEM.TypeCapacity": "Capacité",
+  "ITEM.TypeTrait": "Trait",
+  "ITEM.TypeProfile": "Profil",
+  "ITEM.TypePath": "Voie",
+
   "COC.title": "Chroniques Oubliées Contemporain",
 
   "COC.ui.na": "N.C.",
@@ -82,6 +94,8 @@
   "COC.ui.stacksize" : "Quantité max",
   "COC.ui.capacity" : "Capacité",
   "COC.ui.capacities" : "Capacités",
+  "COC.ui.activeCapacities": "Capacités actives",
+  "COC.ui.CapacityPoints": "Points de capacités",
 
   "COC.placeholders.stacksize" : "Quantité infinie si vide",
 
@@ -268,5 +282,7 @@
   "COC.setting.cyberpunk" : "Cyberpunk",
 
   "COC.notification.MacroItemMissing" : "Le personnage ne possède pas cet objet",
-  "COC.notification.MacroItemUnequiped" : "L'objet n'est pas équipé"
+  "COC.notification.MacroItemUnequiped" : "L'objet n'est pas équipé",
+  "COC.notification.noCapacitySelected" : "Aucune capacité n'a été sélectionnée pour le moment",
+  "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment."
 }

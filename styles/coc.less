@@ -1,0 +1,42 @@
+// Import utilities.
+@import 'utils/colors';
+@import 'utils/typography';
+@import 'utils/mixins';
+@import 'utils/variables';
+
+/* Global styles */
+@import 'global/grid';
+@import 'global/flex';
+@import 'global/table';
+@import 'global/chat';
+
+/* Styles limited to co sheets */
+.coc {
+
+  //font-family: $font-primary;
+  @import 'components/common';
+
+  &.base{
+    &.actor {
+      @import 'components/base/actor';
+    }
+    &.item {
+      @import 'components/base/item';
+    }
+    @import 'components/base/tabs';
+  }
+
+  &.cocth{
+    font-family: @font-primary;
+    @import 'components/common';
+    &.actor {
+      @import 'components/cocth/actor';
+    }
+    &.item {
+      @import 'components/cocth/item';
+    }
+    @import 'components/cocth/tabs';
+  }
+  @import 'components/forms';
+
+}
