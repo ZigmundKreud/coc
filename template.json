@@ -194,7 +194,8 @@
             "enabled": false,
             "base": 5,
             "bonus": 0,
-            "value": 5
+            "value": 5,
+            "max": 5
           },
           "fp": {
             "key" : "fp",

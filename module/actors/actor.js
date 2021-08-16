@@ -92,7 +92,7 @@ export class CoCActor extends Actor {
         attributes.fp.bonus = (profile && profile.data.bonuses.fp) ? profile.data.bonuses.fp : 0;
         attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
         attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
-        attributes.rp.value = attributes.rp.base + attributes.rp.bonus;
+        attributes.rp.max = attributes.rp.base + attributes.rp.bonus;
         attributes.hp.max = attributes.hp.base + attributes.hp.bonus;
 
         attributes.mp.base = lvl + stats.cha.mod;

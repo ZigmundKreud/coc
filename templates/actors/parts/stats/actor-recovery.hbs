@@ -1,29 +1,35 @@
 {{#if (isEnabled "useRecovery")}}
     <div class="flexrow table-header recovery-header no-wrap">
-        <div class="flex2 center">
+        <div class="flex8 center">
             <div class="field-label ellipsis">{{ localize 'COC.attributes.recovery.label' }}</div>
         </div>
-        <div class="flex1 center">
+        <div class="flex3 center">
             <div class="field-label">{{ localize 'COC.ui.base' }}</div>
         </div>
-        <div class="flex1 center">
+        <div class="flex3 center">
             <div class="field-label">{{ localize 'COC.ui.bonus' }}</div>
         </div>
-        <div class="flex1 center">
-            <div class="field-label">{{ localize 'COC.ui.value' }}</div>
+        <div class="flex3 center">
+            <div class="field-label">{{ localize 'COC.ui.max' }}</div>
+        </div>
+        <div class="flex3 center">
+            <div class="field-label">{{ localize 'COC.ui.current' }}</div>
         </div>
     </div>
     <div class="flexrow no-wrap recovery">
-        <div class="flex2 center cell-header">
+        <div class="flex8 center cell-header">
             <span class="field-label ellipsis"><i class="fas fa-heartbeat"></i>&nbsp;{{ localize 'COC.attributes.rp.abbrev' }}</span>
         </div>
-        <div class="flex1 center cell">
+        <div class="flex3 center cell">
             <input class="field-value" name="data.attributes.rp.base" type="text" value="{{actor.data.attributes.rp.base}}" placeholder="Base" data-dtype="Number"/>
         </div>
-        <div class="flex1 center cell">
+        <div class="flex3 center cell">
             <input class="field-value" name="data.attributes.rp.bonus" type="text" value="{{actor.data.attributes.rp.bonus}}" placeholder="Bonus" data-dtype="Number"/>
         </div>
-        <div class="flex1 center cell">
+        <div class="flex3 center cell">
+            <input class="field-value" name="data.attributes.rp.max" type="text" readonly="true" value="{{actor.data.attributes.rp.max}}" placeholder="Max" data-dtype="Number"/>
+        </div>        
+        <div class="flex3 center cell">
             <input class="field-value" name="data.attributes.rp.value" type="text" value="{{actor.data.attributes.rp.value}}" placeholder="Value" data-dtype="Number"/>
         </div>
     </div>
