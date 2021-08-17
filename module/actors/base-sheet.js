@@ -9,6 +9,7 @@ import {Profile} from "../controllers/profile.js";
 import {Traversal} from "../utils/traversal.js";
 import {Trait} from "../controllers/trait.js";
 import {ArrayUtils} from "../utils/array-utils.js";
+import {Inventory} from "../controllers/inventory.js";
 
 export class CoCBaseSheet extends ActorSheet {
 
@@ -95,32 +96,12 @@ export class CoCBaseSheet extends ActorSheet {
             });
         });
 
-        // Equip/Unequip items
-        html.find('.item-equip').click(ev => {
-            ev.preventDefault();
-            const elt = $(ev.currentTarget).parents(".item");
-            const item = this.actor.items.get(elt.data("itemId"));
-            let itemData = item.data;
-            itemData.data.worn = !itemData.data.worn;
-            return this.actor.updateEmbeddedDocuments("Item", [itemData], {}).then(() => this.render(true));
-        });
+        // Equip/Unequip item
+        html.find('.item-equip').click(this._onToggleEquip.bind(this));
 
-        html.find('.item-qty').click(ev => {
-            ev.preventDefault();
-            const li = $(ev.currentTarget).closest(".item");
-            const item = this.actor.items.get(li.data("itemId"));
-            let itemData = item.data;
-            itemData.data.qty = (itemData.data.qty) ? itemData.data.qty + 1 : 1;
-            return this.actor.updateEmbeddedDocuments("Item", [itemData], {}).then(() => this.render(true));
-        });
-        html.find('.item-qty').contextmenu(ev => {
-            ev.preventDefault();
-            const li = $(ev.currentTarget).closest(".item");
-            const item = this.actor.items.get(li.data("itemId"));
-            let itemData = item.data;
-            itemData.data.qty = (itemData.data.qty > 0) ? itemData.data.qty -1 : 0;
-            return this.actor.updateEmbeddedDocuments("Item", [itemData], {}).then(() => this.render(true));
-        });
+        // Stackable item
+        html.find('.item-qty').click(this._onIncrease.bind(this));
+        html.find('.item-qty').contextmenu(this._onDecrease.bind(this));
 
         // html.find('.item-name, .item-edit').click(this._onEditItem.bind(this));
         html.find('.item-edit').click(this._onEditItem.bind(this));
@@ -139,6 +120,22 @@ export class CoCBaseSheet extends ActorSheet {
         // look first in actor owned items elsewhere into world/compendiums items
         let entity = this.actor.items.get(id);
         return (entity) ? entity.sheet.render(true) : Traversal.getDocument(id, type, pack).then(e => e.sheet.render(true));
+    }
+
+    _onToggleEquip(event) {
+        event.preventDefault();
+        //AudioHelper.play({ src: "/systems/cof/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+        return Inventory.onToggleEquip(this.actor, event);
+    }
+
+    _onIncrease(event) {
+        event.preventDefault();
+        return Inventory.onModifyQuantity(this.actor, event, 1, false);
+    }
+
+    _onDecrease(event) {
+        event.preventDefault();
+        return Inventory.onModifyQuantity(this.actor, event, 1, true);
     }
 
     /* -------------------------------------------- */
