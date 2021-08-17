@@ -35,14 +35,14 @@ export class CoCActor extends Actor {
     /* -------------------------------------------- */
 
     getProtection(items) {
-        const protections = items.filter(i => i.type === "item" && i.data.worn && i.data.def).map(i => i.data.def);
+        const protections = items.filter(i => i.type === "item" && i.data.data.worn && i.data.data.def).map(i => i.data.data.def);
         return protections.reduce((acc, curr) => acc + curr, 0);
     }
 
     /* -------------------------------------------- */
 
     getResistance(items) {
-        const resistances = items.filter(i => i.type === "item" && i.data.worn && i.data.dr).map(i => i.data.dr);
+        const resistances = items.filter(i => i.type === "item" && i.data.data.worn && i.data.data.dr).map(i => i.data.data.dr);
         return resistances.reduce((acc, curr) => acc + curr, 0);
     }
 
@@ -50,7 +50,7 @@ export class CoCActor extends Actor {
 
     getCurrentXP(items) {
         const capacities = items.filter(i => i.type === "capacity");
-        return capacities.map(cap => (cap.data.rank > 2) ? 2 : 1).reduce((acc, curr) => acc + curr, 0);
+        return capacities.map(cap => (cap.data.data.rank > 2) ? 2 : 1).reduce((acc, curr) => acc + curr, 0);
     }
 
     /* -------------------------------------------- */
