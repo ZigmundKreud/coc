@@ -260,7 +260,7 @@ export class CoCItemSheet extends ItemSheet {
         // const labels = this.item.labels;
 
         if ( item.type === "item" ) {
-            const entries = Object.entries(item.data.properties)
+            const entries = Object.entries(item.data.data.properties)
             props.push(...entries.filter(e => e[1] === true).map(e => {
                 return game.coc.config.itemProperties[e[0]]
             }));
