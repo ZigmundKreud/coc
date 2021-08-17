@@ -87,7 +87,7 @@ export class Path {
             yes: () => {
                 const pathData = entity.data;
                 let items = actor.items.filter(item => item.data.type === "capacity" && item.data.data.path._id === pathData._id).map(c => c.data._id);
-                items.push(entity._id);
+                items.push(entity.id);
                 return actor.deleteEmbeddedDocuments("Item", items);
             },
             defaultYes: true

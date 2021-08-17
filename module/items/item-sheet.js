@@ -185,7 +185,7 @@ export class CoCItemSheet extends ItemSheet {
             case "path" : pack = "coc.paths"; break;
             case "capacity" : pack = "coc.capacities"; break;
         }
-        if(pack) return Traversal.getEntity(id, "item", pack).then(e => { if(e) e.sheet.render(true) });
+        if(pack) return Traversal.getDocument(id, "item", pack).then(e => { if(e) e.sheet.render(true) });
     }
 
     /* -------------------------------------------- */
@@ -209,6 +209,7 @@ export class CoCItemSheet extends ItemSheet {
 
     /** @override */
     getData(options) {
+        /*
         const context = super.getData(options);
         const data = {
             config : game.coc.config,
@@ -233,6 +234,18 @@ export class CoCItemSheet extends ItemSheet {
         // }
         console.log(data);
         return data;
+        */
+        const data = super.getData(options);
+        const itemData = data.data;
+
+        data.labels = this.item.labels;
+        data.config = game.coc.config;
+        data.itemType = data.item.type.titleCase();
+        data.itemProperties = this._getItemProperties(data.item);
+        data.item = itemData;
+        data.data = itemData.data;
+        
+        return data;       
     }
 
     /* -------------------------------------------- */
