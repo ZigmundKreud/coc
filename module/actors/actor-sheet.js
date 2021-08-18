@@ -143,31 +143,6 @@ export class CoCActorSheet extends CoCBaseSheet {
             }
         });
 
-        // console.log(actor.data);
-        // console.log(actor.data.data);
-        // context.data.stats = actor.data.data.stats;
-        // context.data.attacks = actor.data.data.attacks;
-        // actor.data.attributes = Object.values(actor.data.data.attributes);
-        // actor.data.aptitudes = Object.values(actor.data.data.aptitudes);
-        // actor.data.resources = Object.values(actor.data.data.resources);
-        // actor.data.equipment = actor.data.items.filter(i => i.type === "item");
-
-        // const idx = await game.packs.get("coc.capacities").getContent();
-        // const caps = idx.concat(game.items.filter(item => item.data.type === "capacity")).map(e => e.data);
-        // let paths = data.items.filter(i => i.type === "path");
-        // let capacities = data.items.filter(i => i.type === "capacity");
-        // const capKeys = capacities.map(c => c.data.key);
-        // for(let p of paths){
-        //     p.capacities = p.data.capacities.map(cid => {
-        //         let cap = caps.find(c => c._id === cid);
-        //         cap.checked = capKeys.includes(cap.data.key);
-        //         return cap;
-        //     });
-        // }
-        // data.paths = paths;
-        // data.capacities = capacities;
-        // data.trait = data.items.find(i => i.type === "trait");
-        // data.profile = data.items.find(i => i.type === "profile");
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }

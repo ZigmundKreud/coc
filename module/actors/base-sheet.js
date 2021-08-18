@@ -54,27 +54,17 @@ export class CoCBaseSheet extends ActorSheet {
             return this._onRoll(ev);
         });
 
-        // Check/Uncheck capacities
-        html.find('.capacity-checked').click(ev => {
-            ev.preventDefault();
-            return Capacity.toggleCheck(this.actor, ev, true);
-        });
-        html.find('.capacity-unchecked').click(ev => {
-            ev.preventDefault();
-            return Capacity.toggleCheck(this.actor, ev, false);
-        });
-        html.find('.capacity-create').click(ev => {
-            ev.preventDefault();
-            return Capacity.create(this.actor, ev);
-        });
-        html.find('.capacity-toggle').click(ev => {
-            ev.preventDefault();
-            const li = $(ev.currentTarget).closest(".capacity");
-            li.find(".capacity-description").slideToggle(200);
-        });
+        // Equip/Unequip item
+        html.find('.inventory-equip').click(this._onToggleEquip.bind(this));
 
+        // Stackable item
+        html.find('.inventory-qty').click(this._onIncrease.bind(this));
+        html.find('.inventory-qty').contextmenu(this._onDecrease.bind(this));
+
+        // html.find('.item-name, .item-edit').click(this._onEditItem.bind(this));
+        html.find('.item-edit').click(this._onEditItem.bind(this));
         html.find('.item .item-name h4').click(this._onItemSummary.bind(this));
-
+        html.find('.item-delete').click(this._onDeleteItem.bind(this));
         html.find('.foldable h3.item-name').click(ev => {
             ev.preventDefault();
             const li = $(ev.currentTarget);
@@ -98,17 +88,23 @@ export class CoCBaseSheet extends ActorSheet {
             });
         });
 
-        // Equip/Unequip item
-        html.find('.inventory-equip').click(this._onToggleEquip.bind(this));
-
-        // Stackable item
-        html.find('.inventory-qty').click(this._onIncrease.bind(this));
-        html.find('.inventory-qty').contextmenu(this._onDecrease.bind(this));
-
-        // html.find('.item-name, .item-edit').click(this._onEditItem.bind(this));
-        html.find('.item-edit').click(this._onEditItem.bind(this));
-        html.find('.item-delete').click(ev => {
-            return this._onDeleteItem(ev);
+        // Check/Uncheck capacities
+        html.find('.capacity-checked').click(ev => {
+            ev.preventDefault();
+            return Capacity.toggleCheck(this.actor, ev, true);
+        });
+        html.find('.capacity-unchecked').click(ev => {
+            ev.preventDefault();
+            return Capacity.toggleCheck(this.actor, ev, false);
+        });
+        html.find('.capacity-create').click(ev => {
+            ev.preventDefault();
+            return Capacity.create(this.actor, ev);
+        });
+        html.find('.capacity-toggle').click(ev => {
+            ev.preventDefault();
+            const li = $(ev.currentTarget).closest(".capacity");
+            li.find(".capacity-description").slideToggle(200);
         });
     }
 
@@ -171,28 +167,18 @@ export class CoCBaseSheet extends ActorSheet {
      * @param event the roll event
      * @private
      */
-    _onDeleteItem(event) {
-        if (!this.actor.isOwner) return false;
+     _onDeleteItem(event) {
         event.preventDefault();
         const li = $(event.currentTarget).parents(".item");
-        const itemId = li.data("itemId");
-        const entity = this.actor.items.get(itemId);
+        let itemId = li.data("itemId");
+        const entity = this.actor.items.find(item => item.id === itemId);
+        itemId = itemId instanceof Array ? itemId : [itemId];
         switch (entity.data.type) {
-            case "capacity" :
-                return Capacity.removeFromActor(this.actor, entity);
-                break;
-            case "trait" :
-                return Trait.removeFromActor(this.actor, entity);
-                break;
-            case "path" :
-                return Path.removeFromActor(this.actor, entity);
-                break;
-            case "profile" :
-                return Profile.removeFromActor(this.actor, entity);
-                break;
-            default: {
-                return this.actor.deleteEmbeddedDocuments("Item", [entity], {});
-            }
+            case "capacity": return Capacity.removeFromActor(this.actor, entity);
+            case "path": return Path.removeFromActor(this.actor, entity);
+            case "profile": return Profile.removeFromActor(this.actor, entity);
+            case "species": return Species.removeFromActor(this.actor, entity);
+            default: return this.actor.deleteEmbeddedDocuments("Item", itemId);
         }
     }
 
