@@ -1,1 +1,66 @@
+<div class="flexrow">
+    <div class="flex1 center bg-default">
+        <span class="field-label">{{ localize 'COC.details.gender' }}</span>
+    </div>
+    <div class="flex4 cell">
+        <input class="field-value" name="data.details.gender" type="text" value="{{actor.data.details.gender}}" placeholder="" data-dtype="String"/>
+    </div>
+</div>
+<div class="flexrow">
+    <div class="flex1 center bg-default">
+        <span class="field-label">{{ localize "COC.details.age" }}</span>
+    </div>
+    <div class="flex4 cell">
+        <input class="field-value" name="data.details.age" type="text" value="{{actor.data.details.age}}" placeholder="" data-dtype="String"/>
+    </div>
+</div>
+<div class="flexrow">
+    <div class="flex1 center bg-default">
+        <span class="field-label">{{ localize "COC.details.height" }}</span>
+    </div>
+    <div class="flex4 cell">
+        <input class="field-value" name="data.details.height" type="text" value="{{actor.data.details.height}}" placeholder="" data-dtype="String"/>
+    </div>
+</div>
+<div class="flexrow">
+    <div class="flex1 center bg-default">
+        <span class="field-label">{{ localize "COC.details.weight" }}</span>
+    </div>
+    <div class="flex4 cell">
+        <input class="field-value" name="data.details.weight" type="text" value="{{actor.data.details.weight}}" placeholder="" data-dtype="String"/>
+    </div>
+</div>
+<div class="flexrow">
+    <div class="flex1 center bg-default">
+        <span class="field-label">{{ localize "COC.details.eyes" }}</span>
+    </div>
+    <div class="flex4 cell">
+        <input class="field-value" name="data.details.eyes" type="text" value="{{actor.data.details.eyes}}" placeholder="" data-dtype="String"/>
+    </div>
+</div>
+<div class="flexrow">
+    <div class="flex1 center bg-default">
+        <span class="field-label">{{ localize "COC.details.hair" }}</span>
+    </div>
+    <div class="flex4 cell">
+        <input class="field-value" name="data.details.hair" type="text" value="{{actor.data.details.hair}}" placeholder="" data-dtype="String"/>
+    </div>
+</div>
+{{#if actor.data.milieu}}
+<div class="flexrow">
+    <div class="flex1 center bg-default">
+        <span class="field-label">{{ localize 'COC.ui.milieu' }}</span>
+    </div>
+    <div class="flex4 cell">
+        <input class="field-value sans" name="data.milieu" type="text" value="{{actor.data.milieu}}" placeholder="{{ localize 'COC.ui.milieu' }}" data-dtype="String"/>
+    </div>
+</div>
+{{/if}}
+<hr/>
+<div class="flexrow">
+    <div class="flex">
+        <span class="field-label">{{ localize "COC.details.description" }}</span>
+    </div>
+</div>
+<hr/>
 {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
