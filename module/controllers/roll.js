@@ -301,4 +301,52 @@ export class CoCRoll {
         return d.render(true);
     }
 
+   /**
+     *  Handles recovery roll
+     * 
+     * @param {*} data 
+     * @param {*} actor 
+     * @param {*} withHPrecovery true to Get HitPoints
+     * @returns 
+     */
+    static rollRecoveryUse(data, actor, withHPrecovery) {
+        let recoveryPoints = data.attributes.rp.value;
+        if (!recoveryPoints > 0) return;
+
+        let hp = data.attributes.hp;
+        let rp = data.attributes.rp;
+        const level = data.level.value;
+        const conMod = data.stats.con.mod;
+        const actorData = actor.data;
+    
+        if (!withHPrecovery) {
+            rp.value -= 1;
+            actor.update({ 'data.attributes.rp': rp });
+        }
+        else {
+
+        Dialog.confirm({
+                title: game.i18n.format("COC.dialog.spendRecoveryPoint.title"),
+                content: `<p>Êtes-vous sûr de vouloir dépenser 1 point de récupération ?`,
+                yes: async () => {
+                        const hd = actorData.data.attributes.hd.value;
+                        const hdmax = parseInt(hd.split("d")[1]);
+                        const bonus = level + conMod;
+                        const formula = `1d${hdmax} + ${bonus}`;
+                        const r = new Roll(formula);
+                        await r.roll({"async": true});
+                        r.toMessage({
+                                user: game.user.id,
+                                flavor: "<h2>Dépense un point de récupération</h2>",
+                                speaker: ChatMessage.getSpeaker({ actor: actor })
+                        });
+    
+                        hp.value += r.total;
+                        rp.value -= 1;
+                        actor.update({ 'data.attributes.hp': hp, 'data.attributes.rp': rp });
+                },
+                defaultYes: false
+            });
+        }   
+    }
 }

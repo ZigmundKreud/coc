@@ -284,5 +284,7 @@
   "COC.notification.MacroItemMissing" : "Le personnage ne possède pas cet objet",
   "COC.notification.MacroItemUnequiped" : "L'objet n'est pas équipé",
   "COC.notification.noCapacitySelected" : "Aucune capacité n'a été sélectionnée pour le moment",
-  "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment."
+  "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment.",
+
+  "COC.dialog.spendRecoveryPoint.title": "Dépenser un point de récupération"
 }

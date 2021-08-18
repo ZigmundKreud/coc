@@ -260,31 +260,23 @@ export class CoCBaseSheet extends ActorSheet {
         const elt = $(event.currentTarget)[0];
         const rolltype = elt.attributes["data-roll-type"].value;
         let data = await this.getData();
+        // SHIFT + click
+        if (event.shiftKey) {
+            switch (rolltype) {
+                // Spend recovery point without getting hit points
+                case "recovery": return CoCRoll.rollRecoveryUse(data.data, this.actor, false)    
+            }
+        }
         switch (rolltype) {
-            case "skillcheck" :
-                return CoCRoll.skillCheck(data.data, this.actor, event);
-                break;
-            case "weapon" :
-                return CoCRoll.rollWeapon(data.data, this.actor, event);
-                break;
-            case "encounter-weapon" :
-                return CoCRoll.rollEncounterWeapon(data.data, this.actor, event);
-                break;
-            case "encounter-damage" :
-                return CoCRoll.rollEncounterDamage(data.data, this.actor, event);
-                break;
-            case "spell" :
-                return CoCRoll.rollSpell(data.data, this.actor, event);
-                break;
-            case "damage" :
-                return CoCRoll.rollDamage(data.data, this.actor, event);
-                break;
-            case "hp" :
-                return CoCRoll.rollHitPoints(data.data, this.actor, event);
-                break;
-            case "attributes" :
-                return CoCRoll.rollAttributes(data.data, this.actor, event);
-                break;
+            case "skillcheck" : return CoCRoll.skillCheck(data.data, this.actor, event);
+            case "weapon" : return CoCRoll.rollWeapon(data.data, this.actor, event);
+            case "encounter-weapon" : return CoCRoll.rollEncounterWeapon(data.data, this.actor, event);
+            case "encounter-damage" : return CoCRoll.rollEncounterDamage(data.data, this.actor, event);
+            case "spell" : return CoCRoll.rollSpell(data.data, this.actor, event);
+            case "damage" : return CoCRoll.rollDamage(data.data, this.actor, event);
+            case "hp" : return CoCRoll.rollHitPoints(data.data, this.actor, event);
+            case "attributes" : return CoCRoll.rollAttributes(data.data, this.actor, event);
+            case "recovery": return CoCRoll.rollRecoveryUse(data.data, this.actor, true);
         }
     }
 }

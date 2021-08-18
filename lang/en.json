@@ -322,5 +322,7 @@
   "COC.notification.MacroItemMissing" : "Your controlled Actor does not have such an item.",
   "COC.notification.MacroItemUnequiped" : "Item is unequiped",
   "COC.notification.noCapacitySelected" : "No capacity has been selected yet",
-  "COC.notification.noPathSelected": "No path have been added yet"
+  "COC.notification.noPathSelected": "No path have been added yet",
+
+  "COC.dialog.spendRecoveryPoint.title": "Spend one Recovery Point"
 }
