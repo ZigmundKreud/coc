@@ -67,7 +67,6 @@ export class CoCActor extends Actor {
 
     computeNpcMods(actorData) {
         let stats = actorData.data.stats;
-        let attributes = actorData.data.attributes;
         for(const stat of Object.values(stats)){
             stat.value = Stats.getStatValueFromMod(stat.mod);
         }
@@ -181,5 +180,44 @@ export class CoCActor extends Actor {
             alert.msg = null;
             alert.type = null;
         }
+    }
+
+    /**
+     * @name computeWeaponMod
+     * @description calcule le modificateur final pour une arme
+     *  Total = Mod lié à la caractéristique + Mod lié au bonus 
+     * @param {int} itemModStat le modificateur issue de la caractéristique
+     * @param {int} itemModBonus le modificateur issue du bonus
+
+     * @returns {int} retourne mod
+     */       
+     computeWeaponMod(itemModStat, itemModBonus) {
+        let total = 0;
+
+        const fromStat = eval("this.data.data." + itemModStat);        
+        total = fromStat + itemModBonus;
+
+        return total;
+    }
+
+    /**
+     * @name computeDm
+     * @description calculer les dégâts d'une arme
+
+    * @param {string} itemDmgBase le modificateur issue de la caractéristique
+     * @param {string} itemDmgStat la caractéristique utilisée pour les dégâts
+     * @param {int} itemDmgBonus le bonus aux dégâts
+
+     * @returns {string} retourne la chaine de caractères utilisée pour le lancer de dés
+     */      
+    computeDm(itemDmgBase, itemDmgStat, itemDmgBonus) {
+        let total = itemDmgBase;
+        
+        const fromStat = eval("this.data.data." + itemDmgStat);
+        const fromBonus = (fromStat) ? parseInt(fromStat) + itemDmgBonus : itemDmgBonus;
+        if (fromBonus < 0) total = itemDmgBase + " - " + parseInt(-fromBonus);
+        if (fromBonus > 0) total = itemDmgBase + " + " + fromBonus;
+
+        return total;
     }
 }

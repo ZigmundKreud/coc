@@ -100,6 +100,49 @@ export class CoCActorSheet extends CoCBaseSheet {
         // Labels and filters
         data.labels = this.actor.labels || {};
 
+        // Combat and Inventory
+        data.combat = {
+            count: data.items.filter(i => i.data.worn).length,
+            categories: []
+        };
+        data.inventory = {
+            count: data.items.filter(i => i.type === "item").length,
+            categories: []
+        };
+        for (const category of Object.keys(game.coc.config.itemCategories)) {
+            data.combat.categories.push({
+                id: category,
+                label: game.coc.config.itemCategories[category],
+                items: Object.values(data.items).filter(item => item.type === "item" && item.data.subtype === category && item.data.worn).sort((a, b) => (a.name > b.name) ? 1 : -1)
+            });
+            data.inventory.categories.push({
+                id: category,
+                label: "COC.category." + category,
+                items: Object.values(data.items).filter(item => item.type === "item" && item.data.subtype === category).sort((a, b) => (a.name > b.name) ? 1 : -1)
+            });
+        }
+
+        data.combat.categories.forEach(category => {
+            if (category.items.length > 0) {
+                category.items.forEach(item => {
+                    if (item.data.properties?.weapon) {
+                        // Compute MOD
+                        const itemModStat = item.data.skill.split("@")[1];
+                        const itemModBonus = parseInt(item.data.skillBonus);
+
+                        item.data.mod = this.actor.computeWeaponMod(itemModStat, itemModBonus);
+
+                        // Compute DM
+                        const itemDmgBase = item.data.dmgBase;
+                        const itemDmgStat = item.data.dmgStat.split("@")[1];
+                        const itemDmgBonus = parseInt(item.data.dmgBonus);
+
+                        item.data.dmg = this.actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
+                    }
+                });
+            }
+        });
+
         // console.log(actor.data);
         // console.log(actor.data.data);
         // context.data.stats = actor.data.data.stats;

@@ -97,11 +97,11 @@ export class CoCBaseSheet extends ActorSheet {
         });
 
         // Equip/Unequip item
-        html.find('.item-equip').click(this._onToggleEquip.bind(this));
+        html.find('.inventory-equip').click(this._onToggleEquip.bind(this));
 
         // Stackable item
-        html.find('.item-qty').click(this._onIncrease.bind(this));
-        html.find('.item-qty').contextmenu(this._onDecrease.bind(this));
+        html.find('.inventory-qty').click(this._onIncrease.bind(this));
+        html.find('.inventory-qty').contextmenu(this._onDecrease.bind(this));
 
         // html.find('.item-name, .item-edit').click(this._onEditItem.bind(this));
         html.find('.item-edit').click(this._onEditItem.bind(this));

@@ -174,8 +174,14 @@ export const registerHandlebarsHelpers = function () {
     });
 
     Handlebars.registerHelper('includesKey', function (items, type, key) {
-        // console.log(items);
         return items.filter(i => i.type === type).map(i => i.data.key).includes(key);
     });
 
+    Handlebars.registerHelper('isCategoryIn', function () {
+        for (let index = 1; index < arguments.length; index++) {
+            const element = arguments[index];
+            if (element === arguments[0]) return true;
+        }
+        return false;
+    });
 }

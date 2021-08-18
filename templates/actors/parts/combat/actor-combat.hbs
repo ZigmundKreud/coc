@@ -1,18 +1,24 @@
-<ol class="inventory-list">
-    <!-- MELEE -->
-    <li class="inventory-header flexrow">
-        <h3 class="item-name flexrow">Attaques</h3>
-        <div class="item-detail">Mod</div>
-        <div class="item-detail">Critique</div>
-        <div class="item-damage">DM</div>
-        <div class="item-controls">
-            <a class="item-control item-create weapon-add" title="Ajouter une attaque"><i class="fas fa-plus"></i>&nbsp; Aj.</a>
-            <!--                <a class="item-control" title="Ajouter une attaque"><i class="fas fa-plus"></i>&nbsp;Add</a>-->
-        </div>
-        <!--                <a class="item-control weapon-add btn" title="Ajouter une attaque" style="padding:3px"><i class="fas fa-plus"></i></a>-->
-        <!--                <a class="weapons-control weapon-remove btn" title="Supprimer une attaque" style="padding:3px"><i class="fas fa-minus"></i></a>-->
-    </li>
-    {{#each actor.data.weapons as |weapon id|}}
-        {{> "systems/coc/templates/actors/parts/combat/actor-combat-item.hbs" this id=id}}
+{{#if (gt combat.count 0)}}
+    {{#each combat.categories as |category id|}}
+        {{#if (gt category.items.length 0)}}
+            <ol class="inventory-list foldable {{#if (includes ../folded.combat category.id)}}folded{{/if}}" data-tab="combat" data-category="{{category.id}}">
+                <li class="inventory-header flexrow">
+                    <h3 class="item-name flexrow">{{localize category.label}}</h3>
+                    {{#if (isCategoryIn category.id "armor" "shield" "spell")}}<div class="item-detail">Def</div>{{else}}<div class="item-detail"></div>{{/if}}
+                    {{#if (isCategoryIn category.id "ranged" "spell")}}<div class="item-detail">Portée(m)</div>{{else}}<div class="item-detail"></div>{{/if}}
+                    {{#if (isCategoryIn category.id "melee" "ranged" "spell")}}<div class="item-detail">Crit</div>{{else}}<div class="item-detail"></div>{{/if}}
+                    {{#if (isCategoryIn category.id "melee" "ranged" "spell")}}<div class="item-detail">Mod</div>{{else}}<div class="item-detail"></div>{{/if}}
+                    {{#if (isCategoryIn category.id "melee" "ranged" "spell")}}<div class="item-detail">DM</div>{{else}}<div class="item-detail"></div>{{/if}}
+                    <div class="item-controls"></div>
+                </li>
+                <ol class="item-list" {{#if (includes ../folded.combat category.id)}}style="display: none;"{{/if}}>
+                {{#each category.items as |item id|}}
+                    {{> "systems/coc/templates/actors/parts/combat/actor-combat-item.hbs" item}}
+                {{/each}}
+                </ol>
+            </ol>
+        {{/if}}
     {{/each}}
-</ol>
+{{else}}
+    <p class="empty">Aucun objet équipé.</p>
+{{/if}}
