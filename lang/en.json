@@ -55,6 +55,9 @@
   "COC.ui.pathtype" : "Path type",
   "COC.ui.capacity" : "Capacity",
   "COC.ui.capacities" : "Capacities",
+  "COC.ui.formula" : "Formula",
+  "COC.ui.customFormula" : "Custom Formula",
+  "COC.ui.bonusMalus" : "Bonus/Malus",
   "COC.ui.activecaps" : "Active capacities",
   "COC.ui.spell" : "Spell",
   "COC.ui.spellcasting" : "Spellcasting",
@@ -97,11 +100,21 @@
   "COC.ui.activeCapacities": "Active capacities",
   "COC.ui.CapacityPoints": "Capacity points",
   "COC.placeholders.stacksize" : "Infinite if empty",
+  "COC.ui.dr.abbrev": "DR",
+  "COC.ui.applyDamage": "Apply damage",
+  "COC.ui.applyHalfDamage": "Apply half damage",
+  "COC.ui.applyDoubleDamage": "Apply double damage",
+  "COC.ui.applyHealing" : "Apply healing",
 
+  "COC.roll.skillcheck" : "Skill check",
   "COC.roll.success" : "Success",
   "COC.roll.critical" : "Critical",
   "COC.roll.failure" : "Failure",
   "COC.roll.fumble" : "Fumble",
+  "COC.roll.dmg" : "Damage",
+  "COC.roll.criticalDmg" : "Critical Damage",
+  "COC.roll.heal" : "Healing",
+  "COC.roll.criticalHeal" : "Critical Healing",
 
   "COC.None": "--",
   "COC.tabs.stats": "Stats",
@@ -324,5 +337,8 @@
   "COC.notification.noCapacitySelected" : "No capacity has been selected yet",
   "COC.notification.noPathSelected": "No path have been added yet",
 
+  "COC.dialog.rollWeapon.title": "Weapon Roll",
+  "COC.dialog.rollDamage.title": "Damage Roll",
+  "COC.dialog.rollHitPoints.title": "Hit Points Roll",
   "COC.dialog.spendRecoveryPoint.title": "Spend one Recovery Point"
 }

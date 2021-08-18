@@ -92,17 +92,30 @@
   "COC.ui.equipable" :  "Équipable",
   "COC.ui.stackable" : "Empilable",
   "COC.ui.stacksize" : "Quantité max",
+  "COC.ui.formula" : "Formule",
+  "COC.ui.customFormula" : "Formule personnalisée",
+  "COC.ui.bonusMalus" : "Bonus/Malus",  
   "COC.ui.capacity" : "Capacité",
   "COC.ui.capacities" : "Capacités",
   "COC.ui.activeCapacities": "Capacités actives",
   "COC.ui.CapacityPoints": "Points de capacités",
+  "COC.ui.dr.abbrev": "RD",
+  "COC.ui.applyDamage": "Appliquer les dégâts",
+  "COC.ui.applyHalfDamage": "Appliquer la moitié des dégâts",
+  "COC.ui.applyDoubleDamage": "Appliquer le double des dégâts",
+  "COC.ui.applyHealing" : "Appliquer les soins",
 
   "COC.placeholders.stacksize" : "Quantité infinie si vide",
 
+  "COC.roll.skillcheck" : "Test de compétence",
   "COC.roll.success" : "Succès",
   "COC.roll.critical" : "Critique",
   "COC.roll.failure" : "Échec",
   "COC.roll.fumble" : "Échec critique",
+  "COC.roll.dmg" : "Dommages",
+  "COC.roll.criticalDmg" : "Dommages critiques",
+  "COC.roll.heal" : "Soins",
+  "COC.roll.criticalHeal" : "Soins critiques",
 
   "COC.None": "--",
   "COC.tabs.stats": "Caractéristiques",
@@ -286,5 +299,8 @@
   "COC.notification.noCapacitySelected" : "Aucune capacité n'a été sélectionnée pour le moment",
   "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment.",
 
+  "COC.dialog.rollWeapon.title": "Jet d'attaque",
+  "COC.dialog.rollDamage.title": "Jet de dommages",
+  "COC.dialog.rollHitPoints.title": "Lancer les points de vie",
   "COC.dialog.spendRecoveryPoint.title": "Dépenser un point de récupération"
 }

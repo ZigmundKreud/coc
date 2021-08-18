@@ -37,6 +37,9 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/" + System.name + "/templates/actors/parts/inventory/actor-inventory.hbs",
         "systems/" + System.name + "/templates/actors/parts/inventory/actor-inventory-item.hbs",
 
+        "systems/" + System.name + "/templates/dialogs/roll-weapon-dialog.hbs",
+        "systems/" + System.name + "/templates/dialogs/parts/roll-dmg-fields.hbs",
+
         // ITEMS PROPERTIES
         "systems/" + System.name + "/templates/items/parts/properties/item-properties.hbs",
         "systems/" + System.name + "/templates/items/parts/properties/capacity-properties.hbs",

@@ -2,20 +2,21 @@ import {DamageRoll} from "./dmg-roll.js";
 
 export class SkillRoll {
 
-    constructor(label, dice, mod, bonus, difficulty, critrange){
+    constructor(label, dice, mod, bonus, malus, difficulty, critrange, description){
         this._label = label;
         this._dice = dice;
         this._mod = mod;
         this._bonus = bonus;
+        this._malus = malus;
+        this._totalBonusMalus = parseInt(this._bonus) + parseInt(this._malus);
+        this._total = parseInt(this._mod) + this._totalBonusMalus;
         this._difficulty = difficulty;
         this._critrange = critrange;
-        this._totalBonus = parseInt(this._mod) + parseInt(this._bonus);
-        this._formula = (this._totalBonus === 0) ? this._dice : `${this._dice} + ${this._totalBonus}`;
-        this._critrange = critrange;
+        this._formula = (this._total === 0) ? this._dice : ((this._totalBonusMalus === 0) ? `${this._dice} ${this._mod}`: `${this._dice} ${this._mod} + ${this._totalBonusMalus}`);
         this._isCritical = false;
         this._isFumble = false;
         this._isSuccess = false;
-        this._msgFlavor = "";
+        this._description = description;
     }
 
     async roll(actor){
@@ -27,47 +28,45 @@ export class SkillRoll {
         this._isFumble = (result == 1);
         if(this._difficulty){
             this._isSuccess = r.total >= this._difficulty;
-            this._msgFlavor = this._buildRollMessage();
-        }else{
-            this._msgFlavor = this._buildRollMessageNoDifficulty();
         }
-        r.toMessage({
-            user: game.user.id,
-            flavor: this._msgFlavor,
-            speaker: ChatMessage.getSpeaker({actor: actor})
-        });
+        this._buildRollMessage().then(msgFlavor => {
+            r.toMessage({
+                user: game.user.id,
+                flavor: msgFlavor,
+                speaker: ChatMessage.getSpeaker({actor: actor})
+            });
+        })
     }
 
-    weaponRoll(actor, formula){
-        this.roll(actor);
+   async weaponRoll(actor, dmgFormula, dmgDescr){
+        await this.roll(actor);
         if (this._difficulty) {
-            if(this._isSuccess){
-                let r = new DamageRoll(this._label, formula, this._isCritical);
-                r.roll(actor);
+            if(this._isSuccess && game.settings.get("coc", "useComboRolls")){
+                let r = new DamageRoll(this._label, dmgFormula, this._isCritical, dmgDescr);
+                await r.roll(actor);
             }
         }
         else {
-            let r = new DamageRoll(this._label, formula, this._isCritical);
-            r.roll(actor);
+            if(game.settings.get("coc", "useComboRolls")){
+                let r = new DamageRoll(this._label, dmgFormula, this._isCritical, dmgDescr);
+                await r.roll(actor);
+            }
         }
     }
 
-    /* -------------------------------------------- */
-
     _buildRollMessage() {
-        let subtitle = `<h3><strong>${this._label}</strong> ${game.i18n.localize("COC.ui.difficulty")} <strong>${this._difficulty}</strong></h3>`;
-        if (this._isCritical) return `<h2 class="success critical">${game.i18n.localize("COC.roll.critical")} !!</h2>${subtitle}`;
-        if (this._isFumble) return `<h2 class="failure fumble">${game.i18n.localize("COC.roll.fumble")} !!</h2>${subtitle}`;
-        if (this._isSuccess) return `<h2 class="success">${game.i18n.localize("COC.roll.success")} !</h2>${subtitle}`;
-        else return `<h2 class="failure">${game.i18n.localize("COC.roll.failure")}...</h2>${subtitle}`;
-    }
-
-    /* -------------------------------------------- */
-
-    _buildRollMessageNoDifficulty() {
-        let subtitle = `<h3><strong>${this._label}</strong></h3>`;
-        if (this._isCritical) return `<h2 class="success critical">${game.i18n.localize("COC.roll.critical")} !!</h2>${subtitle}`;
-        if (this._isFumble) return `<h2 class="failure fumble">${game.i18n.localize("COC.roll.fumble")} !!</h2>${subtitle}`;
-        else return `<h2 class="roll">${game.i18n.localize("COC.ui.skillcheck")}</h2>${subtitle}`;
+        const rollMessageTpl = 'systems/coc/templates/chat/skill-roll-card.hbs';
+        const tplData = {
+            label : this._label,
+            difficulty : this._difficulty,
+            showDifficulty : !!this._difficulty,
+            isCritical : this._isCritical,
+            isFumble : this._isFumble,
+            isSuccess : this._isSuccess,
+            isFailure : !this._isSuccess,
+            hasDescription : this._description && this._description.length > 0,
+			description : this._description       
+        };
+        return renderTemplate(rollMessageTpl, tplData);
     }
 }

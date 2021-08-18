@@ -31,16 +31,37 @@ export class CoCRoll {
      * @param elt DOM element which raised the roll event
      * @param key the key of the attribute to roll
      * @private
-     */
+    
     static rollWeapon(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
         let item = actor.items.get(li.data("itemId"));
         const itemData = item.data;
-        let label = itemData.name;
+        let label = itemData.name;const rollOptionContent
         let mod = itemData.data.mod;
         let critrange = itemData.data.critrange;
         let dmg = itemData.data.dmg;
         return this.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
+    } */
+
+    /**
+     *  Handles weapon check rolls
+     * @param elt DOM element which raised the roll event
+     * @param key the key of the attribute to roll
+     * @private
+     */
+    static rollWeapon(data, actor, event) {
+        const li = $(event.currentTarget).parents(".item");        
+        let item = actor.items.get(li.data("itemId"));
+        const itemData = item.data;
+    
+        const label = itemData.name;
+        const critrange = itemData.data.critrange;
+        const itemMod = $(event.currentTarget).parents().children(".item-mod");
+        const mod = itemMod.data('itemMod');
+        const dmgMod = $(event.currentTarget).parents().children(".item-dmg");
+        const dmg = dmgMod.data('itemDmg');
+
+        return this.rollWeaponDialog(actor, label, mod, 0, 0, critrange, dmg, 0);
     }
 
     /**
@@ -114,7 +135,7 @@ export class CoCRoll {
         const actorData = actor.data;
 
         return Dialog.confirm({
-            title: "Roll Hit Points",
+            title: game.i18n.format("COC.dialog.rollHitPoints.title"),
             content: `<p>Êtes sûr de vouloir remplacer les points de vie de <strong>${actor.name}</strong></p>`,
             yes: () => {
                 if (actorData.data.attributes.hd && actorData.data.attributes.hd.value) {
@@ -225,7 +246,19 @@ export class CoCRoll {
         return d.render(true);
     }
 
-    static async rollWeaponDialog(actor, label, mod, bonus, critrange, formula, onEnter = "submit") {
+    /**
+     * 
+     * @param {*} actor 
+     * @param {*} label 
+     * @param {*} mod 
+     * @param {*} bonus 
+     * @param {*} critrange 
+     * @param {*} dmgFormula 
+     * @param {*} dmgBonus 
+     * @param {*} onEnter 
+     * @returns 
+     */
+     static async rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmgFormula, dmgBonus, onEnter = "submit", skillDescr, dmgDescr) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-weapon-dialog.hbs';
         let diff = null;
         if (game.settings.get("coc", "displayDifficulty") && game.user.targets.size > 0) {
@@ -234,38 +267,76 @@ export class CoCRoll {
         const rollOptionContent = await renderTemplate(rollOptionTpl, {
             mod: mod,
             bonus: bonus,
+            malus: malus,
             critrange: critrange,
-            formula: formula,
-            difficulty: diff
+            difficulty: diff,
+            dmgFormula: dmgFormula,
+            dmgBonus: dmgBonus,
+            dmgCustomFormula: "",
+            hasSkillDescr: skillDescr && skillDescr.length > 0,
+            skillDescr: skillDescr,
+            hasDmgDescr: dmgDescr && dmgDescr.length > 0,
+            dmgDescr: dmgDescr
         });
 
         let d = new Dialog({
-            title: "Weapon Roll",
+            title: label && label.length > 0 ? label : game.i18n.format("COC.dialog.rollWeapon.title"),
             content: rollOptionContent,
             buttons: {
                 cancel: {
                     icon: '<i class="fas fa-times"></i>',
-                    label: "Cancel",
+                    label: game.i18n.localize("COC.ui.cancel"),
                     callback: () => {
                     }
                 },
                 submit: {
                     icon: '<i class="fas fa-check"></i>',
-                    label: "Submit",
+                    label: game.i18n.localize("COC.ui.submit"),
                     callback: (html) => {
                         const dice = html.find("#dice").val();
                         const diff = html.find('#difficulty').val();
                         const critrange = html.find('input#critrange').val();
-                        const m = html.find('input#mod').val();
-                        const b = html.find('input#bonus').val();
-                        const dmgFormula = html.find("#formula").val();
-                        let r = new SkillRoll(label, dice, m, b, diff, critrange);
-                        r.weaponRoll(actor, dmgFormula);
+                        const mod = html.find('input#mod').val();
+                        const bonus = html.find('input#bonus').val();
+                        let malus = html.find('input#malus').val();
+                        if (!malus) malus = 0;
+
+                        // Jet d'attaque uniquement
+                        if(!game.settings.get("coc", "useComboRolls")) {
+                            let r = new SkillRoll(label, dice, mod, bonus, malus, diff, critrange, skillDescr);
+                            r.weaponRoll(actor, "", dmgDescr);
+                        }
+                        else {
+                            // Jet combiné attaque et dommages
+                            let dmgBonus = html.find("#dmgBonus") ? html.find("#dmgBonus").val() : 0;
+                            let dmgCustomFormula = html.find("#dmgCustomFormula") ? html.find("#dmgCustomFormula").val() : "";
+                            let dmgBaseFormula = html.find("#dmgFormula") ? html.find("#dmgFormula").val() : "";
+                            let dmgFormula = (dmgCustomFormula) ? dmgCustomFormula : dmgBaseFormula;
+
+                            if (dmgBonus.indexOf("d") !== -1 || dmgBonus.indexOf("D") !== -1) {
+                                if ((dmgBonus.indexOf("+") === -1) && (dmgBonus.indexOf("-") === -1)){
+                                    dmgFormula = dmgFormula.concat('+', dmgBonus);
+                                }
+                                else dmgFormula = dmgFormula.concat(dmgBonus);
+                            }
+                            else {
+                                const dmgBonusInt = parseInt(dmgBonus);
+                                if (dmgBonusInt > 0) {
+                                    dmgFormula = dmgFormula.concat('+', dmgBonusInt);
+                                }
+                                else if (dmgBonusInt < 0) {
+                                    dmgFormula = dmgFormula.concat(' ', dmgBonus);
+                                }
+                            }
+                            let r = new SkillRoll(label, dice, mod, bonus, malus, diff, critrange, skillDescr);
+                            r.weaponRoll(actor, dmgFormula, dmgDescr);
+                        }
                     }
                 }
             },
             default: onEnter,
-            close: () => {}
+            close: () => {
+            }
         }, this.options());
         return d.render(true);
     }

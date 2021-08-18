@@ -61,6 +61,16 @@ export const registerSystemSettings = function() {
         onChange: lang => window.location.reload()
     });
 
+    game.settings.register("coc", "useComboRolls", {
+        name: "Active les jets \"combo\"",
+        hint: "Permet de lancer les jets d'attaque et de dommages simultanément.",
+        scope: "world",
+        config: true,
+        default: true,
+        type: Boolean,
+        onChange: lang => window.location.reload()
+    });
+
     game.settings.register("coc", "cocthSkin", {
         name: "Skin COC Cthulhu",
         hint: "Utiliser la skin COC Cthulhu",

@@ -1,28 +1,34 @@
 export class DamageRoll {
-    constructor(label, formula, isCritical){
+    constructor(label, formula, isCritical, description){
         this._label = label;
         this._formula = formula;
         this._isCritical = isCritical;
+        this._description = description;
     }
 
-    roll(actor){
+    async roll(actor){
         const r = new Roll(this._formula);
-        r.roll();
+        await r.roll({"async": true});
         if (this._isCritical) r._total = r._total * 2;
-        const dmgCheckFlavor = this._buildDamageRollMessage();
-        r.toMessage({
-            user: game.user._id,
-            flavor: dmgCheckFlavor,
-            speaker: ChatMessage.getSpeaker({actor: actor})
+        this._buildDamageRollMessage().then(msgFlavor => {
+            r.toMessage({
+                user: game.user.id,
+                flavor: msgFlavor,
+                speaker: ChatMessage.getSpeaker({actor: actor}),
+                flags : {msgType : "damage"}
+            });
         });
     }
 
-    /* -------------------------------------------- */
-
     _buildDamageRollMessage() {
-        let subtitle = `<h3><strong>${this._label}</strong></h3>`;
-        if (this._isCritical) return `<h2 class="damage">Jet de dommages critique !</h2>${subtitle}`;
-        return `<h2 class="damage">Jet de dommages</h2>${subtitle}`;
+        const rollMessageTpl = 'systems/coc/templates/chat/dmg-roll-card.hbs';
+        const tplData = {
+            label : this._label,
+            isCritical : this._isCritical,
+            hasDescription : this._description && this._description.length > 0,
+			description : this._description
+        };
+        return renderTemplate(rollMessageTpl, tplData);
     }
 
 }
