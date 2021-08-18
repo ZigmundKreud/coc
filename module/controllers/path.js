@@ -76,7 +76,7 @@ export class Path {
         }
         const end = performance.now();
         const duration = end-start;
-        console.log("Duration : " + duration + " ms");
+        //console.log("Duration : " + duration + " ms");
         return items;
     }
 

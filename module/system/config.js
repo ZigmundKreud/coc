@@ -7,6 +7,16 @@ System.dataPath = System.rootPath + "/data";
 System.templatesPath = System.rootPath + "/templates";
 System.debugMode = true;
 
+System.ASCII = `
+   ******    *******     ****** 
+  **////**  **/////**   **////**
+ **    //  **     //** **    // 
+/**       /**      /**/**       
+/**       /**      /**/**       
+//**    **//**     ** //**    **
+ //******  //*******   //****** 
+  //////    ///////     ////// `;
+
 export const COC = {};
 COC.debug = false;
 
@@ -54,35 +64,33 @@ COC.paths = [];
 COC.capacities = [];
 COC.traits = [];
 
+//FIXME Vérifier si les 4 méthodes suivantes sont utilisées
 // Mise en cache des données de profil
 COC.getProfiles = async function () {
     let profiles = await game.packs.get("coc.profiles").getContent().then(index => index.map(entity => entity.data));
     COC.profiles = profiles;
-    console.debug("Profiles loaded");
+    if (COC.debug) console.debug("COC | Profiles loaded");
 };
 
 // Mise en cache des données de voies
 COC.getPaths = async function () {
     let paths = await game.packs.get("coc.paths").getContent().then(index => index.map(entity => entity.data));
     COC.paths = paths;
-    // console.log(COC.paths);
-    console.debug("Paths loaded");
+    if (COC.debug) console.debug("COC | Paths loaded");
 };
 
 // Mise en cache des données de capacités
 COC.getCapacities = async function () {
     let capacities = await game.packs.get("coc.capacities").getContent().then(index => index.map(entity => entity.data));
     COC.capacities = capacities;
-    // console.log(COC.capacities);
-    console.debug("Capacities loaded");
+    if (COC.debug) console.debug("COC | Capacities loaded");
 };
 
 // Mise en cache des données de capacités
 COC.getTraits = async function () {
     let traits = await game.packs.get("coc.traits").getContent().then(index => index.map(entity => entity.data));
     COC.traits = traits;
-    // console.log(COC.traits);
-    console.debug("Traits loaded");
+    if (COC.debug) console.debug("COC | Traits loaded");
 };
 
 COC.itemTypes = {

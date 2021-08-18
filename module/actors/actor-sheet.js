@@ -2,7 +2,8 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-import {CoCBaseSheet} from "./base-sheet.js";
+import { CoCBaseSheet } from "./base-sheet.js";
+import { COC } from "../system/config.js";
 
 export class CoCActorSheet extends CoCBaseSheet {
 
@@ -124,7 +125,7 @@ export class CoCActorSheet extends CoCBaseSheet {
         // data.capacities = capacities;
         // data.trait = data.items.find(i => i.type === "trait");
         // data.profile = data.items.find(i => i.type === "profile");
-        //console.log(data);
+        if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }
 

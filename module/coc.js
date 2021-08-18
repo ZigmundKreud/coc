@@ -24,7 +24,8 @@ import {UpdateUtils} from "./utils/update-utils.js";
 
 Hooks.once("init", function () {
 
-    console.debug(System.label + " | System Initializing...");
+    console.info("COC | "+ System.label + " | System Initializing...");
+    console.info(System.ASCII);  
 
     /**
      * Set an initiative formula for the system
@@ -90,6 +91,6 @@ Hooks.once("ready", async () => {
         game.coc.skin = "cocth";
     }
 
-    console.debug(System.label + " | System Initialized.");
+    console.info("COC | " + System.label + " | System Initialized.");
 
 });

@@ -1,3 +1,4 @@
+import { COC } from "../system/config.js";
 export class Trait {
 
     static addToActor(actor, event, itemData) {
@@ -11,6 +12,7 @@ export class Trait {
 
     static removeFromActor(actor, entity) {
         console.log(entity);
+        if (COC.debug) { console.log("COC | Trait ", entity, " removed from Actor ", actor) };
         Dialog.confirm({
             title: "Supprimer le trait",
             content: `<p>Etes-vous sûr de vouloir supprimer le trait ${entity.name} de ${actor.name} ?</p>`,
