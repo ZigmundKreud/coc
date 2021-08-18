@@ -73,6 +73,8 @@ export class CoCBaseSheet extends ActorSheet {
             li.find(".capacity-description").slideToggle(200);
         });
 
+        html.find('.item .item-name h4').click(this._onItemSummary.bind(this));
+
         html.find('.foldable h3.item-name').click(ev => {
             ev.preventDefault();
             const li = $(ev.currentTarget);
@@ -109,6 +111,28 @@ export class CoCBaseSheet extends ActorSheet {
             return this._onDeleteItem(ev);
         });
     }
+
+    /**
+    * Callback on render item actions : display or not the summary
+    * @param event
+    * @private
+    */
+         _onItemSummary(event) {
+            event.preventDefault();
+            let li = $(event.currentTarget).parents('.item').children('.item-summary');
+            let entity = this.actor.items.get($(event.currentTarget).parents('.item').data("itemId"));
+            if (entity && entity.data.type === "capacity") {
+                if (li.hasClass('expanded')) {
+                    li.css("display", "none");
+                }
+                else {
+                    li.css("display", "block");
+                }
+                li.toggleClass('expanded');
+            } else {
+                this._onEditItem(event);
+            }
+        }
 
     _onEditItem(event) {
         event.preventDefault();
