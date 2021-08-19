@@ -329,7 +329,7 @@ export class CoCRoll {
         const rollOptionContent = await renderTemplate(rollOptionTpl, {formula: formula, bonus: bonus, custom: ""});
 
         let d = new Dialog({
-            title: "Damage Roll",
+            title: label && label.length > 0 ? label : game.i18n.format("COC.dialog.rollDamage.title"),
             content: rollOptionContent,
             buttons: {
                 cancel: {

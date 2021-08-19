@@ -13,7 +13,7 @@
                 </li>
                 <ol class="item-list" {{#if (includes ../folded.combat category.id)}}style="display: none;"{{/if}}>
                 {{#each category.items as |item id|}}
-                    {{> "systems/coc/templates/actors/parts/combat/actor-combat-item.hbs" item}}
+                    {{> "systems/coc/templates/actors/parts/combat/character-combat-item.hbs" item}}
                 {{/each}}
                 </ol>
             </ol>

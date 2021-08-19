@@ -31,8 +31,8 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/" + System.name + "/templates/actors/parts/combat/character-combat.hbs",
         "systems/" + System.name + "/templates/actors/parts/combat/character-combat-item.hbs",
 
-        "systems/" + System.name + "/templates/actors/parts/combat/actor-combat.hbs",
-        "systems/" + System.name + "/templates/actors/parts/combat/actor-combat-item.hbs",
+        "systems/" + System.name + "/templates/actors/parts/combat/npc-combat.hbs",
+        "systems/" + System.name + "/templates/actors/parts/combat/npc-combat-item.hbs",
 
         "systems/" + System.name + "/templates/actors/parts/inventory/actor-inventory.hbs",
         "systems/" + System.name + "/templates/actors/parts/inventory/actor-inventory-item.hbs",

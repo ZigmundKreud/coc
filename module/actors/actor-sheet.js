@@ -28,35 +28,25 @@ export class CoCActorSheet extends CoCBaseSheet {
 
     /** @override */
     getData(options) {
-        // const context = super.getData(options);
+        const data = super.getData(options);
+        if (COC.debug) console.log("COC | ActorSheet getData", data);
 
         // Basic data
         let isOwner = this.actor.isOwner;
 
-        const data = {
-            owner: isOwner,
-            limited: this.actor.limited,
-            options: this.options,
-            editable: this.isEditable,
-            config : game.coc.config,
-            cssClass: isOwner ? "editable" : "locked",
-            isCharacter: this.actor.type === "character",
-            isNPC: this.actor.type === "npc",
-            isVehicle: this.actor.type === 'vehicle',
-            rollData: this.actor.getRollData.bind(this.actor)
-        };
-
+        data.owner =  isOwner;
+        data.limited =  this.actor.limited;
+        data.options =  this.options;
+        data.editable =  this.isEditable;
+        data.config =  game.coc.config;
+        data.cssClass =  isOwner ? "editable" : "locked";
+        data.isCharacter =  this.actor.type === "character";
+        data.isNPC =  this.actor.type === "npc";
+        data.isVehicle =  this.actor.type === 'vehicle';
+        data.rollData =  this.actor.getRollData.bind(this.actor);
+        
         // The Actor's data
         const actorData = this.actor.data.toObject(false);
-        data.actor = actorData;
-        data.data = actorData.data;
-
-        data.folded = {
-            "combat": (actorData.data.settings?.combat) ? actorData.data.settings?.combat.folded : [],
-            "inventory": (actorData.data.settings?.inventory) ? actorData.data.settings?.inventory.folded : [],
-            "capacities": (actorData.data.settings?.capacities) ? actorData.data.settings?.capacities.folded : [],
-            "effects": (actorData.data.settings?.effects) ? actorData.data.settings?.effects.folded : []
-        };
 
         // Owned Items
         data.profile = actorData.items.find(item => item.type === "profile");

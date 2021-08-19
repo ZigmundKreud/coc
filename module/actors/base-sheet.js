@@ -113,22 +113,22 @@ export class CoCBaseSheet extends ActorSheet {
     * @param event
     * @private
     */
-         _onItemSummary(event) {
-            event.preventDefault();
-            let li = $(event.currentTarget).parents('.item').children('.item-summary');
-            let entity = this.actor.items.get($(event.currentTarget).parents('.item').data("itemId"));
-            if (entity && entity.data.type === "capacity") {
-                if (li.hasClass('expanded')) {
-                    li.css("display", "none");
-                }
-                else {
-                    li.css("display", "block");
-                }
-                li.toggleClass('expanded');
-            } else {
-                this._onEditItem(event);
+    _onItemSummary(event) {
+        event.preventDefault();
+        let li = $(event.currentTarget).parents('.item').children('.item-summary');
+        let entity = this.actor.items.get($(event.currentTarget).parents('.item').data("itemId"));
+        if (entity && entity.data.type === "capacity") {
+            if (li.hasClass('expanded')) {
+                li.css("display", "none");
             }
+            else {
+                li.css("display", "block");
+            }
+            li.toggleClass('expanded');
+        } else {
+            this._onEditItem(event);
         }
+    }
 
     _onEditItem(event) {
         event.preventDefault();
@@ -279,4 +279,22 @@ export class CoCBaseSheet extends ActorSheet {
             case "recovery": return CoCRoll.rollRecoveryUse(data.data, this.actor, true);
         }
     }
+
+        /** @override */
+	getData(options) {
+        const data = super.getData(options);
+        const actorData = data.data;
+        //data.logoPath = this.getPathRoot() + this.getLogoPath();
+		data.isGm = game.user.isGM;
+        data.effects = data.actor.effects;
+        data.folded = {
+            "combat": (actorData.data.settings?.combat) ? actorData.data.settings?.combat.folded : [],
+            "inventory": (actorData.data.settings?.inventory) ? actorData.data.settings?.inventory.folded : [],
+            "capacities": (actorData.data.settings?.capacities) ? actorData.data.settings?.capacities.folded : [],
+            "effects": (actorData.data.settings?.effects) ? actorData.data.settings?.effects.folded : []
+        };        
+        data.actor = actorData;
+        data.data = actorData.data;       
+        return data;
+	}
 }
