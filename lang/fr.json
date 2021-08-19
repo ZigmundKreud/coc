@@ -294,10 +294,15 @@
   "COC.setting.surhumains" : "Surhumains",
   "COC.setting.cyberpunk" : "Cyberpunk",
 
-  "COC.notification.MacroItemMissing" : "Le personnage ne possède pas cet objet",
-  "COC.notification.MacroItemUnequiped" : "L'objet n'est pas équipé",
   "COC.notification.noCapacitySelected" : "Aucune capacité n'a été sélectionnée pour le moment",
   "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment.",
+
+  "COC.notification.MacroMultipleTokensSelected": "Vous avez sélectionné plusieurs tokens",
+  "COC.notification.MacroNoActorAvailable": "Aucun acteur n'a pu être ciblé",
+  "COC.notification.MacroNoTokenSelected": "Vous devez sélectionner un token",
+  "COC.notification.MacroItemMissing" : "L'acteur n'a pas l'objet {item}",
+  "COC.notification.MacroItemUnequiped" : "L'objet {item} n'est pas équipé",
+  "COC.notification.MacroUnknownStat" : "La compétence à tester n'a pas été reconnue",
 
   "COC.dialog.rollWeapon.title": "Jet d'attaque",
   "COC.dialog.rollDamage.title": "Jet de dommages",

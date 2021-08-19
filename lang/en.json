@@ -332,10 +332,15 @@
   "COC.setting.surhumains" : "Mutants",
   "COC.setting.cyberpunk" : "Cyberpunk",
 
-  "COC.notification.MacroItemMissing" : "Your controlled Actor does not have such an item.",
-  "COC.notification.MacroItemUnequiped" : "Item is unequiped",
   "COC.notification.noCapacitySelected" : "No capacity has been selected yet",
   "COC.notification.noPathSelected": "No path have been added yet",
+
+  "COC.notification.MacroMultipleTokensSelected": "You have selected several tokens",
+  "COC.notification.MacroNoActorAvailable": "No actor could be targeted",
+  "COC.notification.MacroNoTokenSelected": "You must select a token",  
+  "COC.notification.MacroItemMissing" : "The actor does not have the item {item}",
+  "COC.notification.MacroItemUnequiped" : "The item {item} is not equiped",
+  "COC.notification.MacroUnknownStat" : "The skill to test is unknown",
 
   "COC.dialog.rollWeapon.title": "Weapon Roll",
   "COC.dialog.rollDamage.title": "Damage Roll",

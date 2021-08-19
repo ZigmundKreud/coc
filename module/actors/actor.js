@@ -130,7 +130,7 @@ export class CoCActor extends Actor {
         magic.base = (magicMod) ? magicMod + atmBonus : atmBonus;
 
         for (let attack of Object.values(attacks)) {
-            attack.mod = attack.base + attack.bonus;
+            attack.mod = attack.base + attack.bonus + attack.malus; 
         }
 
     }

@@ -107,6 +107,7 @@
             "enabled": true,
             "base": 0,
             "bonus": 0,
+            "malus": 0,
             "mod": 0
           },
           "ranged" : {
@@ -117,6 +118,7 @@
             "enabled": true,
             "base": 0,
             "bonus": 0,
+            "malus": 0,
             "mod": 0
           },
           "magic" : {
@@ -127,6 +129,7 @@
             "enabled": true,
             "base": 0,
             "bonus": 0,
+            "malus": 0,
             "mod": 0
           }
         },
