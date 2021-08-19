@@ -1,5 +1,13 @@
 export class StringUtils {
 
+    static normalize (str) {
+        return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    }
+
+    static toKey (str) {
+        return StringUtils.normalize(str).split(/[\s;:,\']+/).join('-');
+    }
+    
     static async sha256(message) {
 
         // encode as UTF-8

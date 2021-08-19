@@ -209,33 +209,7 @@ export class CoCItemSheet extends ItemSheet {
 
     /** @override */
     getData(options) {
-        /*
-        const context = super.getData(options);
-        const data = {
-            config : game.coc.config,
-            itemType : context.item.type.titleCase(),
-        };
-        // The Item's data
-        const itemData = this.item.data.toObject(false);
-        data.item = itemData;
-        data.data = itemData.data;
-
-        // data.itemType = data.item.type.titleCase();
-        // data.itemProperties = this._getItemProperties(data.item);
-        // if(data.data.capacities && data.data.capacities.length > 0){
-        //     const idx = await game.packs.get("coc.capacities").getIndex();
-        //     const caps = idx.concat(game.items.filter(item => item.data.type === "capacity" && data.data.capacities.includes(item._id)));
-        //     data.capacities = data.data.capacities.map(c => caps.find(e => e._id === c));
-        // }
-        // if(data.data.paths && data.data.paths.length > 0){
-        //     const idx = await game.packs.get("coc.paths").getIndex();
-        //     const ingame = game.items.filter(item => item.data.type === "path" && data.data.paths.includes(item._id));
-        //     data.paths = ingame.concat(idx.filter(item => data.data.paths.includes(item._id)));
-        // }
-        console.log(data);
-        return data;
-        */
-        const data = super.getData(options);
+         const data = super.getData(options);
         const itemData = data.data;
 
         data.labels = this.item.labels;

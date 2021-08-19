@@ -1,6 +1,6 @@
 import {CharacterGeneration} from "../system/chargen.js";
-import {SkillRoll} from "../system/skill-roll.js";
-import {DamageRoll} from "../system/dmg-roll.js";
+import {SkillRoll} from "./skill-roll.js";
+import {DamageRoll} from "./dmg-roll.js";
 
 export class CoCRoll {
     static options() {
@@ -25,23 +25,6 @@ export class CoCRoll {
         label = (label) ? game.i18n.localize(label) : null;
         return this.skillRollDialog(actor, label, mod, bonus, critrange, superior);
     }
-
-    /**
-     *  Handles weapon check rolls
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
-    
-    static rollWeapon(data, actor, event) {
-        const li = $(event.currentTarget).parents(".item");
-        let item = actor.items.get(li.data("itemId"));
-        const itemData = item.data;
-        let label = itemData.name;const rollOptionContent
-        let mod = itemData.data.mod;
-        let critrange = itemData.data.critrange;
-        let dmg = itemData.data.dmg;
-        return this.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
-    } */
 
     /**
      *  Handles weapon check rolls
