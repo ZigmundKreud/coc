@@ -25,6 +25,10 @@
         {{> "systems/coc/templates/actors/parts/capacities/actor-paths.hbs"}}
     </div>
     <div class="tab description" data-group="primary" data-tab="description">
-        {{> "systems/coc/templates/actors/parts/actor-description.hbs"}}
+        {{#if (equals actor.type "character")}}
+            {{> "systems/coc/templates/actors/parts/character-description.hbs"}}
+        {{else}}
+            {{> "systems/coc/templates/actors/parts/actor-description.hbs"}}
+        {{/if}}
     </div>
 </section>

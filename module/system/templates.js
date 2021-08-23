@@ -14,7 +14,8 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/" + System.name + "/templates/actors/actor-sheet.hbs",
         "systems/" + System.name + "/templates/actors/parts/actor-details.hbs",
         "systems/" + System.name + "/templates/actors/parts/actor-tabs.hbs",
-        "systems/" + System.name + "/templates/actors/parts/actor-description.hbs", 
+        "systems/" + System.name + "/templates/actors/parts/character-description.hbs",
+        "systems/" + System.name + "/templates/actors/parts/actor-description.hbs",
 
         "systems/" + System.name + "/templates/actors/parts/details/actor-details.hbs",
         "systems/" + System.name + "/templates/actors/parts/details/encounter-details.hbs",
