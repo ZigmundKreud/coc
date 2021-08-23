@@ -10,6 +10,7 @@ import {CoCItem} from "./items/item.js";
 
 import {CoCActorSheet} from "./actors/actor-sheet.js";
 import {CoCNpcSheet} from "./actors/npc-sheet.js";
+import {CoCEncounterSheet} from "./actors/encounter-sheet.js";
 import {CoCItemSheet} from "./items/item-sheet.js";
 
 import { registerSystemSettings } from "./system/settings.js";
@@ -55,6 +56,8 @@ Hooks.once("init", function () {
     // Register actor sheets
     Actors.registerSheet("coc", CoCActorSheet, {types: ["character"], makeDefault: true});
     Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: true});
+    Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: true});
+
     // Register item sheets
     Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "trait"], makeDefault: true});
 

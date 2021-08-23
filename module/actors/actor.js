@@ -6,8 +6,117 @@ import {Stats} from "../system/stats.js";
 
 export class CoCActor extends Actor {
 
+    /* -------------------------------------------- */
+    /*  Data Preparation                            */
+    /* -------------------------------------------- */
+    /* Avant application des effets                 */
+    /* -------------------------------------------- */
+    /** @override */
+    prepareBaseData() {
+        let actorData = this.data;
+        if (!actorData.data.settings) {
+            actorData.data.settings = {
+                "combat": { "folded": [] },
+                "inventory": { "folded": [] },
+                "capacities": { "folded": [] },
+                "effects": { "folded": [] }
+            };
+        }
+        if (actorData.type === "encounter") this._prepareBaseEncounterData(actorData);
+    }    
+
+    _prepareBaseEncounterData(actorData) {
+        // STATS
+        let stats = actorData.data.stats;
+        // COMPUTE STATS FROM MODS
+        for (let stat of Object.values(stats)) {
+            stat.value = Stats.getStatValueFromMod(stat.mod);
+        }
+
+        // ATTACKS
+        if (!actorData.data.attacks) {
+            actorData.data.attacks = {
+                "melee": {
+                    "key": "melee",
+                    "label": "COF.attacks.melee.label",
+                    "abbrev": "COF.attacks.melee.abbrev",
+                    "stat": "@stats.str.mod",
+                    "enabled": true,
+                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.str.mod,
+                    "bonus": 0,
+                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.str.mod
+                },
+                "ranged": {
+                    "key": "ranged",
+                    "label": "COF.attacks.ranged.label",
+                    "abbrev": "COF.attacks.ranged.abbrev",
+                    "stat": "@stats.dex.mod",
+                    "enabled": true,
+                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.dex.mod,
+                    "bonus": 0,
+                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.dex.mod
+                },
+                "magic": {
+                    "key": "magic",
+                    "label": "COF.attacks.magic.label",
+                    "abbrev": "COF.attacks.magic.abbrev",
+                    "stat": "@stats.int.mod",
+                    "enabled": true,
+                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.int.mod,
+                    "bonus": 0,
+                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.int.mod
+                }
+            }
+        } else {
+            let attacks = actorData.data.attacks;
+            for (let attack of Object.values(attacks)) {
+                attack.mod = attack.base + attack.bonus;
+            }
+        }
+
+        // MODIFY TOKEN REGARDING SIZE
+        switch (actorData.data.details.size) {
+            case "big":
+                actorData.token.width = 2;
+                actorData.token.height = 2;
+                break;
+            case "huge":
+                actorData.token.width = 4;
+                actorData.token.height = 4;
+                break;
+            case "colossal":
+                actorData.token.width = 8;
+                actorData.token.height = 8;
+                break;
+            case "tiny":
+            case "small":
+            case "short":
+            case "med":
+            default:
+                break;
+        }
+    }
+    
+    /* -------------------------------------------- */
+    /* Après application des effets                 */
+    /* -------------------------------------------- */
     /** @override */
     prepareDerivedData() {
+        let actorData = this.data;
+        if (actorData.type === "encounter") this._prepareDerivedEncounterData(actorData);
+        else this._prepareDerivedCharacterData(actorData);
+    }
+
+    _prepareDerivedEncounterData(actorData) { 
+        let attributes = actorData.data.attributes;
+        
+        // Points de vie
+        if (attributes.hp.value > attributes.hp.max) attributes.hp.value = attributes.hp.max;
+        if (attributes.hp.value < 0) attributes.hp.value = 0;
+    }
+    
+    /** @override */
+    _prepareDerivedCharacterData() {
         super.prepareDerivedData();
         // console.debug("Actor prepareDerivedData");
 

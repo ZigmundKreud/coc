@@ -13,39 +13,10 @@
         </div>
         <div class="content flex3">
             <header class="sheet-header flexrow header-background no-wrap">
-                {{> "systems/coc/templates/actors/parts/actor-header.hbs"}}
+                {{> "systems/coc/templates/actors/parts/actor-details.hbs"}}
             </header>
             {{!-- Sheet Tab Navigation --}}
-            <nav class="sheet-navigation tabs" data-group="primary">
-                <a class="item" data-tab="stats">{{localize "COC.tabs.stats"}}</a>
-                <a class="item" data-tab="combat">{{localize "COC.tabs.combat"}}</a>
-                <a class="item compendium-pack" data-pack="coc.items" data-open="0" data-tab="inventory">{{localize "COC.tabs.inventory"}}</a>
-                <a class="item compendium-pack" data-pack="coc.paths" data-open="0" data-tab="capacities">{{localize "COC.tabs.capacities"}}</a>
-                <a class="item" data-tab="description">{{localize "COC.tabs.description"}}</a>
-            </nav>
-            {{!-- Sheet Body --}}
-            <section class="sheet-body">
-                <div class="tab stats" data-group="primary" data-tab="stats">
-                    {{> "systems/coc/templates/actors/parts/stats/actor-stats.hbs"}}
-                </div>
-                <div class="tab combat" data-group="primary" data-tab="combat">
-                    {{#if (equals actor.type "character")}}
-                        {{> "systems/coc/templates/actors/parts/combat/character-combat.hbs"}}
-                    {{/if}}
-                    {{#if (equals actor.type "npc")}}
-                        {{> "systems/coc/templates/actors/parts/combat/npc-combat.hbs"}}
-                    {{/if}}
-                </div>
-                <div class="tab inventory" data-group="primary" data-tab="inventory">
-                    {{> "systems/coc/templates/actors/parts/inventory/actor-inventory.hbs"}}
-                </div>
-                <div class="tab capacities" data-group="primary" data-tab="capacities">
-                    {{> "systems/coc/templates/actors/parts/capacities/actor-paths.hbs"}}
-                </div>
-                <div class="tab description" data-group="primary" data-tab="description">
-                    {{> "systems/coc/templates/actors/parts/actor-description.hbs"}}
-                </div>
-            </section>
+            {{> "systems/coc/templates/actors/parts/actor-tabs.hbs"}}
         </div>
     </div>
 </form>

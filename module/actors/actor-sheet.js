@@ -30,20 +30,6 @@ export class CoCActorSheet extends CoCBaseSheet {
     getData(options) {
         const data = super.getData(options);
         if (COC.debug) console.log("COC | ActorSheet getData", data);
-
-        // Basic data
-        let isOwner = this.actor.isOwner;
-
-        data.owner =  isOwner;
-        data.limited =  this.actor.limited;
-        data.options =  this.options;
-        data.editable =  this.isEditable;
-        data.config =  game.coc.config;
-        data.cssClass =  isOwner ? "editable" : "locked";
-        data.isCharacter =  this.actor.type === "character";
-        data.isNPC =  this.actor.type === "npc";
-        data.isVehicle =  this.actor.type === 'vehicle';
-        data.rollData =  this.actor.getRollData.bind(this.actor);
         
         // The Actor's data
         const actorData = this.actor.data.toObject(false);

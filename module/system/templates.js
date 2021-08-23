@@ -10,9 +10,14 @@ export const preloadHandlebarsTemplates = async function () {
     // Define template paths to load
     const templatePaths = [
         // CHARACTER
-        "systems/" + System.name + "/templates/actors/parts/actor-header.hbs",
-        "systems/" + System.name + "/templates/actors/parts/actor-description.hbs",
 
+        "systems/" + System.name + "/templates/actors/actor-sheet.hbs",
+        "systems/" + System.name + "/templates/actors/parts/actor-details.hbs",
+        "systems/" + System.name + "/templates/actors/parts/actor-tabs.hbs",
+        "systems/" + System.name + "/templates/actors/parts/actor-description.hbs", 
+
+        "systems/" + System.name + "/templates/actors/parts/details/actor-details.hbs",
+        "systems/" + System.name + "/templates/actors/parts/details/encounter-details.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/actor-attacks.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/actor-attributes.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/npc-attributes.hbs",

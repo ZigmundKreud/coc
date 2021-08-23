@@ -284,8 +284,23 @@ export class CoCBaseSheet extends ActorSheet {
 	getData(options) {
         const data = super.getData(options);
         const actorData = data.data;
-        //data.logoPath = this.getPathRoot() + this.getLogoPath();
 		data.isGm = game.user.isGM;
+        
+        // Basic data
+        let isOwner = this.actor.isOwner;
+
+        data.owner =  isOwner;
+        data.limited =  this.actor.limited;
+        data.options =  this.options;
+        data.editable =  this.isEditable;
+        data.config =  game.coc.config;
+        data.cssClass =  isOwner ? "editable" : "locked";
+        data.isCharacter =  this.actor.type === "character";
+        data.isNPC =  this.actor.type === "npc";
+        data.isEncounter = this.actor.type === "encounter";
+        data.isVehicle =  this.actor.type === 'vehicle';
+        data.rollData =  this.actor.getRollData.bind(this.actor);
+        
         data.effects = data.actor.effects;
         data.folded = {
             "combat": (actorData.data.settings?.combat) ? actorData.data.settings?.combat.folded : [],
@@ -295,6 +310,7 @@ export class CoCBaseSheet extends ActorSheet {
         };        
         data.actor = actorData;
         data.data = actorData.data;       
+
         return data;
 	}
 }

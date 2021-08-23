@@ -2,7 +2,8 @@
   "Actor": {
     "types": [
       "character",
-      "npc"
+      "npc",
+      "encounter"
     ],
     "templates": {
       "stats": {
@@ -280,6 +281,29 @@
         "xp",
         "common"
       ]
+    },
+    "encounter": {
+      "key": null,
+      "templates": [
+        "stats",
+        "attacks",
+        "common"
+      ],
+      "nc": {
+        "key" : "nc",
+        "label" : "COC.attributes.nc.label",
+        "abbrev" : "COC.attributes.nc.abbrev",
+        "value": 1
+      },
+      "capacities" : [],
+      "paths": [],
+      "boss": {
+        "rank" : null,
+        "type" : null
+      },
+      "families": [],
+      "archetype": "",
+      "category": ""
     }
   },
   "Item": {
