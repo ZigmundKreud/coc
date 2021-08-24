@@ -22,7 +22,7 @@ export class CoCActor extends Actor {
                 "effects": { "folded": [] }
             };
         }
-        if (actorData.type === "encounter") this._prepareBaseEncounterData(actorData);
+        //if (actorData.type === "encounter") this._prepareBaseEncounterData(actorData);
     }    
 
     _prepareBaseEncounterData(actorData) {
@@ -108,19 +108,37 @@ export class CoCActor extends Actor {
     }
 
     _prepareDerivedEncounterData(actorData) { 
+        // Stats
+        this.computeNpcMods(actorData);
+
+        // Attributs
         let attributes = actorData.data.attributes;
-        
+
+        // Initiative
+        attributes.init.value = attributes.init.base + attributes.init.bonus;
+
         // Points de vie
-        if (attributes.hp.value > attributes.hp.max) attributes.hp.value = attributes.hp.max;
-        if (attributes.hp.value < 0) attributes.hp.value = 0;
+        attributes.hp.max = attributes.hp.base + attributes.hp.bonus;
+
+        // Defense
+        attributes.def.value = attributes.def.base + attributes.def.bonus;
+
+        // Réduction de dommages
+        attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
+
+        // Attaques
+        let attacks = actorData.data.attacks;
+        for (let attack of Object.values(attacks)) {
+            attack.mod = attack.base + attack.bonus; 
+        }
     }
     
     /** @override */
-    _prepareDerivedCharacterData() {
-        super.prepareDerivedData();
+    _prepareDerivedCharacterData(actorData) {
+        // super.prepareDerivedData();
         // console.debug("Actor prepareDerivedData");
 
-        const actorData = this.data;
+        //const actorData = this.data;
         // const data = actorData.data;
         // const flags = actorData.flags;
 

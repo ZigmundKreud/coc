@@ -2,9 +2,11 @@
     <div class="flex6 center rollable" data-rolling="data.attributes.hp" data-roll-type="hp">
         <div class="field-label"><i class="fas fa-dice-d6"></i>&nbsp;{{ localize 'COC.attributes.vitality.label' }}</div>
     </div>
+    {{#unless (equals actor.type "encounter")}}
     <div class="flex4 center">
         <div class="field-label">{{ localize 'COC.ui.hd' }}</div>
     </div>
+    {{/unless}}
     <div class="flex3 center">
         <div class="field-label">{{ localize 'COC.ui.base' }}</div>
     </div>
@@ -22,6 +24,7 @@
     <div class="flex6 center cell-header">
         <span class="field-label"><i class="fas fa-heart"></i>&nbsp;{{ localize 'COC.attributes.hp.abbrev' }}</span>
     </div>
+    {{#unless (equals actor.type "encounter")}}
     <div class="flex4 center cell readonly">
         <select class="field-value" name="data.attributes.hd.value" data-type="String" style="width:100%">
         {{#select actor.data.attributes.hd.value}}
@@ -35,6 +38,7 @@
         {{/select}}
         </select>
     </div>
+    {{/unless}}
     <div class="flex3 center cell">
         <input class="field-value" name="data.attributes.hp.base" type="text" value="{{actor.data.attributes.hp.base}}" placeholder="Base" data-dtype="Number"/>
     </div>
