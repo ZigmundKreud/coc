@@ -117,7 +117,7 @@ export class CoCBaseSheet extends ActorSheet {
         event.preventDefault();
         let li = $(event.currentTarget).parents('.item').children('.item-summary');
         let entity = this.actor.items.get($(event.currentTarget).parents('.item').data("itemId"));
-        if (entity && entity.data.type === "capacity") {
+        if (entity && (entity.data.type === "capacity" || entity.data.type === "encounterWeapon" ) ) {
             if (li.hasClass('expanded')) {
                 li.css("display", "none");
             }

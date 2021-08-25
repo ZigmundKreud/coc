@@ -557,6 +557,68 @@
   text-align: center;
   color: #7a7971;
 }
+
+.inventory-list .item-controls-3 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 88px;
+  flex: 0 0 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.inventory-list .item-controls-3 > * {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.inventory-list .item-controls-3 .flex1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.inventory-list .item-controls-3 .flex2 {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+.inventory-list .item-controls-3 .flex3 {
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+}
+
+.inventory-list .item-controls-3 .flex4 {
+  -webkit-box-flex: 4;
+  -ms-flex: 4;
+  flex: 4;
+}
+
+.inventory-list .item-controls-3 a {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 22px;
+  flex: 0 0 22px;
+  font-size: 12px;
+  text-align: center;
+  color: #7a7971;
+}
+
+
 .inventory-list .item-summary {
   flex: 0 0 100%;
   font-size: 12px;
