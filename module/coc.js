@@ -59,7 +59,7 @@ Hooks.once("init", function () {
     Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: true});
 
     // Register item sheets
-    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "trait"], makeDefault: true});
+    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "trait", "encounterWeapon"], makeDefault: true});
 
     // Register System Settings
     registerSystemSettings();

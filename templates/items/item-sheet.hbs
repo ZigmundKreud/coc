@@ -13,13 +13,6 @@
                     {{/if}}
                 </span>
             </div>
-<!--            <ul class="summary flexrow">-->
-<!--                {{!#if item.subtype}}-->
-<!--                <li>-->
-<!--                    {{!localize (concat "COC.category." item.subtype)}}-->
-<!--                </li>-->
-<!--                {{!/if}}-->
-<!--            </ul>-->
         </div>
     </header>
     {{!-- Sheet Tab Navigation --}}
@@ -48,6 +41,9 @@
             {{/if}}
             {{#if (equals item.type "profile")}}
                 {{> "systems/coc/templates/items/parts/details/profile-details.hbs"}}
+            {{/if}}
+            {{#if (equals item.type "encounterWeapon")}}
+                {{> "systems/coc/templates/items/parts/details/encounter-weapon-details.hbs"}}
             {{/if}}
         </div>
     </section>

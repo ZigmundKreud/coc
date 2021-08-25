@@ -312,7 +312,8 @@
       "capacity",
       "profile",
       "trait",
-      "path"
+      "path",
+      "encounterWeapon"
     ],
     "templates": {
       "base" : {
@@ -428,6 +429,18 @@
       ],
       "family": "",
       "rank": null
+    },
+    "encounterWeapon":{
+      "templates": [
+        "base"
+      ],
+      "weapon": {
+        "critrange" : 20,
+        "mod" : 0,
+        "dmg" : 0,
+        "skillBonus" : 0,
+        "dmgBonus": 0
+      }
     }
   }
 }

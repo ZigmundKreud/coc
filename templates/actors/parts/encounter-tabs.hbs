@@ -1,0 +1,14 @@
+{{!-- Sheet Tab Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item" data-tab="stats">{{localize "COC.tabs.stats"}}</a>
+    <a class="item" data-tab="description">{{localize "COC.tabs.description"}}</a>
+</nav>
+{{!-- Sheet Body --}}
+<section class="sheet-body">
+    <div class="tab stats" data-group="primary" data-tab="stats">
+        {{> "systems/coc/templates/actors/parts/stats/encounter-stats.hbs"}}
+    </div>
+    <div class="tab description" data-group="primary" data-tab="description">
+        {{> "systems/coc/templates/actors/parts/actor-description.hbs"}}
+    </div>
+</section>

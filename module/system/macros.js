@@ -73,32 +73,41 @@ export class Macros {
         if (!item) return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemMissing', {item:itemName}));
         const itemData = item.data;
 
-        if(itemData.data.properties.weapon || itemData.data.properties.heal){
-            if (itemData.data.properties.weapon){
-                if(itemData.data.worn){
-                    const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;                
-                    const critrange = itemData.data.critrange;              
+        if (itemData.data.weapon != undefined) {
+            const weapon = itemData.data.weapon;
+            const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;                
 
-                    // Compute MOD
-                    const itemModStat = itemData.data.skill.split("@")[1];
-                    const itemModBonus = parseInt(itemData.data.skillBonus);
-                    
-                    let mod = actor.computeWeaponMod(itemModStat, itemModBonus);
+            if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, weapon.dmg, weapon.dmgBonus, "submit", dmgDescr);
+            else CoCRoll.rollWeaponDialog(actor, label, weapon.mod, weapon.skillBonus, 0, weapon.critrange, weapon.dmg, weapon.dmgBonus, "submit", dmgDescr);
+        }
+        else if (itemData.data.properties !== undefined) {
+            if(itemData.data.properties.weapon || itemData.data.properties.heal){
+                if (itemData.data.properties.weapon){
+                    if(itemData.data.worn){
+                        const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;                
+                        const critrange = itemData.data.critrange;              
 
-                    // Compute DM
-                    const itemDmgBase = itemData.data.dmgBase;                        
-                    const itemDmgStat = itemData.data.dmgStat.split("@")[1];
-                    const itemDmgBonus = parseInt(itemData.data.dmgBonus);
+                        // Compute MOD
+                        const itemModStat = itemData.data.skill.split("@")[1];
+                        const itemModBonus = parseInt(itemData.data.skillBonus);
+                        
+                        let mod = actor.computeWeaponMod(itemModStat, itemModBonus);
 
-                    let dmg = actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
+                        // Compute DM
+                        const itemDmgBase = itemData.data.dmgBase;                        
+                        const itemDmgStat = itemData.data.dmgStat.split("@")[1];
+                        const itemDmgBonus = parseInt(itemData.data.dmgBonus);
 
-                    if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, dmg, 0, false, "submit", dmgDescr);
-                    else CoCRoll.rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmg, dmgBonus, "submit", skillDescr, dmgDescr);
+                        let dmg = actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
+                        
+                        if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, dmg, 0, false, "submit", dmgDescr);
+                        else CoCRoll.rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmg, dmgBonus, "submit", skillDescr, dmgDescr);
+                    }
+                    else return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemUnequiped', {item: itemName}));
                 }
-                else return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemUnequiped', {item: itemName}));
-            }
-            if (itemData.data.properties.heal){
-                new CocHealingRoll(itemData.name, itemData.data.effects.heal.formula, false).roll(actor);
+                if (itemData.data.properties.heal){
+                    new CocHealingRoll(itemData.name, itemData.data.effects.heal.formula, false).roll(actor);
+                }
             }
         }
         else { return item.sheet.render(true); }

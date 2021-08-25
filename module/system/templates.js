@@ -14,6 +14,7 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/" + System.name + "/templates/actors/actor-sheet.hbs",
         "systems/" + System.name + "/templates/actors/parts/actor-details.hbs",
         "systems/" + System.name + "/templates/actors/parts/actor-tabs.hbs",
+        "systems/" + System.name + "/templates/actors/parts/encounter-tabs.hbs",
         "systems/" + System.name + "/templates/actors/parts/character-description.hbs",
         "systems/" + System.name + "/templates/actors/parts/actor-description.hbs",
 
@@ -27,6 +28,7 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/" + System.name + "/templates/actors/parts/stats/actor-madness.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/actor-injuries.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/actor-stats.hbs",
+        "systems/" + System.name + "/templates/actors/parts/stats/encounter-stats.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/actor-vitality.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/actor-defence.hbs",
         "systems/" + System.name + "/templates/actors/parts/stats/actor-init.hbs",
@@ -39,6 +41,8 @@ export const preloadHandlebarsTemplates = async function () {
 
         "systems/" + System.name + "/templates/actors/parts/combat/npc-combat.hbs",
         "systems/" + System.name + "/templates/actors/parts/combat/npc-combat-item.hbs",
+
+        "systems/" + System.name + "/templates/actors/parts/combat/encounter-combat.hbs",
 
         "systems/" + System.name + "/templates/actors/parts/inventory/actor-inventory.hbs",
         "systems/" + System.name + "/templates/actors/parts/inventory/actor-inventory-item.hbs",
@@ -53,6 +57,7 @@ export const preloadHandlebarsTemplates = async function () {
 
         // ITEMS DETAILS
         "systems/" + System.name + "/templates/items/parts/details/item-details.hbs",
+        "systems/" + System.name + "/templates/items/parts/details/encounter-weapon-details.hbs",
         "systems/" + System.name + "/templates/items/parts/details/capacity-details.hbs",
         "systems/" + System.name + "/templates/items/parts/details/path-details.hbs",
         "systems/" + System.name + "/templates/items/parts/details/profile-details.hbs",

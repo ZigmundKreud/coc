@@ -10,6 +10,7 @@
   "ITEM.TypeTrait": "Trait",
   "ITEM.TypeProfile": "Profile",
   "ITEM.TypePath": "Path",
+  "ITEM.TypeEncounterWeapon": "Weapon",
 
   "COC.title": "Chroniques Oubliées Contemporain",
 
@@ -252,6 +253,7 @@
   "COC.category.capacity": "Capacity",
   "COC.category.profile": "Profile",
   "COC.category.spell": "Spell",
+  "COC.category.encounterWeapon": "Weapon",  
   "COC.category.trait": "Trait",
   "COC.category.jewel": "Jewel",
   "COC.category.ammunition": "Ammunition",

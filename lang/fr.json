@@ -10,6 +10,7 @@
   "ITEM.TypeTrait": "Trait",
   "ITEM.TypeProfile": "Profil",
   "ITEM.TypePath": "Voie",
+  "ITEM.TypeEncounterWeapon": "Arme",
 
   "COC.title": "Chroniques Oubliées Contemporain",
 
@@ -243,6 +244,7 @@
   "COC.category.profile": "Profil",
   "COC.category.spell": "Sort",
   "COC.category.trait": "Trait",
+  "COC.category.encounterWeapon": "Arme",
   "COC.category.ammunition": "Munition",
   "COC.category.container" : "Contenant",
   "COC.category.vehicle" : "Véhicule",

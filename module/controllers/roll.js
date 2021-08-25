@@ -52,7 +52,7 @@ export class CoCRoll {
      * @param elt DOM element which raised the roll event
      * @param key the key of the attribute to roll
      * @private
-     */
+     
     static rollEncounterWeapon(data, actor, event) {
         const item = $(event.currentTarget).parents(".weapon");
         let label = item.find(".weapon-name").text();
@@ -61,18 +61,45 @@ export class CoCRoll {
         let dmg = item.find(".weapon-dmg").val();
         return this.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
     }
+    */
 
     /**
      *  Handles encounter damage rolls
      * @param elt DOM element which raised the roll event
      * @param key the key of the attribute to roll
      * @private
-     */
+     
     static rollEncounterDamage(data, actor, event) {
         const item = $(event.currentTarget).parents(".weapon");
         let label = item.find(".weapon-name").text();
         let dmg = item.find(".weapon-dmg").val();
         return this.rollDamageDialog(actor, label, dmg, 0);
+    }*/
+
+    /**
+     *  Handles encounter attack checks
+     */
+     static rollEncounterWeapon(data, actor, event) {
+        const li = $(event.currentTarget).parents(".item");
+        const item = actor.data.items.find(item=>item.id === li.data("itemId"));
+        
+        const label = item.name;
+        const weapon = item.data.data.weapon;
+
+        return this.rollWeaponDialog(actor, label, weapon.mod, weapon.skillBonus, 0, weapon.critrange, weapon.dmg, weapon.dmgBonus);
+    }
+
+    /**
+     *  Handles encounter damage rolls
+     */
+    static rollEncounterDamage(data, actor, event) {
+        const li = $(event.currentTarget).parents(".item");
+        const item = actor.data.items.find(item=>item.id === li.data("itemId"));
+
+        const label = item.name;
+        const weapon = item.data.data.weapon;
+
+        return this.rollDamageDialog(actor, label, weapon.dmg, weapon.bonus);
     }
 
     /**
@@ -324,9 +351,16 @@ export class CoCRoll {
         return d.render(true);
     }
 
-    static async rollDamageDialog(actor, label, formula, bonus, onEnter = "submit") {
+    static async rollDamageDialog(actor, label, formula, bonus, critical = false, onEnter = "submit", dmgDescr) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-dmg-dialog.hbs';
-        const rollOptionContent = await renderTemplate(rollOptionTpl, {formula: formula, bonus: bonus, custom: ""});
+        const rollOptionContent = await renderTemplate(rollOptionTpl, {
+            dmgFormula: formula,
+            dmgBonus: bonus,
+            dmgCustomFormula: "",
+            isCritical: critical,
+            hasDescription: dmgDescr && dmgDescr.length > 0,
+            dmgDescr: dmgDescr
+        });
 
         let d = new Dialog({
             title: label && label.length > 0 ? label : game.i18n.format("COC.dialog.rollDamage.title"),
@@ -334,23 +368,44 @@ export class CoCRoll {
             buttons: {
                 cancel: {
                     icon: '<i class="fas fa-times"></i>',
-                    label: "Cancel",
+                    label: game.i18n.localize("COC.ui.cancel"),
                     callback: () => {
                     }
                 },
                 submit: {
                     icon: '<i class="fas fa-check"></i>',
-                    label: "Submit",
+                    label: game.i18n.localize("COC.ui.submit"),
                     callback: (html) => {
-                        const custom = html.find("#custom").val();
-                        const formula = (custom) ? custom : html.find("#formula").val();
-                        let r = new DamageRoll(label, formula, false);
+                        let dmgBonus = html.find("#dmgBonus").val();
+                        let dmgCustomFormula = html.find("#dmgCustomFormula").val();
+                        let dmgBaseFormula = html.find("#dmgFormula").val();
+                        const isCritical = html.find("#isCritical").is(":checked");
+                        let dmgFormula = (dmgCustomFormula) ? dmgCustomFormula : dmgBaseFormula;
+
+                        if (dmgBonus.indexOf("d") !== -1 || dmgBonus.indexOf("D") !== -1) {
+                            if ((dmgBonus.indexOf("+") === -1) && (dmgBonus.indexOf("-") === -1)){
+                                dmgFormula = dmgFormula.concat('+', dmgBonus);
+                            }
+                            else dmgFormula = dmgFormula.concat(dmgBonus);
+                        }
+                        else {
+                            const dmgBonusInt = parseInt(dmgBonus);
+                            if (dmgBonusInt > 0) {
+                                dmgFormula = dmgFormula.concat('+', dmgBonusInt);
+                            }
+                            else if (dmgBonusInt < 0) {
+                                dmgFormula = dmgFormula.concat(' ', dmgBonus);
+                            }
+                        }
+
+                        let r = new DamageRoll(label, dmgFormula, isCritical, dmgDescr);
                         r.roll(actor);
                     }
                 }
             },
             default: onEnter,
-            close: () => {}
+            close: () => {
+            }
         }, this.options());
         return d.render(true);
     }

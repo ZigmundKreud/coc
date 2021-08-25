@@ -98,7 +98,8 @@ COC.itemTypes = {
     "capacity": "COC.category.capacity",
     "path": "COC.category.path",
     "trait": "COC.category.trait",
-    "item": "COC.category.item"
+    "item": "COC.category.item",
+    "encounterWeapon": "COC.category.encounterWeapon"
 };
 
 COC.itemCategories = {
