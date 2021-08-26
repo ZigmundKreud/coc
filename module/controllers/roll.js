@@ -23,15 +23,9 @@ export class CoCRoll {
         const critrange = 20;
         bonus = (bonus) ? bonus : 0;
         label = (label) ? game.i18n.localize(label) : null;
-        return this.skillRollDialog(actor, label, mod, bonus, critrange, superior);
+        return this.skillRollDialog(actor, label, mod, bonus, 0, critrange, superior);
     }
 
-    /**
-     *  Handles weapon check rolls
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
-     */
     static rollWeapon(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");        
         let item = actor.items.get(li.data("itemId"));
@@ -223,9 +217,9 @@ export class CoCRoll {
     /* ROLL DIALOGS                                 */
     /* -------------------------------------------- */
 
-    static async skillRollDialog(actor, label, mod, bonus, critrange, superior=false, onEnter = "submit") {
+    static async skillRollDialog(actor, label, mod, bonus, malus, critrange, superior=false, onEnter = "submit") {
         const rollOptionTpl = 'systems/coc/templates/dialogs/skillroll-dialog.hbs';
-        const rollOptionContent = await renderTemplate(rollOptionTpl, {mod: mod, bonus: bonus, critrange: critrange, superior:superior});
+        const rollOptionContent = await renderTemplate(rollOptionTpl, {mod: mod, bonus: bonus, malus: malus, critrange: critrange, superior:superior});
         let d = new Dialog({
             title: label,
             content: rollOptionContent,
@@ -243,9 +237,10 @@ export class CoCRoll {
                         const dice = html.find("#dice").val();
                         const diff = html.find('#difficulty').val();
                         const critrange = html.find('input#critrange').val();
-                        const m = html.find('input#mod').val();
-                        const b = html.find('input#bonus').val();
-                        let r = new SkillRoll(label, dice, m, b, diff, critrange);
+                        const mod = html.find('input#mod').val();
+                        const bonus = html.find('input#bonus').val();
+                        const malus = html.find('input#malus').val();
+                        let r = new SkillRoll(label, dice, mod, bonus, malus, diff, critrange);
                         r.roll(actor);
                     }
                 }
