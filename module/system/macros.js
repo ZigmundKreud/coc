@@ -51,7 +51,7 @@ export class Macros {
         if (stat === "for" || stat === "str" || stat === "dex") {
 
             // Prise en compte de la notion d'encombrement
-            malus += actor.getOverloadedSkillMalus(stat);
+            // malus += actor.getOverloadedSkillMalus(stat);
 
             // Prise en compte des bonus ou malus liés à la caractéristique
             let skillBonus = statObj.skillbonus;
