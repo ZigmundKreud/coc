@@ -3,7 +3,7 @@ import {Path} from "./path.js";
 
 export class Profile {
 
-    static addToActor(actor, event, itemData) {
+    static addToActor(actor, itemData) {
         if (actor.items.filter(item => item.type === "profile").length > 0) {
             ui.notifications.error("Vous avez déjà un profil.");
             return false;

@@ -248,10 +248,10 @@ export class CoCBaseSheet extends ActorSheet {
             if (!COC.actorsAllowedItems[this.actor.data.type]?.includes(item.data.type)) return;
             const itemData = duplicate(item.data);
             switch (itemData.type) {
-                case "capacity"    : return Capacity.addToActor(this.actor, event, itemData);
-                case "trait"    : return Trait.addToActor(this.actor, event, itemData);
-                case "path"    : return Path.addToActor(this.actor, event, itemData);
-                case "profile" : return Profile.addToActor(this.actor, event, itemData);
+                case "capacity"    : return Capacity.addToActor(this.actor, itemData);
+                case "trait"    : return Trait.addToActor(this.actor, itemData);
+                case "path"    : return Path.addToActor(this.actor, itemData);
+                case "profile" : return Profile.addToActor(this.actor, itemData);
                 default:
                     // Handle item sorting within the same Actor
                     const actor = this.actor;

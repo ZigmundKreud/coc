@@ -3,7 +3,7 @@ import { ArrayUtils } from "../utils/array-utils.js";
 
 export class Capacity {
 
-    static addToActor(actor, event, itemData) {
+    static addToActor(actor, itemData) {
         if (actor.items.filter(item => item.type === "capacity" && item.data.name === itemData.name).length > 0) {
             ui.notifications.error("Vous possédez déjà cette capacité.");
             return false;
