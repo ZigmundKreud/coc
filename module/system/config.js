@@ -18,7 +18,6 @@ System.ASCII = `
   //////    ///////     ////// `;
 
 export const COC = {};
-COC.debug = false;
 
 COC.itemProperties = {
     "equipable": "COC.properties.equipable",
@@ -59,12 +58,12 @@ COC.itemProperties = {
     "explosive" : "COC.properties.explosive"
 };
 
+//TODO Vérifier si les 4 tableaux et méthodes qui suivent sont utilisés
 COC.profiles = [];
 COC.paths = [];
 COC.capacities = [];
 COC.traits = [];
 
-//FIXME Vérifier si les 4 méthodes suivantes sont utilisées
 // Mise en cache des données de profil
 COC.getProfiles = async function () {
     let profiles = await game.packs.get("coc.profiles").getContent().then(index => index.map(entity => entity.data));
@@ -119,3 +118,41 @@ COC.itemCategories = {
     "currency": "COC.category.currency",
     "trapping": "COC.category.trapping"
 }
+
+COC.itemIcons = {
+    "item": "icons/containers/chest/chest-worn-oak-tan.webp",
+    "capacity":"icons/sundries/scrolls/scroll-plain-tan-red.webp",
+    "profile": "icons/sundries/documents/blueprint-axe.webp",
+    "path": "icons/sundries/books/book-embossed-gold-red.webp",
+    "trait": "icons/skills/social/diplomacy-peace-alliance.webp",
+    "encounterWeapon": "icons/weapons/ammunition/bullets-cartridge-shell-gray.webp"
+}
+
+COC.actorIcons = {
+    "npc": "icons/environment/people/commoner.webp",
+    "encounter": "systems/coc/ui/icons/creature.webp"
+}
+
+COC.actorsAllowedItems = {
+    "character":[
+        "item",
+        "capacity",
+        "trait",
+        "profile",
+        "path"
+    ],
+    "npc":[
+        "item",
+        "capacity",
+        "trait",
+        "profile",
+        "path"
+    ],
+    "encounter":[
+        "item",
+        "capacity",
+        "encounterWeapon"
+    ]
+}
+
+COC.debug = false;

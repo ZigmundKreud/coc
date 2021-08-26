@@ -2,9 +2,26 @@
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-import {Stats} from "../system/stats.js";
+import { Stats } from "../system/stats.js";
+import { COC } from "../system/config.js";
 
 export class CoCActor extends Actor {
+
+    /* -------------------------------------------- */
+    /*  Constructor                                 */
+    /* -------------------------------------------- */
+    /* Définition des images par défaut             */
+    /* -------------------------------------------- */   
+    constructor(...args) {
+        let data = args[0];
+        
+        if (!data.img && COC.actorIcons[data.type]){
+            data.img = COC.actorIcons[data.type];
+            if (!data.token) data.token = {};
+            if (!data.token.img) data.token.img = COC.actorIcons[data.type];
+        }
+        super(...args);
+    }
 
     /* -------------------------------------------- */
     /*  Data Preparation                            */
@@ -25,6 +42,7 @@ export class CoCActor extends Actor {
         //if (actorData.type === "encounter") this._prepareBaseEncounterData(actorData);
     }    
 
+    /*
     _prepareBaseEncounterData(actorData) {
         // STATS
         let stats = actorData.data.stats;
@@ -38,8 +56,8 @@ export class CoCActor extends Actor {
             actorData.data.attacks = {
                 "melee": {
                     "key": "melee",
-                    "label": "COF.attacks.melee.label",
-                    "abbrev": "COF.attacks.melee.abbrev",
+                    "label": "COC.attacks.melee.label",
+                    "abbrev": "COC.attacks.melee.abbrev",
                     "stat": "@stats.str.mod",
                     "enabled": true,
                     "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.str.mod,
@@ -48,8 +66,8 @@ export class CoCActor extends Actor {
                 },
                 "ranged": {
                     "key": "ranged",
-                    "label": "COF.attacks.ranged.label",
-                    "abbrev": "COF.attacks.ranged.abbrev",
+                    "label": "COC.attacks.ranged.label",
+                    "abbrev": "COC.attacks.ranged.abbrev",
                     "stat": "@stats.dex.mod",
                     "enabled": true,
                     "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.dex.mod,
@@ -58,8 +76,8 @@ export class CoCActor extends Actor {
                 },
                 "magic": {
                     "key": "magic",
-                    "label": "COF.attacks.magic.label",
-                    "abbrev": "COF.attacks.magic.abbrev",
+                    "label": "COC.attacks.magic.label",
+                    "abbrev": "COC.attacks.magic.abbrev",
                     "stat": "@stats.int.mod",
                     "enabled": true,
                     "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.int.mod,
@@ -96,7 +114,8 @@ export class CoCActor extends Actor {
                 break;
         }
     }
-    
+    */
+
     /* -------------------------------------------- */
     /* Après application des effets                 */
     /* -------------------------------------------- */

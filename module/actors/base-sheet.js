@@ -2,14 +2,15 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-import {CoCRoll} from "../controllers/roll.js";
-import {Capacity} from "../controllers/capacity.js";
-import {Path} from "../controllers/path.js";
-import {Profile} from "../controllers/profile.js";
-import {Traversal} from "../utils/traversal.js";
-import {Trait} from "../controllers/trait.js";
-import {ArrayUtils} from "../utils/array-utils.js";
-import {Inventory} from "../controllers/inventory.js";
+import { CoCRoll } from "../controllers/roll.js";
+import { Capacity } from "../controllers/capacity.js";
+import { Path } from "../controllers/path.js";
+import { Profile } from "../controllers/profile.js";
+import { Traversal } from "../utils/traversal.js";
+import { Trait } from "../controllers/trait.js";
+import { ArrayUtils } from "../utils/array-utils.js";
+import { Inventory } from "../controllers/inventory.js";
+import { COC } from "../system/config.js";
 
 export class CoCBaseSheet extends ActorSheet {
 
@@ -144,7 +145,7 @@ export class CoCBaseSheet extends ActorSheet {
 
     _onToggleEquip(event) {
         event.preventDefault();
-        //AudioHelper.play({ src: "/systems/cof/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+        //AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
         return Inventory.onToggleEquip(this.actor, event);
     }
 
@@ -229,7 +230,9 @@ export class CoCBaseSheet extends ActorSheet {
      */
     _onDropItem(event, data) {
         if (!this.actor.isOwner) return false;
+
         return Item.fromDropData(data).then(item => {
+            if (!COC.actorsAllowedItems[this.actor.data.type]?.includes(item.data.type)) return;
             const itemData = duplicate(item.data);
             switch (itemData.type) {
                 case "capacity"    : return Capacity.addToActor(this.actor, event, itemData);
