@@ -61,10 +61,62 @@ export class CoCItemSheet extends ItemSheet {
         });
 
         // Display item sheet
-        html.find('.item-name').click(this._onEditItem.bind(this));
         html.find('.item-edit').click(this._onEditItem.bind(this));
         // Delete items
         html.find('.item-delete').click(this._onDeleteItem.bind(this));
+
+        // Item Effects
+        html.find('.item-name').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            if (!elt || elt.length === 0) this._onEditItem(ev);
+            else {
+                if (this.item.actor) return;    // Si l'item appartient à un actor, l'effet n'est pas modifiable
+                const effectId = elt.data("itemId");
+                let effect = this.item.effects.get(effectId);
+                if (effect) {
+                    new ActiveEffectConfig(effect).render(true);
+                }
+            }
+        });
+        // Abonnement des évènements sur les effets
+        html.find('.effect-create').click(ev => {
+            ev.preventDefault();
+            if (!this.isEditable) return;
+            return this.item.createEmbeddedDocuments("ActiveEffect", [{
+                label: game.i18n.localize("COC.ui.newEffect"),
+                icon: "icons/svg/aura.svg",
+                origin: this.item.uuid,
+                "duration.rounds": undefined,
+                disabled: false
+            }]);
+        });
+        html.find('.effect-edit').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let effect = this.item.effects.get(effectId);
+            if (effect) {
+                new ActiveEffectConfig(effect).render(true);
+            }
+        });
+        html.find('.effect-delete').click(ev => {
+            ev.preventDefault();
+            if (!this.isEditable) return;
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let effect = this.item.effects.get(effectId);
+            if (effect) effect.delete();
+        });
+        html.find('.effect-toggle').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let effect = this.item.effects.get(effectId);
+            if (effect) {
+                effect.update({ disabled: !effect.data.disabled })
+            }
+        });
 
     }
 
@@ -216,6 +268,10 @@ export class CoCItemSheet extends ItemSheet {
         data.config = game.coc.config;
         data.itemType = data.item.type.titleCase();
         data.itemProperties = this._getItemProperties(data.item);
+        data.effects = data.item.effects;
+        // Gestion de l'affichage des boutons de modification des effets
+        // Les boutons sont masqués si l'item appartient à un actor
+        data.isEffectsEditable = this.item.actor ? false : true;
         data.item = itemData;
         data.data = itemData.data;
         

@@ -933,6 +933,11 @@
   height: calc(100% - 195px);
   max-height: calc(100% - 195px);
 }
+
+.effect-icon {
+  background-color: black;
+}
+
 .coc.base.actor .window-content > form .main .content .cell {
   height: 26px;
 }

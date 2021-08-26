@@ -373,6 +373,24 @@
           "bashing" : false,
           "sling" : false,
           "spell" : false
+        },
+        "effects" : {
+          "heal" : {
+            "formula" : null,
+            "persistent" : false,
+            "duration" : {
+              "value" : null,
+              "units" : null
+            }
+          },
+          "buff" : {
+            "formula" : null,
+            "persistent" : false,
+            "duration" : {
+              "value" : null,
+              "units" : null
+            }
+          }
         }
       }
     },

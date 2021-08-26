@@ -17,8 +17,9 @@
     </header>
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-navigation tabs" data-group="primary">
-        <a class="item active" data-tab="description">Description</a>
-        <a class="item" data-tab="details">Détails</a>
+        <a class="item active" data-tab="description">{{localize "COC.tabs.description"}}</a>
+        <a class="item" data-tab="details">{{localize "COC.tabs.details"}}</a>
+        <a class="item" data-tab="effets">{{localize "COC.tabs.effects"}}</a>
     </nav>
     {{!-- Sheet Body --}}
     <section class="sheet-body">
@@ -45,6 +46,9 @@
             {{#if (equals item.type "encounterWeapon")}}
                 {{> "systems/coc/templates/items/parts/details/encounter-weapon-details.hbs"}}
             {{/if}}
+        </div>
+        <div class="tab" data-group="primary" data-tab="effets">
+            {{> "systems/coc/templates/effects/effects.hbs"}}            
         </div>
     </section>
 </form>

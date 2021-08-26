@@ -27,7 +27,7 @@
             <div class="flex1 center cell-header">
                 <span class="field-label">Trait</span>
             </div>
-            <div class="flex2 center cell drop-field compendium-pack" data-pack="coc.traits" data-open="0">
+            <div class="flex2 center cell drop-field compendium-pack" data-pack="coc.traits" data-open="0" title="click droit pour ouvrir le compendium">
                 {{#with trait}}
                     <div class="flex5 drop-item item-name item trait" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                     <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">
@@ -42,7 +42,7 @@
             <div class="flex2 center cell-header">
                 <span class="field-label">{{ localize 'COC.details.profile' }}</span>
             </div>
-            <div class="flex4 center cell drop-field compendium-pack" data-pack="coc.profiles" data-open="0">
+            <div class="flex4 center cell drop-field compendium-pack" data-pack="coc.profiles" data-open="0" title="click droit pour ouvrir le compendium">
             {{#with profile}}
                 <div class="flex5 drop-item item-name item profile" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                 <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">

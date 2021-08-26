@@ -102,21 +102,20 @@ COC.itemTypes = {
 };
 
 COC.itemCategories = {
-    "other": "COC.category.other",
     "armor": "COC.category.armor",
     "shield": "COC.category.shield",
     "melee": "COC.category.melee",
     "ranged": "COC.category.ranged",
     "spell": "COC.category.spell",
+    "currency": "COC.category.currency",
     "jewel": "COC.category.jewel",
-    "scroll": "COC.category.scroll",
-    "wand": "COC.category.wand",
     "ammunition": "COC.category.ammunition",
     "consumable": "COC.category.consumable",
     "container": "COC.category.container",
     "mount": "COC.category.mount",
-    "currency": "COC.category.currency",
-    "trapping": "COC.category.trapping"
+    "vehicle": "COC.category.vehicle",    
+    "trapping": "COC.category.trapping",
+    "other": "COC.category.other"
 }
 
 COC.itemIcons = {

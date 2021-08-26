@@ -22,12 +22,44 @@ export class CoCActorSheet extends CoCBaseSheet {
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
+
+        // Effects controls
+        html.find('.effect-toggle').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let updateData = duplicate(this.actor);
+            let effects = updateData.effects;
+            const effect = effects.find(e => e._id === effectId);
+            if (effect) {
+                effect.disabled = !effect.disabled;
+                return this.actor.update(updateData);
+            }
+        });
+        html.find('.effect-create').click(ev => {
+            ev.preventDefault();
+            return this.actor.createEmbeddedDocuments("ActiveEffect", [{
+                label: game.i18n.localize("COC.ui.newEffect"),
+                icon: "icons/svg/aura.svg",
+                origin: this.actor.uuid,
+                "duration.rounds": undefined,
+                disabled: true
+            }]);
+        });
+        html.find('.effect-edit').click(this._onEditItem.bind(this));
+        html.find('.effect-delete').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let effect = this.actor.effects.get(effectId);
+            if (effect) effect.delete();
+        });
     }
 
     /* -------------------------------------------- */
 
     /** @override */
-    getData(options) {
+    getData(options = {}) {
         const data = super.getData(options);
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         
@@ -119,6 +151,8 @@ export class CoCActorSheet extends CoCBaseSheet {
             }
         });
 
+        // Gestion des boutons de modification des effets (visible pour l'actor)
+        data.isEffectsEditable = true;
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }

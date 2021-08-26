@@ -70,7 +70,11 @@ export const preloadHandlebarsTemplates = async function () {
         "systems/" + System.name + "/templates/items/parts/details/usage-details.hbs",
         "systems/" + System.name + "/templates/items/parts/details/effects-details.hbs",
         "systems/" + System.name + "/templates/items/parts/details/trait-details.hbs",
-        "systems/" + System.name + "/templates/items/parts/details/setting-details.hbs"
+        "systems/" + System.name + "/templates/items/parts/details/setting-details.hbs",
+
+        // EFFECTS
+        "systems/" + System.name + "/templates/effects/effects.hbs",
+        "systems/" + System.name + "/templates/effects/effects-item.hbs"
 
     ];
 
