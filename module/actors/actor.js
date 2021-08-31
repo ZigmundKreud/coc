@@ -39,82 +39,7 @@ export class CoCActor extends Actor {
                 "effects": { "folded": [] }
             };
         }
-        //if (actorData.type === "encounter") this._prepareBaseEncounterData(actorData);
     }    
-
-    /*
-    _prepareBaseEncounterData(actorData) {
-        // STATS
-        let stats = actorData.data.stats;
-        // COMPUTE STATS FROM MODS
-        for (let stat of Object.values(stats)) {
-            stat.value = Stats.getStatValueFromMod(stat.mod);
-        }
-
-        // ATTACKS
-        if (!actorData.data.attacks) {
-            actorData.data.attacks = {
-                "melee": {
-                    "key": "melee",
-                    "label": "COC.attacks.melee.label",
-                    "abbrev": "COC.attacks.melee.abbrev",
-                    "stat": "@stats.str.mod",
-                    "enabled": true,
-                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.str.mod,
-                    "bonus": 0,
-                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.str.mod
-                },
-                "ranged": {
-                    "key": "ranged",
-                    "label": "COC.attacks.ranged.label",
-                    "abbrev": "COC.attacks.ranged.abbrev",
-                    "stat": "@stats.dex.mod",
-                    "enabled": true,
-                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.dex.mod,
-                    "bonus": 0,
-                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.dex.mod
-                },
-                "magic": {
-                    "key": "magic",
-                    "label": "COC.attacks.magic.label",
-                    "abbrev": "COC.attacks.magic.abbrev",
-                    "stat": "@stats.int.mod",
-                    "enabled": true,
-                    "base": Math.ceil(actorData.data.nc.value) + actorData.data.stats.int.mod,
-                    "bonus": 0,
-                    "mod": Math.ceil(actorData.data.nc.value) + actorData.data.stats.int.mod
-                }
-            }
-        } else {
-            let attacks = actorData.data.attacks;
-            for (let attack of Object.values(attacks)) {
-                attack.mod = attack.base + attack.bonus;
-            }
-        }
-
-        // MODIFY TOKEN REGARDING SIZE
-        switch (actorData.data.details.size) {
-            case "big":
-                actorData.token.width = 2;
-                actorData.token.height = 2;
-                break;
-            case "huge":
-                actorData.token.width = 4;
-                actorData.token.height = 4;
-                break;
-            case "colossal":
-                actorData.token.width = 8;
-                actorData.token.height = 8;
-                break;
-            case "tiny":
-            case "small":
-            case "short":
-            case "med":
-            default:
-                break;
-        }
-    }
-    */
 
     /* -------------------------------------------- */
     /* Après application des effets                 */
@@ -126,6 +51,10 @@ export class CoCActor extends Actor {
         else this._prepareDerivedCharacterData(actorData);
     }
 
+    /**
+     * 
+     * @param {*} actorData 
+     */
     _prepareDerivedEncounterData(actorData) { 
         // Stats
         this.computeNpcMods(actorData);
@@ -139,7 +68,7 @@ export class CoCActor extends Actor {
         // Points de vie
         attributes.hp.max = attributes.hp.base + attributes.hp.bonus;
 
-        // Defense
+        // Défense
         attributes.def.value = attributes.def.base + attributes.def.bonus;
 
         // Réduction de dommages
@@ -152,15 +81,11 @@ export class CoCActor extends Actor {
         }
     }
     
-    /** @override */
+    /**
+     * 
+     * @param {*} actorData 
+     */
     _prepareDerivedCharacterData(actorData) {
-        // super.prepareDerivedData();
-        // console.debug("Actor prepareDerivedData");
-
-        //const actorData = this.data;
-        // const data = actorData.data;
-        // const flags = actorData.flags;
-
         if(actorData.type === "npc") this.computeNpcMods(actorData);
         else this.computeMods(actorData);
 
@@ -170,37 +95,65 @@ export class CoCActor extends Actor {
         this.computeXP(actorData);
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} items 
+     * @returns 
+     */
     getProfile(items) {
         let profile = items.find(i => i.type === "profile")
         if(profile) return profile.data;
         else return null;
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} items 
+     * @returns 
+     */
     getProtection(items) {
         const protections = items.filter(i => i.type === "item" && i.data.data.worn && i.data.data.def).map(i => i.data.data.def);
         return protections.reduce((acc, curr) => acc + curr, 0);
     }
 
-    /* -------------------------------------------- */
+    /**
+     * @name
+     * @description Calcule le malus due à la Défense. Le bonus d'une armure diminue le malus d'autant
+     
+     * @param {*} items 
+     * @returns {int} retourne le malus 0 ou un nombre négatif
+     */
+    getMalusFromProtection(items) {
+        let malus = 0;
+        let protections = items.filter(i => i.data.type === "item" && i.data.data.subtype === "armor" && i.data.data.worn && i.data.data.def).map(i => (-1 * i.data.data.defBase) + i.data.data.defBonus);     
+        if (protections.length > 0) malus = protections.reduce((acc, curr) => acc + curr, 0);
+        return malus;
+    }
 
+    /**
+     * 
+     * @param {*} items 
+     * @returns 
+     */
     getResistance(items) {
         const resistances = items.filter(i => i.type === "item" && i.data.data.worn && i.data.data.dr).map(i => i.data.data.dr);
         return resistances.reduce((acc, curr) => acc + curr, 0);
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} items 
+     * @returns 
+     */
     getCurrentXP(items) {
         const capacities = items.filter(i => i.type === "capacity");
         return capacities.map(cap => (cap.data.data.rank > 2) ? 2 : 1).reduce((acc, curr) => acc + curr, 0);
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} actorData 
+     */
     computeMods(actorData) {
         let stats = actorData.data.stats;
         for(const stat of Object.values(stats)){
@@ -209,8 +162,10 @@ export class CoCActor extends Actor {
         }
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} actorData 
+     */
     computeNpcMods(actorData) {
         let stats = actorData.data.stats;
         for(const stat of Object.values(stats)){
@@ -218,8 +173,10 @@ export class CoCActor extends Actor {
         }
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} actorData 
+     */
     computeAttributes(actorData) {
 
         let stats = actorData.data.stats;
@@ -230,7 +187,7 @@ export class CoCActor extends Actor {
         const protection = this.getProtection(actorData.items);
 
         attributes.init.base = stats.dex.value;
-        attributes.init.penalty = - parseInt(protection);
+        attributes.init.penalty = this.getMalusFromProtection(actorData.items);
         attributes.init.value = attributes.init.base + attributes.init.bonus + attributes.init.penalty;
 
         attributes.fp.base = 2 + stats.cha.mod;
@@ -246,8 +203,10 @@ export class CoCActor extends Actor {
         attributes.hd.value = (profile && profile.data.dv) ? profile.data.dv : attributes.hd.value;
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} actorData 
+     */
     computeAttacks(actorData) {
 
         let stats = actorData.data.stats;
@@ -281,12 +240,15 @@ export class CoCActor extends Actor {
 
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * 
+     * @param {*} actorData 
+     */
     computeDef(actorData) {
         let stats = actorData.data.stats;
         let attributes = actorData.data.attributes;
-        // COMPUTE DEF SCORES
+        
+        // Calcule DEF et RD
         const protection = this.getProtection(actorData.items);
         const dr = this.getResistance(actorData.items);
 
@@ -298,8 +260,11 @@ export class CoCActor extends Actor {
 
     }
 
-    /* -------------------------------------------- */
-
+    /**
+     * @name computeXP
+     * @description calcule les XPs dépensés dans les capacités
+     * @param {*} actorData 
+     */
     computeXP(actorData) {
         let items = actorData.items;
         let lvl = actorData.data.level.value;
@@ -350,7 +315,7 @@ export class CoCActor extends Actor {
      * @name computeDm
      * @description calculer les dégâts d'une arme
 
-    * @param {string} itemDmgBase le modificateur issue de la caractéristique
+     * @param {string} itemDmgBase le modificateur issue de la caractéristique
      * @param {string} itemDmgStat la caractéristique utilisée pour les dégâts
      * @param {int} itemDmgBonus le bonus aux dégâts
 
