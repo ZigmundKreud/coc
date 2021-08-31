@@ -202,67 +202,17 @@ export class CoCBaseSheet extends ActorSheet {
     /* -------------------------------------------- */
 
     /** @override */
-    _onDrop(event) {
-        event.preventDefault();
-        // Get dropped data
-        let data;
-        try {
-            data = JSON.parse(event.dataTransfer.getData('text/plain'));
-        } catch (err) {
-            return false;
+    async _onDropItemCreate(itemData) {
+        switch (itemData.type) {
+            case "capacity" : return Capacity.addToActor(this.actor, itemData);
+            case "trait" : return Trait.addToActor(this.actor, itemData);
+            case "path" : return Path.addToActor(this.actor, itemData);
+            case "profile" : return Profile.addToActor(this.actor, itemData);
+            default: return this.actor.createEmbeddedDocuments("Item", [itemData], {});
         }
-        if (!data) return false;
-
-        // Case 1 - Dropped Item
-        if (data.type === "Item") {
-            return this._onDropItem(event, data);
-        }
-
-        // Case 2 - Dropped Actor
-        if (data.type === "Actor") {
-            return this._onDropActor(event, data);
-        }
-    }
-
-    /**
-     * Handle dropping an Actor on the sheet to trigger a Polymorph workflow
-     * @param {DragEvent} event   The drop event
-     * @param {Object} data       The data transfer
-     * @private
-     */
-    async _onDropActor(event, data) {
-        return false;
-    }
-
-    /**
-     * Handle dropping of an item reference or item data onto an Actor Sheet
-     * @param {DragEvent} event     The concluding DragEvent which contains drop data
-     * @param {Object} data         The data transfer extracted from the event
-     * @return {Object}             OwnedItem data to create
-     * @private
-     */
-    _onDropItem(event, data) {
-        if (!this.actor.isOwner) return false;
-
-        return Item.fromDropData(data).then(item => {
-            if (!COC.actorsAllowedItems[this.actor.data.type]?.includes(item.data.type)) return;
-            const itemData = duplicate(item.data);
-            switch (itemData.type) {
-                case "capacity"    : return Capacity.addToActor(this.actor, itemData);
-                case "trait"    : return Trait.addToActor(this.actor, itemData);
-                case "path"    : return Path.addToActor(this.actor, itemData);
-                case "profile" : return Profile.addToActor(this.actor, itemData);
-                default:
-                    // Handle item sorting within the same Actor
-                    const actor = this.actor;
-                    let sameActor = (data.actorId === actor.id) || (actor.isToken && (data.tokenId === actor.token.id));
-                    if (sameActor) return this._onSortItem(event, itemData);
-                    // Create the owned item
-                    return this.actor.createEmbeddedDocuments("Item", [itemData], {});
-            }
-        });
-    }
-
+      }
+      
+      
     /* -------------------------------------------- */
     /* ROLL EVENTS CALLBACKS                        */
     /* -------------------------------------------- */
@@ -296,7 +246,7 @@ export class CoCBaseSheet extends ActorSheet {
         }
     }
 
-        /** @override */
+    /** @override */
 	getData(options) {
         const data = super.getData(options);
         const actorData = data.data;

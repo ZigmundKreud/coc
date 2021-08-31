@@ -115,8 +115,9 @@
   "COC.ui.applyDoubleDamage": "Apply double damage",
   "COC.ui.applyHealing" : "Apply healing",
   "COC.ui.newEffect" : "New Effect",
-  "COC.notification.noCapacitySelected" : "No capacity has been selected yet",
-  "COC.notification.noPathSelected": "No path have been added yet",
+  "COC.notification.noCapacitySelected" : "No capacity has been added yet",
+  "COC.notification.noPathSelected": "No path has been added yet",
+  "COC.notification.noEncounterWeaponsSelected": "No encounter weapon has been added yet",
 
   "COC.placeholders.stacksize" : "Infinite if empty",
 

@@ -115,9 +115,10 @@
   "COC.ui.applyDoubleDamage": "Appliquer le double des dégâts",
   "COC.ui.applyHealing" : "Appliquer les soins",
   "COC.ui.newEffect" : "Nouvel Effet",
-  "COC.notification.noCapacitySelected" : "Aucune capacité n'a été sélectionnée pour le moment",
-  "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment.",
-
+  "COC.notification.noCapacitySelected" : "Aucune capacité n'a été ajoutée pour le moment",
+  "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment",
+  "COC.notification.noEncounterWeaponsSelected": "Aucune arme de rencontre n'a été ajoutée pour le moment",
+  
   "COC.placeholders.stacksize" : "Quantité infinie si vide",
 
   "COC.roll.skillcheck" : "Test de compétence",

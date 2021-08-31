@@ -15,10 +15,6 @@ export class Capacity {
         }
     }
 
-    /*static removeFromActor(actor, event, entity) {
-        return entity.delete();
-    }*/
-
     /**
      * Supprime une capacité de la feuille de personnage et met à jour les infos d'un éventuel path
      * @param {*} actor 

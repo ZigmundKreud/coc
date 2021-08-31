@@ -82,7 +82,7 @@ export class CoCActorSheet extends CoCBaseSheet {
             id: "standalone-capacities",
             label: "Capacités Hors-Voies",
             items: Object.values(actorData.items).filter(item => {
-                if (item.type === "capacity" && !item.data.path) {
+                if (item.type === "capacity" && item.data.path.key === "") {
                     return true;
                 }
             }).sort((a, b) => (a.name > b.name) ? 1 : -1)
@@ -156,8 +156,6 @@ export class CoCActorSheet extends CoCBaseSheet {
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }
-
-    /* -------------------------------------------- */
 
     /** @override */
     setPosition(options = {}) {
