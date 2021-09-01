@@ -1,4 +1,4 @@
-import {COC} from "../system/config.js";
+import {COC,System} from "../system/config.js";
 import {Compendia} from "./compendia.js";
 
 export class Traversal {
@@ -11,7 +11,7 @@ export class Traversal {
         else if(type === "journal") entity = game.journal.get(id);
         // Case 2 - Import from a Compendium pack
         if (!entity && pack) {
-            await game.packs.get(pack).getDocument(id).then(e => entity = e);
+            await game.packs.get(System.name + "." + pack).getDocument(id).then(e => entity = e);
         }
         return entity;
     }
