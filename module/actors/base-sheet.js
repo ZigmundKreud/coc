@@ -21,18 +21,30 @@ export class CoCBaseSheet extends ActorSheet {
         // Everything below here is only needed if the sheet is editable
         if (!this.options.editable) return;
 
-        // Double click to open
+        // Right click to open
         html.find('.compendium-pack').contextmenu(ev => {
             ev.preventDefault();
             const li = $(ev.currentTarget);
-            const pack = game.packs.get(li.data("pack"));
+
+            let packName;
+            let attributeName;
+            // SHIFT + right click to alternative open
+            if (ev.shiftKey) {
+                packName = "alternative-pack";
+                attributeName = "data-alternative-open";
+            }
+            else {
+                packName = "pack";
+                attributeName = "data-open";
+            }
+            const pack = game.packs.get(li.data(packName));
             if (pack) {
-                if (li.attr("data-open") === "1") {
-                    li.attr("data-open", "0");
+                if (li.attr(attributeName) === "1") {
+                    li.attr(attributeName, "0");
                     pack.apps[0].close();
                 }
                 else {
-                    li.attr("data-open", "1");
+                    li.attr(attributeName, "1");
                     pack.render(true);
                 }
             }
