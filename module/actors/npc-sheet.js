@@ -39,7 +39,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
             id: "standalone-capacities",
             label: "Capacités Hors-Voies",
             items: Object.values(actorData.items).filter(item => {
-                if (item.type === "capacity" && !item.data.path) {
+                if (item.type === "capacity" && item.data.path.key === "") {
                     return true;
                 }
             }).sort((a, b) => (a.name > b.name) ? 1 : -1)
