@@ -15,7 +15,7 @@
                 </li>
                 <ol class="item-list" {{#if (includes ../folded.capacities collection.id)}}style="display: none;"{{/if}}>
                     {{#each collection.items as |capacity id|}}
-                        <li class="item flexrow" data-item-id="{{capacity._id}}" data-item-type="item" data-item-type="item" draggable="true">
+                        <li class="item flexrow" data-item-id="{{capacity._id}}" data-item-type="item" draggable="true">
                             <div class="item-name flexrow">
                                 <div class="item-image" style="background-image: url('{{capacity.img}}')"></div>
                                 <h4>{{capacity.name}}</h4>
