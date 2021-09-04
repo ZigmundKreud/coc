@@ -18,12 +18,13 @@ export class CoCRoll {
         let key = elt.attributes["data-rolling"].value;
         let label = eval(`${key}.label`);
         const mod = eval(`${key}.mod`);
+        const tmpmod = eval(`${key}.tmpmod`);
         let bonus = eval(`${key}.bonus`);
         let superior = eval(`${key}.superior`);
         const critrange = 20;
         bonus = (bonus) ? bonus : 0;
         label = (label) ? game.i18n.localize(label) : null;
-        return this.skillRollDialog(actor, label, mod, bonus, 0, critrange, superior);
+        return this.skillRollDialog(actor, label, tmpmod !== null ? tmpmod : mod, bonus, 0, critrange, superior);
     }
 
     static rollWeapon(data, actor, event) {

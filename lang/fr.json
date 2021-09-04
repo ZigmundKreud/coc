@@ -167,7 +167,7 @@
   "COC.stats.value.abbrev": "Valeur",
   "COC.stats.bonus.abbrev": "Bonus",
   "COC.stats.mod.abbrev" : "Mod",
-  "COC.stats.tmpmod.abbrev" : "Temp",
+  "COC.stats.tmpmod.abbrev" : "Mod Tmp",
 
   "COC.stats.str.label" : "Force",
   "COC.stats.str.abbrev" : "FOR",
