@@ -1,17 +1,17 @@
-{{#if (equals weapons.length 0)}}
-    <p class="empty">{{localize "COC.notification.noEncounterWeaponsSelected"}}</p>
-{{else}}
-    <ol class="inventory-list">
-        <li class="inventory-header flexrow">
-            <h3 class="item-name flexrow">Attaques</h3>
-            <div class="item-detail">Portée</div>
-            <div class="item-detail">Critique</div>        
-            <div class="item-detail">Mod</div>
-            <div class="item-detail">DM</div>
-            <div class="item-controls-3">
-                <a class="item-control item-create weapon-add" title="Ajouter une attaque"><i class="fas fa-plus"></i>&nbsp;</a>
-            </div>
-        </li>
+<ol class="inventory-list">
+    <li class="inventory-header flexrow">
+        <h3 class="item-name flexrow">Attaques</h3>
+        <div class="item-detail">Portée</div>
+        <div class="item-detail">Critique</div>        
+        <div class="item-detail">Mod</div>
+        <div class="item-detail">DM</div>
+        <div class="item-controls-3">
+            <a class="item-control item-create weapon-add" title="Ajouter une attaque"><i class="fas fa-plus"></i>&nbsp;</a>
+        </div>
+    </li>
+    {{#if (equals weapons.length 0)}}
+        <p class="empty">{{localize "COC.notification.noEncounterWeaponsSelected"}}</p>
+    {{else}}
         <ol class="item-list">
         {{#each weapons as |weapon id|}}
             <li class="item flexrow" data-item-id="{{_id}}" data-item-type="item" draggable="true">
@@ -37,5 +37,5 @@
             </li>
         {{/each}}
         </ol>
-    </ol>
-{{/if}}
+    {{/if}}
+</ol>
