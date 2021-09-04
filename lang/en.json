@@ -118,6 +118,7 @@
   "COC.notification.noCapacitySelected" : "No capacity has been added yet",
   "COC.notification.noPathSelected": "No path has been added yet",
   "COC.notification.noEncounterWeaponsSelected": "No encounter weapon has been added yet",
+  "COC.notification.emptyInventory": "The inventory is empty",
 
   "COC.placeholders.stacksize" : "Infinite if empty",
 
@@ -133,6 +134,7 @@
 
   "COC.None": "--",
   "COC.tabs.stats": "Stats",
+  "COC.tabs.encounter": "Stats Capacities Combat",
   "COC.tabs.combat": "Combat",
   "COC.tabs.paths" : "Paths",
   "COC.tabs.capacities" : "Capacities",

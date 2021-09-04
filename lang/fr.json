@@ -118,6 +118,7 @@
   "COC.notification.noCapacitySelected" : "Aucune capacité n'a été ajoutée pour le moment",
   "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment",
   "COC.notification.noEncounterWeaponsSelected": "Aucune arme de rencontre n'a été ajoutée pour le moment",
+  "COC.notification.emptyInventory": "L'inventaire est vide",
   
   "COC.placeholders.stacksize" : "Quantité infinie si vide",
 
@@ -133,6 +134,7 @@
 
   "COC.None": "--",
   "COC.tabs.stats": "Caractéristiques",
+  "COC.tabs.encounter": "Caractéristiques Capacités Combat",
   "COC.tabs.combat": "Combat",
   "COC.tabs.paths" : "Voies",
   "COC.tabs.capacities" : "Capacités",
