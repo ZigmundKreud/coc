@@ -20,11 +20,11 @@ export class CoCEncounterSheet extends CoCBaseSheet {
         super.activateListeners(html);
         html.find('.item-create.weapon-add').click(ev => {
             ev.preventDefault();
-            this.actor.createOwnedItem({type:"encounterWeapon",name:"attaque"});
+            return this.actor.createEmbeddedDocuments("Item", [{type:"encounterWeapon",name:"Attaque"}]);
         });
         html.find('.item-create.capacity-add').click(ev => {
             ev.preventDefault();
-            this.actor.createOwnedItem({type:"capacity",name:"capacité"});
+            return this.actor.createEmbeddedDocuments("Item", [{type:"encounterWeapon",name:"Capacité"}]);
         });
     }
 
