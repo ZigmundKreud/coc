@@ -24,7 +24,7 @@ export class CoCEncounterSheet extends CoCBaseSheet {
         });
         html.find('.item-create.capacity-add').click(ev => {
             ev.preventDefault();
-            return this.actor.createEmbeddedDocuments("Item", [{type:"encounterWeapon",name:"Capacité"}]);
+            return this.actor.createEmbeddedDocuments("Item", [{type:"capacity",name:"Capacité"}]);
         });
     }
 
