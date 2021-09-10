@@ -213,16 +213,53 @@ export class CoCBaseSheet extends ActorSheet {
     /* DROP EVENTS CALLBACKS                        */
     /* -------------------------------------------- */
 
-    /** @override */
-    async _onDropItemCreate(itemData) {
+    /**
+     * Handle dropping of an item reference or item data onto an Actor Sheet
+     * @param {DragEvent} event     The concluding DragEvent which contains drop data
+     * @param {Object} data         The data transfer extracted from the event
+     * @return {Object}             OwnedItem data to create
+     * @private
+     */
+    async _onDropItem(event, data) {
+        if ( !this.actor.isOwner ) return false;
+
+        const item = await Item.fromDropData(data);
+        if (!COC.actorsAllowedItems[this.actor.data.type]?.includes(item.data.type)) return;
+        
+        const itemData = duplicate(item.data);
         switch (itemData.type) {
-            case "capacity" : return Capacity.addToActor(this.actor, itemData);
-            case "trait" : return Trait.addToActor(this.actor, itemData);
-            case "path" : return Path.addToActor(this.actor, itemData);
-            case "profile" : return Profile.addToActor(this.actor, itemData);
-            default: return this.actor.createEmbeddedDocuments("Item", [itemData], {});
+            case "path": return await Path.addToActor(this.actor, item);
+            case "profile": return await Profile.addToActor(this.actor, itemData);
+            case "species": return await Species.addToActor(this.actor, item);
+            case "capacity":
+            default: {
+                // Handle item sorting within the same Actor
+                const actor = this.actor;
+                let sameActor = (data.actorId === actor.id) && ((!actor.isToken && !data.tokenId) || (data.tokenId === actor.token.id));
+                if (sameActor) return this._onSortItem(event, itemData);
+                // Create the owned item
+                return this.actor.createEmbeddedDocuments("Item", [itemData]).then((item)=>{                    
+                    // Si il n'y as pas d'actor id, il s'agit d'un objet du compendium, on quitte
+                    if (!data.actorId) return item;
+                                        
+                    // Si l'item doit être "move", on le supprime de l'actor précédent
+                    let moveItem = game.settings.get("coc","moveItem");                    
+                    if (moveItem ^ event.shiftKey) {
+
+                        if (!data.tokenId){
+                            let originalActor = ActorDirectory.collection.get(data.actorId);
+                            originalActor.deleteEmbeddedDocuments("Item", [data.data._id]);
+                        }
+                        else{
+                            let token = TokenLayer.instance.placeables.find(token=>token.id === data.tokenId);
+                            let oldItem = token?.document.getEmbeddedCollection('Item').get(data.data._id);
+                            oldItem?.delete();
+                        }
+                    }                     
+                });
+            }
         }
-      }
+    }
       
       
     /* -------------------------------------------- */

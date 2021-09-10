@@ -53,7 +53,7 @@ export const registerSystemSettings = function() {
 
     game.settings.register("coc", "displayDifficulty", {
         name: "Affiche la difficulté",
-        hint: "Active l'affichage de la difficulté sur les jets de compétences/attributs et d'armes.",
+        hint: "Active l'affichage de la difficulté sur les jets de compétences/attributs et d'armes",
         scope: "world",
         config: true,
         default: true,
@@ -94,5 +94,17 @@ export const registerSystemSettings = function() {
     //     }
     // });
 
-
+    game.settings.register("coc", "moveItem", {
+        name: "Mode de déplacement des items",
+        hint: "Comportement du drag & drop d'un item sur une fiche de personnage (Maintenir MAJ lors du drop pour inverser)",
+        scope: "world",
+        type: String,
+        choices: {
+            "0" : "Copier l'item (par défaut dans Foundry)",
+            "1" : "Déplacer l'item"
+        },
+        default: "0",
+        config: true,
+        onChange: lang => window.location.reload()
+    });   
 };

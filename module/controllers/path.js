@@ -15,7 +15,7 @@ export class Path {
             pathsData.forEach(p => { items.push(p.toObject(false)) });
         }
         else {
-            items.push(pathsData[0]);
+            items.push(pathsData[0].data);
         }        
         return actor.createEmbeddedDocuments("Item", items).then(newPaths => {
             // on ajoute toutes les metadonnees aux voies nouvellement creees pour faciliter la gestions des capacites qui en dependent
@@ -58,7 +58,6 @@ export class Path {
             return false;
         } else {
             return this.addPathsToActor(actor, [pathData]);
-            // return this.addPathsToActor(actor, [{ "itemData": pathData, "sourceId": pathData.data.flags.core.sourceId }]);
         }
     }
     
