@@ -190,8 +190,8 @@ export class CoCActor extends Actor {
         attributes.init.penalty = this.getMalusFromProtection(actorData.items);
         attributes.init.value = attributes.init.base + attributes.init.bonus + attributes.init.penalty;
 
-        attributes.fp.base = 2 + stats.cha.mod;
-        attributes.fp.bonus = (profile && profile.data.bonuses.fp) ? profile.data.bonuses.fp : 0;
+        const fpBonusFromProfile = (profile && profile.data.bonuses.fp) ? profile.data.bonuses.fp : 0;
+        attributes.fp.base = 2 + stats.cha.mod + fpBonusFromProfile;
         attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
         attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
         attributes.rp.max = attributes.rp.base + attributes.rp.bonus;
