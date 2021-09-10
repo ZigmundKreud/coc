@@ -119,17 +119,17 @@ COC.itemCategories = {
 }
 
 COC.itemIcons = {
-    "item": "icons/containers/chest/chest-worn-oak-tan.webp",
-    "capacity":"icons/sundries/scrolls/scroll-plain-tan-red.webp",
-    "profile": "icons/sundries/documents/blueprint-axe.webp",
-    "path": "icons/sundries/books/book-embossed-gold-red.webp",
-    "trait": "icons/skills/social/diplomacy-peace-alliance.webp",
-    "encounterWeapon": "icons/weapons/ammunition/bullets-cartridge-shell-gray.webp"
+    "item": "icons/svg/tankard.svg",
+    "capacity":"icons/svg/wing.svg",
+    "profile": "icons/svg/statue.svg",
+    "path": "icons/svg/upgrade.svg",
+    "trait": "icons/svg/eye.svg",
+    "encounterWeapon": "icons/svg/pawprint.svg"
 }
 
 COC.actorIcons = {
-    "npc": "icons/environment/people/commoner.webp",
-    "encounter": "systems/coc/ui/icons/creature.webp"
+    "npc": "icons/svg/angel.svg",
+    "encounter": "icons/svg/terror.svg"
 }
 
 COC.actorsAllowedItems = {

@@ -14,6 +14,11 @@
 
   "COC.title": "Chroniques Oubliées Contemporain",
 
+  "COC.sheet.actor" : "Feuille de Personnage - Chroniques Oubliées Contemporain",
+  "COC.sheet.npc" : "Feuille de PNJ - Chroniques Oubliées Contemporain",
+  "COC.sheet.encounter" : "Feuille de Rencontre - Chroniques Oubliées Contemporain",
+  "COC.sheet.item" : "Fiche d'Objet - Chroniques Oubliées Contemporain",
+
   "COC.ui.na": "N.C.",
   "COC.ui.cancel": "Annuler",
   "COC.ui.submit": "Valider",

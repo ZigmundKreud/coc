@@ -44,22 +44,27 @@ Hooks.once("init", function () {
 
     // Create a namespace within the game global
     game.coc = {
-        skin : "base",
         macros : Macros,
         config: COC
     };
 
     // Register sheet application classes
-    Actors.unregisterSheet("core", ActorSheet);
-    Items.unregisterSheet("core", ItemSheet);
+    Actors.unregisterSheet("core", ActorSheet, {
+        makeDefault: true,
+
+    });
+    Items.unregisterSheet("core", ItemSheet, {
+        makeDefault: true,
+
+    });
 
     // Register actor sheets
-    Actors.registerSheet("coc", CoCActorSheet, {types: ["character"], makeDefault: true});
-    Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: true});
-    Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: true});
+    Actors.registerSheet("coc", CoCActorSheet, {types: ["character"], makeDefault: false, label: "COC.sheet.actor"});
+    Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: false, label: "COC.sheet.npc"});
+    Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: false, label: "COC.sheet.encounter"});
 
     // Register item sheets
-    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: true});
+    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});
 
     // Register System Settings
     registerSystemSettings();
@@ -89,10 +94,6 @@ Hooks.once("ready", async () => {
     // await UpdateUtils.updateCapacities();
     // await UpdateUtils.updateProfiles();
     // await UpdateUtils.updatePacks();
-
-    if(game.settings.get("coc", "cocthSkin")){
-        game.coc.skin = "cocth";
-    }
 
     console.info("COC | " + System.label + " | System Initialized.");
 

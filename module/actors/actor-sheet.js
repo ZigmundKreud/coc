@@ -10,7 +10,7 @@ export class CoCActorSheet extends CoCBaseSheet {
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["coc", game.coc.skin, "sheet", "actor", "character"],
+            classes: ["coc", "base", "sheet", "actor", "character"],
             template: "/systems/coc/templates/actors/actor-sheet.hbs",
             width: 970,
             height: 750,

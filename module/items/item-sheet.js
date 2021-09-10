@@ -10,7 +10,7 @@ export class CoCItemSheet extends ItemSheet {
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["coc", game.coc.skin, "sheet", "item", this.type],
+            classes: ["coc", "base", "sheet", "item", this.type],
             template: "/systems/coc/templates/items/item-sheet.hbs",
             width: 600,
             height: 600,

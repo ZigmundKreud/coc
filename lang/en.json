@@ -14,6 +14,11 @@
 
   "COC.title": "Chroniques Oubliées Contemporain",
 
+  "COC.sheet.actor" : "Chroniques Oubliées Contemporain - Actor Sheet",
+  "COC.sheet.npc" : "Chroniques Oubliées Contemporain - NPC Sheet",
+  "COC.sheet.encounter" : "Chroniques Oubliées Contemporain - Encounter Sheet",
+  "COC.sheet.item" : "Chroniques Oubliées Contemporain - Item Sheet",
+
   "COC.ui.na": "N.A.",
   "COC.ui.cancel": "Cancel",
   "COC.ui.submit": "Submit",
