@@ -108,6 +108,8 @@ export class CoCNpcSheet extends CoCBaseSheet {
             }
         });
 
+        // Gestion des boutons de modification des effets (visible pour le npc)
+        data.isEffectsEditable = true;
         if (COC.debug) console.log("COC | NpcSheet getData", data);
         return data;
     }

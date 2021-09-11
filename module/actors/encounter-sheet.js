@@ -44,6 +44,8 @@ export class CoCEncounterSheet extends CoCBaseSheet {
             if (weapon.data.weapon.dmgBonus > 0) weapon.data.weapon.dmgTotal += ` + ${weapon.data.weapon.dmgBonus}`;
         });
 
+        // Gestion des boutons de modification des effets (visible pour l'encounter)
+        data.isEffectsEditable = true;
         if (COC.debug) console.log("COC | EncounterSheet getData", data);
         return data;
     }

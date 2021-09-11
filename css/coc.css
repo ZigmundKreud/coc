@@ -1227,3 +1227,7 @@
 .coc input::placeholder {
   color: lightgray;
 }
+
+.effect-icon {
+  background-color: black;
+}
