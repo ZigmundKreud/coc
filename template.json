@@ -2,7 +2,8 @@
   "Actor": {
     "types": [
       "character",
-      "npc"
+      "npc",
+      "encounter"
     ],
     "templates": {
       "stats": {
@@ -107,6 +108,7 @@
             "enabled": true,
             "base": 0,
             "bonus": 0,
+            "malus": 0,
             "mod": 0
           },
           "ranged" : {
@@ -117,6 +119,7 @@
             "enabled": true,
             "base": 0,
             "bonus": 0,
+            "malus": 0,
             "mod": 0
           },
           "magic" : {
@@ -127,6 +130,7 @@
             "enabled": true,
             "base": 0,
             "bonus": 0,
+            "malus": 0,
             "mod": 0
           }
         },
@@ -140,21 +144,6 @@
       "common": {
         "description": "",
         "attributes": {
-          "hp": {
-            "key" : "hp",
-            "label" : "COC.attributes.hp.label",
-            "abbrev" : "COC.attributes.hp.abbrev",
-            "base": 0,
-            "bonus": 0,
-            "value": 0,
-            "max": 0
-          },
-          "bg": {
-            "key" : "bg",
-            "label" : "COC.attributes.bg.label",
-            "abbrev" : "COC.attributes.bg.abbrev",
-            "value": 0
-          },
           "def": {
             "key" : "def",
             "label" : "COC.attributes.def.label",
@@ -181,6 +170,27 @@
             "bonus": { "value" : 0, "ignored" : ""},
             "value": 0
           },
+          "hd": {
+            "key" : "hd",
+            "label" : "COC.attributes.hd.label",
+            "abbrev" : "COC.attributes.hd.abbrev",
+            "value": "1d4"
+          },
+          "hp": {
+            "key" : "hp",
+            "label" : "COC.attributes.hp.label",
+            "abbrev" : "COC.attributes.hp.abbrev",
+            "base": 0,
+            "bonus": 0,
+            "value": 0,
+            "max": 0
+          },
+          "bg": {
+            "key" : "bg",
+            "label" : "COC.attributes.bg.label",
+            "abbrev" : "COC.attributes.bg.abbrev",
+            "value": 0
+          },
           "rp": {
             "key" : "rp",
             "label" : "COC.attributes.rp.label",
@@ -188,7 +198,8 @@
             "enabled": false,
             "base": 5,
             "bonus": 0,
-            "value": 5
+            "value": 5,
+            "max": 5
           },
           "fp": {
             "key" : "fp",
@@ -218,12 +229,6 @@
             "bonus": 0,
             "value": 0,
             "max": 0
-          },
-          "hd": {
-            "key" : "hd",
-            "label" : "COC.attributes.hd.label",
-            "abbrev" : "COC.attributes.hd.abbrev",
-            "value": "1d4"
           }
         },
         "alert": {
@@ -243,7 +248,22 @@
             "value": [],
             "custom": ""
           }
-        }
+        },
+        "settings": {
+          "combat": {
+            "folded": []
+          },
+          "inventory": {
+            "folded": []
+          },
+          "capacities": {
+            "folded": []
+          },
+          "effects": {
+            "folded": []
+          }
+        },
+        "moduleData": {}
       }
     },
     "character": {
@@ -261,6 +281,29 @@
         "xp",
         "common"
       ]
+    },
+    "encounter": {
+      "key": null,
+      "templates": [
+        "stats",
+        "attacks",
+        "common"
+      ],
+      "nc": {
+        "key" : "nc",
+        "label" : "COC.attributes.nc.label",
+        "abbrev" : "COC.attributes.nc.abbrev",
+        "value": 1
+      },
+      "capacities" : [],
+      "paths": [],
+      "boss": {
+        "rank" : null,
+        "type" : null
+      },
+      "families": [],
+      "archetype": "",
+      "category": ""
     }
   },
   "Item": {
@@ -269,14 +312,16 @@
       "capacity",
       "profile",
       "trait",
-      "path"
+      "path",
+      "encounterWeapon"
     ],
     "templates": {
       "base" : {
         "description" : "",
         "source" : "",
         "key": "",
-        "setting": ""
+        "setting": "",
+        "moduleData": {}
       },
       "equipment" : {
         "def" : 0,
@@ -328,6 +373,24 @@
           "bashing" : false,
           "sling" : false,
           "spell" : false
+        },
+        "effects" : {
+          "heal" : {
+            "formula" : null,
+            "persistent" : false,
+            "duration" : {
+              "value" : null,
+              "units" : null
+            }
+          },
+          "buff" : {
+            "formula" : null,
+            "persistent" : false,
+            "duration" : {
+              "value" : null,
+              "units" : null
+            }
+          }
         }
       }
     },
@@ -384,6 +447,19 @@
       ],
       "family": "",
       "rank": null
+    },
+    "encounterWeapon":{
+      "templates": [
+        "base"
+      ],
+      "weapon": {
+        "critrange" : 20,
+        "range": null,
+        "mod" : 0,
+        "dmg" : 0,
+        "skillBonus" : 0,
+        "dmgBonus": 0
+      }
     }
   }
 }

@@ -2,78 +2,17 @@
   "name": "coc",
   "title": "Chroniques Oubliées Contemporain",
   "description": "<p>Système Foundry VTT pour <a href='https://www.black-book-editions.fr/catalogue.php?id=477'>Chroniques Oubliées Contemporain</a>.</p><p> *** Rejoignez la communauté Discord FR :<a href='https://discord.gg/pPSDNJk'>https://discord.gg/pPSDNJk</a></p>",
-  "version": "0.1.1",
-  "minimumCoreVersion": "0.7.3",
-  "compatibleCoreVersion": "0.7.9",
+  "version": "0.8.9.1",
+  "minimumCoreVersion": "0.8.6",
+  "compatibleCoreVersion": "0.8.9",
   "templateVersion": 2,
   "author": "Zigmund",
-  "esmodules": [
-    "module/coc.js",
-    "module/hooks/system-ready.js",
-    "module/hooks/chat-message.js",
-    "module/hooks/hotbar-drop.js"
-  ],
   "scripts": [],
+  "esmodules": [
+    "module/coc.js"
+  ],
   "styles": [
     "./css/coc.css"
-  ],
-  "packs": [
-    {
-      "name": "capacities",
-      "label": "Capacités",
-      "system": "coc",
-      "path": "./packs/capacities.db",
-      "entity": "Item",
-      "tag" : "capacity"
-    },
-    {
-      "name": "items",
-      "label": "Equipement",
-      "system": "coc",
-      "path": "./packs/items.db",
-      "entity": "Item",
-      "tag" : "item"
-    },
-    {
-      "name": "paths",
-      "label": "Voies",
-      "system": "coc",
-      "path": "./packs/paths.db",
-      "entity": "Item",
-      "tag" : "path"
-    },
-    {
-      "name": "profiles",
-      "label": "Profils",
-      "system": "coc",
-      "path": "./packs/profiles.db",
-      "entity": "Item",
-      "tag" : "profile"
-    },
-    {
-      "name": "traits",
-      "label": "Traits",
-      "system": "coc",
-      "path": "./packs/traits.db",
-      "entity": "Item",
-      "tag" : "trait"
-    },
-    {
-      "name": "tables",
-      "label": "Tables",
-      "system": "coc",
-      "path": "./packs/tables.db",
-      "entity": "RollTable",
-      "tag" : "table"
-    },
-    {
-      "name": "macros",
-      "label": "Macros",
-      "system": "coc",
-      "path": "./packs/macros.db",
-      "entity": "Macro",
-      "tag" : "macro"
-    }
   ],
   "languages": [
     {
@@ -87,6 +26,64 @@
       "path": "lang/fr.json"
     }
   ],
+  "packs": [
+    {
+      "name": "capacities",
+      "label": "Capacités",
+      "system": "coc",
+      "path": "./packs/capacities.db",
+      "entity": "Item",
+      "tag": "capacity"
+    },
+    {
+      "name": "items",
+      "label": "Equipement",
+      "system": "coc",
+      "path": "./packs/items.db",
+      "entity": "Item",
+      "tag": "item"
+    },
+    {
+      "name": "paths",
+      "label": "Voies",
+      "system": "coc",
+      "path": "./packs/paths.db",
+      "entity": "Item",
+      "tag": "path"
+    },
+    {
+      "name": "profiles",
+      "label": "Profils",
+      "system": "coc",
+      "path": "./packs/profiles.db",
+      "entity": "Item",
+      "tag": "profile"
+    },
+    {
+      "name": "traits",
+      "label": "Traits",
+      "system": "coc",
+      "path": "./packs/traits.db",
+      "entity": "Item",
+      "tag": "trait"
+    },
+    {
+      "name": "tables",
+      "label": "Tables",
+      "system": "coc",
+      "path": "./packs/tables.db",
+      "entity": "RollTable",
+      "tag": "table"
+    },
+    {
+      "name": "macros",
+      "label": "Macros",
+      "system": "coc",
+      "path": "./packs/macros.db",
+      "entity": "Macro",
+      "tag": "macro"
+    }
+  ],
   "socket": true,
   "gridDistance": 1.5,
   "gridUnits": "m",
@@ -94,6 +91,6 @@
   "secondaryTokenAttribute": null,
   "url": "https://github.com/ZigmundKreud/coc",
   "manifest": "https://raw.githubusercontent.com/ZigmundKreud/coc/master/system.json",
-  "download": "https://github.com/ZigmundKreud/coc/archive/0.1.1.zip",
+  "download": "https://github.com/ZigmundKreud/coc/archive/refs/tags/0.8.9.1.zip",
   "license": "LICENCE"
 }

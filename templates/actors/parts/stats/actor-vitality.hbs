@@ -1,28 +1,31 @@
 <div class="flexrow table-header vitality-header no-wrap">
-    <div class="flex2 center rollable" data-rolling="data.attributes.hp" data-roll-type="hp">
+    <div class="flex6 center rollable" data-rolling="data.attributes.hp" data-roll-type="hp">
         <div class="field-label"><i class="fas fa-dice-d6"></i>&nbsp;{{ localize 'COC.attributes.vitality.label' }}</div>
     </div>
-    <div class="flex1 center">
+    {{#unless (equals actor.type "encounter")}}
+    <div class="flex4 center">
         <div class="field-label">{{ localize 'COC.ui.hd' }}</div>
     </div>
-    <div class="flex1 center">
-        <div class="field-label">{{ localize 'COC.ui.current' }}</div>
-    </div>
-    <div class="flex1 center">
+    {{/unless}}
+    <div class="flex3 center">
         <div class="field-label">{{ localize 'COC.ui.base' }}</div>
     </div>
-    <div class="flex1 center">
+    <div class="flex3 center">
         <div class="field-label">{{ localize 'COC.ui.bonus' }}</div>
     </div>
-    <div class="flex1 center">
+    <div class="flex3 center">
         <div class="field-label">{{ localize 'COC.ui.max' }}</div>
     </div>
+    <div class="flex3 center">
+        <div class="field-label">{{ localize 'COC.ui.current' }}</div>
+    </div>    
 </div>
 <div class="flexrow no-wrap vitality">
-    <div class="flex2 center cell-header">
+    <div class="flex6 center cell-header">
         <span class="field-label"><i class="fas fa-heart"></i>&nbsp;{{ localize 'COC.attributes.hp.abbrev' }}</span>
     </div>
-    <div class="center cell readonly" style="flex:0 1 60px">
+    {{#unless (equals actor.type "encounter")}}
+    <div class="flex4 center cell readonly">
         <select class="field-value" name="data.attributes.hd.value" data-type="String" style="width:100%">
         {{#select actor.data.attributes.hd.value}}
             <option value="">{{localize "COC.None"}}</option>
@@ -35,16 +38,17 @@
         {{/select}}
         </select>
     </div>
-    <div class="flex1 center cell">
-        <input class="field-value" name="data.attributes.hp.value" type="text" value="{{actor.data.attributes.hp.value}}" placeholder="Value" data-dtype="Number"/>
-    </div>
-    <div class="flex1 center cell">
+    {{/unless}}
+    <div class="flex3 center cell">
         <input class="field-value" name="data.attributes.hp.base" type="text" value="{{actor.data.attributes.hp.base}}" placeholder="Base" data-dtype="Number"/>
     </div>
-    <div class="flex1 center cell">
+    <div class="flex3 center cell">
         <input class="field-value" name="data.attributes.hp.bonus" type="text" value="{{actor.data.attributes.hp.bonus}}" placeholder="Bonus" data-dtype="Number"/>
     </div>
-    <div class="flex1 center cell readonly">
+    <div class="flex3 center cell readonly">
         <input class="field-value" name="data.attributes.hp.max" type="text" readonly="true" value="{{actor.data.attributes.hp.max}}" placeholder="Max" data-dtype="Number"/>
+    </div>
+    <div class="flex3 center cell">
+        <input class="field-value" name="data.attributes.hp.value" type="text" value="{{actor.data.attributes.hp.value}}" placeholder="Value" data-dtype="Number"/>
     </div>
 </div>

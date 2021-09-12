@@ -21,7 +21,7 @@
             <a class="item-control item-create compendium-pack" data-pack="coc.capacities" data-open="0" title="Ajouter une capacité"><i class="fas fa-plus"></i>&nbsp; Add</a>
         </div>
     </li>
-    {{#each capacities as |capacity id|}}
+    {{#each data.capacities as |capacity id|}}
     <ol class="item-list">
         <li class="item flexrow" data-item-id="{{capacity._id}}" data-item-type="capacity" data-key="{{capacity.data.key}}" draggable="true">
             <div class="item-name flexrow">

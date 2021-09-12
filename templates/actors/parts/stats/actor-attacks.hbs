@@ -12,7 +12,7 @@
         <div class="field-label">{{ localize 'COC.ui.mod' }}</div>
     </div>
 </div>
-{{#each actor.data.attacks as |attack id|}}
+{{#each data.attacks as |attack id|}}
 <div class="flexrow no-wrap attacks">
     <div class="flex2 center cell-header rollable" data-rolling="data.attacks.{{id}}" data-roll-type="skillcheck">
         <span class="field-label ellipsis"><i class="fas fa-dice-d20"></i>&nbsp;{{ localize attack.abbrev }}</span>

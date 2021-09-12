@@ -1,0 +1,48 @@
+.element-invisible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nomargin {
+  margin:0;
+  padding: 0;
+}
+
+.flxrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  > * {
+    flex: 1;
+  }
+
+  .flex1 { flex: 1; }
+  .flex2 { flex: 2; }
+  .flex3 { flex: 3; }
+  .flex4 { flex: 4; }
+}
+
+
+//@mixin modesto {
+//  font-family: $font-tertiary;
+//  font-size: 20px;
+//  font-weight: 700;
+//}

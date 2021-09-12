@@ -1,0 +1,31 @@
+{{#if isCritical}}
+<h2 class="damage"><i class="fas fa-tint"></i><i class="fas fa-tint"></i>&nbsp;{{localize "COC.roll.criticalDmg"}} !</h2>
+{{else}}
+<h2 class="damage"><i class="fas fa-tint"></i>&nbsp;{{localize "COC.roll.dmg"}}</h2>
+{{/if}}
+<div class="flexrow">
+    <div class="flex1 no-wrap">
+        <h3><strong>{{label}}</strong></h3>
+    </div>
+    <div class="flex1 right no-wrap">
+        <label for="dr">{{localize "COC.ui.dr.abbrev"}}</label>
+        <input type="checkbox" id="dr" name="dr">            
+        <a class="btn apply-dmg" data-apply="full">
+            <i class="fas fa-user-minus" title="{{localize "COC.ui.applyDamage"}}"></i>
+        </a>
+        <a class="btn apply-dmg" data-apply="half">
+            <i class="fas fa-user-shield" title="{{localize "COC.ui.applyHalfDamage"}}"></i>
+        </a>
+        <a class="btn apply-dmg" data-apply="double">
+            <i class="fas fa-user-injured" title="{{localize "COC.ui.applyDoubleDamage"}}"></i>
+        </a>
+        <a class="btn apply-dmg" data-apply="heal">
+            <i class="fas fa-user-plus" title="{{localize "COC.ui.applyHealing"}}"></i>
+        </a>
+    </div>
+</div>
+{{#if hasDescription}}
+    <h4>
+        <pre class="rollDescr-line">{{description}}</pre>
+    </h4>
+{{/if}}  

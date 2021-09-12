@@ -3,8 +3,7 @@
         <!-- STATS -->
         {{#if (equals actor.type "character")}}
             {{> "systems/coc/templates/actors/parts/stats/actor-attributes.hbs"}}
-        {{/if}}
-        {{#if (equals actor.type "npc")}}
+        {{else}}
             {{> "systems/coc/templates/actors/parts/stats/npc-attributes.hbs"}}
         {{/if}}
     </div>
@@ -24,14 +23,17 @@
         <div class="flexrow"><div class="flex1 half-spacer"></div></div>
         <!-- DEFENSE -->
         {{> "systems/coc/templates/actors/parts/stats/actor-defence.hbs"}}
-    </div>
-    <div class="flex1 layout">
+    </div>    
+    {{#unless (equals actor.type "encounter")}}
+    <div class="flex1 layout">    
         <!-- RECOVERY -->
-        {{> "systems/coc/templates/actors/parts/stats/actor-recovery.hbs"}}
+        {{> "systems/coc/templates/actors/parts/stats/actor-recovery.hbs"}}        
         <!-- RESOURCES -->
         {{> "systems/coc/templates/actors/parts/stats/actor-resources.hbs"}}
-    </div>
+    </div>    
+    {{/unless}}
 </div>
+{{#unless (equals actor.type "encounter")}}
 <div class="flexrow no-wrap">
     <div class="flex1 layout">
         <!-- INJURIES -->
@@ -42,3 +44,4 @@
         {{> "systems/coc/templates/actors/parts/stats/actor-madness.hbs"}}
     </div>
 </div>
+{{/unless}}

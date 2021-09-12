@@ -4,17 +4,46 @@
 
 Ce programme est fait pour être exécuté dans le moteur [Foundry VTT](https://foundryvtt.com/).
 
+Le système comporte les règles et le design du jeu de base, les settings spécifiques sont dans des modules séparés.
+
+Modules disponibles :
+* Cthulhu
+
 ---
-### Installation
 
-* Aller dans la page d'accueil de Foundry (Configuration and Setup), cliquer sur Game Systems.
-* Cliquer sur "Install System" et coller le lien vers le [manifest](https://raw.githubusercontent.com/ZigmundKreud/coc/master/system.json) dans le champ "Manifest URL" en bas de la fenêtre. 
-* Cliquer sur "Install"
-* Dans l'onglet "Game Worlds", cliquer sur "Create World", donner un nom et un chemin à votre monde et sélectionner "Chroniques Oubliées Fantasy" dans le champ "Game System". Cliquer sur "Create World".
+### Installation automatique
+* Allez dans la page d'accueil de Foundry (Configuration and Setup), cliquer sur Game Systems.
+* Cliquez sur "Install System" et chercher le système.
+* Cliquez sur "Install"
+### Installation manuelle
+
+* Allez dans la page d'accueil de Foundry (Configuration and Setup), cliquer sur Game Systems.
+* Cliquez sur "Install System" et coller le lien vers le [manifest](https://raw.githubusercontent.com/ZigmundKreud/coc/master/system.json) dans le champ "Manifest URL" en bas de la fenêtre. 
+* Cliquez sur "Install"
+
+### Créer son monde
+* Dans l'onglet "Game Worlds", cliquer sur "Create World", donner un nom et un chemin à votre monde et sélectionner "Chroniques Oubliées Contemporain" dans le champ "Game System". Cliquer sur "Create World".
 * Lancer votre partie en cliquant sur le bouton "Launch World" de votre monde. Vous êtes prêts à jouer.
-
 ---
 ## Changelog
+
+### Version 0.8.9.1
+Mise à jour pour supporter Foundry 0.8 et rattrapage des fonctionnalités déjà offertes par COF.
+
+* Mis en oeuvre des Effets
+* Ajout de l'onglet Effets dans les Items et les Actors
+* Tous les calculs de la fiche sont maintenant réalisés après la prise en compte des effets
+* Shift + Click sur un raccourci d'arme dans la hotbar pour avoir uniquement la fenêtre des dommages
+* Changement de l'icône par défaut pour chaque type d'actors et d'items
+* Dépense d'un PR en cliquant sur l'icône du Coeur : clic gauche avec gain de PV, clic droit sans
+* Séparation de Bonus/Malus en Bonus et Malus dans les fenêtres de dialogue Jet de compétence / Jet d'attaque
+* Possibilité d'infliger les dégâts des attaques depuis le chat à des tokens ciblés via des "boutons de dommages"
+* Prise en compte de la Résistance aux Dommages
+* Option "Affiche les boutons de dommages" : afficher ou non les boutons d'application des dégâts à tout le monde, par défaut uniquement au MJ
+* Affiche uniquement les entêtes utiles à la catégorie dans la partie Combat
+* Onglet Voies et Capacités : un clic permet de déplier/replier la description d'une capacité
+* Possibilité de changer le label, la description du jet de compétences et la description des dommages des fenêtres de jet dans une macro
+* Acteur de type Rencontre avec des items Armes de rencontre et Capacités
 
 ### Version 0.1.0
 * Gestion de l'équipement dans l'onglet Combat

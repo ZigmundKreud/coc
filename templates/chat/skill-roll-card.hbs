@@ -1,0 +1,34 @@
+{{#if showDifficulty}}
+    {{#if isSuccess}}
+        {{#if isCritical}}
+            <h2 class="success critical"><i class="fas fa-check-double"></i>&nbsp;{{localize "COC.roll.critical"}}...</h2>
+        {{else}}
+            <h2 class="success"><i class="fas fa-check"></i>&nbsp;{{localize "COC.roll.success"}}...</h2>
+        {{/if}}
+    {{/if}}
+
+    {{#if isFailure}}
+        {{#if isFumble}}
+            <h2 class="failure fumble"><i class="fas fa-skull-crossbones"></i>&nbsp;{{localize "COC.roll.fumble"}}...</h2>
+        {{else}}
+            <h2 class="failure"><i class="fas fa-times"></i>&nbsp;{{localize "COC.roll.failure"}}...</h2>
+        {{/if}}
+    {{/if}}
+    <h3><strong>{{label}}</strong> {{localize "COC.ui.difficulty"}} <strong>{{difficulty}}</strong></h3>
+{{else}}
+    {{#if isCritical}}
+        <h2 class="standard critical"><i class="fas fa-check-double"></i>&nbsp;{{localize "COC.roll.critical"}}...</h2>
+    {{else}}
+        {{#if isFumble}}
+            <h2 class="failure fumble"><i class="fas fa-skull-crossbones"></i>&nbsp;{{localize "COC.roll.fumble"}}...</h2>
+        {{else}}
+            <h2 class="standard"><i class="fas fa-dice-d20"></i>&nbsp;{{localize "COC.roll.skillcheck"}}</h2>
+        {{/if}}
+    {{/if}}
+    <h3><strong>{{label}}</strong>
+{{/if}}
+{{#if hasDescription}}
+    <h4>
+        <pre class="rollDescr-line">{{description}}</pre>
+    </h4>
+{{/if}}  

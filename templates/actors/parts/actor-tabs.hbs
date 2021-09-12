@@ -1,0 +1,38 @@
+{{!-- Sheet Tab Navigation --}}
+<nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item" data-tab="stats">{{localize "COC.tabs.stats"}}</a>
+    <a class="item" data-tab="combat">{{localize "COC.tabs.combat"}}</a>
+    <a class="item compendium-pack" data-pack="coc.items" data-open="0" data-tab="inventory" title="clic droit pour ouvrir le compendium"><i class="fas fa-atlas"></i>&nbsp;&nbsp;{{localize "COC.tabs.inventory"}}</a>
+    <a class="item compendium-pack" data-pack="coc.capacities" data-open="0" data-alternative-pack="coc.paths" data-alternative-open="0" data-tab="capacities" title="clic droit pour ouvrir les capacités, SHIFT + clic droit pour ouvrir les voies"><i class="fas fa-atlas"></i>&nbsp;&nbsp;{{localize "COC.tabs.capacities"}}</a>
+    <a class="item" data-tab="effects">{{ localize "COC.tabs.effects" }}</a>
+    <a class="item" data-tab="description">{{localize "COC.tabs.description"}}</a>    
+</nav>
+{{!-- Sheet Body --}}
+<section class="sheet-body">
+    <div class="tab stats" data-group="primary" data-tab="stats">
+        {{> "systems/coc/templates/actors/parts/stats/actor-stats.hbs"}}
+    </div>
+    <div class="tab combat" data-group="primary" data-tab="combat">
+        {{#if (equals actor.type "character")}}
+            {{> "systems/coc/templates/actors/parts/combat/character-combat.hbs"}}
+        {{else}}
+            {{> "systems/coc/templates/actors/parts/combat/npc-combat.hbs"}}
+        {{/if}}
+    </div>
+    <div class="tab inventory" data-group="primary" data-tab="inventory">
+        {{> "systems/coc/templates/actors/parts/inventory/actor-inventory.hbs"}}
+    </div>
+    <div class="tab capacities" data-group="primary" data-tab="capacities">
+        {{> "systems/coc/templates/actors/parts/capacities/actor-paths.hbs"}}
+    </div>
+    <div class="tab effects" data-group="primary" data-tab="effects">
+        {{> "systems/coc/templates/effects/effects.hbs"}}
+    </div>    
+    <div class="tab description" data-group="primary" data-tab="description">
+        {{#if (equals actor.type "character")}}
+            {{> "systems/coc/templates/actors/parts/character-description.hbs"}}
+        {{else}}
+            {{> "systems/coc/templates/actors/parts/actor-description.hbs"}}
+        {{/if}}
+    </div>
+</section>

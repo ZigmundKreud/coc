@@ -2,16 +2,27 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-
+ import { COC } from "../system/config.js";
 export class CoCItem extends Item {
 
-    initialize() {
+    /*initialize() {
         try {
             this.prepareData();
         } catch(err) {
             console.error(`Failed to initialize data for ${this.constructor.name} ${this.id}:`);
             console.error(err);
         }
+    }*/
+    /* -------------------------------------------- */
+    /*  Constructor                                 */
+    /* -------------------------------------------- */
+    /* Définition de l'image par défaut             */
+    /* -------------------------------------------- */   
+    constructor(...args) {
+        let data = args[0];
+        if (!data.img && COC.itemIcons[data.type]) data.img = COC.itemIcons[data.type];
+
+        super(...args);
     }
 
     /** @override */

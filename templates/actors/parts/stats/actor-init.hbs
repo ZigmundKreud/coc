@@ -8,9 +8,11 @@
     <div class="flex1 center">
         <div class="field-label">{{ localize 'COC.attributes.bonus.abbrev' }}</div>
     </div>
+    {{#unless (equals actor.type "encounter")}}
     <div class="flex1 center">
         <div class="field-label">{{ localize 'COC.attributes.penalty.abbrev' }}</div>
     </div>
+    {{/unless}}
     <div class="flex1 center">
         <div class="field-label">{{ localize 'COC.attributes.value.abbrev' }}</div>
     </div>
@@ -31,9 +33,11 @@
     <div class="flex1 center cell">
         <input class="field-value" name="data.attributes.init.bonus" type="text" value="{{actor.data.attributes.init.bonus}}" placeholder="{{ localize 'COC.attributes.bonus.abbrev' }}" data-dtype="Number"/>
     </div>
+    {{#unless (equals actor.type "encounter")}}
     <div class="flex1 center cell readonly">
         <input class="field-value" name="data.attributes.init.penalty" readonly="true" type="text" value="{{actor.data.attributes.init.penalty}}" placeholder="{{ localize 'COC.attributes.penalty.abbrev' }}" data-dtype="Number"/>
     </div>
+    {{/unless}}
     <div class="flex1 center cell readonly">
         <input class="field-value" name="data.attributes.init.value" readonly="true" type="text" value="{{actor.data.attributes.init.value}}" placeholder="{{ localize 'COC.attributes.value.abbrev' }}" data-dtype="Number"/>
     </div>

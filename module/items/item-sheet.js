@@ -10,7 +10,7 @@ export class CoCItemSheet extends ItemSheet {
     /** @override */
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["coc", game.coc.skin, "sheet", "item", this.type],
+            classes: ["coc", "base", "sheet", "item", this.type],
             template: "/systems/coc/templates/items/item-sheet.hbs",
             width: 600,
             height: 600,
@@ -61,10 +61,62 @@ export class CoCItemSheet extends ItemSheet {
         });
 
         // Display item sheet
-        html.find('.item-name').click(this._onEditItem.bind(this));
         html.find('.item-edit').click(this._onEditItem.bind(this));
         // Delete items
         html.find('.item-delete').click(this._onDeleteItem.bind(this));
+
+        // Item Effects
+        html.find('.item-name').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            if (!elt || elt.length === 0) this._onEditItem(ev);
+            else {
+                if (this.item.actor) return;    // Si l'item appartient à un actor, l'effet n'est pas modifiable
+                const effectId = elt.data("itemId");
+                let effect = this.item.effects.get(effectId);
+                if (effect) {
+                    new ActiveEffectConfig(effect).render(true);
+                }
+            }
+        });
+        // Abonnement des évènements sur les effets
+        html.find('.effect-create').click(ev => {
+            ev.preventDefault();
+            if (!this.isEditable) return;
+            return this.item.createEmbeddedDocuments("ActiveEffect", [{
+                label: game.i18n.localize("COC.ui.newEffect"),
+                icon: "icons/svg/aura.svg",
+                origin: this.item.uuid,
+                "duration.rounds": undefined,
+                disabled: false
+            }]);
+        });
+        html.find('.effect-edit').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let effect = this.item.effects.get(effectId);
+            if (effect) {
+                new ActiveEffectConfig(effect).render(true);
+            }
+        });
+        html.find('.effect-delete').click(ev => {
+            ev.preventDefault();
+            if (!this.isEditable) return;
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let effect = this.item.effects.get(effectId);
+            if (effect) effect.delete();
+        });
+        html.find('.effect-toggle').click(ev => {
+            ev.preventDefault();
+            const elt = $(ev.currentTarget).parents(".effect");
+            const effectId = elt.data("itemId");
+            let effect = this.item.effects.get(effectId);
+            if (effect) {
+                effect.update({ disabled: !effect.data.disabled })
+            }
+        });
 
     }
 
@@ -185,7 +237,7 @@ export class CoCItemSheet extends ItemSheet {
             case "path" : pack = "coc.paths"; break;
             case "capacity" : pack = "coc.capacities"; break;
         }
-        if(pack) return Traversal.getEntity(id, "item", pack).then(e => { if(e) e.sheet.render(true) });
+        if(pack) return Traversal.getDocument(id, "item", pack).then(e => { if(e) e.sheet.render(true) });
     }
 
     /* -------------------------------------------- */
@@ -208,25 +260,22 @@ export class CoCItemSheet extends ItemSheet {
     }
 
     /** @override */
-    async getData() {
-        const data = super.getData();
+    getData(options) {
+         const data = super.getData(options);
+        const itemData = data.data;
+
         data.labels = this.item.labels;
-        // Include CONFIG values
         data.config = game.coc.config;
         data.itemType = data.item.type.titleCase();
         data.itemProperties = this._getItemProperties(data.item);
-        if(data.data.capacities && data.data.capacities.length > 0){
-            const idx = await game.packs.get("coc.capacities").getIndex();
-            const caps = idx.concat(game.items.filter(item => item.data.type === "capacity" && data.data.capacities.includes(item._id)));
-            data.capacities = data.data.capacities.map(c => caps.find(e => e._id === c));
-        }
-        if(data.data.paths && data.data.paths.length > 0){
-            const idx = await game.packs.get("coc.paths").getIndex();
-            const ingame = game.items.filter(item => item.data.type === "path" && data.data.paths.includes(item._id));
-            data.paths = ingame.concat(idx.filter(item => data.data.paths.includes(item._id)));
-        }
-        // console.log(data);
-        return data;
+        data.effects = data.item.effects;
+        // Gestion de l'affichage des boutons de modification des effets
+        // Les boutons sont masqués si l'item appartient à un actor
+        data.isEffectsEditable = this.item.actor ? false : true;
+        data.item = itemData;
+        data.data = itemData.data;
+        
+        return data;       
     }
 
     /* -------------------------------------------- */
@@ -241,7 +290,7 @@ export class CoCItemSheet extends ItemSheet {
         // const labels = this.item.labels;
 
         if ( item.type === "item" ) {
-            const entries = Object.entries(item.data.properties)
+            const entries = Object.entries(item.data.data.properties)
             props.push(...entries.filter(e => e[1] === true).map(e => {
                 return game.coc.config.itemProperties[e[0]]
             }));

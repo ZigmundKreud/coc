@@ -1,0 +1,290 @@
+@borderColor:#caad27;
+@headerHeight:100px;
+@bodyHeight:calc(100% - 100px);
+@sidebarWidth:400px;
+
+@colorGold : #caad27;
+@headerColor:black;
+
+/* ----------------------------------------- */
+/*  Layout                                   */
+/* ----------------------------------------- */
+.window-content {
+  .nomargin();
+  height: 100%;
+  overflow: hidden;
+
+  &>form {
+    .nomargin();
+    height: 100%;
+    overflow: hidden;
+    background-image: url("../ui/coc/header.png");
+    background-repeat: repeat;
+
+    .upper{
+      min-height:@headerHeight;
+      height:@headerHeight;
+      max-height:@headerHeight;
+      .logo{
+        position: relative;
+        top: 30px;
+        background-image: url("../ui/coc/logo.png");
+        background-position-x: center;
+        background-position-y: bottom;
+        background-repeat: no-repeat;
+        background-size: 280px auto;
+        min-height:@headerHeight;
+        height:@headerHeight;
+        max-height:@headerHeight;
+      }
+    }
+
+    .main {
+      min-height:@bodyHeight;
+      height:@bodyHeight;
+      max-height:@bodyHeight;
+
+      .sidebar{
+        border-right: 3px solid @borderColor;
+        padding: 0 5px 0 5px;
+        height: 100%;
+        max-width: 300px;
+
+        .charname-title{
+          padding-top:20px;
+          .charname{
+            font-family: Polentical;
+            color:white;
+            font-size: 30px;
+            font-weight: 700;
+          }
+        }
+        .portrait{
+          img.profile{
+            border:none;
+          }
+        }
+      }
+
+      .content{
+        height: 100%;
+        padding: 40px 10px 10px 10px;
+        border-top: 3px solid @borderColor;
+        background: white;
+
+        .sheet-header {
+          height: 90px;
+          min-height: 90px;
+          max-height: 90px;
+          padding: 10px 0;
+          .header-details {
+            padding: 10px 0;
+            .field-label{
+              text-transform: uppercase;
+            }
+            .cell-header{
+              background-color:@headerColor;
+            }
+            .flexrow {
+              margin-bottom: 1px;
+            }
+          }
+        }
+
+        .sheet-body {
+          padding: 10px 0;
+          height: calc(100% - 10px);
+          min-height: calc(100% - 10px);
+          max-height: calc(100% - 10px);
+          .tab {
+            .nomargin();
+
+            height: calc(100% - 80px);
+            min-height: calc(100% - 80px);
+            max-height: calc(100% - 80px);
+            overflow: auto;
+
+            &.stats {
+              .flexrow {
+                margin-bottom: 1px;
+              }
+              .attributes-header{ font-family: @font-secondary; color:@colorGold }
+              .attributes{ .cell-header{ background-color:@headerColor } }
+
+              .init-header, .attacks-header{ font-family: @font-secondary; color:@colorGold; }
+              .init,.attacks{ .cell-header{ background-color:@headerColor } }
+
+              .defence-header{ font-family: @font-secondary; color:@colorGold; }
+              .defence{ .cell-header{ background-color:@headerColor } }
+
+              .injuries-header,
+              .recovery-header,
+              .vitality-header{ font-family: @font-secondary; color:@colorGold; }
+              .injuries,
+              .recovery,
+              .vitality{ .cell-header{ background-color:@headerColor } }
+
+              .madness-header,
+              .resources-header{ font-family: @font-secondary; color:@colorGold; }
+              .madness,
+              .resources{ .cell-header{ background-color:@headerColor } }
+
+            }
+            &.combat {
+              .inventory-list {
+                .item-list {
+                  .item {
+                    .item-subtype {
+                      //font-size: 10px;
+                      flex: 0 1 100px;
+                      font-size: 12px;
+                      color: @colorTan;
+                      text-align: center;
+                      border-right: 1px solid @colorFaint;
+                      word-break: break-word;
+                      .ellipsis();
+                    }
+                  }
+                }
+              }
+
+              .weapon {
+                .item-name {
+                  padding-top: 2px;
+                  border-right: 1px solid #c9c7b8;
+                  .weapon-image {
+                    background-image: url('../ui/coc/weapon.png');
+                    background-size: 26px 26px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                  }
+                  .weapon-name {
+                  }
+                }
+              }
+            }
+            &.inventory {}
+            &.capacities {
+              overflow: auto;
+              .path-list {
+                box-shadow: 0 4px 3px -3px gray;
+                margin: 0 0 5px 0;
+                padding: 3px;
+                max-height: 205px;
+                overflow: hidden;
+
+                .grid {
+                  //font-family: @font-condensed;
+                  font-size: 12px;
+                  max-height: 150px;
+                  overflow: auto;
+                  .gridrow {
+                    .gridcell{
+                      padding:3px 5px;
+                      &.gridheader{
+                        background-color:@headerColor;
+                        font-family: @font-secondary;
+                        color:white;
+                      }
+                    }
+                    &.gridheader{
+                      background-color:@headerColor;
+                      font-family: @font-secondary;
+                      color:white;
+                    }
+                  }
+                }
+
+                &.encounter {
+                  min-height: 100px;
+                  height: 100px;
+                  max-height: 100px;
+                  overflow: hidden;
+
+                  .grid {
+                    min-height: 100px;
+                    height: 100px;
+                    max-height: 100px;
+                    overflow: auto;
+                  }
+                }
+              }
+
+              .capacity-list {
+                min-height:calc(100% - 220px);
+                height:calc(100% - 220px);
+                max-height:calc(100% - 220px);
+                overflow: auto;
+                &.p0{
+                  min-height:calc(100% - 15px);
+                  height:calc(100% - 15px);
+                  max-height:calc(100% - 15px);
+                }
+                &.p1{
+                  min-height:calc(100% - 120px);
+                  height:calc(100% - 120px);
+                  max-height:calc(100% - 120px);
+                }
+                &.p2{
+                  min-height:calc(100% - 145px);
+                  height:calc(100% - 145px);
+                  max-height:calc(100% - 145px);
+                }
+                &.p3{
+                  min-height:calc(100% - 170px);
+                  height:calc(100% - 170px);
+                  max-height:calc(100% - 170px);
+                }
+                &.p4{
+                  min-height:calc(100% - 195px);
+                  height:calc(100% - 195px);
+                  max-height:calc(100% - 195px);
+                }
+              }
+            }
+          }
+        }
+
+        .cell{
+          height:26px;
+          .field-value{
+            font-family: @font-deco;
+            font-size: 16px;
+            //font-family: Signika;
+          }
+          select.field-value{
+            font-size: 14px;
+          }
+        }
+        .cell-header{
+          height:26px;
+          background-color: black;
+          color: white;
+          padding-top: 2px;
+          //font-family: @font-primary;
+          font-family: @font-secondary;
+        }
+        .drop-field {
+          background-color: rgba(0, 0, 0, 0.1);
+          .drop-item {
+            margin-left: 1px;
+            padding-top: 5px;
+            height: 26px;
+          }
+          .item {
+            padding-top: 3px;
+            .item-control {
+              color: @c-darkbrown;
+              visibility: hidden;
+              flex: 0 0 18px;
+              border:1px solid transparent;
+            }
+          }
+          &:hover > .item > .item-control {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
