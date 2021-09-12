@@ -10,12 +10,14 @@
     .inventory-header {
       h3 {
         cursor: pointer;
+
         &:before {
-          content:"▾\202F"
+          content: "▾\202F"
         }
       }
     }
   }
+
   &.folded {
     .inventory-header {
       h3:before {
@@ -29,7 +31,10 @@
     line-height: 30px;
     padding: 0 2px; // to align with the header border
     border-bottom: 1px solid @colorFaint;
-    &:last-child { border-bottom: none; }
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     // Item Header Name
     .item-name {
@@ -53,6 +58,7 @@
       &.rollable:hover .item-image {
         background-image: url("../../../icons/svg/d20-grey.svg") !important;
       }
+
       &.rollable .item-image:hover {
         background-image: url("../../../icons/svg/d20-black.svg") !important;
       }
@@ -125,8 +131,13 @@
     white-space: nowrap;
     overflow: hidden;
 
-    &:last-child { border-right: none; }
-    &.item-action {flex: 0 0 120px}
+    &:last-child {
+      border-right: none;
+    }
+
+    &.item-action {
+      flex: 0 0 120px
+    }
   }
 
   .item-subtype {
@@ -182,6 +193,67 @@
     line-height: 16px;
     padding: 0.25em 0.5em;
     border-top: 1px solid @colorFaint;
+  }
+
+
+  .item-controls-3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 88px;
+    flex: 0 0 88px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+
+    & > * {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+
+    .flex1 {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+
+    .flex2 {
+      -webkit-box-flex: 2;
+      -ms-flex: 2;
+      flex: 2;
+    }
+
+    .flex3 {
+      -webkit-box-flex: 3;
+      -ms-flex: 3;
+      flex: 3;
+    }
+
+    .flex4 {
+      -webkit-box-flex: 4;
+      -ms-flex: 4;
+      flex: 4;
+    }
+
+    a {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 22px;
+      flex: 0 0 22px;
+      font-size: 12px;
+      text-align: center;
+      color: #7a7971;
+    }
   }
 }
 
