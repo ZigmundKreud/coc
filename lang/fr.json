@@ -249,7 +249,7 @@
   "COC.attributes.rp.label" : "Points de récupération",
   "COC.attributes.rp.abbrev" : "PR",
   "COC.attributes.fp.label" : "Points de chance",
-  "COC.attributes.fp.abbrev" : "PC",
+  "COC.attributes.fp.abbrev" : "PC (Chance)",
   "COC.attributes.mp.label" : "Points de magie",
   "COC.attributes.mp.abbrev" : "PM",
   "COC.attributes.dr.label" : "Réduction de dégâts",

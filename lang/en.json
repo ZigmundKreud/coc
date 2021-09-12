@@ -249,7 +249,7 @@
   "COC.attributes.rp.label" : "Recovery Points",
   "COC.attributes.rp.abbrev" : "RP",
   "COC.attributes.fp.label" : "Fortune Points",
-  "COC.attributes.fp.abbrev" : "FP",
+  "COC.attributes.fp.abbrev" : "FP (Chance)",
   "COC.attributes.mp.label" : "Magic Points",
   "COC.attributes.mp.abbrev" : "MP",
   "COC.attributes.dr.label" : "Damage Reduction",

@@ -80,20 +80,7 @@ export const registerSystemSettings = function() {
         type: Boolean,
         onChange: lang => window.location.reload()
     });
-
-    // game.settings.register("coc", "cocthSkin", {
-    //     name: "Skin COC Cthulhu",
-    //     hint: "Utiliser la skin COC Cthulhu",
-    //     scope: "world",
-    //     config: true,
-    //     default: false,
-    //     type: Boolean,
-    //     onChange: checked => {
-    //         game.coc.skin = (checked) ? "cocth" : "base";
-    //         window.location.reload()
-    //     }
-    // });
-
+    
     game.settings.register("coc", "moveItem", {
         name: "Mode de déplacement des items",
         hint: "Comportement du drag & drop d'un item sur une fiche de personnage (Maintenir MAJ lors du drop pour inverser)",
