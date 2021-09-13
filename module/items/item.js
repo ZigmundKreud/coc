@@ -62,7 +62,7 @@ export class CoCItem extends Item {
             // Compute damage mod
             const dmgStat = eval("actorData.data." + itemData.data.dmgStat.split("@")[1]);
             const dmgBonus = (dmgStat) ? parseInt(dmgStat) + parseInt(itemData.data.dmgBonus) : parseInt(itemData.data.dmgBonus);
-            const dmgBase = itemData.data.dmgBase.trim() + "x";
+            const dmgBase = itemData.data.dmgBase;
             if (dmgBonus < 0) itemData.data.dmg = dmgBase + " - " + parseInt(-dmgBonus);
             else if (dmgBonus === 0) itemData.data.dmg = dmgBase;
             else itemData.data.dmg = dmgBase + " + " + dmgBonus;
