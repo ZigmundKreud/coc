@@ -120,7 +120,7 @@ export class CoCActorSheet extends CoCBaseSheet {
         });
 
         // Gestion des boutons de modification des effets (visible pour l'actor)
-        data.isEffectsEditable = true;
+        data.isEffectsEditable = options.editable;
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }

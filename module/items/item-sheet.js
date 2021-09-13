@@ -71,6 +71,8 @@ export class CoCItemSheet extends ItemSheet {
             const elt = $(ev.currentTarget).parents(".effect");
             if (!elt || elt.length === 0) this._onEditItem(ev);
             else {
+                let lockItems = game.settings.get("coc", "lockItems");
+                if ((!game.user.isGM && lockItems) || this.item.actor) return;    // Si l'item est verrouillé ou appartient à un actor, l'effet n'est pas modifiable
                 if (this.item.actor) return;    // Si l'item appartient à un actor, l'effet n'est pas modifiable
                 const effectId = elt.data("itemId");
                 let effect = this.item.effects.get(effectId);
@@ -261,9 +263,12 @@ export class CoCItemSheet extends ItemSheet {
 
     /** @override */
     getData(options) {
-         const data = super.getData(options);
-        const itemData = data.data;
+        const data = super.getData(options);
+        
+        let lockItems = game.settings.get("coc", "lockItems");
+        options.editable &= (game.user.isGM || !lockItems);
 
+        const itemData = data.data;
         data.labels = this.item.labels;
         data.config = game.coc.config;
         data.itemType = data.item.type.titleCase();
@@ -271,7 +276,7 @@ export class CoCItemSheet extends ItemSheet {
         data.effects = data.item.effects;
         // Gestion de l'affichage des boutons de modification des effets
         // Les boutons sont masqués si l'item appartient à un actor
-        data.isEffectsEditable = this.item.actor ? false : true;
+        data.isEffectsEditable = !this.item.actor && options.editable;
         data.item = itemData;
         data.data = itemData.data;
         
@@ -295,39 +300,6 @@ export class CoCItemSheet extends ItemSheet {
                 return game.coc.config.itemProperties[e[0]]
             }));
         }
-
-        // else if ( item.type === "spell" ) {
-        //     // props.push(
-        //         // labels.components,
-        //         // labels.materials,
-        //         // item.data.components.concentration ? game.i18n.localize("DND5E.Concentration") : null,
-        //         // item.data.components.ritual ? game.i18n.localize("DND5E.Ritual") : null
-        //     // )
-        // }
-        //
-        // else if ( item.type === "equipment" ) {
-        //     props.push(CONFIG.DND5E.equipmentTypes[item.data.armor.type]);
-        //     props.push(labels.armor);
-        // }
-
-        // else if ( item.type === "feat" ) {
-        //     props.push(labels.featType);
-        // }
-
-        // Action type
-        // if ( item.data.actionType ) {
-        //     props.push(CONFIG.DND5E.itemActionTypes[item.data.actionType]);
-        // }
-
-        // Action usage
-        // if ( (item.type !== "weapon") && item.data.activation && !isObjectEmpty(item.data.activation) ) {
-        //     props.push(
-        //         labels.activation,
-        //         labels.range,
-        //         labels.target,
-        //         labels.duration
-        //     )
-        // }
         return props.filter(p => !!p);
     }
 }
