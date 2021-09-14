@@ -1,6 +1,7 @@
-import {CharacterGeneration} from "../system/chargen.js";
-import {SkillRoll} from "./skill-roll.js";
-import {DamageRoll} from "./dmg-roll.js";
+import { CharacterGeneration } from "../system/chargen.js";
+import { SkillRoll } from "./skill-roll.js";
+import { DamageRoll } from "./dmg-roll.js";
+import { CocHealingRoll } from "./healing-roll.js";
 
 export class CoCRoll {
     static options() {
@@ -438,15 +439,11 @@ export class CoCRoll {
                         const hdmax = parseInt(hd.split("d")[1]);
                         const bonus = level + conMod;
                         const formula = `1d${hdmax} + ${bonus}`;
-                        const r = new Roll(formula);
-                        await r.roll({"async": true});
-                        r.toMessage({
-                                user: game.user.id,
-                                flavor: "<h2>Dépense un point de récupération</h2>",
-                                speaker: ChatMessage.getSpeaker({ actor: actor })
-                        });
+                        
+                        let healingRoll = new CocHealingRoll("", formula, false, "Point de récupération", false);
+                        let result = await healingRoll.roll(actor);
     
-                        hp.value += r.total;
+                        hp.value += result.total;
                         rp.value -= 1;
                         actor.update({ 'data.attributes.hp': hp, 'data.attributes.rp': rp });
                 },

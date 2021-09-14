@@ -38,6 +38,7 @@ FONCTIONNALITES
 * Modification de l'actor-sheet et de l'item-sheet pour prise en compte du droit "Limité"
 * Masquage des boutons d'actions si la feuille est en lecture seule
 * Prise en compte du droit Limité sur les Rencontres
+* Remplacement du jet de dé des points de récupération par un healing roll
 
 ### Version 0.8.9.1
 Mise à jour pour supporter Foundry 0.8 et rattrapage des fonctionnalités déjà offertes par COF.
