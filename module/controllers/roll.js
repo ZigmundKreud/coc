@@ -1,6 +1,7 @@
-import {CharacterGeneration} from "../system/chargen.js";
-import {SkillRoll} from "./skill-roll.js";
-import {DamageRoll} from "./dmg-roll.js";
+import { CharacterGeneration } from "../system/chargen.js";
+import { SkillRoll } from "./skill-roll.js";
+import { DamageRoll } from "./dmg-roll.js";
+import { CocHealingRoll } from "./healing-roll.js";
 
 export class CoCRoll {
     static options() {
@@ -8,11 +9,14 @@ export class CoCRoll {
     }
 
     /**
-     *  Handles skill check rolls
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
-     */
+     * @name skillCheck
+     * @description  Jet de compétence 
+     * 
+     * @param {*} data 
+     * @param {*} actor 
+     * @param {*} event 
+     * @returns 
+     */  
     static skillCheck(data, actor, event) {
         const elt = $(event.currentTarget)[0];
         let key = elt.attributes["data-rolling"].value;
@@ -27,6 +31,15 @@ export class CoCRoll {
         return this.skillRollDialog(actor, label, tmpmod !== null ? tmpmod : mod, bonus, 0, critrange, superior);
     }
 
+    /**
+     * @name rollWeapon
+     * @description  Jet d'attaque 
+     * 
+     * @param {*} data 
+     * @param {*} actor 
+     * @param {*} event 
+     * @returns 
+     */    
     static rollWeapon(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");        
         let item = actor.items.get(li.data("itemId"));
@@ -43,60 +56,22 @@ export class CoCRoll {
     }
 
     /**
-     *  Handles encounter attack checks
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
-     
-    static rollEncounterWeapon(data, actor, event) {
-        const item = $(event.currentTarget).parents(".weapon");
-        let label = item.find(".weapon-name").text();
-        let mod = item.find(".weapon-mod").val();
-        let critrange = item.find(".weapon-critrange").val();
-        let dmg = item.find(".weapon-dmg").val();
-        return this.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
-    }
-    */
-
-    /**
-     *  Handles encounter damage rolls
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
-     
-    static rollEncounterDamage(data, actor, event) {
-        const item = $(event.currentTarget).parents(".weapon");
-        let label = item.find(".weapon-name").text();
-        let dmg = item.find(".weapon-dmg").val();
+     * @name rollDamage
+     * @description  Jet de dommages 
+     * 
+     * @param {*} data 
+     * @param {*} actor 
+     * @param {*} event 
+     * @returns 
+     */  
+     static rollDamage(data, actor, event) {
+        const li = $(event.currentTarget).parents(".item");
+        let item = actor.items.get(li.data("itemId"));
+        let label = item.data.name;
+        let dmg = item.data.data.dmg;
         return this.rollDamageDialog(actor, label, dmg, 0);
-    }*/
-
-    /**
-     *  Handles encounter attack checks
-     */
-     static rollEncounterWeapon(data, actor, event) {
-        const li = $(event.currentTarget).parents(".item");
-        const item = actor.data.items.find(item=>item.id === li.data("itemId"));
+    }
         
-        const label = item.name;
-        const weapon = item.data.data.weapon;
-
-        return this.rollWeaponDialog(actor, label, weapon.mod, weapon.skillBonus, 0, weapon.critrange, weapon.dmg, weapon.dmgBonus);
-    }
-
-    /**
-     *  Handles encounter damage rolls
-     */
-    static rollEncounterDamage(data, actor, event) {
-        const li = $(event.currentTarget).parents(".item");
-        const item = actor.data.items.find(item=>item.id === li.data("itemId"));
-
-        const label = item.name;
-        const weapon = item.data.data.weapon;
-
-        return this.rollDamageDialog(actor, label, weapon.dmg, weapon.bonus);
-    }
-
     /**
      *  Handles spell rolls
      * @param elt DOM element which raised the roll event
@@ -111,20 +86,6 @@ export class CoCRoll {
         let critrange = item.data.data.critrange;
         let dmg = item.data.data.dmg;
         return this.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
-    }
-
-    /**
-     *  Handles damage rolls
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
-     */
-    static rollDamage(data, actor, event) {
-        const li = $(event.currentTarget).parents(".item");
-        let item = actor.items.get(li.data("itemId"));
-        let label = item.data.name;
-        let dmg = item.data.data.dmg;
-        return this.rollDamageDialog(actor, label, dmg, 0);
     }
 
     /**
@@ -190,11 +151,15 @@ export class CoCRoll {
         });
     }
 
+
     /**
-     *  Handles attributes rolls
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
+     * @name rollAttributes
+     * @description Handles attributes rolls
+     * 
+     * @param {*} data 
+     * @param {*} actor 
+     * @param {*} event 
+     * @returns 
      */
     static async rollAttributes(data, actor, event) {
         let stats = data.stats;
@@ -212,6 +177,42 @@ export class CoCRoll {
             },
             defaultYes: false
         });
+    }
+
+        /**
+     * @name rollEncounterWeapon
+     * @description  Jet d'attaque d'une rencontre
+     *  Basé sur les valeurs affichées sur la fiche
+     * 
+     * @param {*} data 
+     * @param {*} actor 
+     * @param {*} event 
+     * @returns 
+     */
+    static rollEncounterWeapon(data, actor, event) {
+        const weapon = $(event.currentTarget).parents(".item");
+        let label = weapon.find(".weapon-name").text();
+        let critrange = weapon.find(".weapon-crit").text();        
+        let mod = weapon.find(".weapon-mod").text();
+        let dmg = weapon.find(".weapon-dmg").text();
+        return this.rollWeaponDialog(actor, label, mod, 0, 0, critrange, dmg, 0);
+    }
+    
+    /**
+     * @name rollEncounterDamage
+     * @description  Jet de dommages d'une rencontre
+     *  Basé sur les valeurs affichées sur la fiche
+     * 
+     * @param {*} data 
+     * @param {*} actor 
+     * @param {*} event 
+     * @returns
+     */
+    static rollEncounterDamage(data, actor, event) {
+        const weapon = $(event.currentTarget).parents(".item");
+        let label = weapon.find(".weapon-name").text();
+        let dmg = weapon.find(".weapon-dmg").text();
+        return this.rollDamageDialog(actor, label, dmg, 0);
     }
 
     /* -------------------------------------------- */
@@ -438,15 +439,11 @@ export class CoCRoll {
                         const hdmax = parseInt(hd.split("d")[1]);
                         const bonus = level + conMod;
                         const formula = `1d${hdmax} + ${bonus}`;
-                        const r = new Roll(formula);
-                        await r.roll({"async": true});
-                        r.toMessage({
-                                user: game.user.id,
-                                flavor: "<h2>Dépense un point de récupération</h2>",
-                                speaker: ChatMessage.getSpeaker({ actor: actor })
-                        });
+                        
+                        let healingRoll = new CocHealingRoll("", formula, false, "Point de récupération", false);
+                        let result = await healingRoll.roll(actor);
     
-                        hp.value += r.total;
+                        hp.value += result.total;
                         rp.value -= 1;
                         actor.update({ 'data.attributes.hp': hp, 'data.attributes.rp': rp });
                 },
@@ -454,4 +451,5 @@ export class CoCRoll {
             });
         }   
     }
+
 }

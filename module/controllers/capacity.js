@@ -1,5 +1,6 @@
 import {Traversal} from "../utils/traversal.js";
 import { ArrayUtils } from "../utils/array-utils.js";
+import { EntitySummary } from "./entity-summary.js";
 
 export class Capacity {
 
@@ -47,6 +48,24 @@ export class Capacity {
         return actor.createEmbeddedDocuments("Item", [data], {renderSheet: true}); // Returns one Entity, saved to the database
     }
 
+
+   /**
+     * 
+     * @param {*} entity 
+     * @param {*} capacityData 
+     * @returns 
+     */
+    static addToItem(entity, capacityData) {
+        let data = duplicate(entity.data);
+        let caps = data.data.capacities;
+        let capsIds = caps.map(c => c._id);
+        if (capsIds && !capsIds.includes(capacityData._id)) {
+            data.data.capacities.push(EntitySummary.create(capacityData));
+            return entity.update(data);
+        }
+        else ui.notifications.error("Cet objet contient déjà cette capacité.")
+    }
+    
     /**
      *
      * @param {*} actor
@@ -113,57 +132,5 @@ export class Capacity {
             });
         });
     }
-
-
-
-
-
-
-
-    //
-    // static toggleCheck(actor, event, isUncheck) {
-    //     const elt = $(event.currentTarget).parents(".capacity");
-    //     const data = duplicate(actor.data);
-    //     // get id of clicked capacity
-    //     const capId = elt.data("itemId");
-    //     // get id of parent path
-    //     const pathId = elt.data("pathId");
-    //     // get path from owned items
-    //     const path = actor.items.get(pathId).data;
-    //     // retrieve path capacities from world/compendiums
-    //     let capacities = Traversal.getItemsOfType("capacity").filter(c => {if(c && c._id) return path.data.capacities.includes(c._id)});
-    //     capacities = capacities.map(c => {
-    //         let cdata = duplicate(c);
-    //         // if no rank, force it
-    //         if(!cdata.data.rank) cdata.data.rank = path.data.capacities.indexOf(c._id) +1;
-    //         // if no path, force it
-    //         if(!cdata.data.path) {
-    //             cdata.data.path = {
-    //                 id : path._id,
-    //                 name : path.name,
-    //                 key : path.data.key
-    //             };
-    //         }
-    //         return cdata;
-    //     });
-    //     const capacitiesKeys = capacities.map(c=>c.data.key);
-    //
-    //     // retrieve path's capacities already present in owned items
-    //     const items = data.items.filter(i => i.type === "capacity" && capacitiesKeys.includes(i.data.key));
-    //     const itemKeys = items.map(i => i.data.key);
-    //
-    //     if(isUncheck){
-    //         const caps = capacities.filter(c => path.data.capacities.indexOf(c._id) >= path.data.capacities.indexOf(capId));
-    //         const capsKeys = caps.map(c => c.data.key);
-    //         // const caps = capacities.filter(c => c.data.rank >= capacity.data.rank);
-    //         // REMOVE SELECTED CAPS
-    //         const toRemove = items.filter(i => capsKeys.includes(i.data.key)).map(i => i._id);
-    //         return actor.deleteEmbeddedDocuments("Item", toRemove, {});
-    //     }else {
-    //         const caps = capacities.filter(c => path.data.capacities.indexOf(c._id) <= path.data.capacities.indexOf(capId));
-    //         // const caps = capacities.filter(c => c.data.rank <= capacity.data.rank);
-    //         const toAdd = caps.filter(c => !itemKeys.includes(c.data.key));
-    //         return actor.createEmbeddedDocuments("Item", toAdd, {});
-    //     }
-    // }
+ 
 }

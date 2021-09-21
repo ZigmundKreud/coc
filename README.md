@@ -27,6 +27,19 @@ Modules disponibles :
 ---
 ## Changelog
 
+### Version 0.8.9.2
+CORRECTIFS
+* Correction du calcul Mod et DM d'une rencontre : calcul depuis l'onglet Combat et non l'objet
+* Correction de la gestion des voies et capacités : drag and drop, édition, suppression
+
+FONCTIONNALITES
+* Prise en compte du dé explosif pour les DM
+* Mise en place du verrou Joueur pour les Items
+* Modification de l'actor-sheet et de l'item-sheet pour prise en compte du droit "Limité"
+* Masquage des boutons d'actions si la feuille est en lecture seule
+* Prise en compte du droit Limité sur les Rencontres
+* Remplacement du jet de dé des points de récupération par un healing roll
+
 ### Version 0.8.9.1
 Mise à jour pour supporter Foundry 0.8 et rattrapage des fonctionnalités déjà offertes par COF.
 
