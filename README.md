@@ -27,6 +27,9 @@ Modules disponibles :
 ---
 ## Changelog
 
+### Version 0.8.9.3
+CORRECTIFS
+* Correction de la gestion du profil : drag and drop, édition, suppression
 ### Version 0.8.9.2
 CORRECTIFS
 * Correction du calcul Mod et DM d'une rencontre : calcul depuis l'onglet Combat et non l'objet

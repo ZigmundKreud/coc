@@ -245,6 +245,19 @@ export class CoCBaseSheet extends ActorSheet {
     /* DROP EVENTS CALLBACKS                        */
     /* -------------------------------------------- */
 
+    /** @override */
+    async _onDrop(event) {
+        event.preventDefault();
+        // Get dropped data
+        let data;
+        try {
+            data = JSON.parse(event.dataTransfer.getData('text/plain'));
+        } catch (err) {return false;}
+        if (!data) return false;
+        if (data.type === "Item") {return this._onDropItem(event, data);}
+        if (data.type === "Actor") {return false; }
+    }
+
     /**
      * Handle dropping of an item reference or item data onto an Actor Sheet
      * @param {DragEvent} event     The concluding DragEvent which contains drop data

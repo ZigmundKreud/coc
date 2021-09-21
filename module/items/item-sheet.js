@@ -2,10 +2,10 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-import {ArrayUtils} from "../utils/array-utils.js";
-import {Traversal} from "../utils/traversal.js";
 import { Capacity } from "../controllers/capacity.js";
-
+import { Path } from "../controllers/path.js";
+import { ArrayUtils } from "../utils/array-utils.js";
+import { Traversal } from "../utils/traversal.js";
 export class CoCItemSheet extends ItemSheet {
 
     /** @override */
@@ -199,16 +199,8 @@ export class CoCItemSheet extends ItemSheet {
 
     _onDropPathItem(event, itemData) {
         event.preventDefault();
-        let data = duplicate(this.item.data);
-        const id = itemData._id;
-        if(data.type === "profile"){
-            if(!data.data.paths.includes(id)){
-                data.data.paths.push(id);
-                return this.item.update(data);
-            }
-            else ui.notifications.error("Ce profil contient déjà cette voie.")
-        }
-        return false;
+        if (this.item.data.type === "profile") return Path.addToItem(this.item, itemData);
+        else return false;
     }
 
     /* -------------------------------------------- */

@@ -1,4 +1,5 @@
-import {Traversal} from "../utils/traversal.js";
+import { Traversal } from "../utils/traversal.js";
+import { EntitySummary } from "./entity-summary.js";
 
 export class Path {
 
@@ -84,6 +85,23 @@ export class Path {
         return items;
     }
 
+    /**
+     * 
+     * @param {*} entity 
+     * @param {*} pathData 
+     * @returns 
+     */
+     static addToItem(entity, pathData) {
+        let data = duplicate(entity.data);
+        let paths = data.data.paths;
+        let pathsIds = paths.map(p => p._id);
+        if (pathsIds && !pathsIds.includes(pathData._id)) {
+            data.data.paths.push(EntitySummary.create(pathData));
+            return entity.update(data);
+        }
+        else ui.notifications.error("Cet objet contient déjà cette voie.")
+    }
+
     static removeFromActor(actor, entity) {        
         Dialog.confirm({
             title: "Supprimer une voie",
@@ -104,19 +122,19 @@ export class Path {
      * @param {*} paths 
      * @returns 
      */
-         static removePathsFromActor(actor, paths) {
-            let items = [];
-            paths = paths instanceof Array ? paths : [paths];
-            paths.map(path => {
-                let caps = actor.items.filter(item => {
-                    if (item.data.type === "capacity") {
-                        if (item.data.data.path._id === path.id) return true;
-                    }
-                });
-                caps.map(c => items.push(c.id));
-                items.push(path.id);
+    static removePathsFromActor(actor, paths) {
+        let items = [];
+        paths = paths instanceof Array ? paths : [paths];
+        paths.map(path => {
+            let caps = actor.items.filter(item => {
+                if (item.data.type === "capacity") {
+                    if (item.data.data.path._id === path.id) return true;
+                }
             });
-            return actor.deleteEmbeddedDocuments("Item", items);
-        }
+            caps.map(c => items.push(c.id));
+            items.push(path.id);
+        });
+        return actor.deleteEmbeddedDocuments("Item", items);
+    }
 
 }
