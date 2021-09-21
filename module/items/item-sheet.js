@@ -4,6 +4,7 @@
  */
 import {ArrayUtils} from "../utils/array-utils.js";
 import {Traversal} from "../utils/traversal.js";
+import { Capacity } from "../controllers/capacity.js";
 
 export class CoCItemSheet extends ItemSheet {
 
@@ -166,18 +167,16 @@ export class CoCItemSheet extends ItemSheet {
      * @private
      */
     async _onDropItem(event, data) {
-        const item = await Item.fromDropData(data);
-        const itemData = duplicate(item.data);
-        switch (itemData.type) {
-            case "path"    :
-                return await this._onDropPathItem(event, itemData);
-            case "profile" :
-                return await this._onDropProfileItem(event, itemData);
-            case "capacity" :
-                return await this._onDropCapacityItem(event, itemData);
-            default:
-                return;
-        }
+        Item.fromDropData(data).then(item => {
+            const itemData = duplicate(item.data);
+            switch (itemData.type) {
+                case "path": return this._onDropPathItem(event, itemData);
+                case "capacity": return this._onDropCapacityItem(event, itemData);
+                case "profile": return this._onDropProfileItem(event, itemData);
+                case "species":
+                default: return false;
+            }
+        });
     }
     /* -------------------------------------------- */
     /**
@@ -216,14 +215,8 @@ export class CoCItemSheet extends ItemSheet {
 
     _onDropCapacityItem(event, itemData) {
         event.preventDefault();
-        let data = duplicate(this.item.data);
-        const id = itemData._id;
-        if(data.data.capacities && !data.data.capacities.includes(id)){
-            let caps = data.data.capacities;
-            caps.push(id);
-            return this.item.update(data);
-        }
-        else ui.notifications.error("Cette voie contient déjà cette capacité.")
+        if (this.item.data.type === "path") return Capacity.addToItem(this.item, itemData);
+        else return false;
     }
 
     /* -------------------------------------------- */
@@ -232,14 +225,17 @@ export class CoCItemSheet extends ItemSheet {
         ev.preventDefault();
         const li = $(ev.currentTarget).closest(".item");
         const id = li.data("itemId");
-        const itemType = li.data("itemType");
-        let pack = null;
-        switch(itemType){
-            case "profile" : pack = "coc.profiles"; break;
-            case "path" : pack = "coc.paths"; break;
-            case "capacity" : pack = "coc.capacities"; break;
+
+        if (id) {
+            return Traversal.find(id).then(e => {
+                if (e) return e.sheet.render(true);
+                else {
+                    ui.notifications.error("Impossible de trouver l'entité");
+                    return false;
+                }
+            });
         }
-        if(pack) return Traversal.getDocument(id, "item", pack).then(e => { if(e) e.sheet.render(true) });
+        else return null;
     }
 
     /* -------------------------------------------- */
@@ -255,10 +251,11 @@ export class CoCItemSheet extends ItemSheet {
             case "path" : array = data.data.paths; break;
             case "capacity" : array = data.data.capacities; break;
         }
-        if(array && array.includes(id)) {
-            ArrayUtils.remove(array, id)
-            return this.item.update(data);
+        const item = array.find(e => e._id === id);
+        if(array && array.includes(item)) {
+            ArrayUtils.remove(array, item)
         }
+        return this.item.update(data);
     }
 
     /** @override */

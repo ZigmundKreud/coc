@@ -125,4 +125,31 @@ export class Traversal {
         return this.getAllPathsData().find(entity => entity.data.key === key);
     }
 
+    static find(id) {
+        return this.getIndex().then(idx => {
+            const entry = idx[id];
+            if(entry){
+                if(entry.sourceId){
+                    const elts = entry.sourceId.split(".");
+                    if(elts[0] === "Item") return game.items.get(id);
+                    else if(elts[0] === "Actor") return game.actors.get(id);
+                    else if(elts[0] === "JournalEntry") return game.journal.get(id);
+                    else if(elts[0] === "Compendium") {
+                        const packName = elts[1] + "." + elts[2];
+                        return game.packs.get(packName).getDocument(id).then(entity => entity);
+                    }
+                }
+            }
+        });
+    }
+
+    static findBySource(id, source) {
+        if(id && source) {
+            if(source === "game.items") return game.items.get(id);
+            if(source === "game.actors") return game.actors.get(id);
+            if(source === "game.journal") return game.journal.get(id);
+            else return game.packs.get(source).getDocument(id).then(entity => entity);
+        }
+    }
+    
 }
