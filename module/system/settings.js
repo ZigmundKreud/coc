@@ -7,8 +7,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: false,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
 
     game.settings.register("coc", "useFortune", {
@@ -17,8 +16,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: true,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
 
     game.settings.register("coc", "useMadness", {
@@ -27,8 +25,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: false,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
 
     game.settings.register("coc", "useMana", {
@@ -37,8 +34,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: false,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
 
     game.settings.register("coc", "useDamageResistance", {
@@ -47,8 +43,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: false,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
 
     game.settings.register("coc", "displayDifficulty", {
@@ -57,8 +52,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: true,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
 
     game.settings.register("coc", "useComboRolls", {
@@ -67,8 +61,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: true,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
 
     game.settings.register("coc", "displayChatDamageButtonsToAll", {
@@ -77,8 +70,7 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: false,
-        type: Boolean,
-        onChange: lang => window.location.reload()
+        type: Boolean
     });
     
     game.settings.register("coc", "moveItem", {
@@ -90,9 +82,8 @@ export const registerSystemSettings = function() {
             "0" : "Copier l'item (par défaut dans Foundry)",
             "1" : "Déplacer l'item"
         },
-        default: "0",
         config: true,
-        onChange: lang => window.location.reload()
+        default: "0"        
     });   
 
     game.settings.register("coc", "lockItems",{
@@ -101,7 +92,6 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: false,
-        type: Boolean,
-        onChange: lang => window.location.reload()        
+        type: Boolean       
     });   
 };
