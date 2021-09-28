@@ -342,4 +342,20 @@ export class CoCActor extends Actor {
         const { bonus = 0, malus = 0 } = options;
         return Macros.rollStatMacro(this, stat, bonus, malus);
     }
+
+    /**
+    * @name syncItemActiveEffects
+    * @param {*} item 
+    * @description synchronise l'état des effets qui appartiennent à un item équipable avec l'état "équipé" de cet item
+    * @returns {Promise}
+    */
+     syncItemActiveEffects(item){
+        // Récupération des effets qui proviennent de l'item
+        let effectsData = this.effects.filter(effect=>effect.data.origin.endsWith(item.id))?.map(effect=> duplicate(effect.data));
+        if (effectsData.length > 0){        
+            effectsData.forEach(effect=>effect.disabled = !item.data.data.worn);
+
+            this.updateEmbeddedDocuments("ActiveEffect", effectsData);
+        }
+    }      
 }

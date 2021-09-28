@@ -282,6 +282,10 @@ export class CoCBaseSheet extends ActorSheet {
                 const actor = this.actor;
                 let sameActor = (data.actorId === actor.id) && ((!actor.isToken && !data.tokenId) || (data.tokenId === actor.token.id));
                 if (sameActor) return this._onSortItem(event, itemData);
+
+                // On force le nouvel Item a ne pas être équipé (notamment lors du transfert d'un inventaire à un autre)
+                if (itemData.data.worn) itemData.data.worn = false;
+                
                 // Create the owned item
                 return this.actor.createEmbeddedDocuments("Item", [itemData]).then((item)=>{                    
                     // Si il n'y as pas d'actor id, il s'agit d'un objet du compendium, on quitte
