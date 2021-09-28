@@ -38,6 +38,9 @@ Hooks.once("init", function () {
         decimals: 2
     };
 
+    // Record Configuration values
+    CONFIG.COC = COC;
+
     // Define custom Entity classes
     CONFIG.Actor.documentClass = CoCActor;
     CONFIG.Item.documentClass = CoCItem;

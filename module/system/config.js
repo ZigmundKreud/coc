@@ -19,6 +19,30 @@ System.ASCII = `
 
 export const COC = {};
 
+COC.stats = {
+    "str": "COC.stats.str.label",
+    "dex": "COC.stats.dex.label",
+    "con": "COC.stats.con.label",
+    "int": "COC.stats.int.label",
+    "wis": "COC.stats.wis.label",
+    "cha": "COC.stats.cha.label"
+};
+
+COC.skills = {
+    "melee": "COC.attacks.melee.label",
+    "ranged": "COC.attacks.ranged.label",
+    "magic": "COC.attacks.magic.label"
+};
+
+COC.statAbbreviations = {
+    "str": "COC.stats.str.abbrev",
+    "dex": "COC.stats.dex.abbrev",
+    "con": "COC.stats.con.abbrev",
+    "int": "COC.stats.int.abbrev",
+    "wis": "COC.stats.wis.abbrev",
+    "cha": "COC.stats.cha.abbrev"
+};
+
 COC.itemProperties = {
     "equipable": "COC.properties.equipable",
     "stackable": "COC.properties.stackable",

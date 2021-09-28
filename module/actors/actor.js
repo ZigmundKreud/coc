@@ -4,6 +4,7 @@
  */
 import { Stats } from "../system/stats.js";
 import { COC } from "../system/config.js";
+import { Macros } from "../system/macros.js";
 
 export class CoCActor extends Actor {
 
@@ -330,5 +331,15 @@ export class CoCActor extends Actor {
         if (fromBonus > 0) total = itemDmgBase + " + " + fromBonus;
 
         return total;
+    }
+
+    /**
+     * @name rollStat
+     * @description Lance un dé pour l'habilité demandée
+     * @returns {Promise}
+     */
+    rollStat(stat, options = {}) {
+        const { bonus = 0, malus = 0 } = options;
+        return Macros.rollStatMacro(this, stat, bonus, malus);
     }
 }
