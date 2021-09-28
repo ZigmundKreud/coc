@@ -385,6 +385,7 @@ export class CoCActor extends Actor {
             itemData.data.worn = !itemData.data.worn;
 
             return item.update(itemData).then((item)=>{
+                AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
                 if (!bypassChecks) this.syncItemActiveEffects(item);
             });
         }
@@ -439,12 +440,12 @@ export class CoCActor extends Actor {
         if (item.data.data.slot !== "hand") return true;
 
         // Nombre de mains nécessaire pour l'objet que l'on veux équipper
-        let neededHands = item.data.data.properties["2h"] ? 2 : 1;
+        let neededHands = item.data.data.properties["2H"] ? 2 : 1;
 
         // Calcul du nombre de mains déjà utilisées
         let itemsInHands = this.items.filter(item=>item.data.data.worn && item.data.data.slot === "hand");
         let usedHands = 0;
-        itemsInHands.forEach(item=>usedHands += item.data.data.properties["2h"] ? 2 : 1);                
+        itemsInHands.forEach(item=>usedHands += item.data.data.properties["2H"] ? 2 : 1);                
 
         return usedHands + neededHands <= 2;        
     }
@@ -494,6 +495,7 @@ export class CoCActor extends Actor {
         if(consumable && quantity>0){
             let itemData = duplicate(item.data);
             itemData.data.qty = (itemData.data.qty > 0) ? itemData.data.qty - 1 : 0;
+            AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
             return item.update(itemData).then(item => item.applyEffects(this));
         }
     }    

@@ -47,7 +47,6 @@ COC.itemProperties = {
     "equipable": "COC.properties.equipable",
     "stackable": "COC.properties.stackable",
     "unique": "COC.properties.unique",
-    "2h": "COC.properties.2H",
     "ranged": "COC.properties.ranged",
     "proficient": "COC.properties.proficient",
     "finesse": "COC.properties.finesse",
