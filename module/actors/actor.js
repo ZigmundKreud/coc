@@ -4,6 +4,7 @@
  */
 import { Stats } from "../system/stats.js";
 import { COC } from "../system/config.js";
+import { Macros } from "../system/macros.js";
 
 export class CoCActor extends Actor {
 
@@ -331,4 +332,30 @@ export class CoCActor extends Actor {
 
         return total;
     }
+
+    /**
+     * @name rollStat
+     * @description Lance un dé pour l'habilité demandée
+     * @returns {Promise}
+     */
+    rollStat(stat, options = {}) {
+        const { bonus = 0, malus = 0 } = options;
+        return Macros.rollStatMacro(this, stat, bonus, malus);
+    }
+
+    /**
+    * @name syncItemActiveEffects
+    * @param {*} item 
+    * @description synchronise l'état des effets qui appartiennent à un item équipable avec l'état "équipé" de cet item
+    * @returns {Promise}
+    */
+     syncItemActiveEffects(item){
+        // Récupération des effets qui proviennent de l'item
+        let effectsData = this.effects.filter(effect=>effect.data.origin.endsWith(item.id))?.map(effect=> duplicate(effect.data));
+        if (effectsData.length > 0){        
+            effectsData.forEach(effect=>effect.disabled = !item.data.data.worn);
+
+            this.updateEmbeddedDocuments("ActiveEffect", effectsData);
+        }
+    }      
 }

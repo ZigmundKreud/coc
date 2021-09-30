@@ -28,7 +28,7 @@ export class CoCRoll {
         const critrange = 20;
         bonus = (bonus) ? bonus : 0;
         label = (label) ? game.i18n.localize(label) : null;
-        return this.skillRollDialog(actor, label, tmpmod !== null ? tmpmod : mod, bonus, 0, critrange, superior);
+        return this.skillRollDialog(actor, label, tmpmod != null ? tmpmod : mod, bonus, 0, critrange, superior);
     }
 
     /**

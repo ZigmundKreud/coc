@@ -11,13 +11,8 @@ export class Path {
      */
     static addPathsToActor(actor, pathsData) {
         let items = [];
-        pathsData = pathsData instanceof Array ? pathsData : [pathsData];
-        if (pathsData.length >1){
-            pathsData.forEach(p => { items.push(p.toObject(false)) });
-        }
-        else {
-            items.push(pathsData[0].data);
-        }        
+        pathsData = pathsData instanceof Array ? pathsData : [pathsData];   
+        pathsData.forEach(p => { items.push(p.toObject(false)) });
         return actor.createEmbeddedDocuments("Item", items).then(newPaths => {
             // on ajoute toutes les metadonnees aux voies nouvellement creees pour faciliter la gestions des capacites qui en dependent
             let updatedPaths = newPaths.map(newPath => {

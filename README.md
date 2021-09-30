@@ -26,7 +26,17 @@ Modules disponibles :
 * Lancer votre partie en cliquant sur le bouton "Launch World" de votre monde. Vous êtes prêts à jouer.
 ---
 ## Changelog
+### Version 0.8.9.4
+CORRECTIFS
+* Correction si le profil n'a qu'une voie
+* Correction de la valeur de l'incantation
+* Correction de la sélection multiple des options du système
+* Correction du calcul du Mod des jets d'attaque
 
+FONCTIONNALITES
+* Ajout d'un filtre sur l'onglet combat pour n'afficher que les "arme" et "protection
+* Synchronisation de l'état des effets avec l'état "Equipé" des items parent
+* Ajout de la possibilité d'ignorer la synchronisation des active effect avec leur item "équipable" en utilisant MAJ
 ### Version 0.8.9.3
 CORRECTIFS
 * Correction de la gestion du profil : drag and drop, édition, suppression

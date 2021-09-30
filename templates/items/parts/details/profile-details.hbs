@@ -39,9 +39,9 @@
         <select name="data.spellcasting" data-type="String" style="width:100%">
             {{#select data.spellcasting}}
                 <option value="">{{localize "COC.None"}}</option>
-                <option value="int">{{localize "COC.stats.int.label"}}</option>
-                <option value="wis">{{localize "COC.stats.wis.label"}}</option>
-                <option value="cha">{{localize "COC.stats.cha.label"}}</option>
+                <option value="@stats.int.mod">{{localize "COC.stats.int.label"}}</option>
+                <option value="@stats.wis.mod">{{localize "COC.stats.wis.label"}}</option>
+                <option value="@stats.cha.mod">{{localize "COC.stats.cha.label"}}</option>
             {{/select}}
         </select>
     </div>
