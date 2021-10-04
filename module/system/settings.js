@@ -93,5 +93,14 @@ export const registerSystemSettings = function() {
         config: true,
         default: false,
         type: Boolean       
-    });   
+    });  
+    
+    game.settings.register("coc", "explosiveDice",{
+        name: "Dé explosif pour les dommages",
+        hint: "Si activée, les dommages utilisent la règle du dé explosif",
+        scope: "world",
+        config: true,
+        default: true,
+        type: Boolean       
+    });
 };

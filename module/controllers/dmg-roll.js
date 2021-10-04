@@ -8,10 +8,12 @@ export class DamageRoll {
 
     async roll(actor){
         const r = new Roll(this._formula);
-        // Manage explosive die
-        r.dice.forEach((die)=>{             
-            if (!die.modifiers.includes("x")) die.modifiers.push("x");
-        });
+        // Manage explosive dice
+        if (game.settings.get("coc","explosiveDice")) {
+            r.dice.forEach((die)=>{             
+                if (!die.modifiers.includes("x")) die.modifiers.push("x");
+            });    
+        }
         await r.roll({"async": true});
         if (this._isCritical) r._total = r._total * 2;
         this._buildDamageRollMessage().then(msgFlavor => {
