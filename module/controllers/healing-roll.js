@@ -27,7 +27,7 @@ export class CocHealingRoll {
         const tplData = {
             label : this._label,
             isCritical : this._isCritical,
-            title : this._title ? this._title : this._isCritical ? game.i18n.localize("COF.roll.criticalHeal") : game.i18n.localize("COF.roll.heal"),
+            title : this._title ? this._title : this._isCritical ? game.i18n.localize("COC.roll.criticalHeal") : game.i18n.localize("COC.roll.heal"),
             showButtons : this._showButtons
         };
         return renderTemplate(rollMessageTpl, tplData);

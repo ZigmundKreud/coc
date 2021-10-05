@@ -328,7 +328,7 @@
   "COC.properties.powerful" : "Powerful",
   "COC.properties.critscience" : "Crit Science",
   "COC.properties.specialization" : "Specialization",  
-  "COC.properties.effects" : "Effet magique",
+  "COC.properties.effects" : "Effet",
   "COC.properties.heal" : "Soin",
   "COC.properties.buff" : "Amélioration",
   "COC.properties.temporary" : "Temporaire",
@@ -339,6 +339,7 @@
   "COC.properties.proneshot" : "DM supp. si tir couché",
   "COC.properties.sling" : "Sling",
   "COC.properties.salve" : "Arc de feu (L)",
+  "COC.properties.consumable" : "Consommable",
 
   "COC.properties.profile" : "Profil",
   "COC.properties.action" : "Action",
@@ -364,6 +365,11 @@
   "COC.notification.MacroItemMissing" : "L'acteur n'a pas l'objet {item}",
   "COC.notification.MacroItemUnequiped" : "L'objet {item} n'est pas équipé",
   "COC.notification.MacroUnknownStat" : "La compétence à tester n'a pas été reconnue",
+  "COC.notification.MacroNotAnEncounter" : "Le token sélectionné n'est pas une rencontre",
+  "COC.notification.WeaponIndexMissing" : "Cette rencontre ne possède pas d'arme numéro",
+  "COC.notification.NotEnoughFreeHands" : "Pas suffisament de mains libres pour équiper l'objet",
+  "COC.notification.ArmorSlotNotAvailable" : "L'emplacement pour équiper cette armure n'est pas disponible",
+  "COC.notification.ItemNotEquipable" : "{itemName} n'est pas un objet équipable",
 
   "COC.dialog.rollWeapon.title": "Jet d'attaque",
   "COC.dialog.rollDamage.title": "Jet de dommages",

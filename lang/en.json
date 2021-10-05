@@ -337,7 +337,7 @@
   "COC.properties.powerful" : "Powerful",
   "COC.properties.critscience" : "Crit Science",
   "COC.properties.specialization" : "Specialization",
-  "COC.properties.effects" : "Magical effect",
+  "COC.properties.effects" : "Effect",
   "COC.properties.heal" : "Heal",
   "COC.properties.buff" : "Buff",
   "COC.properties.temporary" : "Temporary",
@@ -348,6 +348,7 @@
   "COC.properties.proneshot" : "DM sup if prone shot",
   "COC.properties.sling" : "Sling",  
   "COC.properties.salve" : "Salve",
+  "COC.properties.consumable" : "Consumable",
 
   "COC.properties.profile" : "Profile",
   "COC.properties.prestige" : "Prestige",
@@ -369,6 +370,11 @@
   "COC.notification.MacroItemMissing" : "The actor does not have the item {item}",
   "COC.notification.MacroItemUnequiped" : "The item {item} is not equiped",
   "COC.notification.MacroUnknownStat" : "The skill to test is unknown",
+  "COC.notification.MacroNotAnEncounter" : "The selected token is not an encounter",
+  "COC.notification.WeaponIndexMissing" : "This encounter does not posses a weapon number",
+  "COC.notification.NotEnoughFreeHands" : "Not enough free hands to equip this object",
+  "COC.notification.ArmorSlotNotAvailable" : "This armor slot is not available",
+  "COC.notification.ItemNotEquipable" : "{itemName} is not an equipable object",    
 
   "COC.dialog.rollWeapon.title": "Weapon Roll",
   "COC.dialog.rollDamage.title": "Damage Roll",

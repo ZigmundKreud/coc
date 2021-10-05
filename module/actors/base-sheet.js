@@ -71,6 +71,7 @@ export class CoCBaseSheet extends ActorSheet {
         html.find('.inventory-equip').click(this._onToggleEquip.bind(this));
 
         // Stackable item
+        html.find('.inventory-consume').click(this._onConsume.bind(this));
         html.find('.inventory-qty').click(this._onIncrease.bind(this));
         html.find('.inventory-qty').contextmenu(this._onDecrease.bind(this));
 
@@ -200,22 +201,43 @@ export class CoCBaseSheet extends ActorSheet {
         }
     }
 
-    _onToggleEquip(event) {
-        event.preventDefault();
-        //AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
-        return Inventory.onToggleEquip(this.actor, event);
-    }
-
     _onIncrease(event) {
         event.preventDefault();
-        return Inventory.onModifyQuantity(this.actor, event, 1, false);
+        const li = $(event.currentTarget).closest(".item");
+        const item = this.actor.items.get(li.data("itemId"));
+        return item.modifyQuantity(1, false);
     }
 
     _onDecrease(event) {
         event.preventDefault();
-        return Inventory.onModifyQuantity(this.actor, event, 1, true);
+        const li = $(event.currentTarget).closest(".item");
+        const item = this.actor.items.get(li.data("itemId"));
+        return item.modifyQuantity(1, true);
     }
 
+    /**
+     * Callbacks on consume actions
+     * @param event
+     * @private
+     */
+     _onConsume(event) {
+        event.preventDefault();
+        const li = $(event.currentTarget).closest(".item");
+        const item = this.actor.items.get(li.data("itemId"));
+
+        this.actor.consumeItem(item);
+    }    
+
+    _onToggleEquip(event) {
+        event.preventDefault();
+        const li = $(event.currentTarget).closest(".item");
+        const item = this.actor.items.get(li.data("itemId"));
+
+        const bypassChecks = event.shiftKey;
+
+        return this.actor.toggleEquipItem(item, bypassChecks);
+    }
+    
     /* -------------------------------------------- */
     /* DELETE EVENTS CALLBACKS                      */
     /* -------------------------------------------- */

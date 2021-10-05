@@ -83,7 +83,7 @@ COC.itemProperties = {
 };
 
 //TODO Vérifier si les 4 tableaux et méthodes qui suivent sont utilisés
-COC.profiles = [];
+/*COC.profiles = [];
 COC.paths = [];
 COC.capacities = [];
 COC.traits = [];
@@ -115,6 +115,7 @@ COC.getTraits = async function () {
     COC.traits = traits;
     if (COC.debug) console.debug("COC | Traits loaded");
 };
+*/
 
 COC.itemTypes = {
     "profile": "COC.category.profile",
