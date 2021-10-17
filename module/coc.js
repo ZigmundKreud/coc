@@ -52,14 +52,8 @@ Hooks.once("init", function () {
     };
 
     // Register sheet application classes
-    Actors.unregisterSheet("core", ActorSheet, {
-        makeDefault: true,
-
-    });
-    Items.unregisterSheet("core", ItemSheet, {
-        makeDefault: true,
-
-    });
+    Actors.unregisterSheet("core", ActorSheet, { makeDefault: true });
+    Items.unregisterSheet("core", ItemSheet, { makeDefault: true });
 
     // Register actor sheets
     Actors.registerSheet("coc", CoCActorSheet, {types: ["character"], makeDefault: false, label: "COC.sheet.actor"});
@@ -83,21 +77,29 @@ Hooks.once("init", function () {
 
 });
 
+Hooks.once("setup", function() {
+
+	// Localize CONFIG objects once up-front
+	const toLocalize = ["stats","skills"];
+	// Exclude some from sorting where the default order matters
+	const noSort = ["stats","skills"];
+
+	// Localize and sort CONFIG objects
+	for ( let o of toLocalize ) {
+		const localized = Object.entries(CONFIG.COC[o]).map(e => {
+		  return [e[0], game.i18n.localize(e[1])];
+		});
+		if ( !noSort.includes(o) ) localized.sort((a, b) => a[1].localeCompare(b[1]));
+		CONFIG.COC[o] = localized.reduce((obj, e) => {
+		  obj[e[0]] = e[1];
+		  return obj;
+		}, {});
+	}
+});
+
 /**
  * Ready hook loads tables, and override's foundry's entity link functions to provide extension to pseudo entities
  */
 Hooks.once("ready", async () => {
-
-    // await COC.getProfiles();
-    // await COC.getTraits();
-    // await COC.getPaths();
-    // await COC.getCapacities();
-
-    // await UpdateUtils.updateTraits();
-    // await UpdateUtils.updateCapacities();
-    // await UpdateUtils.updateProfiles();
-    // await UpdateUtils.updatePacks();
-
     console.info("COC | " + System.label + " | System Initialized.");
-
 });

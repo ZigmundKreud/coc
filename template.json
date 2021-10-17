@@ -340,6 +340,7 @@
         "range": 0,
         "reload": "",
         "worn": false,
+        "slot": "",
         "qty" : 1,
         "strmin" : null,
         "stacksize" : null,
@@ -372,7 +373,8 @@
           "13strmin" : false,
           "bashing" : false,
           "sling" : false,
-          "spell" : false
+          "spell" : false,
+          "consumable" : false
         },
         "effects" : {
           "heal" : {
