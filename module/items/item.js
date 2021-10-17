@@ -2,17 +2,10 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
- import { COC } from "../system/config.js";
+import { CocHealingRoll } from "../controllers/healing-roll.js"; 
+import { COC } from "../system/config.js";
 export class CoCItem extends Item {
 
-    /*initialize() {
-        try {
-            this.prepareData();
-        } catch(err) {
-            console.error(`Failed to initialize data for ${this.constructor.name} ${this.id}:`);
-            console.error(err);
-        }
-    }*/
     /* -------------------------------------------- */
     /*  Constructor                                 */
     /* -------------------------------------------- */
@@ -54,7 +47,7 @@ export class CoCItem extends Item {
     _prepareWeaponData(itemData, actorData) {
         itemData.data.skillBonus = (itemData.data.skillBonus) ? itemData.data.skillBonus : 0;
         itemData.data.dmgBonus = (itemData.data.dmgBonus) ? itemData.data.dmgBonus : 0;
-        // console.log(actorData);
+
         if (actorData) {
             // Compute skill mod
             const skillMod = eval("actorData.data." + itemData.data.skill.split("@")[1]);
@@ -66,6 +59,32 @@ export class CoCItem extends Item {
             if (dmgBonus < 0) itemData.data.dmg = dmgBase + " - " + parseInt(-dmgBonus);
             else if (dmgBonus === 0) itemData.data.dmg = dmgBase;
             else itemData.data.dmg = dmgBase + " + " + dmgBonus;
+        }
+    }
+
+    applyEffects(actor){
+        const itemData = this.data;
+
+        if(itemData.data.properties.heal){
+            const heal = itemData.data.effects.heal;
+            const r = new CocHealingRoll(itemData.name, heal.formula, false);
+            r.roll(actor);
+        }
+    }    
+
+    modifyQuantity(increment, isDecrease) {
+        if(this.data.data.properties.stackable){
+            let itemData = duplicate(this.data);
+            const qty = itemData.data.qty;
+            if(isDecrease) itemData.data.qty = qty - increment;
+            else itemData.data.qty = qty + increment;
+            if(itemData.data.qty < 0) itemData.data.qty = 0;
+            if(itemData.data.stacksize && itemData.data.qty > itemData.data.stacksize) itemData.data.qty = itemData.data.stacksize;
+            if(itemData.data.price){
+                const qty = (itemData.data.qty) ? itemData.data.qty : 1;
+                itemData.data.value = qty * itemData.data.price;
+            }
+            return this.update(itemData);
         }
     }
 }

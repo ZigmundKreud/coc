@@ -1,7 +1,15 @@
-import {CoCRoll} from "../controllers/roll.js";
-import {CocHealingRoll} from "../controllers/healing-roll.js";
+import { CoCRoll } from "../controllers/roll.js";
+import { CocHealingRoll } from "../controllers/healing-roll.js";
+import { SkillRoll } from "../controllers/skill-roll.js";
+import { DamageRoll} from "../controllers/dmg-roll.js"
 export class Macros {
 
+    /**
+     * @name getSpeakersActor
+     * @description
+     * 
+     * @returns 
+     */
     static getSpeakersActor = function(){
         // Vérifie qu'un seul token est sélectionné
         const tokens = canvas.tokens.controlled;
@@ -19,7 +27,23 @@ export class Macros {
         return actor;
     }
 
-    static rollStatMacro = async function (actor, stat, bonus = 0, malus = 0, onEnter = "submit", label, description) {
+    /**
+     * @anme rollStatMacro
+     * @description
+     * 
+     * @param {*} actor 
+     * @param {*} stat 
+     * @param {*} bonus 
+     * @param {*} malus 
+     * @param {*} onEnter 
+     * @param {*} label 
+     * @param {*} description 
+     * @param {*} dialog 
+     * @param {*} dice 
+     * @param {*} difficulty 
+     * @returns 
+     */
+     static rollStatMacro = async function (actor, stat, bonus = 0, malus = 0, onEnter = "submit", label, description, dialog=true, dice="1d20", difficulty) {
         // Plusieurs tokens sélectionnés
         if (actor === null) return;
         // Aucun acteur cible
@@ -59,10 +83,32 @@ export class Macros {
             let skillMalus = statObj.skillmalus;
             if (skillMalus) malus += skillMalus;
         }
-        await CoCRoll.skillRollDialog(actor, label && label.length > 0 ? label : game.i18n.localize(statObj.label), mod, bonus, malus, 20, statObj.superior, onEnter, description);
+
+        if (dialog){
+            CoCRoll.skillRollDialog(actor, label && label.length > 0 ? label : game.i18n.localize(statObj.label), mod, bonus, malus, 20, statObj.superior, onEnter, description);
+        }
+        else{
+            return new SkillRoll(label && label.length > 0 ? label : game.i18n.localize(statObj.label), dice, "+" + +mod, bonus, malus, difficulty, "20", description).roll();        
+        }
     };
 
-    static rollItemMacro = async function (itemId, itemName, itemType, bonus = 0, malus = 0, dmgBonus=0, dmgOnly=false, customLabel, skillDescr, dmgDescr) {
+    /**
+     * @name rollItemMacro
+     * @description
+     * 
+     * @param {*} itemId 
+     * @param {*} itemName 
+     * @param {*} itemType 
+     * @param {*} bonus 
+     * @param {*} malus 
+     * @param {*} dmgBonus 
+     * @param {*} dmgOnly 
+     * @param {*} customLabel 
+     * @param {*} skillDescr 
+     * @param {*} dmgDescr 
+     * @returns 
+     */
+     static rollItemMacro = async function (itemId, itemName, itemType, bonus = 0, malus = 0, dmgBonus=0, dmgOnly=false, customLabel, skillDescr, dmgDescr, dialog=true) {
         const actor = this.getSpeakersActor();
         // Several tokens selected
         if (actor === null) return;
@@ -71,43 +117,49 @@ export class Macros {
 
         const item = actor.items.get(itemId);
         if (!item) return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemMissing', {item:itemName}));
+        
         const itemData = item.data;
 
-        if (itemData.data.weapon != undefined) {
-            const weapon = itemData.data.weapon;
-            const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;                
-
-            if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, weapon.dmg, weapon.dmgBonus, "submit", dmgDescr);
-            else CoCRoll.rollWeaponDialog(actor, label, weapon.mod, weapon.skillBonus, 0, weapon.critrange, weapon.dmg, weapon.dmgBonus, "submit", dmgDescr);
-        }
-        else if (itemData.data.properties !== undefined) {
-            if(itemData.data.properties.weapon || itemData.data.properties.heal){
-                if (itemData.data.properties.weapon){
-                    if(itemData.data.worn){
-                        const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;                
-                        const critrange = itemData.data.critrange;              
-
-                        // Compute MOD
-                        const itemModStat = itemData.data.skill.split("@")[1];
-                        const itemModBonus = parseInt(itemData.data.skillBonus);
-                        
-                        let mod = actor.computeWeaponMod(itemModStat, itemModBonus);
-
-                        // Compute DM
-                        const itemDmgBase = itemData.data.dmgBase;                        
-                        const itemDmgStat = itemData.data.dmgStat.split("@")[1];
-                        const itemDmgBonus = parseInt(itemData.data.dmgBonus);
-
-                        let dmg = actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
-                        
-                        if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, dmg, 0, false, "submit", dmgDescr);
-                        else CoCRoll.rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmg, dmgBonus, "submit", skillDescr, dmgDescr);
-                    }
-                    else return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemUnequiped', {item: itemName}));
+        if(itemData.data.properties.weapon || itemData.data.properties.heal){
+            if (itemData.data.properties.weapon){
+                if (itemData.data.properties.equipable && !itemData.data.worn) {
+                    return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemUnequiped', {item: itemName}));
                 }
-                if (itemData.data.properties.heal){
-                    new CocHealingRoll(itemData.name, itemData.data.effects.heal.formula, false).roll(actor);
+                const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;                
+                const critrange = itemData.data.critrange;              
+
+                // Compute MOD
+                const itemModStat = itemData.data.skill.split("@")[1];
+                const itemModBonus = parseInt(itemData.data.skillBonus);
+                
+                let mod = actor.computeWeaponMod(itemModStat, itemModBonus);
+
+                // Compute DM
+                const itemDmgBase = itemData.data.dmgBase;                        
+                const itemDmgStat = itemData.data.dmgStat.split("@")[1];
+                const itemDmgBonus = parseInt(itemData.data.dmgBonus);
+
+                let dmg = actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
+                
+                if (dialog){
+                    if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, dmg, 0, false, "submit", dmgDescr);
+                    else CoCRoll.rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmg, dmgBonus, "submit", skillDescr, dmgDescr);
                 }
+                else {
+                    let formula = dmgBonus ? dmg +  "+" + dmgBonus : dmg;
+                    if (dmgOnly) new DamageRoll(label, formula, false, dmgDescr).roll(); 
+                    else {        
+                        let skillRoll = await new SkillRoll(label, "1d20", "+" + +mod, bonus, malus, null, critrange, skillDescr).roll();
+
+                        let result = skillRoll.dice[0].results[0].result;
+                        let critical = ((result >= critrange.split("-")[0]) || result == 20);
+                        
+                        new DamageRoll(label, formula, critical, dmgDescr).roll();                            
+                    }                    
+                }
+            }
+            if (itemData.data.properties.heal){
+                new CocHealingRoll(itemData.name, itemData.data.effects.heal.formula, false).roll(actor);
             }
         }
         else { return item.sheet.render(true); }

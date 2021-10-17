@@ -8,6 +8,15 @@
         <div class="item-detail">
             {{#if data.properties.ranged}}{{data.range}}{{/if}}
         </div>
+        <div class="item-detail">
+            {{#if (equals data.slot "hand")}}
+                {{#if (equals data.hands 2)}}
+                    <i class="fas fa-hand-paper"></i><i class="fas fa-hand-paper"></i>
+                {{else}}
+                    <i class="fas fa-hand-paper"></i>
+                {{/if}}
+            {{/if}}
+        </div>        
         <div class="item-detail item-critrange">
             {{#if data.properties.weapon}}{{data.critrange}}{{/if}}
         </div>

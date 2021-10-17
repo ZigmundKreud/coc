@@ -8,12 +8,41 @@
         <label class="checkbox"> <input type="checkbox" name="data.properties.stackable" {{checked data.properties.stackable}}> {{localize "COC.ui.stackable"}}</label>
 {{/if}}
 {{#if (not data.properties.stackable)}}
-        <label class="checkbox"> <input type="checkbox" name="data.properties.unique"    {{checked data.properties.unique}}> Unique </label>
+        <label class="checkbox"> <input type="checkbox" name="data.properties.unique"    {{checked data.properties.unique}}> {{localize "COC.properties.unique"}}</label>
 {{/if}}
-        <label class="checkbox"> <input type="checkbox" name="data.properties.tailored"  {{checked data.properties.tailored}}> Sur-mesure </label>
-        <label class="checkbox"><input type="checkbox" name="data.properties.2h" {{checked data.properties.2h}}> {{localize "COC.ui.2H"}}</label>
+        <label class="checkbox"><input type="checkbox" name="data.properties.consumable" {{checked data.properties.consumable}}> {{localize "COC.properties.consumable"}}</label>
+        <label class="checkbox"> <input type="checkbox" name="data.properties.tailored"  {{checked data.properties.tailored}}> {{localize "COC.properties.tailored"}}</label>
+        <label class="checkbox"><input type="checkbox" name="data.properties.2H" {{checked data.properties.2H}}> {{localize "COC.ui.2H"}}</label>
     </div>
 </div>
+{{#if data.properties.equipable}}
+    <div class="form-group">
+        <label>{{localize "COC.ui.slot"}}</label>
+        <div class="form-fields">
+            <select name="data.slot" data-type="String" style="width:100%">
+                {{#select data.slot}}
+                    <option value="">{{localize "COC.None"}}</option>
+                    <option value="hand">{{localize "COC.slot.hand"}}</option>
+                    <option value="head">{{localize "COC.slot.head"}}</option>
+                    <option value="ear">{{localize "COC.slot.ear"}}</option>
+                    <option value="neck">{{localize "COC.slot.neck"}}</option>
+                    <option value="shoulders">{{localize "COC.slot.shoulders"}}</option>
+                    <option value="chest">{{localize "COC.slot.chest"}}</option>
+                    <option value="back">{{localize "COC.slot.back"}}</option>
+                    <option value="arm">{{localize "COC.slot.arm"}}</option>
+                    <option value="finger">{{localize "COC.slot.finger"}}</option>
+                    <option value="wrist">{{localize "COC.slot.wrist"}}</option>
+                    <option value="waist">{{localize "COC.slot.waist"}}</option>
+                    <option value="legs">{{localize "COC.slot.legs"}}</option>
+                    <option value="feet">{{localize "COC.slot.feet"}}</option>
+                    <option value="belt">{{localize "COC.slot.belt"}}</option>
+                    <option value="backpack">{{localize "COC.slot.backpack"}}</option>
+                    <option value="quiver">{{localize "COC.slot.quiver"}}</option>
+                {{/select}}
+            </select>
+        </div>
+    </div>
+{{/if}}
 <div class="form-group">
     <label>{{ localize "COC.ui.price" }}</label>&nbsp; <input type="number" name="data.price" value="{{data.price}}" data-dtype="Number"/>
 </div>

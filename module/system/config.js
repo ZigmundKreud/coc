@@ -47,7 +47,6 @@ COC.itemProperties = {
     "equipable": "COC.properties.equipable",
     "stackable": "COC.properties.stackable",
     "unique": "COC.properties.unique",
-    "2h": "COC.properties.2H",
     "ranged": "COC.properties.ranged",
     "proficient": "COC.properties.proficient",
     "finesse": "COC.properties.finesse",
@@ -83,7 +82,7 @@ COC.itemProperties = {
 };
 
 //TODO Vérifier si les 4 tableaux et méthodes qui suivent sont utilisés
-COC.profiles = [];
+/*COC.profiles = [];
 COC.paths = [];
 COC.capacities = [];
 COC.traits = [];
@@ -115,6 +114,7 @@ COC.getTraits = async function () {
     COC.traits = traits;
     if (COC.debug) console.debug("COC | Traits loaded");
 };
+*/
 
 COC.itemTypes = {
     "profile": "COC.category.profile",
