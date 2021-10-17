@@ -7,6 +7,7 @@
                     {{#if (isNotLimited @root)}}
                         {{#if (isCategoryIn category.id "armor" "shield" "spell")}}<div class="item-detail">Def</div>{{else}}<div class="item-detail"></div>{{/if}}
                         {{#if (isCategoryIn category.id "ranged" "spell")}}<div class="item-detail">Portée</div>{{else}}<div class="item-detail"></div>{{/if}}
+                        {{#if (isCategoryIn category.id "melee" "ranged" "shield")}}<div class="item-detail">Usage</div>{{else}}<div class="item-detail"></div>{{/if}}
                         {{#if (isCategoryIn category.id "melee" "ranged" "spell")}}<div class="item-detail">Critique</div>{{else}}<div class="item-detail"></div>{{/if}}
                         {{#if (isCategoryIn category.id "melee" "ranged" "spell")}}<div class="item-detail">Mod</div>{{else}}<div class="item-detail"></div>{{/if}}
                         {{#if (isCategoryIn category.id "melee" "ranged" "spell")}}<div class="item-detail">DM</div>{{else}}<div class="item-detail"></div>{{/if}}
