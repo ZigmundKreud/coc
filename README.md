@@ -26,6 +26,45 @@ Modules disponibles :
 * Lancer votre partie en cliquant sur le bouton "Launch World" de votre monde. Vous êtes prêts à jouer.
 ---
 ## Changelog
+### Version 0.8.9.5
+FONCTIONNALITES
+- Dé explosif des DM désactivable par une option
+- Ajout d'une option "Vérification des mains libres" : vérifie qu'il reste assez de mains pour équiper l'objet
+		Ne pas vérifier
+		Vérifié : ignorable par tout le monde en utilisant SHIFT
+		Vérifié : ignorable uniquement par le MJ en utilisant SHIFT
+
+- Ajout d'une option "Vérification des emplacements d'armure" : vérifie que le slot n'est pas déjà pris par une armure équipée
+		Ne pas vérifier
+		Vérifié : ignorable par tout le monde en utilisant SHIFT
+		Vérifié : ignorable uniquement par le MJ en utilisant SHIFT
+- Ajout du support du module Token Action HUD
+	Caractéristiques : 
+		Clic gauche : Jet avec dialogue
+		Clic droit : Jet sans dialogue
+		
+		Caractéristiques : Jet de dé
+		Attaques : Jet de dé
+
+	Combat
+		Clic gauche : Toucher + DM
+		Shift + Click : DM
+		
+		Armes : armes de contact ou à distance équipées
+		Sorts : de type armes ou les sorts activables
+			Cliquer sur un sort activable ouvre sa fiche
+		
+	Inventaire
+		Clic droit (si option activée): ouvre la fiche de l'objet
+		Clic gauche :
+			Armes et Protections : Equipe/Déséquipe
+			Consommables : affiche les objets consommables sauf les sorts, consomme une unité de l'objet
+			Sorts : consomme le sort s'il est "consommable", sinon ne fait rien
+			Equipement : les autres objets, ne fait rien
+			
+	Capacité 
+		Clic gauche : ouvre la capacité
+- Mise à jour du compendium d'équipement avec le champ Emplacement et Deux mains
 ### Version 0.8.9.4
 CORRECTIFS
 * Correction si le profil n'a qu'une voie
