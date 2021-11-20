@@ -29,8 +29,6 @@ export class CoCItemSheet extends ItemSheet {
     activateListeners(html) {
         super.activateListeners(html);
 
-        // html.find('.editor-content[data-edit]').each((i, div) => this._activateEditor(div));
-
         html.find('.droppable').on("dragover", function(event) {
             event.preventDefault();
             event.stopPropagation();
@@ -121,6 +119,7 @@ export class CoCItemSheet extends ItemSheet {
             }
         });
 
+        html.find('.checkbox').click(this._onVerifyCheckboxes.bind(this));
     }
 
     /** @override */
@@ -290,5 +289,118 @@ export class CoCItemSheet extends ItemSheet {
             }));
         }
         return props.filter(p => !!p);
+    }
+
+    /**
+     * 
+     * @param {*} event 
+     * @returns 
+     */
+     _onVerifyCheckboxes(event){
+        const input = $(event.currentTarget).find("input");
+        const name = input.attr('name');
+        const checked = input.prop('checked')
+        if (name === "data.properties.equipment" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.properties.equipable = false;
+            data.data.slot = "";
+            data.data.properties.stackable = false;
+            data.data.qty = 1;
+            data.data.stacksize = null;
+            data.data.properties.unique = false;
+            data.data.properties.consumable = false;
+            data.data.properties.tailored = false;
+            data.data.properties["2H"] = false;
+            data.data.price = 0;
+            data.data.value = 0;
+            data.data.rarity = "";
+            return this.item.update(data);
+        }        
+        if (name === "data.properties.equipable" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.slot = "";
+            return this.item.update(data);
+        }
+        if (name === "data.properties.stackable" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.qty = 1;
+            data.data.stacksize = null;
+            return this.item.update(data);
+        }
+        if (name === "data.properties.weapon" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.skill = "@attacks.melee.mod";
+            data.data.skillBonus = 0;
+            data.data.dmgBase = 0;
+            data.data.dmgStat = "";
+            data.data.dmgBonus = 0;
+            data.data.critrange = "20"
+            data.data.properties.bashing = false;
+            data.data.properties["13strmin"] = false;
+            return this.item.update(data);
+        }
+        if (name === "data.properties.protection" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.defBase = 0;
+            data.data.defBonus = 0;
+            data.data.properties.dr = false;
+            data.data.dr = 0;
+            return this.item.update(data);
+        }
+        if (name === "data.properties.dr" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.dr = 0;
+            return this.item.update(data);
+        }        
+        if (name === "data.properties.ranged" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.range = 0;
+            data.data.properties.reloadable = false;
+            data.data.properties.salve = false;
+            data.data.properties.proneshot = false;            
+            data.data.properties.explosive = false;
+            data.data.reload = "";
+            return this.item.update(data);
+        }
+        if (name === "data.properties.reloadable" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.reload = "";
+            return this.item.update(data);
+        }        
+        if (name === "data.properties.effects" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.properties.heal = false;
+            data.data.properties.buff = false;
+            data.data.properties.temporary = false;
+            data.data.properties.persistent = false;
+            data.data.properties.spell = false;
+            data.data.effects.heal.formula = null;
+            data.data.effects.buff.formula = null;
+            data.data.properties.duration.formula = null;
+            data.data.properties.duration.units = "";
+            data.data.properties.activable = false;
+            return this.item.update(data);
+        }
+        if (name === "data.properties.heal" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.effects.heal.formula = null;
+            return this.item.update(data);
+        }
+        if (name === "data.properties.buff" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.effects.buff.formula = null;
+            return this.item.update(data);
+        }
+        if (name === "data.properties.temporary" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.properties.duration.formula = null;
+            data.data.properties.duration.units = "";
+            return this.item.update(data);
+        }
+        if (name === "data.properties.spell" && !checked) {
+            let data = duplicate(this.item.data);
+            data.data.properties.activable = false;
+            return this.item.update(data);
+        }        
     }
 }
