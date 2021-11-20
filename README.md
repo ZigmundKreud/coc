@@ -26,6 +26,12 @@ Modules disponibles :
 * Lancer votre partie en cliquant sur le bouton "Launch World" de votre monde. Vous êtes prêts à jouer.
 ---
 ## Changelog
+### Version 0.8.9.6
+CORRECTIFS
+- Affichage du nombre de mains dans l'onglet Combat
+- La désélection des propriétés d'un objet entraine la désélection des propriétés liées
+- Corrige checkbox DR cachée si option non activée
+
 ### Version 0.8.9.5
 FONCTIONNALITES
 - Dé explosif des DM désactivable par une option
