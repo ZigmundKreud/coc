@@ -80,29 +80,30 @@ export default function registerHooks() {
 
                 let command = `let onlyDamage = false;\nlet customLabel = "";\nlet skillDescription = "";\nlet dmgDescription = "";\n\nif (event) {\n  if (event.shiftKey) onlyDamage = true;\n}\n\ngame.coc.macros.rollItemMacro("${item._id}", "${item.name}", "${item.type}", 0, 0, 0, onlyDamage, customLabel, skillDescription, dmgDescription);`;
     
-                let macro = game.macros.entities.find(m => (m.name === item.name) && (m.command === command));
+                let macro = game.macros.contents.find(m => (m.name === item.name) && (m.data.command === command));
                 if (!macro) {
                     macro = await Macro.create({
                         name: item.name,
                         type : "script",
                         img: item.img,
                         command : command
-                    }, {displaySheet: false})
+                    }, {displaySheet: false});
+                    game.user.assignHotbarMacro(macro, slot);                    
                 }
-                game.user.assignHotbarMacro(macro, slot);
+                
             }
             // Create a macro to open the actor sheet of the actor dropped on the hotbar
             else if (data.type == "Actor") {
                 let actor = game.actors.get(data.id);
                 let command = `game.actors.get("${data.id}").sheet.render(true)`
-                let macro = game.macros.entities.find(m => (m.name === actor.name) && (m.command === command));
+                let macro = game.macros.contents.find(m => (m.name === actor.name) && (m.data.command === command));
                 if (!macro) {
                     macro = await Macro.create({
                         name: actor.data.name,
                         type: "script",
                         img: actor.data.img,
                         command: command
-                    }, {displaySheet: false})
+                    }, {displaySheet: false});
                     game.user.assignHotbarMacro(macro, slot);
                 }
             }
@@ -110,14 +111,14 @@ export default function registerHooks() {
             else if (data.type == "JournalEntry") {
                 let journal = game.journal.get(data.id);
                 let command = `game.journal.get("${data.id}").sheet.render(true)`
-                let macro = game.macros.entities.find(m => (m.name === journal.name) && (m.command === command));
+                let macro = game.macros.contents.find(m => (m.name === journal.name) && (m.data.command === command));
                 if (!macro) {
                     macro = await Macro.create({
                         name: journal.data.name,
                         type: "script",
                         img: (journal.data.img) ? journal.data.img : "icons/svg/book.svg",
                         command: command
-                    }, {displaySheet: false})
+                    }, {displaySheet: false});
                     game.user.assignHotbarMacro(macro, slot);
                 }
             }
