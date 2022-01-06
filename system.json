@@ -2,11 +2,18 @@
   "name": "coc",
   "title": "Chroniques Oubliées Contemporain",
   "description": "<p>Système Foundry VTT pour <a href='https://www.black-book-editions.fr/catalogue.php?id=477'>Chroniques Oubliées Contemporain</a>.</p><p> *** Rejoignez la communauté Discord FR :<a href='https://discord.gg/pPSDNJk'>https://discord.gg/pPSDNJk</a></p>",
-  "version": "0.8.9.6",
-  "minimumCoreVersion": "0.8.6",
-  "compatibleCoreVersion": "0.8.9",
+  "version": "9.238.1",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "9.238",
   "templateVersion": 2,
-  "author": "Zigmund",
+  "authors": [
+    {
+      "name": "Zigmund"
+    },
+    {
+      "name": "Kristov"
+    }
+  ],
   "scripts": [],
   "esmodules": [
     "module/coc.js"
@@ -32,7 +39,7 @@
       "label": "Capacités",
       "system": "coc",
       "path": "./packs/capacities.db",
-      "entity": "Item",
+      "type": "Item",
       "tag": "capacity"
     },
     {
@@ -40,7 +47,7 @@
       "label": "Equipement",
       "system": "coc",
       "path": "./packs/items.db",
-      "entity": "Item",
+      "type": "Item",
       "tag": "item"
     },
     {
@@ -48,7 +55,7 @@
       "label": "Voies",
       "system": "coc",
       "path": "./packs/paths.db",
-      "entity": "Item",
+      "type": "Item",
       "tag": "path"
     },
     {
@@ -56,7 +63,7 @@
       "label": "Profils",
       "system": "coc",
       "path": "./packs/profiles.db",
-      "entity": "Item",
+      "type": "Item",
       "tag": "profile"
     },
     {
@@ -64,7 +71,7 @@
       "label": "Traits",
       "system": "coc",
       "path": "./packs/traits.db",
-      "entity": "Item",
+      "type": "Item",
       "tag": "trait"
     },
     {
@@ -72,7 +79,7 @@
       "label": "Tables",
       "system": "coc",
       "path": "./packs/tables.db",
-      "entity": "RollTable",
+      "type": "RollTable",
       "tag": "table"
     },
     {
@@ -80,7 +87,7 @@
       "label": "Macros",
       "system": "coc",
       "path": "./packs/macros.db",
-      "entity": "Macro",
+      "type": "Macro",
       "tag": "macro"
     }
   ],
@@ -91,6 +98,6 @@
   "secondaryTokenAttribute": null,
   "url": "https://github.com/ZigmundKreud/coc",
   "manifest": "https://raw.githubusercontent.com/ZigmundKreud/coc/master/system.json",
-  "download": "https://github.com/ZigmundKreud/coc/archive/refs/tags/0.8.9.6.zip",
+  "download": "https://github.com/ZigmundKreud/coc/archive/refs/tags/9.238.1.zip",
   "license": "LICENCE"
 }
