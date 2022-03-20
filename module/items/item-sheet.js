@@ -48,7 +48,7 @@ export class CoCItemSheet extends ItemSheet {
         });
 
         // Click to open
-        html.find('.compendium-pack').click(ev => {
+        html.find('.coc-compendium-pack').click(ev => {
             ev.preventDefault();
             let li = $(ev.currentTarget), pack = game.packs.get(li.data("pack"));
             if ( li.attr("data-open") === "1" ) pack.close();

@@ -22,7 +22,7 @@ export class CoCBaseSheet extends ActorSheet {
         if (!this.options.editable) return;
 
         // Right click to open
-        html.find('.compendium-pack').contextmenu(ev => {
+        html.find('.coc-compendium-pack').contextmenu(ev => {
             ev.preventDefault();
             const li = $(ev.currentTarget);
 
@@ -51,7 +51,7 @@ export class CoCBaseSheet extends ActorSheet {
         });
 
         // Click to open
-        html.find('.item-create.compendium-pack').click(ev => {
+        html.find('.item-create.coc-compendium-pack').click(ev => {
             ev.preventDefault();
             let li = $(ev.currentTarget), pack = game.packs.get(li.data("pack"));
             if (li.attr("data-open") === "1") pack.close();
