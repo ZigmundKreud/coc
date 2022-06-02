@@ -18,7 +18,9 @@
             "mod": 0,
             "value": 10,
             "tmpmod": null,
-            "superior" : false
+            "superior" : false,
+            "skillbonus": 0,
+            "skillmalus": 0
           },
           "dex" : {
             "key" : "dex",
@@ -30,7 +32,9 @@
             "mod": 0,
             "value": 10,
             "tmpmod": null,
-            "superior" : false
+            "superior" : false,
+            "skillbonus": 0,
+            "skillmalus": 0
           },
           "con" : {
             "key" : "con",
@@ -42,7 +46,9 @@
             "mod": 0,
             "value": 10,
             "tmpmod": null,
-            "superior" : false
+            "superior" : false,
+            "skillbonus": 0,
+            "skillmalus": 0
           },
           "int" : {
             "key" : "int",
@@ -54,7 +60,9 @@
             "mod": 0,
             "value": 10,
             "tmpmod": null,
-            "superior" : false
+            "superior" : false,
+            "skillbonus": 0,
+            "skillmalus": 0
           },
           "wis" : {
             "key" : "wis",
@@ -66,7 +74,9 @@
             "mod": 0,
             "value": 10,
             "tmpmod": null,
-            "superior" : false
+            "superior" : false,
+            "skillbonus": 0,
+            "skillmalus": 0
           },
           "cha" : {
             "key" : "cha",
@@ -78,7 +88,9 @@
             "mod": 0,
             "value": 10,
             "tmpmod": null,
-            "superior" : false
+            "superior" : false,
+            "skillbonus": 0,
+            "skillmalus": 0
           }
         }
       },
@@ -109,7 +121,8 @@
             "base": 0,
             "bonus": 0,
             "malus": 0,
-            "mod": 0
+            "mod": 0,
+            "dmBonus":0
           },
           "ranged" : {
             "key" : "ranged",
@@ -120,7 +133,8 @@
             "base": 0,
             "bonus": 0,
             "malus": 0,
-            "mod": 0
+            "mod": 0,
+            "dmBonus":0
           },
           "magic" : {
             "key" : "magic",
@@ -131,7 +145,8 @@
             "base": 0,
             "bonus": 0,
             "malus": 0,
-            "mod": 0
+            "mod": 0,
+            "dmBonus":0
           }
         },
         "weapons" : [{
@@ -150,6 +165,7 @@
             "abbrev" : "COC.attributes.def.abbrev",
             "base": 10,
             "bonus": 0,
+            "malus": 0,
             "value": 10
           },
           "init": {
@@ -158,6 +174,7 @@
             "abbrev" : "COC.attributes.init.abbrev",
             "base": 10,
             "bonus": 0,
+            "malus": 0,
             "penalty": 0,
             "value": 10
           },
