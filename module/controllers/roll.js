@@ -21,14 +21,22 @@ export class CoCRoll {
         const elt = $(event.currentTarget)[0];
         let key = elt.attributes["data-rolling"].value;
         let label = eval(`${key}.label`);
+
         const mod = eval(`${key}.mod`);
         const tmpmod = eval(`${key}.tmpmod`);
-        let bonus = eval(`${key}.bonus`);
+        
+        let bonus = eval(`${key}.skillbonus`);        
+        if (!bonus) bonus = 0;
+
+        let malus = 0;
+        let skillMalus = eval(`${key}.skillmalus`);
+        if (!skillMalus) skillMalus = 0;
+        malus += skillMalus;
         let superior = eval(`${key}.superior`);
         const critrange = 20;
-        bonus = (bonus) ? bonus : 0;
+
         label = (label) ? game.i18n.localize(label) : null;
-        return this.skillRollDialog(actor, label, tmpmod != null ? tmpmod : mod, bonus, 0, critrange, superior);
+        return this.skillRollDialog(actor, label, tmpmod != null ? tmpmod : mod, bonus, malus, critrange, superior);
     }
 
     /**
@@ -221,7 +229,21 @@ export class CoCRoll {
 
     static async skillRollDialog(actor, label, mod, bonus, malus, critrange, superior=false, onEnter = "submit") {
         const rollOptionTpl = 'systems/coc/templates/dialogs/skillroll-dialog.hbs';
-        const rollOptionContent = await renderTemplate(rollOptionTpl, {mod: mod, bonus: bonus, malus: malus, critrange: critrange, superior:superior});
+        let diff = null;
+        const displayDifficulty = game.settings.get("coc", "displayDifficulty");
+        if ( displayDifficulty !== "none" && game.user.targets.size > 0) {
+            diff = [...game.user.targets][0].actor.data.data.attributes.def.value;
+        }
+        const isDifficultyDisplayed = displayDifficulty === "all" || (displayDifficulty === "gm" && game.user.isGM);
+        const rollOptionContent = await renderTemplate(rollOptionTpl, {
+            mod: mod,
+            bonus: bonus, 
+            malus: malus, 
+            critrange: critrange, 
+            superior:superior,
+            difficulty: diff,
+            displayDifficulty: isDifficultyDisplayed
+        });
         let d = new Dialog({
             title: label,
             content: rollOptionContent,
@@ -237,12 +259,12 @@ export class CoCRoll {
                     label: game.i18n.localize("COC.ui.submit"),
                     callback: (html) => {
                         const dice = html.find("#dice").val();
-                        const diff = html.find('#difficulty').val();
+                        const difficulty = html.find('#difficulty').val();
                         const critrange = html.find('input#critrange').val();
                         const mod = html.find('input#mod').val();
                         const bonus = html.find('input#bonus').val();
                         const malus = html.find('input#malus').val();
-                        let r = new SkillRoll(label, dice, mod, bonus, malus, diff, critrange);
+                        let r = new SkillRoll(label, dice, mod, bonus, malus, difficulty, critrange);
                         r.roll(actor);
                     }
                 }
@@ -265,11 +287,20 @@ export class CoCRoll {
      * @param {*} onEnter 
      * @returns 
      */
-     static async rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmgFormula, dmgBonus, onEnter = "submit", skillDescr, dmgDescr) {
+     static async rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmgFormula, dmgBonus, onEnter = "submit", skillDescr, dmgDescr, difficulty = null) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-weapon-dialog.hbs';
         let diff = null;
-        if (game.settings.get("coc", "displayDifficulty") && game.user.targets.size > 0) {
-            diff = [...game.user.targets][0].actor.data.data.attributes.def.value;
+        let isDifficultyDisplayed = true;
+
+        if (difficulty !== null) {
+            diff = difficulty;   
+        }
+        else {
+            const displayDifficulty = game.settings.get("coc", "displayDifficulty");
+            if ( displayDifficulty !== "none" && game.user.targets.size > 0) {
+                diff = [...game.user.targets][0].actor.data.data.attributes.def.value;
+            }
+            isDifficultyDisplayed = displayDifficulty === "all" || (displayDifficulty === "gm" && game.user.isGM);
         }
         const rollOptionContent = await renderTemplate(rollOptionTpl, {
             mod: mod,
@@ -277,6 +308,7 @@ export class CoCRoll {
             malus: malus,
             critrange: critrange,
             difficulty: diff,
+            displayDifficulty: isDifficultyDisplayed,
             dmgFormula: dmgFormula,
             dmgBonus: dmgBonus,
             dmgCustomFormula: "",

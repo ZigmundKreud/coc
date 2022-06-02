@@ -1,9 +1,11 @@
 
 export const registerSystemSettings = function() {
 
+    const reload = foundry.utils.debounce(() => window.location.reload(), 250);
+
     game.settings.register("coc", "useRecovery", {
-        name: "Points de récupération",
-        hint: "Utiliser la règle optionnelle des points de récupération",
+        name: "SETTINGS.useRecovery.name",
+        hint: "SETTINGS.useRecovery.hint",
         scope: "world",
         config: true,
         default: false,
@@ -11,8 +13,8 @@ export const registerSystemSettings = function() {
     });
 
     game.settings.register("coc", "useFortune", {
-        name: "Points de chance",
-        hint: "Utiliser la règle optionnelle des points de chance",
+        name: "SETTINGS.useFortune.name",
+        hint: "SETTINGS.useFortune.hint",
         scope: "world",
         config: true,
         default: true,
@@ -29,8 +31,8 @@ export const registerSystemSettings = function() {
     });
 
     game.settings.register("coc", "useMana", {
-        name: "Points de Mana",
-        hint: "Utiliser la règle optionnelle des points de mana",
+        name: "SETTINGS.useMana.name",
+        hint: "SETTINGS.useMana.hint",
         scope: "world",
         config: true,
         default: false,
@@ -38,8 +40,8 @@ export const registerSystemSettings = function() {
     });
 
     game.settings.register("coc", "useDamageResistance", {
-        name: "Résistance aux dommages",
-        hint: "Afficher la résistance aux dommages sur la feuille de personnage",
+        name: "SETTINGS.useDamageResistance.name",
+        hint: "SETTINGS.useDamageResistance.hint",
         scope: "world",
         config: true,
         default: false,
@@ -47,17 +49,22 @@ export const registerSystemSettings = function() {
     });
 
     game.settings.register("coc", "displayDifficulty", {
-        name: "Affiche la difficulté",
-        hint: "Active l'affichage de la difficulté sur les jets de compétences/attributs et d'armes",
+        name: "SETTINGS.displayDifficulty.name",
+        hint: "SETTINGS.displayDifficulty.hint",
         scope: "world",
         config: true,
-        default: true,
-        type: Boolean
+        default: "none",
+        type: String,
+        choices: {
+            "none" : "SETTINGS.displayDifficulty.none",
+            "all" : "SETTINGS.displayDifficulty.all",
+            "gm" : "SETTINGS.displayDifficulty.gm"
+        }
     });
 
     game.settings.register("coc", "useComboRolls", {
-        name: "Active les jets \"combo\"",
-        hint: "Permet de lancer les jets d'attaque et de dommages simultanément.",
+        name: "SETTINGS.useComboRolls.name",
+        hint: "SETTINGS.useComboRolls.hint",
         scope: "world",
         config: true,
         default: true,
@@ -65,8 +72,8 @@ export const registerSystemSettings = function() {
     });
 
     game.settings.register("coc", "displayChatDamageButtonsToAll", {
-        name: "Affiche les boutons de dommages",
-        hint: "Affiche les boutons d'application des dommages dans les messages de chat à tout le monde.",
+        name: "SETTINGS.displayChatDamageButtonsToAll.name",
+        hint: "SETTINGS.displayChatDamageButtonsToAll.hint",
         scope: "world",
         config: true,
         default: false,
@@ -79,16 +86,16 @@ export const registerSystemSettings = function() {
         scope: "world",
         type: String,
         choices: {
-            "0" : "Copier l'item (par défaut dans Foundry)",
-            "1" : "Déplacer l'item"
+            "0" : "SETTINGS.moveItem.copy",
+            "1" : "SETTINGS.moveItem.move"
         },
-        config: true,
-        default: "0"        
+        default: "0",
+        config: true                
     });   
 
     game.settings.register("coc", "lockItems",{
-        name: "Verrouiller les objets",
-        hint: "Interdire aux joueurs de modifier les objets",
+        name: "SETTINGS.lockItems.name",
+        hint: "SETTINGS.lockItems.hint",
         scope: "world",
         config: true,
         default: false,
@@ -105,30 +112,30 @@ export const registerSystemSettings = function() {
     });
 
     game.settings.register("coc", "checkFreeHandsBeforeEquip", {
-        name: "Vérification des mains libres",
-        hint: "Vérifier que le personnage a assez de mains libres pour équiper un objet (Maintenir MAJ pour ignorer le contrôle)",
+        name: "SETTINGS.checkFreeHandsBeforeEquip.name",
+        hint: "SETTINGS.checkFreeHandsBeforeEquip.hint",
         scope: "world",
         config: true,
         default: "none",
         type: String,
         choices: {
-            "none" : "Ne pas vérifier",
-            "all" : "Vérification (ignorable par tous)",
-            "gm" : "Vérification (ignorable uniquement par le MJ)"
+            "none" : "SETTINGS.checkFreeHandsBeforeEquip.none",
+            "all" : "SETTINGS.checkFreeHandsBeforeEquip.all",
+            "gm" : "SETTINGS.checkFreeHandsBeforeEquip.gm"
         }
     });
 
     game.settings.register("coc", "checkArmorSlotAvailability", {
-        name: "Vérification des emplacements d'armure",
-        hint: "Vérifier la disponibilité d'un emplacement avant d'équiper une armure (Maintenir MAJ pour ignorer le contrôle)",
+        name: "SETTINGS.checkArmorSlotAvailability.name",
+        hint: "SETTINGS.checkArmorSlotAvailability.hint",
         scope: "world",
         config: true,
         default: "none",
         type: String,
         choices: {
-            "none" : "Ne pas vérifier",
-            "all" : "Vérification (ignorable par tous)",
-            "gm" : "Vérification (ignorable uniquement par le MJ)"
+            "none" : "SETTINGS.checkArmorSlotAvailability.none",
+            "all" : "SETTINGS.checkArmorSlotAvailability.all",
+            "gm" : "SETTINGS.checkArmorSlotAvailability.gm"
         }
     }); 
 
