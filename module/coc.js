@@ -28,16 +28,25 @@ Hooks.once("init", function () {
     console.info("COC | "+ System.label + " | System Initializing...");
     console.info(System.ASCII);  
 
+    // Register System Settings
+    registerSystemSettings();
+
     /**
      * Set an initiative formula for the system
-     * @type {String}
      */
-
-    CONFIG.Combat.initiative = {
+    if(game.settings.get("coc", "useVarInit")){
+      CONFIG.Combat.initiative = {
+        formula: "1d6x + @attributes.init.value + @stats.wis.value/100",
+        decimals: 2
+      };
+    }
+    else {
+      CONFIG.Combat.initiative = {
         formula: "@attributes.init.value + @stats.wis.value/100",
         decimals: 2
-    };
-
+      };
+    }
+   
     // Record Configuration values
     CONFIG.COC = COC;
 
@@ -61,10 +70,7 @@ Hooks.once("init", function () {
     Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: false, label: "COC.sheet.encounter"});
 
     // Register item sheets
-    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});
-
-    // Register System Settings
-    registerSystemSettings();
+    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});    
 
     // Preload Handlebars Templates
     preloadHandlebarsTemplates();

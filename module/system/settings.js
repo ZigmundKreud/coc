@@ -22,8 +22,8 @@ export const registerSystemSettings = function() {
     });
 
     game.settings.register("coc", "useMadness", {
-        name: "Points de Folie",
-        hint: "Afficher les points de folie sur la fiche de personnage",
+        name: "SETTINGS.useMadness.name",
+        hint: "SETTINGS.useMadness.hint",
         scope: "world",
         config: true,
         default: false,
@@ -69,6 +69,16 @@ export const registerSystemSettings = function() {
         config: true,
         default: true,
         type: Boolean
+    });
+
+    game.settings.register("coc", "useVarInit", {
+        name: "SETTINGS.useVarInit.name",
+        hint: "SETTINGS.useVarInit.hint",
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: reload
     });
 
     game.settings.register("coc", "displayChatDamageButtonsToAll", {
