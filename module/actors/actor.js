@@ -182,22 +182,31 @@ export class CoCActor extends Actor {
 
         let stats = actorData.data.stats;
         let attributes = actorData.data.attributes;
+        let items = actorData.items;
         let lvl = actorData.data.level.value;
 
-        const profile = this.getProfile(actorData.items);
-        const protection = this.getProtection(actorData.items);
+        const profile = this.getProfile(items);
+        const protection = this.getProtection(items);
 
+        // Initiative
         attributes.init.base = stats.dex.value;
-        attributes.init.penalty = this.getMalusFromProtection(actorData.items);
+        attributes.init.penalty = this.getMalusFromProtection(items);
         attributes.init.value = attributes.init.base + attributes.init.bonus + attributes.init.penalty;
 
-        const fpBonusFromProfile = (profile && profile.data.bonuses.fp) ? profile.data.bonuses.fp : 0;
-        attributes.fp.base = 2 + stats.cha.mod + fpBonusFromProfile;
+         // Points de chance
+        attributes.fp.base = this.computeBaseFP(stats.cha.mod, profile);
         attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
+
+        // Réduction des dommages
         attributes.dr.value = attributes.dr.base.value + attributes.dr.bonus.value;
+
+        // Points de récupération
         attributes.rp.max = attributes.rp.base + attributes.rp.bonus;
+
+        // Points de vie
         attributes.hp.max = attributes.hp.base + attributes.hp.bonus;
 
+        // Points de magie
         attributes.mp.base = lvl + stats.cha.mod;
         attributes.mp.max = attributes.mp.base + attributes.mp.bonus;
 
@@ -499,4 +508,23 @@ export class CoCActor extends Actor {
             return item.update(itemData).then(item => item.applyEffects(this));
         }
     }    
+
+    /**
+     * @name computeBaseFP
+     * @description Calcule le nombre de points de chance de base
+     * @public
+     * 
+     * @param {Int} charismeMod Modificateur de charisme
+     * @param {CofItem} profile Item de type profile
+     * 
+     */
+     computeBaseFP(charismeMod, profile) {
+         if (game.settings.get("coc", "settingCyberpunk")){
+             return 3 + charismeMod;
+         }
+         else {
+            const fpBonusFromProfile = (profile && profile.data.bonuses.fp) ? profile.data.bonuses.fp : 0;
+            return 2 + charismeMod + fpBonusFromProfile;
+         }        
+    }
 }

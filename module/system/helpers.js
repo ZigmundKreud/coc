@@ -192,4 +192,18 @@ export const registerHandlebarsHelpers = function () {
     Handlebars.registerHelper('isNotLimitedEncounter', function(options){
         return !(options?.limited && options?.actor?.type === "encounter");    
     });
+
+    Handlebars.registerHelper('getFpLabel', function(){
+        if (game.settings.get("coc", "settingCyberpunk")) {
+            return game.i18n.localize("COC.attributes.cp.label");
+        }
+        else return game.i18n.localize("COC.attributes.fp.label");
+    });
+
+    Handlebars.registerHelper('getFpAbbrev', function(){
+        if (game.settings.get("coc", "settingCyberpunk")) {
+            return game.i18n.localize("COC.attributes.cp.abbrev");
+        }
+        else return game.i18n.localize("COC.attributes.fp.abbrev");
+    });
 }

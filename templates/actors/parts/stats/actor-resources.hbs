@@ -18,7 +18,7 @@
 {{#if (isEnabled "useFortune")}}
 <div class="flexrow no-wrap resources fortune">
     <div class="flex8 center cell-header">
-        <span class="field-label ellipsis"><i class="fas fa-star"></i>&nbsp;{{ localize 'COC.attributes.fp.abbrev' }}</span>
+        <span class="field-label ellipsis"><i class="fas fa-star"></i>&nbsp;{{getFpAbbrev}}</span>
     </div>
     <div class="flex3 center cell">
         <input class="field-value" name="data.attributes.fp.base" type="text" value="{{actor.data.attributes.fp.base}}" placeholder="Base" data-dtype="Number"/>

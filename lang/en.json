@@ -250,6 +250,8 @@
   "COC.attributes.rp.abbrev" : "RP",
   "COC.attributes.fp.label" : "Fortune Points",
   "COC.attributes.fp.abbrev" : "FP (Chance)",
+  "COC.attributes.cp.label" : "Cash Points",
+  "COC.attributes.cp.abbrev" : "CP (Cash)",
   "COC.attributes.mp.label" : "Magic Points",
   "COC.attributes.mp.abbrev" : "MP",
   "COC.attributes.dr.label" : "Damage Reduction",
@@ -425,5 +427,7 @@
   "SETTINGS.explosiveDice.name": "Explosive dice for damages",
   "SETTINGS.explosiveDice.hint": "If activated, the damage uses the explosive dice rule",
   "SETTINGS.useMadness.name": "Madness points",
-  "SETTINGS.useMadness.hint": "Display the points of madness on the character sheet"
+  "SETTINGS.useMadness.hint": "Display the points of madness on the character sheet",
+  "SETTINGS.settingCyberpunk.name": "Cyberpunk setting",
+  "SETTINGS.settingCyberpunk.hint": "Change the rules to calculate MP"
 } 

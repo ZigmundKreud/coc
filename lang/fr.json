@@ -250,6 +250,8 @@
   "COC.attributes.rp.abbrev" : "PR",
   "COC.attributes.fp.label" : "Points de chance",
   "COC.attributes.fp.abbrev" : "PC (Chance)",
+  "COC.attributes.cp.label" : "Points de cash",
+  "COC.attributes.cp.abbrev" : "PC (Cash)",
   "COC.attributes.mp.label" : "Points de magie",
   "COC.attributes.mp.abbrev" : "PM",
   "COC.attributes.dr.label" : "Réduction de dégâts",
@@ -425,5 +427,7 @@
   "SETTINGS.explosiveDice.name": "Dé explosif pour les dommages",
   "SETTINGS.explosiveDice.hint": "Si activée, les dommages utilisent la règle du dé explosif",
   "SETTINGS.useMadness.name": "Points de Folie",
-  "SETTINGS.useMadness.hint": "Afficher les points de folie sur la fiche de personnage"
+  "SETTINGS.useMadness.hint": "Afficher les points de folie sur la fiche de personnage",
+  "SETTINGS.settingCyberpunk.name": "Variante Cyberpunk",
+  "SETTINGS.settingCyberpunk.hint": "Change les règles de calcul des PM"
 }

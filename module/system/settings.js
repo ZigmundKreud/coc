@@ -113,8 +113,8 @@ export const registerSystemSettings = function() {
     });  
     
     game.settings.register("coc", "explosiveDice",{
-        name: "Dé explosif pour les dommages",
-        hint: "Si activée, les dommages utilisent la règle du dé explosif",
+        name: "SETTINGS.explosiveDice.name",
+        hint: "SETTINGS.explosiveDice.hint",
         scope: "world",
         config: true,
         default: true,
@@ -148,5 +148,15 @@ export const registerSystemSettings = function() {
             "gm" : "SETTINGS.checkArmorSlotAvailability.gm"
         }
     }); 
+
+    game.settings.register("coc", "settingCyberpunk",{
+        name: "SETTINGS.settingCyberpunk.name",
+        hint: "SETTINGS.settingCyberpunk.hint",
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: reload       
+    });
 
 };
