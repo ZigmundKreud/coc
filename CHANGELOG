@@ -1,3 +1,10 @@
+### Version 9.269.3
+CORRECTIFS
+- Correction de l'affichage de la difficulté dans le chat des joueurs
+
+FONCTIONNALITES
+- Ajout du maximum à deux fois l'Init avec l'option Initiative aléatoire
+
 ### Version 9.269.2
 FONCTIONNALITES
 - Ajout de l'option initiative variable
