@@ -179,6 +179,13 @@ export default function registerHooks() {
                     });
                 }        
             }        
+            // Affiche ou non la difficulté
+            const displayDifficulty = game.settings.get("coc", "displayDifficulty");
+            if (displayDifficulty === "none" || (displayDifficulty === "gm" && !game.user.isGM)) {
+                html.find(".display-difficulty").each((i, elt) => {
+                    elt.remove();
+                });
+            }
         });
 
     /**
