@@ -8,6 +8,8 @@
 import {CoCActor} from "./actors/actor.js";
 import {CoCItem} from "./items/item.js";
 
+import CocCombat from "./controllers/combat.js";
+
 import {CoCActorSheet} from "./actors/actor-sheet.js";
 import {CoCNpcSheet} from "./actors/npc-sheet.js";
 import {CoCEncounterSheet} from "./actors/encounter-sheet.js";
@@ -53,6 +55,9 @@ Hooks.once("init", function () {
     // Define custom Entity classes
     CONFIG.Actor.documentClass = CoCActor;
     CONFIG.Item.documentClass = CoCItem;
+
+    // Custom combat for Initiative
+    CONFIG.Combat.documentClass = CocCombat;
 
     // Create a namespace within the game global
     game.coc = {
