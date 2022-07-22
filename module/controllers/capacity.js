@@ -18,9 +18,9 @@ export class Capacity {
 
     /**
      * Supprime une capacité de la feuille de personnage et met à jour les infos d'un éventuel path
-     * @param {*} actor 
-     * @param {*} capacity 
-     * @returns 
+     * @param {*} actor
+     * @param {*} capacity
+     * @returns
      */
      static removeFromActor(actor, capacity) {
         const capacityData = capacity.data;
@@ -50,10 +50,10 @@ export class Capacity {
 
 
    /**
-     * 
-     * @param {*} entity 
-     * @param {*} capacityData 
-     * @returns 
+     *
+     * @param {*} entity
+     * @param {*} capacityData
+     * @returns
      */
     static addToItem(entity, capacityData) {
         let data = duplicate(entity.data);
@@ -65,7 +65,7 @@ export class Capacity {
         }
         else ui.notifications.error("Cet objet contient déjà cette capacité.")
     }
-    
+
     /**
      *
      * @param {*} actor
@@ -132,5 +132,5 @@ export class Capacity {
             });
         });
     }
- 
+
 }

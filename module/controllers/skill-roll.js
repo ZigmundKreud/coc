@@ -42,12 +42,12 @@ export class SkillRoll {
     /**
      * @name weaponRoll
      * @description Jet de dommages d'une arme
-     * 
-     * @param {*} actor 
-     * @param {*} dmgFormula 
-     * @param {*} dmgDescr 
-     * @returns 
-     */    
+     *
+     * @param {*} actor
+     * @param {*} dmgFormula
+     * @param {*} dmgDescr
+     * @returns
+     */
    async weaponRoll(actor, dmgFormula, dmgDescr){
         await this.roll(actor);
         if (this._difficulty) {
@@ -77,7 +77,7 @@ export class SkillRoll {
             isSuccess : this._isSuccess,
             isFailure : !this._isSuccess,
             hasDescription : this._description && this._description.length > 0,
-			description : this._description       
+			description : this._description
         };
         return renderTemplate(rollMessageTpl, tplData);
     }

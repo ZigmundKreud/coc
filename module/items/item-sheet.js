@@ -252,7 +252,7 @@ export class CoCItemSheet extends ItemSheet {
     /** @override */
     getData(options) {
         const data = super.getData(options);
-        
+
         let lockItems = game.settings.get("coc", "lockItems");
         options.editable &= (game.user.isGM || !lockItems);
 
@@ -267,8 +267,8 @@ export class CoCItemSheet extends ItemSheet {
         data.isEffectsEditable = !this.item.actor && options.editable;
         data.item = itemData;
         data.data = itemData.data;
-        
-        return data;       
+
+        return data;
     }
 
     /* -------------------------------------------- */
@@ -292,9 +292,9 @@ export class CoCItemSheet extends ItemSheet {
     }
 
     /**
-     * 
-     * @param {*} event 
-     * @returns 
+     *
+     * @param {*} event
+     * @returns
      */
      _onVerifyCheckboxes(event){
         const input = $(event.currentTarget).find("input");
@@ -315,7 +315,7 @@ export class CoCItemSheet extends ItemSheet {
             data.data.value = 0;
             data.data.rarity = "";
             return this.item.update(data);
-        }        
+        }
         if (name === "data.properties.equipable" && !checked) {
             let data = duplicate(this.item.data);
             data.data.slot = "";
@@ -351,13 +351,13 @@ export class CoCItemSheet extends ItemSheet {
             let data = duplicate(this.item.data);
             data.data.dr = 0;
             return this.item.update(data);
-        }        
+        }
         if (name === "data.properties.ranged" && !checked) {
             let data = duplicate(this.item.data);
             data.data.range = 0;
             data.data.properties.reloadable = false;
             data.data.properties.salve = false;
-            data.data.properties.proneshot = false;            
+            data.data.properties.proneshot = false;
             data.data.properties.explosive = false;
             data.data.reload = "";
             return this.item.update(data);
@@ -366,7 +366,7 @@ export class CoCItemSheet extends ItemSheet {
             let data = duplicate(this.item.data);
             data.data.reload = "";
             return this.item.update(data);
-        }        
+        }
         if (name === "data.properties.effects" && !checked) {
             let data = duplicate(this.item.data);
             data.data.properties.heal = false;
@@ -401,6 +401,6 @@ export class CoCItemSheet extends ItemSheet {
             let data = duplicate(this.item.data);
             data.data.properties.activable = false;
             return this.item.update(data);
-        }        
+        }
     }
 }

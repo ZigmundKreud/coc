@@ -35,7 +35,7 @@ export class CoCEncounterSheet extends CoCBaseSheet {
 
         // Combat and Inventory
         data.inventory = data.items.filter(i => i.type === "item");
-        data.capacities = data.items.filter(i => i.type === "capacity");        
+        data.capacities = data.items.filter(i => i.type === "capacity");
 
         data.weapons = data.items.filter(item=>item.type === "encounterWeapon");
         data.weapons.forEach((weapon)=>{

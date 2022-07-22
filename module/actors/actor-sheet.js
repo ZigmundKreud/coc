@@ -30,7 +30,7 @@ export class CoCActorSheet extends CoCBaseSheet {
     getData(options = {}) {
         const data = super.getData(options);
         if (COC.debug) console.log("COC | ActorSheet getData", data);
-        
+
         // The Actor's data
         const actorData = this.actor.data.toObject(false);
 

@@ -2,7 +2,7 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-import { CocHealingRoll } from "../controllers/healing-roll.js"; 
+import { CocHealingRoll } from "../controllers/healing-roll.js";
 import { COC } from "../system/config.js";
 export class CoCItem extends Item {
 
@@ -10,7 +10,7 @@ export class CoCItem extends Item {
     /*  Constructor                                 */
     /* -------------------------------------------- */
     /* Définition de l'image par défaut             */
-    /* -------------------------------------------- */   
+    /* -------------------------------------------- */
     constructor(...args) {
         let data = args[0];
         if (!data.img && COC.itemIcons[data.type]) data.img = COC.itemIcons[data.type];
@@ -70,7 +70,7 @@ export class CoCItem extends Item {
             const r = new CocHealingRoll(itemData.name, heal.formula, false);
             r.roll(actor);
         }
-    }    
+    }
 
     modifyQuantity(increment, isDecrease) {
         if(this.data.data.properties.stackable){

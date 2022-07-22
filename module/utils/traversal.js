@@ -151,5 +151,5 @@ export class Traversal {
             else return game.packs.get(source).getDocument(id).then(entity => entity);
         }
     }
-    
+
 }

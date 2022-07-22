@@ -19,7 +19,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
     getData(options) {
         const data = super.getData(options);
         if (COC.debug) console.log("COC | NpcSheet getData", data);
-        
+
         // The Actor's data
         const actorData = this.actor.data.toObject(false);
 

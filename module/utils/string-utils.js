@@ -7,7 +7,7 @@ export class StringUtils {
     static toKey (str) {
         return StringUtils.normalize(str).split(/[\s;:,\']+/).join('-');
     }
-    
+
     static async sha256(message) {
 
         // encode as UTF-8

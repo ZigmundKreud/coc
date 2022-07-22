@@ -226,7 +226,7 @@ export class CoCBaseSheet extends ActorSheet {
         const item = this.actor.items.get(li.data("itemId"));
 
         this.actor.consumeItem(item);
-    }    
+    }
 
     _onToggleEquip(event) {
         event.preventDefault();
@@ -237,7 +237,7 @@ export class CoCBaseSheet extends ActorSheet {
 
         return this.actor.toggleEquipItem(item, bypassChecks);
     }
-    
+
     /* -------------------------------------------- */
     /* DELETE EVENTS CALLBACKS                      */
     /* -------------------------------------------- */
@@ -292,7 +292,7 @@ export class CoCBaseSheet extends ActorSheet {
 
         const item = await Item.fromDropData(data);
         if (!COC.actorsAllowedItems[this.actor.data.type]?.includes(item.data.type)) return;
-        
+
         const itemData = duplicate(item.data);
         switch (itemData.type) {
             case "path": return await Path.addToActor(this.actor, item);
@@ -307,14 +307,14 @@ export class CoCBaseSheet extends ActorSheet {
 
                 // On force le nouvel Item a ne pas être équipé (notamment lors du transfert d'un inventaire à un autre)
                 if (itemData.data.worn) itemData.data.worn = false;
-                
+
                 // Create the owned item
-                return this.actor.createEmbeddedDocuments("Item", [itemData]).then((item)=>{                    
+                return this.actor.createEmbeddedDocuments("Item", [itemData]).then((item)=>{
                     // Si il n'y as pas d'actor id, il s'agit d'un objet du compendium, on quitte
                     if (!data.actorId) return item;
-                                        
+
                     // Si l'item doit être "move", on le supprime de l'actor précédent
-                    let moveItem = game.settings.get("coc","moveItem");                    
+                    let moveItem = game.settings.get("coc","moveItem");
                     if (moveItem ^ event.shiftKey) {
 
                         if (!data.tokenId){
@@ -326,13 +326,13 @@ export class CoCBaseSheet extends ActorSheet {
                             let oldItem = token?.document.getEmbeddedCollection('Item').get(data.data._id);
                             oldItem?.delete();
                         }
-                    }                     
+                    }
                 });
             }
         }
     }
-      
-      
+
+
     /* -------------------------------------------- */
     /* ROLL EVENTS CALLBACKS                        */
     /* -------------------------------------------- */
@@ -350,7 +350,7 @@ export class CoCBaseSheet extends ActorSheet {
         if (event.shiftKey) {
             switch (rolltype) {
                 // Spend recovery point without getting hit points
-                case "recovery": return CoCRoll.rollRecoveryUse(data.data, this.actor, false)    
+                case "recovery": return CoCRoll.rollRecoveryUse(data.data, this.actor, false)
             }
         }
         switch (rolltype) {
@@ -359,7 +359,7 @@ export class CoCBaseSheet extends ActorSheet {
             case "damage" : return CoCRoll.rollDamage(data.data, this.actor, event);
             case "encounter-weapon" : return CoCRoll.rollEncounterWeapon(data.data, this.actor, event);
             case "encounter-damage" : return CoCRoll.rollEncounterDamage(data.data, this.actor, event);
-            case "spell" : return CoCRoll.rollSpell(data.data, this.actor, event);            
+            case "spell" : return CoCRoll.rollSpell(data.data, this.actor, event);
             case "hp" : return CoCRoll.rollHitPoints(data.data, this.actor, event);
             case "attributes" : return CoCRoll.rollAttributes(data.data, this.actor, event);
             case "recovery": return CoCRoll.rollRecoveryUse(data.data, this.actor, true);
@@ -371,7 +371,7 @@ export class CoCBaseSheet extends ActorSheet {
         const data = super.getData(options);
         const actorData = data.data;
 		data.isGm = game.user.isGM;
-        
+
         // Basic data
         let isOwner = this.actor.isOwner;
 
@@ -386,16 +386,16 @@ export class CoCBaseSheet extends ActorSheet {
         data.isEncounter = this.actor.type === "encounter";
         data.isVehicle =  this.actor.type === 'vehicle';
         data.rollData =  this.actor.getRollData.bind(this.actor);
-        
+
         data.effects = data.actor.effects;
         data.folded = {
             "combat": (actorData.data.settings?.combat) ? actorData.data.settings?.combat.folded : [],
             "inventory": (actorData.data.settings?.inventory) ? actorData.data.settings?.inventory.folded : [],
             "capacities": (actorData.data.settings?.capacities) ? actorData.data.settings?.capacities.folded : [],
             "effects": (actorData.data.settings?.effects) ? actorData.data.settings?.effects.folded : []
-        };        
+        };
         data.actor = actorData;
-        data.data = actorData.data;       
+        data.data = actorData.data;
 
         return data;
 	}

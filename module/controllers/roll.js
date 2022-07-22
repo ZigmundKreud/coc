@@ -10,13 +10,13 @@ export class CoCRoll {
 
     /**
      * @name skillCheck
-     * @description  Jet de compétence 
-     * 
-     * @param {*} data 
-     * @param {*} actor 
-     * @param {*} event 
-     * @returns 
-     */  
+     * @description  Jet de compétence
+     *
+     * @param {*} data
+     * @param {*} actor
+     * @param {*} event
+     * @returns
+     */
     static skillCheck(data, actor, event) {
         const elt = $(event.currentTarget)[0];
         let key = elt.attributes["data-rolling"].value;
@@ -24,8 +24,8 @@ export class CoCRoll {
 
         const mod = eval(`${key}.mod`);
         const tmpmod = eval(`${key}.tmpmod`);
-        
-        let bonus = eval(`${key}.skillbonus`);        
+
+        let bonus = eval(`${key}.skillbonus`);
         if (!bonus) bonus = 0;
 
         let malus = 0;
@@ -41,18 +41,18 @@ export class CoCRoll {
 
     /**
      * @name rollWeapon
-     * @description  Jet d'attaque 
-     * 
-     * @param {*} data 
-     * @param {*} actor 
-     * @param {*} event 
-     * @returns 
-     */    
+     * @description  Jet d'attaque
+     *
+     * @param {*} data
+     * @param {*} actor
+     * @param {*} event
+     * @returns
+     */
     static rollWeapon(data, actor, event) {
-        const li = $(event.currentTarget).parents(".item");        
+        const li = $(event.currentTarget).parents(".item");
         let item = actor.items.get(li.data("itemId"));
         const itemData = item.data;
-    
+
         const label = itemData.name;
         const critrange = itemData.data.critrange;
         const itemMod = $(event.currentTarget).parents().children(".item-mod");
@@ -65,13 +65,13 @@ export class CoCRoll {
 
     /**
      * @name rollDamage
-     * @description  Jet de dommages 
-     * 
-     * @param {*} data 
-     * @param {*} actor 
-     * @param {*} event 
-     * @returns 
-     */  
+     * @description  Jet de dommages
+     *
+     * @param {*} data
+     * @param {*} actor
+     * @param {*} event
+     * @returns
+     */
      static rollDamage(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
         let item = actor.items.get(li.data("itemId"));
@@ -79,7 +79,7 @@ export class CoCRoll {
         let dmg = item.data.data.dmg;
         return this.rollDamageDialog(actor, label, dmg, 0);
     }
-        
+
     /**
      *  Handles spell rolls
      * @param elt DOM element which raised the roll event
@@ -163,11 +163,11 @@ export class CoCRoll {
     /**
      * @name rollAttributes
      * @description Handles attributes rolls
-     * 
-     * @param {*} data 
-     * @param {*} actor 
-     * @param {*} event 
-     * @returns 
+     *
+     * @param {*} data
+     * @param {*} actor
+     * @param {*} event
+     * @returns
      */
     static async rollAttributes(data, actor, event) {
         let stats = data.stats;
@@ -191,29 +191,29 @@ export class CoCRoll {
      * @name rollEncounterWeapon
      * @description  Jet d'attaque d'une rencontre
      *  Basé sur les valeurs affichées sur la fiche
-     * 
-     * @param {*} data 
-     * @param {*} actor 
-     * @param {*} event 
-     * @returns 
+     *
+     * @param {*} data
+     * @param {*} actor
+     * @param {*} event
+     * @returns
      */
     static rollEncounterWeapon(data, actor, event) {
         const weapon = $(event.currentTarget).parents(".item");
         let label = weapon.find(".weapon-name").text();
-        let critrange = weapon.find(".weapon-crit").text();        
+        let critrange = weapon.find(".weapon-crit").text();
         let mod = weapon.find(".weapon-mod").text();
         let dmg = weapon.find(".weapon-dmg").text();
         return this.rollWeaponDialog(actor, label, mod, 0, 0, critrange, dmg, 0);
     }
-    
+
     /**
      * @name rollEncounterDamage
      * @description  Jet de dommages d'une rencontre
      *  Basé sur les valeurs affichées sur la fiche
-     * 
-     * @param {*} data 
-     * @param {*} actor 
-     * @param {*} event 
+     *
+     * @param {*} data
+     * @param {*} actor
+     * @param {*} event
      * @returns
      */
     static rollEncounterDamage(data, actor, event) {
@@ -237,9 +237,9 @@ export class CoCRoll {
         const isDifficultyDisplayed = displayDifficulty === "all" || (displayDifficulty === "gm" && game.user.isGM);
         const rollOptionContent = await renderTemplate(rollOptionTpl, {
             mod: mod,
-            bonus: bonus, 
-            malus: malus, 
-            critrange: critrange, 
+            bonus: bonus,
+            malus: malus,
+            critrange: critrange,
             superior:superior,
             difficulty: diff,
             displayDifficulty: isDifficultyDisplayed
@@ -276,16 +276,16 @@ export class CoCRoll {
     }
 
     /**
-     * 
-     * @param {*} actor 
-     * @param {*} label 
-     * @param {*} mod 
-     * @param {*} bonus 
-     * @param {*} critrange 
-     * @param {*} dmgFormula 
-     * @param {*} dmgBonus 
-     * @param {*} onEnter 
-     * @returns 
+     *
+     * @param {*} actor
+     * @param {*} label
+     * @param {*} mod
+     * @param {*} bonus
+     * @param {*} critrange
+     * @param {*} dmgFormula
+     * @param {*} dmgBonus
+     * @param {*} onEnter
+     * @returns
      */
      static async rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmgFormula, dmgBonus, onEnter = "submit", skillDescr, dmgDescr, difficulty = null) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-weapon-dialog.hbs';
@@ -293,7 +293,7 @@ export class CoCRoll {
         let isDifficultyDisplayed = true;
 
         if (difficulty !== null) {
-            diff = difficulty;   
+            diff = difficulty;
         }
         else {
             const displayDifficulty = game.settings.get("coc", "displayDifficulty");
@@ -441,11 +441,11 @@ export class CoCRoll {
 
    /**
      *  Handles recovery roll
-     * 
-     * @param {*} data 
-     * @param {*} actor 
+     *
+     * @param {*} data
+     * @param {*} actor
      * @param {*} withHPrecovery true to Get HitPoints
-     * @returns 
+     * @returns
      */
     static rollRecoveryUse(data, actor, withHPrecovery) {
         let recoveryPoints = data.attributes.rp.value;
@@ -456,7 +456,7 @@ export class CoCRoll {
         const level = data.level.value;
         const conMod = data.stats.con.mod;
         const actorData = actor.data;
-    
+
         if (!withHPrecovery) {
             rp.value -= 1;
             actor.update({ 'data.attributes.rp': rp });
@@ -471,17 +471,17 @@ export class CoCRoll {
                         const hdmax = parseInt(hd.split("d")[1]);
                         const bonus = level + conMod;
                         const formula = `1d${hdmax} + ${bonus}`;
-                        
+
                         let healingRoll = new CocHealingRoll("", formula, false, "Point de récupération", false);
                         let result = await healingRoll.roll(actor);
-    
+
                         hp.value += result.total;
                         rp.value -= 1;
                         actor.update({ 'data.attributes.hp': hp, 'data.attributes.rp': rp });
                 },
                 defaultYes: false
             });
-        }   
+        }
     }
 
 }

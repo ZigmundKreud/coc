@@ -11,7 +11,7 @@ export class Path {
      */
     static addPathsToActor(actor, pathsData) {
         let items = [];
-        pathsData = pathsData instanceof Array ? pathsData : [pathsData];   
+        pathsData = pathsData instanceof Array ? pathsData : [pathsData];
         pathsData.forEach(p => { items.push(p.toObject(false)) });
         return actor.createEmbeddedDocuments("Item", items).then(newPaths => {
             // on ajoute toutes les metadonnees aux voies nouvellement creees pour faciliter la gestions des capacites qui en dependent
@@ -56,7 +56,7 @@ export class Path {
             return this.addPathsToActor(actor, [pathData]);
         }
     }
-    
+
     static getPathsFromActorByKey(actor, pathKeys) {
         const start = performance.now();
         let items = [];
@@ -81,10 +81,10 @@ export class Path {
     }
 
     /**
-     * 
-     * @param {*} entity 
-     * @param {*} pathData 
-     * @returns 
+     *
+     * @param {*} entity
+     * @param {*} pathData
+     * @returns
      */
      static addToItem(entity, pathData) {
         let data = duplicate(entity.data);
@@ -97,7 +97,7 @@ export class Path {
         else ui.notifications.error("Cet objet contient déjà cette voie.")
     }
 
-    static removeFromActor(actor, entity) {        
+    static removeFromActor(actor, entity) {
         Dialog.confirm({
             title: "Supprimer une voie",
             content: `<p>Etes-vous sûr de vouloir supprimer la ${entity.name} de ${actor.name} ?</p>`,
@@ -112,10 +112,10 @@ export class Path {
     }
 
     /**
-     * 
-     * @param {*} actor 
-     * @param {*} paths 
-     * @returns 
+     *
+     * @param {*} actor
+     * @param {*} paths
+     * @returns
      */
     static removePathsFromActor(actor, paths) {
         let items = [];

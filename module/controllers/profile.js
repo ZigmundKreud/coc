@@ -35,11 +35,11 @@ export class Profile {
      /**
      * @name removeFromActor
      * @description Supprime le profil et ses voies de l'acteur en paramètre
-     * @public @static 
-     * 
+     * @public @static
+     *
      * @param {CocActor} actor l'acteur sur lequel supprimer le profil
      * @param {CocItem} profile l'item profil à supprimer
-     * @returns 
+     * @returns
      */
     static removeFromActor(actor, profile) {
         const paths = actor.items.filter(item => item.type === "path" && item.data.data.profile?._id === profile.id);

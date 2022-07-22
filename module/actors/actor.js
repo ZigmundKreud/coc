@@ -12,10 +12,10 @@ export class CoCActor extends Actor {
     /*  Constructor                                 */
     /* -------------------------------------------- */
     /* Définition des images par défaut             */
-    /* -------------------------------------------- */   
+    /* -------------------------------------------- */
     constructor(...args) {
         let data = args[0];
-        
+
         if (!data.img && COC.actorIcons[data.type]){
             data.img = COC.actorIcons[data.type];
             if (!data.token) data.token = {};
@@ -40,7 +40,7 @@ export class CoCActor extends Actor {
                 "effects": { "folded": [] }
             };
         }
-    }    
+    }
 
     /* -------------------------------------------- */
     /* Après application des effets                 */
@@ -53,10 +53,10 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} actorData 
+     *
+     * @param {*} actorData
      */
-    _prepareDerivedEncounterData(actorData) { 
+    _prepareDerivedEncounterData(actorData) {
         // Stats
         this.computeNpcMods(actorData);
 
@@ -78,13 +78,13 @@ export class CoCActor extends Actor {
         // Attaques
         let attacks = actorData.data.attacks;
         for (let attack of Object.values(attacks)) {
-            attack.mod = attack.base + attack.bonus; 
+            attack.mod = attack.base + attack.bonus;
         }
     }
-    
+
     /**
-     * 
-     * @param {*} actorData 
+     *
+     * @param {*} actorData
      */
     _prepareDerivedCharacterData(actorData) {
         if(actorData.type === "npc") this.computeNpcMods(actorData);
@@ -97,9 +97,9 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} items 
-     * @returns 
+     *
+     * @param {*} items
+     * @returns
      */
     getProfile(items) {
         let profile = items.find(i => i.type === "profile")
@@ -108,9 +108,9 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} items 
-     * @returns 
+     *
+     * @param {*} items
+     * @returns
      */
     getProtection(items) {
         const protections = items.filter(i => i.type === "item" && i.data.data.worn && i.data.data.def).map(i => i.data.data.def);
@@ -120,21 +120,21 @@ export class CoCActor extends Actor {
     /**
      * @name
      * @description Calcule le malus due à la Défense. Le bonus d'une armure diminue le malus d'autant
-     
-     * @param {*} items 
+
+     * @param {*} items
      * @returns {int} retourne le malus 0 ou un nombre négatif
      */
     getMalusFromProtection(items) {
         let malus = 0;
-        let protections = items.filter(i => i.data.type === "item" && i.data.data.subtype === "armor" && i.data.data.worn && i.data.data.def).map(i => (-1 * i.data.data.defBase) + i.data.data.defBonus);     
+        let protections = items.filter(i => i.data.type === "item" && i.data.data.subtype === "armor" && i.data.data.worn && i.data.data.def).map(i => (-1 * i.data.data.defBase) + i.data.data.defBonus);
         if (protections.length > 0) malus = protections.reduce((acc, curr) => acc + curr, 0);
         return malus;
     }
 
     /**
-     * 
-     * @param {*} items 
-     * @returns 
+     *
+     * @param {*} items
+     * @returns
      */
     getResistance(items) {
         const resistances = items.filter(i => i.type === "item" && i.data.data.worn && i.data.data.dr).map(i => i.data.data.dr);
@@ -142,9 +142,9 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} items 
-     * @returns 
+     *
+     * @param {*} items
+     * @returns
      */
     getCurrentXP(items) {
         const capacities = items.filter(i => i.type === "capacity");
@@ -152,8 +152,8 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} actorData 
+     *
+     * @param {*} actorData
      */
     computeMods(actorData) {
         let stats = actorData.data.stats;
@@ -164,8 +164,8 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} actorData 
+     *
+     * @param {*} actorData
      */
     computeNpcMods(actorData) {
         let stats = actorData.data.stats;
@@ -175,8 +175,8 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} actorData 
+     *
+     * @param {*} actorData
      */
     computeAttributes(actorData) {
 
@@ -214,8 +214,8 @@ export class CoCActor extends Actor {
     }
 
     /**
-     * 
-     * @param {*} actorData 
+     *
+     * @param {*} actorData
      */
     computeAttacks(actorData) {
 
@@ -245,19 +245,19 @@ export class CoCActor extends Actor {
         magic.base = (magicMod) ? magicMod + atmBonus : atmBonus;
 
         for (let attack of Object.values(attacks)) {
-            attack.mod = attack.base + attack.bonus + attack.malus; 
+            attack.mod = attack.base + attack.bonus + attack.malus;
         }
 
     }
 
     /**
-     * 
-     * @param {*} actorData 
+     *
+     * @param {*} actorData
      */
     computeDef(actorData) {
         let stats = actorData.data.stats;
         let attributes = actorData.data.attributes;
-        
+
         // Calcule DEF et RD
         const protection = this.getProtection(actorData.items);
         const dr = this.getResistance(actorData.items);
@@ -273,7 +273,7 @@ export class CoCActor extends Actor {
     /**
      * @name computeXP
      * @description calcule les XPs dépensés dans les capacités
-     * @param {*} actorData 
+     * @param {*} actorData
      */
     computeXP(actorData) {
         let items = actorData.items;
@@ -306,16 +306,16 @@ export class CoCActor extends Actor {
     /**
      * @name computeWeaponMod
      * @description calcule le modificateur final pour une arme
-     *  Total = Mod lié à la caractéristique + Mod lié au bonus 
+     *  Total = Mod lié à la caractéristique + Mod lié au bonus
      * @param {int} itemModStat le modificateur issue de la caractéristique
      * @param {int} itemModBonus le modificateur issue du bonus
 
      * @returns {int} retourne mod
-     */       
+     */
      computeWeaponMod(itemModStat, itemModBonus) {
         let total = 0;
 
-        const fromStat = eval("this.data.data." + itemModStat);        
+        const fromStat = eval("this.data.data." + itemModStat);
         total = fromStat + itemModBonus;
 
         return total;
@@ -330,10 +330,10 @@ export class CoCActor extends Actor {
      * @param {int} itemDmgBonus le bonus aux dégâts
 
      * @returns {string} retourne la chaine de caractères utilisée pour le lancer de dés
-     */      
+     */
     computeDm(itemDmgBase, itemDmgStat, itemDmgBonus) {
         let total = itemDmgBase;
-        
+
         const fromStat = eval("this.data.data." + itemDmgStat);
         const fromBonus = (fromStat) ? parseInt(fromStat) + itemDmgBonus : itemDmgBonus;
         if (fromBonus < 0) total = itemDmgBase + " - " + parseInt(-fromBonus);
@@ -354,14 +354,14 @@ export class CoCActor extends Actor {
 
     /**
     * @name syncItemActiveEffects
-    * @param {*} item 
+    * @param {*} item
     * @description synchronise l'état des effets qui appartiennent à un item équipable avec l'état "équipé" de cet item
     * @returns {Promise}
     */
      syncItemActiveEffects(item){
         // Récupération des effets qui proviennent de l'item
         let effectsData = this.effects.filter(effect=>effect.data.origin.endsWith(item.id))?.map(effect=> duplicate(effect.data));
-        if (effectsData.length > 0){        
+        if (effectsData.length > 0){
             effectsData.forEach(effect=>effect.disabled = !item.data.data.worn);
 
             this.updateEmbeddedDocuments("ActiveEffect", effectsData);
@@ -377,16 +377,16 @@ export class CoCActor extends Actor {
         const { bonus = 0, malus = 0, dmgBonus = 0, dmgOnly = false } = options;
 
         return Macros.rollItemMacro(item.id, item.name, item.type, bonus, malus, dmgBonus, dmgOnly);
-     }    
+     }
 
     /**
-     * 
-     * @param {*} item 
-     * @param {*} bypassChecks 
-     * @returns 
+     *
+     * @param {*} item
+     * @param {*} bypassChecks
+     * @returns
      */
      toggleEquipItem(item, bypassChecks) {
-        if (!this.canEquipItem(item, bypassChecks)) return;        
+        if (!this.canEquipItem(item, bypassChecks)) return;
 
         const equipable = item.data.data.properties.equipable;
         if(equipable){
@@ -403,8 +403,8 @@ export class CoCActor extends Actor {
     /**
      * Check if an item can be equiped
      * @param item
-     * @param bypassChecks      
-     */        
+     * @param bypassChecks
+     */
      canEquipItem(item, bypassChecks) {
         if (!this.items.some(it=>it.id === item.id)){
             ui.notifications.warn(game.i18n.format('COC.notification.MacroItemMissing', {item:item.name}));
@@ -415,7 +415,7 @@ export class CoCActor extends Actor {
             ui.notifications.warn(game.i18n.format("COC.notification.ItemNotEquipable", {itemName:item.name}));
             return;
         }
-      
+
         if (!this._hasEnoughFreeHands(item, bypassChecks)){
             ui.notifications.warn(game.i18n.localize("COC.notification.NotEnoughFreeHands"));
             return false;
@@ -424,24 +424,24 @@ export class CoCActor extends Actor {
             ui.notifications.warn(game.i18n.localize("COC.notification.ArmorSlotNotAvailable"));
             return false;
         }
-        
+
         return true;
     }
 
    /**
      * Check if actor has enough free hands to equip this item
      * @param event
-     * @param bypassChecks     
+     * @param bypassChecks
      * @private
-     */    
+     */
     _hasEnoughFreeHands(item, bypassChecks){
         // Si le contrôle de mains libres n'est pas demandé, on renvoi Vrai
         let checkFreehands = game.settings.get("coc", "checkFreeHandsBeforeEquip");
         if (!checkFreehands || checkFreehands === "none") return true;
 
         // Si le contrôle est ignoré ponctuellement avec la touche MAJ, on renvoi Vrai
-        if (bypassChecks && (checkFreehands === "all" || (checkFreehands === "gm" && game.user.isGM))) return true;      
-        
+        if (bypassChecks && (checkFreehands === "all" || (checkFreehands === "gm" && game.user.isGM))) return true;
+
         // Si l'objet est équipé, on tente de le déséquiper donc on ne fait pas de contrôle et on renvoi Vrai
         if (item.data.data.worn) return true;
 
@@ -454,17 +454,17 @@ export class CoCActor extends Actor {
         // Calcul du nombre de mains déjà utilisées
         let itemsInHands = this.items.filter(item=>item.data.data.worn && item.data.data.slot === "hand");
         let usedHands = 0;
-        itemsInHands.forEach(item=>usedHands += item.data.data.properties["2H"] ? 2 : 1);                
+        itemsInHands.forEach(item=>usedHands += item.data.data.properties["2H"] ? 2 : 1);
 
-        return usedHands + neededHands <= 2;        
+        return usedHands + neededHands <= 2;
     }
 
     /**
      * Check if armor slot is available to equip this item
      * @param event
-     * @param bypassChecks          
+     * @param bypassChecks
      * @private
-     */        
+     */
     _isArmorSlotAvailable(item, bypassChecks){
         // Si le contrôle de disponibilité de l'emplacement d'armure n'est pas demandé, on renvoi Vrai
         let checkArmorSlotAvailability = game.settings.get("coc", "checkArmorSlotAvailability");
@@ -472,12 +472,12 @@ export class CoCActor extends Actor {
 
         // Si le contrôle est ignoré ponctuellement avec la touche MAJ, on renvoi Vrai
         if (bypassChecks && (checkArmorSlotAvailability === "all" || (checkArmorSlotAvailability === "gm" && game.user.isGM))) return true;
-        
+
         const itemData = item.data.data;
 
         // Si l'objet est équipé, on tente de le déséquiper donc on ne fait pas de contrôle et on renvoi Vrai
         if (itemData.worn) return true;
-        
+
         // Si l'objet n'est pas une protection, on renvoi Vrai
         if (!itemData.properties.protection) return true;
 
@@ -487,15 +487,15 @@ export class CoCActor extends Actor {
 
             return slotItemData.properties?.protection && slotItemData.properties.equipable && slotItemData.worn && slotItemData.slot === itemData.slot;
         });
-        
+
         // Renvoie vrai si le le slot est libre, sinon renvoi faux
-        return !equipedItem;    
-    }   
+        return !equipedItem;
+    }
 
     /**
      * Consume one item
-     * @param {*} item 
-     * @returns 
+     * @param {*} item
+     * @returns
      */
     consumeItem(item) {
         const consumable = item.data.data.properties.consumable;
@@ -507,16 +507,16 @@ export class CoCActor extends Actor {
             AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
             return item.update(itemData).then(item => item.applyEffects(this));
         }
-    }    
+    }
 
     /**
      * @name computeBaseFP
      * @description Calcule le nombre de points de chance de base
      * @public
-     * 
+     *
      * @param {Int} charismeMod Modificateur de charisme
      * @param {CofItem} profile Item de type profile
-     * 
+     *
      */
      computeBaseFP(charismeMod, profile) {
          if (game.settings.get("coc", "settingCyberpunk")){
@@ -525,6 +525,6 @@ export class CoCActor extends Actor {
          else {
             const fpBonusFromProfile = (profile && profile.data.bonuses.fp) ? profile.data.bonuses.fp : 0;
             return 2 + charismeMod + fpBonusFromProfile;
-         }        
+         }
     }
 }

@@ -8,13 +8,13 @@ System.templatesPath = System.rootPath + "/templates";
 System.debugMode = true;
 
 System.ASCII = `
-   ******    *******     ****** 
+   ******    *******     ******
   **////**  **/////**   **////**
- **    //  **     //** **    // 
-/**       /**      /**/**       
-/**       /**      /**/**       
+ **    //  **     //** **    //
+/**       /**      /**/**
+/**       /**      /**/**
 //**    **//**     ** //**    **
- //******  //*******   //****** 
+ //******  //*******   //******
   //////    ///////     ////// `;
 
 export const COC = {};
@@ -137,7 +137,7 @@ COC.itemCategories = {
     "consumable": "COC.category.consumable",
     "container": "COC.category.container",
     "mount": "COC.category.mount",
-    "vehicle": "COC.category.vehicle",    
+    "vehicle": "COC.category.vehicle",
     "trapping": "COC.category.trapping",
     "other": "COC.category.other"
 }

@@ -2,9 +2,9 @@ export class Compendia {
 
     /**
      * @todo : Renommer la méthode getContent en getDocuments
-     * 
-     * @param {*} filters 
-     * @returns 
+     *
+     * @param {*} filters
+     * @returns
      */
     static getContent(filters = []) {
         let promises = game.packs.map(comp => {
