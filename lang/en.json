@@ -163,6 +163,8 @@
   "COC.details.languages": "Languages",
   "COC.details.biography": "Biography",
   "COC.details.description": "Description",
+  "COC.details.openTrait": "Left click to see the trait, right click to open the compendium",
+  "COC.details.openProfile": "Left click to see the profile, right click to open the compendium",
 
   "COC.stats.label": "Characteristics",
   "COC.stats.abbrev": "STATS",

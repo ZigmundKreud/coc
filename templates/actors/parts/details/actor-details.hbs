@@ -30,9 +30,9 @@
                 <div class="flex1 center cell-header">
                     <span class="field-label">Trait</span>
                 </div>
-                <div class="flex2 center cell drop-field coc-compendium-pack" data-pack="coc.traits" data-open="0" title="clic droit pour ouvrir le compendium">
+                <div class="flex2 center cell drop-field coc-compendium-pack item" data-item-id="{{trait._id}}" data-pack="coc.traits" data-open="0" title="{{ localize 'COC.details.openTrait' }}">
                     {{#with trait}}
-                        <div class="flex5 drop-item item-name item trait" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
+                        <div class="flex5 drop-item item-name item trait item-edit" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                         <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">
                             <a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a>
                         </div>
@@ -45,7 +45,7 @@
                 <div class="flex2 center cell-header">
                     <span class="field-label">{{ localize 'COC.details.profile' }}</span>
                 </div>
-                <div class="flex4 center cell drop-field coc-compendium-pack item" data-item-id="{{profile._id}}" data-pack="coc.profiles" data-open="0" title="clic droit pour ouvrir le compendium">
+                <div class="flex4 center cell drop-field coc-compendium-pack item" data-item-id="{{profile._id}}" data-pack="coc.profiles" data-open="0" title="{{ localize 'COC.details.openProfile' }}">
                 {{#with profile}}
                     <div class="flex5 drop-item item-name item profile item-edit" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                     <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">
