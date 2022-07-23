@@ -20,19 +20,19 @@ export class CoCRoll {
     static skillCheck(data, actor, event) {
         const elt = $(event.currentTarget)[0];
         let key = elt.attributes["data-rolling"].value;
-        let label = eval(`${key}.label`);
+        let label = eval(`data.${key}.label`);
 
-        const mod = eval(`${key}.mod`);
-        const tmpmod = eval(`${key}.tmpmod`);
+        const mod = eval(`data.${key}.mod`);
+        const tmpmod = eval(`data.${key}.tmpmod`);
 
-        let bonus = eval(`${key}.skillbonus`);
+        let bonus = eval(`data.${key}.skillbonus`);
         if (!bonus) bonus = 0;
 
         let malus = 0;
-        let skillMalus = eval(`${key}.skillmalus`);
+        let skillMalus = eval(`data.${key}.skillmalus`);
         if (!skillMalus) skillMalus = 0;
         malus += skillMalus;
-        let superior = eval(`${key}.superior`);
+        let superior = eval(`data.${key}.superior`);
         const critrange = 20;
 
         label = (label) ? game.i18n.localize(label) : null;
@@ -51,10 +51,10 @@ export class CoCRoll {
     static rollWeapon(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
         let item = actor.items.get(li.data("itemId"));
-        const itemData = item.data;
+        const itemData = item;
 
         const label = itemData.name;
-        const critrange = itemData.data.critrange;
+        const critrange = itemData.system.critrange;
         const itemMod = $(event.currentTarget).parents().children(".item-mod");
         const mod = itemMod.data('itemMod');
         const dmgMod = $(event.currentTarget).parents().children(".item-dmg");
@@ -75,8 +75,8 @@ export class CoCRoll {
      static rollDamage(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
         let item = actor.items.get(li.data("itemId"));
-        let label = item.data.name;
-        let dmg = item.data.data.dmg;
+        let label = item.name;
+        let dmg = item.system.dmg;
         return this.rollDamageDialog(actor, label, dmg, 0);
     }
 
@@ -89,10 +89,10 @@ export class CoCRoll {
     static rollSpell(data, actor, event) {
         const li = $(event.currentTarget).parents(".item");
         let item = actor.items.get(li.data("itemId"));
-        let label = item.data.name;
-        let mod = item.data.data.mod;
-        let critrange = item.data.data.critrange;
-        let dmg = item.data.data.dmg;
+        let label = item.name;
+        let mod = item.system.mod;
+        let critrange = item.system.critrange;
+        let dmg = item.system.dmg;
         return this.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
     }
 
@@ -103,17 +103,17 @@ export class CoCRoll {
      * @private
      */
     static rollHitPoints(data, actor, event) {
-        let hp = data.attributes.hp;
-        const lvl = data.level.value;
-        const conMod = data.stats.con.mod;
-        const actorData = actor.data;
+        let hp = data.system.attributes.hp;
+        const lvl = data.system.level.value;
+        const conMod = data.system.stats.con.mod;
+        const actorData = actor;
 
         return Dialog.confirm({
             title: game.i18n.format("COC.dialog.rollHitPoints.title"),
             content: `<p>Êtes sûr de vouloir remplacer les points de vie de <strong>${actor.name}</strong></p>`,
-            yes: () => {
-                if (actorData.data.attributes.hd && actorData.data.attributes.hd.value) {
-                    const hd = actorData.data.attributes.hd.value;
+            yes: async () => {
+                if (actorData.system.attributes.hd && actorData.system.attributes.hd.value) {
+                    const hd = actorData.system.attributes.hd.value;
                     const hdmax = parseInt(hd.split("d")[1]);
                     // If LVL 1 COMPUTE HIT POINTS
                     if (lvl == 1) {
@@ -141,7 +141,7 @@ export class CoCRoll {
                         const bonus = (mods2add * conMod) + hpLvl1;
                         const formula = `${dice2Roll}d${hdmax} + ${bonus}`;
                         const r = new Roll(formula);
-                        r.roll();
+                        await r.roll();
                         r.toMessage({
                             user: game.user.id,
                             flavor: "<h2>Roll Hit Points</h2>",
@@ -152,7 +152,7 @@ export class CoCRoll {
                         hp.max = hp.base + hp.bonus;
                         hp.value = hp.max;
                     }
-                    actor.update({'data.attributes.hp': hp});
+                    actor.update({'system.attributes.hp': hp});
                 } else ui.notifications.error("Vous devez sélectionner un profil ou choisir un Dé de Vie.");
             },
             defaultYes: false
@@ -170,7 +170,7 @@ export class CoCRoll {
      * @returns
      */
     static async rollAttributes(data, actor, event) {
-        let stats = data.stats;
+        let stats = data.system.stats;
         return Dialog.confirm({
             title: "Jet de caractéristiques",
             content: `<p>Êtes-vous sûr de vouloir remplacer les caractéristiques de <strong>${actor.name}</strong> ?</p>`,
@@ -181,7 +181,7 @@ export class CoCRoll {
                     stat.base = rolls[i].total;
                     ++i;
                 }
-                actor.update({'data.stats': stats});
+                actor.update({'system.stats': stats});
             },
             defaultYes: false
         });
@@ -232,7 +232,7 @@ export class CoCRoll {
         let diff = null;
         const displayDifficulty = game.settings.get("coc", "displayDifficulty");
         if ( displayDifficulty !== "none" && game.user.targets.size > 0) {
-            diff = [...game.user.targets][0].actor.data.data.attributes.def.value;
+            diff = [...game.user.targets][0].actor.system.attributes.def.value;
         }
         const isDifficultyDisplayed = displayDifficulty === "all" || (displayDifficulty === "gm" && game.user.isGM);
         const rollOptionContent = await renderTemplate(rollOptionTpl, {
@@ -298,7 +298,7 @@ export class CoCRoll {
         else {
             const displayDifficulty = game.settings.get("coc", "displayDifficulty");
             if ( displayDifficulty !== "none" && game.user.targets.size > 0) {
-                diff = [...game.user.targets][0].actor.data.data.attributes.def.value;
+                diff = [...game.user.targets][0].actor.system.attributes.def.value;
             }
             isDifficultyDisplayed = displayDifficulty === "all" || (displayDifficulty === "gm" && game.user.isGM);
         }
@@ -448,18 +448,18 @@ export class CoCRoll {
      * @returns
      */
     static rollRecoveryUse(data, actor, withHPrecovery) {
-        let recoveryPoints = data.attributes.rp.value;
+        let recoveryPoints = data.system.attributes.rp.value;
         if (!recoveryPoints > 0) return;
 
-        let hp = data.attributes.hp;
-        let rp = data.attributes.rp;
-        const level = data.level.value;
-        const conMod = data.stats.con.mod;
-        const actorData = actor.data;
+        let hp = data.system.attributes.hp;
+        let rp = data.system.attributes.rp;
+        const level = data.system.level.value;
+        const conMod = data.system.stats.con.mod;
+        const actorData = actor;
 
         if (!withHPrecovery) {
             rp.value -= 1;
-            actor.update({ 'data.attributes.rp': rp });
+            actor.update({ 'system.attributes.rp': rp });
         }
         else {
 
@@ -467,7 +467,7 @@ export class CoCRoll {
                 title: game.i18n.format("COC.dialog.spendRecoveryPoint.title"),
                 content: `<p>Êtes-vous sûr de vouloir dépenser 1 point de récupération ?`,
                 yes: async () => {
-                        const hd = actorData.data.attributes.hd.value;
+                        const hd = actorData.system.attributes.hd.value;
                         const hdmax = parseInt(hd.split("d")[1]);
                         const bonus = level + conMod;
                         const formula = `1d${hdmax} + ${bonus}`;
@@ -477,7 +477,7 @@ export class CoCRoll {
 
                         hp.value += result.total;
                         rp.value -= 1;
-                        actor.update({ 'data.attributes.hp': hp, 'data.attributes.rp': rp });
+                        actor.update({ 'system.attributes.hp': hp, 'system.attributes.rp': rp });
                 },
                 defaultYes: false
             });

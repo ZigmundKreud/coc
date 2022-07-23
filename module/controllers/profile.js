@@ -11,22 +11,22 @@ export class Profile {
 
             // ajoute le profil dans Items
             return actor.createEmbeddedDocuments("Item", [itemData], {}).then(newProfile => {
-                let newProfileData = newProfile[0].data;
+                let newProfileData = newProfile[0];
                 return Traversal.mapItemsOfType(["path"]).then(paths => {
-                    newProfileData.data.paths = newProfileData.data.paths.map(p => {
+                    newProfileData.system.paths = newProfileData.system.paths.map(p => {
                         let pathData = paths[p._id];
                         pathData.flags.core = { sourceId: p.sourceId };
-                        pathData.data.profile = {
+                        pathData.system.profile = {
                             _id: newProfileData._id,
                             name: newProfileData.name,
                             img: newProfileData.img,
-                            key: newProfileData.data.key,
+                            key: newProfileData.system.key,
                             sourceId: newProfileData.flags.core.sourceId,
                         };
                         return pathData;
                     });
                     // add paths from profile
-                    return Path.addPathsToActor(actor, newProfileData.data.paths)
+                    return Path.addPathsToActor(actor, newProfileData.system.paths)
                 });
             });
         }
@@ -42,7 +42,7 @@ export class Profile {
      * @returns
      */
     static removeFromActor(actor, profile) {
-        const paths = actor.items.filter(item => item.type === "path" && item.data.data.profile?._id === profile.id);
+        const paths = actor.items.filter(item => item.type === "path" && item.system.profile?._id === profile.id);
         return Dialog.confirm({
             title: "Supprimer le profil",
             content: `<p>Etes-vous sûr de vouloir supprimer le profil de ${actor.name} ?</p>`,

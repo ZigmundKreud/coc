@@ -52,19 +52,19 @@ export class Macros {
         let statObj;
         switch(stat){
             case "for" :
-            case "str" : statObj = eval(`actor.data.data.stats.str`); break;
-            case "dex" : statObj = eval(`actor.data.data.stats.dex`); break;
-            case "con" : statObj = eval(`actor.data.data.stats.con`); break;
-            case "int" : statObj = eval(`actor.data.data.stats.int`); break;
+            case "str" : statObj = eval(`actor.system.stats.str`); break;
+            case "dex" : statObj = eval(`actor.system.stats.dex`); break;
+            case "con" : statObj = eval(`actor.system.stats.con`); break;
+            case "int" : statObj = eval(`actor.system.stats.int`); break;
             case "sag" :
-            case "wis" : statObj = eval(`actor.data.data.stats.wis`); break;
-            case "cha" : statObj = eval(`actor.data.data.stats.cha`); break;
+            case "wis" : statObj = eval(`actor.system.stats.wis`); break;
+            case "cha" : statObj = eval(`actor.system.stats.cha`); break;
             case "atc" :
-            case "melee" : statObj = eval(`actor.data.data.attacks.melee`); break;
+            case "melee" : statObj = eval(`actor.system.attacks.melee`); break;
             case "atd" :
-            case "ranged" : statObj = eval(`actor.data.data.attacks.ranged`); break;
+            case "ranged" : statObj = eval(`actor.system.attacks.ranged`); break;
             case "atm" :
-            case "magic" : statObj = eval(`actor.data.data.attacks.magic`); break;
+            case "magic" : statObj = eval(`actor.system.attacks.magic`); break;
             default :
                 ui.notifications.error(game.i18n.localize("COC.notification.MacroUnknownStat"));
                 break;
@@ -118,26 +118,26 @@ export class Macros {
         const item = actor.items.get(itemId);
         if (!item) return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemMissing', {item:itemName}));
 
-        const itemData = item.data;
+        const itemData = item;
 
-        if(itemData.data.properties.weapon || itemData.data.properties.heal){
-            if (itemData.data.properties.weapon){
-                if (itemData.data.properties.equipable && !itemData.data.worn) {
+        if(itemData.system.properties.weapon || itemData.system.properties.heal){
+            if (itemData.system.properties.weapon){
+                if (itemData.system.properties.equipable && !itemData.system.worn) {
                     return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemUnequiped', {item: itemName}));
                 }
                 const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;
-                const critrange = itemData.data.critrange;
+                const critrange = itemData.system.critrange;
 
                 // Compute MOD
-                const itemModStat = itemData.data.skill.split("@")[1];
-                const itemModBonus = parseInt(itemData.data.skillBonus);
+                const itemModStat = itemData.system.skill.split("@")[1];
+                const itemModBonus = parseInt(itemData.system.skillBonus);
 
                 let mod = actor.computeWeaponMod(itemModStat, itemModBonus);
 
                 // Compute DM
-                const itemDmgBase = itemData.data.dmgBase;
-                const itemDmgStat = itemData.data.dmgStat.split("@")[1];
-                const itemDmgBonus = parseInt(itemData.data.dmgBonus);
+                const itemDmgBase = itemData.system.dmgBase;
+                const itemDmgStat = itemData.system.dmgStat.split("@")[1];
+                const itemDmgBonus = parseInt(itemData.system.dmgBonus);
 
                 let dmg = actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
 
@@ -158,8 +158,8 @@ export class Macros {
                     }
                 }
             }
-            if (itemData.data.properties.heal){
-                new CocHealingRoll(itemData.name, itemData.data.effects.heal.formula, false).roll(actor);
+            if (itemData.system.properties.heal){
+                new CocHealingRoll(itemData.name, itemData.system.effects.heal.formula, false).roll(actor);
             }
         }
         else { return item.sheet.render(true); }

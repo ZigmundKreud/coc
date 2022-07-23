@@ -53,8 +53,13 @@ export class CoCBaseSheet extends ActorSheet {
         // Click to open
         html.find('.item-create.coc-compendium-pack').click(ev => {
             ev.preventDefault();
-            let li = $(ev.currentTarget), pack = game.packs.get(li.data("pack"));
-            if (li.attr("data-open") === "1") pack.close();
+            let li = $(ev.currentTarget)
+            let packName = li.data("pack").startsWith("coc.") ? li.data("pack") : `coc.${li.data("pack")}`;
+            let pack = game.packs.get(packName);
+            if (li.attr("data-open") === "1") {
+                li.attr("data-open", "0");
+                pack.apps[0].close();
+            }
             else {
                 li.attr("data-open", "1");
                 pack.render(true);
@@ -89,16 +94,16 @@ export class CoCBaseSheet extends ActorSheet {
             const actor = this.actor;
             itemList.slideToggle("fast", function () {
                 ol.toggleClass("folded");
-                if (actor.data.data.settings) {
+                if (actor.system.settings) {
                     if (ol.hasClass("folded")) {
-                        if (!actor.data.data.settings[tab].folded.includes(category)) {
-                            actor.data.data.settings[tab].folded.push(category);
+                        if (!actor.system.settings[tab].folded.includes(category)) {
+                            actor.system.settings[tab].folded.push(category);
                         }
                     } else {
-                        ArrayUtils.remove(actor.data.data.settings[tab].folded, category)
+                        ArrayUtils.remove(actor.system.settings[tab].folded, category)
                     }
                 }
-                actor.update({ "data.settings": actor.data.data.settings })
+                actor.update({ "system.settings": actor.system.settings })
             });
         });
 
@@ -164,7 +169,7 @@ export class CoCBaseSheet extends ActorSheet {
         event.preventDefault();
         let li = $(event.currentTarget).parents('.item').children('.item-summary');
         let entity = this.actor.items.get($(event.currentTarget).parents('.item').data("itemId"));
-        if (entity && (entity.data.type === "capacity" || entity.data.type === "encounterWeapon" ) ) {
+        if (entity && (entity.type === "capacity" || entity.type === "encounterWeapon" ) ) {
             if (li.hasClass('expanded')) {
                 li.css("display", "none");
             }
@@ -253,7 +258,7 @@ export class CoCBaseSheet extends ActorSheet {
         let itemId = li.data("itemId");
         const entity = this.actor.items.find(item => item.id === itemId);
         itemId = itemId instanceof Array ? itemId : [itemId];
-        switch (entity.data.type) {
+        switch (entity.type) {
             case "capacity": return Capacity.removeFromActor(this.actor, entity);
             case "path": return Path.removeFromActor(this.actor, entity);
             case "profile": return Profile.removeFromActor(this.actor, entity);
@@ -291,9 +296,9 @@ export class CoCBaseSheet extends ActorSheet {
         if ( !this.actor.isOwner ) return false;
 
         const item = await Item.fromDropData(data);
-        if (!COC.actorsAllowedItems[this.actor.data.type]?.includes(item.data.type)) return;
+        if (!COC.actorsAllowedItems[this.actor.type]?.includes(item.type)) return;
 
-        const itemData = duplicate(item.data);
+        const itemData = duplicate(item);
         switch (itemData.type) {
             case "path": return await Path.addToActor(this.actor, item);
             case "profile": return await Profile.addToActor(this.actor, itemData);
@@ -302,30 +307,22 @@ export class CoCBaseSheet extends ActorSheet {
             default: {
                 // Handle item sorting within the same Actor
                 const actor = this.actor;
-                let sameActor = (data.actorId === actor.id) && ((!actor.isToken && !data.tokenId) || (data.tokenId === actor.token.id));
+                let sameActor = (item.actor?.id === actor.id) && ((!actor.isToken && !data.tokenId) || (data.tokenId === actor.token.id));
                 if (sameActor) return this._onSortItem(event, itemData);
 
                 // On force le nouvel Item a ne pas être équipé (notamment lors du transfert d'un inventaire à un autre)
-                if (itemData.data.worn) itemData.data.worn = false;
+                if (itemData.system.worn) itemData.system.worn = false;
 
                 // Create the owned item
-                return this.actor.createEmbeddedDocuments("Item", [itemData]).then((item)=>{
+                return this.actor.createEmbeddedDocuments("Item", [itemData]).then(async () => {
                     // Si il n'y as pas d'actor id, il s'agit d'un objet du compendium, on quitte
-                    if (!data.actorId) return item;
+                    if (!item.actor) return item;
 
                     // Si l'item doit être "move", on le supprime de l'actor précédent
                     let moveItem = game.settings.get("coc","moveItem");
                     if (moveItem ^ event.shiftKey) {
-
-                        if (!data.tokenId){
-                            let originalActor = ActorDirectory.collection.get(data.actorId);
-                            originalActor.deleteEmbeddedDocuments("Item", [data.data._id]);
-                        }
-                        else{
-                            let token = TokenLayer.instance.placeables.find(token=>token.id === data.tokenId);
-                            let oldItem = token?.document.getEmbeddedCollection('Item').get(data.data._id);
-                            oldItem?.delete();
-                        }
+                        const originalActor = (await fromUuid(data.uuid)).actor
+                        originalActor.deleteEmbeddedDocuments("Item", [item.id]);
                     }
                 });
             }
@@ -389,13 +386,13 @@ export class CoCBaseSheet extends ActorSheet {
 
         data.effects = data.actor.effects;
         data.folded = {
-            "combat": (actorData.data.settings?.combat) ? actorData.data.settings?.combat.folded : [],
-            "inventory": (actorData.data.settings?.inventory) ? actorData.data.settings?.inventory.folded : [],
-            "capacities": (actorData.data.settings?.capacities) ? actorData.data.settings?.capacities.folded : [],
-            "effects": (actorData.data.settings?.effects) ? actorData.data.settings?.effects.folded : []
+            "combat": (actorData.system.settings?.combat) ? actorData.system.settings?.combat.folded : [],
+            "inventory": (actorData.system.settings?.inventory) ? actorData.system.settings?.inventory.folded : [],
+            "capacities": (actorData.system.settings?.capacities) ? actorData.system.settings?.capacities.folded : [],
+            "effects": (actorData.system.settings?.effects) ? actorData.system.settings?.effects.folded : []
         };
         data.actor = actorData;
-        data.data = actorData.data;
+        data.system = actorData.system;
 
         return data;
 	}

@@ -1,5 +1,6 @@
 import {CharacterGeneration} from "./chargen.js";
 import {Hitpoints} from "../controllers/hitpoints.js";
+import {CoCActor} from "../actors/actor.js"
 
 export default function registerHooks() {
 
@@ -74,13 +75,14 @@ export default function registerHooks() {
          Hooks.on("hotbarDrop", async (bar, data, slot) => {
             // Create item macro if rollable item - weapon, spell, prayer, trait, or skill
             if (data.type == "Item") {
-                let item = data.data;
+                let item = await fromUuid(data.uuid);
 
                 if (item === undefined) return;
+                if (item.type === "encounterWeapon") return;
 
                 let command = `let onlyDamage = false;\nlet customLabel = "";\nlet skillDescription = "";\nlet dmgDescription = "";\n\nif (event) {\n  if (event.shiftKey) onlyDamage = true;\n}\n\ngame.coc.macros.rollItemMacro("${item._id}", "${item.name}", "${item.type}", 0, 0, 0, onlyDamage, customLabel, skillDescription, dmgDescription);`;
 
-                let macro = game.macros.contents.find(m => (m.name === item.name) && (m.data.command === command));
+                let macro = game.macros.contents.find(m => (m.name === item.name) && (m.command === command));
                 if (!macro) {
                     macro = await Macro.create({
                         name: item.name,
@@ -94,14 +96,14 @@ export default function registerHooks() {
             }
             // Create a macro to open the actor sheet of the actor dropped on the hotbar
             else if (data.type == "Actor") {
-                let actor = game.actors.get(data.id);
-                let command = `game.actors.get("${data.id}").sheet.render(true)`
-                let macro = game.macros.contents.find(m => (m.name === actor.name) && (m.data.command === command));
+                let actor = await fromUuid(data.uuid);
+                let command = `game.actors.get("${actor.id}").sheet.render(true)`
+                let macro = game.macros.contents.find(m => (m.name === actor.name) && (m.command === command));
                 if (!macro) {
                     macro = await Macro.create({
-                        name: actor.data.name,
+                        name: actor.name,
                         type: "script",
-                        img: actor.data.img,
+                        img: actor.img,
                         command: command
                     }, {displaySheet: false});
                     game.user.assignHotbarMacro(macro, slot);
@@ -109,14 +111,14 @@ export default function registerHooks() {
             }
             // Create a macro to open the journal sheet of the journal dropped on the hotbar
             else if (data.type == "JournalEntry") {
-                let journal = game.journal.get(data.id);
-                let command = `game.journal.get("${data.id}").sheet.render(true)`
-                let macro = game.macros.contents.find(m => (m.name === journal.name) && (m.data.command === command));
+                let journal = await fromUuid(data.uuid);
+                let command = `game.journal.get("${journal.id}").sheet.render(true)`
+                let macro = game.macros.contents.find(m => (m.name === journal.name) && (m.command === command));
                 if (!macro) {
                     macro = await Macro.create({
-                        name: journal.data.name,
+                        name: journal.name,
                         type: "script",
-                        img: (journal.data.img) ? journal.data.img : "icons/svg/book.svg",
+                        img: (journal.img) ? journal.img : "icons/svg/book.svg",
                         command: command
                     }, {displaySheet: false});
                     game.user.assignHotbarMacro(macro, slot);
@@ -198,7 +200,7 @@ export default function registerHooks() {
         // Si l'effet ne s'applique pas à un actor, on quitte en laissant l'effet se créer normalement
         if (!activeEffect.parent instanceof CoCActor) return;
 
-        let origin = activeEffect.data.origin;
+        let origin = activeEffect.origin;
         // Si l'effet ne provient pas d'un item, on quitte en laissant l'effet se créer normalement
         if (!/Item\.[^.]+$/.test(origin)) return;
 
@@ -215,13 +217,13 @@ export default function registerHooks() {
         else return true;
 
         // Si l'item parent n'est pas équipable, on quitte en laissant l'effet se créer normalement
-        let itemData = item.data;
-        if (!itemData.data.properties.equipable) return;
+        let itemData = item;
+        if (!itemData.system.properties?.equipable) return;
 
         // Si l'effet est déjà à jour, on quitte
-        if (activeEffect.data.disabled === !itemData.worn) return;
+        if (activeEffect.disabled === !itemData.system.worn) return;
 
         // On met à jour l'effet en fonction du fait que l'item est équipé ou non
-        activeEffect.update({disabled: !itemData.worn});
+        activeEffect.update({disabled: !itemData.system.worn});
     });
 }

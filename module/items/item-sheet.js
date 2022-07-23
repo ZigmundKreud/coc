@@ -51,7 +51,10 @@ export class CoCItemSheet extends ItemSheet {
         html.find('.coc-compendium-pack').click(ev => {
             ev.preventDefault();
             let li = $(ev.currentTarget), pack = game.packs.get(li.data("pack"));
-            if ( li.attr("data-open") === "1" ) pack.close();
+            if ( li.attr("data-open") === "1" ) {
+                li.attr("data-open", "0");
+                pack.apps[0].close();
+            }
             else {
                 li.attr("data-open", "1");
                 li.find("i.folder").removeClass("fa-folder").addClass("fa-folder-open");
@@ -115,7 +118,7 @@ export class CoCItemSheet extends ItemSheet {
             const effectId = elt.data("itemId");
             let effect = this.item.effects.get(effectId);
             if (effect) {
-                effect.update({ disabled: !effect.data.disabled })
+                effect.update({ disabled: !effect.disabled })
             }
         });
 
@@ -167,7 +170,7 @@ export class CoCItemSheet extends ItemSheet {
      */
     async _onDropItem(event, data) {
         Item.fromDropData(data).then(item => {
-            const itemData = duplicate(item.data);
+            const itemData = duplicate(item);
             switch (itemData.type) {
                 case "path": return this._onDropPathItem(event, itemData);
                 case "capacity": return this._onDropCapacityItem(event, itemData);
@@ -198,7 +201,7 @@ export class CoCItemSheet extends ItemSheet {
 
     _onDropPathItem(event, itemData) {
         event.preventDefault();
-        if (this.item.data.type === "profile") return Path.addToItem(this.item, itemData);
+        if (this.item.type === "profile") return Path.addToItem(this.item, itemData);
         else return false;
     }
 
@@ -206,7 +209,7 @@ export class CoCItemSheet extends ItemSheet {
 
     _onDropCapacityItem(event, itemData) {
         event.preventDefault();
-        if (this.item.data.type === "path") return Capacity.addToItem(this.item, itemData);
+        if (this.item.type === "path") return Capacity.addToItem(this.item, itemData);
         else return false;
     }
 
@@ -233,14 +236,14 @@ export class CoCItemSheet extends ItemSheet {
 
     _onDeleteItem(ev){
         ev.preventDefault();
-        let data = duplicate(this.item.data);
+        let data = duplicate(this.item);
         const li = $(ev.currentTarget).closest(".item");
         const id = li.data("itemId");
         const itemType = li.data("itemType");
         let array = null;
         switch(itemType){
-            case "path" : array = data.data.paths; break;
-            case "capacity" : array = data.data.capacities; break;
+            case "path" : array = data.system.paths; break;
+            case "capacity" : array = data.system.capacities; break;
         }
         const item = array.find(e => e._id === id);
         if(array && array.includes(item)) {
@@ -266,7 +269,7 @@ export class CoCItemSheet extends ItemSheet {
         // Les boutons sont masqués si l'item appartient à un actor
         data.isEffectsEditable = !this.item.actor && options.editable;
         data.item = itemData;
-        data.data = itemData.data;
+        data.system = itemData.system;
 
         return data;
     }
@@ -283,7 +286,7 @@ export class CoCItemSheet extends ItemSheet {
         // const labels = this.item.labels;
 
         if ( item.type === "item" ) {
-            const entries = Object.entries(item.data.data.properties)
+            const entries = Object.entries(item.system.properties)
             props.push(...entries.filter(e => e[1] === true).map(e => {
                 return game.coc.config.itemProperties[e[0]]
             }));
@@ -300,106 +303,106 @@ export class CoCItemSheet extends ItemSheet {
         const input = $(event.currentTarget).find("input");
         const name = input.attr('name');
         const checked = input.prop('checked')
-        if (name === "data.properties.equipment" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.properties.equipable = false;
-            data.data.slot = "";
-            data.data.properties.stackable = false;
-            data.data.qty = 1;
-            data.data.stacksize = null;
-            data.data.properties.unique = false;
-            data.data.properties.consumable = false;
-            data.data.properties.tailored = false;
-            data.data.properties["2H"] = false;
-            data.data.price = 0;
-            data.data.value = 0;
-            data.data.rarity = "";
+        if (name === "system.properties.equipment" && !checked) {
+            let data = duplicate(this.item);
+            data.system.properties.equipable = false;
+            data.system.slot = "";
+            data.system.properties.stackable = false;
+            data.system.qty = 1;
+            data.system.stacksize = null;
+            data.system.properties.unique = false;
+            data.system.properties.consumable = false;
+            data.system.properties.tailored = false;
+            data.system.properties["2H"] = false;
+            data.system.price = 0;
+            data.system.value = 0;
+            data.system.rarity = "";
             return this.item.update(data);
         }
-        if (name === "data.properties.equipable" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.slot = "";
+        if (name === "system.properties.equipable" && !checked) {
+            let data = duplicate(this.item);
+            data.system.slot = "";
             return this.item.update(data);
         }
-        if (name === "data.properties.stackable" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.qty = 1;
-            data.data.stacksize = null;
+        if (name === "system.properties.stackable" && !checked) {
+            let data = duplicate(this.item);
+            data.system.qty = 1;
+            data.system.stacksize = null;
             return this.item.update(data);
         }
-        if (name === "data.properties.weapon" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.skill = "@attacks.melee.mod";
-            data.data.skillBonus = 0;
-            data.data.dmgBase = 0;
-            data.data.dmgStat = "";
-            data.data.dmgBonus = 0;
-            data.data.critrange = "20"
-            data.data.properties.bashing = false;
-            data.data.properties["13strmin"] = false;
+        if (name === "system.properties.weapon" && !checked) {
+            let data = duplicate(this.item);
+            data.system.skill = "@attacks.melee.mod";
+            data.system.skillBonus = 0;
+            data.system.dmgBase = 0;
+            data.system.dmgStat = "";
+            data.system.dmgBonus = 0;
+            data.system.critrange = "20"
+            data.system.properties.bashing = false;
+            data.system.properties["13strmin"] = false;
             return this.item.update(data);
         }
-        if (name === "data.properties.protection" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.defBase = 0;
-            data.data.defBonus = 0;
-            data.data.properties.dr = false;
-            data.data.dr = 0;
+        if (name === "system.properties.protection" && !checked) {
+            let data = duplicate(this.item);
+            data.system.defBase = 0;
+            data.system.defBonus = 0;
+            data.system.properties.dr = false;
+            data.system.dr = 0;
             return this.item.update(data);
         }
-        if (name === "data.properties.dr" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.dr = 0;
+        if (name === "system.properties.dr" && !checked) {
+            let data = duplicate(this.item);
+            data.system.dr = 0;
             return this.item.update(data);
         }
-        if (name === "data.properties.ranged" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.range = 0;
-            data.data.properties.reloadable = false;
-            data.data.properties.salve = false;
-            data.data.properties.proneshot = false;
-            data.data.properties.explosive = false;
-            data.data.reload = "";
+        if (name === "system.properties.ranged" && !checked) {
+            let data = duplicate(this.item);
+            data.system.range = 0;
+            data.system.properties.reloadable = false;
+            data.system.properties.salve = false;
+            data.system.properties.proneshot = false;
+            data.system.properties.explosive = false;
+            data.system.reload = "";
             return this.item.update(data);
         }
-        if (name === "data.properties.reloadable" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.reload = "";
+        if (name === "system.properties.reloadable" && !checked) {
+            let data = duplicate(this.item);
+            data.system.reload = "";
             return this.item.update(data);
         }
-        if (name === "data.properties.effects" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.properties.heal = false;
-            data.data.properties.buff = false;
-            data.data.properties.temporary = false;
-            data.data.properties.persistent = false;
-            data.data.properties.spell = false;
-            data.data.effects.heal.formula = null;
-            data.data.effects.buff.formula = null;
-            data.data.properties.duration.formula = null;
-            data.data.properties.duration.units = "";
-            data.data.properties.activable = false;
+        if (name === "system.properties.effects" && !checked) {
+            let data = duplicate(this.item);
+            data.system.properties.heal = false;
+            data.system.properties.buff = false;
+            data.system.properties.temporary = false;
+            data.system.properties.persistent = false;
+            data.system.properties.spell = false;
+            data.system.effects.heal.formula = null;
+            data.system.effects.buff.formula = null;
+            data.system.properties.duration.formula = null;
+            data.system.properties.duration.units = "";
+            data.system.properties.activable = false;
             return this.item.update(data);
         }
-        if (name === "data.properties.heal" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.effects.heal.formula = null;
+        if (name === "system.properties.heal" && !checked) {
+            let data = duplicate(this.item);
+            data.system.effects.heal.formula = null;
             return this.item.update(data);
         }
-        if (name === "data.properties.buff" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.effects.buff.formula = null;
+        if (name === "system.properties.buff" && !checked) {
+            let data = duplicate(this.item);
+            data.system.effects.buff.formula = null;
             return this.item.update(data);
         }
-        if (name === "data.properties.temporary" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.properties.duration.formula = null;
-            data.data.properties.duration.units = "";
+        if (name === "system.properties.temporary" && !checked) {
+            let data = duplicate(this.item);
+            data.system.properties.duration.formula = null;
+            data.system.properties.duration.units = "";
             return this.item.update(data);
         }
-        if (name === "data.properties.spell" && !checked) {
-            let data = duplicate(this.item.data);
-            data.data.properties.activable = false;
+        if (name === "system.properties.spell" && !checked) {
+            let data = duplicate(this.item);
+            data.system.properties.activable = false;
             return this.item.update(data);
         }
     }

@@ -21,7 +21,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
         if (COC.debug) console.log("COC | NpcSheet getData", data);
 
         // The Actor's data
-        const actorData = this.actor.data.toObject(false);
+        const actorData = this.actor.toObject(false);
 
         // Owned Items
         data.profile = actorData.items.find(item => item.type === "profile");
@@ -39,18 +39,18 @@ export class CoCNpcSheet extends CoCBaseSheet {
             id: "standalone-capacities",
             label: "Capacités Hors-Voies",
             items: Object.values(actorData.items).filter(item => {
-                if (item.type === "capacity" && item.data.path.key === "") {
+                if (item.type === "capacity" && item.system.path.key === "") {
                     return true;
                 }
             }).sort((a, b) => (a.name > b.name) ? 1 : -1)
         });
         for (const path of paths) {
             data.capacities.collections.push({
-                id: (path.data.key) ? path.data.key : path.name.slugify({ strict: true }),
+                id: (path.system.key) ? path.system.key : path.name.slugify({ strict: true }),
                 label: path.name,
                 items: Object.values(actorData.items).filter(item => {
-                    if (item.type === "capacity" && item.data.path._id === path._id) return true;
-                }).sort((a, b) => (a.data.rank > b.data.rank) ? 1 : -1)
+                    if (item.type === "capacity" && item.system.path._id === path._id) return true;
+                }).sort((a, b) => (a.system.rank > b.system.rank) ? 1 : -1)
             });
         }
 
@@ -67,7 +67,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
 
         // Combat and Inventory
         data.combat = {
-            count: data.items.filter(i => i.data.worn).length,
+            count: data.items.filter(i => i.system.worn).length,
             categories: []
         };
         data.inventory = {
@@ -78,31 +78,31 @@ export class CoCNpcSheet extends CoCBaseSheet {
             data.combat.categories.push({
                 id: category,
                 label: game.coc.config.itemCategories[category],
-                items: Object.values(data.items).filter(item => item.type === "item" && item.data.subtype === category && item.data.worn).sort((a, b) => (a.name > b.name) ? 1 : -1)
+                items: Object.values(data.items).filter(item => item.type === "item" && item.system.subtype === category && item.system.worn).sort((a, b) => (a.name > b.name) ? 1 : -1)
             });
             data.inventory.categories.push({
                 id: category,
                 label: "COC.category." + category,
-                items: Object.values(data.items).filter(item => item.type === "item" && item.data.subtype === category).sort((a, b) => (a.name > b.name) ? 1 : -1)
+                items: Object.values(data.items).filter(item => item.type === "item" && item.system.subtype === category).sort((a, b) => (a.name > b.name) ? 1 : -1)
             });
         }
 
         data.combat.categories.forEach(category => {
             if (category.items.length > 0) {
                 category.items.forEach(item => {
-                    if (item.data.properties?.weapon) {
+                    if (item.system.properties?.weapon) {
                         // Compute MOD
-                        const itemModStat = item.data.skill.split("@")[1];
-                        const itemModBonus = parseInt(item.data.skillBonus);
+                        const itemModStat = item.system.skill.split("@")[1];
+                        const itemModBonus = parseInt(item.system.skillBonus);
 
-                        item.data.mod = this.actor.computeWeaponMod(itemModStat, itemModBonus);
+                        item.system.mod = this.actor.computeWeaponMod(itemModStat, itemModBonus);
 
                         // Compute DM
-                        const itemDmgBase = item.data.dmgBase;
-                        const itemDmgStat = item.data.dmgStat.split("@")[1];
-                        const itemDmgBonus = parseInt(item.data.dmgBonus);
+                        const itemDmgBase = item.system.dmgBase;
+                        const itemDmgStat = item.system.dmgStat.split("@")[1];
+                        const itemDmgBonus = parseInt(item.system.dmgBonus);
 
-                        item.data.dmg = this.actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
+                        item.dmg = this.actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
                     }
                 });
             }
