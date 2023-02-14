@@ -262,7 +262,6 @@ export class CoCBaseSheet extends ActorSheet {
             case "capacity": return Capacity.removeFromActor(this.actor, entity);
             case "path": return Path.removeFromActor(this.actor, entity);
             case "profile": return Profile.removeFromActor(this.actor, entity);
-            case "species": return Species.removeFromActor(this.actor, entity);
             default: return this.actor.deleteEmbeddedDocuments("Item", itemId);
         }
     }
@@ -302,7 +301,6 @@ export class CoCBaseSheet extends ActorSheet {
         switch (itemData.type) {
             case "path": return await Path.addToActor(this.actor, item);
             case "profile": return await Profile.addToActor(this.actor, itemData);
-            case "species": return await Species.addToActor(this.actor, item);
             case "capacity":
             default: {
                 // Handle item sorting within the same Actor

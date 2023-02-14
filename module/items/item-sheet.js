@@ -175,7 +175,6 @@ export class CoCItemSheet extends ItemSheet {
                 case "path": return this._onDropPathItem(event, itemData);
                 case "capacity": return this._onDropCapacityItem(event, itemData);
                 case "profile": return this._onDropProfileItem(event, itemData);
-                case "species":
                 default: return false;
             }
         });
