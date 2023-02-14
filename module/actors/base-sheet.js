@@ -354,7 +354,6 @@ export class CoCBaseSheet extends ActorSheet {
             case "damage" : return CoCRoll.rollDamage(data.data, this.actor, event);
             case "encounter-weapon" : return CoCRoll.rollEncounterWeapon(data.data, this.actor, event);
             case "encounter-damage" : return CoCRoll.rollEncounterDamage(data.data, this.actor, event);
-            case "spell" : return CoCRoll.rollSpell(data.data, this.actor, event);
             case "hp" : return CoCRoll.rollHitPoints(data.data, this.actor, event);
             case "attributes" : return CoCRoll.rollAttributes(data.data, this.actor, event);
             case "recovery": return CoCRoll.rollRecoveryUse(data.data, this.actor, true);

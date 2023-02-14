@@ -81,22 +81,6 @@ export class CoCRoll {
     }
 
     /**
-     *  Handles spell rolls
-     * @param elt DOM element which raised the roll event
-     * @param key the key of the attribute to roll
-     * @private
-     */
-    static rollSpell(data, actor, event) {
-        const li = $(event.currentTarget).parents(".item");
-        let item = actor.items.get(li.data("itemId"));
-        let label = item.name;
-        let mod = item.system.mod;
-        let critrange = item.system.critrange;
-        let dmg = item.system.dmg;
-        return this.rollWeaponDialog(actor, label, mod, 0, critrange, dmg);
-    }
-
-    /**
      *  Handles Hit Points Rolls
      * @param elt DOM element which raised the roll event
      * @param key the key of the attribute to roll
