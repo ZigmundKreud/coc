@@ -431,5 +431,7 @@
   "SETTINGS.useMadness.name": "Madness points",
   "SETTINGS.useMadness.hint": "Display the points of madness on the character sheet",
   "SETTINGS.settingCyberpunk.name": "Cyberpunk setting",
-  "SETTINGS.settingCyberpunk.hint": "Change the rules to calculate MP"
+  "SETTINGS.settingCyberpunk.hint": "Change the rules to calculate MP",
+  "SETTINGS.useActionSound.name": "Sound for actions",
+  "SETTINGS.useActionSound.hint": "Play a sound for some actions" 
 } 

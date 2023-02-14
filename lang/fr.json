@@ -431,5 +431,7 @@
   "SETTINGS.useMadness.name": "Points de Folie",
   "SETTINGS.useMadness.hint": "Afficher les points de folie sur la fiche de personnage",
   "SETTINGS.settingCyberpunk.name": "Variante Cyberpunk",
-  "SETTINGS.settingCyberpunk.hint": "Change les règles de calcul des PM"
+  "SETTINGS.settingCyberpunk.hint": "Change les règles de calcul des PM",
+  "SETTINGS.useActionSound.name": "Son des actions",
+  "SETTINGS.useActionSound.hint": "Joue un son pour certaines actions (équiper, consommer)"  
 }

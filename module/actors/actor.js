@@ -394,7 +394,7 @@ export class CoCActor extends Actor {
             itemData.system.worn = !itemData.system.worn;
 
             return item.update(itemData).then((item)=>{
-                AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+                if (game.settings.get("coc","useActionSound")) AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
                 if (!bypassChecks) this.syncItemActiveEffects(item);
             });
         }
@@ -504,7 +504,7 @@ export class CoCActor extends Actor {
         if(consumable && quantity>0){
             let itemData = duplicate(item);
             itemData.system.qty = (itemData.system.qty > 0) ? itemData.system.qty - 1 : 0;
-            AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+            if (game.settings.get("coc","useActionSound")) AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
             return item.update(itemData).then(item => item.applyEffects(this));
         }
     }

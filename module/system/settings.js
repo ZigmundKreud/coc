@@ -39,6 +39,16 @@ export const registerSystemSettings = function() {
         type: Boolean
     });
 
+    game.settings.register("coc", "settingCyberpunk",{
+        name: "SETTINGS.settingCyberpunk.name",
+        hint: "SETTINGS.settingCyberpunk.hint",
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: reload
+    });    
+
     game.settings.register("coc", "useDamageResistance", {
         name: "SETTINGS.useDamageResistance.name",
         hint: "SETTINGS.useDamageResistance.hint",
@@ -46,6 +56,16 @@ export const registerSystemSettings = function() {
         config: true,
         default: false,
         type: Boolean
+    });
+
+    game.settings.register("coc", "useVarInit", {
+        name: "SETTINGS.useVarInit.name",
+        hint: "SETTINGS.useVarInit.hint",
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+        onChange: reload
     });
 
     game.settings.register("coc", "displayDifficulty", {
@@ -71,14 +91,13 @@ export const registerSystemSettings = function() {
         type: Boolean
     });
 
-    game.settings.register("coc", "useVarInit", {
-        name: "SETTINGS.useVarInit.name",
-        hint: "SETTINGS.useVarInit.hint",
+    game.settings.register("coc", "explosiveDice",{
+        name: "SETTINGS.explosiveDice.name",
+        hint: "SETTINGS.explosiveDice.hint",
         scope: "world",
         config: true,
-        default: false,
-        type: Boolean,
-        onChange: reload
+        default: true,
+        type: Boolean
     });
 
     game.settings.register("coc", "displayChatDamageButtonsToAll", {
@@ -112,15 +131,6 @@ export const registerSystemSettings = function() {
         type: Boolean
     });
 
-    game.settings.register("coc", "explosiveDice",{
-        name: "SETTINGS.explosiveDice.name",
-        hint: "SETTINGS.explosiveDice.hint",
-        scope: "world",
-        config: true,
-        default: true,
-        type: Boolean
-    });
-
     game.settings.register("coc", "checkFreeHandsBeforeEquip", {
         name: "SETTINGS.checkFreeHandsBeforeEquip.name",
         hint: "SETTINGS.checkFreeHandsBeforeEquip.hint",
@@ -149,14 +159,13 @@ export const registerSystemSettings = function() {
         }
     });
 
-    game.settings.register("coc", "settingCyberpunk",{
-        name: "SETTINGS.settingCyberpunk.name",
-        hint: "SETTINGS.settingCyberpunk.hint",
+    game.settings.register("coc", "useActionSound",{
+        name: "SETTINGS.useActionSound.name",
+        hint: "SETTINGS.useActionSound.hint",
         scope: "world",
         config: true,
-        default: false,
-        type: Boolean,
-        onChange: reload
+        default: true,
+        type: Boolean
     });
 
 };
