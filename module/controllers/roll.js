@@ -453,8 +453,6 @@ export class CoCRoll {
 
         let hp = data.system.attributes.hp;
         let rp = data.system.attributes.rp;
-        const level = data.system.level.value;
-        const conMod = data.system.stats.con.mod;
         const actorData = actor;
 
         if (!withHPrecovery) {
@@ -467,15 +465,7 @@ export class CoCRoll {
                 title: game.i18n.format("COC.dialog.spendRecoveryPoint.title"),
                 content: `<p>Êtes-vous sûr de vouloir dépenser 1 point de récupération ?`,
                 yes: async () => {
-                        const hd = actorData.system.attributes.hd.value;
-                        const hdmax = parseInt(hd.split("d")[1]);
-                        const bonus = level + conMod;
-                        const formula = `1d${hdmax} + ${bonus}`;
-
-                        let healingRoll = new CocHealingRoll("", formula, false, "Point de récupération", false);
-                        let result = await healingRoll.roll(actor);
-
-                        hp.value += result.total;
+                        hp.value = hp.max;
                         rp.value -= 1;
                         actor.update({ 'system.attributes.hp': hp, 'system.attributes.rp': rp });
                 },
