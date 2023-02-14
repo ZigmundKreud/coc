@@ -110,7 +110,7 @@ export class CoCRoll {
 
         return Dialog.confirm({
             title: game.i18n.format("COC.dialog.rollHitPoints.title"),
-            content: `<p>Êtes sûr de vouloir remplacer les points de vie de <strong>${actor.name}</strong></p>`,
+            content: `<p>Êtes-vous sûr de vouloir remplacer les points de vie de <strong>${actor.name}</strong></p>`,
             yes: async () => {
                 if (actorData.system.attributes.hd && actorData.system.attributes.hd.value) {
                     const hd = actorData.system.attributes.hd.value;
@@ -141,10 +141,10 @@ export class CoCRoll {
                         const bonus = (mods2add * conMod) + hpLvl1;
                         const formula = `${dice2Roll}d${hdmax} + ${bonus}`;
                         const r = new Roll(formula);
-                        await r.roll();
+                        await r.roll({ async: true });
                         r.toMessage({
                             user: game.user.id,
-                            flavor: "<h2>Roll Hit Points</h2>",
+                            flavor: "<h2>Lancer les points de vie</h2>",
                             speaker: ChatMessage.getSpeaker({actor: actor})
                         });
                         const minHp = dice2Roll + hpLvl1;
