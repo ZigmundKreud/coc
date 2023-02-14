@@ -35,13 +35,13 @@ export class CoCEncounterSheet extends CoCBaseSheet {
 
         // Combat and Inventory
         data.inventory = data.items.filter(i => i.type === "item");
-        data.capacities = data.items.filter(i => i.type === "capacity");        
+        data.capacities = data.items.filter(i => i.type === "capacity");
 
         data.weapons = data.items.filter(item=>item.type === "encounterWeapon");
         data.weapons.forEach((weapon)=>{
-            weapon.data.weapon.modTotal = weapon.data.weapon.mod + weapon.data.weapon.skillBonus;
-            weapon.data.weapon.dmgTotal = weapon.data.weapon.dmg;
-            if (weapon.data.weapon.dmgBonus > 0) weapon.data.weapon.dmgTotal += ` + ${weapon.data.weapon.dmgBonus}`;
+            weapon.system.weapon.modTotal = weapon.system.weapon.mod + weapon.system.weapon.skillBonus;
+            weapon.system.weapon.dmgTotal = weapon.system.weapon.dmg;
+            if (weapon.system.weapon.dmgBonus > 0) weapon.system.weapon.dmgTotal += ` + ${weapon.system.weapon.dmgBonus}`;
         });
 
         // Gestion des boutons de modification des effets (visible pour l'encounter)

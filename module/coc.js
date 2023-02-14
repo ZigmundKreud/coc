@@ -28,7 +28,7 @@ import {UpdateUtils} from "./utils/update-utils.js";
 Hooks.once("init", function () {
 
     console.info("COC | "+ System.label + " | System Initializing...");
-    console.info(System.ASCII);  
+    console.info(System.ASCII);
 
     // Register System Settings
     registerSystemSettings();
@@ -48,7 +48,7 @@ Hooks.once("init", function () {
         decimals: 2
       };
     }
-   
+
     // Record Configuration values
     CONFIG.COC = COC;
 
@@ -75,7 +75,7 @@ Hooks.once("init", function () {
     Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: false, label: "COC.sheet.encounter"});
 
     // Register item sheets
-    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});    
+    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});
 
     // Preload Handlebars Templates
     preloadHandlebarsTemplates();

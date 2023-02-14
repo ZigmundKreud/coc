@@ -7,10 +7,10 @@ export class Hitpoints {
             ui.notifications.error("Vous devez sélectionner au moins une cible pour appliquer les dégâts.");
         } else {
             for(let target of targets){
-                let data = duplicate(target.actor.data);
-                let hp = data.data.attributes.hp;
+                let data = duplicate(target.actor);
+                let hp = data.system.attributes.hp;
                 // Application de la RD si c'est cochée
-                const finalAmount = amount + (dr ? data.data.attributes.dr.value : 0);
+                const finalAmount = amount + (dr ? target.actor.system.attributes.dr.value : 0);
                 hp.value += finalAmount;
 
                 target.actor.update(data);

@@ -8,8 +8,8 @@ export class UpdateUtils {
                 // PATHS
                 Traversal.getEntitiesOfType(["path"]).then(paths => {
                     paths.forEach(path => {
-                        let data = duplicate(path.data);
-                        data.data.capacities = data.data.capacities.map(cid => {
+                        let data = duplicate(path);
+                        data.system.capacities = data.system.capacities.map(cid => {
                             if (typeof cid === "string") {
                                 // not updated
                                 return index[cid];
@@ -24,8 +24,8 @@ export class UpdateUtils {
                 // PROFILES
                 Traversal.getEntitiesOfType(["profile"]).then(profiles => {
                     profiles.forEach(profile => {
-                        let data = duplicate(profile.data);
-                        data.data.paths = data.data.paths.map(pid => {
+                        let data = duplicate(profile);
+                        data.system.paths = data.system.paths.map(pid => {
                             if (typeof pid === "string") {
                                 // not updated
                                 return index[pid];

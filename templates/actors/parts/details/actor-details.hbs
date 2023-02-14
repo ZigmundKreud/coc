@@ -17,13 +17,13 @@
                     <span class="field-label">{{ localize 'COC.attributes.level.label' }}</span>
                 </div>
                 <div class="flex2 center cell">
-                    <input class="level" name="data.level.value" type="text" value="{{actor.data.level.value}}" placeholder="Level" data-dtype="Number"/>
+                    <input class="level" name="system.level.value" type="text" value="{{actor.system.level.value}}" placeholder="Level" data-dtype="Number"/>
                 </div>
             </div>
         {{/if}}
         <!-- /LEVEL -->
     </div>
-    <div class="flex1 layout">        
+    <div class="flex1 layout">
         {{#if (isNotLimited @root)}}
             <!-- TRAIT -->
             <div class="flexrow">
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!-- /TRAIT -->
-            <!-- PROFILE -->        
+            <!-- PROFILE -->
             <div class="flexrow">
                 <div class="flex2 center cell-header">
                     <span class="field-label">{{ localize 'COC.details.profile' }}</span>
@@ -52,7 +52,7 @@
                     <a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a>
                 </div>
                 {{/with}}
-                </div>       
+                </div>
             </div>
             <!-- /PROFILE -->
         {{/if}}

@@ -8,8 +8,8 @@
             <div class="item-subtitle">
                 <h4 class="item-type">{{localize (concat "COC.category." item.type)}}</h4>
                 <span class="item-status">
-                    {{#if data.setting}}
-                    {{localize (concat "COC.setting." data.setting)}}
+                    {{#if system.setting}}
+                    {{localize (concat "COC.setting." system.setting)}}
                     {{/if}}
                 </span>
             </div>
@@ -27,7 +27,7 @@
     <section class="sheet-body">
         <div class="tab flexrow active no-wrap" data-group="primary" data-tab="description">
             {{> "systems/coc/templates/items/parts/properties/item-properties.hbs"}}
-            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+            {{editor system.description target="system.description" button=true owner=owner editable=editable}}
         </div>
         {{#if (isNotLimited @root)}}
             <div class="tab details" data-group="primary" data-tab="details">
@@ -51,7 +51,7 @@
                 {{/if}}
             </div>
             <div class="tab" data-group="primary" data-tab="effets">
-                {{> "systems/coc/templates/effects/effects.hbs"}}            
+                {{> "systems/coc/templates/effects/effects.hbs"}}
             </div>
         {{/if}}
     </section>

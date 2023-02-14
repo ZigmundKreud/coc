@@ -17,7 +17,7 @@
                     <span class="field-label">{{ localize 'COC.attributes.nc.abbrev' }}</span>
                 </div>
                 <div class="flex2 center cell">
-                    <input class="level" name="data.nc.value" type="text" value="{{actor.data.nc.value}}" placeholder="{{ localize 'COC.attributes.nc.label' }}" data-dtype="Number"/>
+                    <input class="level" name="system.nc.value" type="text" value="{{actor.system.nc.value}}" placeholder="{{ localize 'COC.attributes.nc.label' }}" data-dtype="Number"/>
                 </div>
             </div>
         {{/if}}
@@ -28,8 +28,8 @@
                 <span class="field-label">{{ localize 'COC.details.size' }}</span>
             </div>
             <div class="flex2 center cell">
-                <select name="data.details.size" data-type="String" style="width:100%">
-                    {{#select data.details.size}}
+                <select name="system.details.size" data-type="String" style="width:100%">
+                    {{#select system.details.size}}
                         <option value="">{{localize "COC.None"}}</option>
                         <option value="tiny">Minuscule</option>
                         <option value="small">Très petite</option>
@@ -52,8 +52,8 @@
                     <span class="field-label">{{ localize 'COC.ui.archetype' }}</span>
                 </div>
                 <div class="flex2 center cell">
-                    <select name="data.archetype" data-type="String" style="width:100%">
-                        {{#select data.archetype}}
+                    <select name="system.archetype" data-type="String" style="width:100%">
+                        {{#select system.archetype}}
                             <option value="">{{localize "COC.None"}}</option>
                             <option value="standard">Standard</option>
                             <option value="rapide">Rapide</option>
@@ -70,8 +70,8 @@
                     <span class="field-label">{{ localize 'COC.ui.category' }}</span>
                 </div>
                 <div class="flex2 center cell">
-                    <select name="data.category" data-type="String" style="width:100%">
-                        {{#select data.category}}
+                    <select name="system.category" data-type="String" style="width:100%">
+                        {{#select system.category}}
                             <option value="">{{localize "COC.None"}}</option>
                             <option value="vivante">Vivante</option>
                             <option value="humanoïde">Humanoïde</option>
@@ -88,8 +88,8 @@
                     <span class="field-label">{{ localize 'COC.ui.boss' }}</span>
                 </div>
                 <div class="flex2 center cell">
-                    <select name="data.boss.rank" data-type="String" style="width:100%">
-                        {{#select data.boss.rank}}
+                    <select name="system.boss.rank" data-type="String" style="width:100%">
+                        {{#select system.boss.rank}}
                             <option value="">{{localize "COC.None"}}</option>
                             <option value="1">Endurci</option>
                             <option value="2">Expert</option>

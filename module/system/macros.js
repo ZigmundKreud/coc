@@ -7,8 +7,8 @@ export class Macros {
     /**
      * @name getSpeakersActor
      * @description
-     * 
-     * @returns 
+     *
+     * @returns
      */
     static getSpeakersActor = function(){
         // Vérifie qu'un seul token est sélectionné
@@ -17,7 +17,7 @@ export class Macros {
             ui.notifications.warn(game.i18n.localize('COC.notification.MacroMultipleTokensSelected'));
             return null;
         }
-        
+
         const speaker = ChatMessage.getSpeaker();
         let actor;
         // Si un token est sélectionné, le prendre comme acteur cible
@@ -30,18 +30,18 @@ export class Macros {
     /**
      * @anme rollStatMacro
      * @description
-     * 
-     * @param {*} actor 
-     * @param {*} stat 
-     * @param {*} bonus 
-     * @param {*} malus 
-     * @param {*} onEnter 
-     * @param {*} label 
-     * @param {*} description 
-     * @param {*} dialog 
-     * @param {*} dice 
-     * @param {*} difficulty 
-     * @returns 
+     *
+     * @param {*} actor
+     * @param {*} stat
+     * @param {*} bonus
+     * @param {*} malus
+     * @param {*} onEnter
+     * @param {*} label
+     * @param {*} description
+     * @param {*} dialog
+     * @param {*} dice
+     * @param {*} difficulty
+     * @returns
      */
      static rollStatMacro = async function (actor, stat, bonus = 0, malus = 0, onEnter = "submit", label, description, dialog=true, dice="1d20", difficulty) {
         // Plusieurs tokens sélectionnés
@@ -52,21 +52,21 @@ export class Macros {
         let statObj;
         switch(stat){
             case "for" :
-            case "str" : statObj = eval(`actor.data.data.stats.str`); break;
-            case "dex" : statObj = eval(`actor.data.data.stats.dex`); break;
-            case "con" : statObj = eval(`actor.data.data.stats.con`); break;
-            case "int" : statObj = eval(`actor.data.data.stats.int`); break;
+            case "str" : statObj = eval(`actor.system.stats.str`); break;
+            case "dex" : statObj = eval(`actor.system.stats.dex`); break;
+            case "con" : statObj = eval(`actor.system.stats.con`); break;
+            case "int" : statObj = eval(`actor.system.stats.int`); break;
             case "sag" :
-            case "wis" : statObj = eval(`actor.data.data.stats.wis`); break;
-            case "cha" : statObj = eval(`actor.data.data.stats.cha`); break;
+            case "wis" : statObj = eval(`actor.system.stats.wis`); break;
+            case "cha" : statObj = eval(`actor.system.stats.cha`); break;
             case "atc" :
-            case "melee" : statObj = eval(`actor.data.data.attacks.melee`); break;
+            case "melee" : statObj = eval(`actor.system.attacks.melee`); break;
             case "atd" :
-            case "ranged" : statObj = eval(`actor.data.data.attacks.ranged`); break;
+            case "ranged" : statObj = eval(`actor.system.attacks.ranged`); break;
             case "atm" :
-            case "magic" : statObj = eval(`actor.data.data.attacks.magic`); break;
+            case "magic" : statObj = eval(`actor.system.attacks.magic`); break;
             default :
-                ui.notifications.error(game.i18n.localize("COC.notification.MacroUnknownStat")); 
+                ui.notifications.error(game.i18n.localize("COC.notification.MacroUnknownStat"));
                 break;
         }
         let mod = statObj.mod;
@@ -88,25 +88,25 @@ export class Macros {
             CoCRoll.skillRollDialog(actor, label && label.length > 0 ? label : game.i18n.localize(statObj.label), mod, bonus, malus, 20, statObj.superior, onEnter, description);
         }
         else{
-            return new SkillRoll(label && label.length > 0 ? label : game.i18n.localize(statObj.label), dice, "+" + +mod, bonus, malus, difficulty, "20", description).roll();        
+            return new SkillRoll(label && label.length > 0 ? label : game.i18n.localize(statObj.label), dice, "+" + +mod, bonus, malus, difficulty, "20", description).roll();
         }
     };
 
     /**
      * @name rollItemMacro
      * @description
-     * 
-     * @param {*} itemId 
-     * @param {*} itemName 
-     * @param {*} itemType 
-     * @param {*} bonus 
-     * @param {*} malus 
-     * @param {*} dmgBonus 
-     * @param {*} dmgOnly 
-     * @param {*} customLabel 
-     * @param {*} skillDescr 
-     * @param {*} dmgDescr 
-     * @returns 
+     *
+     * @param {*} itemId
+     * @param {*} itemName
+     * @param {*} itemType
+     * @param {*} bonus
+     * @param {*} malus
+     * @param {*} dmgBonus
+     * @param {*} dmgOnly
+     * @param {*} customLabel
+     * @param {*} skillDescr
+     * @param {*} dmgDescr
+     * @returns
      */
      static rollItemMacro = async function (itemId, itemName, itemType, bonus = 0, malus = 0, dmgBonus=0, dmgOnly=false, customLabel, skillDescr, dmgDescr, dialog=true) {
         const actor = this.getSpeakersActor();
@@ -117,49 +117,49 @@ export class Macros {
 
         const item = actor.items.get(itemId);
         if (!item) return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemMissing', {item:itemName}));
-        
-        const itemData = item.data;
 
-        if(itemData.data.properties.weapon || itemData.data.properties.heal){
-            if (itemData.data.properties.weapon){
-                if (itemData.data.properties.equipable && !itemData.data.worn) {
+        const itemData = item;
+
+        if(itemData.system.properties.weapon || itemData.system.properties.heal){
+            if (itemData.system.properties.weapon){
+                if (itemData.system.properties.equipable && !itemData.system.worn) {
                     return ui.notifications.warn(game.i18n.format('COC.notification.MacroItemUnequiped', {item: itemName}));
                 }
-                const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;                
-                const critrange = itemData.data.critrange;              
+                const label =  customLabel && customLabel.length > 0 ? customLabel : itemData.name;
+                const critrange = itemData.system.critrange;
 
                 // Compute MOD
-                const itemModStat = itemData.data.skill.split("@")[1];
-                const itemModBonus = parseInt(itemData.data.skillBonus);
-                
+                const itemModStat = itemData.system.skill.split("@")[1];
+                const itemModBonus = parseInt(itemData.system.skillBonus);
+
                 let mod = actor.computeWeaponMod(itemModStat, itemModBonus);
 
                 // Compute DM
-                const itemDmgBase = itemData.data.dmgBase;                        
-                const itemDmgStat = itemData.data.dmgStat.split("@")[1];
-                const itemDmgBonus = parseInt(itemData.data.dmgBonus);
+                const itemDmgBase = itemData.system.dmgBase;
+                const itemDmgStat = itemData.system.dmgStat.split("@")[1];
+                const itemDmgBonus = parseInt(itemData.system.dmgBonus);
 
                 let dmg = actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
-                
+
                 if (dialog){
                     if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, dmg, 0, false, "submit", dmgDescr);
                     else CoCRoll.rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmg, dmgBonus, "submit", skillDescr, dmgDescr);
                 }
                 else {
                     let formula = dmgBonus ? dmg +  "+" + dmgBonus : dmg;
-                    if (dmgOnly) new DamageRoll(label, formula, false, dmgDescr).roll(); 
-                    else {        
+                    if (dmgOnly) new DamageRoll(label, formula, false, dmgDescr).roll();
+                    else {
                         let skillRoll = await new SkillRoll(label, "1d20", "+" + +mod, bonus, malus, null, critrange, skillDescr).roll();
 
                         let result = skillRoll.dice[0].results[0].result;
                         let critical = ((result >= critrange.split("-")[0]) || result == 20);
-                        
-                        new DamageRoll(label, formula, critical, dmgDescr).roll();                            
-                    }                    
+
+                        new DamageRoll(label, formula, critical, dmgDescr).roll();
+                    }
                 }
             }
-            if (itemData.data.properties.heal){
-                new CocHealingRoll(itemData.name, itemData.data.effects.heal.formula, false).roll(actor);
+            if (itemData.system.properties.heal){
+                new CocHealingRoll(itemData.name, itemData.system.effects.heal.formula, false).roll(actor);
             }
         }
         else { return item.sheet.render(true); }
@@ -185,19 +185,19 @@ export class Macros {
 
         let crit = parseInt(critRange);
         crit = !isNaN(crit) ? crit : 20;
-        CoCRoll.skillRollDialog(actor, label, mod, bonus, malus, crit, isSuperior, "submit", description);  
+        CoCRoll.skillRollDialog(actor, label, mod, bonus, malus, crit, isSuperior, "submit", description);
     }
 
     static rollDamageMacro = async function(label, dmgFormula, dmgBonus, isCritical, dmgDescr){
         const actor = this.getSpeakersActor();
-        
+
         // Several tokens selected
         if (actor === null) return;
         // Aucun acteur cible
         if (actor === undefined) return ui.notifications.error(game.i18n.localize("COC.notification.MacroNoActorAvailable"));
 
         CoCRoll.rollDamageDialog(actor, label, dmgFormula, dmgBonus, isCritical, "submit", dmgDescr);
-          
+
     }
 
 

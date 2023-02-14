@@ -52,7 +52,7 @@ export class DataLoader {
         let pack = this.findPack(packName);
 
         // Get entity type to populate the proper collection
-        const entity = pack.metadata.entity;
+        const entity = pack.metadata.type;
 
         // Unlock the pack
         pack.locked = false;

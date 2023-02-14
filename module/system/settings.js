@@ -89,7 +89,7 @@ export const registerSystemSettings = function() {
         default: false,
         type: Boolean
     });
-    
+
     game.settings.register("coc", "moveItem", {
         name: "Mode de déplacement des items",
         hint: "Comportement du drag & drop d'un item sur une fiche de personnage (Maintenir MAJ lors du drop pour inverser)",
@@ -100,8 +100,8 @@ export const registerSystemSettings = function() {
             "1" : "SETTINGS.moveItem.move"
         },
         default: "0",
-        config: true                
-    });   
+        config: true
+    });
 
     game.settings.register("coc", "lockItems",{
         name: "SETTINGS.lockItems.name",
@@ -109,16 +109,16 @@ export const registerSystemSettings = function() {
         scope: "world",
         config: true,
         default: false,
-        type: Boolean       
-    });  
-    
+        type: Boolean
+    });
+
     game.settings.register("coc", "explosiveDice",{
         name: "SETTINGS.explosiveDice.name",
         hint: "SETTINGS.explosiveDice.hint",
         scope: "world",
         config: true,
         default: true,
-        type: Boolean       
+        type: Boolean
     });
 
     game.settings.register("coc", "checkFreeHandsBeforeEquip", {
@@ -147,7 +147,7 @@ export const registerSystemSettings = function() {
             "all" : "SETTINGS.checkArmorSlotAvailability.all",
             "gm" : "SETTINGS.checkArmorSlotAvailability.gm"
         }
-    }); 
+    });
 
     game.settings.register("coc", "settingCyberpunk",{
         name: "SETTINGS.settingCyberpunk.name",
@@ -156,7 +156,7 @@ export const registerSystemSettings = function() {
         config: true,
         default: false,
         type: Boolean,
-        onChange: reload       
+        onChange: reload
     });
 
 };

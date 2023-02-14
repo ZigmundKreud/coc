@@ -2,7 +2,7 @@
     <li class="inventory-header flexrow">
         <h3 class="item-name flexrow">Attaques</h3>
         <div class="item-detail">Portée</div>
-        <div class="item-detail">Critique</div>        
+        <div class="item-detail">Critique</div>
         <div class="item-detail">Mod</div>
         <div class="item-detail">DM</div>
         <div class="item-controls-3">
@@ -19,11 +19,11 @@
                     <div class="item-image encounter-attack-icon" style="background-image: url('{{img}}')"></div>
                     <h4 class="weapon-name">{{name}}</h4>
                 </div>
-                {{#with data.weapon as |weapon|}}
+                {{#with system.weapon as |weapon|}}
                     <div class="item-detail">{{range}}</div>
-                    <div class="item-detail weapon-crit">{{critrange}}</div>                
+                    <div class="item-detail weapon-crit">{{critrange}}</div>
                     <div class="item-detail weapon-mod">{{numberFormat modTotal decimals=0 sign=true}}</div>
-                    <div class="item-detail weapon-dmg">{{dmgTotal}}</div>            
+                    <div class="item-detail weapon-dmg">{{dmgTotal}}</div>
                     <div class="item-controls-3">
                         <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
                         <a class="item-control rollable" data-roll-type="encounter-weapon"><i class="fas fa-dice-d20"></i></a>
@@ -32,7 +32,7 @@
                     </div>
                 {{/with}}
                 <div class="item-summary" style="display: none">
-                    {{{data.description}}}
+                    {{{system.description}}}
                 </div>
             </li>
         {{/each}}

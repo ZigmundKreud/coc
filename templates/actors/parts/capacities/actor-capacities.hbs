@@ -22,9 +22,9 @@
                                 <div class="item-image" style="background-image: url('{{capacity.img}}')"></div>
                                 <h4>{{capacity.name}}</h4>
                             </div>
-                            <div class="item-detail">{{#if capacity.data.rank}}{{capacity.data.rank}}{{/if}}</div>
-                            <div class="item-detail">{{#if capacity.data.limited}}L{{/if}}</div>
-                            <div class="item-detail">{{#if capacity.data.spell}}&#10033;{{/if}}</div>
+                            <div class="item-detail">{{#if capacity.system.rank}}{{capacity.system.rank}}{{/if}}</div>
+                            <div class="item-detail">{{#if capacity.system.limited}}L{{/if}}</div>
+                            <div class="item-detail">{{#if capacity.system.spell}}&#10033;{{/if}}</div>
                             {{#if @root.editable}}
                                 <div class="item-controls">
                                     <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
@@ -32,10 +32,10 @@
                                 </div>
                             {{/if}}
                             <div class="item-summary" style="display: none">
-                                {{{capacity.data.description}}}
+                                {{{capacity.system.description}}}
                                 <div class="item-properties">
-                                    {{#if capacity.data.spell}}<span class="tag">{{localize "COC.ui.spell"}}</span>{{/if}}
-                                    {{#if capacity.data.limited}}<span class="tag">{{localize "COC.ui.limited"}}</span>{{/if}}
+                                    {{#if capacity.system.spell}}<span class="tag">{{localize "COC.ui.spell"}}</span>{{/if}}
+                                    {{#if capacity.system.limited}}<span class="tag">{{localize "COC.ui.limited"}}</span>{{/if}}
                                 </div>
                             </div>
                         </li>
