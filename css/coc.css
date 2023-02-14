@@ -1223,3 +1223,9 @@
 .coc input::placeholder {
   color: lightgray;
 }
+
+.btn.apply-dmg i {
+  font-size: 16px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
