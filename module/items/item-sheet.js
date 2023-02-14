@@ -378,8 +378,10 @@ export class CoCItemSheet extends ItemSheet {
             data.system.properties.spell = false;
             data.system.effects.heal.formula = null;
             data.system.effects.buff.formula = null;
-            data.system.properties.duration.formula = null;
-            data.system.properties.duration.units = "";
+            if (data.system.effects.duration) {
+                data.system.properties.duration.formula = null;
+                data.system.properties.duration.units = "";
+            }            
             data.system.properties.activable = false;
             return this.item.update(data);
         }
@@ -395,8 +397,10 @@ export class CoCItemSheet extends ItemSheet {
         }
         if (name === "system.properties.temporary" && !checked) {
             let data = duplicate(this.item);
-            data.system.properties.duration.formula = null;
-            data.system.properties.duration.units = "";
+            if (data.system.properties.duration) {
+                data.system.properties.duration.formula = null;
+                data.system.properties.duration.units = "";
+            }
             return this.item.update(data);
         }
         if (name === "system.properties.spell" && !checked) {
