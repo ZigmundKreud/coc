@@ -1,9 +1,3 @@
-/**
- * A simple and flexible system for world-building using an arbitrary collection of character and item attributes
- * Author: Atropos
- * Software License: GNU GPLv3
- */
-
 // Import Modules
 import {CoCActor} from "./actors/actor.js";
 import {CoCItem} from "./items/item.js";
@@ -86,6 +80,8 @@ Hooks.once("init", function () {
     // Register hooks
     registerHooks();
 
+    console.info("COC | "+ System.label + " | System initialized");
+
 });
 
 Hooks.once("setup", function() {
@@ -108,9 +104,42 @@ Hooks.once("setup", function() {
 	}
 });
 
+// Register world usage statistics
+function registerWorldCount(registerKey) {
+  if (game.user.isGM) {
+    let worldKey = game.settings.get(registerKey,"worldKey");
+    if (worldKey == undefined || worldKey == "") {
+      worldKey = randomID(32);
+      game.settings.set(registerKey, "worldKey", worldKey);
+    }
+
+    // Simple API counter
+    const worldData = {
+        "register_key": registerKey,
+        "world_key": worldKey,
+        "foundry_version": `${game.release.generation}.${game.release.build}`,
+        "system_name": game.system.id,
+        "system_version": game.system.version
+    }
+
+    let apiURL = "https://worlds.qawstats.info/worlds-counter";
+    $.ajax({
+        url: apiURL,
+        type: 'POST',
+        data: JSON.stringify(worldData),
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        async: false
+      });
+  }
+}
+
 /**
  * Ready hook loads tables, and override's foundry's entity link functions to provide extension to pseudo entities
  */
 Hooks.once("ready", async () => {
-    console.info("COC | " + System.label + " | System Initialized.");
+    if (!System.DEV_MODE) {
+      registerWorldCount('coc');
+    }
+    console.info("COC | " + System.label + " | System ready.");
 });

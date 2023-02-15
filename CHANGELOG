@@ -1,3 +1,12 @@
+### 10.291.1
+FONCTIONNALITES
+- Système compatible avec Foundry v10
+- Nouvelle option du système pour désactiver le son de certaines actions et changement de l'ordre des options
+- Statistique anonyme de la création d'un monde
+
+CORRECTIFS
+- Dépenser 1 Point de Récupération rend TOUS les points de vie
+
 ### Version 9.269.4
 FONCTIONNALITES
 - Ajout du clic gauche pour ouvrir directement un trait ou un profil depuis la fiche de personnage

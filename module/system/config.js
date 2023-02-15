@@ -6,6 +6,7 @@ System.rootPath = "/systems/" + System.name;
 System.dataPath = System.rootPath + "/data";
 System.templatesPath = System.rootPath + "/templates";
 System.debugMode = true;
+System.DEV_MODE = false;
 
 System.ASCII = `
    ******    *******     ******
@@ -80,41 +81,6 @@ COC.itemProperties = {
     "salve" : "COC.properties.salve",
     "explosive" : "COC.properties.explosive"
 };
-
-//TODO Vérifier si les 4 tableaux et méthodes qui suivent sont utilisés
-/*COC.profiles = [];
-COC.paths = [];
-COC.capacities = [];
-COC.traits = [];
-
-// Mise en cache des données de profil
-COC.getProfiles = async function () {
-    let profiles = await game.packs.get("coc.profiles").getContent().then(index => index.map(entity => entity));
-    COC.profiles = profiles;
-    if (COC.debug) console.debug("COC | Profiles loaded");
-};
-
-// Mise en cache des données de voies
-COC.getPaths = async function () {
-    let paths = await game.packs.get("coc.paths").getContent().then(index => index.map(entity => entity));
-    COC.paths = paths;
-    if (COC.debug) console.debug("COC | Paths loaded");
-};
-
-// Mise en cache des données de capacités
-COC.getCapacities = async function () {
-    let capacities = await game.packs.get("coc.capacities").getContent().then(index => index.map(entity => entity));
-    COC.capacities = capacities;
-    if (COC.debug) console.debug("COC | Capacities loaded");
-};
-
-// Mise en cache des données de capacités
-COC.getTraits = async function () {
-    let traits = await game.packs.get("coc.traits").getContent().then(index => index.map(entity => entity));
-    COC.traits = traits;
-    if (COC.debug) console.debug("COC | Traits loaded");
-};
-*/
 
 COC.itemTypes = {
     "profile": "COC.category.profile",
