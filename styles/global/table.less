@@ -173,10 +173,27 @@
   }
 
   // Item Control Buttons
+  .item-controls-header {
+    flex: 0 0 44px;
+    .flxrow();
+    justify-content: flex-end;
+    margin-right: 10px;
+
+    a {
+      flex: 0 0 22px;
+      font-size: 12px;
+      text-align: center;
+      color: @colorTan;
+    }
+  }
+
   .item-controls {
     flex: 0 0 44px;
     .flxrow();
     justify-content: flex-end;
+    margin-left: 5px;
+    margin-right: 5px;
+    flex-wrap: nowrap;
 
     a {
       flex: 0 0 22px;

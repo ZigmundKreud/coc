@@ -34,7 +34,7 @@
                     {{#with trait}}
                         <div class="flex5 drop-item item-name item trait item-edit" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                         <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">
-                            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a>
+                            <a class="item-control item-delete" title='{{localize "COC.ui.deleteItem"}}'><i class="fas fa-times"></i></a>
                         </div>
                     {{/with}}
                 </div>
@@ -49,7 +49,7 @@
                 {{#with profile}}
                     <div class="flex5 drop-item item-name item profile item-edit" data-item-id="{{_id}}" style="background-image: url('{{img}}'); background-size: 26px 26px; background-repeat: no-repeat">{{name}}</div>
                     <div class="item" data-item-id="{{_id}}" style="padding-right:5px;">
-                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-times"></i></a>
+                    <a class="item-control item-delete" title='{{localize "COC.ui.deleteItem"}}'><i class="fas fa-times"></i></a>
                 </div>
                 {{/with}}
                 </div>

@@ -27,13 +27,14 @@
                             <div class="item-detail">{{#if capacity.system.spell}}&#10033;{{/if}}</div>
                             {{#if @root.editable}}
                                 <div class="item-controls">
-                                    <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                                    <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                                    <a class="item-control item-to-chat" title='{{localize "COC.ui.sendItemToChat"}}'><i class="fas fa-comments"></i></a>
+                                    <a class="item-control item-edit" title='{{localize "COC.ui.editItem"}}'><i class="fas fa-edit"></i></a>
+                                    <a class="item-control item-delete" title='{{localize "COC.ui.deleteItem"}}'><i class="fas fa-trash"></i></a>
                                 </div>
                             {{/if}}
                             <div class="item-summary" style="display: none">
                                 {{{capacity.system.description}}}
-                                <div class="item-properties">
+                                <div class="item-properties">                                    
                                     {{#if capacity.system.spell}}<span class="tag">{{localize "COC.ui.spell"}}</span>{{/if}}
                                     {{#if capacity.system.limited}}<span class="tag">{{localize "COC.ui.limited"}}</span>{{/if}}
                                 </div>
