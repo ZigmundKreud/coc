@@ -139,7 +139,6 @@ Hooks.on("renderChatMessage", (message, html, data) => {
   }
 
   html.find(".item-chat").click(async (event) => {
-    console.log("item-chat");
     event.preventDefault();
     const uuid = $(event.currentTarget).data("itemUuid");
     let item = await fromUuid(uuid);

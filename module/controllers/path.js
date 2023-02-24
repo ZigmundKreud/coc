@@ -58,7 +58,7 @@ export class Path {
     }
 
     static getPathsFromActorByKey(actor, pathKeys) {
-        const start = performance.now();
+        // const start = performance.now();
         let items = [];
         const ownedPaths = actor.items.filter(item => pathKeys.includes(item.system.key) && item.type === "path");
         if(ownedPaths.length>0){
@@ -74,9 +74,9 @@ export class Path {
             }
             items = items.concat(ownedPathsIds);
         }
-        const end = performance.now();
-        const duration = end-start;
-        //console.log("Duration : " + duration + " ms");
+        // const end = performance.now();
+        // const duration = end-start;
+        // console.log("Duration : " + duration + " ms");
         return items;
     }
 
