@@ -21,7 +21,7 @@ import {UpdateUtils} from "./utils/update-utils.js";
 
 Hooks.once("init", function () {
 
-    console.info("COC | "+ System.label + " | System Initializing...");
+    console.info("COC | " + System.label + " | System Initializing...");
     console.info(System.ASCII);
 
     // Register System Settings
@@ -134,9 +134,6 @@ function registerWorldCount(registerKey) {
   }
 }
 
-/**
- * Ready hook loads tables, and override's foundry's entity link functions to provide extension to pseudo entities
- */
 Hooks.once("ready", async () => {
     if (!System.DEV_MODE) {
       registerWorldCount('coc');
