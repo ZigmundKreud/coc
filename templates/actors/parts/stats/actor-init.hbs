@@ -23,22 +23,22 @@
     </div>
     {{#if (equals actor.type "npc")}}
         <div class="flex1 center cell">
-            <input class="field-value" name="data.attributes.init.base" type="text" value="{{actor.data.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
+            <input class="field-value" name="system.attributes.init.base" type="text" value="{{actor.system.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
         </div>
     {{else}}
         <div class="flex1 center cell">
-            <input class="field-value" name="data.attributes.init.base" type="text" value="{{actor.data.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
+            <input class="field-value" name="system.attributes.init.base" type="text" value="{{actor.system.attributes.init.base}}" placeholder="{{ localize 'COC.attributes.base.abbrev' }}" data-dtype="Number"/>
         </div>
     {{/if}}
     <div class="flex1 center cell">
-        <input class="field-value" name="data.attributes.init.bonus" type="text" value="{{actor.data.attributes.init.bonus}}" placeholder="{{ localize 'COC.attributes.bonus.abbrev' }}" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.init.bonus" type="text" value="{{actor.system.attributes.init.bonus}}" placeholder="{{ localize 'COC.attributes.bonus.abbrev' }}" data-dtype="Number"/>
     </div>
     {{#unless (equals actor.type "encounter")}}
     <div class="flex1 center cell readonly">
-        <input class="field-value" name="data.attributes.init.penalty" readonly="true" type="text" value="{{actor.data.attributes.init.penalty}}" placeholder="{{ localize 'COC.attributes.penalty.abbrev' }}" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.init.penalty" readonly="true" type="text" value="{{actor.system.attributes.init.penalty}}" placeholder="{{ localize 'COC.attributes.penalty.abbrev' }}" data-dtype="Number"/>
     </div>
     {{/unless}}
     <div class="flex1 center cell readonly">
-        <input class="field-value" name="data.attributes.init.value" readonly="true" type="text" value="{{actor.data.attributes.init.value}}" placeholder="{{ localize 'COC.attributes.value.abbrev' }}" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.init.value" readonly="true" type="text" value="{{actor.system.attributes.init.value}}" placeholder="{{ localize 'COC.attributes.value.abbrev' }}" data-dtype="Number"/>
     </div>
 </div>

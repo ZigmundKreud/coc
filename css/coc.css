@@ -394,6 +394,9 @@
 .no-wrap {
   flex-wrap: nowrap !important;
 }
+h3 {
+  border-bottom: none;
+}
 .inventory-list {
   list-style: none;
   margin: 0;
@@ -528,6 +531,36 @@
   margin: 0;
   padding: 0;
 }
+.inventory-list .item-controls-header {
+  flex: 0 0 44px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+.inventory-list .item-controls-header > * {
+  flex: 1;
+}
+.inventory-list .item-controls-header .flex1 {
+  flex: 1;
+}
+.inventory-list .item-controls-header .flex2 {
+  flex: 2;
+}
+.inventory-list .item-controls-header .flex3 {
+  flex: 3;
+}
+.inventory-list .item-controls-header .flex4 {
+  flex: 4;
+}
+.inventory-list .item-controls-header a {
+  flex: 0 0 22px;
+  font-size: 12px;
+  text-align: center;
+  color: #7a7971;
+}
 .inventory-list .item-controls {
   flex: 0 0 44px;
   display: flex;
@@ -535,6 +568,9 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   justify-content: flex-end;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex-wrap: nowrap;
 }
 .inventory-list .item-controls > * {
   flex: 1;
@@ -565,23 +601,11 @@
   border-top: 1px solid #c9c7b8;
 }
 .inventory-list .item-controls-3 {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 88px;
-  flex: 0 0 88px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 0 0 66px;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .inventory-list .item-controls-3 > * {

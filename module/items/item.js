@@ -2,7 +2,7 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-import { CocHealingRoll } from "../controllers/healing-roll.js"; 
+import { CocHealingRoll } from "../controllers/healing-roll.js";
 import { COC } from "../system/config.js";
 export class CoCItem extends Item {
 
@@ -10,7 +10,7 @@ export class CoCItem extends Item {
     /*  Constructor                                 */
     /* -------------------------------------------- */
     /* Définition de l'image par défaut             */
-    /* -------------------------------------------- */   
+    /* -------------------------------------------- */
     constructor(...args) {
         let data = args[0];
         if (!data.img && COC.itemIcons[data.type]) data.img = COC.itemIcons[data.type];
@@ -21,8 +21,8 @@ export class CoCItem extends Item {
     /** @override */
     prepareData() {
         super.prepareData();
-        const itemData = this.data;
-        const actorData = (this.actor) ? this.actor.data : null;
+        const itemData = this;
+        const actorData = (this.actor) ? this.actor : null;
         switch (itemData.type) {
             case "item" :
                 this._prepareArmorData(itemData, actorData);
@@ -32,8 +32,8 @@ export class CoCItem extends Item {
             case "trait" :
             case "capacity" :
             case "profile" :
-                if(!itemData.data.setting) itemData.data.setting = "base";
-                itemData.data.key = itemData.data.setting + "-" + itemData.name.slugify({strict: true});
+                if(!itemData.system.setting) itemData.system.setting = "base";
+                itemData.system.key = itemData.system.setting + "-" + itemData.name.slugify({strict: true});
                 break;
             default :
                 break;
@@ -41,48 +41,48 @@ export class CoCItem extends Item {
     }
 
     _prepareArmorData(itemData, actorData) {
-        itemData.data.def = parseInt(itemData.data.defBase, 10) + parseInt(itemData.data.defBonus, 10);
+        itemData.system.def = parseInt(itemData.system.defBase, 10) + parseInt(itemData.system.defBonus, 10);
     }
 
     _prepareWeaponData(itemData, actorData) {
-        itemData.data.skillBonus = (itemData.data.skillBonus) ? itemData.data.skillBonus : 0;
-        itemData.data.dmgBonus = (itemData.data.dmgBonus) ? itemData.data.dmgBonus : 0;
+        itemData.system.skillBonus = (itemData.system.skillBonus) ? itemData.system.skillBonus : 0;
+        itemData.system.dmgBonus = (itemData.system.dmgBonus) ? itemData.system.dmgBonus : 0;
 
         if (actorData) {
             // Compute skill mod
-            const skillMod = eval("actorData.data." + itemData.data.skill.split("@")[1]);
-            itemData.data.mod = parseInt(skillMod) + parseInt(itemData.data.skillBonus);
+            const skillMod = eval("actorData.system." + itemData.system.skill.split("@")[1]);
+            itemData.system.mod = parseInt(skillMod) + parseInt(itemData.system.skillBonus);
             // Compute damage mod
-            const dmgStat = eval("actorData.data." + itemData.data.dmgStat.split("@")[1]);
-            const dmgBonus = (dmgStat) ? parseInt(dmgStat) + parseInt(itemData.data.dmgBonus) : parseInt(itemData.data.dmgBonus);
-            const dmgBase = itemData.data.dmgBase;
-            if (dmgBonus < 0) itemData.data.dmg = dmgBase + " - " + parseInt(-dmgBonus);
-            else if (dmgBonus === 0) itemData.data.dmg = dmgBase;
-            else itemData.data.dmg = dmgBase + " + " + dmgBonus;
+            const dmgStat = eval("actorData.system." + itemData.system.dmgStat.split("@")[1]);
+            const dmgBonus = (dmgStat) ? parseInt(dmgStat) + parseInt(itemData.system.dmgBonus) : parseInt(itemData.system.dmgBonus);
+            const dmgBase = itemData.system.dmgBase;
+            if (dmgBonus < 0) itemData.system.dmg = dmgBase + " - " + parseInt(-dmgBonus);
+            else if (dmgBonus === 0) itemData.system.dmg = dmgBase;
+            else itemData.system.dmg = dmgBase + " + " + dmgBonus;
         }
     }
 
     applyEffects(actor){
-        const itemData = this.data;
+        const itemData = this;
 
-        if(itemData.data.properties.heal){
-            const heal = itemData.data.effects.heal;
+        if(itemData.system.properties.heal){
+            const heal = itemData.system.effects.heal;
             const r = new CocHealingRoll(itemData.name, heal.formula, false);
             r.roll(actor);
         }
-    }    
+    }
 
     modifyQuantity(increment, isDecrease) {
-        if(this.data.data.properties.stackable){
-            let itemData = duplicate(this.data);
-            const qty = itemData.data.qty;
-            if(isDecrease) itemData.data.qty = qty - increment;
-            else itemData.data.qty = qty + increment;
-            if(itemData.data.qty < 0) itemData.data.qty = 0;
-            if(itemData.data.stacksize && itemData.data.qty > itemData.data.stacksize) itemData.data.qty = itemData.data.stacksize;
-            if(itemData.data.price){
-                const qty = (itemData.data.qty) ? itemData.data.qty : 1;
-                itemData.data.value = qty * itemData.data.price;
+        if(this.system.properties.stackable){
+            let itemData = duplicate(this);
+            const qty = itemData.system.qty;
+            if(isDecrease) itemData.system.qty = qty - increment;
+            else itemData.system.qty = qty + increment;
+            if(itemData.system.qty < 0) itemData.system.qty = 0;
+            if(itemData.system.stacksize && itemData.system.qty > itemData.system.stacksize) itemData.system.qty = itemData.system.stacksize;
+            if(itemData.system.price){
+                const qty = (itemData.system.qty) ? itemData.system.qty : 1;
+                itemData.system.value = qty * itemData.system.price;
             }
             return this.update(itemData);
         }

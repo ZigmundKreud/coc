@@ -17,13 +17,13 @@
         <span class="field-label"><i class="fas fa-shield-alt"></i>&nbsp;{{ localize 'COC.attributes.def.abbrev' }}</span>
     </div>
     <div class="flex5 center cell">
-        <input class="field-value" name="data.attributes.def.base" type="text" value="{{actor.data.attributes.def.base}}" placeholder="Base" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.def.base" type="text" value="{{actor.system.attributes.def.base}}" placeholder="Base" data-dtype="Number"/>
     </div>
     <div class="flex5 center cell">
-        <input class="field-value" name="data.attributes.def.bonus" type="text" value="{{actor.data.attributes.def.bonus}}" placeholder="Bonus" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.def.bonus" type="text" value="{{actor.system.attributes.def.bonus}}" placeholder="Bonus" data-dtype="Number"/>
     </div>
     <div class="flex6 center cell readonly">
-        <input class="field-value" name="data.attributes.def.value" readonly="true" type="text" value="{{actor.data.attributes.def.value}}" placeholder="Value" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.def.value" readonly="true" type="text" value="{{actor.system.attributes.def.value}}" placeholder="Value" data-dtype="Number"/>
     </div>
 </div>
 {{#if (isEnabled "useDamageResistance")}}
@@ -32,13 +32,13 @@
         <span class="field-label"><i class="fas fa-user-shield"></i>&nbsp;{{ localize 'COC.attributes.dr.abbrev' }}</span>
     </div>
     <div class="flex5 center cell">
-        <input class="field-value" name="data.attributes.dr.base.value" type="text" value="{{actor.data.attributes.dr.base.value}}" placeholder="Base" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.dr.base.value" type="text" value="{{actor.system.attributes.dr.base.value}}" placeholder="Base" data-dtype="Number"/>
     </div>
     <div class="flex5 center cell">
-        <input class="field-value" name="data.attributes.dr.bonus.value" type="text" value="{{actor.data.attributes.dr.bonus.value}}" placeholder="Bonus" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.dr.bonus.value" type="text" value="{{actor.system.attributes.dr.bonus.value}}" placeholder="Bonus" data-dtype="Number"/>
     </div>
     <div class="flex6 center cell readonly">
-        <input class="field-value" name="data.attributes.dr.value" readonly="true" type="text" value="{{actor.data.attributes.dr.value}}" placeholder="Value" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.dr.value" readonly="true" type="text" value="{{actor.system.attributes.dr.value}}" placeholder="Value" data-dtype="Number"/>
     </div>
 </div>
 {{/if}}

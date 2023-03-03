@@ -120,6 +120,10 @@
   "COC.ui.applyDoubleDamage": "Apply double damage",
   "COC.ui.applyHealing" : "Apply healing",
   "COC.ui.newEffect" : "New Effect",
+  "COC.ui.sendItemToChat" : "Send item to chat",
+  "COC.ui.editItem" : "Edit item",
+  "COC.ui.deleteItem" : "Delete item",
+
   "COC.notification.noCapacitySelected" : "No capacity has been added yet",
   "COC.notification.noPathSelected": "No path has been added yet",
   "COC.notification.noEncounterWeaponsSelected": "No encounter weapon has been added yet",
@@ -431,5 +435,7 @@
   "SETTINGS.useMadness.name": "Madness points",
   "SETTINGS.useMadness.hint": "Display the points of madness on the character sheet",
   "SETTINGS.settingCyberpunk.name": "Cyberpunk setting",
-  "SETTINGS.settingCyberpunk.hint": "Change the rules to calculate MP"
+  "SETTINGS.settingCyberpunk.hint": "Change the rules to calculate MP",
+  "SETTINGS.useActionSound.name": "Sound for actions",
+  "SETTINGS.useActionSound.hint": "Play a sound for some actions" 
 } 

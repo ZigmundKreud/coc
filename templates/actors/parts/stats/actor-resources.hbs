@@ -13,7 +13,7 @@
     </div>
     <div class="flex3 center">
         <div class="field-label">{{ localize 'COC.ui.current' }}</div>
-    </div>    
+    </div>
 </div>
 {{#if (isEnabled "useFortune")}}
 <div class="flexrow no-wrap resources fortune">
@@ -21,17 +21,17 @@
         <span class="field-label ellipsis"><i class="fas fa-star"></i>&nbsp;{{getFpAbbrev}}</span>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.fp.base" type="text" value="{{actor.data.attributes.fp.base}}" placeholder="Base" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.fp.base" type="text" value="{{actor.system.attributes.fp.base}}" placeholder="Base" data-dtype="Number"/>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.fp.bonus" type="text" value="{{actor.data.attributes.fp.bonus}}" placeholder="Bonus" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.fp.bonus" type="text" value="{{actor.system.attributes.fp.bonus}}" placeholder="Bonus" data-dtype="Number"/>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.fp.max" type="text" readonly="true" value="{{actor.data.attributes.fp.max}}" placeholder="Max" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.fp.max" type="text" readonly="true" value="{{actor.system.attributes.fp.max}}" placeholder="Max" data-dtype="Number"/>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.fp.value" type="text" value="{{actor.data.attributes.fp.value}}" placeholder="Value" data-dtype="Number"/>
-    </div>    
+        <input class="field-value" name="system.attributes.fp.value" type="text" value="{{actor.system.attributes.fp.value}}" placeholder="Value" data-dtype="Number"/>
+    </div>
 </div>
 {{/if}}
 {{#if (isEnabled "useMana")}}
@@ -40,16 +40,16 @@
         <span class="field-label ellipsis"><i class="fas fa-hand-sparkles"></i>&nbsp;{{ localize 'COC.attributes.mp.abbrev' }}</span>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.mp.base" type="text" value="{{actor.data.attributes.mp.base}}" placeholder="Base" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.mp.base" type="text" value="{{actor.system.attributes.mp.base}}" placeholder="Base" data-dtype="Number"/>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.mp.bonus" type="text" value="{{actor.data.attributes.mp.bonus}}" placeholder="Bonus" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.mp.bonus" type="text" value="{{actor.system.attributes.mp.bonus}}" placeholder="Bonus" data-dtype="Number"/>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.mp.max" type="text" readonly="true" value="{{actor.data.attributes.mp.max}}" placeholder="Max" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.mp.max" type="text" readonly="true" value="{{actor.system.attributes.mp.max}}" placeholder="Max" data-dtype="Number"/>
     </div>
     <div class="flex3 center cell">
-        <input class="field-value" name="data.attributes.mp.value" type="text" value="{{actor.data.attributes.mp.value}}" placeholder="Value" data-dtype="Number"/>
+        <input class="field-value" name="system.attributes.mp.value" type="text" value="{{actor.system.attributes.mp.value}}" placeholder="Value" data-dtype="Number"/>
     </div>
 </div>
 {{/if}}

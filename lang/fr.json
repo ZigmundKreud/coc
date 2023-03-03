@@ -120,6 +120,10 @@
   "COC.ui.applyDoubleDamage": "Appliquer le double des dégâts",
   "COC.ui.applyHealing" : "Appliquer les soins",
   "COC.ui.newEffect" : "Nouvel Effet",
+  "COC.ui.sendItemToChat" : "Afficher l'objet dans le chat",
+  "COC.ui.editItem" : "Editer l'objet",
+  "COC.ui.deleteItem" : "Supprimer l'objet",
+
   "COC.notification.noCapacitySelected" : "Aucune capacité n'a été ajoutée pour le moment",
   "COC.notification.noPathSelected": "Aucune voie n'a été ajoutée pour le moment",
   "COC.notification.noEncounterWeaponsSelected": "Aucune arme de rencontre n'a été ajoutée pour le moment",
@@ -431,5 +435,7 @@
   "SETTINGS.useMadness.name": "Points de Folie",
   "SETTINGS.useMadness.hint": "Afficher les points de folie sur la fiche de personnage",
   "SETTINGS.settingCyberpunk.name": "Variante Cyberpunk",
-  "SETTINGS.settingCyberpunk.hint": "Change les règles de calcul des PM"
+  "SETTINGS.settingCyberpunk.hint": "Change les règles de calcul des PM",
+  "SETTINGS.useActionSound.name": "Son des actions",
+  "SETTINGS.useActionSound.hint": "Joue un son pour certaines actions (équiper, consommer)"  
 }

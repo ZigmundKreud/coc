@@ -1,15 +1,15 @@
 {{> "systems/coc/templates/items/parts/details/setting-details.hbs"}}
 
 <h3 class="form-header">{{localize "COC.ui.properties"}}</h3>
-<input class="field-value" name="data.key" type="hidden" value="{{data.key}}" placeholder="{{ localize "COC.ui.key" }}" data-dtype="String">
+<input class="field-value" name="system.key" type="hidden" value="{{system.key}}" placeholder="{{ localize "COC.ui.key" }}" data-dtype="String">
 <div class="form-group stacked">
     <label>Propriétés</label>
     <div class="form-fields">
         <label class="checkbox">
-            <input type="checkbox" name="data.limited" {{checked data.limited}}> {{localize "COC.ui.limited"}}
+            <input type="checkbox" name="system.limited" {{checked system.limited}}> {{localize "COC.ui.limited"}}
         </label>
         <label class="checkbox">
-            <input type="checkbox" name="data.spell" {{checked data.spell}}> {{localize "COC.ui.spell"}}
+            <input type="checkbox" name="system.spell" {{checked system.spell}}> {{localize "COC.ui.spell"}}
         </label>
     </div>
 </div>

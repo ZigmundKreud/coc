@@ -1,9 +1,3 @@
-/**
- * A simple and flexible system for world-building using an arbitrary collection of character and item attributes
- * Author: Atropos
- * Software License: GNU GPLv3
- */
-
 // Import Modules
 import {CoCActor} from "./actors/actor.js";
 import {CoCItem} from "./items/item.js";
@@ -27,8 +21,8 @@ import {UpdateUtils} from "./utils/update-utils.js";
 
 Hooks.once("init", function () {
 
-    console.info("COC | "+ System.label + " | System Initializing...");
-    console.info(System.ASCII);  
+    console.info("COC | " + System.label + " | System Initializing...");
+    console.info(System.ASCII);
 
     // Register System Settings
     registerSystemSettings();
@@ -48,7 +42,7 @@ Hooks.once("init", function () {
         decimals: 2
       };
     }
-   
+
     // Record Configuration values
     CONFIG.COC = COC;
 
@@ -75,7 +69,7 @@ Hooks.once("init", function () {
     Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: false, label: "COC.sheet.encounter"});
 
     // Register item sheets
-    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});    
+    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});
 
     // Preload Handlebars Templates
     preloadHandlebarsTemplates();
@@ -85,6 +79,8 @@ Hooks.once("init", function () {
 
     // Register hooks
     registerHooks();
+
+    console.info("COC | "+ System.label + " | System initialized");
 
 });
 
@@ -108,9 +104,39 @@ Hooks.once("setup", function() {
 	}
 });
 
-/**
- * Ready hook loads tables, and override's foundry's entity link functions to provide extension to pseudo entities
- */
+// Register world usage statistics
+function registerWorldCount(registerKey) {
+  if (game.user.isGM) {
+    let worldKey = game.settings.get(registerKey,"worldKey");
+    if (worldKey == undefined || worldKey == "") {
+      worldKey = randomID(32);
+      game.settings.set(registerKey, "worldKey", worldKey);
+    }
+
+    // Simple API counter
+    const worldData = {
+        "register_key": registerKey,
+        "world_key": worldKey,
+        "foundry_version": `${game.release.generation}.${game.release.build}`,
+        "system_name": game.system.id,
+        "system_version": game.system.version
+    }
+
+    let apiURL = "https://worlds.qawstats.info/worlds-counter";
+    $.ajax({
+        url: apiURL,
+        type: 'POST',
+        data: JSON.stringify(worldData),
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        async: false
+      });
+  }
+}
+
 Hooks.once("ready", async () => {
-    console.info("COC | " + System.label + " | System Initialized.");
+    if (!System.DEV_MODE) {
+      registerWorldCount('coc');
+    }
+    console.info("COC | " + System.label + " | System ready.");
 });

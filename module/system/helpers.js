@@ -9,18 +9,18 @@ export const registerHandlebarsHelpers = function () {
     Handlebars.registerHelper('getInventory', function (items) {
         let inventory = items.filter(item => item.type === "item");
         inventory.sort(function (a, b) {
-            const aKey = a.data.subtype + "-" + a.name.slugify({strict: true});
-            const bKey = b.data.subtype + "-" + b.name.slugify({strict: true});
+            const aKey = a.system.subtype + "-" + a.name.slugify({strict: true});
+            const bKey = b.system.subtype + "-" + b.name.slugify({strict: true});
             return (aKey > bKey) ? 1 : -1
         });
         return inventory;
     });
 
     Handlebars.registerHelper('getWorn', function (items) {
-        let worn = items.filter(item => item.type === "item" && item.data.worn);
+        let worn = items.filter(item => item.type === "item" && item.system.worn);
         worn.sort(function (a, b) {
-            const aKey = a.data.subtype + "-" + a.name.slugify({strict: true});
-            const bKey = b.data.subtype + "-" + b.name.slugify({strict: true});
+            const aKey = a.system.subtype + "-" + a.name.slugify({strict: true});
+            const bKey = b.system.subtype + "-" + b.name.slugify({strict: true});
             return (aKey > bKey) ? 1 : -1
         });
         return worn;
@@ -37,8 +37,8 @@ export const registerHandlebarsHelpers = function () {
     Handlebars.registerHelper('getCapacities', function (items) {
         let caps = items.filter(item => item.type === "capacity");
         caps.sort(function (a, b) {
-            const aKey = a.data.path + "-" + a.data.rank;
-            const bKey = b.data.path + "-" + b.data.rank;
+            const aKey = a.system.path + "-" + a.system.rank;
+            const bKey = b.system.path + "-" + b.system.rank;
             return (aKey > bKey) ? 1 : -1
         });
         return caps;
@@ -59,7 +59,7 @@ export const registerHandlebarsHelpers = function () {
     });
 
     Handlebars.registerHelper('getPath', function (items, pathKey) {
-        return items.filter(item => item.type === "path").find(p => p.data.key === pathKey);
+        return items.filter(item => item.type === "path").find(p => p.system.key === pathKey);
     });
 
     Handlebars.registerHelper('isNull', function (val) {
@@ -143,11 +143,11 @@ export const registerHandlebarsHelpers = function () {
     });
 
     Handlebars.registerHelper('findPath', function (key) {
-        return Traversal.getAllPathsData().find(p => p.data.key === key);
+        return Traversal.getAllPathsData().find(p => p.system.key === key);
     });
 
     Handlebars.registerHelper('findCapacity', function (key) {
-        return Traversal.getAllCapacitiesData().find(c => c.data.key === key);
+        return Traversal.getAllCapacitiesData().find(c => c.system.key === key);
     });
 
     // If you need to add Handlebars helpers, here are a few useful examples:
@@ -174,7 +174,7 @@ export const registerHandlebarsHelpers = function () {
     });
 
     Handlebars.registerHelper('includesKey', function (items, type, key) {
-        return items.filter(i => i.type === type).map(i => i.data.key).includes(key);
+        return items.filter(i => i.type === type).map(i => i.system.key).includes(key);
     });
 
     Handlebars.registerHelper('isCategoryIn', function () {
@@ -186,11 +186,11 @@ export const registerHandlebarsHelpers = function () {
     });
 
     Handlebars.registerHelper('isNotLimited', function(options){
-        return !options?.limited;    
+        return !options?.limited;
     });
 
     Handlebars.registerHelper('isNotLimitedEncounter', function(options){
-        return !(options?.limited && options?.actor?.type === "encounter");    
+        return !(options?.limited && options?.actor?.type === "encounter");
     });
 
     Handlebars.registerHelper('getFpLabel', function(){

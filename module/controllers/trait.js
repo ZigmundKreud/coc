@@ -11,7 +11,6 @@ export class Trait {
     }
 
     static removeFromActor(actor, entity) {
-        console.log(entity);
         if (COC.debug) { console.log("COC | Trait ", entity, " removed from Actor ", actor) };
         Dialog.confirm({
             title: "Supprimer le trait",
