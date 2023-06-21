@@ -12,6 +12,24 @@
   "ITEM.TypePath": "Voie",
   "ITEM.TypeEncounterweapon": "Arme de rencontre",
 
+  "TYPES": {
+    "Actor": {
+      "character": "Personnage",
+      "npc": "PNJ",
+      "encounter": "Rencontre",
+      "loot": "Vendeur/Coffre",
+      "vehicle": "Véhicule"
+    },
+    "Item": {
+      "item": "Objet",
+      "capacity": "Capacité",
+      "trait": "Trait",
+      "profile": "Profil",
+      "path": "Voie",
+      "encounterWeapon": "Arme de rencontre"
+    }
+  },
+
   "COC.title": "Chroniques Oubliées Contemporain",
 
   "COC.sheet.actor" : "Feuille de Personnage - Chroniques Oubliées Contemporain",

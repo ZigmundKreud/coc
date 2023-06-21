@@ -12,6 +12,24 @@
   "ITEM.TypePath": "Path",
   "ITEM.TypeEncounterweapon": "Encounter Weapon",
 
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC",
+      "encounter": "Encounter",
+      "loot": "Vendor/Loot",
+      "vehicle": "Vehicle"
+    },
+    "Item": {
+      "item": "Object",
+      "capacity": "Capacity",
+      "trait": "Trait",
+      "profile": "Profile",
+      "path": "Path",
+      "encounterWeapon": "Encounter Weapon"
+    }
+  },
+
   "COC.title": "Chroniques Oubliées Contemporain",
 
   "COC.sheet.actor" : "Chroniques Oubliées Contemporain - Actor Sheet",
