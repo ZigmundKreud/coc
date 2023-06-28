@@ -27,7 +27,7 @@ export class CoCActorSheet extends CoCBaseSheet {
     /* -------------------------------------------- */
 
     /** @override */
-    getData(options = {}) {
+    async getData(options = {}) {
         const data = super.getData(options);
         if (COC.debug) console.log("COC | ActorSheet getData", data);
 
@@ -121,6 +121,9 @@ export class CoCActorSheet extends CoCBaseSheet {
 
         // Gestion des boutons de modification des effets (visible pour l'actor)
         data.isEffectsEditable = options.editable;
+
+        data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }

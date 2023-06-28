@@ -16,7 +16,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
     }
 
     /** @override */
-    getData(options) {
+    async getData(options) {
         const data = super.getData(options);
         if (COC.debug) console.log("COC | NpcSheet getData", data);
 
@@ -110,6 +110,9 @@ export class CoCNpcSheet extends CoCBaseSheet {
 
         // Gestion des boutons de modification des effets (visible pour le npc)
         data.isEffectsEditable = true;
+
+        data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+
         if (COC.debug) console.log("COC | NpcSheet getData", data);
         return data;
     }

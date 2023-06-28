@@ -252,7 +252,7 @@ export class CoCItemSheet extends ItemSheet {
     }
 
     /** @override */
-    getData(options) {
+    async getData(options) {
         const data = super.getData(options);
 
         let lockItems = game.settings.get("coc", "lockItems");
@@ -269,6 +269,8 @@ export class CoCItemSheet extends ItemSheet {
         data.isEffectsEditable = !this.item.actor && options.editable;
         data.item = itemData;
         data.system = itemData.system;
+
+        data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
 
         return data;
     }
