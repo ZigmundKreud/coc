@@ -216,7 +216,7 @@ export class CoCBaseSheet extends ActorSheet {
 
     // decription may begin by "<h1>Description</h1>", we suppress it
     let description = item.system.description;
-    if (description.startsWith("<h1>Description</h1>")) {
+    if (description && description.startsWith("<h1>Description</h1>")) {
       description = description.substr(20);
     }
 
