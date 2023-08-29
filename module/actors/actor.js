@@ -175,6 +175,14 @@ export class CoCActor extends Actor {
     }
 
     /**
+     * @name isWeakened
+     * @returns true si l'active Effect Affaibli (radiation) et Immobilisé (restrain) est actif
+     */
+    get isWeakened() {
+        return this.getFlag("coc", "weakened");
+    }    
+
+    /**
      *
      * @param {*} actorData
      */

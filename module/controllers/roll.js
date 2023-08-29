@@ -36,7 +36,7 @@ export class CoCRoll {
         const critrange = 20;
 
         label = (label) ? game.i18n.localize(label) : null;
-        return this.skillRollDialog(actor, label, tmpmod != null ? tmpmod : mod, bonus, malus, critrange, superior);
+        return this.skillRollDialog(actor, label, tmpmod != null ? tmpmod : mod, bonus, malus, critrange, superior, "submit", null, actor.isWeakened);
     }
 
     /**
@@ -60,7 +60,7 @@ export class CoCRoll {
         const dmgMod = $(event.currentTarget).parents().children(".item-dmg");
         const dmg = dmgMod.data('itemDmg');
 
-        return this.rollWeaponDialog(actor, label, mod, 0, 0, critrange, dmg, 0);
+        return this.rollWeaponDialog(actor, label, mod, 0, 0, critrange, dmg, 0, "submit", null, null, null, actor.isWeakened);
     }
 
     /**
@@ -211,7 +211,7 @@ export class CoCRoll {
     /* ROLL DIALOGS                                 */
     /* -------------------------------------------- */
 
-    static async skillRollDialog(actor, label, mod, bonus, malus, critrange, superior=false, onEnter = "submit") {
+    static async skillRollDialog(actor, label, mod, bonus, malus, critrange, superior = false, onEnter = "submit", description, weakened = false) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/skillroll-dialog.hbs';
         let diff = null;
         const displayDifficulty = game.settings.get("coc", "displayDifficulty");
@@ -224,9 +224,12 @@ export class CoCRoll {
             bonus: bonus,
             malus: malus,
             critrange: critrange,
-            superior:superior,
             difficulty: diff,
-            displayDifficulty: isDifficultyDisplayed
+            displayDifficulty: isDifficultyDisplayed,
+            superior:superior,
+            hasDescription : description && description.length > 0,
+			skillDescr: description,
+            weakened: weakened            
         });
         let d = new Dialog({
             title: label,
@@ -248,7 +251,7 @@ export class CoCRoll {
                         const mod = html.find('input#mod').val();
                         const bonus = html.find('input#bonus').val();
                         const malus = html.find('input#malus').val();
-                        let r = new SkillRoll(label, dice, mod, bonus, malus, difficulty, critrange);
+                        let r = new SkillRoll(label, dice, mod, bonus, malus, difficulty, critrange, description);
                         r.roll(actor);
                     }
                 }
@@ -269,9 +272,9 @@ export class CoCRoll {
      * @param {*} dmgFormula
      * @param {*} dmgBonus
      * @param {*} onEnter
-     * @returns
+     * @returns 
      */
-     static async rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmgFormula, dmgBonus, onEnter = "submit", skillDescr, dmgDescr, difficulty = null) {
+     static async rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmgFormula, dmgBonus, onEnter = "submit", skillDescr, dmgDescr, difficulty = null, weakened = false) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-weapon-dialog.hbs';
         let diff = null;
         let isDifficultyDisplayed = true;
@@ -299,7 +302,8 @@ export class CoCRoll {
             hasSkillDescr: skillDescr && skillDescr.length > 0,
             skillDescr: skillDescr,
             hasDmgDescr: dmgDescr && dmgDescr.length > 0,
-            dmgDescr: dmgDescr
+            dmgDescr: dmgDescr, 
+            weakened: weakened
         });
 
         let d = new Dialog({

@@ -1,6 +1,11 @@
+### 11.308.1
+FONCTIONNALITES
+- Portage de la fonctionnalité COF des StatusEffects : changement de l'ordre, mise en couleur des icônes pris en comptes pour COC, prise en compte des modifications (malus ou d12)
+
 ### 11.302.1
 CORRECTIFS
 - Rendu correct des liens dans les champs de type Editeur de texte
+
 ### 11.302.0
 FONCTIONNALITES
 - Système compatible avec Foundry v11 tout en restant compatible V10

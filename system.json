@@ -2,7 +2,7 @@
   "id": "coc",
   "title": "Chroniques Oubliées Contemporain",
   "description": "<p>Système Foundry VTT pour <a href='https://www.black-book-editions.fr/catalogue.php?id=477'>Chroniques Oubliées Contemporain</a>.</p><p> *** Rejoignez la communauté Discord FR :<a href='https://discord.gg/pPSDNJk'>https://discord.gg/pPSDNJk</a></p>",
-  "version": "11.302.1",
+  "version": "11.308.1",
   "compatibility": {
     "minimum": 10,
     "verified": "11"
@@ -100,6 +100,6 @@
   "secondaryTokenAttribute": null,
   "url": "https://github.com/ZigmundKreud/coc",
   "manifest": "https://raw.githubusercontent.com/ZigmundKreud/coc/master/system.json",
-  "download": "https://github.com/ZigmundKreud/coc/archive/refs/tags/11.302.1.zip",
+  "download": "https://github.com/ZigmundKreud/coc/archive/refs/tags/11.308.1.zip",
   "license": "LICENCE"
 }

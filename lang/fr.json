@@ -2,7 +2,7 @@
   "ACTOR.TypeCharacter": "Personnage",
   "ACTOR.TypeNpc": "PNJ",
   "ACTOR.TypeEncounter": "Rencontre",
-  "ACTOR.TypeLoot": "Vendeur/Coffre",
+  "ACTOR.TypeLoot": "Vendeur/COCfre",
   "ACTOR.TypeVehicle": "Véhicule",
 
   "ITEM.TypeItem": "Objet",
@@ -17,7 +17,7 @@
       "character": "Personnage",
       "npc": "PNJ",
       "encounter": "Rencontre",
-      "loot": "Vendeur/Coffre",
+      "loot": "Vendeur/COCfre",
       "vehicle": "Véhicule"
     },
     "Item": {
@@ -455,5 +455,12 @@
   "SETTINGS.settingCyberpunk.name": "Variante Cyberpunk",
   "SETTINGS.settingCyberpunk.hint": "Change les règles de calcul des PM",
   "SETTINGS.useActionSound.name": "Son des actions",
-  "SETTINGS.useActionSound.hint": "Joue un son pour certaines actions (équiper, consommer)"  
+  "SETTINGS.useActionSound.hint": "Joue un son pour certaines actions (équiper, consommer)",
+
+  "COC.CustomStatus.prone": "Renversé (malus)",
+  "COC.CustomStatus.blind": "Aveuglé (malus)",
+  "COC.CustomStatus.stun": "Etourdi (malus)",
+  "COC.CustomStatus.weak": "Affaibli (d12)",
+  "COC.CustomStatus.restrain": "Immobilisé (d12)",
+  "COC.CustomStatus.dead": "Hors d'état"
 }

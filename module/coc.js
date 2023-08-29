@@ -18,6 +18,7 @@ import {Macros} from "./system/macros.js";
 
 import registerHooks from "./system/hooks.js";
 import {UpdateUtils} from "./utils/update-utils.js";
+import { customizeStatusEffects } from "./system/effects.js";
 
 Hooks.once("init", function () {
 
@@ -80,8 +81,10 @@ Hooks.once("init", function () {
     // Register hooks
     registerHooks();
 
-    console.info("COC | "+ System.label + " | System initialized");
+    // Customize Status Effects
+    customizeStatusEffects();
 
+    console.info("COC | "+ System.label + " | System initialized");
 });
 
 Hooks.once("setup", function() {

@@ -455,5 +455,12 @@
   "SETTINGS.settingCyberpunk.name": "Cyberpunk setting",
   "SETTINGS.settingCyberpunk.hint": "Change the rules to calculate MP",
   "SETTINGS.useActionSound.name": "Sound for actions",
-  "SETTINGS.useActionSound.hint": "Play a sound for some actions" 
+  "SETTINGS.useActionSound.hint": "Play a sound for some actions",
+
+  "COC.CustomStatus.prone": "Prone (malus)",
+  "COC.CustomStatus.blind": "Blind (malus)",
+  "COC.CustomStatus.stun": "Stun (malus)",
+  "COC.CustomStatus.weak": "Weak (d12)",
+  "COC.CustomStatus.restrain": "Restrain (d12)",
+  "COC.CustomStatus.dead": "Dead"
 } 
