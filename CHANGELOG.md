@@ -1,3 +1,7 @@
+
+### 11.315.0
+- Dernière version v11 (avec version maximum de Foundry à 11) 
+
 ### 11.308.1
 FONCTIONNALITES
 - Portage de la fonctionnalité COF des StatusEffects : changement de l'ordre, mise en couleur des icônes pris en comptes pour COC, prise en compte des modifications (malus ou d12)
