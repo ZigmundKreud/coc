@@ -9,7 +9,7 @@ export class CoCActorSheet extends CoCBaseSheet {
 
     /** @override */
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["coc", "base", "sheet", "actor", "character"],
             template: "/systems/coc/templates/actors/actor-sheet.hbs",
             width: 970,

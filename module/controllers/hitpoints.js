@@ -7,7 +7,7 @@ export class Hitpoints {
             ui.notifications.error("Vous devez sélectionner au moins une cible pour appliquer les dégâts.");
         } else {
             for(let target of targets){
-                let data = duplicate(target.actor);
+                let data = foundry.utils.duplicate(target.actor);
                 let hp = data.system.attributes.hp;
                 // Application de la RD si c'est cochée
                 const finalAmount = amount + (dr ? target.actor.system.attributes.dr.value : 0);

@@ -368,7 +368,7 @@ export class CoCActor extends Actor {
     */
      syncItemActiveEffects(item){
         // Récupération des effets qui proviennent de l'item
-        let effectsData = this.effects.filter(effect=>effect.origin.endsWith(item.id))?.map(effect=> duplicate(effect));
+        let effectsData = this.effects.filter(effect=>effect.origin.endsWith(item.id))?.map(effect=> foundry.utils.duplicate(effect));
         if (effectsData.length > 0){
             effectsData.forEach(effect=>effect.disabled = !item.system.worn);
 
@@ -398,11 +398,11 @@ export class CoCActor extends Actor {
 
         const equipable = item.system.properties.equipable;
         if(equipable){
-            let itemData = duplicate(item);
+            let itemData = foundry.utils.duplicate(item);
             itemData.system.worn = !itemData.system.worn;
 
             return item.update(itemData).then((item)=>{
-                if (game.settings.get("coc","useActionSound")) AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+                if (game.settings.get("coc","useActionSound")) foundry.utils.AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
                 if (!bypassChecks) this.syncItemActiveEffects(item);
             });
         }
@@ -510,9 +510,9 @@ export class CoCActor extends Actor {
         const quantity = item.system.qty;
 
         if(consumable && quantity>0){
-            let itemData = duplicate(item);
+            let itemData = foundry.utils.duplicate(item);
             itemData.system.qty = (itemData.system.qty > 0) ? itemData.system.qty - 1 : 0;
-            if (game.settings.get("coc","useActionSound")) AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+            if (game.settings.get("coc","useActionSound")) foundry.utils.AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
             return item.update(itemData).then(item => item.applyEffects(this));
         }
     }

@@ -74,7 +74,7 @@ export class CoCItem extends Item {
 
     modifyQuantity(increment, isDecrease) {
         if(this.system.properties.stackable){
-            let itemData = duplicate(this);
+            let itemData = foundry.utils.duplicate(this);
             const qty = itemData.system.qty;
             if(isDecrease) itemData.system.qty = qty - increment;
             else itemData.system.qty = qty + increment;

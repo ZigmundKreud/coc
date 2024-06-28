@@ -9,7 +9,7 @@ export class Inventory {
         const item = actor.items.get(li.data("itemId"));
         const consumable = li.data("itemConsumable");
         if(consumable){
-            let itemData = duplicate(item);
+            let itemData = foundry.utils.duplicate(item);
             itemData.system.qty = (itemData.system.qty > 0) ? itemData.system.qty - 1 : 0;
             return item.update(itemData).then(i=> item.applyEffects(actor, event));
             // return actor.updateOwnedItem(itemData);
