@@ -14,7 +14,7 @@ export class DamageRoll {
                 if (!die.modifiers.includes("x")) die.modifiers.push("x");
             });
         }
-        await r.roll({"async": true});
+        await r.roll();
         if (this._isCritical) r._total = r._total * 2;
         this._buildDamageRollMessage().then(msgFlavor => {
             r.toMessage({
