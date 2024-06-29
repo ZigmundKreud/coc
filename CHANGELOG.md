@@ -1,3 +1,6 @@
+### 12.328.1
+- Correction de la création des compendiums
+
 ### 12.328.0
 - Compatibilité V12
 
