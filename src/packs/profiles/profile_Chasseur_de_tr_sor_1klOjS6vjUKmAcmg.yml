@@ -1,0 +1,55 @@
+_id: 1klOjS6vjUKmAcmg
+name: Chasseur de trésor
+type: profile
+img: systems/coc/ui/icons/Icon.3_65.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.Xbf9K9zu1WdF0Ecq
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-chasseur-de-tresor
+  setting: base
+  moduleData: {}
+  family: adventure
+  dv: 1d8
+  bonuses:
+    atc: 1
+    atd: 0
+    atm: 0
+    fp: 2
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie de l'investigation
+      type: path
+      _id: jKsHMEaZF5MTL4iF
+      img: systems/coc/ui/icons/Icon.4_68.png
+      sourceId: Compendium.coc.paths.jKsHMEaZF5MTL4iF
+    - name: Voie des voyages
+      type: path
+      _id: m8psb2pbkDNSJ5YS
+      img: systems/coc/ui/icons/Icon.6_43.png
+      sourceId: Compendium.coc.paths.m8psb2pbkDNSJ5YS
+    - name: Voie de la survie
+      type: path
+      _id: 415P4oWcA5Mzwhca
+      img: systems/coc/ui/icons/Icon.5_64.png
+      sourceId: Compendium.coc.paths.415P4oWcA5Mzwhca
+_key: '!items!1klOjS6vjUKmAcmg'
+

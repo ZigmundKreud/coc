@@ -1,0 +1,55 @@
+_id: 7o8XmQGrIHmc1HdB
+name: Explorateur
+type: profile
+img: systems/coc/ui/icons/Icon.3_65.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.tImMkTc0F2GNCHoW
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-explorateur
+  setting: base
+  moduleData: {}
+  family: adventure
+  dv: 1d8
+  bonuses:
+    atc: 1
+    atd: 0
+    atm: 0
+    fp: 2
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie des voyages
+      type: path
+      _id: m8psb2pbkDNSJ5YS
+      img: systems/coc/ui/icons/Icon.6_43.png
+      sourceId: Compendium.coc.paths.m8psb2pbkDNSJ5YS
+    - name: Voie des langues
+      type: path
+      _id: vxwPOiu4RqFFEw86
+      img: systems/coc/ui/icons/Icons8_50.png
+      sourceId: Compendium.coc.paths.vxwPOiu4RqFFEw86
+    - name: Voie de la survie
+      type: path
+      _id: 415P4oWcA5Mzwhca
+      img: systems/coc/ui/icons/Icon.5_64.png
+      sourceId: Compendium.coc.paths.415P4oWcA5Mzwhca
+_key: '!items!7o8XmQGrIHmc1HdB'
+

@@ -1,0 +1,35 @@
+name: Voie du vagabond de la nuit
+type: path
+flags:
+  core:
+    sourceId: Item.Q8uxmbnKSmSrKkiL
+img: systems/coc/ui/icons/Icon.5_78.png
+effects: []
+_id: U6NTqJywQLdK4Jxh
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: surhumains-voie-du-vagabond-de-la-nuit
+  setting: surhumains
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!U6NTqJywQLdK4Jxh'
+

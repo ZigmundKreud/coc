@@ -1,0 +1,65 @@
+name: Traitement expérimental
+type: capacity
+flags:
+  core:
+    sourceId: Item.yF7kyBhz8e0NsfOR
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_id: QI0S2i397U3H9liG
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le chercheur a mis au point un traitement qui fait passer le sujet
+    trait&eacute; pour un zombie aupr&egrave;s des autres zombies&nbsp;
+    (Traitement Cam&eacute;l&eacute;on)</p>
+
+    <blockquote>
+
+    <p>S&rsquo;il est prudent, le sujet trait&eacute; peut marcher parmi les
+    zombies sans provoquer leur agressivit&eacute;. Le sujet gagne +10 en
+    discr&eacute;tion contre les zombies. S&rsquo;il est dans le champs de
+    vision proche (10 m&egrave;tres) d&rsquo;un ou plusieurs zombies, il doit
+    r&eacute;ussir un test de CHA difficult&eacute; 5 pour passer pour un
+    zombie. La difficult&eacute; du test augmente si le personnage fait du bruit
+    (+5), s&rsquo;il a une activit&eacute; autre que marcher en ayant
+    l&rsquo;air hagard (+5) ou s&rsquo;il est oblig&eacute; de fr&ocirc;ler un
+    zombie pour passer (+10). Toute action agressive lui fait perdre le
+    b&eacute;n&eacute;fice.</p>
+
+    </blockquote>
+
+    <p>Le chercheur dispose de [1d6 + Mod. d&rsquo;INT] doses par aventure
+    (dur&eacute;e 1d6 x 10 minutes par dose). Les doses ne se cumulent pas entre
+    chaque aventure : le joueur doit relancer pour l&rsquo;aventure suivante,
+    mais il peut d&eacute;cider de garder ce qui lui reste si le nouveau
+    r&eacute;sultat est plus faible. En cours d&rsquo;aventure, s&rsquo;il
+    r&eacute;ussit un test de ressource dans un h&ocirc;pital, il peut fabriquer
+    1d4 doses suppl&eacute;mentaires (au lieu d&rsquo;obtenir des ressources
+    ordinaires).</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-traitement-experimental
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!QI0S2i397U3H9liG'
+

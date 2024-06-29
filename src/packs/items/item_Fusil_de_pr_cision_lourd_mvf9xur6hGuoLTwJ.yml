@@ -1,0 +1,101 @@
+_id: mvf9xur6hGuoLTwJ
+name: Fusil de précision lourd
+type: item
+img: systems/coc/ui/icons/svg/steyr-aug.svg
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.TzPbtSlTEWb9CfxQ
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 0
+  defBase: 0
+  defBonus: 0
+  dr: 0
+  dmg: ''
+  dmgBase: 2d8
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: '@attacks.ranged.mod'
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 100
+  reload: s
+  worn: false
+  slot: hand
+  qty: 1
+  strmin: 16
+  stacksize: null
+  price: 8000
+  properties:
+    predilection: false
+    ranged: true
+    equipable: true
+    stackable: false
+    activable: false
+    2H: true
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: true
+    protection: false
+    reloadable: true
+    explosive: false
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: false
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: false
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: true
+    salve: false
+    proneshot: true
+    snipe: false
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: ranged
+_key: '!items!mvf9xur6hGuoLTwJ'
+

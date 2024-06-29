@@ -1,0 +1,43 @@
+_id: CU4Q1QM7RDkYuBAy
+name: Usurpateur
+type: capacity
+flags:
+  core:
+    sourceId: Item.sqzIOVFFOsq9FmJk
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage sait se faire passer pour un autre ou pour un membre
+    d&rsquo;une corporation dont il n&rsquo;est pas issu. Il re&ccedil;oit un
+    bonus de +5 &agrave; tous les tests d&rsquo;imitation et de
+    d&eacute;guisement, ainsi que pour singer les habitudes et les r&egrave;gles
+    de toute organisation &agrave; laquelle il n&rsquo;appartient pas.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-usurpateur
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!CU4Q1QM7RDkYuBAy'
+

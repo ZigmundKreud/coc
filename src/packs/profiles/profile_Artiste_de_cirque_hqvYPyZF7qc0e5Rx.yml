@@ -1,0 +1,55 @@
+_id: hqvYPyZF7qc0e5Rx
+name: Artiste de cirque
+type: profile
+img: systems/coc/ui/icons/Icons8_04.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.huVzPHHzR1TKV7Td
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-artiste-de-cirque
+  setting: base
+  moduleData: {}
+  family: action
+  dv: 1d10
+  bonuses:
+    atc: 1
+    atd: 1
+    atm: 0
+    fp: 0
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie des arts
+      type: path
+      _id: zhSPJpkRcCKrPTN7
+      img: systems/coc/ui/icons/Icon.3_39.png
+      sourceId: Compendium.coc.paths.zhSPJpkRcCKrPTN7
+    - name: Voie du danger
+      type: path
+      _id: cRhwmsQ6fmZBe5ML
+      img: systems/coc/ui/icons/Icon.6_84.png
+      sourceId: Compendium.coc.paths.cRhwmsQ6fmZBe5ML
+    - name: Voie des exploits physiques
+      type: path
+      _id: dp1CJLC0sJCjIK1V
+      img: systems/coc/ui/icons/Icon.4_64.png
+      sourceId: Compendium.coc.paths.dp1CJLC0sJCjIK1V
+_key: '!items!hqvYPyZF7qc0e5Rx'
+

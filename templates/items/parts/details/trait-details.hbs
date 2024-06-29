@@ -5,11 +5,7 @@
     <label>Famille</label>
     <div class="form-fields">
         <select name="system.family" data-type="String" style="width:100%">
-            {{#select system.family}}
-                <option value="">{{localize "COC.None"}}</option>
-                <option value="action">Action</option>
-                <option value="reflexion">Réflexion</option>
-            {{/select}}
-        </select>
+            {{selectOptions config.FAMILY selected=system.family localize=true blank="COC.None"}}
+        </select>         
     </div>
 </div>

@@ -1,0 +1,183 @@
+name: Profils Action
+flags:
+  core:
+    sourceId: RollTable.iriQJkBaXh4TVbIg
+img: systems/coc/ui/icons/Icons8_04.png
+description: Tirage aléatoire de profil "Action"
+results:
+  - _id: bCDuzfuA5PMjWDQj
+    flags: {}
+    type: pack
+    text: Artiste de cirque
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: hqvYPyZF7qc0e5Rx
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.bCDuzfuA5PMjWDQj'
+  - _id: OU9BZ7ucwL1sTVXI
+    flags: {}
+    type: pack
+    text: Aviateur
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: BzNhmwQ4mMQTNMQi
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.OU9BZ7ucwL1sTVXI'
+  - _id: of2fm1ecb5VFBosz
+    flags: {}
+    type: pack
+    text: Baroudeur
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: xVXBAJ6xeOjA7XOJ
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.of2fm1ecb5VFBosz'
+  - _id: 8T8UyP6C2LPjxvVm
+    flags: {}
+    type: pack
+    text: Cascadeur
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: 6pxynkcAxrROVx6g
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.8T8UyP6C2LPjxvVm'
+  - _id: RMFshvkr3hOKDDSj
+    flags: {}
+    type: pack
+    text: Commando
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: Y6kcUSrng0ltsEZy
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.RMFshvkr3hOKDDSj'
+  - _id: qRXp6EJNjhZ7U9OV
+    flags: {}
+    type: pack
+    text: Criminel
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: ka79BUndoRQbsONN
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.qRXp6EJNjhZ7U9OV'
+  - _id: 60pHst08YSEC64LI
+    flags: {}
+    type: pack
+    text: Garde du corps
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: pRJ8knbaxvKBjjPt
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.60pHst08YSEC64LI'
+  - _id: iO7EfKRKQ3lk7bCY
+    flags: {}
+    type: pack
+    text: Militaire
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: qmg4mrst4RvM1JCU
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.iO7EfKRKQ3lk7bCY'
+  - _id: t05UdBmAQKTDd8kj
+    flags: {}
+    type: pack
+    text: Pilote
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: aQssGvvhoImy6OyF
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.t05UdBmAQKTDd8kj'
+  - _id: lauEaq3oa41UE1nY
+    flags: {}
+    type: pack
+    text: Pompier
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: zCruPf4mXgmfOxGZ
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.lauEaq3oa41UE1nY'
+  - _id: fLZMOMlXrFlQe0I6
+    flags: {}
+    type: pack
+    text: Spécialiste des milieux extrêmes
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: juR8I7dfWus4UQtN
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.fLZMOMlXrFlQe0I6'
+  - _id: eEhRAgWnCn5JJHRQ
+    flags: {}
+    type: pack
+    text: Sportif de haut niveau
+    img: systems/coc/ui/icons/Icons8_04.png
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: SflYWnYZn5EtHbVT
+    _key: '!tables.results!RN2QRIiZ61snQ9O1.eEhRAgWnCn5JJHRQ'
+formula: 1d12
+replacement: true
+displayRoll: true
+_id: RN2QRIiZ61snQ9O1
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+sort: 0
+_key: '!tables!RN2QRIiZ61snQ9O1'
+

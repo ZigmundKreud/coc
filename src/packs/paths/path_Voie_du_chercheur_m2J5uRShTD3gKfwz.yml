@@ -1,0 +1,69 @@
+_id: m2J5uRShTD3gKfwz
+name: Voie du chercheur
+type: path
+img: systems/coc/ui/icons/Icon.4_92.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.Qv0J3BTzlhAoTMgr
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Un chercheur est un personnage qui n&rsquo;a pas abandonn&eacute;
+    l&rsquo;espoir de r&eacute;soudre le probl&egrave;me gr&acirc;ce &agrave; la
+    science : trouver un rem&egrave;de ou un vaccin ou au contraire trouver un
+    virus qui extermine l&rsquo;ennemi. Il est g&eacute;n&eacute;ralement de
+    formation scientifique (Voie des sciences ou Voie de la m&eacute;decine),
+    mais il peut &ecirc;tre un enqu&ecirc;teur (Voie de
+    l&rsquo;investigation).</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-voie-du-chercheur
+  setting: zombis
+  moduleData: {}
+  capacities:
+    - name: Spécialiste des zombies
+      type: capacity
+      _id: tJVpo026LpybWmTY
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.tJVpo026LpybWmTY
+    - name: Les gestes qui sauvent
+      type: capacity
+      _id: x8dtY9dkB0ND1IR4
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.x8dtY9dkB0ND1IR4
+    - name: Comprend tes ennemis
+      type: capacity
+      _id: xG3NMGHbCQRZWgkN
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.xG3NMGHbCQRZWgkN
+    - name: Traitement expérimental
+      type: capacity
+      _id: QI0S2i397U3H9liG
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.QI0S2i397U3H9liG
+    - name: Les idées claires
+      type: capacity
+      _id: tVb8PAj2Fsn9Grsw
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.tVb8PAj2Fsn9Grsw
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!m2J5uRShTD3gKfwz'
+

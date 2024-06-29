@@ -9,7 +9,7 @@ export class CoCActorSheet extends CoCBaseSheet {
 
     /** @override */
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["coc", "base", "sheet", "actor", "character"],
             template: "/systems/coc/templates/actors/actor-sheet.hbs",
             width: 970,
@@ -28,7 +28,7 @@ export class CoCActorSheet extends CoCBaseSheet {
 
     /** @override */
     async getData(options = {}) {
-        const data = super.getData(options);
+        const data = await super.getData(options);
         if (COC.debug) console.log("COC | ActorSheet getData", data);
 
         // The Actor's data
@@ -124,6 +124,7 @@ export class CoCActorSheet extends CoCBaseSheet {
 
         data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
 
+        
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }

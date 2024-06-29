@@ -1,0 +1,32 @@
+_id: yInYKgPsuZra6RWv
+name: Vif
+type: trait
+flags: {}
+img: systems/coc/ui/icons/Icon.1_12.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  bw0hbcRcNy32Ee84: 3
+system:
+  description: >-
+    <p><span style="color: #191813; background-color: #d3d3d3;">Le personnage
+    re&ccedil;oit un bonus de +3 en Initiative.</span></p>
+  source: Chroniques Oubliées Contemporain
+  key: trait-vif
+  setting: base
+  moduleData: {}
+  family: action
+  rank: null
+folder: null
+sort: 0
+_key: '!items!yInYKgPsuZra6RWv'
+

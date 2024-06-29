@@ -1,0 +1,118 @@
+_id: o7FfxTLM9a3QUSus
+name: Gilet pare-balle lourd
+type: item
+img: systems/coc/ui/icons/svg/kevlar-vest.svg
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.Y4tZQ1Z1KAHJruAU
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 34">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Il ajoute des protections au cou et au bas-ventre, ainsi que des plaques
+    en céramique ou composites sur la poitrine et éventuel- lement le dos. Il
+    apporte un bonus de +4 en DEF et une RD 8 contre les armes à feu. Prix 1
+    500 $</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 4
+  defBase: 4
+  defBonus: 0
+  dr: 8
+  dmg: ''
+  dmgBase: ''
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: ''
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 0
+  reload: ''
+  worn: false
+  slot: chest
+  qty: 1
+  strmin: null
+  stacksize: null
+  price: 1500
+  properties:
+    predilection: false
+    ranged: false
+    equipable: true
+    stackable: false
+    activable: false
+    2H: false
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: false
+    protection: true
+    reloadable: false
+    explosive: false
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: true
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: false
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: false
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: armor
+_key: '!items!o7FfxTLM9a3QUSus'
+

@@ -1,0 +1,44 @@
+_id: w60blRBdE7hTtduR
+name: Appel à un ami
+type: capacity
+flags:
+  core:
+    sourceId: Item.inZyMteMsVwQ1lux
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Une fois par jour, le personnage peut demander de l&rsquo;aide &agrave;
+    un ami : renseignement, coup de main, etc. Il doit r&eacute;ussir un test de
+    CHA diicult&eacute; 10 si le service est du domaine de la routine, de 15 si
+    le service est difficile ou s&rsquo;il peut pr&eacute;senter un risque, et
+    de 20 si le service fait appel &agrave; une information secr&egrave;te ou
+    s&rsquo;il met ouvertement l&rsquo;alli&eacute; en danger.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-appel-a-un-ami
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!w60blRBdE7hTtduR'
+

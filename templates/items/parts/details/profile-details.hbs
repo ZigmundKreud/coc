@@ -6,15 +6,7 @@
     <label>{{localize "COC.ui.hd"}}</label>
     <div class="form-fields">
         <select name="system.dv" data-type="String" style="width:100%">
-            {{#select system.dv}}
-                <option value="">{{localize "COC.None"}}</option>
-                <option value="1d4">d4</option>
-                <option value="1d6">d6</option>
-                <option value="1d8">d8</option>
-                <option value="1d10">d10</option>
-                <option value="1d12">d12</option>
-                <option value="1d20">d20</option>
-            {{/select}}
+            {{selectOptions config.DICE_VALUES selected=system.dv localize=true blank="COC.None"}}
         </select>
     </div>
 </div>
@@ -23,13 +15,8 @@
     <label>Famille de profil</label>
     <div class="form-fields">
         <select name="system.family" data-type="String" style="width:100%">
-            {{#select system.family}}
-                <option value="">{{localize "COC.None"}}</option>
-                <option value="action">Action</option>
-                <option value="adventure">Aventure</option>
-                <option value="reflexion">Réflexion</option>
-            {{/select}}
-        </select>
+            {{selectOptions config.FAMILY selected=system.family localize=true blank="COC.None"}}
+        </select>        
     </div>
 </div>
 
@@ -37,12 +24,7 @@
     <label>{{localize "COC.ui.spellcasting"}}</label>
     <div class="form-fields">
         <select name="system.spellcasting" data-type="String" style="width:100%">
-            {{#select system.spellcasting}}
-                <option value="">{{localize "COC.None"}}</option>
-                <option value="@stats.int.mod">{{localize "COC.stats.int.label"}}</option>
-                <option value="@stats.wis.mod">{{localize "COC.stats.wis.label"}}</option>
-                <option value="@stats.cha.mod">{{localize "COC.stats.cha.label"}}</option>
-            {{/select}}
+            {{selectOptions config.SPELLCASTING selected=system.spellcasting localize=true blank="COC.None"}}
         </select>
     </div>
 </div>

@@ -20,25 +20,7 @@
         <label>{{localize "COC.ui.slot"}}</label>
         <div class="form-fields">
             <select name="system.slot" data-type="String" style="width:100%">
-                {{#select system.slot}}
-                    <option value="">{{localize "COC.None"}}</option>
-                    <option value="hand">{{localize "COC.slot.hand"}}</option>
-                    <option value="head">{{localize "COC.slot.head"}}</option>
-                    <option value="ear">{{localize "COC.slot.ear"}}</option>
-                    <option value="neck">{{localize "COC.slot.neck"}}</option>
-                    <option value="shoulders">{{localize "COC.slot.shoulders"}}</option>
-                    <option value="chest">{{localize "COC.slot.chest"}}</option>
-                    <option value="back">{{localize "COC.slot.back"}}</option>
-                    <option value="arm">{{localize "COC.slot.arm"}}</option>
-                    <option value="finger">{{localize "COC.slot.finger"}}</option>
-                    <option value="wrist">{{localize "COC.slot.wrist"}}</option>
-                    <option value="waist">{{localize "COC.slot.waist"}}</option>
-                    <option value="legs">{{localize "COC.slot.legs"}}</option>
-                    <option value="feet">{{localize "COC.slot.feet"}}</option>
-                    <option value="belt">{{localize "COC.slot.belt"}}</option>
-                    <option value="backpack">{{localize "COC.slot.backpack"}}</option>
-                    <option value="quiver">{{localize "COC.slot.quiver"}}</option>
-                {{/select}}
+                {{selectOptions config.itemSlots selected=system.slot localize=true}}
             </select>
         </div>
     </div>

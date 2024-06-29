@@ -1,0 +1,145 @@
+_id: Dk6j15NzzpjdmU2S
+name: Dynamite
+type: item
+flags:
+  core:
+    sourceId: Item.AGCZw4sLnhg8tcp9
+img: systems/coc/ui/icons/svg/dynamite.svg
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 34">
+
+    <div title="Page 34">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Dépassée depuis l&rsquo;invention de la gre- nade, la dynamite peut
+    cependant être une option pour les PJ, même si son emploi en combat est un
+    jeu dange- reux. De plus, la dynamite âgée suinte de la nitroglycérine et
+    devient instable et sensible aux chocs. Un bâton de dy- namite
+    s&rsquo;utilise comme une grenade, mais nécessite obligatoirement une ac-
+    tion limitée pour être allumé et lancé. Si le test d&rsquo;attaque est
+    un échec critique, l&rsquo;explosion a lieu à l&rsquo;endroit où se tient
+    le personnage. La dynamite inflige 3d6 DM dans un rayon de 3 mètres, le
+    double aux structures (voir DM aux structures). Les victimes peuvent effec-
+    tuer un test de DEX difficulté 15 pour ne subir que la moitié des
+    DM.&nbsp;</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    <p>&nbsp;</p>
+
+    <div title="Page 34">
+
+    <div>
+
+    <div>
+
+    <div>&nbsp;</div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 0
+  defBase: 0
+  defBonus: 0
+  dr: 0
+  dmg: ''
+  dmgBase: 3d6
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: '@attacks.ranged.mod'
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 3
+  reload: ''
+  worn: false
+  slot: ''
+  qty: 1
+  strmin: null
+  stacksize: null
+  price: 0
+  properties:
+    predilection: false
+    ranged: true
+    equipable: false
+    stackable: true
+    activable: false
+    2H: false
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: true
+    protection: false
+    reloadable: false
+    explosive: true
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: false
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: false
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: false
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: ammunition
+folder: null
+sort: 0
+_key: '!items!Dk6j15NzzpjdmU2S'
+

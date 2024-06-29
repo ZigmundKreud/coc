@@ -1,0 +1,46 @@
+_id: XZxjflgQXZp2iM8Y
+name: Intervention psychologique
+type: capacity
+flags:
+  core:
+    sourceId: Item.5N7SGL9xzXq0JTjx
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Lorsqu&rsquo;un individu est victime d&rsquo;un &eacute;tat de folie, de
+    col&egrave;re, de d&eacute;couragement ou de peur, le personnage peut tenter
+    un test de CHA difficult&eacute; 10 pour le raisonner (action
+    limit&eacute;e, une tentative par tour). S&rsquo;il s&rsquo;agit d&rsquo;un
+    adversaire d&eacute;cid&eacute; &agrave; attaquer les PJ, un test de CHA
+    difficult&eacute; 15 est n&eacute;cessaire et le personnage peut le calmer
+    pendant seulement 1d6 tours, ensuite l&rsquo;adversaire reprend le combat
+    (ou d&egrave;s qu&rsquo;il est attaqu&eacute;).</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-intervention-psychologique
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!XZxjflgQXZp2iM8Y'
+

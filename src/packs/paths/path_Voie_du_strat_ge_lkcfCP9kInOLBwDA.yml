@@ -1,0 +1,35 @@
+name: Voie du stratège
+type: path
+flags:
+  core:
+    sourceId: Item.PkpPjsfxhWYy4y3C
+img: systems/coc/ui/icons/Icon.1_10.png
+effects: []
+_id: lkcfCP9kInOLBwDA
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: espionnage-voie-du-stratege
+  setting: espionnage
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!lkcfCP9kInOLBwDA'
+

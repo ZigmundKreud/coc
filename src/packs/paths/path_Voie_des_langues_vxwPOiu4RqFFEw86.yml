@@ -1,0 +1,71 @@
+_id: vxwPOiu4RqFFEw86
+name: Voie des langues
+type: path
+img: systems/coc/ui/icons/Icons8_50.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.RaBNNtV7JzLsQirb
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: |-
+    <div title="Page 25">
+    <div>
+    <div>
+    <div>
+    <p><strong>Équipement: </strong>des romans en langue étrangère.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-des-langues
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Langues étrangères
+      type: capacity
+      _id: uQdESUHxpAOkNzZx
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.uQdESUHxpAOkNzZx
+    - name: Histoire et culture
+      type: capacity
+      _id: UCoDcRA3wfbZRUmq
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.UCoDcRA3wfbZRUmq
+    - name: Langues mortes
+      type: capacity
+      _id: 2FGEPkDqSKqafFUM
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.2FGEPkDqSKqafFUM
+    - name: Oreille fantastique
+      type: capacity
+      _id: 4YSqFaqpodNTX1Cc
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.4YSqFaqpodNTX1Cc
+    - name: Perception supérieure
+      type: capacity
+      _id: 4eHQoheCysCDMrDW
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.4eHQoheCysCDMrDW
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!vxwPOiu4RqFFEw86'
+

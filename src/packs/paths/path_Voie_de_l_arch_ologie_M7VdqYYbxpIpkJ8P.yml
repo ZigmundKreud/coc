@@ -1,0 +1,68 @@
+_id: M7VdqYYbxpIpkJ8P
+name: Voie de l'archéologie
+type: path
+img: systems/coc/ui/icons/Icon.3_46.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.CjA4HpAXyaCal8JB
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 20">
+
+    <p><strong>Équipement :</strong> livre sur une civilisation perdue, tenue
+    de randonnée, matériel de fouille.</p>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-de-larcheologie
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Formation d'historien
+      type: capacity
+      _id: FFuIiHsUVrxvyZsU
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.FFuIiHsUVrxvyZsU
+    - name: Langues anciennes
+      type: capacity
+      _id: NTvvBH5Ljq3K6kor
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.NTvvBH5Ljq3K6kor
+    - name: Spéléologue
+      type: capacity
+      _id: s2QsjXcwdhzrldlb
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.s2QsjXcwdhzrldlb
+    - name: Vigilance
+      type: capacity
+      _id: qpHaLBTmWMcJIaqa
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.qpHaLBTmWMcJIaqa
+    - name: Savoirs interdits
+      type: capacity
+      _id: 9Efooxdt5oHSbNVU
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.9Efooxdt5oHSbNVU
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!M7VdqYYbxpIpkJ8P'
+

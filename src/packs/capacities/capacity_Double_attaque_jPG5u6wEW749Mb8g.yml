@@ -1,0 +1,41 @@
+_id: jPG5u6wEW749Mb8g
+name: Double attaque
+type: capacity
+flags:
+  core:
+    sourceId: Item.KgkSLAvJqQsig4Ao
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage peut efectuer deux attaques au contact pendant ce tour.
+    Toutefois, le joueur utilise un d12 au lieu du d20 pour le test de la
+    seconde attaque.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-double-attaque
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: true
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!jPG5u6wEW749Mb8g'
+

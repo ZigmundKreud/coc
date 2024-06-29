@@ -1,0 +1,85 @@
+_id: QO3BtvhxvQVtkEgq
+name: Voie du héros pulp
+type: path
+flags:
+  core:
+    sourceId: Item.8MD0VnIZliusMKQc
+img: systems/coc/ui/icons/Icon.6_38.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 87">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <h2>Voie du héros pulp</h2>
+
+    <p style="text-align: justify;">La Voie du héros pulp est une voie
+    optionnelle supplémentaire réservée aux personnages du genre. Si vous
+    choisissez cette règle, tous les joueurs l&rsquo;ajoutent à leur fiche de
+    personnage dès leur création. Cette voie a pour particularité de ne
+    nécessiter l&rsquo;investissement d&rsquo;aucun point de capacité pour
+    progresser.</p>
+
+    <p style="text-align: justify;">Chaque personnage reçoit un rang
+    supplémentaire dans la voie par passage de niveau (donc le rang 1 dès la
+    création). En d&rsquo;autres termes, le rang atteint dans la voie est
+    simplement et automatiquement égal au niveau du personnage (avec un maximum
+    de 5).</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    <div style="text-align: justify;" title="Page 88">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Si votre univers pulp accepte les surhumain (voir chapitre 7), il sera
+    possible de remplacer cette voie par une Voie de surhumain (voir chapitre 7
+    p. 154).</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: pulp-voie-du-heros-pulp
+  setting: pulp
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: true
+folder: null
+sort: 0
+_key: '!items!QO3BtvhxvQVtkEgq'
+

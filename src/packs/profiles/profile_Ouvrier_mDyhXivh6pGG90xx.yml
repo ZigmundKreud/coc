@@ -1,0 +1,55 @@
+_id: mDyhXivh6pGG90xx
+name: Ouvrier
+type: profile
+img: systems/coc/ui/icons/Icon.3_65.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.k1ZGk4tCywbx9iBK
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-ouvrier
+  setting: base
+  moduleData: {}
+  family: adventure
+  dv: 1d8
+  bonuses:
+    atc: 1
+    atd: 0
+    atm: 0
+    fp: 2
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie des corporations
+      type: path
+      _id: cK8TdXe1vm68uP4u
+      img: systems/coc/ui/icons/Icon.5_53.png
+      sourceId: Compendium.coc.paths.cK8TdXe1vm68uP4u
+    - name: Voie des exploits physiques
+      type: path
+      _id: dp1CJLC0sJCjIK1V
+      img: systems/coc/ui/icons/Icon.4_64.png
+      sourceId: Compendium.coc.paths.dp1CJLC0sJCjIK1V
+    - name: Voie de la mécanique
+      type: path
+      _id: OUV8YE0BqDMldsO2
+      img: systems/coc/ui/icons/Icon.7_55.png
+      sourceId: Compendium.coc.paths.OUV8YE0BqDMldsO2
+_key: '!items!mDyhXivh6pGG90xx'
+

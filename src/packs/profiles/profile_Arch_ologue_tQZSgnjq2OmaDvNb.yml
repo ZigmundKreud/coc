@@ -1,0 +1,55 @@
+_id: tQZSgnjq2OmaDvNb
+name: Archéologue
+type: profile
+img: systems/coc/ui/icons/Icon.3_65.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.5KvrPvHpkU9FSaTo
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: null
+  source: ''
+  key: base-archeologue
+  setting: base
+  moduleData: {}
+  family: adventure
+  dv: 1d8
+  bonuses:
+    atc: 1
+    atd: 0
+    atm: 0
+    fp: 2
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie de l'archéologie
+      type: path
+      _id: M7VdqYYbxpIpkJ8P
+      img: systems/coc/ui/icons/Icon.3_46.png
+      sourceId: Compendium.coc.paths.M7VdqYYbxpIpkJ8P
+    - name: Voie de l'investigation
+      type: path
+      _id: jKsHMEaZF5MTL4iF
+      img: systems/coc/ui/icons/Icon.4_68.png
+      sourceId: Compendium.coc.paths.jKsHMEaZF5MTL4iF
+    - name: Voie des voyages
+      type: path
+      _id: m8psb2pbkDNSJ5YS
+      img: systems/coc/ui/icons/Icon.6_43.png
+      sourceId: Compendium.coc.paths.m8psb2pbkDNSJ5YS
+_key: '!items!tQZSgnjq2OmaDvNb'
+

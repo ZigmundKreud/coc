@@ -1,0 +1,66 @@
+_id: 4tC9JCuewfgvWd45
+name: Voie du fossoyeur
+type: path
+img: systems/coc/ui/icons/Icon.1_38.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.ZbkVRVBGMrELeGeS
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le fossoyeur est un tueur de zombie, il n&rsquo;a de cesse que de les
+    poursuivre pour les annihiler, broyer, br&ucirc;ler, etc. Il a sans doute
+    perdu des &ecirc;tres tr&egrave;s chers et n&rsquo;a plus d&rsquo;autre
+    motivation dans la vie que la vengeance.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-voie-du-fossoyeur
+  setting: zombis
+  moduleData: {}
+  capacities:
+    - name: Prend ça !
+      type: capacity
+      _id: rYyQIZgGM8L5noBk
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.rYyQIZgGM8L5noBk
+    - name: Plus de munitions
+      type: capacity
+      _id: fHvaTx4LoWyWJJsm
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.fHvaTx4LoWyWJJsm
+    - name: Dans ta face
+      type: capacity
+      _id: GM8bqxeQXOvntMrt
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.GM8bqxeQXOvntMrt
+    - name: Et encore ça !
+      type: capacity
+      _id: Vq6i5J17W6RTGq15
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.Vq6i5J17W6RTGq15
+    - name: Show time
+      type: capacity
+      _id: GCJaylQY9511k48D
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.GCJaylQY9511k48D
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!4tC9JCuewfgvWd45'
+

@@ -5,7 +5,7 @@ export class CoCEncounterSheet extends CoCBaseSheet {
 
     /** @override */
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["coc", "base", "sheet", "actor", "encounter"],
             template: "/systems/coc/templates/actors/actor-sheet.hbs",
             width: 970,
@@ -30,7 +30,7 @@ export class CoCEncounterSheet extends CoCBaseSheet {
 
     /** @override */
     async getData(options) {
-        const data = super.getData(options);
+        const data = await super.getData(options);
         if (COC.debug) console.log("COC | EncounterSheet getData", data);
 
         // Combat and Inventory

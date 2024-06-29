@@ -1,0 +1,46 @@
+_id: 14shEJsAT5xIFjws
+name: Pied-à-terre
+type: capacity
+flags:
+  core:
+    sourceId: Item.CpDQafa0tIy5igJE
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage a acc&egrave;s &agrave; un logement de qualit&eacute; dans
+    toutes les grandes capitales, il s&rsquo;agit g&eacute;n&eacute;ralement de
+    la r&eacute;sidence secondaire d&rsquo;un ami ou d&rsquo;un alli&eacute;.
+    L&rsquo;endroit peut &ecirc;tre discret ou ostentatoire, au gr&eacute; du
+    joueur. Il peut comprendre du personnel et donne aussi acc&egrave;s &agrave;
+    tout l&rsquo;&eacute;quipement disponible dans ce type de local, y compris
+    de l&rsquo;armement ou d&rsquo;autres produits &eacute;ventuellement
+    ill&eacute;gaux (&agrave; la discr&eacute;tion du MJ).</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-pied-a-terre
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!14shEJsAT5xIFjws'
+

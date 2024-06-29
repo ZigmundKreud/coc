@@ -1,0 +1,35 @@
+name: Voie de l'attrait de la nuit
+type: path
+flags:
+  core:
+    sourceId: Item.Zcc4UffOgIzIemzc
+img: systems/coc/ui/icons/Icon.5_78.png
+effects: []
+_id: Sj3PQAK0PoaUjNM2
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: surhumains-voie-de-lattrait-de-la-nuit
+  setting: surhumains
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!Sj3PQAK0PoaUjNM2'
+

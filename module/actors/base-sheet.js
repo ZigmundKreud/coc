@@ -128,7 +128,7 @@ export class CoCBaseSheet extends ActorSheet {
       ev.preventDefault();
       const elt = $(ev.currentTarget).parents(".effect");
       const effectId = elt.data("itemId");
-      let updateData = duplicate(this.actor);
+      let updateData = foundry.utils.duplicate(this.actor);
       let effects = updateData.effects;
       const effect = effects.find((e) => e._id === effectId);
       if (effect) {
@@ -140,8 +140,8 @@ export class CoCBaseSheet extends ActorSheet {
       ev.preventDefault();
       return this.actor.createEmbeddedDocuments("ActiveEffect", [
         {
-          label: game.i18n.localize("COC.ui.newEffect"),
-          icon: "icons/svg/aura.svg",
+          name: game.i18n.localize("COC.ui.newEffect"),
+          img: "icons/svg/aura.svg",
           origin: this.actor.uuid,
           "duration.rounds": undefined,
           disabled: true,
@@ -340,7 +340,7 @@ export class CoCBaseSheet extends ActorSheet {
     const item = await Item.fromDropData(data);
     if (!COC.actorsAllowedItems[this.actor.type]?.includes(item.type)) return;
 
-    const itemData = duplicate(item);
+    const itemData = foundry.utils.duplicate(item);
     switch (itemData.type) {
       case "path":
         return await Path.addToActor(this.actor, item);
@@ -414,7 +414,7 @@ export class CoCBaseSheet extends ActorSheet {
   }
 
   /** @override */
-  getData(options) {
+  async getData(options) {
     const data = super.getData(options);
     const actorData = data.data;
     data.isGm = game.user.isGM;

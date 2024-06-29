@@ -32,17 +32,9 @@
     </div>
     {{#unless (equals actor.type "encounter")}}
     <div class="flex4 center cell readonly">
-        <select class="field-value" name="system.attributes.hd.value" data-type="String" style="width:100%">
-        {{#select actor.system.attributes.hd.value}}
-            <option value="">{{localize "COC.None"}}</option>
-            <option value="1d4">1d4</option>
-            <option value="1d6">1d6</option>
-            <option value="1d8">1d8</option>
-            <option value="1d10">1d10</option>
-            <option value="1d12">1d12</option>
-            <option value="1d20">1d20</option>
-        {{/select}}
-        </select>
+        <select name="system.attributes.hd.value" data-type="String" style="font-size:12px; width:100%">
+            {{selectOptions config.DICE_VALUES selected=actor.system.attributes.hd.value blank="COC.None" localize=true}}
+        </select> 
     </div>
     {{/unless}}
     <div class="flex3 center cell">

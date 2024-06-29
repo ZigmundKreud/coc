@@ -1,0 +1,71 @@
+_id: jKsHMEaZF5MTL4iF
+name: Voie de l'investigation
+type: path
+img: systems/coc/ui/icons/Icon.4_68.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.8W2ZWpK4fy5cc2pX
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: |-
+    <div title="Page 25">
+    <div>
+    <div>
+    <div>
+    <p><strong>Équipement: </strong>une lampe-torche, une loupe.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-de-linvestigation
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Esprit d'analyse
+      type: capacity
+      _id: kbWLe2MbN7UzDgZf
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.kbWLe2MbN7UzDgZf
+    - name: Expertise
+      type: capacity
+      _id: YwMxkQhWzJU4mqS3
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.YwMxkQhWzJU4mqS3
+    - name: Recherche rapide
+      type: capacity
+      _id: 78hIYpsooajL7CNk
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.78hIYpsooajL7CNk
+    - name: Mémoire eidétique
+      type: capacity
+      _id: CwdyJdHCMUdWdOBD
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.CwdyJdHCMUdWdOBD
+    - name: Flair infaillible
+      type: capacity
+      _id: XyIvD4CsBmTlV3ky
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.XyIvD4CsBmTlV3ky
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!jKsHMEaZF5MTL4iF'
+

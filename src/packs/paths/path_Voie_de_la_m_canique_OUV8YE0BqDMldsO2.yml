@@ -1,0 +1,80 @@
+_id: OUV8YE0BqDMldsO2
+name: Voie de la mécanique
+type: path
+img: systems/coc/ui/icons/Icon.7_55.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.60IpXCyVDWNsnufs
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 26">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement</strong> : caisse à outil, une voiture ou une moto
+    (de base ou standard).</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-de-la-mecanique
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Mécano
+      type: capacity
+      _id: BEffZ9JaxyIMttSV
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.BEffZ9JaxyIMttSV
+    - name: Systèmes modernes
+      type: capacity
+      _id: FXvi6SJ9ej5ZY7lk
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.FXvi6SJ9ej5ZY7lk
+    - name: Dégotter du matos
+      type: capacity
+      _id: eYThN2FtZoF2geiF
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.eYThN2FtZoF2geiF
+    - name: Système D
+      type: capacity
+      _id: Wazcx3ID8asiKIeZ
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.Wazcx3ID8asiKIeZ
+    - name: Customisation
+      type: capacity
+      _id: Ri2QoX9Ng6tNfuzO
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.Ri2QoX9Ng6tNfuzO
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!OUV8YE0BqDMldsO2'
+

@@ -27,7 +27,7 @@ export class Capacity {
         if (capacityData.system.path) {
             let path = actor.items.find(item => item.id === capacityData.system.path._id);
             if (path) {
-                let pathData = duplicate(path);
+                let pathData = foundry.utils.duplicate(path);
                 if (capacityData.flags.core.sourceId) {
                     let pcap = pathData.system.capacities.find(c => c.sourceId === capacityData.flags.core.sourceId);
                     pcap.data.checked = false;
@@ -56,7 +56,7 @@ export class Capacity {
      * @returns
      */
     static addToItem(entity, capacityData) {
-        let data = duplicate(entity);
+        let data = foundry.utils.duplicate(entity);
         let caps = data.system.capacities;
         let capsIds = caps.map(c => c._id);
         if (capsIds && !capsIds.includes(capacityData._id)) {
@@ -80,7 +80,7 @@ export class Capacity {
         // get id of parent path
         const pathId = elt.data("pathId");
         // get path from owned items
-        const path = duplicate(actor.items.get(pathId));
+        const path = foundry.utils.duplicate(actor.items.get(pathId));
         const pathData = path.system;
         const capacities = pathData.capacities;
         const capsIds = capacities.map(c => c._id);

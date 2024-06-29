@@ -3,12 +3,8 @@
     <label>{{localize "COC.ui.skill"}}</label>
     <div class="form-fields">
         <select name="system.skill" data-type="String" style="width:100%">
-            {{#select system.skill}}
-                <option value="@attacks.melee.mod">{{localize "COC.attacks.melee.label"}}</option>
-                <option value="@attacks.ranged.mod">{{localize "COC.attacks.ranged.label"}}</option>
-                <option value="@attacks.magic.mod">{{localize "COC.attacks.magic.label"}}</option>
-            {{/select}}
-        </select>
+            {{selectOptions config.SKILL selected=system.skill localize=true}}
+        </select>        
     </div>
 </div>
 
@@ -30,16 +26,8 @@
     <label>{{localize "COC.ui.dmgStat"}}</label>
     <div class="form-fields">
         <select name="system.dmgStat" data-type="String" style="width:100%">
-            {{#select system.dmgStat}}
-                <option value="">{{localize "COC.None"}}</option>
-                <option value="@stats.str.mod">{{localize "COC.stats.str.label"}}</option>
-                <option value="@stats.dex.mod">{{localize "COC.stats.dex.label"}}</option>
-                <option value="@stats.con.mod">{{localize "COC.stats.con.label"}}</option>
-                <option value="@stats.int.mod">{{localize "COC.stats.int.label"}}</option>
-                <option value="@stats.wis.mod">{{localize "COC.stats.wis.label"}}</option>
-                <option value="@stats.cha.mod">{{localize "COC.stats.cha.label"}}</option>
-            {{/select}}
-        </select>
+            {{selectOptions config.DAMAGE_STAT selected=system.dmgStat localize=true blank="COC.None"}}
+        </select>        
     </div>
 </div>
 

@@ -1,0 +1,28 @@
+name: STR
+type: script
+flags:
+  core:
+    sourceId: Macro.NaCOab5is1cZZbLm
+scope: global
+command: |-
+  const actor = game.coc.macros.getSpeakersActor();
+  game.coc.macros.rollStatMacro(actor, "str");
+author: 9RNwlVuBKg8gXYwl
+img: systems/coc/ui/macros/icons/STR.png
+_id: Qye6pp101f5CO8KL
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+sort: 0
+_key: '!macros!Qye6pp101f5CO8KL'
+

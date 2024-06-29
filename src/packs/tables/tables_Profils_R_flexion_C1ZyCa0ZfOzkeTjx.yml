@@ -1,0 +1,183 @@
+_id: C1ZyCa0ZfOzkeTjx
+name: Profils Réflexion
+flags:
+  core:
+    sourceId: RollTable.iriQJkBaXh4TVbIg
+img: systems/coc/ui/icons/Icon.7_20.png
+description: Tirage aléatoire de profil "Réflexion"
+results:
+  - _id: T07ImTY6MsKWDEpD
+    flags: {}
+    type: pack
+    text: Activiste
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: 3130W6tHcbJa3q19
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.T07ImTY6MsKWDEpD'
+  - _id: RJZ2pKeQFRqVa8sa
+    flags: {}
+    type: pack
+    text: Artiste
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: gnWdApC3c8hUQnha
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.RJZ2pKeQFRqVa8sa'
+  - _id: ylQSjMHd6jnCk1Ux
+    flags: {}
+    type: pack
+    text: Bibliothécaire
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: xU5Gf2r3NndxsXA0
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.ylQSjMHd6jnCk1Ux'
+  - _id: nM3y6pawTR8QcDdK
+    flags: {}
+    type: pack
+    text: Dandy
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: sjS9zSEVGmoEocjk
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.nM3y6pawTR8QcDdK'
+  - _id: LH7h14Vj6PFpiATS
+    flags: {}
+    type: pack
+    text: Dilettante
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: iE66GSqKkdFfQfjD
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.LH7h14Vj6PFpiATS'
+  - _id: pRRlwqlVuRtGZPzP
+    flags: {}
+    type: pack
+    text: Ecrivain
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: sSpKJpINnu8szbpg
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.pRRlwqlVuRtGZPzP'
+  - _id: Th7udxvP5WBRBDiM
+    flags: {}
+    type: pack
+    text: Erudit
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: JEiWvQZgKVRUq40S
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.Th7udxvP5WBRBDiM'
+  - _id: PvXiW70q3QZrdCGd
+    flags: {}
+    type: pack
+    text: Linguiste
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: ZmU0YG7CXcMZKQvj
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.PvXiW70q3QZrdCGd'
+  - _id: ioDNy55ICgKOrNxj
+    flags: {}
+    type: pack
+    text: Majordome
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: WrBPhiLCiKnQe5Ix
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.ioDNy55ICgKOrNxj'
+  - _id: jopwVXrePv6W73dx
+    flags: {}
+    type: pack
+    text: Missionnaire
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: uAUNGnc6RW30rbry
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.jopwVXrePv6W73dx'
+  - _id: I6cRzVnXmwVBB1pP
+    flags: {}
+    type: pack
+    text: Médecin
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: TPRfVhsGL5vJFLAv
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.I6cRzVnXmwVBB1pP'
+  - _id: erB8iJSbJPHbHyNj
+    flags: {}
+    type: pack
+    text: Scientifique
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: P0zuKglAnZ1g5bvn
+    _key: '!tables.results!C1ZyCa0ZfOzkeTjx.erB8iJSbJPHbHyNj'
+formula: 1d12
+replacement: true
+displayRoll: true
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+sort: 0
+_key: '!tables!C1ZyCa0ZfOzkeTjx'
+

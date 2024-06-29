@@ -1,0 +1,41 @@
+_id: SNelTtlyNg4Ecyv3
+name: Joli coup !
+type: capacity
+flags:
+  core:
+    sourceId: Item.DlFm5KD5L94XAx5K
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage ignore les p&eacute;nalit&eacute;s normalement
+    appliqu&eacute;es lorsque la cible est &agrave; couvert ou engag&eacute;e au
+    corps-&agrave;-corps (g&eacute;n&eacute;ralement -2 &agrave; -5).</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-joli-coup-
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!SNelTtlyNg4Ecyv3'
+

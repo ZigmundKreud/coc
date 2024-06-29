@@ -462,5 +462,28 @@
   "COC.CustomStatus.stun": "Stun (malus)",
   "COC.CustomStatus.weak": "Weak (d12)",
   "COC.CustomStatus.restrain": "Restrain (d12)",
-  "COC.CustomStatus.dead": "Dead"
+  "COC.CustomStatus.dead": "Dead",
+
+  "COC.Family.action": "Action",
+  "COC.Family.adventure": "Adventure",
+  "COC.Family.reflexion": "Reflexion",
+
+  "COC.encounter.size.tiny": "Tiny",
+  "COC.encounter.size.small": "Small",
+  "COC.encounter.size.short": "Short",
+  "COC.encounter.size.medium": "Medium",
+  "COC.encounter.size.big": "Big",
+  "COC.encounter.size.huge": "Huge",
+  "COC.encounter.size.colossal": "Colossal",
+  "COC.encounter.archetype.standard": "Standard",
+  "COC.encounter.archetype.rapide": "Fast",
+  "COC.encounter.archetype.puissant": "Powerful",
+  "COC.encounter.archetype.inférieur": "Lesser",
+  "COC.encounter.category.vivante": "Living",
+  "COC.encounter.category.humanoïde": "Humanoid",
+  "COC.encounter.category.non-vivante": "Unliving",
+  "COC.encounter.boss.rank.endurci": "Superior",
+  "COC.encounter.boss.rank.expert": "Expert",
+  "COC.encounter.boss.rank.elite": "Elite",
+  "COC.encounter.boss.rank.legendaire": "Legendary"
 } 

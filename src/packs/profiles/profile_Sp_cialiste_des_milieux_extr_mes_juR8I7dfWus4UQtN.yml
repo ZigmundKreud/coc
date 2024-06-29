@@ -1,0 +1,55 @@
+_id: juR8I7dfWus4UQtN
+name: Spécialiste des milieux extrêmes
+type: profile
+img: systems/coc/ui/icons/Icons8_04.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.15EXkn5XghM22xx3
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-specialiste-des-milieux-extremes
+  setting: base
+  moduleData: {}
+  family: action
+  dv: 1d10
+  bonuses:
+    atc: 1
+    atd: 1
+    atm: 0
+    fp: 0
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie du danger
+      type: path
+      _id: cRhwmsQ6fmZBe5ML
+      img: systems/coc/ui/icons/Icon.6_84.png
+      sourceId: Compendium.coc.paths.cRhwmsQ6fmZBe5ML
+    - name: Voie des exploits physiques
+      type: path
+      _id: dp1CJLC0sJCjIK1V
+      img: systems/coc/ui/icons/Icon.4_64.png
+      sourceId: Compendium.coc.paths.dp1CJLC0sJCjIK1V
+    - name: Voie de la survie
+      type: path
+      _id: 415P4oWcA5Mzwhca
+      img: systems/coc/ui/icons/Icon.5_64.png
+      sourceId: Compendium.coc.paths.415P4oWcA5Mzwhca
+_key: '!items!juR8I7dfWus4UQtN'
+

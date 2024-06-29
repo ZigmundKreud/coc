@@ -10,7 +10,7 @@ export class CoCItemSheet extends ItemSheet {
 
     /** @override */
     static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["coc", "base", "sheet", "item", this.type],
             template: "/systems/coc/templates/items/item-sheet.hbs",
             width: 600,
@@ -88,8 +88,8 @@ export class CoCItemSheet extends ItemSheet {
             ev.preventDefault();
             if (!this.isEditable) return;
             return this.item.createEmbeddedDocuments("ActiveEffect", [{
-                label: game.i18n.localize("COC.ui.newEffect"),
-                icon: "icons/svg/aura.svg",
+                name: game.i18n.localize("COC.ui.newEffect"),
+                img: "icons/svg/aura.svg",
                 origin: this.item.uuid,
                 "duration.rounds": undefined,
                 disabled: false
@@ -170,7 +170,7 @@ export class CoCItemSheet extends ItemSheet {
      */
     async _onDropItem(event, data) {
         Item.fromDropData(data).then(item => {
-            const itemData = duplicate(item);
+            const itemData = foundry.utils.duplicate(item);
             switch (itemData.type) {
                 case "path": return this._onDropPathItem(event, itemData);
                 case "capacity": return this._onDropCapacityItem(event, itemData);
@@ -235,7 +235,7 @@ export class CoCItemSheet extends ItemSheet {
 
     _onDeleteItem(ev){
         ev.preventDefault();
-        let data = duplicate(this.item);
+        let data = foundry.utils.duplicate(this.item);
         const li = $(ev.currentTarget).closest(".item");
         const id = li.data("itemId");
         const itemType = li.data("itemType");
@@ -305,7 +305,7 @@ export class CoCItemSheet extends ItemSheet {
         const name = input.attr('name');
         const checked = input.prop('checked')
         if (name === "system.properties.equipment" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.properties.equipable = false;
             data.system.slot = "";
             data.system.properties.stackable = false;
@@ -321,18 +321,18 @@ export class CoCItemSheet extends ItemSheet {
             return this.item.update(data);
         }
         if (name === "system.properties.equipable" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.slot = "";
             return this.item.update(data);
         }
         if (name === "system.properties.stackable" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.qty = 1;
             data.system.stacksize = null;
             return this.item.update(data);
         }
         if (name === "system.properties.weapon" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.skill = "@attacks.melee.mod";
             data.system.skillBonus = 0;
             data.system.dmgBase = 0;
@@ -344,7 +344,7 @@ export class CoCItemSheet extends ItemSheet {
             return this.item.update(data);
         }
         if (name === "system.properties.protection" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.defBase = 0;
             data.system.defBonus = 0;
             data.system.properties.dr = false;
@@ -352,12 +352,12 @@ export class CoCItemSheet extends ItemSheet {
             return this.item.update(data);
         }
         if (name === "system.properties.dr" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.dr = 0;
             return this.item.update(data);
         }
         if (name === "system.properties.ranged" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.range = 0;
             data.system.properties.reloadable = false;
             data.system.properties.salve = false;
@@ -367,12 +367,12 @@ export class CoCItemSheet extends ItemSheet {
             return this.item.update(data);
         }
         if (name === "system.properties.reloadable" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.reload = "";
             return this.item.update(data);
         }
         if (name === "system.properties.effects" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.properties.heal = false;
             data.system.properties.buff = false;
             data.system.properties.temporary = false;
@@ -388,17 +388,17 @@ export class CoCItemSheet extends ItemSheet {
             return this.item.update(data);
         }
         if (name === "system.properties.heal" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.effects.heal.formula = null;
             return this.item.update(data);
         }
         if (name === "system.properties.buff" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.effects.buff.formula = null;
             return this.item.update(data);
         }
         if (name === "system.properties.temporary" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             if (data.system.properties.duration) {
                 data.system.properties.duration.formula = null;
                 data.system.properties.duration.units = "";
@@ -406,7 +406,7 @@ export class CoCItemSheet extends ItemSheet {
             return this.item.update(data);
         }
         if (name === "system.properties.spell" && !checked) {
-            let data = duplicate(this.item);
+            let data = foundry.utils.duplicate(this.item);
             data.system.properties.activable = false;
             return this.item.update(data);
         }

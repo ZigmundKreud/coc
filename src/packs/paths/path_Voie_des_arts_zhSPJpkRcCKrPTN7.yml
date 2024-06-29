@@ -1,0 +1,80 @@
+_id: zhSPJpkRcCKrPTN7
+name: Voie des arts
+type: path
+img: systems/coc/ui/icons/Icon.3_39.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.WLWGMYiuaqKBMOOB
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 21">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement </strong>: de quoi pratiquer son art, tenue à la
+    mode.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-des-arts
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Formation artistique
+      type: capacity
+      _id: pRpt6lOT1a1GklZB
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.pRpt6lOT1a1GklZB
+    - name: Inspiration
+      type: capacity
+      _id: IA5z0muhMZZFm44j
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.IA5z0muhMZZFm44j
+    - name: Imprévisible
+      type: capacity
+      _id: 4yMMErywDuPf1xf4
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.4yMMErywDuPf1xf4
+    - name: Riche
+      type: capacity
+      _id: Wjycfkda3Jk3gyHm
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.Wjycfkda3Jk3gyHm
+    - name: Célèbre
+      type: capacity
+      _id: LSgoCrV3nkWJXM2H
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.LSgoCrV3nkWJXM2H
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!zhSPJpkRcCKrPTN7'
+

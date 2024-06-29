@@ -1,0 +1,58 @@
+name: Résistance occulte
+type: capacity
+flags:
+  core:
+    sourceId: Item.MTd985cij37WUgie
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+_id: CtPRmiHTFrbU1QVH
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 80">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Le personnage commence un entraînement dans le but d&rsquo;obtenir des
+    pouvoirs magiques. Il obtient un bonus de +5 à tous les tests destinés à
+    résister à la perte de points de choc et augmente son score maximum de
+    points de choc de 1. De plus, il peut dépenser 1 point de choc (PC) pour
+    annuler la pénalité d&rsquo;une blessure grave pendant 1 heure.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: epouvante-resistance-occulte
+  setting: epouvante
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+folder: null
+sort: 0
+_key: '!items!CtPRmiHTFrbU1QVH'
+

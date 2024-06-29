@@ -1,0 +1,75 @@
+_id: cxjeMprFQlIhvHpv
+name: Voie du protecteur
+type: path
+img: systems/coc/ui/icons/Icon.1_88.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.NkfK8ocoxHJf5Hwt
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le protecteur est un personnage qui s&rsquo;attache fortement &agrave;
+    ses compagnons d&rsquo;infortune et qui est pr&ecirc;t &agrave;
+    l&rsquo;impossible pour les sauver. Dans sa vision des choses, sa propre
+    survie n&rsquo;est pas la plus importante, peut-&ecirc;tre se sent-il
+    coupable de ne pas avoir &eacute;t&eacute; l&agrave; pour d&eacute;fendre
+    les siens et cherche-t-il une forme de r&eacute;demption.</p>
+
+    <p><strong>Notion de compagnon :</strong> Un compagnon est un alli&eacute;
+    du protecteur avec lequel il a d&eacute;j&agrave; affront&eacute; des
+    zombies et pass&eacute; plusieurs jours &agrave; tenter de survivre. Le
+    personnage peut avoir un nombre de compagnon de son choix &eacute;gal
+    &agrave; son rang atteint dans la voie. Il ne peut pas changer plus
+    d&rsquo;un compagnon chaque jour.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-voie-du-protecteur
+  setting: zombis
+  moduleData: {}
+  capacities:
+    - name: Soutien
+      type: capacity
+      _id: FGoJewuIx9UG16DH
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.FGoJewuIx9UG16DH
+    - name: Sens du partage
+      type: capacity
+      _id: WNsDvoAmDQ6cNiIG
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.WNsDvoAmDQ6cNiIG
+    - name: Défenseur
+      type: capacity
+      _id: 7Km4Fx8819u00Z6j
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.7Km4Fx8819u00Z6j
+    - name: Loyauté indéfectible
+      type: capacity
+      _id: brbdcJIcSjYvHGi0
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.brbdcJIcSjYvHGi0
+    - name: Pilier de la communauté
+      type: capacity
+      _id: lBMw1wEMaLkIzYxC
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.lBMw1wEMaLkIzYxC
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!cxjeMprFQlIhvHpv'
+

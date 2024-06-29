@@ -8,7 +8,7 @@ export class UpdateUtils {
                 // PATHS
                 Traversal.getEntitiesOfType(["path"]).then(paths => {
                     paths.forEach(path => {
-                        let data = duplicate(path);
+                        let data = foundry.utils.duplicate(path);
                         data.system.capacities = data.system.capacities.map(cid => {
                             if (typeof cid === "string") {
                                 // not updated
@@ -24,7 +24,7 @@ export class UpdateUtils {
                 // PROFILES
                 Traversal.getEntitiesOfType(["profile"]).then(profiles => {
                     profiles.forEach(profile => {
-                        let data = duplicate(profile);
+                        let data = foundry.utils.duplicate(profile);
                         data.system.paths = data.system.paths.map(pid => {
                             if (typeof pid === "string") {
                                 // not updated

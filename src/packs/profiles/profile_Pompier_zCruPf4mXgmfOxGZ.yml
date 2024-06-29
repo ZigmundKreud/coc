@@ -1,0 +1,55 @@
+_id: zCruPf4mXgmfOxGZ
+name: Pompier
+type: profile
+img: systems/coc/ui/icons/Icons8_04.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.x9FeOyss2cBb5HFE
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-pompier
+  setting: base
+  moduleData: {}
+  family: action
+  dv: 1d10
+  bonuses:
+    atc: 2
+    atd: 0
+    atm: 0
+    fp: 0
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie des exploits physiques
+      type: path
+      _id: dp1CJLC0sJCjIK1V
+      img: systems/coc/ui/icons/Icon.4_64.png
+      sourceId: Compendium.coc.paths.dp1CJLC0sJCjIK1V
+    - name: Voie de la médecine
+      type: path
+      _id: ZfcxHdwZU8uem1PH
+      img: systems/coc/ui/icons/Icon.1_72.png
+      sourceId: Compendium.coc.paths.ZfcxHdwZU8uem1PH
+    - name: Voie du pilotage
+      type: path
+      _id: oKVyaq1vmgMwynf3
+      img: systems/coc/ui/icons/Icon.3_95.png
+      sourceId: Compendium.coc.paths.oKVyaq1vmgMwynf3
+_key: '!items!zCruPf4mXgmfOxGZ'
+

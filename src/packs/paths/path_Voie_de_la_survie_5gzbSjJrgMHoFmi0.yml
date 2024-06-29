@@ -1,0 +1,62 @@
+_id: 5gzbSjJrgMHoFmi0
+name: Voie de la survie
+type: path
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.hqDrcUoHdJmS8fi7
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p><strong>Équipement :</strong>&nbsp;tenue de randonnée, matériel de
+    camping.</p>
+  source: Chroniques Oubliées Contemporain
+  key: epouvante-voie-de-la-survie
+  setting: epouvante
+  moduleData: {}
+  capacities:
+    - name: Ami de la nature
+      type: capacity
+      _id: ZrWNVPtQCum7FEzw
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ZrWNVPtQCum7FEzw
+    - name: Endurant
+      type: capacity
+      _id: 0dh0PPnO5HlbajfW
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.0dh0PPnO5HlbajfW
+    - name: Milieux extrêmes
+      type: capacity
+      _id: rpgGIuTI6F5Cyei6
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.rpgGIuTI6F5Cyei6
+    - name: Guide
+      type: capacity
+      _id: ci0qUUQGm8I8j8yP
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ci0qUUQGm8I8j8yP
+    - name: Survivant
+      type: capacity
+      _id: BjUTwOWaxxA0yWRH
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.BjUTwOWaxxA0yWRH
+  properties:
+    profile: false
+    prestige: false
+    alternative: true
+_key: '!items!5gzbSjJrgMHoFmi0'
+

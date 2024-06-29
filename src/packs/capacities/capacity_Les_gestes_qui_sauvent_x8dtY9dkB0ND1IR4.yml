@@ -1,0 +1,44 @@
+name: Les gestes qui sauvent
+type: capacity
+flags:
+  core:
+    sourceId: Item.SE4Ka87YXTHP1Lnw
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_id: x8dtY9dkB0ND1IR4
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Lorsqu&rsquo;un personnage est mordu, &agrave; son prochain tour, le
+    chercheur peut utiliser une action limit&eacute;e pour parcourir
+    jusqu&rsquo;&agrave; 20 m&egrave;tres et aider la victime (ou
+    lui-m&ecirc;me). La cible b&eacute;n&eacute;ficie d&rsquo;un bonus de +5
+    &agrave; son test de contagion. Si vous jouez en mode contagion automatique,
+    autorisez alors un test difficult&eacute; 20.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-les-gestes-qui-sauvent
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!x8dtY9dkB0ND1IR4'
+

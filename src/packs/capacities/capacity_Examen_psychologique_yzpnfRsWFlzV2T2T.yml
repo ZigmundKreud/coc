@@ -1,0 +1,45 @@
+_id: yzpnfRsWFlzV2T2T
+name: Examen psychologique
+type: capacity
+flags:
+  core:
+    sourceId: Item.kjN8wZumOY2Zvkz0
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>En parlant pendant 1d6 minutes avec sa cible et en r&eacute;ussissant un
+    test oppos&eacute; de PER contre CHA, le personnage peut d&eacute;terminer
+    l&rsquo;&eacute;tat &eacute;motionnel de sa cible m&ecirc;me si elle tente
+    de le camoufler. Le personnage peut notamment savoir si on tente de lui
+    mentir ou de lui cacher des choses (sans pouvoir d&eacute;terminer lequel
+    des deux). En cas d&rsquo;&eacute;chec, le personnage ne peut plus tenter
+    cette capacit&eacute; sur la m&ecirc;me cible pendant 24 heures.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-examen-psychologique
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!yzpnfRsWFlzV2T2T'
+
