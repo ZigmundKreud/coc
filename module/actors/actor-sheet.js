@@ -28,7 +28,7 @@ export class CoCActorSheet extends CoCBaseSheet {
 
     /** @override */
     async getData(options = {}) {
-        const data = super.getData(options);
+        const data = await super.getData(options);
         if (COC.debug) console.log("COC | ActorSheet getData", data);
 
         // The Actor's data
