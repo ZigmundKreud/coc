@@ -1,0 +1,74 @@
+_id: OAcjLfargsHguV26
+name: Voie du leader
+type: path
+img: systems/coc/ui/icons/Icon.3_51.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.G4M5vF9DzdP1L6xv
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le leader est un chef n&eacute;. Pourtant, peut-&ecirc;tre
+    &eacute;tait-il quelqu&rsquo;un d&rsquo;ordinaire avant la catastrophe. Ce
+    sont les &eacute;v&eacute;nements qui ont r&eacute;v&eacute;l&eacute; son
+    potentiel et ont fait de lui un leader, presque contre son gr&eacute;.
+    &Agrave; moins qu&rsquo;il n&rsquo;ait profit&eacute; de la situation pour
+    prendre sa revanche sur le syst&egrave;me et enfin devenir quelqu&rsquo;un
+    d&rsquo;important. Un leader cherche &agrave; diriger une vaste
+    communaut&eacute; et g&eacute;n&eacute;ralement &agrave; construire un havre
+    fortifi&eacute; pour la prot&eacute;ger de l&rsquo;ext&eacute;rieur. Le
+    leader peut &ecirc;tre un humaniste qui essaye de cr&eacute;er une
+    soci&eacute;t&eacute; utopiste parfaite, tout comme il peut &ecirc;tre un
+    tyran qui profite de son pouvoir pour asservir.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-voie-du-leader
+  setting: zombis
+  moduleData: {}
+  capacities:
+    - name: L'homme providentiel
+      type: capacity
+      _id: EzVqFbNs3uTJDUIM
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.EzVqFbNs3uTJDUIM
+    - name: Chef de guerre
+      type: capacity
+      _id: R9eirN9Gm5L5BDfi
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.R9eirN9Gm5L5BDfi
+    - name: Quadriller le secteur
+      type: capacity
+      _id: 7b9Dqan8KckizLi9
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.7b9Dqan8KckizLi9
+    - name: À mon commandement
+      type: capacity
+      _id: U1SSIQ377ru92FFO
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.U1SSIQ377ru92FFO
+    - name: Gestionnaire avisé
+      type: capacity
+      _id: AWZdwbak1DNMwr7r
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.AWZdwbak1DNMwr7r
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!OAcjLfargsHguV26'
+

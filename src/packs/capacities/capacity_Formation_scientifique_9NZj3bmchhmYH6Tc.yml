@@ -1,0 +1,42 @@
+_id: 9NZj3bmchhmYH6Tc
+name: Formation scientifique
+type: capacity
+flags:
+  core:
+    sourceId: Item.0sMj0mKP99NI9sTa
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage obtient un bonus de +1 par rang atteint dans cette voie
+    &agrave; tous les tests en rapport avec les sciences. Il choisit un domaine
+    particulier (math&eacute;matiques, physique, chimie, etc.) dans lequel il
+    re&ccedil;oit un bonus de +2 par rang au lieu de +1.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-formation-scientifique
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!9NZj3bmchhmYH6Tc'
+

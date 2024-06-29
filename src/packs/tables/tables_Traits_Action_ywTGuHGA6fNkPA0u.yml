@@ -1,0 +1,285 @@
+_id: ywTGuHGA6fNkPA0u
+name: Traits Action
+sort: 100001
+flags: {}
+img: systems/coc/ui/icons/Icon.1_12.png
+description: Tirage automatique des traits de la famille "Action"
+results:
+  - _id: 5IGkrJ34Zl6gvHSV
+    flags: {}
+    type: pack
+    text: Ambidextre
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    documentCollection: coc.traits
+    documentId: FMVfxNzVkHYP74rj
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.5IGkrJ34Zl6gvHSV'
+  - _id: KE7D91n8NgX4neAP
+    flags: {}
+    type: pack
+    text: Acrobate
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    documentCollection: coc.traits
+    documentId: SsEntMmwvINjbAky
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.KE7D91n8NgX4neAP'
+  - _id: 21RfWhde4WUEn1Tx
+    flags: {}
+    type: pack
+    text: Anguille
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    documentCollection: coc.traits
+    documentId: dwd8kjRUlqNUv9M9
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.21RfWhde4WUEn1Tx'
+  - _id: ybxX4pVT8B2cK3nU
+    flags: {}
+    type: pack
+    text: Bagarreur
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    documentCollection: coc.traits
+    documentId: OON2p5LRjuie8wvS
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.ybxX4pVT8B2cK3nU'
+  - _id: 6GnhxQGBSoIojqPu
+    flags: {}
+    type: pack
+    text: Chasseur
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    documentCollection: coc.traits
+    documentId: LCAvF5ro5vC65e40
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.6GnhxQGBSoIojqPu'
+  - _id: yoYl85Uk9gxp0r7l
+    flags: {}
+    type: pack
+    text: Endurant
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    documentCollection: coc.traits
+    documentId: 8ur7UAbZhB4tVdKr
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.yoYl85Uk9gxp0r7l'
+  - _id: aJOINPwjDCgG1V8W
+    flags: {}
+    type: pack
+    text: Énorme
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    documentCollection: coc.traits
+    documentId: m5MVzB8Y7Pi2ApNm
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.aJOINPwjDCgG1V8W'
+  - _id: 7AacrfL0P1PS7Tzo
+    flags: {}
+    type: pack
+    text: Jeune
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    documentCollection: coc.traits
+    documentId: lB5npa6rPQn9Jsju
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.7AacrfL0P1PS7Tzo'
+  - _id: Exy59MIZURbqwado
+    flags: {}
+    type: pack
+    text: Marin
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    documentCollection: coc.traits
+    documentId: DbhPKjEadPAoK9Jw
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.Exy59MIZURbqwado'
+  - _id: AAsKG5AFBMuHL0Y8
+    flags: {}
+    type: pack
+    text: Nyctalope
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    documentCollection: coc.traits
+    documentId: FgU88dstP2EpzLLP
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.AAsKG5AFBMuHL0Y8'
+  - _id: FGs8WnefloE3MlNV
+    flags: {}
+    type: pack
+    text: Rambo
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    documentCollection: coc.traits
+    documentId: dJhLKSWIgK52n5UN
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.FGs8WnefloE3MlNV'
+  - _id: jPkw7OysuOlr6MJv
+    flags: {}
+    type: pack
+    text: Rapide
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    documentCollection: coc.traits
+    documentId: 23vEuj01VRsbuUEg
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.jPkw7OysuOlr6MJv'
+  - _id: eKhHom7KwHTWJemz
+    flags: {}
+    type: pack
+    text: Résistant
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    documentCollection: coc.traits
+    documentId: xzpsFaUu9eUdov8o
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.eKhHom7KwHTWJemz'
+  - _id: Fc13Z5Ga3OAbxUsK
+    flags: {}
+    type: pack
+    text: Robuste
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    documentCollection: coc.traits
+    documentId: afGifsB5u69os6vm
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.Fc13Z5Ga3OAbxUsK'
+  - _id: HWzjR84rwH5FTVwV
+    flags: {}
+    type: pack
+    text: Teigneux
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    documentCollection: coc.traits
+    documentId: XISQ9rkEH7zoW8kY
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.HWzjR84rwH5FTVwV'
+  - _id: s5heZJTGwHYmnFH7
+    flags: {}
+    type: pack
+    text: Tueur né
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    documentCollection: coc.traits
+    documentId: TCnWLMNdZMookTZg
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.s5heZJTGwHYmnFH7'
+  - _id: xrjFGI5qXa102rKx
+    flags: {}
+    type: pack
+    text: Vicieux
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    documentCollection: coc.traits
+    documentId: dCalW6JWmHbhbi8R
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.xrjFGI5qXa102rKx'
+  - _id: kd3DqRxdparUammp
+    flags: {}
+    type: pack
+    text: Vif
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    documentCollection: coc.traits
+    documentId: yInYKgPsuZra6RWv
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.kd3DqRxdparUammp'
+  - _id: WPi0h9MqoyeJgu4M
+    flags: {}
+    type: pack
+    text: Oeil de lynx
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    documentCollection: coc.traits
+    documentId: JDquPPV1qHg6SLlz
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.WPi0h9MqoyeJgu4M'
+  - _id: WUwrYYuSTZ6UCSLh
+    flags: {}
+    type: pack
+    text: Vitalité
+    img: systems/coc/ui/icons/Icon.1_12.png
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    documentCollection: coc.traits
+    documentId: sEL40tc4Ii3zQORJ
+    _key: '!tables.results!ywTGuHGA6fNkPA0u.WUwrYYuSTZ6UCSLh'
+formula: 1d20
+replacement: true
+displayRoll: true
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+_key: '!tables!ywTGuHGA6fNkPA0u'
+

@@ -1,0 +1,58 @@
+name: Sciences occultes
+type: capacity
+flags:
+  core:
+    sourceId: Item.i8qF8rWcH8BWzCVj
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+_id: VHVynZT3oUV4Vylt
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 80">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Le personnage obtient un bonus de +1 par rang à tous les tests de
+    sciences occultes et un bonus de +2 par rang sur un sujet en particulier
+    (l&rsquo;alchimie, les créatures des autres plans, les grands anciens,
+    etc.). Mais cette connaissance n&rsquo;est pas sans conséquence, il gagne
+    immédiatement 1 point de folie et il en gagne un autre au rang 3.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: epouvante-sciences-occultes
+  setting: epouvante
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+folder: null
+sort: 0
+_key: '!items!VHVynZT3oUV4Vylt'
+

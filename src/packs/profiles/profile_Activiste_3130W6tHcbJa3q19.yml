@@ -1,0 +1,55 @@
+_id: 3130W6tHcbJa3q19
+name: Activiste
+type: profile
+img: systems/coc/ui/icons/Icon.7_20.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.ALvDDEfZtAgaFyum
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-activiste
+  setting: base
+  moduleData: {}
+  family: reflexion
+  dv: 1d6
+  bonuses:
+    atc: 0
+    atd: 0
+    atm: 0
+    fp: 0
+    xp: 2
+  spellcasting: ''
+  paths:
+    - name: Voie des corporations
+      type: path
+      _id: cK8TdXe1vm68uP4u
+      img: systems/coc/ui/icons/Icon.5_53.png
+      sourceId: Compendium.coc.paths.cK8TdXe1vm68uP4u
+    - name: Voie du discours
+      type: path
+      _id: Ahgo8B5GWOmbdG9t
+      img: systems/coc/ui/icons/Icon.6_62.png
+      sourceId: Compendium.coc.paths.Ahgo8B5GWOmbdG9t
+    - name: Voie de l'investigation
+      type: path
+      _id: jKsHMEaZF5MTL4iF
+      img: systems/coc/ui/icons/Icon.4_68.png
+      sourceId: Compendium.coc.paths.jKsHMEaZF5MTL4iF
+_key: '!items!3130W6tHcbJa3q19'
+

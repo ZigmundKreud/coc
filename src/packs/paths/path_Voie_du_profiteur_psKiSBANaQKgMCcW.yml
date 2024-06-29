@@ -1,0 +1,69 @@
+_id: psKiSBANaQKgMCcW
+name: Voie du profiteur
+type: path
+img: systems/coc/ui/icons/Icons8_89.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.ywiL0KuusejXTDev
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le profiteur a d&eacute;cid&eacute; de ne pas se laisser abattre par la
+    catastrophe. Il fait contre mauvaise fortune bon coeur, ou il a
+    d&eacute;cid&eacute; de profiter de la situation pour s&rsquo;enrichir. Sans
+    doute faisait-il parti des laiss&eacute;s pour compte dans la
+    soci&eacute;t&eacute; d&rsquo;avant et cette nouvelle donne semble &agrave;
+    son avantage. Apr&egrave;s tout, sa d&eacute;brouillardise devient enfin une
+    qualit&eacute; plus importante que la culture des cols blancs&hellip;</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-voie-du-profiteur
+  setting: zombis
+  moduleData: {}
+  capacities:
+    - name: Réserve personnelle
+      type: capacity
+      _id: oB4YTgzE43iM2Jll
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.oB4YTgzE43iM2Jll
+    - name: Débrouillard
+      type: capacity
+      _id: YjFGgjowNZeHC7nm
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.YjFGgjowNZeHC7nm
+    - name: La part du lion
+      type: capacity
+      _id: UXtqMBLhGwvgQTix
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.UXtqMBLhGwvgQTix
+    - name: Ca c'est du matos !
+      type: capacity
+      _id: Ccdhp1lZl6X6kWqt
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.Ccdhp1lZl6X6kWqt
+    - name: Négoce et prospérité
+      type: capacity
+      _id: E9xmaIb8ymaShL10
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.E9xmaIb8ymaShL10
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!psKiSBANaQKgMCcW'
+

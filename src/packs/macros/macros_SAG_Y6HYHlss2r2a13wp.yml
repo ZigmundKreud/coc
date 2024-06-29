@@ -1,0 +1,28 @@
+name: SAG
+type: script
+flags:
+  core:
+    sourceId: Macro.CmFzau5dIWP0oD7d
+scope: global
+command: |-
+  const actor = game.coc.macros.getSpeakersActor();
+  game.coc.macros.rollStatMacro(actor, "wis");
+author: 9RNwlVuBKg8gXYwl
+img: systems/coc/ui/macros/icons/SAG.png
+_id: Y6HYHlss2r2a13wp
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+sort: 0
+_key: '!macros!Y6HYHlss2r2a13wp'
+

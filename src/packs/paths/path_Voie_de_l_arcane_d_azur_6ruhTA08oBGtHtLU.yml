@@ -1,0 +1,35 @@
+name: Voie de l'arcane d'azur
+type: path
+flags:
+  core:
+    sourceId: Item.4EHwXe22eAo6p1Up
+img: systems/coc/ui/icons/Icon.5_78.png
+effects: []
+_id: 6ruhTA08oBGtHtLU
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: surhumains-voie-de-larcane-dazur
+  setting: surhumains
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!6ruhTA08oBGtHtLU'
+

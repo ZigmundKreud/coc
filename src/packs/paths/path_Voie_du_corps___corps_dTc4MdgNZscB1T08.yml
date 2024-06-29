@@ -1,0 +1,80 @@
+_id: dTc4MdgNZscB1T08
+name: Voie du corps-à-corps
+type: path
+img: systems/coc/ui/icons/Icons8_28.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.5SOUL5SSYy12uzbS
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 22">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement</strong> : un poignard, éventuellement une autre
+    arme en accord avec le MJ.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-du-corps-a-corps
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Arts martiaux
+      type: capacity
+      _id: xAu8Y9ao2nLY6LV4
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.xAu8Y9ao2nLY6LV4
+    - name: Arme de prédilection
+      type: capacity
+      _id: 2Hg488FbKGdQPpnk
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.2Hg488FbKGdQPpnk
+    - name: Enchaînement
+      type: capacity
+      _id: qe6PaD1FEo1Ru7cr
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.qe6PaD1FEo1Ru7cr
+    - name: Double attaque
+      type: capacity
+      _id: jPG5u6wEW749Mb8g
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.jPG5u6wEW749Mb8g
+    - name: Maître d'arme
+      type: capacity
+      _id: z52xjRJv8SKJoAEJ
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.z52xjRJv8SKJoAEJ
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!dTc4MdgNZscB1T08'
+

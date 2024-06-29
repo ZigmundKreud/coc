@@ -1,0 +1,285 @@
+_id: gibxM9KNJFpx5Bj8
+name: Traits Réflexion
+sort: 100001
+flags: {}
+img: systems/coc/ui/icons/Icon.7_20.png
+description: Tirage automatique des traits de la famille "Réflexion"
+results:
+  - _id: BKPCOXap7u0Auk6m
+    flags: {}
+    type: pack
+    text: Autorité naturelle
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    documentCollection: coc.traits
+    documentId: oHLq7F5o7ef06AgA
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.BKPCOXap7u0Auk6m'
+  - _id: trYfi1oAAG93nU96
+    flags: {}
+    type: pack
+    text: Baratineur
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    documentCollection: coc.traits
+    documentId: F6ceZlsbsSdCfakF
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.trYfi1oAAG93nU96'
+  - _id: QxVKQHbBOGGhtE7s
+    flags: {}
+    type: pack
+    text: Belle gueule
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    documentCollection: coc.traits
+    documentId: mIqAuUqCiFZ4Pktz
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.QxVKQHbBOGGhtE7s'
+  - _id: HrMP0WVsnk8h9D8v
+    flags: {}
+    type: pack
+    text: Bonne mémoire
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    documentCollection: coc.traits
+    documentId: E76VM1cpI9BPA8Et
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.HrMP0WVsnk8h9D8v'
+  - _id: W7FynFU2k622sHer
+    flags: {}
+    type: pack
+    text: Caméléon
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    documentCollection: coc.traits
+    documentId: NFn0Exb5GcS9Yu8T
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.W7FynFU2k622sHer'
+  - _id: RgGCooxS6Za858ri
+    flags: {}
+    type: pack
+    text: Cultivé
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    documentCollection: coc.traits
+    documentId: NmcFyLn9Qa8FE7kf
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.RgGCooxS6Za858ri'
+  - _id: 2sqoPNz6ppoeRhpb
+    flags: {}
+    type: pack
+    text: Double nationalité
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    documentCollection: coc.traits
+    documentId: ozrLsAuPfDTnGvMi
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.2sqoPNz6ppoeRhpb'
+  - _id: U967jy4raIoijB6C
+    flags: {}
+    type: pack
+    text: Expert
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    documentCollection: coc.traits
+    documentId: Kl6XNRsHyLbJAs4c
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.U967jy4raIoijB6C'
+  - _id: OYYcb2Shf6vn6nHz
+    flags: {}
+    type: pack
+    text: Fin psychologue
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    documentCollection: coc.traits
+    documentId: ipRXJdYJ3psNjGp9
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.OYYcb2Shf6vn6nHz'
+  - _id: Hcm9bRtE4DjCF4SW
+    flags: {}
+    type: pack
+    text: Futé
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    documentCollection: coc.traits
+    documentId: GQIUOWybQGQAbX4X
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.Hcm9bRtE4DjCF4SW'
+  - _id: CEQyB7XC25XBleKi
+    flags: {}
+    type: pack
+    text: Logique inébranlable
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    documentCollection: coc.traits
+    documentId: hjA8qFjWjNdbOX5a
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.CEQyB7XC25XBleKi'
+  - _id: D9RrTSEWLI9jcLBF
+    flags: {}
+    type: pack
+    text: Nerd
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    documentCollection: coc.traits
+    documentId: 9Bbo70SYFOxjyizY
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.D9RrTSEWLI9jcLBF'
+  - _id: MbGxlHmPZJPWFdna
+    flags: {}
+    type: pack
+    text: Noble
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 13
+      - 13
+    drawn: false
+    documentCollection: coc.traits
+    documentId: 9xh6rDfkWu0WYLgr
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.MbGxlHmPZJPWFdna'
+  - _id: bjybxdpORaE0ttVa
+    flags: {}
+    type: pack
+    text: Observateur
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 14
+      - 14
+    drawn: false
+    documentCollection: coc.traits
+    documentId: MICvqJY6A0hvgGwx
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.bjybxdpORaE0ttVa'
+  - _id: ZKMXkI5S5oYDx8jZ
+    flags: {}
+    type: pack
+    text: Esotériste
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 15
+      - 15
+    drawn: false
+    documentCollection: coc.traits
+    documentId: oTuuljYPx6la5PTi
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.ZKMXkI5S5oYDx8jZ'
+  - _id: JbLuc31RmTDMfUuf
+    flags: {}
+    type: pack
+    text: Oreille sensible
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 16
+      - 16
+    drawn: false
+    documentCollection: coc.traits
+    documentId: OnPvDWdGZIqs1fgQ
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.JbLuc31RmTDMfUuf'
+  - _id: bBu9CP5LXPOjyAFK
+    flags: {}
+    type: pack
+    text: Riche
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 17
+      - 17
+    drawn: false
+    documentCollection: coc.traits
+    documentId: Gv0WGcPgsCtMkZUO
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.bBu9CP5LXPOjyAFK'
+  - _id: A6T5AjF04JhUAWP7
+    flags: {}
+    type: pack
+    text: Veinard
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 18
+      - 18
+    drawn: false
+    documentCollection: coc.traits
+    documentId: Yacf7EXFU2XeQuse
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.A6T5AjF04JhUAWP7'
+  - _id: c9byWiaB4Zk0pOuN
+    flags: {}
+    type: pack
+    text: Volonté de fer
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 19
+      - 19
+    drawn: false
+    documentCollection: coc.traits
+    documentId: Nm4hINRKROWi7Ugv
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.c9byWiaB4Zk0pOuN'
+  - _id: O7c8b1DenK8E4vtF
+    flags: {}
+    type: pack
+    text: Vieux
+    img: systems/coc/ui/icons/Icon.7_20.png
+    weight: 1
+    range:
+      - 20
+      - 20
+    drawn: false
+    documentCollection: coc.traits
+    documentId: DueodHQc0tl7Fgj3
+    _key: '!tables.results!gibxM9KNJFpx5Bj8.O7c8b1DenK8E4vtF'
+formula: 1d20
+replacement: true
+displayRoll: true
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+_key: '!tables!gibxM9KNJFpx5Bj8'
+

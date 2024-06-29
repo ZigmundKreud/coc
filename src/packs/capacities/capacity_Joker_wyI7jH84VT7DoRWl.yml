@@ -1,0 +1,45 @@
+_id: wyI7jH84VT7DoRWl
+name: Joker
+type: capacity
+flags:
+  core:
+    sourceId: Item.yb7BJ264AEkfuaE4
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Une fois par aventure, le personnage peut r&eacute;soudre une
+    diicult&eacute; gr&acirc;ce &agrave; l&rsquo;intervention d&rsquo;un
+    &eacute;v&eacute;nement inattendu. Le joueur doit inventer une histoire
+    &agrave; peu pr&egrave;s cr&eacute;dible (m&ecirc;me si elle est improbable)
+    pour justifier ce deus ex machina. Par exemple, un militaire peut contacter
+    une troupe de mercenaires de sa connaissance qui tra&icirc;nait justement
+    dans les parages, etc.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-joker
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!wyI7jH84VT7DoRWl'
+

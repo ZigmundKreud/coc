@@ -1,0 +1,55 @@
+_id: sjS9zSEVGmoEocjk
+name: Dandy
+type: profile
+img: systems/coc/ui/icons/Icon.7_20.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.eZ0LIFafpbNQHbcT
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-dandy
+  setting: base
+  moduleData: {}
+  family: reflexion
+  dv: 1d6
+  bonuses:
+    atc: 0
+    atd: 0
+    atm: 0
+    fp: 0
+    xp: 2
+  spellcasting: ''
+  paths:
+    - name: Voie des corporations
+      type: path
+      _id: cK8TdXe1vm68uP4u
+      img: systems/coc/ui/icons/Icon.5_53.png
+      sourceId: Compendium.coc.paths.cK8TdXe1vm68uP4u
+    - name: Voie de l'argent
+      type: path
+      _id: eUFEAvnBjSmNA5wF
+      img: systems/coc/ui/icons/Icons8_78.png
+      sourceId: Compendium.coc.paths.eUFEAvnBjSmNA5wF
+    - name: Voie des voyages
+      type: path
+      _id: m8psb2pbkDNSJ5YS
+      img: systems/coc/ui/icons/Icon.6_43.png
+      sourceId: Compendium.coc.paths.m8psb2pbkDNSJ5YS
+_key: '!items!sjS9zSEVGmoEocjk'
+

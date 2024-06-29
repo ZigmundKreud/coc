@@ -1,0 +1,84 @@
+_id: cK8TdXe1vm68uP4u
+name: Voie des corporations
+type: path
+img: systems/coc/ui/icons/Icon.5_53.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.hxK10qYK5qOI5Y6G
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>&nbsp;</p>
+
+    <div title="Page 22">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement</strong> : costume, un objet symbolique.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    <p>Le joueur doit choisir une corporation : arm&eacute;e, m&eacute;decine,
+    universit&eacute;, crime organis&eacute;, show-biz, police, etc.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-des-corporations
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Corporatisme
+      type: capacity
+      _id: NVU2HbDn2Awopmfg
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.NVU2HbDn2Awopmfg
+    - name: Appel à un ami
+      type: capacity
+      _id: w60blRBdE7hTtduR
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.w60blRBdE7hTtduR
+    - name: 50/50
+      type: capacity
+      _id: uZPaDik2CXsW2DkM
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.uZPaDik2CXsW2DkM
+    - name: Joker
+      type: capacity
+      _id: wyI7jH84VT7DoRWl
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.wyI7jH84VT7DoRWl
+    - name: Mandarin
+      type: capacity
+      _id: SE5zjCXiPtt9kskD
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.SE5zjCXiPtt9kskD
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!cK8TdXe1vm68uP4u'
+

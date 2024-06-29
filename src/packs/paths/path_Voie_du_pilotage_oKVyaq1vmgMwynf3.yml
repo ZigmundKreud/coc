@@ -1,0 +1,82 @@
+_id: oKVyaq1vmgMwynf3
+name: Voie du pilotage
+type: path
+img: systems/coc/ui/icons/Icon.3_95.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.qnJbnW3ZEWrrBgXC
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 27">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement : </strong>un véhicule au choix (en accord avec le
+    MJ), tenue de pilote. Si son véhicule est détruit, le personnage pourra
+    faire l&rsquo;acquisition d&rsquo;un nouveau véhicule au niveau
+    suivant.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-du-pilotage
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Pilote émérite
+      type: capacity
+      _id: e3JK6uDfI3rigULz
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.e3JK6uDfI3rigULz
+    - name: Manoeuvre d'évitement
+      type: capacity
+      _id: bA5ITtjr0QbnVKiG
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.bA5ITtjr0QbnVKiG
+    - name: Polyvalent
+      type: capacity
+      _id: sncHffEcGmsDAcSX
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.sncHffEcGmsDAcSX
+    - name: En un seul morceau
+      type: capacity
+      _id: isHaGbnKCATqBSjt
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.isHaGbnKCATqBSjt
+    - name: As des as
+      type: capacity
+      _id: ImLgdQ2kvWLeE0FX
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ImLgdQ2kvWLeE0FX
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!oKVyaq1vmgMwynf3'
+

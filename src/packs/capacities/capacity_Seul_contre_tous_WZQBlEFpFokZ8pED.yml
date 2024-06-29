@@ -1,0 +1,42 @@
+_id: WZQBlEFpFokZ8pED
+name: Seul contre tous
+type: capacity
+flags:
+  core:
+    sourceId: Item.vcGfya3Ynn2PitW4
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Les forces du personnage sont d&eacute;cupl&eacute;es lorsqu&rsquo;il se
+    bat contre plusieurs adversaires. Il obtient un bonus de +2 en attaque et en
+    DEF lorsque plusieurs adversaires l&rsquo;attaquent au cours du m&ecirc;me
+    tour.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-seul-contre-tous
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!WZQBlEFpFokZ8pED'
+

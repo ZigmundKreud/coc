@@ -1,0 +1,45 @@
+_id: IA5z0muhMZZFm44j
+name: Inspiration
+type: capacity
+flags:
+  core:
+    sourceId: Item.MVpwpvdpqfc1jL6Y
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage poss&egrave;de une grande sensibilit&eacute;, les
+    &eacute;motions sont chez lui un vecteur puissant de motivation et de
+    r&eacute;ussite. Il obtient chaque jour un nombre de points
+    d&rsquo;inspiration (PI) &eacute;gal au rang atteint dans cette voie. Chaque
+    point d&rsquo;inspiration peut &ecirc;tre d&eacute;pens&eacute; pour
+    relancer un d&eacute; dont le r&eacute;sultat ne convient pas au joueur,
+    mais pas sur un test d&rsquo;attaque ou les DM.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-inspiration
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!IA5z0muhMZZFm44j'
+

@@ -1,0 +1,80 @@
+_id: ZfcxHdwZU8uem1PH
+name: Voie de la médecine
+type: path
+img: systems/coc/ui/icons/Icon.1_72.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.NKdysdO8zVU1AHXr
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 26">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement :</strong> une trousse de secours, un gros livre sur
+    les médicaments, costume.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-de-la-medecine
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Secouriste
+      type: capacity
+      _id: 1zAX8oqz6FXAkiS0
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.1zAX8oqz6FXAkiS0
+    - name: Médecin
+      type: capacity
+      _id: qqaQHa637dPORBQ6
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.qqaQHa637dPORBQ6
+    - name: Chirurgien
+      type: capacity
+      _id: ItrvTDsLxAtm7Ut6
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ItrvTDsLxAtm7Ut6
+    - name: Frappe chirurgicale
+      type: capacity
+      _id: 38Xw8CaauMzzHsNN
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.38Xw8CaauMzzHsNN
+    - name: Expert
+      type: capacity
+      _id: ofPbJpNMnz2h1Uel
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ofPbJpNMnz2h1Uel
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!ZfcxHdwZU8uem1PH'
+

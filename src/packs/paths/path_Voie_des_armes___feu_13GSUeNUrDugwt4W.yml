@@ -1,0 +1,80 @@
+_id: 13GSUeNUrDugwt4W
+name: Voie des armes à feu
+type: path
+img: systems/coc/ui/icons/Icon.3_32.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.dLeDLYsxpmCpndjn
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 21">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement</strong> : un pistolet et un fusil au choix (en
+    accord avec le MJ), des munitions.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-des-armes-a-feu
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Ajuster
+      type: capacity
+      _id: OD9BZZIZfhGcgn8C
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.OD9BZZIZfhGcgn8C
+    - name: Joli coup !
+      type: capacity
+      _id: SNelTtlyNg4Ecyv3
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.SNelTtlyNg4Ecyv3
+    - name: Tir de précision
+      type: capacity
+      _id: 4n9LsI6yJablrHN0
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.4n9LsI6yJablrHN0
+    - name: Tir rapide
+      type: capacity
+      _id: HNEYhmnTAOldlSnz
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.HNEYhmnTAOldlSnz
+    - name: Tireur d'élite
+      type: capacity
+      _id: MEaX3JnqWDOgt9Vn
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.MEaX3JnqWDOgt9Vn
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!13GSUeNUrDugwt4W'
+

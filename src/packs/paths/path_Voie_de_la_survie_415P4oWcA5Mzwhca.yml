@@ -1,0 +1,80 @@
+_id: 415P4oWcA5Mzwhca
+name: Voie de la survie
+type: path
+img: systems/coc/ui/icons/Icon.5_64.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.JMA8MSlLtmnM2jR1
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 28">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement :</strong> tenue de randonnée, matériel de
+    camping.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-de-la-survie
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Ami de la nature
+      type: capacity
+      _id: ZrWNVPtQCum7FEzw
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ZrWNVPtQCum7FEzw
+    - name: Endurant
+      type: capacity
+      _id: 0dh0PPnO5HlbajfW
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.0dh0PPnO5HlbajfW
+    - name: Milieux extrêmes
+      type: capacity
+      _id: rpgGIuTI6F5Cyei6
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.rpgGIuTI6F5Cyei6
+    - name: Guide
+      type: capacity
+      _id: ci0qUUQGm8I8j8yP
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ci0qUUQGm8I8j8yP
+    - name: Survivant
+      type: capacity
+      _id: ddi8g8gEAKQm2OXv
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ddi8g8gEAKQm2OXv
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!415P4oWcA5Mzwhca'
+

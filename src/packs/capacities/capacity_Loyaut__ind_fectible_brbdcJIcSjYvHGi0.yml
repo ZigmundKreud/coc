@@ -1,0 +1,43 @@
+_id: brbdcJIcSjYvHGi0
+name: Loyauté indéfectible
+type: capacity
+flags:
+  core:
+    sourceId: Item.Fq3PIZJoJqVusZP4
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Lorsqu&rsquo;un zombie a attaqu&eacute; un compagnon, le protecteur gagne
+    un bonus de +2 en attaque et +1d6 aux DM (au contact ou &agrave; distance)
+    contre ce zombie. De plus, il ne tombe &agrave; court de munition que sur un
+    r&eacute;sultat de 1 au d20 lorsqu&rsquo;il tire sur un adversaire au
+    contact d&rsquo;un compagnon.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-loyaute-indefectible
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!brbdcJIcSjYvHGi0'
+

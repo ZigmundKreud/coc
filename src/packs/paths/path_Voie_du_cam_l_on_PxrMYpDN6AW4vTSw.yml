@@ -1,0 +1,35 @@
+name: Voie du caméléon
+type: path
+flags:
+  core:
+    sourceId: Item.Aky0opRDtxS6M0QX
+img: systems/coc/ui/icons/Icon.1_10.png
+effects: []
+_id: PxrMYpDN6AW4vTSw
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: espionnage-voie-du-cameleon
+  setting: espionnage
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!PxrMYpDN6AW4vTSw'
+

@@ -1,0 +1,43 @@
+name: Formation d'historien
+type: capacity
+flags:
+  core:
+    sourceId: Item.afErhSjvzaynSEHg
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_id: FFuIiHsUVrxvyZsU
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage obtient un bonus de +1 par rang atteint dans cette Voie
+    &agrave; tous les tests en rapport avec l&rsquo;histoire. Il choisit une
+    p&eacute;riode particuli&egrave;re (pr&eacute;histoire, antiquit&eacute;,
+    moyen &acirc;ge, renaissance, moderne) pour laquelle il re&ccedil;oit un
+    bonus suppl&eacute;mentaire de +5.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-formation-dhistorien
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!FFuIiHsUVrxvyZsU'
+

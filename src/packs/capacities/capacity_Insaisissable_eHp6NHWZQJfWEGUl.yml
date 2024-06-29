@@ -1,0 +1,41 @@
+name: Insaisissable
+type: capacity
+flags:
+  core:
+    sourceId: Item.Gyl7Zq7ZeC13KpXa
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_id: eHp6NHWZQJfWEGUl
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>L&rsquo;&eacute;claireur obtient un bonus de +1 en DEF par rang contre
+    toutes les attaques des zombies. Il obtient la moiti&eacute; de ce bonus
+    contre toutes les autres attaques (arrondi au sup&eacute;rieur).</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-insaisissable
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!eHp6NHWZQJfWEGUl'
+

@@ -1,0 +1,100 @@
+_id: 0OkkkEmSBs0RGkyT
+name: Couteau de lancer
+type: item
+flags:
+  core:
+    sourceId: Item.A4yrcYf5IjDCXu1c
+img: systems/coc/ui/icons/svg/thrown-knife.svg
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 0
+  defBase: 0
+  defBonus: 0
+  dr: 0
+  dmg: ''
+  dmgBase: 1d4
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: '@attacks.ranged.mod'
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 5
+  reload: ''
+  worn: false
+  slot: ''
+  qty: 1
+  strmin: 4
+  stacksize: null
+  price: 10
+  properties:
+    predilection: false
+    ranged: true
+    equipable: true
+    stackable: true
+    activable: false
+    2H: false
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: true
+    protection: false
+    reloadable: false
+    explosive: false
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: false
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: false
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: false
+    salve: false
+    proneshot: false
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: ranged
+folder: null
+sort: 0
+_key: '!items!0OkkkEmSBs0RGkyT'
+

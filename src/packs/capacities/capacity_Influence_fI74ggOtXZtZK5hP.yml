@@ -1,0 +1,49 @@
+_id: fI74ggOtXZtZK5hP
+name: Influence
+type: capacity
+flags:
+  core:
+    sourceId: Item.Lf8OQMtKrbUd0fa5
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Glisser le bon billet dans la bonne poche ou simplement faire
+    &eacute;talage de son inluence permet souvent de r&eacute;duire les
+    diicult&eacute;s rencontr&eacute;es. Le personnage dispose d&rsquo;un nombre
+    de points de fortune &eacute;gal au rang atteint dans la voie. Chaque point
+    de fortune lui permet d&rsquo;obtenir un bonus de +5 sur un test de
+    n&eacute;gociation ou de Charisme, il peut &ecirc;tre d&eacute;pens&eacute;
+    apr&egrave;s avoir pris connaissance du r&eacute;sultat de l&rsquo;action.
+    Les points de fortune sont r&eacute;cup&eacute;r&eacute;s &agrave; la in de
+    l&rsquo;aventure, et ils ne peuvent &ecirc;tre d&eacute;pens&eacute;s que
+    face &agrave; des interlocuteurs dont le niveau de vie est inf&eacute;rieur
+    &agrave; celui du personnage.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-influence
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!fI74ggOtXZtZK5hP'
+

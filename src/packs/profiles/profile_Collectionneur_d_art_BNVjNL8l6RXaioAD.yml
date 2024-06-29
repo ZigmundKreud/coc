@@ -1,0 +1,55 @@
+_id: BNVjNL8l6RXaioAD
+name: Collectionneur d'art
+type: profile
+img: systems/coc/ui/icons/Icon.3_65.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.9pMxQBvezz6WTYPL
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-collectionneur-dart
+  setting: base
+  moduleData: {}
+  family: adventure
+  dv: 1d8
+  bonuses:
+    atc: 0
+    atd: 1
+    atm: 0
+    fp: 2
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie des voyages
+      type: path
+      _id: m8psb2pbkDNSJ5YS
+      img: systems/coc/ui/icons/Icon.6_43.png
+      sourceId: Compendium.coc.paths.m8psb2pbkDNSJ5YS
+    - name: Voie de l'argent
+      type: path
+      _id: eUFEAvnBjSmNA5wF
+      img: systems/coc/ui/icons/Icons8_78.png
+      sourceId: Compendium.coc.paths.eUFEAvnBjSmNA5wF
+    - name: Voie des arts
+      type: path
+      _id: zhSPJpkRcCKrPTN7
+      img: systems/coc/ui/icons/Icon.3_39.png
+      sourceId: Compendium.coc.paths.zhSPJpkRcCKrPTN7
+_key: '!items!BNVjNL8l6RXaioAD'
+

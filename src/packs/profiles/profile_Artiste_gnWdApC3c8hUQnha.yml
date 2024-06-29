@@ -1,0 +1,55 @@
+_id: gnWdApC3c8hUQnha
+name: Artiste
+type: profile
+img: systems/coc/ui/icons/Icon.7_20.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.W1XvFsrRKo7zAu4b
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-artiste
+  setting: base
+  moduleData: {}
+  family: reflexion
+  dv: 1d6
+  bonuses:
+    atc: 0
+    atd: 0
+    atm: 0
+    fp: 0
+    xp: 2
+  spellcasting: ''
+  paths:
+    - name: Voie du discours
+      type: path
+      _id: Ahgo8B5GWOmbdG9t
+      img: systems/coc/ui/icons/Icon.6_62.png
+      sourceId: Compendium.coc.paths.Ahgo8B5GWOmbdG9t
+    - name: Voie des arts
+      type: path
+      _id: zhSPJpkRcCKrPTN7
+      img: systems/coc/ui/icons/Icon.3_39.png
+      sourceId: Compendium.coc.paths.zhSPJpkRcCKrPTN7
+    - name: Voie de la psychologie
+      type: path
+      _id: 27iLpuLPI8oym3e0
+      img: systems/coc/ui/icons/Icons8_03.png
+      sourceId: Compendium.coc.paths.27iLpuLPI8oym3e0
+_key: '!items!gnWdApC3c8hUQnha'
+

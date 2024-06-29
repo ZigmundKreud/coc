@@ -1,0 +1,43 @@
+_id: KAX125HdxHZiuVJb
+name: A l'écoute
+type: capacity
+flags:
+  core:
+    sourceId: Item.IIzOjXbWPWL3MiN6
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage sait &eacute;couter et mettre les autres &agrave;
+    l&rsquo;aise pour obtenir leurs conidences. Il gagne un bonus de +2 par rang
+    atteint dans cette voie aux tests de PER effectu&eacute;s pour analyser
+    l&rsquo;&eacute;tat &eacute;motionnel de ses interlocuteurs et aux tests de
+    CHA pour obtenir un aveu.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-a-lecoute
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!KAX125HdxHZiuVJb'
+

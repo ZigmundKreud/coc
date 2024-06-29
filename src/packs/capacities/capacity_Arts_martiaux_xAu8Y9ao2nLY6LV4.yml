@@ -1,0 +1,44 @@
+_id: xAu8Y9ao2nLY6LV4
+name: Arts martiaux
+type: capacity
+flags:
+  core:
+    sourceId: Item.thbon00dZTrlXlXP
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Lorsqu&rsquo;il combat &agrave; mains nues, le personnage inlige [1d4 +
+    Mod. de FOR] DM (l&eacute;taux ou temporaires, au choix). Le d&eacute; de DM
+    passe &agrave; 1d6 au rang 3 atteint dans cette voie et &agrave; 1d8 au rang
+    5. De plus, le personnage obtient un bonus de +1 par rang en DEF contre les
+    attaques au contact (sauf en cas de surprise) et &agrave; tous les tests de
+    DEX destin&eacute;s &agrave; esquiver.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-arts-martiaux
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!xAu8Y9ao2nLY6LV4'
+

@@ -1,0 +1,117 @@
+_id: q95q4dPyKgdWdkX0
+name: Gilet pare-balle
+type: item
+img: systems/coc/ui/icons/svg/kevlar-vest.svg
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.e9jmW3DLqxf0pz9g
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 34">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Le gilet pare-balle apporte un bonus de +2 en DEF contre tous les types
+    d&rsquo;attaque et offre 5 points de réduction des DM (RD5) contre les
+    armes à feu, sauf en cas de critique. Prix 400 $.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 2
+  defBase: 2
+  defBonus: 0
+  dr: 5
+  dmg: ''
+  dmgBase: ''
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: ''
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 0
+  reload: ''
+  worn: false
+  slot: chest
+  qty: 1
+  strmin: null
+  stacksize: null
+  price: 400
+  properties:
+    predilection: false
+    ranged: false
+    equipable: true
+    stackable: false
+    activable: false
+    2H: false
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: false
+    protection: true
+    reloadable: false
+    explosive: false
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: true
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: false
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: false
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: armor
+_key: '!items!q95q4dPyKgdWdkX0'
+

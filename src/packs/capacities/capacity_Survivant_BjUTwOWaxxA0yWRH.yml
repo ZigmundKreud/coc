@@ -1,0 +1,65 @@
+_id: BjUTwOWaxxA0yWRH
+name: Survivant
+type: capacity
+flags:
+  core:
+    sourceId: Item.hJe2P51Md57gxooe
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 78">
+
+    <div title="Page 78">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Le personnage s&rsquo;est déjà tiré de nombreux mauvais pas et a pu
+    regarder la mort en face. Il est capable de trouver en lui des ressources
+    surhumaines pour vaincre la fatigue ou les blessures. Désormais, le joueur
+    lance deux d20 à tous les tests de CON et garde le meilleur résultat. De
+    plus, lorsque le personnage est victime d&rsquo;une blessure grave, le
+    joueur continue à lancer un d20 pour tous les tests de caractéristique, au
+    lieu d&rsquo;un d12. <span style="text-decoration: underline;">Enfin il peut
+    ajouter son Mod.de CON à tous les tests de choc.</span></p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: epouvante-survivant
+  setting: epouvante
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+folder: null
+sort: 0
+_key: '!items!BjUTwOWaxxA0yWRH'
+

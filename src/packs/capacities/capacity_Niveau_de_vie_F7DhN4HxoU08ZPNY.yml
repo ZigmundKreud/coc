@@ -1,0 +1,42 @@
+_id: F7DhN4HxoU08ZPNY
+name: Niveau de vie
+type: capacity
+flags:
+  core:
+    sourceId: Item.eq0hlnjLMZWPknMZ
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Vous d&eacute;butez avec le niveau de vie fortun&eacute; (si vous aviez
+    d&eacute;j&agrave; d&eacute;termin&eacute; le niveau de vie fortun&eacute;,
+    votre revenu passe &agrave; 20 000 par mois). Lorsque vous atteignez le rang
+    4 de la voie, vous obtenez le niveau de vie tr&egrave;s fortun&eacute;.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-niveau-de-vie
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!F7DhN4HxoU08ZPNY'
+

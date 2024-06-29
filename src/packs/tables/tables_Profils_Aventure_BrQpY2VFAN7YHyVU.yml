@@ -1,0 +1,183 @@
+name: Profils Aventure
+flags:
+  core:
+    sourceId: RollTable.iriQJkBaXh4TVbIg
+img: systems/coc/ui/icons/Icon.3_65.png
+description: Tirage aléatoire de profil "Aventure"
+results:
+  - _id: x72Kc4Rob3BVY9Em
+    flags: {}
+    type: pack
+    text: Archéologue
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 1
+      - 1
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: tQZSgnjq2OmaDvNb
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.x72Kc4Rob3BVY9Em'
+  - _id: 10hWlLSE1kKT8XkN
+    flags: {}
+    type: pack
+    text: Cambrioleur
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 2
+      - 2
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: 5o59UYznzw26V3Bl
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.10hWlLSE1kKT8XkN'
+  - _id: uwga1cUwK4nGJhMy
+    flags: {}
+    type: pack
+    text: Chasseur de gros gibier
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 3
+      - 3
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: AN5SC0dF61LPl4P0
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.uwga1cUwK4nGJhMy'
+  - _id: G2VBJJmYdkRQC4yP
+    flags: {}
+    type: pack
+    text: Chasseur de trésor
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 4
+      - 4
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: 1klOjS6vjUKmAcmg
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.G2VBJJmYdkRQC4yP'
+  - _id: 2tiFmcmGUXt20oUi
+    flags: {}
+    type: pack
+    text: Collectionneur d'art
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 5
+      - 5
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: BNVjNL8l6RXaioAD
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.2tiFmcmGUXt20oUi'
+  - _id: oU9Z6ClalPyL0ofi
+    flags: {}
+    type: pack
+    text: Espion
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 6
+      - 6
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: Kdj5QOV64yhVIfGz
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.oU9Z6ClalPyL0ofi'
+  - _id: VlDc2ogyYIrRsnTg
+    flags: {}
+    type: pack
+    text: Explorateur
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 7
+      - 7
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: 7o8XmQGrIHmc1HdB
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.VlDc2ogyYIrRsnTg'
+  - _id: DIcfKNaqYd9t6kSu
+    flags: {}
+    type: pack
+    text: Humanitaire
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 8
+      - 8
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: DKuZ3hdC8Yvus0Sa
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.DIcfKNaqYd9t6kSu'
+  - _id: qdBD1N7MybEbrsfc
+    flags: {}
+    type: pack
+    text: Inspecteur
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 9
+      - 9
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: BZe1C8HYXa0l8GXn
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.qdBD1N7MybEbrsfc'
+  - _id: fLYO8anyLt7GMkGf
+    flags: {}
+    type: pack
+    text: Inventeur
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 10
+      - 10
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: TKGK6QnfKFmnMQ4j
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.fLYO8anyLt7GMkGf'
+  - _id: dpq3twHdAj9alyke
+    flags: {}
+    type: pack
+    text: Journaliste
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 11
+      - 11
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: EqjTlGUJZReyAq40
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.dpq3twHdAj9alyke'
+  - _id: L0XvCt9KzLPKWIq5
+    flags: {}
+    type: pack
+    text: Ouvrier
+    img: systems/coc/ui/icons/Icon.3_65.png
+    weight: 1
+    range:
+      - 12
+      - 12
+    drawn: false
+    documentCollection: coc.profiles
+    documentId: mDyhXivh6pGG90xx
+    _key: '!tables.results!BrQpY2VFAN7YHyVU.L0XvCt9KzLPKWIq5'
+formula: 1d12
+replacement: true
+displayRoll: true
+_id: BrQpY2VFAN7YHyVU
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+sort: 0
+_key: '!tables!BrQpY2VFAN7YHyVU'
+

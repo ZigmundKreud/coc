@@ -1,0 +1,55 @@
+_id: 6pxynkcAxrROVx6g
+name: Cascadeur
+type: profile
+img: systems/coc/ui/icons/Icons8_04.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.1mp3gYVeFcKesf0B
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-cascadeur
+  setting: base
+  moduleData: {}
+  family: action
+  dv: 1d10
+  bonuses:
+    atc: 2
+    atd: 0
+    atm: 0
+    fp: 0
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie du danger
+      type: path
+      _id: cRhwmsQ6fmZBe5ML
+      img: systems/coc/ui/icons/Icon.6_84.png
+      sourceId: Compendium.coc.paths.cRhwmsQ6fmZBe5ML
+    - name: Voie des exploits physiques
+      type: path
+      _id: dp1CJLC0sJCjIK1V
+      img: systems/coc/ui/icons/Icon.4_64.png
+      sourceId: Compendium.coc.paths.dp1CJLC0sJCjIK1V
+    - name: Voie du pilotage
+      type: path
+      _id: oKVyaq1vmgMwynf3
+      img: systems/coc/ui/icons/Icon.3_95.png
+      sourceId: Compendium.coc.paths.oKVyaq1vmgMwynf3
+_key: '!items!6pxynkcAxrROVx6g'
+

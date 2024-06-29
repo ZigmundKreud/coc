@@ -1,0 +1,35 @@
+name: Voie des élixirs
+type: path
+flags:
+  core:
+    sourceId: Item.JYrhu8TaeFb5Rus1
+img: systems/coc/ui/icons/Icon.6_38.png
+effects: []
+_id: Y3SqFepgR5rR7I8D
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: pulp-voie-des-elixirs
+  setting: pulp
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!Y3SqFepgR5rR7I8D'
+

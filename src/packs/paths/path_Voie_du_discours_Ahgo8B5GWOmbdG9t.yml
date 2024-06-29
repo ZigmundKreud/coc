@@ -1,0 +1,80 @@
+_id: Ahgo8B5GWOmbdG9t
+name: Voie du discours
+type: path
+img: systems/coc/ui/icons/Icon.6_62.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.KJnXh43LKXVqWlm4
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 23">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement</strong> : un lot de carte de visite, une trousse de
+    maquillage.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-du-discours
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Beau parleur
+      type: capacity
+      _id: MB9ly236olRrlLcG
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.MB9ly236olRrlLcG
+    - name: Provocation
+      type: capacity
+      _id: JtLNzOaODXIWYKnC
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.JtLNzOaODXIWYKnC
+    - name: Usurpateur
+      type: capacity
+      _id: CU4Q1QM7RDkYuBAy
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.CU4Q1QM7RDkYuBAy
+    - name: Manipulateur
+      type: capacity
+      _id: VWpPDv80MBPAtaC5
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.VWpPDv80MBPAtaC5
+    - name: Charisme héroïque
+      type: capacity
+      _id: 5Zn9slc1qaHTJJzd
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.5Zn9slc1qaHTJJzd
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!Ahgo8B5GWOmbdG9t'
+

@@ -1,0 +1,121 @@
+name: Foudroyeur (Taser)
+type: item
+flags:
+  core:
+    sourceId: Item.f4CeL9p7REAwtesJ
+img: systems/coc/ui/icons/svg/lightning-frequency.svg
+effects: []
+_id: N3IUTTWyGTAxD4vb
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 33">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>Inventé en 1972, le Taser ne fait son apparition qu&rsquo;à partir des
+    années 2000. Les DM de cette arme à impulsion électrique sont
+    temporaires. De plus, la victime doit faire un test de CON difficulté 15 ou
+    être Renversée et Étourdie pendant 1 tour. Le foudroyeur moderne
+    nécessite une action limitée pour être rechargé, le foudroyeur fu-
+    turiste peut tirer plusieurs fois, comme une arme à feu.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 0
+  defBase: 0
+  defBonus: 0
+  dr: 0
+  dmg: ''
+  dmgBase: 1d6
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: '@attacks.ranged.mod'
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 5
+  reload: ''
+  worn: false
+  slot: ''
+  qty: 1
+  strmin: 6
+  stacksize: null
+  price: 300
+  properties:
+    predilection: false
+    ranged: true
+    equipable: true
+    stackable: false
+    activable: false
+    2H: false
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: true
+    protection: false
+    reloadable: false
+    explosive: false
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: false
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: true
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: false
+    salve: false
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: ranged
+folder: null
+sort: 0
+_key: '!items!N3IUTTWyGTAxD4vb'
+

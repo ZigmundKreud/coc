@@ -1,0 +1,69 @@
+_id: Q9nsWNyT6VFzXWcO
+name: Voie de l'éclaireur
+type: path
+img: systems/coc/ui/icons/Icon.1_11.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.OwflqXOhGJDQSQGH
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>L&rsquo;&eacute;claireur est sans doute l&rsquo;arch&eacute;type du
+    parfait survivant. Il n&rsquo;est pas altruiste comme le protecteur, pas
+    capable de tuer du zombie &agrave; tour de bras comme le fossoyeur. Non, son
+    talent &agrave; lui c&rsquo;est de rep&eacute;rer les zombies et de leur
+    &eacute;chapper. Cette voie peut parfaitement convenir &agrave; un
+    personnage jeune adolescent ou &agrave; un enfant si vous souhaitez jouer
+    avec les nerfs de vos joueurs.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-voie-de-leclaireur
+  setting: zombis
+  moduleData: {}
+  capacities:
+    - name: Radar à zombies
+      type: capacity
+      _id: V0Wa1A5yLMKdl5LY
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.V0Wa1A5yLMKdl5LY
+    - name: Insaisissable
+      type: capacity
+      _id: eHp6NHWZQJfWEGUl
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.eHp6NHWZQJfWEGUl
+    - name: Fureteur
+      type: capacity
+      _id: axKsgo6bJC3ITkSm
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.axKsgo6bJC3ITkSm
+    - name: Esquive supérieure
+      type: capacity
+      _id: EuCxyMVAmtt4VkeW
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.EuCxyMVAmtt4VkeW
+    - name: Sprint
+      type: capacity
+      _id: 4rj6BUDlOrHQNoH5
+      img: systems/coc/ui/icons/Icon.3_37.png
+      sourceId: Compendium.coc.capacities.4rj6BUDlOrHQNoH5
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!Q9nsWNyT6VFzXWcO'
+

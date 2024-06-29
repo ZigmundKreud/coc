@@ -1,0 +1,55 @@
+_id: JEiWvQZgKVRUq40S
+name: Erudit
+type: profile
+img: systems/coc/ui/icons/Icon.7_20.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.PY4E2TnvohDGqUCW
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-erudit
+  setting: base
+  moduleData: {}
+  family: reflexion
+  dv: 1d6
+  bonuses:
+    atc: 0
+    atd: 0
+    atm: 0
+    fp: 0
+    xp: 2
+  spellcasting: ''
+  paths:
+    - name: Voie du discours
+      type: path
+      _id: Ahgo8B5GWOmbdG9t
+      img: systems/coc/ui/icons/Icon.6_62.png
+      sourceId: Compendium.coc.paths.Ahgo8B5GWOmbdG9t
+    - name: Voie de l'archéologie
+      type: path
+      _id: M7VdqYYbxpIpkJ8P
+      img: systems/coc/ui/icons/Icon.3_46.png
+      sourceId: Compendium.coc.paths.M7VdqYYbxpIpkJ8P
+    - name: Voie des sciences
+      type: path
+      _id: DHEkGr1FuPmogTWp
+      img: systems/coc/ui/icons/Icon.4_92.png
+      sourceId: Compendium.coc.paths.DHEkGr1FuPmogTWp
+_key: '!items!JEiWvQZgKVRUq40S'
+

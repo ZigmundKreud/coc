@@ -1,0 +1,92 @@
+_id: F3jmvSzrHxqGkzCL
+name: Occultiste
+type: profile
+img: systems/coc/ui/icons/Icon.6_16.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.0QeNPRsjwQT2C1vG
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <h2>Magie occulte</h2>
+
+    <div title="Page 79">
+
+    <p style="text-align: justify;">Ici, la magie est quelque chose
+    d&rsquo;exceptionnel et de particulièrement dangereux. Les utilisateurs
+    sont rares et le prix à payer est élevé : folie, mort, dégénérescence
+    physique ou mentale, servitude, etc. Le commun des mortels n&rsquo;est pas
+    conscient de son existence et ces pouvoirs étranges sont des secrets bien
+    gardés. Des sectes et des groupes bien informés sont prêts à tuer pour
+    que ce savoir reste dans l&rsquo;ombre. Il n&rsquo;y a pas de liste de
+    pouvoirs prédéterminée, le MJ pourra parfois les choisir parmi
+    d&rsquo;autres options de magie, mais devra généralement en inventer sur
+    mesure. Ces pouvoirs concernent le plus souvent des rituels maléfiques et
+    étranges. Même si elle correspond parfaitement au genre de
+    l&rsquo;épouvante, cette magie s&rsquo;adapte aussi très bien au genre
+    pulp.</p>
+
+    </div>
+
+    <div style="text-align: justify;" title="Page 80">
+
+    <p>La magie n&rsquo;est accessible qu&rsquo;à travers la Voie de
+    l&rsquo;occulte. Elle permet l&rsquo;acquisition de deux pouvoirs magiques
+    en fin de progression dans la voie et seulement au prix de la santé mentale
+    de l&rsquo;utilisateur...</p>
+
+    <p>La Voie de l&rsquo;occulte n&rsquo;est pas proposée dans les profils de
+    base. Le MJ peut l&rsquo;accorder en voie de prestige à un personnage en
+    contact fréquent avec des phénomènes paranormaux. Il peut aussi
+    l&rsquo;autoriser dès le premier niveau à un joueur qui choisit le profil
+    d&rsquo;occultiste.</p>
+
+    <p><strong>Occultiste (famille réflexion)&nbsp;</strong>: investigation,
+    occulte, voyages.</p>
+
+    </div>
+  source: ''
+  key: epouvante-occultiste
+  setting: epouvante
+  moduleData: {}
+  family: reflexion
+  dv: ''
+  bonuses:
+    atc: 0
+    atd: 0
+    atm: 0
+    fp: 0
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie de l'investigation
+      type: path
+      _id: jKsHMEaZF5MTL4iF
+      img: systems/coc/ui/icons/Icon.4_68.png
+      sourceId: Compendium.coc.paths.jKsHMEaZF5MTL4iF
+    - name: Voie des voyages
+      type: path
+      _id: m8psb2pbkDNSJ5YS
+      img: systems/coc/ui/icons/Icon.6_43.png
+      sourceId: Compendium.coc.paths.m8psb2pbkDNSJ5YS
+    - name: Voie de l'occulte
+      type: path
+      _id: jhw3iOYQhrz8pILM
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.paths.jhw3iOYQhrz8pILM
+_key: '!items!F3jmvSzrHxqGkzCL'
+

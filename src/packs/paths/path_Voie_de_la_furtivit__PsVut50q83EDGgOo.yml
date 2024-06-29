@@ -1,0 +1,71 @@
+_id: PsVut50q83EDGgOo
+name: Voie de la furtivité
+type: path
+img: systems/coc/ui/icons/Icon.6_10.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.HLMgwVEscBxH5DzK
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: |-
+    <div title="Page 24">
+    <div>
+    <div>
+    <div>
+    <p><strong>Équipement: </strong>chapeau ou casquette, paire de jumelle.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-de-la-furtivite
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Discrétion
+      type: capacity
+      _id: 25LUNNagFJnWwHRq
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.25LUNNagFJnWwHRq
+    - name: Sens affutés
+      type: capacity
+      _id: BbZD0c5waw8QR03i
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.BbZD0c5waw8QR03i
+    - name: Attaque déloyale
+      type: capacity
+      _id: 9j9GaLmp0LMnUfZ0
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.9j9GaLmp0LMnUfZ0
+    - name: Embuscade
+      type: capacity
+      _id: pvSh1lGs3I4NV1Xe
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.pvSh1lGs3I4NV1Xe
+    - name: Perception héroïque
+      type: capacity
+      _id: mExl5tZZQnLj7q38
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.mExl5tZZQnLj7q38
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!PsVut50q83EDGgOo'
+

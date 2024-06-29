@@ -1,0 +1,47 @@
+_id: gx0ZpBC3pl09HfHm
+name: Tacticien
+type: capacity
+flags:
+  core:
+    sourceId: Item.41EG3GRY6rlk9mAw
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage applique le raisonnement logique et les probabilit&eacute;s
+    aux actions &agrave; venir et analyse leurs effets &agrave; travers le
+    prisme de la science (pensez au personnage de Sherlock Holmes dans le film
+    du m&ecirc;me nom, interpr&eacute;t&eacute; par Robert Downey Jr). Il
+    obtient son Mod. d&rsquo;INT en bonus &agrave; l&rsquo;initiative et peut
+    utiliser chaque jour un nombre de points de tactique (PT) &eacute;gal
+    &agrave; son Mod. d&rsquo;INT. Chaque point de tactique peut &ecirc;tre
+    d&eacute;pens&eacute; pour relancer un d&eacute; dont le r&eacute;sultat ne
+    convient pas au joueur.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-tacticien
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!gx0ZpBC3pl09HfHm'
+

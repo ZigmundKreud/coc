@@ -1,0 +1,55 @@
+_id: DKuZ3hdC8Yvus0Sa
+name: Humanitaire
+type: profile
+img: systems/coc/ui/icons/Icon.3_65.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.Y1FhN9J2PZlYxSF2
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-humanitaire
+  setting: base
+  moduleData: {}
+  family: adventure
+  dv: 1d8
+  bonuses:
+    atc: 1
+    atd: 0
+    atm: 0
+    fp: 2
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie des voyages
+      type: path
+      _id: m8psb2pbkDNSJ5YS
+      img: systems/coc/ui/icons/Icon.6_43.png
+      sourceId: Compendium.coc.paths.m8psb2pbkDNSJ5YS
+    - name: Voie du danger
+      type: path
+      _id: cRhwmsQ6fmZBe5ML
+      img: systems/coc/ui/icons/Icon.6_84.png
+      sourceId: Compendium.coc.paths.cRhwmsQ6fmZBe5ML
+    - name: Voie de la médecine
+      type: path
+      _id: ZfcxHdwZU8uem1PH
+      img: systems/coc/ui/icons/Icon.1_72.png
+      sourceId: Compendium.coc.paths.ZfcxHdwZU8uem1PH
+_key: '!items!DKuZ3hdC8Yvus0Sa'
+

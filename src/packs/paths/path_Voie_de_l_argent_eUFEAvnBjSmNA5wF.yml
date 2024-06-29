@@ -1,0 +1,80 @@
+_id: eUFEAvnBjSmNA5wF
+name: Voie de l'argent
+type: path
+img: systems/coc/ui/icons/Icons8_78.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.scfWJJTu0ChgC8EL
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 20">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement : </strong>vêtements et accessoires de luxe (montre,
+    bijoux, etc.). 1000$ ou &euro; en liquide.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-de-largent
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Niveau de vie
+      type: capacity
+      _id: F7DhN4HxoU08ZPNY
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.F7DhN4HxoU08ZPNY
+    - name: Influence
+      type: capacity
+      _id: fI74ggOtXZtZK5hP
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.fI74ggOtXZtZK5hP
+    - name: Véhicule de luxe
+      type: capacity
+      _id: lVlUQ1dUTVemRiGb
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.lVlUQ1dUTVemRiGb
+    - name: Relations
+      type: capacity
+      _id: BdanytnWbuwur1MA
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.BdanytnWbuwur1MA
+    - name: Pied-à-terre
+      type: capacity
+      _id: 14shEJsAT5xIFjws
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.14shEJsAT5xIFjws
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!eUFEAvnBjSmNA5wF'
+

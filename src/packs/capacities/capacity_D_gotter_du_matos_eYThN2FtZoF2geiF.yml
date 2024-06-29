@@ -1,0 +1,44 @@
+_id: eYThN2FtZoF2geiF
+name: Dégotter du matos
+type: capacity
+flags:
+  core:
+    sourceId: Item.bOoqur8WcRPvFtua
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage obtient un bonus de +5 pour trouver un fournisseur de
+    n&rsquo;importe quel type de mat&eacute;riel (outillage, v&eacute;hicules,
+    armes). Une fois par aventure, apr&egrave;s 3d6 heures de recherche, il peut
+    se procurer du mat&eacute;riel lourd (un avion, un v&eacute;hicule
+    blind&eacute; l&eacute;ger, une mitrailleuse, etc.). Le MJ d&eacute;termine
+    les limites du raisonnable, en fonction du lieu.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-degotter-du-matos
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!eYThN2FtZoF2geiF'
+

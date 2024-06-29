@@ -1,0 +1,45 @@
+_id: IcoUyq3RPZJ6icMi
+name: Grosse tête
+type: capacity
+flags:
+  core:
+    sourceId: Item.SMuwg8FbIFaS1Bhj
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>En utilisant son intelligence &agrave; bon escient, le personnage peut
+    souvent remplacer un test qui n&eacute;cessite des qualit&eacute;s physiques
+    par un test d&rsquo;INT de m&ecirc;me difficult&eacute;. Par exemple, il
+    &eacute;vite un test de FOR en utilisant un levier pour d&eacute;placer une
+    charge ou est d&eacute;j&agrave; &agrave; l&rsquo;abri plut&ocirc;t que de
+    devoir esquiver l&rsquo;explosion d&rsquo;un b&acirc;ton de dynamite (DEX
+    remplac&eacute;e par INT).</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-grosse-tete
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!IcoUyq3RPZJ6icMi'
+

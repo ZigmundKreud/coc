@@ -1,0 +1,43 @@
+_id: tl1pHJJl2g0Ik6RP
+name: Acrobate
+type: capacity
+flags:
+  core:
+    sourceId: Item.q6sl1dzz2MMYnbOz
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage re&ccedil;oit un bonus de +5 pour tous les tests de DEX
+    destin&eacute;s &agrave; grimper, sauter ou tenir en &eacute;quilibre. De
+    plus, il ne subit pas de malus en attaque lorsqu&rsquo;il se trouve en
+    &eacute;quilibre pr&eacute;caire et r&eacute;duit tous les DM des chutes du
+    rang atteint dans cette voie.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-acrobate
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!tl1pHJJl2g0Ik6RP'
+

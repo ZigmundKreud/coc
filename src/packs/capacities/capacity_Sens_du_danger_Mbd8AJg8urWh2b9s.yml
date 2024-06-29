@@ -1,0 +1,44 @@
+_id: Mbd8AJg8urWh2b9s
+name: Sens du danger
+type: capacity
+flags:
+  core:
+    sourceId: Item.nMi7weUVCq1dPKzV
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage a l&rsquo;habitude des situations tendues, il obtient un
+    bonus de +5 pour rep&eacute;rer un danger ou ne pas &ecirc;tre Surpris.
+    Lorsqu&rsquo;il arrive dans un lieu, le joueur peut faire un test de PER
+    difficult&eacute; 12 (sans le bonus de +5 obtenu avec le rang 1 de cette
+    voie) : en cas de r&eacute;ussite, le MJ doit lui indiquer si
+    l&rsquo;endroit est s&ucirc;r ou potentiellement dangereux.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-sens-du-danger
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!Mbd8AJg8urWh2b9s'
+

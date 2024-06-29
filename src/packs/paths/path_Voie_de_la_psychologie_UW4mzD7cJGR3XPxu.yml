@@ -1,0 +1,60 @@
+_id: UW4mzD7cJGR3XPxu
+name: Voie de la psychologie
+type: path
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.qESvxisijadlpDpm
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: <p><strong>Équipement :</strong>&nbsp;des livres de sciences humaines.</p>
+  source: Chroniques Oubliées Contemporain
+  key: epouvante-voie-de-la-psychologie
+  setting: epouvante
+  moduleData: {}
+  capacities:
+    - name: A l'écoute
+      type: capacity
+      _id: KAX125HdxHZiuVJb
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.KAX125HdxHZiuVJb
+    - name: Analyse personnelle
+      type: capacity
+      _id: IHr04zgo4FRWrFhl
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.IHr04zgo4FRWrFhl
+    - name: Aide psychologique
+      type: capacity
+      _id: MbYOlB55qpZWAPpd
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.MbYOlB55qpZWAPpd
+    - name: Examen psychologique
+      type: capacity
+      _id: yzpnfRsWFlzV2T2T
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.yzpnfRsWFlzV2T2T
+    - name: Intuition héroïque
+      type: capacity
+      _id: 5UlzP5VDwtaHkymr
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.5UlzP5VDwtaHkymr
+  properties:
+    profile: false
+    prestige: false
+    alternative: true
+_key: '!items!UW4mzD7cJGR3XPxu'
+

@@ -1,0 +1,28 @@
+name: ATC
+type: script
+flags:
+  core:
+    sourceId: Macro.jAyUXlpXrQcUDI2e
+scope: global
+command: |-
+  const actor = game.coc.macros.getSpeakersActor();
+  game.coc.macros.rollStatMacro(actor, "melee");
+author: 9RNwlVuBKg8gXYwl
+img: systems/coc/ui/macros/icons/ATC.png
+_id: JVecSBDz2cHEV3Oq
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+folder: null
+sort: 0
+_key: '!macros!JVecSBDz2cHEV3Oq'
+

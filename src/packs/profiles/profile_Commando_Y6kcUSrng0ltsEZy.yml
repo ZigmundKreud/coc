@@ -1,0 +1,55 @@
+_id: Y6kcUSrng0ltsEZy
+name: Commando
+type: profile
+img: systems/coc/ui/icons/Icons8_04.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.Xe2eQieks3HJvEeP
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: base-commando
+  setting: base
+  moduleData: {}
+  family: action
+  dv: 1d10
+  bonuses:
+    atc: 1
+    atd: 1
+    atm: 0
+    fp: 0
+    xp: 0
+  spellcasting: ''
+  paths:
+    - name: Voie des armes à feu
+      type: path
+      _id: 13GSUeNUrDugwt4W
+      img: systems/coc/ui/icons/Icon.3_32.png
+      sourceId: Compendium.coc.paths.13GSUeNUrDugwt4W
+    - name: Voie du corps-à-corps
+      type: path
+      _id: dTc4MdgNZscB1T08
+      img: systems/coc/ui/icons/Icons8_28.png
+      sourceId: Compendium.coc.paths.dTc4MdgNZscB1T08
+    - name: Voie de la survie
+      type: path
+      _id: 415P4oWcA5Mzwhca
+      img: systems/coc/ui/icons/Icon.5_64.png
+      sourceId: Compendium.coc.paths.415P4oWcA5Mzwhca
+_key: '!items!Y6kcUSrng0ltsEZy'
+

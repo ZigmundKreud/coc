@@ -1,0 +1,123 @@
+_id: RxQ0TVOm3RsBMrDO
+name: Grenade offensive
+type: item
+flags:
+  core:
+    sourceId: Item.zQnt40gnQcedHqgW
+img: systems/coc/ui/icons/svg/stun-grenade.svg
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 34">
+
+    <div title="Page 34">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>La grenade offensive pro- duit une déflagration destinée à cho- quer
+    l&rsquo;ennemi. Elle inflige 2d6 DM tem- poraires dans un rayon de 3
+    mètres. Les victimes doivent faire un test de CON difficulté 15 ou être
+    Étourdi pendant un tour. Surdité offerte en sus pour 2d6 tours (1d6 si
+    test de CON difficulté 15 réussi). 50 $.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 0
+  defBase: 0
+  defBonus: 0
+  dr: 0
+  dmg: ''
+  dmgBase: 2d6
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: '@attacks.ranged.mod'
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 3
+  reload: ''
+  worn: false
+  slot: ''
+  qty: 1
+  strmin: null
+  stacksize: null
+  price: 50
+  properties:
+    predilection: false
+    ranged: true
+    equipable: false
+    stackable: true
+    activable: false
+    2H: false
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: true
+    protection: false
+    reloadable: false
+    explosive: true
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: false
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: true
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: false
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: ammunition
+folder: null
+sort: 0
+_key: '!items!RxQ0TVOm3RsBMrDO'
+

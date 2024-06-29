@@ -1,0 +1,42 @@
+_id: 9j9GaLmp0LMnUfZ0
+name: Attaque déloyale
+type: capacity
+flags:
+  core:
+    sourceId: Item.ceVaK6gFbNMc9Z5u
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Quand il attaque un adversaire dans le dos ou alors que celui-ci est
+    Surpris, le personnage inflige 1d6 points de DM suppl&eacute;mentaires (ces
+    d&eacute;s ne sont pas multipli&eacute;s en cas de critique). Ce bonus passe
+    &agrave; 2d6 au rang 5.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-attaque-deloyale
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!9j9GaLmp0LMnUfZ0'
+

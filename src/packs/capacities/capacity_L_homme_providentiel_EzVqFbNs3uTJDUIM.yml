@@ -1,0 +1,42 @@
+name: L'homme providentiel
+type: capacity
+flags:
+  core:
+    sourceId: Item.mIiuQpd3y5TwjZBH
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_id: EzVqFbNs3uTJDUIM
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le leader obtient un bonus de +5 pour convaincre les gens qu&rsquo;il
+    rencontre qu&rsquo;il est leur alli&eacute; et qu&rsquo;il peut leur
+    apporter aide et protection. De plus, il peut d&eacute;penser un point de
+    chance pour l&rsquo;appliquer au test d&rsquo;un alli&eacute; en vue.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-lhomme-providentiel
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!EzVqFbNs3uTJDUIM'
+

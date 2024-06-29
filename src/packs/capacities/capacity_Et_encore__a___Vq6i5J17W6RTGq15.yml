@@ -1,0 +1,42 @@
+name: Et encore ça !
+type: capacity
+flags:
+  core:
+    sourceId: Item.Ylhas6DFAnwPHGpe
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_id: Vq6i5J17W6RTGq15
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Contre les zombies, le fossoyeur obtient des critiques sur un
+    r&eacute;sultat de 18-20 au d20 et il ajoute +1d6 DM aux d&eacute;g&acirc;ts
+    des critiques qu&rsquo;il inflige &agrave; des zombies. Contre les autres
+    adversaires, il obtient des critiques sur 19-20.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-et-encore-ca-
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!Vq6i5J17W6RTGq15'
+

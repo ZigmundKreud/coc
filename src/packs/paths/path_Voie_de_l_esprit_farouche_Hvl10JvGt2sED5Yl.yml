@@ -1,0 +1,35 @@
+name: Voie de l'esprit farouche
+type: path
+flags:
+  core:
+    sourceId: Item.Z0ryx5hvNdRIlowU
+img: systems/coc/ui/icons/Icon.5_78.png
+effects: []
+_id: Hvl10JvGt2sED5Yl
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: surhumains-voie-de-lesprit-farouche
+  setting: surhumains
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!Hvl10JvGt2sED5Yl'
+

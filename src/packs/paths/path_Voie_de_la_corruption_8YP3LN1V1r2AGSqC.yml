@@ -1,0 +1,35 @@
+name: Voie de la corruption
+type: path
+flags:
+  core:
+    sourceId: Item.umn2wi2MUzNUpTiL
+img: systems/coc/ui/icons/Icon.5_78.png
+effects: []
+_id: 8YP3LN1V1r2AGSqC
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: surhumains-voie-de-la-corruption
+  setting: surhumains
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!8YP3LN1V1r2AGSqC'
+

@@ -1,0 +1,43 @@
+name: Plus de munitions
+type: capacity
+flags:
+  core:
+    sourceId: Item.YT6Ei3HoV37esDRH
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_id: fHvaTx4LoWyWJJsm
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le fossoyeur semble toujours avoir plus de munitions que les autres,
+    lorsqu&rsquo;il tire sur un zombie, il n&rsquo;est &agrave; court de
+    munitions que sur un r&eacute;sultat de 1-4 au d20. Lorsqu&rsquo;il atteint
+    le rang 5 dans la voie, cela passe &agrave; 1-3. De plus, il peut utiliser
+    un point de chance pour ignorer un incident de tir.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-plus-de-munitions
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!fHvaTx4LoWyWJJsm'
+

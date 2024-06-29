@@ -1,0 +1,99 @@
+name: Mitrailleuse lourde
+type: item
+flags:
+  core:
+    sourceId: Item.ETV6TGuHAtvKkpf6
+img: systems/coc/ui/icons/svg/turret.svg
+effects: []
+_id: BC71GWyZ9Xx1sHpd
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: ''
+  key: ''
+  setting: base
+  moduleData: {}
+  def: 0
+  defBase: 0
+  defBonus: 0
+  dr: 0
+  dmg: ''
+  dmgBase: 3d10
+  dmgStat: ''
+  dmgBonus: 0
+  mod: 0
+  skill: '@attacks.ranged.mod'
+  skillBonus: 0
+  critrange: '20'
+  hands: 1
+  range: 80
+  reload: s
+  worn: false
+  slot: ''
+  qty: 1
+  strmin: 26
+  stacksize: null
+  price: null
+  properties:
+    predilection: false
+    ranged: true
+    equipable: true
+    stackable: false
+    activable: false
+    2H: false
+    proficient: false
+    finesse: false
+    equipment: true
+    weapon: true
+    protection: false
+    reloadable: true
+    explosive: false
+    vehicle: false
+    bow: false
+    crossbow: false
+    powder: false
+    throwing: false
+    dr: false
+    sneak: false
+    powerful: false
+    critscience: false
+    specialization: false
+    effects: false
+    13strmin: false
+    bashing: false
+    sling: false
+    spell: false
+    consumable: false
+    unique: false
+    tailored: false
+    2h: false
+    salve: true
+  effects:
+    heal:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+    buff:
+      formula: null
+      persistent: false
+      duration:
+        value: null
+        units: null
+  subtype: ranged
+folder: null
+sort: 0
+_key: '!items!BC71GWyZ9Xx1sHpd'
+

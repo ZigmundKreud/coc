@@ -1,0 +1,83 @@
+_id: WiyCrjEe0ZRc4Gzm
+name: Pouvoir d'outre-monde
+type: capacity
+flags:
+  core:
+    sourceId: Item.er7exg7XS7foqCzn
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 80">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p style="text-align: justify;">Le personnage est désormais capable de
+    pratiquer une forme de magie. Le MJ et le joueur doivent se mettre
+    d&rsquo;accord sur ce que le personnage apprend. Ce sera probablement un
+    sort ou un rituel particulier avec lequel le personnage a été en contact
+    durant les aventures qu&rsquo;il a vécu. Attention, un pouvoir puissant a
+    toujours une contrepartie déplaisante. Si vous n&rsquo;avez pas
+    d&rsquo;idée, voici trois propositions.<br /><br /></p>
+
+    <ul>
+
+    <li style="text-align: justify;">Une fois par tour, le personnage peut
+    sacrifier 1d4PV (ou 1d6 au choix) pour obtenir un bonus égal au double de
+    ce montant sur le résultat d&rsquo;un test (d20, d12). Il peut annoncer cet
+    effet après avoir pris connaissance du résultat. Ce dé est un jet sans
+    limite (comme la règle des DM).<br /><br /></li>
+
+    <li style="text-align: justify;">Le personnage sacrifie 2 points sur la
+    valeur d&rsquo;une caractéristique de son choix. En échange, il augmente
+    une autre caractéristique de 6 points.<br /><br /></li>
+
+    <li style="text-align: justify;">Le personnage n&rsquo;a plus besoin de
+    dormir, il n&rsquo;a besoin que de la moitié de la nourriture et de
+    l&rsquo;eau que consomme un être humain normal, il est immunisé aux
+    maladies et aux poisons naturels. Enfin, il guérit deux fois plus vite (il
+    double le nombre de PV récupérés) et il vieillit deux fois moins vite.
+    Mais cela a un prix, sa peau devient pâle et froide, et il développe une
+    sensibilité à la lumière vive (elle est considérée comme de la
+    pénombre).</li>
+
+    </ul>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: epouvante-pouvoir-doutre-monde
+  setting: epouvante
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+folder: null
+sort: 0
+_key: '!items!WiyCrjEe0ZRc4Gzm'
+

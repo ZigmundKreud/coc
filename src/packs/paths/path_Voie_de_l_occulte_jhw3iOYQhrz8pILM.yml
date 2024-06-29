@@ -1,0 +1,115 @@
+_id: jhw3iOYQhrz8pILM
+name: Voie de l'occulte
+type: path
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.Vi1CiGsS0n80WQ2A
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 80">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <h2 style="text-align: justify;">Voie de l&rsquo;occulte</h2>
+
+    <p style="text-align: justify;">&nbsp;</p>
+
+    <div style="text-align: justify;" title="Page 80">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <blockquote>
+
+    <p><em>Si, à cette période, certains le crurent fou, c&rsquo;est en raison
+    des bruits que l&rsquo;on entendait à toute heure dans le laboratoire
+    installé au grenier. Il y passait le plus clair de son temps : des
+    psalmodies, répétitions et déclamations tonitruantes sur des rythmes
+    insolites, et bien que tout cela fût prononcé de sa voix, cette dernière,
+    ainsi que les accents des formules qu&rsquo;il récitait, avait un
+    caractère particulier qui glaçait le sang de tous les auditeurs.<br
+    /></em><em>&ndash; L&rsquo;affaire Charles Dexter Ward.</em></p>
+
+    </blockquote>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    <p style="text-align: justify;">&nbsp;</p>
+
+    <p style="text-align: justify;">La Voie de l&rsquo;occulte appartient à la
+    famille Réflexion.&nbsp;</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    <p>&nbsp;</p>
+  source: Chroniques Oubliées Contemporain
+  key: epouvante-voie-de-locculte
+  setting: epouvante
+  moduleData: {}
+  capacities:
+    - name: Sciences occultes
+      type: capacity
+      _id: VHVynZT3oUV4Vylt
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.VHVynZT3oUV4Vylt
+    - name: Résistance occulte
+      type: capacity
+      _id: CtPRmiHTFrbU1QVH
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.CtPRmiHTFrbU1QVH
+    - name: Etoiles propices
+      type: capacity
+      _id: IKmqehMvbqqaChyk
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.IKmqehMvbqqaChyk
+    - name: Force d'âme
+      type: capacity
+      _id: Ujv9Rfsqnui8TWGN
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.Ujv9Rfsqnui8TWGN
+    - name: Pouvoir d'outre-monde
+      type: capacity
+      _id: WiyCrjEe0ZRc4Gzm
+      img: systems/coc/ui/icons/Icon.6_55.png
+      sourceId: Compendium.coc.capacities.WiyCrjEe0ZRc4Gzm
+  properties:
+    profile: true
+    prestige: true
+    alternative: false
+_key: '!items!jhw3iOYQhrz8pILM'
+

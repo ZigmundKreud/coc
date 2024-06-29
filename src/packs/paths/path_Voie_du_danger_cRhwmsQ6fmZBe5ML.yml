@@ -1,0 +1,71 @@
+_id: cRhwmsQ6fmZBe5ML
+name: Voie du danger
+type: path
+img: systems/coc/ui/icons/Icon.6_84.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.yhRILx2y9qYGzlRr
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: |-
+    <div title="Page 23">
+    <div>
+    <div>
+    <div>
+    <p>Équipement : une trousse de secours, une corde d&rsquo;escalade.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-du-danger
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Même pas peur
+      type: capacity
+      _id: IgM4krvpOKEQG6zT
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.IgM4krvpOKEQG6zT
+    - name: Acrobate
+      type: capacity
+      _id: tl1pHJJl2g0Ik6RP
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.tl1pHJJl2g0Ik6RP
+    - name: Ignorer la douleur
+      type: capacity
+      _id: yDKbAV4H2CmN5JPO
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.yDKbAV4H2CmN5JPO
+    - name: Seul contre tous
+      type: capacity
+      _id: WZQBlEFpFokZ8pED
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.WZQBlEFpFokZ8pED
+    - name: Au pied du mur
+      type: capacity
+      _id: QKIqKkclv0pdql5x
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.QKIqKkclv0pdql5x
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!cRhwmsQ6fmZBe5ML'
+

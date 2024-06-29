@@ -1,0 +1,71 @@
+_id: DHEkGr1FuPmogTWp
+name: Voie des sciences
+type: path
+img: systems/coc/ui/icons/Icon.4_92.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.xtZKkqCqeRiMZOCI
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: |-
+    <div title="Page 28">
+    <div>
+    <div>
+    <div>
+    <p><strong>Équipement :</strong> livres de science, costume.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-des-sciences
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Formation scientifique
+      type: capacity
+      _id: 9NZj3bmchhmYH6Tc
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.9NZj3bmchhmYH6Tc
+    - name: Grosse tête
+      type: capacity
+      _id: IcoUyq3RPZJ6icMi
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.IcoUyq3RPZJ6icMi
+    - name: Tacticien
+      type: capacity
+      _id: gx0ZpBC3pl09HfHm
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.gx0ZpBC3pl09HfHm
+    - name: Violon d'Ingres
+      type: capacity
+      _id: Mql910Kry8DrpZey
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.Mql910Kry8DrpZey
+    - name: Intelligence héroïque
+      type: capacity
+      _id: WT9YIahYezOCjbOW
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.WT9YIahYezOCjbOW
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!DHEkGr1FuPmogTWp'
+

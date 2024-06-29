@@ -1,0 +1,43 @@
+_id: FXtXP1QaLYcfzTsz
+name: Mental d'acier
+type: capacity
+flags:
+  core:
+    sourceId: Item.WVRMKOEE1AZ5IFTk
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage a &eacute;tudi&eacute; ses propres points faibles et il est
+    devenu particuli&egrave;rement r&eacute;silient. Lorsqu&rsquo;il obtient un
+    1 (&eacute;chec critique) sur le d20 lors d&rsquo;un test, il
+    r&eacute;cup&egrave;re imm&eacute;diatement un point de chance (sans pouvoir
+    d&eacute;passer son maximum).</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-mental-dacier
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!FXtXP1QaLYcfzTsz'
+

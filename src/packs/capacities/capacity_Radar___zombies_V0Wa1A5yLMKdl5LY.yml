@@ -1,0 +1,41 @@
+name: Radar à zombies
+type: capacity
+flags:
+  core:
+    sourceId: Item.72PCJM9WGBbUOk95
+img: systems/coc/ui/icons/Icon.3_37.png
+effects: []
+_id: V0Wa1A5yLMKdl5LY
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>L&rsquo;&eacute;claireur obtient un bonus de +1 aux tests de
+    discr&eacute;tion et de perception par rang atteint dans la voie
+    lorsqu&rsquo;il s&rsquo;agit de zombies.</p>
+  source: Chroniques Oubliées Contemporain
+  key: zombis-radar-a-zombies
+  setting: zombis
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!V0Wa1A5yLMKdl5LY'
+

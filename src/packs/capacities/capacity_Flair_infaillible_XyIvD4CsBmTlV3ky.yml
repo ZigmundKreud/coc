@@ -1,0 +1,44 @@
+_id: XyIvD4CsBmTlV3ky
+name: Flair infaillible
+type: capacity
+flags:
+  core:
+    sourceId: Item.lPR0pajJlSay3fXx
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le joueur lance d&eacute;sormais deux d20 pour tous les tests de
+    recherche d&rsquo;indices et peut garder le meilleur r&eacute;sultat. Si le
+    personnage quitte une sc&egrave;ne de crime ou d&rsquo;enqu&ecirc;te en
+    ayant rat&eacute; un renseignement utile &agrave; l&rsquo;avanc&eacute;e du
+    sc&eacute;nario, le meneur de jeu doit lui signaler que &laquo;
+    quelque-chose cloche &raquo;.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-flair-infaillible
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!XyIvD4CsBmTlV3ky'
+

@@ -1,0 +1,35 @@
+name: Voie de l'ascendance
+type: path
+flags:
+  core:
+    sourceId: Item.ij67ZTJ5XB8K32wr
+img: systems/coc/ui/icons/Icon.5_78.png
+effects: []
+_id: 43zmC14k3rSajOPS
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: ''
+  source: Chroniques Oubliées Contemporain
+  key: surhumains-voie-de-lascendance
+  setting: surhumains
+  moduleData: {}
+  capacities: []
+  properties:
+    profile: false
+    prestige: false
+    alternative: false
+folder: null
+sort: 0
+_key: '!items!43zmC14k3rSajOPS'
+

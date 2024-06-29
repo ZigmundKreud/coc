@@ -1,0 +1,42 @@
+_id: 38Xw8CaauMzzHsNN
+name: Frappe chirurgicale
+type: capacity
+flags:
+  core:
+    sourceId: Item.4yc2gOAKz3oJINMx
+img: systems/coc/ui/icons/Icon.4_81.png
+effects: []
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <p>Le personnage conna&icirc;t les points vitaux des cr&eacute;atures
+    terrestres vivantes. D&eacute;sormais, il obtient un critique en attaque au
+    contact ou &agrave; distance sur un r&eacute;sultat de 18 &agrave; 20 au d20
+    et il ajoute +1d6 aux DM des critiques obtenus.</p>
+  source: Chroniques Oubliées Contemporain
+  key: base-frappe-chirurgicale
+  setting: base
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+  properties: {}
+folder: null
+sort: 0
+_key: '!items!38Xw8CaauMzzHsNN'
+

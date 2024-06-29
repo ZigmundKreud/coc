@@ -1,0 +1,80 @@
+_id: m8psb2pbkDNSJ5YS
+name: Voie des voyages
+type: path
+img: systems/coc/ui/icons/Icon.6_43.png
+effects: []
+folder: null
+sort: 0
+flags:
+  core:
+    sourceId: Item.JhS2IKCSM8lEo7Qk
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 29">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p><strong>Équipement :</strong> des cartes diverses, des devises de
+    plusieurs pays et des photos de souvenirs de pays lointains.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: Chroniques Oubliées Contemporain
+  key: base-voie-des-voyages
+  setting: base
+  moduleData: {}
+  capacities:
+    - name: Débrouillardise
+      type: capacity
+      _id: zMFTBbUJx4pUwwK5
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.zMFTBbUJx4pUwwK5
+    - name: Par monts et par vaux
+      type: capacity
+      _id: IjkqXsy0X531ijXH
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.IjkqXsy0X531ijXH
+    - name: Sens du danger
+      type: capacity
+      _id: Mbd8AJg8urWh2b9s
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.Mbd8AJg8urWh2b9s
+    - name: Résistance
+      type: capacity
+      _id: oFGlB3n7PuYPvYWr
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.oFGlB3n7PuYPvYWr
+    - name: Adaptation héroïque
+      type: capacity
+      _id: ZYMaJ8BgIDq53j8i
+      img: systems/coc/ui/icons/Icon.4_81.png
+      sourceId: Compendium.coc.capacities.ZYMaJ8BgIDq53j8i
+  properties:
+    profile: true
+    prestige: false
+    alternative: false
+    racial: false
+    creature: false
+_key: '!items!m8psb2pbkDNSJ5YS'
+

@@ -1,0 +1,59 @@
+name: Etoiles propices
+type: capacity
+flags:
+  core:
+    sourceId: Item.8ctkF9t3neg3D3Hw
+img: systems/coc/ui/icons/Icon.6_55.png
+effects: []
+_id: IKmqehMvbqqaChyk
+_stats:
+  coreVersion: '12.324'
+  systemId: null
+  systemVersion: null
+  createdTime: null
+  modifiedTime: null
+  lastModifiedBy: null
+  compendiumSource: null
+  duplicateSource: null
+ownership:
+  default: 0
+  9RNwlVuBKg8gXYwl: 3
+system:
+  description: >-
+    <div title="Page 80">
+
+    <div>
+
+    <div>
+
+    <div>
+
+    <p>L&rsquo;art de la divination permet au personnage de prendre les bonnes
+    décisions ou de profiter des faiblesses de ses adversaires. Chaque matin,
+    après un rituel de 10 minutes effectué par son personnage, le joueur lance
+    1d20 et note le résultat. À tout moment dans la journée, il peut
+    remplacer le résultat d&rsquo;un d20 qu&rsquo;il a lancé ou que le MJ a
+    lancé pour une attaque ou un test opposé contre lui, par ce résultat.</p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+  source: ''
+  key: epouvante-etoiles-propices
+  setting: epouvante
+  moduleData: {}
+  rank: null
+  path:
+    id: ''
+    name: ''
+    key: ''
+  limited: false
+  spell: false
+folder: null
+sort: 0
+_key: '!items!IKmqehMvbqqaChyk'
+
