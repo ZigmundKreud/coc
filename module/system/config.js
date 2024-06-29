@@ -76,10 +76,29 @@ COC.itemProperties = {
     "prestige": "COC.properties.prestige",
     "alternative": "COC.properties.alternative",
     "racial": "COC.properties.racial",
-    "creature" : "COC.properties.creature",
-    "proneshot" : "COC.properties.proneshot",
-    "salve" : "COC.properties.salve",
-    "explosive" : "COC.properties.explosive"
+    "creature": "COC.properties.creature",
+    "proneshot": "COC.properties.proneshot",
+    "salve": "COC.properties.salve",
+    "explosive": "COC.properties.explosive"
+};
+
+COC.itemSlots = {
+    hand: "COC.slot.hand",
+    head: "COC.slot.head",
+    ear: "COC.slot.ear",
+    neck: "COC.slot.neck",
+    shoulders: "COC.slot.shoulders",
+    chest: "COC.slot.chest",
+    back: "COC.slot.back",
+    arm: "COC.slot.arm",
+    finger: "COC.slot.finger",
+    wrist: "COC.slot.wrist",
+    waist: "COC.slot.waist",
+    legs: "COC.slot.legs",
+    feet: "COC.slot.feet",
+    belt: "COC.slot.belt",
+    backpack: "COC.slot.backpack",
+    quiver: "COC.slot.quiver"
 };
 
 COC.itemTypes = {
@@ -110,7 +129,7 @@ COC.itemCategories = {
 
 COC.itemIcons = {
     "item": "icons/svg/tankard.svg",
-    "capacity":"icons/svg/wing.svg",
+    "capacity": "icons/svg/wing.svg",
     "profile": "icons/svg/statue.svg",
     "path": "icons/svg/upgrade.svg",
     "trait": "icons/svg/eye.svg",
@@ -123,21 +142,21 @@ COC.actorIcons = {
 }
 
 COC.actorsAllowedItems = {
-    "character":[
+    "character": [
         "item",
         "capacity",
         "trait",
         "profile",
         "path"
     ],
-    "npc":[
+    "npc": [
         "item",
         "capacity",
         "trait",
         "profile",
         "path"
     ],
-    "encounter":[
+    "encounter": [
         "item",
         "capacity",
         "encounterWeapon"
@@ -145,3 +164,106 @@ COC.actorsAllowedItems = {
 }
 
 COC.debug = false;
+
+/**
+ * Creature sizes.
+ * @enum {string}
+ */
+COC.actorSizes = {
+    tiny: "COC.encounter.size.tiny",
+    small: "COC.encounter.size.small",
+    short: "COC.encounter.size.short",
+    med: "COC.encounter.size.medium",
+    big: "COC.encounter.size.big",
+    huge: "COC.encounter.size.huge",
+    colossal: "COC.encounter.size.colossal"
+};
+
+/**
+ * Encounter archetype.
+ * @enum {string}
+ */
+COC.encounterArchetypes = {
+    standard: "COC.encounter.archetype.standard",
+    rapide: "COC.encounter.archetype.rapide",
+    puissant: "COC.encounter.archetype.puissant",
+    inférieur: "COC.encounter.archetype.inférieur"
+};
+/**
+ * Encounter category.
+ * @enum {string}
+ */
+COC.encounterCategories = {
+    vivante: "COC.encounter.category.vivante",
+    humanoïde: "COC.encounter.category.humanoïde",
+    "non-vivante": "COC.encounter.category.non-vivante"
+};
+
+/**
+ * Encounter Boss Rank.
+ * @enum {string}
+ */
+COC.encounterBossRanks = {
+    "1": "COC.encounter.boss.rank.endurci",
+    "2": "COC.encounter.boss.rank.expert",
+    "3": "COC.encounter.boss.rank.elite",
+    "4": "COC.encounter.boss.rank.legendaire"
+};
+
+COC.DICE_VALUES = {
+    "1d4": "1d4",
+    "1d6": "1d6",
+    "1d8": "1d8",
+    "1d10": "1d10",
+    "1d12": "1d12",
+    "1d20": "1d20"
+};
+
+COC.DAMAGE_STAT = {
+    "@stats.str.mod": "COC.stats.str.label",
+    "@stats.dex.mod": "COC.stats.dex.label",
+    "@stats.con.mod": "COC.stats.con.label",
+    "@stats.int.mod": "COC.stats.int.label",
+    "@stats.wis.mod": "COC.stats.wis.label",
+    "@stats.cha.mod": "COC.stats.cha.label"
+};
+
+COC.SKILL = {
+    "@attacks.melee.mod": "COC.attacks.melee.label",
+    "@attacks.ranged.mod": "COC.attacks.ranged.label",
+    "@attacks.magic.mod": "COC.attacks.magic.label"
+};
+
+COC.DURATION = {
+    rounds: "COC.ui.rounds",
+    minutes: "COC.ui.minutes",
+    hours: "COC.ui.hours",
+    days: "COC.ui.days"
+};
+
+COC.SPELLCASTING = {
+    "@stats.int.mod": "COC.stats.int.label",
+    "@stats.wis.mod": "COC.stats.wis.label",
+    "@stats.cha.mod": "COC.stats.cha.label"
+};
+
+COC.FAMILY = {
+    "action": "COC.Family.action",
+    "adventure": "COC.Family.adventure",
+    "reflexion": "COC.Family.reflexion"
+};
+
+COC.SETTING = {
+    "base": "COC.setting.base",
+    "epouvante": "COC.setting.epouvante",
+    "pulp": "COC.setting.pulp",
+    "zombis": "COC.setting.zombis",
+    "espionnage": "COC.setting.espionnage",
+    "surhumains": "COC.setting.surhumains",
+    "cyberpunk": "COC.setting.cyberpunk"
+};
+
+COC.RELOAD = {
+    s: "COC.ui.simpleAction",
+    l: "COC.ui.limitedAction"
+};

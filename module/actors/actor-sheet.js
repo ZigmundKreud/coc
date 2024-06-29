@@ -124,6 +124,7 @@ export class CoCActorSheet extends CoCBaseSheet {
 
         data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
 
+        
         if (COC.debug) console.log("COC | ActorSheet getData", data);
         return data;
     }

@@ -140,8 +140,8 @@ export class CoCBaseSheet extends ActorSheet {
       ev.preventDefault();
       return this.actor.createEmbeddedDocuments("ActiveEffect", [
         {
-          label: game.i18n.localize("COC.ui.newEffect"),
-          icon: "icons/svg/aura.svg",
+          name: game.i18n.localize("COC.ui.newEffect"),
+          img: "icons/svg/aura.svg",
           origin: this.actor.uuid,
           "duration.rounds": undefined,
           disabled: true,
@@ -414,7 +414,7 @@ export class CoCBaseSheet extends ActorSheet {
   }
 
   /** @override */
-  getData(options) {
+  async getData(options) {
     const data = super.getData(options);
     const actorData = data.data;
     data.isGm = game.user.isGM;

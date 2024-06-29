@@ -88,8 +88,8 @@ export class CoCItemSheet extends ItemSheet {
             ev.preventDefault();
             if (!this.isEditable) return;
             return this.item.createEmbeddedDocuments("ActiveEffect", [{
-                label: game.i18n.localize("COC.ui.newEffect"),
-                icon: "icons/svg/aura.svg",
+                name: game.i18n.localize("COC.ui.newEffect"),
+                img: "icons/svg/aura.svg",
                 origin: this.item.uuid,
                 "duration.rounds": undefined,
                 disabled: false

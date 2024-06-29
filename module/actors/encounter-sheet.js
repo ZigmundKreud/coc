@@ -30,7 +30,7 @@ export class CoCEncounterSheet extends CoCBaseSheet {
 
     /** @override */
     async getData(options) {
-        const data = super.getData(options);
+        const data = await super.getData(options);
         if (COC.debug) console.log("COC | EncounterSheet getData", data);
 
         // Combat and Inventory

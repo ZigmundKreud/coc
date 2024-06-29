@@ -462,5 +462,29 @@
   "COC.CustomStatus.stun": "Etourdi (malus)",
   "COC.CustomStatus.weak": "Affaibli (d12)",
   "COC.CustomStatus.restrain": "Immobilisé (d12)",
-  "COC.CustomStatus.dead": "Hors d'état"
+  "COC.CustomStatus.dead": "Hors d'état",
+
+  "COC.Family.action": "Action",
+  "COC.Family.adventure": "Aventure",
+  "COC.Family.reflexion": "Réflexion",
+
+  "COC.encounter.size.tiny": "Minuscule",
+  "COC.encounter.size.small": "Très petite",
+  "COC.encounter.size.short": "Petite",
+  "COC.encounter.size.medium": "Moyenne",
+  "COC.encounter.size.big": "Grande",
+  "COC.encounter.size.huge": "Énorme",
+  "COC.encounter.size.colossal": "Colossale",
+  "COC.encounter.archetype.standard": "Standard",
+  "COC.encounter.archetype.rapide": "Rapide",
+  "COC.encounter.archetype.puissant": "Puissant",
+  "COC.encounter.archetype.inférieur": "Inférieur",
+  "COC.encounter.category.vivante": "Vivante",
+  "COC.encounter.category.humanoïde": "Humanoïde",
+  "COC.encounter.category.non-vivante": "Non-vivante",
+  "COC.encounter.boss.rank.endurci": "Endurci",
+  "COC.encounter.boss.rank.expert": "Expert",
+  "COC.encounter.boss.rank.elite": "Elite",
+  "COC.encounter.boss.rank.legendaire": "Légendaire"
+
 }

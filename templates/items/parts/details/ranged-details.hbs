@@ -27,12 +27,8 @@
         <label>{{localize "COC.ui.reload"}}</label>
         <div class="form-fields">
             <select name="system.reload" data-type="String" style="width:100%">
-                {{#select system.reload}}
-                    <option value="">{{localize "COC.ui.noAction"}}</option>
-                    <option value="s">{{localize "COC.ui.simpleAction"}}</option>
-                    <option value="l">{{localize "COC.ui.limitedAction"}}</option>
-                {{/select}}
-            </select>
+                {{selectOptions config.RELOAD selected=system.reload localize=true blank="COC.ui.noAction"}}                
+            </select>            
         </div>
     </div>
 {{/if}}
