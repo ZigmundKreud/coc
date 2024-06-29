@@ -1,3 +1,5 @@
+### 12.328.0
+- Compatibilité V12
 
 ### 11.315.0
 - Dernière version v11 (avec version maximum de Foundry à 11) 
