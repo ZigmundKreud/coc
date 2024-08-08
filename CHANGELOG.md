@@ -1,3 +1,6 @@
+### 12.330.0
+- Mise à jour de la gestion des Profils, Voies et Capacités, iso COF
+
 ### 12.328.1
 - Correction de la création des compendiums
 

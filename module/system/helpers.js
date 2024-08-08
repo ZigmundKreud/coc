@@ -1,5 +1,3 @@
-import {Traversal} from "../utils/traversal.js";
-
 export const registerHandlebarsHelpers = function () {
 
     Handlebars.registerHelper('getPaths', function (items) {
@@ -42,20 +40,6 @@ export const registerHandlebarsHelpers = function () {
             return (aKey > bKey) ? 1 : -1
         });
         return caps;
-    });
-
-    Handlebars.registerHelper('getCapacitiesByIds', function (ids) {
-        if (ids) {
-            const caps = Traversal.getItemsOfType("capacity").filter(c => {
-                if (c && c._id) return ids.includes(c._id)
-            });
-            caps.sort(function (a, b) {
-                const indexA = ids.indexOf(a._id);
-                const indexB = ids.indexOf(b._id);
-                return (indexA > indexB) ? 1 : -1
-            });
-            return caps;
-        } else return null;
     });
 
     Handlebars.registerHelper('getPath', function (items, pathKey) {
@@ -132,22 +116,6 @@ export const registerHandlebarsHelpers = function () {
 
     Handlebars.registerHelper('split', function (str, separator, keep) {
         return str.split(separator)[keep];
-    });
-
-    Handlebars.registerHelper('listProfiles', function () {
-        return Traversal.getAllProfilesData()
-    });
-
-    Handlebars.registerHelper('listPaths', function () {
-        return Traversal.getAllPathsData()
-    });
-
-    Handlebars.registerHelper('findPath', function (key) {
-        return Traversal.getAllPathsData().find(p => p.system.key === key);
-    });
-
-    Handlebars.registerHelper('findCapacity', function (key) {
-        return Traversal.getAllCapacitiesData().find(c => c.system.key === key);
     });
 
     // If you need to add Handlebars helpers, here are a few useful examples:

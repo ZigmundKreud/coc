@@ -16,7 +16,7 @@ export class CoCActor extends Actor {
     constructor(...args) {
         let data = args[0];
 
-        if (!data.img && COC.actorIcons[data.type]){
+        if (!data.img && COC.actorIcons[data.type]) {
             data.img = COC.actorIcons[data.type];
             if (!data.token) data.token = {};
             if (!data.token.img) data.token.img = COC.actorIcons[data.type];
@@ -87,7 +87,7 @@ export class CoCActor extends Actor {
      * @param {*} actorData
      */
     _prepareDerivedCharacterData(actorData) {
-        if(actorData.type === "npc") this.computeNpcMods(actorData);
+        if (actorData.type === "npc") this.computeNpcMods(actorData);
         else this.computeMods(actorData);
 
         this.computeAttributes(actorData);
@@ -103,7 +103,7 @@ export class CoCActor extends Actor {
      */
     getProfile(items) {
         let profile = items.find(i => i.type === "profile")
-        if(profile) return profile;
+        if (profile) return profile;
         else return null;
     }
 
@@ -157,7 +157,7 @@ export class CoCActor extends Actor {
      */
     computeMods(actorData) {
         let stats = actorData.system.stats;
-        for(const stat of Object.values(stats)){
+        for (const stat of Object.values(stats)) {
             stat.value = stat.base + stat.bonus;
             stat.mod = Stats.getModFromStatValue(stat.value);
         }
@@ -169,7 +169,7 @@ export class CoCActor extends Actor {
      */
     computeNpcMods(actorData) {
         let stats = actorData.system.stats;
-        for(const stat of Object.values(stats)){
+        for (const stat of Object.values(stats)) {
             stat.value = Stats.getStatValueFromMod(stat.mod);
         }
     }
@@ -180,7 +180,7 @@ export class CoCActor extends Actor {
      */
     get isWeakened() {
         return this.getFlag("coc", "weakened");
-    }    
+    }
 
     /**
      *
@@ -201,7 +201,7 @@ export class CoCActor extends Actor {
         attributes.init.penalty = this.getMalusFromProtection(items);
         attributes.init.value = attributes.init.base + attributes.init.bonus + attributes.init.penalty;
 
-         // Points de chance
+        // Points de chance
         attributes.fp.base = this.computeBaseFP(stats.cha.mod, profile);
         attributes.fp.max = attributes.fp.base + attributes.fp.bonus;
 
@@ -320,7 +320,7 @@ export class CoCActor extends Actor {
 
      * @returns {int} retourne mod
      */
-     computeWeaponMod(itemModStat, itemModBonus) {
+    computeWeaponMod(itemModStat, itemModBonus) {
         let total = 0;
 
         const fromStat = eval("this.system." + itemModStat);
@@ -366,11 +366,11 @@ export class CoCActor extends Actor {
     * @description synchronise l'état des effets qui appartiennent à un item équipable avec l'état "équipé" de cet item
     * @returns {Promise}
     */
-     syncItemActiveEffects(item){
+    syncItemActiveEffects(item) {
         // Récupération des effets qui proviennent de l'item
-        let effectsData = this.effects.filter(effect=>effect.origin.endsWith(item.id))?.map(effect=> foundry.utils.duplicate(effect));
-        if (effectsData.length > 0){
-            effectsData.forEach(effect=>effect.disabled = !item.system.worn);
+        let effectsData = this.effects.filter(effect => effect.origin.endsWith(item.id))?.map(effect => foundry.utils.duplicate(effect));
+        if (effectsData.length > 0) {
+            effectsData.forEach(effect => effect.disabled = !item.system.worn);
 
             this.updateEmbeddedDocuments("ActiveEffect", effectsData);
         }
@@ -381,11 +381,11 @@ export class CoCActor extends Actor {
      * @description
      * @returns {Promise}
      */
-     rollWeapon(item, options = {}) {
+    rollWeapon(item, options = {}) {
         const { bonus = 0, malus = 0, dmgBonus = 0, dmgOnly = false } = options;
 
         return Macros.rollItemMacro(item.id, item.name, item.type, bonus, malus, dmgBonus, dmgOnly);
-     }
+    }
 
     /**
      *
@@ -393,16 +393,16 @@ export class CoCActor extends Actor {
      * @param {*} bypassChecks
      * @returns
      */
-     toggleEquipItem(item, bypassChecks) {
+    toggleEquipItem(item, bypassChecks) {
         if (!this.canEquipItem(item, bypassChecks)) return;
 
         const equipable = item.system.properties.equipable;
-        if(equipable){
+        if (equipable) {
             let itemData = foundry.utils.duplicate(item);
             itemData.system.worn = !itemData.system.worn;
 
-            return item.update(itemData).then((item)=>{
-                if (game.settings.get("coc","useActionSound")) foundry.utils.AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+            return item.update(itemData).then((item) => {
+                if (game.settings.get("coc", "useActionSound")) foundry.utils.AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false);
                 if (!bypassChecks) this.syncItemActiveEffects(item);
             });
         }
@@ -413,22 +413,22 @@ export class CoCActor extends Actor {
      * @param item
      * @param bypassChecks
      */
-     canEquipItem(item, bypassChecks) {
-        if (!this.items.some(it=>it.id === item.id)){
-            ui.notifications.warn(game.i18n.format('COC.notification.MacroItemMissing', {item:item.name}));
+    canEquipItem(item, bypassChecks) {
+        if (!this.items.some(it => it.id === item.id)) {
+            ui.notifications.warn(game.i18n.format('COC.notification.MacroItemMissing', { item: item.name }));
             return false;
         }
         let itemData = item.system;
-        if (!itemData?.properties.equipment || !itemData?.properties.equipable){
-            ui.notifications.warn(game.i18n.format("COC.notification.ItemNotEquipable", {itemName:item.name}));
+        if (!itemData?.properties.equipment || !itemData?.properties.equipable) {
+            ui.notifications.warn(game.i18n.format("COC.notification.ItemNotEquipable", { itemName: item.name }));
             return;
         }
 
-        if (!this._hasEnoughFreeHands(item, bypassChecks)){
+        if (!this._hasEnoughFreeHands(item, bypassChecks)) {
             ui.notifications.warn(game.i18n.localize("COC.notification.NotEnoughFreeHands"));
             return false;
         }
-        if (!this._isArmorSlotAvailable(item, bypassChecks)){
+        if (!this._isArmorSlotAvailable(item, bypassChecks)) {
             ui.notifications.warn(game.i18n.localize("COC.notification.ArmorSlotNotAvailable"));
             return false;
         }
@@ -436,13 +436,13 @@ export class CoCActor extends Actor {
         return true;
     }
 
-   /**
-     * Check if actor has enough free hands to equip this item
-     * @param event
-     * @param bypassChecks
-     * @private
-     */
-    _hasEnoughFreeHands(item, bypassChecks){
+    /**
+      * Check if actor has enough free hands to equip this item
+      * @param event
+      * @param bypassChecks
+      * @private
+      */
+    _hasEnoughFreeHands(item, bypassChecks) {
         // Si le contrôle de mains libres n'est pas demandé, on renvoi Vrai
         let checkFreehands = game.settings.get("coc", "checkFreeHandsBeforeEquip");
         if (!checkFreehands || checkFreehands === "none") return true;
@@ -460,9 +460,9 @@ export class CoCActor extends Actor {
         let neededHands = item.system.properties["2H"] ? 2 : 1;
 
         // Calcul du nombre de mains déjà utilisées
-        let itemsInHands = this.items.filter(item=>item.system.worn && item.system.slot === "hand");
+        let itemsInHands = this.items.filter(item => item.system.worn && item.system.slot === "hand");
         let usedHands = 0;
-        itemsInHands.forEach(item=>usedHands += item.system.properties["2H"] ? 2 : 1);
+        itemsInHands.forEach(item => usedHands += item.system.properties["2H"] ? 2 : 1);
 
         return usedHands + neededHands <= 2;
     }
@@ -473,7 +473,7 @@ export class CoCActor extends Actor {
      * @param bypassChecks
      * @private
      */
-    _isArmorSlotAvailable(item, bypassChecks){
+    _isArmorSlotAvailable(item, bypassChecks) {
         // Si le contrôle de disponibilité de l'emplacement d'armure n'est pas demandé, on renvoi Vrai
         let checkArmorSlotAvailability = game.settings.get("coc", "checkArmorSlotAvailability");
         if (!checkArmorSlotAvailability || checkArmorSlotAvailability === "none") return true;
@@ -490,7 +490,7 @@ export class CoCActor extends Actor {
         if (!itemData.properties.protection) return true;
 
         // Recheche d'une item de type protection déjà équipé dans le slot cible
-        let equipedItem = this.items.find((slotItem)=>{
+        let equipedItem = this.items.find((slotItem) => {
             let slotItemData = slotItem.system;
 
             return slotItemData.properties?.protection && slotItemData.properties.equipable && slotItemData.worn && slotItemData.slot === itemData.slot;
@@ -509,12 +509,13 @@ export class CoCActor extends Actor {
         const consumable = item.system.properties.consumable;
         const quantity = item.system.qty;
 
-        if(consumable && quantity>0){
+        if (consumable && quantity > 0) {
             let itemData = foundry.utils.duplicate(item);
             itemData.system.qty = (itemData.system.qty > 0) ? itemData.system.qty - 1 : 0;
-            if (game.settings.get("coc","useActionSound")) foundry.utils.AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
+            if (game.settings.get("coc", "useActionSound")) foundry.utils.AudioHelper.play({ src: "/systems/coc/sounds/gulp.mp3", volume: 0.8, autoplay: true, loop: false }, false);
             return item.update(itemData).then(item => item.applyEffects(this));
         }
+        return ui.notifications.warn(game.i18n.localize("COC.notification.ConsumeEmptyObject"));
     }
 
     /**
@@ -523,16 +524,16 @@ export class CoCActor extends Actor {
      * @public
      *
      * @param {Int} charismeMod Modificateur de charisme
-     * @param {CofItem} profile Item de type profile
+     * @param {CocItem} profile Item de type profile
      *
      */
-     computeBaseFP(charismeMod, profile) {
-         if (game.settings.get("coc", "settingCyberpunk")){
-             return 3 + charismeMod;
-         }
-         else {
+    computeBaseFP(charismeMod, profile) {
+        if (game.settings.get("coc", "settingCyberpunk")) {
+            return 3 + charismeMod;
+        }
+        else {
             const fpBonusFromProfile = (profile && profile.system.bonuses.fp) ? profile.system.bonuses.fp : 0;
             return 2 + charismeMod + fpBonusFromProfile;
-         }
+        }
     }
 }

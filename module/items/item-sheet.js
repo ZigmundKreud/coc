@@ -5,7 +5,7 @@
 import { Capacity } from "../controllers/capacity.js";
 import { Path } from "../controllers/path.js";
 import { ArrayUtils } from "../utils/array-utils.js";
-import { Traversal } from "../utils/traversal.js";
+
 export class CoCItemSheet extends ItemSheet {
 
     /** @override */
@@ -218,12 +218,12 @@ export class CoCItemSheet extends ItemSheet {
         ev.preventDefault();
         const li = $(ev.currentTarget).closest(".item");
         const id = li.data("itemId");
-
-        if (id) {
-            return Traversal.find(id).then(e => {
+        const uuid = li.data("itemUuid");
+        if (uuid) {
+            return fromUuid(uuid).then(e => {
                 if (e) return e.sheet.render(true);
                 else {
-                    ui.notifications.error("Impossible de trouver l'entité");
+                    ui.notifications.error(game.i18n.localize("COC.notification.ItemNotFound"));
                     return false;
                 }
             });

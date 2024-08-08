@@ -1,5 +1,5 @@
-import { Traversal } from "../utils/traversal.js";
 import { EntitySummary } from "./entity-summary.js";
+import { CoCItem } from "../items/item.js";
 
 export class Path {
 
@@ -12,7 +12,14 @@ export class Path {
     static addPathsToActor(actor, pathsData) {
         let items = [];
         pathsData = pathsData instanceof Array ? pathsData : [pathsData];
-        pathsData.forEach(p => { items.push(p.toObject(false)) });
+        pathsData.forEach(p => {
+            let path = p instanceof CoCItem ? p.toObject() : p;
+            if (p.system.profile != null) {
+                const profile = p.system.profile;
+                path.system.profile = profile;
+            }
+            items.push(path);
+        });
         return actor.createEmbeddedDocuments("Item", items).then(newPaths => {
             // on ajoute toutes les metadonnees aux voies nouvellement creees pour faciliter la gestions des capacites qui en dependent
             let updatedPaths = newPaths.map(newPath => {
@@ -30,7 +37,7 @@ export class Path {
                             name: updatedPath.name,
                             img: updatedPath.img,
                             key: updatedPath.system.key,
-                            sourceId: pathsData[index].flags.core.sourceId,
+                            sourceId: pathsData[index]._stats.compendiumSource,
                         }
                     };
                     return cap;
@@ -50,34 +57,11 @@ export class Path {
      */
     static addToActor(actor, pathData) {
         if (actor.items.filter(item => item.type === "path" && item.name === pathData.name).length > 0) {
-            ui.notifications.error("Vous possédez déjà cette voie.");
+            ui.notifications.error(game.i18n.localize("COF.notification.PathAlreadyOwned"));
             return false;
         } else {
             return this.addPathsToActor(actor, [pathData]);
         }
-    }
-
-    static getPathsFromActorByKey(actor, pathKeys) {
-        // const start = performance.now();
-        let items = [];
-        const ownedPaths = actor.items.filter(item => pathKeys.includes(item.system.key) && item.type === "path");
-        if(ownedPaths.length>0){
-            const ownedPathsIds = ownedPaths.map(c => c._id);
-            const ownedPathsCapacities = ownedPaths.map(c => c.system.capacities).flat();
-            // retrieve owned capacities matching profile paths capacities
-            const allCaps = Traversal.getItemsOfType("capacity");
-            const pathCaps = allCaps.filter(p => { if(p && p._id && ownedPathsCapacities.includes(p._id)) return ownedPathsCapacities.includes(p._id) });
-            if(pathCaps.length > 0){
-                const pathCapsKeys = pathCaps.map(c => c.system.key);
-                const capsIds = actor.items.filter(item => pathCapsKeys.includes(item.system.key) && item.type === "capacity").map(c => c._id);
-                items = items.concat(capsIds);
-            }
-            items = items.concat(ownedPathsIds);
-        }
-        // const end = performance.now();
-        // const duration = end-start;
-        // console.log("Duration : " + duration + " ms");
-        return items;
     }
 
     /**
@@ -86,28 +70,30 @@ export class Path {
      * @param {*} pathData
      * @returns
      */
-     static addToItem(entity, pathData) {
-        let data = foundry.utils.duplicate(entity);
-        let paths = data.system.paths;
+    static addToItem(entity, pathData) {
+        let paths = entity.system.paths;
         let pathsIds = paths.map(p => p._id);
         if (pathsIds && !pathsIds.includes(pathData._id)) {
-            data.system.paths.push(EntitySummary.create(pathData));
-            return entity.update(data);
-        }
-        else ui.notifications.error("Cet objet contient déjà cette voie.")
+            paths.push(EntitySummary.create(pathData));
+            return entity.update({ "system.paths": paths });
+        } else ui.notifications.error(game.i18n.localize("COC.notification.PathAlreadyOnItem"));
     }
 
-    static removeFromActor(actor, entity) {
+    /**
+     *
+     * @param {*} actor
+     * @param {*} path
+     */
+    static removeFromActor(actor, path) {
         Dialog.confirm({
-            title: "Supprimer une voie",
-            content: `<p>Etes-vous sûr de vouloir supprimer la ${entity.name} de ${actor.name} ?</p>`,
+            title: game.i18n.format("COC.dialog.deletePath.title"),
+            content: game.i18n.format("COC.dialog.deletePath.confirm", { name: actor.name }),
             yes: () => {
-                const pathData = entity;
-                let items = actor.items.filter(item => item.type === "capacity" && item.system.path._id === pathData._id).map(c => c._id);
-                items.push(entity.id);
+                let items = actor.items.filter((item) => item.type === "capacity" && item.system.path._id === path._id).map((c) => c._id);
+                items.push(path.id);
                 return actor.deleteEmbeddedDocuments("Item", items);
             },
-            defaultYes: true
+            defaultYes: true,
         });
     }
 
@@ -121,11 +107,7 @@ export class Path {
         let items = [];
         paths = paths instanceof Array ? paths : [paths];
         paths.map(path => {
-            let caps = actor.items.filter(item => {
-                if (item.type === "capacity") {
-                    if (item.system.path._id === path.id) return true;
-                }
-            });
+            let caps = actor.items.filter((item) => item.type === "capacity" && item.system.path._id === path._id);
             caps.map(c => items.push(c.id));
             items.push(path.id);
         });

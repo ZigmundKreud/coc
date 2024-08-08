@@ -6,10 +6,7 @@ import { CoCRoll } from "../controllers/roll.js";
 import { Capacity } from "../controllers/capacity.js";
 import { Path } from "../controllers/path.js";
 import { Profile } from "../controllers/profile.js";
-import { Traversal } from "../utils/traversal.js";
-import { Trait } from "../controllers/trait.js";
 import { ArrayUtils } from "../utils/array-utils.js";
-import { Inventory } from "../controllers/inventory.js";
 import { COC } from "../system/config.js";
 
 export class CoCBaseSheet extends ActorSheet {
@@ -107,11 +104,11 @@ export class CoCBaseSheet extends ActorSheet {
     // Check/Uncheck capacities
     html.find(".capacity-checked").click((ev) => {
       ev.preventDefault();
-      return Capacity.toggleCheck(this.actor, ev, true);
+      return this._onCheckedCapacity(this.actor, ev, true);
     });
     html.find(".capacity-unchecked").click((ev) => {
       ev.preventDefault();
-      return Capacity.toggleCheck(this.actor, ev, false);
+      return this._onCheckedCapacity(this.actor, ev, false);
     });
     html.find(".capacity-create").click((ev) => {
       ev.preventDefault();
@@ -159,6 +156,24 @@ export class CoCBaseSheet extends ActorSheet {
   }
 
   /**
+   * @name _onCheckedCapacity
+   * @description Evènement sur la case à cocher d'une capacité dans la partie voie
+   * @param {CofActor} actor l'acteur
+   * @param {Event} event l'évènement
+   * @param {boolean} isUncheck la capacité est décochée
+   * @returns l'acteur modifié
+   * @private
+   */
+  _onCheckedCapacity(actor, event, isUncheck) {
+    const elt = $(event.currentTarget).parents(".capacity");
+    // get id of clicked capacity
+    const capId = elt.data("itemId");
+    // get id of parent path
+    const pathId = elt.data("pathId");
+    return Capacity.toggleCheck(actor, capId, pathId, isUncheck);
+  }
+
+  /**
    * Callback on render item actions : display or not the summary
    * @param event
    * @private
@@ -189,17 +204,23 @@ export class CoCBaseSheet extends ActorSheet {
     const li = $(event.currentTarget).parents(".item");
     const id = li.data("itemId");
     const type = li.data("itemType") ? li.data("itemType") : "item";
-    const pack = li.data("pack") ? li.data("pack") : null;
+    const uuid = li.data("uuid");
+
     if (type === "effect") {
       let effects = this.actor.effects;
       const effect = effects.get(id);
       if (effect) {
-        return new ActiveEffectConfig(effect, {}).render(true);
+        return new COFActiveEffectConfig(effect, {}).render(true);
       } else return false;
+    } else if (type === "capacity") {
+      // Recherche d'un capacité existante avec la même clé
+      const key = li.data("key");
+      let entity = this.actor.items.find((i) => i.type === "capacity" && i.system.key === key);
+      return entity ? entity.sheet.render(true) : fromUuid(uuid).then((e) => e.sheet.render(true));
     } else {
-      // look first in actor onwed items
+      // look first in actor embedded items
       let entity = this.actor.items.get(id);
-      return entity ? entity.sheet.render(true) : Traversal.getDocument(id, type, pack).then((e) => e.sheet.render(true));
+      return entity ? entity.sheet.render(true) : fromUuid(uuid).then((e) => e.sheet.render(true));
     }
   }
 

@@ -17,7 +17,6 @@ import {COC, System} from "./system/config.js";
 import {Macros} from "./system/macros.js";
 
 import registerHooks from "./system/hooks.js";
-import {UpdateUtils} from "./utils/update-utils.js";
 import { customizeStatusEffects } from "./system/effects.js";
 
 Hooks.once("init", function () {
