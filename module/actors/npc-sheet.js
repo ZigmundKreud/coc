@@ -17,7 +17,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
 
     /** @override */
     async getData(options) {
-        const data = super.getData(options);
+        const data = await super.getData(options);
         if (COC.debug) console.log("COC | NpcSheet getData", data);
 
         // The Actor's data
@@ -78,7 +78,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
             data.combat.categories.push({
                 id: category,
                 label: game.coc.config.itemCategories[category],
-                items: Object.values(data.items).filter(item => item.type === "item" && item.system.subtype === category && item.system.worn).sort((a, b) => (a.name > b.name) ? 1 : -1)
+                items: Object.values(data.items).filter(item => item.type === "item" && item.system.subtype === category && item.system.worn && (item.system.properties.weapon || item.system.properties.protection)).sort((a, b) => (a.name > b.name) ? 1 : -1)
             });
             data.inventory.categories.push({
                 id: category,
@@ -102,7 +102,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
                         const itemDmgStat = item.system.dmgStat.split("@")[1];
                         const itemDmgBonus = parseInt(item.system.dmgBonus);
 
-                        item.dmg = this.actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
+                        item.system.dmg = this.actor.computeDm(itemDmgBase, itemDmgStat, itemDmgBonus)
                     }
                 });
             }

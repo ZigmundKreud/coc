@@ -1,3 +1,6 @@
+### 12.331.0
+- Correction de l'affichage de la fiche NPC
+
 ### 12.330.0
 - Mise à jour de la gestion des Profils, Voies et Capacités, iso COF
 
