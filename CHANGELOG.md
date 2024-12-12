@@ -1,3 +1,6 @@
+### 12.331.1
+- Correction de l'affichage d'un Active Effect depuis l'onglet Effets
+
 ### 12.331.0
 - Correction de l'affichage de la fiche NPC
 

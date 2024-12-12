@@ -210,7 +210,7 @@ export class CoCBaseSheet extends ActorSheet {
       let effects = this.actor.effects;
       const effect = effects.get(id);
       if (effect) {
-        return new COFActiveEffectConfig(effect, {}).render(true);
+        return new ActiveEffectConfig(effect).render(true);
       } else return false;
     } else if (type === "capacity") {
       // Recherche d'un capacité existante avec la même clé
