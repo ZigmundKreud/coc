@@ -101,7 +101,7 @@ export const EffectsModifications = {
 			{
 				key: "flags.coc.weakened",
 				mode: 5,
-				value: "true"
+				value: "str,dex,con,int,wis,cha"
 			}
 		] 
     },
@@ -111,10 +111,20 @@ export const EffectsModifications = {
 			{
 				key: "flags.coc.weakened",
 				mode: 5,
-				value: "true"
+				value: "str,dex,con,int,wis,cha"
 			}
 		]        
     },
+	"bleeding":{
+        name:"COC.CustomStatus.bleeding",
+		changes:[
+			{
+				key: "flags.coc.weakened",
+				mode: 5,
+				value: "str,dex,con"
+			}
+		]        
+    },	
 	"dead":{
 		name:"COC.CustomStatus.dead",
         changes:[

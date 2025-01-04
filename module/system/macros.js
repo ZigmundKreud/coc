@@ -153,7 +153,7 @@ export class Macros {
     }
 
     if (dialog) {
-      CoCRoll.skillRollDialog(actor, label && label.length > 0 ? label : game.i18n.localize(statObj.label), mod, bonus, malus, "20", statObj.superior, onEnter, description, actor.isWeakened);
+      CoCRoll.skillRollDialog(actor, label && label.length > 0 ? label : game.i18n.localize(statObj.label), mod, bonus, malus, "20", statObj.superior, onEnter, description, actor.isWeakened(stat));
     } else {
       return new SkillRoll(label && label.length > 0 ? label : game.i18n.localize(statObj.label), dice, "+" + +mod, bonus, malus, difficulty, "20", description).roll();
     }
@@ -227,7 +227,11 @@ export class Macros {
 
         if (dialog) {
           if (dmgOnly) CoCRoll.rollDamageDialog(actor, label, dmg, 0, false, "submit", dmgDescr);
-          else CoCRoll.rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmg, dmgBonus, "submit", skillDescr, dmgDescr);
+          else {
+            const strWeak =  actor.isWeakened('str');
+            const dexWeak =  actor.isWeakened('dex');
+            CoCRoll.rollWeaponDialog(actor, label, mod, bonus, malus, critrange, dmg, dmgBonus, "submit", skillDescr, dmgDescr, null, strWeak || dexWeak);
+          } 
         } else {
           let formula = dmgBonus ? dmg + "+" + dmgBonus : dmg;
           if (dmgOnly) new DamageRoll(label, formula, false, dmgDescr).roll();

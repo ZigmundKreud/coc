@@ -1,3 +1,6 @@
+### 12.331.4
+- Ajout du Status Effect blessé qui donne 1d12 pour les jets physiques
+
 ### 12.331.3
 - Correction pour la prise en compte des 6 états préjudiciables
 - Suppression de warning pour les ActiveEffects

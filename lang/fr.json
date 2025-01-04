@@ -491,6 +491,7 @@
   "COC.CustomStatus.weak": "Affaibli (d12)",
   "COC.CustomStatus.restrain": "Immobilisé (d12)",
   "COC.CustomStatus.dead": "Hors d'état",
+  "COC.CustomStatus.bleeding": "Blessé (d12)",
 
   "COC.Family.action": "Action",
   "COC.Family.adventure": "Aventure",

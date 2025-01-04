@@ -491,6 +491,7 @@
   "COC.CustomStatus.weak": "Weak (d12)",
   "COC.CustomStatus.restrain": "Restrain (d12)",
   "COC.CustomStatus.dead": "Dead",
+  "COC.CustomStatus.bleeding": "Wounded (d12)",
 
   "COC.Family.action": "Action",
   "COC.Family.adventure": "Adventure",

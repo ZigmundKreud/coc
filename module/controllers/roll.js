@@ -36,7 +36,7 @@ export class CoCRoll {
         const critrange = 20;
 
         label = (label) ? game.i18n.localize(label) : null;
-        return this.skillRollDialog(actor, label, tmpmod != null ? tmpmod : mod, bonus, malus, critrange, superior, "submit", null, actor.isWeakened);
+        return this.skillRollDialog(actor, label, tmpmod != null ? tmpmod : mod, bonus, malus, critrange, superior, "submit", null, actor.isWeakened(key.split('.').pop()));
     }
 
     /**
@@ -60,7 +60,10 @@ export class CoCRoll {
         const dmgMod = $(event.currentTarget).parents().children(".item-dmg");
         const dmg = dmgMod.data('itemDmg');
 
-        return this.rollWeaponDialog(actor, label, mod, 0, 0, critrange, dmg, 0, "submit", null, null, null, actor.isWeakened);
+        const strWeak =  actor.isWeakened('str');
+        const dexWeak =  actor.isWeakened('dex');
+
+        return this.rollWeaponDialog(actor, label, mod, 0, 0, critrange, dmg, 0, "submit", null, null, null, strWeak || dexWeak);
     }
 
     /**

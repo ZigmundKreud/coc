@@ -601,11 +601,23 @@ h3 {
   border-top: 1px solid #c9c7b8;
 }
 .inventory-list .item-controls-3 {
-  flex: 0 0 66px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 88px;
+  flex: 0 0 88px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 .inventory-list .item-controls-3 > * {
@@ -664,6 +676,15 @@ h3 {
 .message-header h2.roll {
   color: darkslategrey;
   font-weight: bold;
+}
+img[data-status-id="dead"],
+img[data-status-id="prone"],
+img[data-status-id="blind"],
+img[data-status-id="stun"],
+img[data-status-id="downgrade"],
+img[data-status-id="restrain"],
+img[data-status-id="bleeding"] {
+  background-color: green;
 }
 /* Styles limited to co sheets */
 .coc {
@@ -1246,8 +1267,4 @@ h3 {
 }
 .coc input::placeholder {
   color: lightgray;
-}
-
-img[data-status-id="dead"],img[data-status-id="prone"],img[data-status-id="blind"],img[data-status-id="stun"],img[data-status-id="downgrade"],img[data-status-id="restrain"] {
-  background-color: green;
 }
