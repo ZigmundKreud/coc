@@ -175,6 +175,23 @@ export class Macros {
    * @param {*} dmgDescr
    * @returns
    */
+  /**
+   * Lance une macro d'objet pour l'objet spécifié.
+   * 
+   * @param {string} itemId - L'ID de l'objet à lancer.
+   * @param {string} itemName - Le nom de l'objet à lancer.
+   * @param {string} itemType - Le type de l'objet à lancer.
+   * @param {number} [bonus=0] - Le bonus à appliquer au jet.
+   * @param {number} [malus=0] - Le malus à appliquer au jet.
+   * @param {number} [dmgBonus=0] - Le bonus de dégâts à appliquer au jet.
+   * @param {boolean} [dmgOnly=false] - Si on doit lancer uniquement les dégâts.
+   * @param {string} [customLabel] - Une étiquette personnalisée pour le jet.
+   * @param {string} [skillDescr] - Une description de la compétence utilisée.
+   * @param {string} [dmgDescr] - Une description des dégâts lancés.
+   * @param {boolean} [dialog=true] - Si on doit afficher une boîte de dialogue pour le jet.
+   * 
+   * @returns {Promise<void>} - Une promesse qui se résout lorsque le jet est terminé.
+   */
   static rollItemMacro = async function (itemId, itemName, itemType, bonus = 0, malus = 0, dmgBonus = 0, dmgOnly = false, customLabel, skillDescr, dmgDescr, dialog = true) {
     const actor = this.getSpeakersActor();
     // Several tokens selected
@@ -232,6 +249,16 @@ export class Macros {
     }
   };
 
+  /**
+   * Exécute une macro de jet de guérison.
+   *
+   * @async
+   * @function rollHealMacro
+   * @param {string} label - L'étiquette pour le jet de guérison.
+   * @param {string} healFormula - La formule utilisée pour calculer la quantité de guérison.
+   * @param {boolean} isCritical - Indique si le jet est un coup critique : double le montant de guérison.
+   * @returns {Promise<void>} - Une promesse qui se résout lorsque le jet est terminé.
+   */
   static rollHealMacro = async function (label, healFormula, isCritical) {
     const actor = this.getSpeakersActor();
     // Several tokens selected
@@ -242,6 +269,18 @@ export class Macros {
     new CocHealingRoll(label, healFormula, isCritical).roll(actor);
   };
 
+  /**
+   * Lance une macro de compétence pour l'acteur spécifié.
+   *
+   * @param {string} label - L'étiquette pour le jet de compétence.
+   * @param {number} mod - Le modificateur pour le jet de compétence.
+   * @param {number} bonus - Le bonus pour le jet de compétence.
+   * @param {number} malus - Le malus pour le jet de compétence.
+   * @param {number} critRange - La plage critique pour le jet de compétence.
+   * @param {boolean} [isSuperior=false] - Si le jet est supérieur.
+   * @param {string} description - La description du jet de compétence.
+   * @returns {Promise<void>} Une promesse qui se résout lorsque le jet est terminé.
+   */
   static rollSkillMacro = async function (label, mod, bonus, malus, critRange, isSuperior = false, description) {
     const actor = this.getSpeakersActor();
 
@@ -255,6 +294,16 @@ export class Macros {
     CoCRoll.skillRollDialog(actor, label, mod, bonus, malus, crit, isSuperior, "submit", description);
   };
 
+  /**
+   * Exécute une macro de jet de dégâts de manière asynchrone.
+   *
+   * @param {string} label - L'étiquette pour le jet de dégâts.
+   * @param {string} dmgFormula - La formule utilisée pour calculer les dégâts.
+   * @param {string} dmgBonus - Tout bonus à ajouter au jet de dégâts.
+   * @param {boolean} isCritical - Indique si le jet est un coup critique.
+   * @param {string} dmgDescr - Une description des dégâts.
+   * @returns {Promise<void>} Une promesse qui se résout lorsque l'exécution de la macro est terminée.
+   */
   static rollDamageMacro = async function (label, dmgFormula, dmgBonus, isCritical, dmgDescr) {
     const actor = this.getSpeakersActor();
 
