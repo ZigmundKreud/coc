@@ -36,6 +36,7 @@ export class Path {
                             _id: updatedPath._id,
                             name: updatedPath.name,
                             img: updatedPath.img,
+                            setting: updatedPath.system.setting,
                             key: updatedPath.system.key,
                             sourceId: pathsData[index]._stats.compendiumSource,
                         }

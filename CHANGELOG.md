@@ -1,3 +1,7 @@
+### 12.331.2
+- Correction de la désélection d'une capacité depuis le tableau des voies (en ignorant la partie setting de la key)
+- Le bouton Editer sur une capacité depuis une voie ouvre maintenant la fiche de la capacité
+
 ### 12.331.1
 - Correction de l'affichage d'un Active Effect depuis l'onglet Effets
 

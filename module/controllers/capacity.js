@@ -74,10 +74,10 @@ export class Capacity {
 
         if (isUncheck) {
             const uncheckedKeys = capacities.filter(c => !c.data.checked).map(c => c.data.key);
-            const itemsKeys = items.map(i => i.system.key);
+            const itemsKeys = items.map(i => i.system.key.substring(i.system.key.indexOf('-') + 1));
             // Liste des capacités déjà cochées
             let inter = ArrayUtils.intersection(uncheckedKeys, itemsKeys);
-            let toRemove = items.filter(i => inter.includes(i.system.key)).map(i => i.id);
+            let toRemove = items.filter(i => inter.includes(i.system.key.substring(i.system.key.indexOf('-') + 1))).map(i => i.id);
             return actor.deleteEmbeddedDocuments("Item", toRemove);
         }
         else {
