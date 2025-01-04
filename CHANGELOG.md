@@ -1,3 +1,7 @@
+### 12.331.3
+- Correction pour la prise en compte des 6 états préjudiciables
+- Suppression de warning pour les ActiveEffects
+
 ### 12.331.2
 - Correction de la désélection d'une capacité depuis le tableau des voies (en ignorant la partie setting de la key)
 - Le bouton Editer sur une capacité depuis une voie ouvre maintenant la fiche de la capacité

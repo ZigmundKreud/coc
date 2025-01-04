@@ -17,7 +17,7 @@ export function customizeStatusEffects() {
             
             if (modifications.name) status.name = modifications.name;
             if (modifications.changes) status.changes = modifications.changes;
-			if (modifications.icon) status.icon = modifications.icon;
+			if (modifications.img) status.img = modifications.img;
 
         }
 		CONFIG.statusEffects.splice(statusIndex,1);
@@ -30,73 +30,73 @@ export function customizeStatusEffects() {
  */
 export const EffectsModifications = {     
     "prone":{
-        label:"COC.CustomStatus.prone",
+        name:"COC.CustomStatus.prone",
         changes:[
 			{
-				key: "data.attacks.melee.bonus",
+				key: "system.attacks.melee.bonus",
 				mode: 2,
 				value: -5
 			},       
 
 			{
-				key: "data.attacks.ranged.bonus",
+				key: "system.attacks.ranged.bonus",
 				mode: 2,
 				value: -5
 			},           
 
 			{
-				key: "data.attacks.magic.bonus",
+				key: "system.attacks.magic.bonus",
 				mode: 2,
 				value: -5
 			},
 
 			{
-				key: "data.attributes.def.bonus",
+				key: "system.attributes.def.bonus",
 				mode: 2,
 				value: -5
 			}
 		]
     },
     "blind":{
-        label:"COC.CustomStatus.blind",
+        name:"COC.CustomStatus.blind",
         changes:[
 			{
-				key: "data.attacks.melee.bonus",
+				key: "system.attacks.melee.bonus",
 				mode: 2,
 				value: -5
 			},
 
 			{
-				key: "data.attacks.ranged.bonus",
+				key: "system.attacks.ranged.bonus",
 				mode: 2,
 				value: -10
 			},
 
 			{
-				key: "data.attacks.magic.bonus",
+				key: "system.attacks.magic.bonus",
 				mode: 2,
 				value: -5
 			},          
 
 			{
-				key: "data.attributes.init.bonus",
+				key: "system.attributes.init.bonus",
 				mode: 2,
 				value: -5
 			}          		
 		]        
     },
     "stun":{
-        label:"COC.CustomStatus.stun",
+        name:"COC.CustomStatus.stun",
         changes:[
 			{
-				key: "data.attributes.def.bonus",
+				key: "system.attributes.def.bonus",
 				mode: 2,
 				value: -5
 			}
 		]        
     },
     "downgrade":{
-        label:"COC.CustomStatus.weak",
+        name:"COC.CustomStatus.weak",
 		changes:[
 			{
 				key: "flags.coc.weakened",
@@ -106,7 +106,7 @@ export const EffectsModifications = {
 		] 
     },
     "restrain":{
-        label:"COC.CustomStatus.restrain",
+        name:"COC.CustomStatus.restrain",
 		changes:[
 			{
 				key: "flags.coc.weakened",
@@ -116,10 +116,10 @@ export const EffectsModifications = {
 		]        
     },
 	"dead":{
-		label:"COC.CustomStatus.dead",
+		name:"COC.CustomStatus.dead",
         changes:[
 			{
-				key: "data.attributes.hp.value",
+				key: "system.attributes.hp.value",
 				mode: 5,
 				value: "0"
 			}
