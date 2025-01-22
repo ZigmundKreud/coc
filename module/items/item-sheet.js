@@ -222,12 +222,14 @@ export class CoCItemSheet extends ItemSheet {
         if (uuid) {
             return fromUuid(uuid).then(e => {
                 if (e) return e.sheet.render(true);
-                else {
-                    ui.notifications.error(game.i18n.localize("COC.notification.ItemNotFound"));
-                    return false;
-                }
+                const item = game.items.get(id);
+                if (item) return item.sheet.render(true);
+                ui.notifications.error(game.i18n.localize("COC.notification.ItemNotFound"));
+                return false;                  
             });
         }
+        const item = game.items.get(id);
+        if (item) return item.sheet.render(true);
         else return null;
     }
 
