@@ -1,3 +1,6 @@
+### 12.331.6
+- Edit d'une capacité depuis la fiche de personnage : si l'objet n'est pas trouvé dans le compendium, il est ensuite cherché dans le monde
+
 ### 12.331.5
 - Edit d'une capacité depuis une voie, ou une voie depuis un profil : si l'objet n'est pas trouvé dans le compendium, il est ensuite cherché dans le monde
 

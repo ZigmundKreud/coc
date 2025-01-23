@@ -218,9 +218,15 @@ export class CoCBaseSheet extends ActorSheet {
       let entity = this.actor.items.find((i) => i.type === "capacity" && i.system.key === key);
       return entity ? entity.sheet.render(true) : fromUuid(uuid).then((e) => e.sheet.render(true));
     } else {
-      // look first in actor embedded items
-      let entity = this.actor.items.get(id);
-      return entity ? entity.sheet.render(true) : fromUuid(uuid).then((e) => e.sheet.render(true));
+      // Look first in actor embedded items
+      let item = this.actor.items.get(id);      
+      if (item) return item.sheet.render(true);
+      // If not found, use the uuid to find the item
+      item = fromUuidSync(uuid);
+      if (item) return item.sheet.render(true);
+      // If not found, look in the world items
+      item = game.items.get(id);
+      if (item) return item.sheet.render(true);
     }
   }
 
