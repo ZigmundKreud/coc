@@ -711,9 +711,9 @@ img[data-status-id="bleeding"] {
   max-height: 26px;
 }
 .coc .half-spacer {
-  min-height: 13px;
-  height: 13px;
-  max-height: 13px;
+  min-height: 26px / 2;
+  height: 26px / 2;
+  max-height: 26px / 2;
 }
 .coc .layout {
   padding: 5px;
@@ -893,7 +893,7 @@ img[data-status-id="bleeding"] {
   border-right: 1px solid #c9c7b8;
 }
 .coc.base.actor .window-content > form .main .content .sheet-body .tab.combat .weapon .item-name .weapon-image {
-  background-image: url('../ui/coc/weapon.png');
+  background-image: url("../ui/coc/weapon.png");
   background-size: 26px 26px;
   background-repeat: no-repeat;
   background-position: center;

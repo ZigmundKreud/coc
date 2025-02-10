@@ -1,3 +1,8 @@
+### 12.331.7
+- Correction du son lors de l'action équiper/déséquiper
+- 2 icônes au lieu d'un pour équiper/déséquiper
+- Tous les titles sont remplacés par le tooltip standard Foundry
+
 ### 12.331.6
 - Edit d'une capacité depuis la fiche de personnage : si l'objet n'est pas trouvé dans le compendium, il est ensuite cherché dans le monde
 
