@@ -294,14 +294,14 @@ export class CoCBaseSheet extends ActorSheet {
     this.actor.consumeItem(item);
   }
 
-  _onToggleEquip(event) {
+  async _onToggleEquip(event) {
     event.preventDefault();
     const li = $(event.currentTarget).closest(".item");
     const item = this.actor.items.get(li.data("itemId"));
 
     const bypassChecks = event.shiftKey;
 
-    return this.actor.toggleEquipItem(item, bypassChecks);
+    return await this.actor.toggleEquipItem(item, bypassChecks);
   }
 
   /* -------------------------------------------- */

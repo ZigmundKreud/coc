@@ -389,18 +389,14 @@ export class CoCActor extends Actor {
    * @param {*} bypassChecks
    * @returns
    */
-  toggleEquipItem(item, bypassChecks) {
+  async toggleEquipItem(item, bypassChecks) {
     if (!this.canEquipItem(item, bypassChecks)) return
 
     const equipable = item.system.properties.equipable
     if (equipable) {
-      let itemData = foundry.utils.duplicate(item)
-      itemData.system.worn = !itemData.system.worn
-
-      return item.update(itemData).then((item) => {
-        if (game.settings.get("coc", "useActionSound")) foundry.utils.AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false)
-        if (!bypassChecks) this.syncItemActiveEffects(item)
-      })
+      await this.updateEmbeddedDocuments("Item", [{ _id: item.id, "system.worn": !item.system.worn }])
+      if (game.settings.get("coc", "useActionSound")) foundry.audio.AudioHelper.play({ src: "/systems/coc/sounds/sword.mp3", volume: 0.8, autoplay: true, loop: false }, false)
+      if (!bypassChecks) this.syncItemActiveEffects(item)
     }
   }
 
