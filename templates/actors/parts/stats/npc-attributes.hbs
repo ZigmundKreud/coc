@@ -16,11 +16,11 @@
 <div class="row flexrow no-wrap attributes">
     <div class="flex2 cell-header">
         <div class="flexrow no-wrap">
-            <div class="flex1 center no-wrap" title="Supérieur (2d20)">
+            <div class="flex1 center no-wrap" data-tooltip="Supérieur (2d20)">
                 <input type="checkbox" name="system.stats.{{id}}.superior" {{checked stat.superior}}>
             </div>
             <div class="flex8 center rollable no-wrap" data-rolling="system.stats.{{id}}" data-roll-type="skillcheck">
-                <div class="field-label no-wrap" title="{{ localize stat.label }}">
+                <div class="field-label no-wrap" data-tooltip="{{ localize stat.label }}">
                     <i class="fas fa-dice-d20"></i>&nbsp;{{ localize stat.abbrev }}
                 </div>
             </div>

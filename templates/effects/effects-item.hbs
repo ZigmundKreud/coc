@@ -12,14 +12,14 @@
     {{#if @root.isEffectsEditable}}
         <div class="item-detail">
         {{#if disabled}}
-            <a class="item-control effect-toggle" title="Activer" style="color:lightgray;"><i class="fas fa-toggle-off"></i></a>
+            <a class="item-control effect-toggle" data-tooltip="Activer" style="color:lightgray;"><i class="fas fa-toggle-off"></i></a>
         {{else}}
-            <a class="item-control effect-toggle" title="Désactiver"><i class="fas fa-toggle-on"></i></a>
+            <a class="item-control effect-toggle" data-tooltip="Désactiver"><i class="fas fa-toggle-on"></i></a>
         {{/if}}
         </div>
         <div class="item-controls">
-            <a class="item-control effect-edit" title='{{localize "COC.ui.editItem"}}'><i class="fas fa-edit"></i></a>
-            <a class="item-control effect-delete" title='{{localize "COC.ui.deleteItem"}}'><i class="fas fa-trash"></i></a>
+            <a class="item-control effect-edit" data-tooltip='{{localize "COC.ui.editItem"}}'><i class="fas fa-edit"></i></a>
+            <a class="item-control effect-delete" data-tooltip='{{localize "COC.ui.deleteItem"}}'><i class="fas fa-trash"></i></a>
         </div>
     {{/if}}
 </li>
