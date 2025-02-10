@@ -21,7 +21,7 @@
     "module/coc.js"
   ],
   "styles": [
-    "./css/coc.css"
+    "css/coc.css"
   ],
   "languages": [
     {

@@ -1,10 +1,10 @@
-@borderColor:#caad27;
-@headerHeight:100px;
-@bodyHeight:calc(100% - 100px);
-@sidebarWidth:400px;
+@borderColor: #caad27;
+@headerHeight: 100px;
+@bodyheight:calc (100% - 100px);
+@sidebarWidth: 400px;
 
-@colorGold : #caad27;
-@headerColor:black;
+@colorGold: #caad27;
+@headerColor: black;
 
 /* ----------------------------------------- */
 /*  Layout                                   */
@@ -14,18 +14,18 @@
   height: 100%;
   overflow: hidden;
 
-  &>form {
+  & > form {
     .nomargin();
     height: 100%;
     overflow: hidden;
     background-image: url("../ui/coc/header.png");
     background-repeat: repeat;
 
-    .upper{
-      min-height:@headerHeight;
-      height:@headerHeight;
-      max-height:@headerHeight;
-      .logo{
+    .upper {
+      min-height: @headerHeight;
+      height: @headerHeight;
+      max-height: @headerHeight;
+      .logo {
         position: relative;
         top: 30px;
         background-image: url("../ui/coc/logo.png");
@@ -33,40 +33,40 @@
         background-position-y: bottom;
         background-repeat: no-repeat;
         background-size: 280px auto;
-        min-height:@headerHeight;
-        height:@headerHeight;
-        max-height:@headerHeight;
+        min-height: @headerHeight;
+        height: @headerHeight;
+        max-height: @headerHeight;
       }
     }
 
     .main {
-      min-height:@bodyHeight;
-      height:@bodyHeight;
-      max-height:@bodyHeight;
+      min-height: calc(100% - 100px);
+      height: calc(100% - 100px);
+      max-height: calc(100% - 100px);
 
-      .sidebar{
+      .sidebar {
         border-right: 3px solid @borderColor;
         padding: 0 5px 0 5px;
         height: 100%;
         max-width: 300px;
 
-        .charname-title{
-          padding-top:20px;
-          .charname{
+        .charname-title {
+          padding-top: 20px;
+          .charname {
             font-family: Polentical;
-            color:white;
+            color: white;
             font-size: 30px;
             font-weight: 700;
           }
         }
-        .portrait{
-          img.profile{
-            border:none;
+        .portrait {
+          img.profile {
+            border: none;
           }
         }
       }
 
-      .content{
+      .content {
         height: 100%;
         padding: 40px 10px 10px 10px;
         border-top: 3px solid @borderColor;
@@ -79,11 +79,11 @@
           padding: 10px 0;
           .header-details {
             padding: 10px 0;
-            .field-label{
+            .field-label {
               text-transform: uppercase;
             }
-            .cell-header{
-              background-color:@headerColor;
+            .cell-header {
+              background-color: @headerColor;
             }
             .flexrow {
               margin-bottom: 1px;
@@ -108,32 +108,80 @@
               .flexrow {
                 margin-bottom: 1px;
               }
-              .attributes-header{ font-family: @font-secondary; color:@colorGold }
-              .attributes{ .cell-header{ background-color:@headerColor } }
+              .attributes-header {
+                font-family: @font-secondary;
+                color: @colorGold;
+              }
+              .attributes {
+                .cell-header {
+                  background-color: @headerColor;
+                }
+              }
 
-              .init-header, .attacks-header{ font-family: @font-secondary; color:@colorGold; }
-              .init,.attacks{ .cell-header{ background-color:@headerColor } }
+              .init-header,
+              .attacks-header {
+                font-family: @font-secondary;
+                color: @colorGold;
+              }
+              .init,
+              .attacks {
+                .cell-header {
+                  background-color: @headerColor;
+                }
+              }
 
-              .defence-header{ font-family: @font-secondary; color:@colorGold; }
-              .defence{ .cell-header{ background-color:@headerColor } }
+              .defence-header {
+                font-family: @font-secondary;
+                color: @colorGold;
+              }
+              .defence {
+                .cell-header {
+                  background-color: @headerColor;
+                }
+              }
 
               .injuries-header,
               .recovery-header,
-              .vitality-header{ font-family: @font-secondary; color:@colorGold; }
+              .vitality-header {
+                font-family: @font-secondary;
+                color: @colorGold;
+              }
               .injuries,
               .recovery,
-              .vitality{ .cell-header{ background-color:@headerColor } }
+              .vitality {
+                .cell-header {
+                  background-color: @headerColor;
+                }
+              }
 
               .madness-header,
-              .resources-header{ font-family: @font-secondary; color:@colorGold; }
+              .resources-header {
+                font-family: @font-secondary;
+                color: @colorGold;
+              }
               .madness,
-              .resources{ .cell-header{ background-color:@headerColor } }
-
+              .resources {
+                .cell-header {
+                  background-color: @headerColor;
+                }
+              }
             }
             &.combat {
               .inventory-list {
                 .item-list {
                   .item {
+                    .item-detail {
+                      .item-control.inventory-equip.equipped i {
+                        .fa-shield-alt {
+                          color: black;
+                        }
+                      }
+                      .item-control.inventory-equip.unquipped i {
+                        .fa-shield-alt {
+                          color: lightgray;
+                        }
+                      }
+                    }
                     .item-subtype {
                       //font-size: 10px;
                       flex: 0 1 100px;
@@ -153,7 +201,7 @@
                   padding-top: 2px;
                   border-right: 1px solid #c9c7b8;
                   .weapon-image {
-                    background-image: url('../ui/coc/weapon.png');
+                    background-image: url("../ui/coc/weapon.png");
                     background-size: 26px 26px;
                     background-repeat: no-repeat;
                     background-position: center;
@@ -163,7 +211,8 @@
                 }
               }
             }
-            &.inventory {}
+            &.inventory {
+            }
             &.capacities {
               overflow: auto;
               .path-list {
@@ -179,18 +228,18 @@
                   max-height: 150px;
                   overflow: auto;
                   .gridrow {
-                    .gridcell{
-                      padding:3px 5px;
-                      &.gridheader{
-                        background-color:@headerColor;
+                    .gridcell {
+                      padding: 3px 5px;
+                      &.gridheader {
+                        background-color: @headerColor;
                         font-family: @font-secondary;
-                        color:white;
+                        color: white;
                       }
                     }
-                    &.gridheader{
-                      background-color:@headerColor;
+                    &.gridheader {
+                      background-color: @headerColor;
                       font-family: @font-secondary;
-                      color:white;
+                      color: white;
                     }
                   }
                 }
@@ -211,53 +260,53 @@
               }
 
               .capacity-list {
-                min-height:calc(100% - 220px);
-                height:calc(100% - 220px);
-                max-height:calc(100% - 220px);
+                min-height: calc(100% - 220px);
+                height: calc(100% - 220px);
+                max-height: calc(100% - 220px);
                 overflow: auto;
-                &.p0{
-                  min-height:calc(100% - 15px);
-                  height:calc(100% - 15px);
-                  max-height:calc(100% - 15px);
+                &.p0 {
+                  min-height: calc(100% - 15px);
+                  height: calc(100% - 15px);
+                  max-height: calc(100% - 15px);
                 }
-                &.p1{
-                  min-height:calc(100% - 120px);
-                  height:calc(100% - 120px);
-                  max-height:calc(100% - 120px);
+                &.p1 {
+                  min-height: calc(100% - 120px);
+                  height: calc(100% - 120px);
+                  max-height: calc(100% - 120px);
                 }
-                &.p2{
-                  min-height:calc(100% - 145px);
-                  height:calc(100% - 145px);
-                  max-height:calc(100% - 145px);
+                &.p2 {
+                  min-height: calc(100% - 145px);
+                  height: calc(100% - 145px);
+                  max-height: calc(100% - 145px);
                 }
-                &.p3{
-                  min-height:calc(100% - 170px);
-                  height:calc(100% - 170px);
-                  max-height:calc(100% - 170px);
+                &.p3 {
+                  min-height: calc(100% - 170px);
+                  height: calc(100% - 170px);
+                  max-height: calc(100% - 170px);
                 }
-                &.p4{
-                  min-height:calc(100% - 195px);
-                  height:calc(100% - 195px);
-                  max-height:calc(100% - 195px);
+                &.p4 {
+                  min-height: calc(100% - 195px);
+                  height: calc(100% - 195px);
+                  max-height: calc(100% - 195px);
                 }
               }
             }
           }
         }
 
-        .cell{
-          height:26px;
-          .field-value{
+        .cell {
+          height: 26px;
+          .field-value {
             font-family: @font-deco;
             font-size: 16px;
             //font-family: Signika;
           }
-          select.field-value{
+          select.field-value {
             font-size: 14px;
           }
         }
-        .cell-header{
-          height:26px;
+        .cell-header {
+          height: 26px;
           background-color: black;
           color: white;
           padding-top: 2px;
@@ -277,7 +326,7 @@
               color: @c-darkbrown;
               visibility: hidden;
               flex: 0 0 18px;
-              border:1px solid transparent;
+              border: 1px solid transparent;
             }
           }
           &:hover > .item > .item-control {
