@@ -3,15 +3,15 @@
 /* ----------------------------------------- */
 
 .flexrow {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+  !display: flex; /* vonv debug foundry vtt v13 */
+  !flex-flow: row wrap; /* vonv debug foundry vtt v13 */
+  !justify-content: flex-start; /* vonv debug foundry vtt v13 */
 
   > * {
-    flex: 1;
+    !flex: 1; /* vonv debug foundry vtt v13 */
   }
 
-  .flex1 { flex: 1; }
+  .flex1 { !flex: 1; /* vonv debug foundry vtt v13 */ }
   .flex2 { flex: 2; }
   .flex3 { flex: 3; }
   .flex4 { flex: 4; }
@@ -23,16 +23,16 @@
 }
 
 .flexcol {
-  display: flex;
-  flex-flow: column nowrap;
+  !display: flex; /* vonv debug foundry vtt v13 */
+  !flex-flow: column nowrap; /* vonv debug foundry vtt v13 */
   //flex-direction: column;
   //flex-wrap: nowrap;
 
   > * {
-    flex: 1;
+    !flex: 1; /* vonv debug foundry vtt v13 */
   }
 
-  .flex1 { flex: 1; }
+  .flex1 { !flex: 1; /* vonv debug foundry vtt v13 */ }
   .flex2 { flex: 2; }
   .flex3 { flex: 3; }
   .flex4 { flex: 4; }
@@ -95,4 +95,11 @@
 
 h3 {
   border-bottom: none;
+}
+
+.flxrow > * {
+  !flex: 1; /* vonv debug foundry vtt v13 */
+}
+.flxrow .flex1 {
+  !flex: 1; /* vonv debug foundry vtt v13 */
 }
