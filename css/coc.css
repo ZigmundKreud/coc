@@ -391,6 +391,8 @@ h3 {
   border: 1px groove #eeede0;
   font-weight: bold;
   line-height: 24px;
+  text-wrap-mode: nowrap;
+  /* vonv le + à côté de Aj qui change de ligne */
 }
 .inventory-list .inventory-header h3 {
   margin: 0 -5px 0 0;
@@ -408,7 +410,8 @@ h3 {
   color: #4b4a44;
 }
 .inventory-list .item-detail {
-  flex: 0 0 50px;
+  flex: 0 0 49px;
+  /* vonv arme de contact qui dépasse dans l'inventaire */
   font-size: 12px;
   color: #7a7971;
   text-align: center;
