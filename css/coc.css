@@ -183,10 +183,10 @@
   justify-content: flex-start;
 }
 .flxrow > * {
-  flex: 1;
+  !flex: 1; /* vonv debug foundry vtt v13 */
 }
 .flxrow .flex1 {
-  flex: 1;
+  !flex: 1; /* vonv debug foundry vtt v13 */
 }
 .flxrow .flex2 {
   flex: 2;
@@ -295,15 +295,15 @@
 /*  Flexbox                                  */
 /* ----------------------------------------- */
 .flexrow {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
+  !display: flex; /* vonv debug foundry vtt v13 */
+  !flex-flow: row wrap; /* vonv debug foundry vtt v13 */
+  !justify-content: flex-start; /* vonv debug foundry vtt v13 */
 }
 .flexrow > * {
-  flex: 1;
+  !flex: 1; /* vonv debug foundry vtt v13 */
 }
 .flexrow .flex1 {
-  flex: 1;
+  !flex: 1; /* vonv debug foundry vtt v13 */
 }
 .flexrow .flex2 {
   flex: 2;
@@ -330,14 +330,14 @@
   flex: 9;
 }
 .flexcol {
-  display: flex;
-  flex-flow: column nowrap;
+  !display: flex; /* vonv debug foundry vtt v13 */
+  !flex-flow: column nowrap; /* vonv debug foundry vtt v13 */
 }
 .flexcol > * {
-  flex: 1;
+  !flex: 1; /* vonv debug foundry vtt v13 */
 }
 .flexcol .flex1 {
-  flex: 1;
+  !flex: 1; /* vonv debug foundry vtt v13 */
 }
 .flexcol .flex2 {
   flex: 2;
@@ -621,13 +621,13 @@ h3 {
   justify-content: flex-end;
 }
 .inventory-list .item-controls-3 > * {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
+  -webkit-box-!flex: 1;
+  -ms-!flex: 1;
   flex: 1;
 }
 .inventory-list .item-controls-3 .flex1 {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
+  -webkit-box-!flex: 1;
+  -ms-!flex: 1;
   flex: 1;
 }
 .inventory-list .item-controls-3 .flex2 {
@@ -1267,4 +1267,14 @@ img[data-status-id="bleeding"] {
 }
 .coc input::placeholder {
   color: lightgray;
+}
+
+
+/* vonv le + à côté de Aj qui change de ligne */
+.inventory-list .inventory-header {
+  text-wrap-mode: nowrap;
+}
+/* vonv arme de contact qui dépasse dans l'inventaire */
+.inventory-list .item-detail {
+    flex: 0 0 49px;
 }
