@@ -259,7 +259,7 @@ export class CoCBaseSheet extends ActorSheet {
       activable: item.system.properties.activable,
     };
 
-    const html = await renderTemplate("systems/coc/templates/chat/item-card.hbs", templateData);
+    const html = await foundry.applications.handlebars.renderTemplate("systems/coc/templates/chat/item-card.hbs", templateData);
     let chatData = {
       speaker: ChatMessage.getSpeaker(),
       content: html,
