@@ -6,7 +6,7 @@ import { Capacity } from "../controllers/capacity.js";
 import { Path } from "../controllers/path.js";
 import { ArrayUtils } from "../utils/array-utils.js";
 
-export class CoCItemSheet extends ItemSheet {
+export class CoCItemSheet extends foundry.appv1.sheets.ItemSheet {
 
     /** @override */
     static get defaultOptions() {
@@ -272,7 +272,7 @@ export class CoCItemSheet extends ItemSheet {
         data.item = itemData;
         data.system = itemData.system;
 
-        data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+        data.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.system.description, {async: true});
 
         return data;
     }

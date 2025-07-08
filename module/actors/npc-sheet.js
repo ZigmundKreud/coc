@@ -111,7 +111,7 @@ export class CoCNpcSheet extends CoCBaseSheet {
         // Gestion des boutons de modification des effets (visible pour le npc)
         data.isEffectsEditable = true;
 
-        data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+        data.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.system.description, {async: true});
 
         if (COC.debug) console.log("COC | NpcSheet getData", data);
         return data;

@@ -222,7 +222,7 @@ export class CoCRoll {
             diff = [...game.user.targets][0].actor.system.attributes.def.value;
         }
         const isDifficultyDisplayed = displayDifficulty === "all" || (displayDifficulty === "gm" && game.user.isGM);
-        const rollOptionContent = await renderTemplate(rollOptionTpl, {
+        const rollOptionContent = await foundry.applications.handlebars.renderTemplate(rollOptionTpl, {
             mod: mod,
             bonus: bonus,
             malus: malus,
@@ -292,7 +292,7 @@ export class CoCRoll {
             }
             isDifficultyDisplayed = displayDifficulty === "all" || (displayDifficulty === "gm" && game.user.isGM);
         }
-        const rollOptionContent = await renderTemplate(rollOptionTpl, {
+        const rollOptionContent = await foundry.applications.handlebars.renderTemplate(rollOptionTpl, {
             mod: mod,
             bonus: bonus,
             malus: malus,
@@ -373,7 +373,7 @@ export class CoCRoll {
 
     static async rollDamageDialog(actor, label, formula, bonus, critical = false, onEnter = "submit", dmgDescr) {
         const rollOptionTpl = 'systems/coc/templates/dialogs/roll-dmg-dialog.hbs';
-        const rollOptionContent = await renderTemplate(rollOptionTpl, {
+        const rollOptionContent = await foundry.applications.handlebars.renderTemplate(rollOptionTpl, {
             dmgFormula: formula,
             dmgBonus: bonus,
             dmgCustomFormula: "",
