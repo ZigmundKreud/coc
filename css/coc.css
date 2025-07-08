@@ -294,58 +294,58 @@
 /* ----------------------------------------- */
 /*  Flexbox                                  */
 /* ----------------------------------------- */
-.flexrow {
+.coc.actor .window-content .flexrow {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
 }
-.flexrow > * {
+.coc.actor .window-content .flexrow > * {
   flex: 1;
 }
-.flexrow .flex1 {
+.coc.actor .window-content .flexrow .flex1 {
   flex: 1;
 }
-.flexrow .flex2 {
+.coc.actor .window-content .flexrow .flex2 {
   flex: 2;
 }
-.flexrow .flex3 {
+.coc.actor .window-content .flexrow .flex3 {
   flex: 3;
 }
-.flexrow .flex4 {
+.coc.actor .window-content .flexrow .flex4 {
   flex: 4;
 }
-.flexrow .flex5 {
+.coc.actor .window-content .flexrow .flex5 {
   flex: 5;
 }
-.flexrow .flex6 {
+.coc.actor .window-content .flexrow .flex6 {
   flex: 6;
 }
-.flexrow .flex7 {
+.coc.actor .window-content .flexrow .flex7 {
   flex: 7;
 }
-.flexrow .flex8 {
+.coc.actor .window-content .flexrow .flex8 {
   flex: 8;
 }
-.flexrow .flex9 {
+.coc.actor .window-content .flexrow .flex9 {
   flex: 9;
 }
-.flexcol {
+.coc.actor .window-content .flexcol {
   display: flex;
   flex-flow: column nowrap;
 }
-.flexcol > * {
+.coc.actor .window-content .flexcol > * {
   flex: 1;
 }
-.flexcol .flex1 {
+.coc.actor .window-content .flexcol .flex1 {
   flex: 1;
 }
-.flexcol .flex2 {
+.coc.actor .window-content .flexcol .flex2 {
   flex: 2;
 }
-.flexcol .flex3 {
+.coc.actor .window-content .flexcol .flex3 {
   flex: 3;
 }
-.flexcol .flex4 {
+.coc.actor .window-content .flexcol .flex4 {
   flex: 4;
 }
 .flex-group-center,
@@ -397,7 +397,7 @@
 h3 {
   border-bottom: none;
 }
-.inventory-list {
+.coc .window-content .inventory-list {
   list-style: none;
   margin: 0;
   padding: 0 5px;
@@ -405,64 +405,64 @@ h3 {
   scrollbar-width: thin;
   color: #7a7971;
 }
-.inventory-list.foldable .inventory-header h3 {
+.coc .window-content .inventory-list.foldable .inventory-header h3 {
   cursor: pointer;
 }
-.inventory-list.foldable .inventory-header h3:before {
+.coc .window-content .inventory-list.foldable .inventory-header h3:before {
   content: "▾\202F";
 }
-.inventory-list.folded .inventory-header h3:before {
+.coc .window-content .inventory-list.folded .inventory-header h3:before {
   content: "▸\202F";
 }
-.inventory-list .item {
+.coc .window-content .inventory-list .item {
   line-height: 30px;
   padding: 0 2px;
   border-bottom: 1px solid #c9c7b8;
 }
-.inventory-list .item:last-child {
+.coc .window-content .inventory-list .item:last-child {
   border-bottom: none;
 }
-.inventory-list .item .item-name {
+.coc .window-content .inventory-list .item .item-name {
   cursor: pointer;
   max-height: 30px;
   overflow: hidden;
 }
-.inventory-list .item .item-name .item-image {
+.coc .window-content .inventory-list .item .item-name .item-image {
   flex: 0 0 30px;
   background-size: 30px;
   margin-right: 5px;
 }
-.inventory-list .item .item-name h4 {
+.coc .window-content .inventory-list .item .item-name h4 {
   margin: 0;
   overflow-x: hidden;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.inventory-list .item .item-name.rollable:hover .item-image {
+.coc .window-content .inventory-list .item .item-name.rollable:hover .item-image {
   background-image: url("../../../icons/svg/d20-grey.svg") !important;
 }
-.inventory-list .item .item-name.rollable .item-image:hover {
+.coc .window-content .inventory-list .item .item-name.rollable .item-image:hover {
   background-image: url("../../../icons/svg/d20-black.svg") !important;
 }
-.inventory-list .item .item-name i.attuned {
+.coc .window-content .inventory-list .item .item-name i.attuned {
   color: #7a7971;
 }
-.inventory-list .item .item-uses input {
+.coc .window-content .inventory-list .item .item-uses input {
   width: 24px;
   text-align: center;
 }
-.inventory-list .item .item-properties {
+.coc .window-content .inventory-list .item .item-properties {
   margin-top: 3px;
 }
-.inventory-list .item .item-recharge {
+.coc .window-content .inventory-list .item .item-recharge {
   flex: 0 0 80px;
   text-align: right;
   font-size: 11px;
   color: #7a7971;
   white-space: nowrap;
 }
-.inventory-list .inventory-header {
+.coc .window-content .inventory-list .inventory-header {
   margin: 2px 0;
   padding: 0;
   align-items: center;
@@ -471,7 +471,7 @@ h3 {
   font-weight: bold;
   line-height: 24px;
 }
-.inventory-list .inventory-header h3 {
+.coc .window-content .inventory-list .inventory-header h3 {
   margin: 0 -5px 0 0;
   padding-left: 5px;
   padding-top: 2px;
@@ -480,13 +480,13 @@ h3 {
   font-weight: bold;
   text-transform: uppercase;
 }
-.inventory-list .inventory-header .item-controls a.item-create {
+.coc .window-content .inventory-list .inventory-header .item-controls a.item-create {
   flex: 0 0 100%;
 }
-.inventory-list .item-name {
+.coc .window-content .inventory-list .item-name {
   color: #4b4a44;
 }
-.inventory-list .item-detail {
+.coc .window-content .inventory-list .item-detail {
   flex: 0 0 50px;
   font-size: 12px;
   color: #7a7971;
@@ -496,13 +496,13 @@ h3 {
   white-space: nowrap;
   overflow: hidden;
 }
-.inventory-list .item-detail:last-child {
+.coc .window-content .inventory-list .item-detail:last-child {
   border-right: none;
 }
-.inventory-list .item-detail.item-action {
+.coc .window-content .inventory-list .item-detail.item-action {
   flex: 0 0 120px;
 }
-.inventory-list .item-subtype {
+.coc .window-content .inventory-list .item-subtype {
   flex: 0 1 100px;
   font-size: 12px;
   color: #7a7971;
@@ -513,7 +513,7 @@ h3 {
   overflow: hidden;
   white-space: nowrap;
 }
-.inventory-list .item-damage {
+.coc .window-content .inventory-list .item-damage {
   flex: 0 1 70px;
   font-size: 12px;
   color: #7a7971;
@@ -521,17 +521,17 @@ h3 {
   border-right: 1px solid #c9c7b8;
   word-break: break-word;
 }
-.inventory-list .item-weight {
+.coc .window-content .inventory-list .item-weight {
   flex: 0 0 60px;
   border-left: 1px solid #c9c7b8;
   border-right: 1px solid #c9c7b8;
 }
-.inventory-list .item-list {
+.coc .window-content .inventory-list .item-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.inventory-list .item-controls-header {
+.coc .window-content .inventory-list .item-controls-header {
   flex: 0 0 44px;
   display: flex;
   flex-direction: row;
@@ -540,28 +540,28 @@ h3 {
   justify-content: flex-end;
   margin-right: 10px;
 }
-.inventory-list .item-controls-header > * {
+.coc .window-content .inventory-list .item-controls-header > * {
   flex: 1;
 }
-.inventory-list .item-controls-header .flex1 {
+.coc .window-content .inventory-list .item-controls-header .flex1 {
   flex: 1;
 }
-.inventory-list .item-controls-header .flex2 {
+.coc .window-content .inventory-list .item-controls-header .flex2 {
   flex: 2;
 }
-.inventory-list .item-controls-header .flex3 {
+.coc .window-content .inventory-list .item-controls-header .flex3 {
   flex: 3;
 }
-.inventory-list .item-controls-header .flex4 {
+.coc .window-content .inventory-list .item-controls-header .flex4 {
   flex: 4;
 }
-.inventory-list .item-controls-header a {
+.coc .window-content .inventory-list .item-controls-header a {
   flex: 0 0 22px;
   font-size: 12px;
   text-align: center;
   color: #7a7971;
 }
-.inventory-list .item-controls {
+.coc .window-content .inventory-list .item-controls {
   flex: 0 0 44px;
   display: flex;
   flex-direction: row;
@@ -572,35 +572,35 @@ h3 {
   margin-right: 5px;
   flex-wrap: nowrap;
 }
-.inventory-list .item-controls > * {
+.coc .window-content .inventory-list .item-controls > * {
   flex: 1;
 }
-.inventory-list .item-controls .flex1 {
+.coc .window-content .inventory-list .item-controls .flex1 {
   flex: 1;
 }
-.inventory-list .item-controls .flex2 {
+.coc .window-content .inventory-list .item-controls .flex2 {
   flex: 2;
 }
-.inventory-list .item-controls .flex3 {
+.coc .window-content .inventory-list .item-controls .flex3 {
   flex: 3;
 }
-.inventory-list .item-controls .flex4 {
+.coc .window-content .inventory-list .item-controls .flex4 {
   flex: 4;
 }
-.inventory-list .item-controls a {
+.coc .window-content .inventory-list .item-controls a {
   flex: 0 0 22px;
   font-size: 12px;
   text-align: center;
   color: #7a7971;
 }
-.inventory-list .item-summary {
+.coc .window-content .inventory-list .item-summary {
   flex: 0 0 100%;
   font-size: 12px;
   line-height: 16px;
   padding: 0.25em 0.5em;
   border-top: 1px solid #c9c7b8;
 }
-.inventory-list .item-controls-3 {
+.coc .window-content .inventory-list .item-controls-3 {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 88px;
   flex: 0 0 88px;
@@ -620,38 +620,59 @@ h3 {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
-.inventory-list .item-controls-3 > * {
+.coc .window-content .inventory-list .item-controls-3 > * {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-.inventory-list .item-controls-3 .flex1 {
+.coc .window-content .inventory-list .item-controls-3 .flex1 {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
-.inventory-list .item-controls-3 .flex2 {
+.coc .window-content .inventory-list .item-controls-3 .flex2 {
   -webkit-box-flex: 2;
   -ms-flex: 2;
   flex: 2;
 }
-.inventory-list .item-controls-3 .flex3 {
+.coc .window-content .inventory-list .item-controls-3 .flex3 {
   -webkit-box-flex: 3;
   -ms-flex: 3;
   flex: 3;
 }
-.inventory-list .item-controls-3 .flex4 {
+.coc .window-content .inventory-list .item-controls-3 .flex4 {
   -webkit-box-flex: 4;
   -ms-flex: 4;
   flex: 4;
 }
-.inventory-list .item-controls-3 a {
+.coc .window-content .inventory-list .item-controls-3 a {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 22px;
   flex: 0 0 22px;
   font-size: 12px;
   text-align: center;
   color: #7a7971;
+}
+.coc .window-content .inventory-list .item-controls-3 a.item-create {
+  -ms-flex: 0 0 32px;
+  flex: 0 0 32px;
+}
+.message {
+  font-family: "Signika", sans-serif;
+}
+.message h2,
+.message h3 {
+  font-family: "Signika", sans-serif;
+  margin: 0 0 0.5rem;
+  padding: 0;
+  font-weight: normal;
+}
+.message h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #782e22;
+}
+.message h3 {
+  font-size: 1.25em;
 }
 .message-header h2.damage {
   color: orangered;
@@ -711,9 +732,9 @@ img[data-status-id="bleeding"] {
   max-height: 26px;
 }
 .coc .half-spacer {
-  min-height: 26px / 2;
-  height: 26px / 2;
-  max-height: 26px / 2;
+  min-height: 13px;
+  height: 13px;
+  max-height: 13px;
 }
 .coc .layout {
   padding: 5px;
