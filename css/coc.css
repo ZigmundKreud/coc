@@ -383,14 +383,6 @@
   display: flex;
   align-items: center;
 }
-.flex-center {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.flex-between {
-  justify-content: space-between;
-}
 .no-wrap {
   flex-wrap: nowrap !important;
 }
@@ -470,6 +462,8 @@ h3 {
   border: 1px groove #eeede0;
   font-weight: bold;
   line-height: 24px;
+  text-wrap-mode: nowrap;
+  /* vonv le + à côté de Aj qui change de ligne */
 }
 .coc .window-content .inventory-list .inventory-header h3 {
   margin: 0 -5px 0 0;

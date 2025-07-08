@@ -108,7 +108,7 @@ jobs:
       
       # Pull YAML to LDB packs
       - name: Build Packs
-        run: npm run pullYAMLtoLDB
+        run: npm run YAMLtoLDB
                   
       # Create a "system.zip" archive containing all the module's required files.
       # If you have other directories or files that will need to be added to
@@ -161,7 +161,7 @@ jobs:
           method: 'POST'
           contentType: 'application/json'
           customHeaders: '{"Authorization": "${{ secrets.FVTT_PACKAGE_RELEASE_TOKEN }}"}'
-          data: '{"id": "coc","dry-run":false,"release":{"version":"${{github.event.release.tag_name}}","manifest":"https://github.com/ZigmundKreud/coc/releases/download/${{github.event.release.tag_name}}/system.json","notes":"https://github.com/ZigmundKreud/coc/blob/master/CHANGELOG.md","compatibility":{"minimum":"12","verified":"12","maximum":"12"}}}'
+          data: '{"id": "coc","dry-run":false,"release":{"version":"${{github.event.release.tag_name}}","manifest":"https://github.com/ZigmundKreud/coc/releases/download/${{github.event.release.tag_name}}/system.json","notes":"https://github.com/ZigmundKreud/coc/blob/master/CHANGELOG.md","compatibility":{"minimum":"13","verified":"13","maximum":"13"}}}'
 
 
       
