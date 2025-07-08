@@ -122,7 +122,7 @@ export class CoCActorSheet extends CoCBaseSheet {
         // Gestion des boutons de modification des effets (visible pour l'actor)
         data.isEffectsEditable = options.editable;
 
-        data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+        data.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.system.description, {async: true});
 
         
         if (COC.debug) console.log("COC | ActorSheet getData", data);

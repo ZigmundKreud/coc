@@ -30,7 +30,7 @@ export class CocHealingRoll {
             title : this._title ? this._title : this._isCritical ? game.i18n.localize("COC.roll.criticalHeal") : game.i18n.localize("COC.roll.heal"),
             showButtons : this._showButtons
         };
-        return renderTemplate(rollMessageTpl, tplData);
+        return foundry.applications.handlebars.renderTemplate(rollMessageTpl, tplData);
     }
 
 }

@@ -60,16 +60,16 @@ Hooks.once("init", function () {
     };
 
     // Register sheet application classes
-    Actors.unregisterSheet("core", ActorSheet, { makeDefault: true });
-    Items.unregisterSheet("core", ItemSheet, { makeDefault: true });
+    foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet, { makeDefault: true });
+    foundry.documents.collections.Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet, { makeDefault: true });
 
     // Register actor sheets
-    Actors.registerSheet("coc", CoCActorSheet, {types: ["character"], makeDefault: false, label: "COC.sheet.actor"});
-    Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: false, label: "COC.sheet.npc"});
-    Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: false, label: "COC.sheet.encounter"});
+    foundry.documents.collections.Actors.registerSheet("coc", CoCActorSheet, {types: ["character"], makeDefault: false, label: "COC.sheet.actor"});
+    foundry.documents.collections.Actors.registerSheet("coc", CoCNpcSheet, {types: ["npc"], makeDefault: false, label: "COC.sheet.npc"});
+    foundry.documents.collections.Actors.registerSheet("coc", CoCEncounterSheet, {types: ["encounter"], makeDefault: false, label: "COC.sheet.encounter"});
 
     // Register item sheets
-    Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});
+    foundry.documents.collections.Items.registerSheet("coc", CoCItemSheet, {types: ["item", "trait", "capacity", "profile", "path", "encounterWeapon"], makeDefault: false, label: "COC.sheet.item"});
 
     // Preload Handlebars Templates
     preloadHandlebarsTemplates();

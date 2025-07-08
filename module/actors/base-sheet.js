@@ -9,7 +9,10 @@ import { Profile } from "../controllers/profile.js";
 import { ArrayUtils } from "../utils/array-utils.js";
 import { COC } from "../system/config.js";
 
-export class CoCBaseSheet extends ActorSheet {
+export class CoCBaseSheet extends foundry.appv1.sheets.ActorSheet {
+
+  static _warnedAppV1 = true
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
@@ -259,7 +262,7 @@ export class CoCBaseSheet extends ActorSheet {
       activable: item.system.properties.activable,
     };
 
-    const html = await renderTemplate("systems/coc/templates/chat/item-card.hbs", templateData);
+    const html = await foundry.applications.handlebars.renderTemplate("systems/coc/templates/chat/item-card.hbs", templateData);
     let chatData = {
       speaker: ChatMessage.getSpeaker(),
       content: html,

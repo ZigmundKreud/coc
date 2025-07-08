@@ -47,7 +47,7 @@ export class CoCEncounterSheet extends CoCBaseSheet {
         // Gestion des boutons de modification des effets (visible pour l'encounter)
         data.isEffectsEditable = true;
 
-        data.enrichedDescription = await TextEditor.enrichHTML(this.object.system.description, {async: true});
+        data.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.object.system.description, {async: true});
 
         if (COC.debug) console.log("COC | EncounterSheet getData", data);
         return data;
