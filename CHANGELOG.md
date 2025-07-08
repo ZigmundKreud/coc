@@ -1,3 +1,7 @@
+### 13.346.0
+- Compatibilité V13 (merci pour ton aide Zakarik)
+- Correctif d'afficahge de Vonv
+
 ### 12.331.7
 - Correction du son lors de l'action équiper/déséquiper
 - 2 icônes au lieu d'un pour équiper/déséquiper

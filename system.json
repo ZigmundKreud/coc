@@ -40,7 +40,7 @@
       "name": "capacities",
       "label": "Capacités",
       "system": "coc",
-      "path": "./packs/capacities.db",
+      "path": "./packs/capacities",
       "type": "Item",
       "tag": "capacity"
     },
@@ -48,7 +48,7 @@
       "name": "items",
       "label": "Equipement",
       "system": "coc",
-      "path": "./packs/items.db",
+      "path": "./packs/items",
       "type": "Item",
       "tag": "item"
     },
@@ -56,7 +56,7 @@
       "name": "paths",
       "label": "Voies",
       "system": "coc",
-      "path": "./packs/paths.db",
+      "path": "./packs/paths",
       "type": "Item",
       "tag": "path"
     },
@@ -64,7 +64,7 @@
       "name": "profiles",
       "label": "Profils",
       "system": "coc",
-      "path": "./packs/profiles.db",
+      "path": "./packs/profiles",
       "type": "Item",
       "tag": "profile"
     },
@@ -72,7 +72,7 @@
       "name": "traits",
       "label": "Traits",
       "system": "coc",
-      "path": "./packs/traits.db",
+      "path": "./packs/traits",
       "type": "Item",
       "tag": "trait"
     },
@@ -80,7 +80,7 @@
       "name": "tables",
       "label": "Tables",
       "system": "coc",
-      "path": "./packs/tables.db",
+      "path": "./packs/tables",
       "type": "RollTable",
       "tag": "table"
     },
@@ -88,7 +88,7 @@
       "name": "macros",
       "label": "Macros",
       "system": "coc",
-      "path": "./packs/macros.db",
+      "path": "./packs/macros",
       "type": "Macro",
       "tag": "macro"
     }
