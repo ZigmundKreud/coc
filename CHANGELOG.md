@@ -1,6 +1,9 @@
+### 13.347.0
+- Correctif Application des dommages via les boutons dans le chat (@ajite)
+
 ### 13.346.0
 - Compatibilité V13 (merci pour ton aide Zakarik)
-- Correctif d'afficahge de Vonv
+- Correctif d'affichage de Vonv
 
 ### 12.331.7
 - Correction du son lors de l'action équiper/déséquiper
